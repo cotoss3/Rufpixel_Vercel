@@ -270,33 +270,47 @@ export default async function HomePage() {
       </section>
 
 
-      {/* 5. TESTIMONIALS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-3 mb-12">
-          <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E14]">Opiniones de Clientes</span>
-          <h2 className="text-3xl font-extrabold text-gray-900 font-outfit">
-            Lo que dicen sobre RufPixel
+      {/* 5. TESTIMONIALS & GOOGLE REVIEWS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center space-y-3">
+          <div className="inline-flex items-center space-x-2 bg-amber-50 border border-amber-200 px-4 py-1.5 rounded-full text-xs font-bold text-amber-900">
+            <span className="text-amber-500">★★★★★</span>
+            <span>5,0 de 5 estrellas en <strong>Google Maps</strong> (7 Reseñas)</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 font-outfit">
+            Reseñas Reales de Clientes
           </h2>
+          <p className="text-gray-600 text-sm max-w-xl mx-auto">
+            Opiniones de nuestros clientes verificados en el perfil de Google Business de <strong>RufPixel - Casa Creativa</strong>.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {MOCK_TESTIMONIALS.map((t) => (
-            <div key={t.id} className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-4 flex flex-col justify-between">
+            <div key={t.id} className="bg-white p-6 rounded-3xl border border-gray-200 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all">
               <div className="space-y-3">
-                <div className="flex text-amber-400 space-x-1">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
+                <div className="flex items-center justify-between">
+                  <div className="flex text-amber-400 space-x-1">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <span className="bg-gray-100 text-gray-700 text-[10px] font-bold px-2 py-0.5 rounded flex items-center space-x-1">
+                    <span>Google</span>
+                  </span>
                 </div>
-                <p className="text-gray-700 text-sm italic leading-relaxed">
+                <p className="text-gray-700 text-xs italic leading-relaxed">
                   "{t.quote}"
                 </p>
               </div>
               <div className="flex items-center space-x-3 pt-4 border-t border-gray-100">
                 <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover border-2 border-[#FF5E14]" />
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900 font-outfit">{t.name}</h4>
-                  <span className="text-xs text-gray-500">{t.company}</span>
+                  <h4 className="text-xs font-bold text-gray-900 font-outfit">{t.name}</h4>
+                  <span className="text-[10px] text-gray-400 flex items-center">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-500 mr-1" />
+                    {t.company}
+                  </span>
                 </div>
               </div>
             </div>

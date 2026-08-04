@@ -233,26 +233,38 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
 export const MOCK_TESTIMONIALS = [
   {
     id: 't-1',
-    name: 'Carlos Mendoza',
-    company: 'Agencia Creativa Horizon',
-    quote: 'La calidad del laminado Soft-Touch en nuestras tarjetas fue espectacular. Llegaron a tiempo para la feria y la atención al cliente por WhatsApp fue impecable.',
+    name: 'Johaneth Amestoy',
+    company: 'Reseña de Google Maps',
+    quote: 'Excelente servicio, la atención es muy buena, recomendados 100%',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop'
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop',
+    googleVerified: true
   },
   {
     id: 't-2',
-    name: 'Elena Ramos',
-    company: 'Restaurante El Muelle',
-    quote: 'Pedimos nuestros banners Roll-Up y los menús plastificados con RufPixel. El pago con Yappy fue súper sencillo y la entrega fue rapidísima.',
+    name: 'Valentina G. Sanchez',
+    company: 'Reseña de Google Maps',
+    quote: 'Excelente trabajo muy impecable super recomendados 100%',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop'
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop',
+    googleVerified: true
   },
   {
     id: 't-3',
-    name: 'Roberto Gómez',
-    company: 'Startup FinTech PA',
-    quote: 'Recomiendo 100% el cotizador de pre-orden para proyectos de gran formato. Te da una idea clara del presupuesto antes de mandar a imprimir.',
+    name: 'Almacén de Cuadro',
+    company: 'Reseña de Google Maps',
+    quote: 'Excelente atención en sus productos y servicios',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop'
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop',
+    googleVerified: true
+  },
+  {
+    id: 't-4',
+    name: 'Fernando Balbontin',
+    company: 'Reseña de Google Maps',
+    quote: 'Trabajos de gran formato y acabados de primera calidad.',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop',
+    googleVerified: true
   }
 ];
