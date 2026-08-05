@@ -63,13 +63,13 @@ export async function getCategories(): Promise<ProductCategory[]> {
   ];
 }
 
-// Fetch all pages in parallel using max allowed per_page=100 per request
+// Fetch all pages 1 to 6 in parallel to collect all 598 raw products (162 root models)
 export async function getProducts(categorySlug?: string, page = 1, perPage = 100): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
     
-    // WooCommerce Store API limits per_page to 100. We fetch Page 1, Page 2, Page 3 in parallel to collect all 250+ products across 7+ pages.
-    const pagesToFetch = categorySlug && categorySlug !== 'todos' ? [1, 2] : [1, 2, 3, 4];
+    // WooCommerce Store API has 598 products across 6 pages. Fetch Pages 1 to 6 in parallel.
+    const pagesToFetch = categorySlug && categorySlug !== 'todos' ? [1, 2] : [1, 2, 3, 4, 5, 6];
     
     const pagePromises = pagesToFetch.map(async (pNum) => {
       try {
