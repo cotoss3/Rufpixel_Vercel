@@ -10,8 +10,11 @@ import { getProducts } from '@/lib/woocommerce';
 import { getBlogPosts } from '@/lib/wordpress';
 
 export default async function HomePage() {
-  const featuredProducts = (await getProducts()).slice(0, 4);
-  const recentPosts = (await getBlogPosts()).slice(0, 3);
+  const { products } = await getProducts();
+  const featuredProducts = products.slice(0, 4);
+
+  const { posts } = await getBlogPosts();
+  const recentPosts = posts.slice(0, 3);
 
   const iconMap: Record<string, React.ReactNode> = {
     CreditCard: <CreditCard className="w-8 h-8 text-[#FF5E14]" />,

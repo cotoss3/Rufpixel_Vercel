@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function BlogCategoryPage({ params }: { params: { slug: string } }) {
-  const posts = await getBlogPosts();
+  const { posts } = await getBlogPosts(1, 50);
   const filtered = posts.filter((p) => p.categorySlug === params.slug || p.category.toLowerCase().includes(params.slug));
 
   const categories = [

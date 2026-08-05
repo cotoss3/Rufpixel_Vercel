@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { categoria: string
 }
 
 export default async function TiendaCategoriaPage({ params }: { params: { categoria: string } }) {
-  const products = await getProducts(params.categoria);
+  const { products } = await getProducts(params.categoria, 1, 50);
 
   const categories = [
     { slug: 'todos', label: 'Todos los Productos' },
