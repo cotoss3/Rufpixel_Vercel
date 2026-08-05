@@ -19,7 +19,7 @@ export default function ShopClientGrid({
 }: ShopClientGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>(activeCategorySlug);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const perPage = 32; // Set exact 32 products per page as requested
+  const perPage = 32;
 
   // 100% Synchronous Instant Client-Side Category Filtering
   const filteredProducts = useMemo(() => {
@@ -126,7 +126,7 @@ export default function ShopClientGrid({
         </nav>
       </aside>
 
-      {/* Right Area: Product Grid (32 items per page) + Pagination */}
+      {/* Right Area: Product Grid (Exactly 3 Columns) + Pagination */}
       <main className="flex-1 w-full space-y-8">
         <div className="flex items-center justify-between bg-white px-5 py-3.5 rounded-2xl border border-gray-200">
           <span className="text-xs font-bold text-gray-600">
@@ -148,7 +148,7 @@ export default function ShopClientGrid({
         </div>
 
         {paginatedProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 animate-fade-in">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
             {paginatedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
