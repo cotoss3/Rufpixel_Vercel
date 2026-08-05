@@ -3,13 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Product } from '@/lib/types';
-import { ShoppingBag, Layers, Loader2 } from 'lucide-react';
+import { ShoppingBag, Layers } from 'lucide-react';
 import QuickAddModal from './QuickAddModal';
 import { setCachedProduct } from '@/lib/productCache';
 
 export default function ProductCard({ product }: { product: Product }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
 
   // Instantly register product in client memory cache when card mounts
   useEffect(() => {
@@ -24,7 +23,6 @@ export default function ProductCard({ product }: { product: Product }) {
 
   const handleCardClick = () => {
     setCachedProduct(product);
-    setIsNavigating(true);
   };
 
   // Determine base quantity
@@ -39,14 +37,6 @@ export default function ProductCard({ product }: { product: Product }) {
         onMouseEnter={() => setCachedProduct(product)}
         className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all group flex flex-col justify-between relative"
       >
-        {/* Instant Spinner Overlay on Card Click */}
-        {isNavigating && (
-          <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px] z-30 flex flex-col items-center justify-center space-y-2 animate-fade-in">
-            <Loader2 className="w-8 h-8 text-[#FF5E14] animate-spin" />
-            <span className="text-xs font-bold text-gray-900 font-outfit">Abriendo producto...</span>
-          </div>
-        )}
-
         {/* Tapping photo or card body enters the product page */}
         <Link
           href={`/producto/${product.slug}`}
