@@ -5,10 +5,58 @@ const LIVE_DOMAIN = 'https://rufpixel.com';
 const CK = process.env.WOOCOMMERCE_CONSUMER_KEY || 'ck_ca97c633f96d52d6b7178f9bef3c1f20fbf21688';
 const CS = process.env.WOOCOMMERCE_CONSUMER_SECRET || 'cs_cf44b18a5302efd0464436c21752fa8c0c56cefc1';
 
+export interface ProductCategory {
+  id: string;
+  name: string;
+  slug: string;
+  count: number;
+}
+
+export async function getCategories(): Promise<ProductCategory[]> {
+  try {
+    const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/categories?per_page=100`, {
+      next: { revalidate: 300 },
+      headers: { 'Accept': 'application/json' },
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        return data
+          .filter((c: any) => c.slug !== 'sin-categorizar' && c.count > 0)
+          .map((c: any) => ({
+            id: String(c.id),
+            name: c.name,
+            slug: c.slug,
+            count: c.count,
+          }));
+      }
+    }
+  } catch (err) {
+    console.warn('Error fetching live WooCommerce categories:', err);
+  }
+
+  // Fallback category list
+  return [
+    { id: '1', name: 'Accesorios de Escritorio', slug: 'accesorios-de-escritorio', count: 9 },
+    { id: '2', name: 'Bolígrafos y Plumas', slug: 'boligrafos-y-plumas', count: 24 },
+    { id: '3', name: 'Bolsas y Totes', slug: 'bolsas-y-totes', count: 18 },
+    { id: '4', name: 'Botellas y Termos', slug: 'botellas-y-termos', count: 14 },
+    { id: '5', name: 'Cocina y Hogar', slug: 'cocina-y-hogar', count: 16 },
+    { id: '6', name: 'Gorras y Accesorios de Cabeza', slug: 'gorras-y-accesorios-de-cabeza', count: 11 },
+    { id: '7', name: 'Libretas y Cuadernos', slug: 'libretas-y-cuadernos', count: 14 },
+    { id: '8', name: 'Llaveros', slug: 'llaveros', count: 9 },
+    { id: '9', name: 'Loncheras Térmicas', slug: 'loncheras-termicas', count: 5 },
+    { id: '10', name: 'Mochilas y Maletines', slug: 'mochilas-y-maletines', count: 6 },
+    { id: '11', name: 'Sets y Regalos', slug: 'sets-y-regalos', count: 2 },
+    { id: '12', name: 'Textiles y Ropa', slug: 'textiles-y-ropa', count: 15 },
+    { id: '13', name: 'Vasos y Tazas', slug: 'vasos-y-tazas', count: 16 },
+  ];
+}
+
 export async function getProducts(categorySlug?: string, page = 1, perPage = 15): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
-    // Fetch top 100 catalog products to filter out quantity sub-product duplicates
     const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100${categoryParam}`;
     
     const res = await fetch(url, {
@@ -26,7 +74,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
           (p.grouped_products || []).forEach((id: number) => allChildIds.add(id));
         });
 
-        // Keep ONLY the parent product models (eliminating 50/100/250 units duplicate cards)
+        // Keep ONLY root parent product models
         const rootProducts = data.filter(p => !allChildIds.has(p.id));
 
         const formattedProducts: Product[] = rootProducts.map((prod: any) => {
@@ -35,7 +83,6 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
           const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
           const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
 
-          // Parse Cantidad & Color attributes
           const parsedAttributes = prod.attributes?.map((attr: any) => {
             const rawOptions = attr.options && attr.options.length > 0
               ? attr.options
@@ -67,7 +114,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
           };
         });
 
-        // Apply clean pagination
+        // Clean pagination
         const totalProducts = formattedProducts.length;
         const totalPages = Math.ceil(totalProducts / perPage) || 1;
         const startIndex = (page - 1) * perPage;
@@ -97,7 +144,6 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   const found = products.find(p => p.slug === slug);
   if (!found) return null;
 
-  // Fetch child quantity/color variations for this product
   try {
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`);
     if (res.ok) {
