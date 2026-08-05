@@ -42,7 +42,7 @@ export async function getCategories(): Promise<ProductCategory[]> {
       }
     }
   } catch (err) {
-    console.warn('Error fetching live WooCommerce categories:', err);
+    console.warn('Error fetching live categories:', err);
   }
 
   // Fallback category list
@@ -63,7 +63,7 @@ export async function getCategories(): Promise<ProductCategory[]> {
   ];
 }
 
-export async function getProducts(categorySlug?: string, page = 1, perPage = 100): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
+export async function getProducts(categorySlug?: string, page = 1, perPage = 300): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
     const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=${perPage}${categoryParam}`;
@@ -144,7 +144,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 100
     console.warn('Store API deduplication fetch error', err);
   }
 
-  // Fallback Mock Data Paginated
+  // Fallback Mock Data
   let filteredMock = MOCK_PRODUCTS;
   if (categorySlug && categorySlug !== 'todos') {
     filteredMock = MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug);
@@ -256,11 +256,11 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   }
 
   // Fallback search in catalog
-  const { products } = await getProducts('todos', 1, 100);
+  const { products } = await getProducts('todos', 1, 300);
   return products.find(p => p.slug === slug) || null;
 }
 
-// Function to post new order directly to WordPress WooCommerce
+// Function to post new order directly to BDD
 export async function createWooCommerceOrder(order: Order): Promise<{ success: boolean; wooOrderId?: number }> {
   try {
     const nameParts = order.customer.fullName.trim().split(' ');
@@ -312,7 +312,7 @@ export async function createWooCommerceOrder(order: Order): Promise<{ success: b
       return { success: true, wooOrderId: data.id };
     }
   } catch (err) {
-    console.warn('Could not post order directly to WooCommerce API, order saved in local state', err);
+    console.warn('Could not post order directly to BDD, order saved in local state', err);
   }
 
   return { success: false };

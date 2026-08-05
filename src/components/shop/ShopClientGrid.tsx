@@ -55,71 +55,25 @@ export default function ShopClientGrid({
     });
   }, [allProducts, selectedCategory, categories]);
 
-  // Fetch products for category dynamically if not found in preloaded set
+  // Fetch products for category dynamically from internal BDD proxy if not yet loaded
   useEffect(() => {
     if (selectedCategory !== 'todos' && filteredProducts.length === 0 && !isLoadingCategory) {
       const fetchCategoryProducts = async () => {
         setIsLoadingCategory(true);
         try {
-          const res = await fetch(`https://rufpixel.com/wp-json/wc/store/v1/products?category=${selectedCategory}&per_page=100`, {
-            headers: {
-              'Accept': 'application/json',
-              'User-Agent': 'RufPixel-Headless-Storefront/1.0',
-            },
-          });
-
+          const res = await fetch(`/api/products?category=${selectedCategory}`);
           if (res.ok) {
             const data = await res.json();
-            if (Array.isArray(data) && data.length > 0) {
-              const allChildIds = new Set<number>();
-              data.forEach((p: any) => {
-                (p.grouped_products || []).forEach((id: number) => allChildIds.add(id));
-              });
-
-              const rootProducts = data.filter((p: any) => !allChildIds.has(p.id));
-
-              const fetched: Product[] = rootProducts.map((prod: any) => {
-                const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
-                const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
-                const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : undefined;
-
-                const catList = prod.categories?.map((c: any) => ({
-                  id: String(c.id),
-                  name: c.name,
-                  slug: c.slug,
-                })) || [];
-
-                return {
-                  id: String(prod.id),
-                  slug: prod.slug,
-                  name: prod.name,
-                  price: rawPrice > 0 ? rawPrice : 5.00,
-                  regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
-                  description: prod.description || prod.short_description || '',
-                  shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
-                  category: prod.categories?.[0]?.name || 'Productos RufPixel',
-                  categorySlug: prod.categories?.[0]?.slug || 'general',
-                  categories: catList,
-                  image: prod.images?.[0]?.src || '',
-                  gallery: prod.images?.map((img: any) => img.src) || [],
-                  stock: prod.is_in_stock ?? 100,
-                  attributes: prod.attributes?.map((attr: any) => ({
-                    name: attr.name,
-                    options: attr.options || attr.terms?.map((t: any) => t.name) || [],
-                  })) || [],
-                };
-              });
-
-              // Merge fetched products into state deduplicated
+            if (data && Array.isArray(data.products) && data.products.length > 0) {
               setAllProducts((prev) => {
                 const existingIds = new Set(prev.map((p) => p.id));
-                const newItems = fetched.filter((p) => !existingIds.has(p.id));
+                const newItems = data.products.filter((p: Product) => !existingIds.has(p.id));
                 return [...prev, ...newItems];
               });
             }
           }
         } catch (e) {
-          console.warn('Error fetching category products dynamically:', e);
+          console.warn('Error fetching BDD category products:', e);
         } finally {
           setIsLoadingCategory(false);
         }
@@ -227,7 +181,7 @@ export default function ShopClientGrid({
           <div className="bg-white rounded-3xl p-16 text-center border border-gray-200 space-y-3 flex flex-col items-center justify-center">
             <Loader2 className="w-10 h-10 text-[#FF5E14] animate-spin" />
             <h3 className="text-base font-bold text-gray-900">Cargando productos de la categoría...</h3>
-            <p className="text-xs text-gray-500">Obteniendo catálogo completo desde WordPress...</p>
+            <p className="text-xs text-gray-500">Obteniendo catálogo desde la Base de Datos (BDD)...</p>
           </div>
         ) : paginatedProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 animate-fade-in">
@@ -237,8 +191,8 @@ export default function ShopClientGrid({
           </div>
         ) : (
           <div className="bg-white rounded-3xl p-12 text-center border border-gray-200 space-y-3">
-            <h3 className="text-lg font-bold text-gray-900">No hay productos en esta categoría</h3>
-            <p className="text-xs text-gray-500">Prueba seleccionando otra categoría o limpiando los filtros.</p>
+            <h3 className="text-lg font-bold text-gray-900">No hay productos disponibles en esta categoría</h3>
+            <p className="text-xs text-gray-500">Prueba seleccionando otra categoría o limpiando los filtros de la BDD.</p>
             <button
               onClick={(e) => handleCategorySelect('todos', e)}
               className="px-4 py-2 bg-[#FF5E14] text-white rounded-xl font-bold text-xs"
