@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
 import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft } from 'lucide-react';
@@ -24,11 +24,16 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const [selectedImage, setSelectedImage] = useState(product.image);
   const [addedMessage, setAddedMessage] = useState(false);
 
-  // Find matching child variation based on selected attributes (e.g. Cantidad: 50, 100)
+  // Find matching child variation based on selected attributes (Modelo / Estilo or Cantidad)
   const getSelectedVariation = (): ProductVariation | undefined => {
     if (!product.childVariations || product.childVariations.length === 0) return undefined;
     
-    // Check quantity attribute match
+    const selectedModel = selectedAttributes['Modelo / Estilo'];
+    if (selectedModel) {
+      const match = product.childVariations.find(v => v.name.includes(selectedModel) || selectedModel.includes(v.name));
+      if (match) return match;
+    }
+
     const selectedQty = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0];
     if (selectedQty) {
       const match = product.childVariations.find(v => v.quantityOption === selectedQty || v.name.includes(selectedQty));
@@ -40,15 +45,22 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const selectedVariation = getSelectedVariation();
   const currentPrice = selectedVariation ? selectedVariation.price : product.price;
 
+  useEffect(() => {
+    if (selectedVariation?.image) {
+      setSelectedImage(selectedVariation.image);
+    }
+  }, [selectedVariation]);
+
   const handleAttributeChange = (attrName: string, option: string) => {
     setSelectedAttributes((prev) => ({ ...prev, [attrName]: option }));
   };
 
   const handleAddToCart = () => {
-    // Create product instance with current variation price
     const productToCart = {
       ...product,
+      name: selectedVariation ? selectedVariation.name : product.name,
       price: currentPrice,
+      image: selectedImage,
     };
     addToCart(productToCart, quantity, selectedAttributes);
     setAddedMessage(true);
@@ -97,7 +109,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               {product.category}
             </span>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 font-outfit mt-2">
-              {product.name}
+              {selectedVariation ? selectedVariation.name : product.name}
             </h1>
             <div className="mt-3 flex items-baseline space-x-3">
               <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit">
@@ -122,14 +134,14 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">
                 Seleccionar {attr.name}: <span className="text-[#FF5E14] font-bold">{selectedAttributes[attr.name]}</span>
               </label>
-              <div className="flex flex-wrap gap-2.5">
+              <div className="flex flex-wrap gap-2.5 max-h-48 overflow-y-auto pr-1">
                 {attr.options.map((opt) => {
                   const isSelected = selectedAttributes[attr.name] === opt;
                   return (
                     <button
                       key={opt}
                       onClick={() => handleAttributeChange(attr.name, opt)}
-                      className={`px-5 py-2.5 rounded-xl text-xs font-extrabold transition-all border ${
+                      className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all border ${
                         isSelected
                           ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md shadow-[#FF5E14]/25 scale-105'
                           : 'bg-white text-gray-700 border-gray-300 hover:border-[#FF5E14]'
@@ -176,7 +188,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-xl text-xs font-medium flex items-center justify-between animate-fade-in">
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <span>¡Producto ({selectedAttributes['Cantidad'] || ''}) agregado al carrito exitosamente!</span>
+                  <span>¡Producto agregado al carrito exitosamente!</span>
                 </div>
                 <Link href="/carrito" className="font-bold underline text-emerald-900 flex items-center space-x-1">
                   <span>Ir al Carrito</span>
