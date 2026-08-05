@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Product } from '@/lib/types';
 import { ProductCategory } from '@/lib/woocommerce';
 import ProductCard from './ProductCard';
-import { ChevronLeft, ChevronRight, Grid, Filter, Check, Loader2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Grid, Filter, Check } from 'lucide-react';
 
 interface ShopClientGridProps {
   initialProducts: Product[];
@@ -17,24 +17,19 @@ export default function ShopClientGrid({
   categories,
   activeCategorySlug = 'todos',
 }: ShopClientGridProps) {
-  const [allProducts, setAllProducts] = useState<Product[]>(initialProducts);
   const [selectedCategory, setSelectedCategory] = useState<string>(activeCategorySlug);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [isLoadingCategory, setIsLoadingCategory] = useState<boolean>(false);
   const perPage = 15;
 
-  // Track categories that have already been queried to prevent infinite loading loops
-  const checkedCategoriesRef = useRef<Set<string>>(new Set(['todos']));
-
-  // Robust Client-Side Category Filtering
+  // 100% Synchronous Instant Client-Side Category Filtering (0ms, Never gets stuck)
   const filteredProducts = useMemo(() => {
     if (!selectedCategory || selectedCategory === 'todos') {
-      return allProducts;
+      return initialProducts;
     }
 
     const cleanSlug = selectedCategory.toLowerCase().trim();
 
-    return allProducts.filter((p) => {
+    return initialProducts.filter((p) => {
       // 1. Check array of categories
       if (p.categories && p.categories.some((c) => c.slug.toLowerCase() === cleanSlug)) {
         return true;
@@ -56,44 +51,7 @@ export default function ShopClientGrid({
 
       return false;
     });
-  }, [allProducts, selectedCategory, categories]);
-
-  // Dynamic BDD Fetching (Only once per category if missing)
-  useEffect(() => {
-    const slug = selectedCategory.toLowerCase().trim();
-
-    if (
-      slug !== 'todos' &&
-      filteredProducts.length === 0 &&
-      !checkedCategoriesRef.current.has(slug) &&
-      !isLoadingCategory
-    ) {
-      checkedCategoriesRef.current.add(slug);
-
-      const fetchCategoryProducts = async () => {
-        setIsLoadingCategory(true);
-        try {
-          const res = await fetch(`/api/products?category=${slug}`);
-          if (res.ok) {
-            const data = await res.json();
-            if (data && Array.isArray(data.products) && data.products.length > 0) {
-              setAllProducts((prev) => {
-                const existingIds = new Set(prev.map((p) => p.id));
-                const newItems = data.products.filter((p: Product) => !existingIds.has(p.id));
-                return [...prev, ...newItems];
-              });
-            }
-          }
-        } catch (e) {
-          console.warn('Error fetching BDD category products:', e);
-        } finally {
-          setIsLoadingCategory(false);
-        }
-      };
-
-      fetchCategoryProducts();
-    }
-  }, [selectedCategory, filteredProducts.length, isLoadingCategory]);
+  }, [initialProducts, selectedCategory, categories]);
 
   // Instant Client-Side Pagination
   const totalProducts = filteredProducts.length;
@@ -189,13 +147,7 @@ export default function ShopClientGrid({
           )}
         </div>
 
-        {isLoadingCategory ? (
-          <div className="bg-white rounded-3xl p-16 text-center border border-gray-200 space-y-3 flex flex-col items-center justify-center">
-            <Loader2 className="w-10 h-10 text-[#FF5E14] animate-spin" />
-            <h3 className="text-base font-bold text-gray-900">Cargando productos de la categoría...</h3>
-            <p className="text-xs text-gray-500">Obteniendo productos de la Base de Datos (BDD)...</p>
-          </div>
-        ) : paginatedProducts.length > 0 ? (
+        {paginatedProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 animate-fade-in">
             {paginatedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -215,7 +167,7 @@ export default function ShopClientGrid({
         )}
 
         {/* Instant Pagination Controls */}
-        {totalPages > 1 && !isLoadingCategory && (
+        {totalPages > 1 && (
           <div className="flex items-center justify-center space-x-2 pt-6 border-t border-gray-200">
             {currentPage > 1 && (
               <button
