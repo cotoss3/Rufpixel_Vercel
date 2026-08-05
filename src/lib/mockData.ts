@@ -54,124 +54,194 @@ export const MOCK_SERVICES: Service[] = [
 ];
 
 export const MOCK_PRODUCTS: Product[] = [
+  // Bolígrafos y Plumas
   {
-    id: 'prod-101',
-    slug: 'tarjetas-premium-soft-touch-100u',
-    name: 'Pack 100 Tarjetas de Presentación Soft-Touch',
-    price: 25.00,
-    regularPrice: 30.00,
-    shortDescription: 'Tarjetas corporativas impresas a doble cara en Couclé 350g con acabado aterciopelado Soft-Touch.',
-    description: 'Impresión offset digital de máxima nitidez. Incluye laminado Soft-Touch que brinda una textura suave tipo seda y mayor durabilidad contra dobleces y arañazos.',
-    category: 'Tarjetas de Presentación',
-    categorySlug: 'tarjetas',
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-    gallery: [
-      'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop'
-    ],
-    stock: 50,
-    featured: true,
-    attributes: [
-      { name: 'Acabado', options: ['Soft-Touch Aterciopelado', 'Mate Clásico', 'Brillante UV'] },
-      { name: 'Esquinas', options: ['Rectas', 'Redondeadas'] }
-    ]
-  },
-  {
-    id: 'prod-102',
-    slug: 'banner-rollup-aluminio-85x200',
-    name: 'Banner Roll-Up en Aluminio (85 x 200 cm)',
-    price: 55.00,
-    regularPrice: 65.00,
-    shortDescription: 'Estructura retráctil de aluminio reforzado con lona impresas a 1440 DPI y estuche de transporte.',
-    description: 'Ideal para exhibición rápida en eventos, conferencias y locales comerciales. La lona no se curva en las esquinas y se guarda fácilmente dentro de la base de aluminio.',
-    category: 'Gran Formato',
-    categorySlug: 'gran-formato',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop',
-    gallery: [
-      'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop'
-    ],
-    stock: 25,
-    featured: true,
-    attributes: [
-      { name: 'Material Lona', options: ['Lona Anti-Curling 13oz', 'Lona Mate Premium'] }
-    ]
-  },
-  {
-    id: 'prod-103',
-    slug: 'pack-500-flyers-media-carta',
-    name: 'Pack 500 Flyers Media Carta (1/2 Carta)',
-    price: 38.00,
-    regularPrice: 45.00,
-    shortDescription: '500 volantes full color a ambas caras en papel glacé de 150 gramos.',
-    description: 'Imprime tus promociones con colores vibrantes y excelente definición de texto. Perfecto para promociones mensuales y difusión comercial.',
-    category: 'Flyers & Folletos',
-    categorySlug: 'flyers',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop',
-    gallery: [
-      'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop'
-    ],
+    id: 'prod-boligrafos-1',
+    slug: 'boligrafos-metalicos-ejecutivos-50u',
+    name: 'Pack 50 Bolígrafos Metálicos Ejecutivos con Logo',
+    price: 95.00,
+    regularPrice: 110.00,
+    shortDescription: 'Bolígrafos metálicos de giro con grabado láser o serigrafía de tu marca.',
+    description: 'Bolígrafo ejecutivo de cuerpo metálico mate con clip cromado. Tinta azul o negra indeleble de escritura suave.',
+    category: 'Bolígrafos y Plumas',
+    categorySlug: 'boligrafos-y-plumas',
+    categories: [{ id: '2', name: 'Bolígrafos y Plumas', slug: 'boligrafos-y-plumas' }],
+    image: 'https://images.unsplash.com/photo-1585336261026-875a60a1c96b?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1585336261026-875a60a1c96b?q=80&w=1000&auto=format&fit=crop'],
     stock: 100,
     featured: true,
-    attributes: [
-      { name: 'Impresión', options: ['Ambas Caras (4/4)', 'Una Sola Cara (4/0)'] }
-    ]
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Negro Matte', 'Plateado', 'Azul Marino'] }]
   },
+
+  // Bolsas y Totes
   {
-    id: 'prod-104',
-    slug: 'stickers-vinil-troquelados-100u',
-    name: '100 Stickers Troquelados en Vinil Resistente',
-    price: 22.00,
-    regularPrice: 28.00,
-    shortDescription: 'Stickers personalizados cortados a la silueta de tu diseño en vinil impermeabilizado.',
-    description: 'Corte exacto mediante plotter digital. Resisten el lavaplatos, la intemperie y la fricción. Ideales para termos, laptops, packaging y regalos de marca.',
-    category: 'Stickers & Etiquetas',
-    categorySlug: 'stickers',
-    image: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?q=80&w=1000&auto=format&fit=crop',
-    gallery: [
-      'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?q=80&w=1000&auto=format&fit=crop'
-    ],
+    id: 'prod-bolsas-1',
+    slug: 'tote-bag-algodon-ecologico-50u',
+    name: 'Pack 50 Tote Bags de Algodón Ecológico 100% Personalizadas',
+    price: 135.00,
+    regularPrice: 150.00,
+    shortDescription: 'Bolsas ecológicas de algodón crudo lavable con estampado serigráfico full color.',
+    description: 'Bolsas reutilizables para eventos, marcas de moda e institucionales. Asas reforzadas de 65cm ideales para hombro.',
+    category: 'Bolsas y Totes',
+    categorySlug: 'bolsas-y-totes',
+    categories: [{ id: '3', name: 'Bolsas y Totes', slug: 'bolsas-y-totes' }],
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1000&auto=format&fit=crop'],
     stock: 80,
     featured: true,
-    attributes: [
-      { name: 'Tamaño Aprox', options: ['5 x 5 cm', '7 x 7 cm', '10 x 10 cm'] },
-      { name: 'Acabado Vinil', options: ['Brillante', 'Mate', 'Transparente'] }
-    ]
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Algodón Natural', 'Negro', 'Beige'] }]
   },
+
+  // Botellas y Termos
   {
-    id: 'prod-105',
-    slug: 'carpetas-corporativas-con-bolsillo-50u',
-    name: '50 Carpetas Corporativas con Bolsillo Interior',
+    id: 'prod-botellas-1',
+    slug: 'termo-acero-inoxidable-termico-50u',
+    name: 'Pack 50 Termos de Acero Inoxidable (500 ml)',
+    price: 245.00,
+    regularPrice: 280.00,
+    shortDescription: 'Botellas térmicas de doble pared al vacío. Mantiene frío 24h y caliente 12h.',
+    description: 'Termo reutilizable de acero inoxidable de grado alimentario 18/8. Grabado láser de alta fidelidad con tu logo corporativo.',
+    category: 'Botellas y Termos',
+    categorySlug: 'botellas-y-termos',
+    categories: [{ id: '4', name: 'Botellas y Termos', slug: 'botellas-y-termos' }],
+    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1000&auto=format&fit=crop'],
+    stock: 60,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Negro Mate', 'Blanco', 'Acero'] }]
+  },
+
+  // Vasos y Tazas
+  {
+    id: 'prod-vasos-1',
+    slug: 'tazas-ceramica-blanca-350ml-50u',
+    name: 'Pack 50 Tazas de Cerámica Blanca (11 oz / 325 ml)',
+    price: 120.00,
+    regularPrice: 140.00,
+    shortDescription: 'Tazas publicitarias de cerámica brillante aptas para microondas y lavavajillas.',
+    description: 'Impresión por sublimación digital full color de alta nitidez sin límite de tonos. Calidad fotográfica.',
+    category: 'Vasos y Tazas',
+    categorySlug: 'vasos-y-tazas',
+    categories: [{ id: '13', name: 'Vasos y Tazas', slug: 'vasos-y-tazas' }],
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1000&auto=format&fit=crop'],
+    stock: 90,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Blanca Clásica', 'Interior Negro', 'Interior Naranja'] }]
+  },
+
+  // Libretas y Cuadernos
+  {
+    id: 'prod-libretas-1',
+    slug: 'libreta-cuero-ecologico-50u',
+    name: 'Pack 50 Libretas Ejecutivas A5 de Cuerina con Elástico',
+    price: 175.00,
+    regularPrice: 195.00,
+    shortDescription: 'Libretas tamaño A5 con portada de cuero sintético, elástico separador y cinta marcadora.',
+    description: 'Cuaderno notas de 80 hojas de papel crema de 80g. Grabado en relieve o impresión UV de tu logo corporativo en portada.',
+    category: 'Libretas y Cuadernos',
+    categorySlug: 'libretas-y-cuadernos',
+    categories: [{ id: '7', name: 'Libretas y Cuadernos', slug: 'libretas-y-cuadernos' }],
+    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop'],
+    stock: 75,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Negro', 'Azul Noche', 'Marrón'] }]
+  },
+
+  // Llaveros
+  {
+    id: 'prod-llaveros-1',
+    slug: 'llaveros-metalicos-acero-50u',
+    name: 'Pack 50 Llaveros Metálicos Grabados con Logo',
     price: 85.00,
-    regularPrice: 95.00,
-    shortDescription: 'Carpetas tamaño carta impresas a full color en Glacé 300g con ranura para tarjeta de presentación.',
-    description: 'Presenta tus cotizaciones y contratos con elegancia. Incluye bolsillo ensamblado con ranura para sujetar tus tarjetas corporativas.',
-    category: 'Promocional & POP',
-    categorySlug: 'promocional',
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000&auto=format&fit=crop',
-    gallery: [],
-    stock: 20,
-    featured: false,
-    attributes: [
-      { name: 'Laminado', options: ['Mate Exterior', 'Brillante Exterior'] }
-    ]
+    regularPrice: 100.00,
+    shortDescription: 'Llaveros metálicos con estuche individual y grabado láser inalterable.',
+    description: 'Llaveros de aleación de zinc de alta resistencia con argolla reforzada. Regalo publicitario de gran recordación.',
+    category: 'Llaveros',
+    categorySlug: 'llaveros',
+    categories: [{ id: '8', name: 'Llaveros', slug: 'llaveros' }],
+    image: 'https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=1000&auto=format&fit=crop'],
+    stock: 120,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Estilo', options: ['Rectangular', 'Redondo'] }]
   },
+
+  // Gorras y Accesorios de Cabeza
   {
-    id: 'prod-106',
-    slug: 'gift-cards-pvc-100u',
-    name: '100 Gift Cards / Tarjetas de Fidelización en PVC',
-    price: 90.00,
-    regularPrice: 110.00,
-    shortDescription: 'Tarjetas plásticas rígidas tipo tarjeta de crédito impresas a todo color.',
-    description: 'Tarjetas de regalo, membresías o pases VIP en PVC duradero. Puedes personalizar código de barras, numeración correlativa o panel de firma.',
-    category: 'Promocional & POP',
-    categorySlug: 'promocional',
-    image: 'https://images.unsplash.com/photo-1556742049-0a670f4a458d?q=80&w=1000&auto=format&fit=crop',
-    gallery: [],
-    stock: 15,
-    featured: false,
-    attributes: [
-      { name: 'Efectos Especiales', options: ['Sin Efecto', 'Banda Magnética Simular', 'Numeración Impresa'] }
-    ]
+    id: 'prod-gorras-1',
+    slug: 'gorras-gabardina-bordadas-50u',
+    name: 'Pack 50 Gorras Gabardina de Algodón con Bordado 3D',
+    price: 195.00,
+    regularPrice: 220.00,
+    shortDescription: 'Gorras tipo beisbolera de 6 paneles con ajuste de hebilla metálica y bordado frontal.',
+    description: 'Gorras corporativas de alta calidad textil. Bordado frontal de alta densidad con relieve para resaltar tu marca.',
+    category: 'Gorras y Accesorios de Cabeza',
+    categorySlug: 'gorras-y-accesorios-de-cabeza',
+    categories: [{ id: '6', name: 'Gorras y Accesorios de Cabeza', slug: 'gorras-y-accesorios-de-cabeza' }],
+    image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=1000&auto=format&fit=crop'],
+    stock: 50,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Negro', 'Azul Marino', 'Rojo'] }]
+  },
+
+  // Textiles y Ropa
+  {
+    id: 'prod-textiles-1',
+    slug: 'camisetas-polo-bordadas-50u',
+    name: 'Pack 50 Camisetas Polo Piqué 100% Algodón Bordadas',
+    price: 325.00,
+    regularPrice: 360.00,
+    shortDescription: 'Camisetas tipo Polo corporativas con bordado de logo en pecho.',
+    description: 'Textil de 220g transpirable de excelente confección. Disponibles en corte de dama y caballero con cuello tejido reforzado.',
+    category: 'Textiles y Ropa',
+    categorySlug: 'textiles-y-ropa',
+    categories: [{ id: '12', name: 'Textiles y Ropa', slug: 'textiles-y-ropa' }],
+    image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=1000&auto=format&fit=crop'],
+    stock: 40,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Negro', 'Blanco', 'Azul'] }]
+  },
+
+  // Cocina y Hogar
+  {
+    id: 'prod-cocina-1',
+    slug: 'delantales-gabardina-cocina-50u',
+    name: 'Pack 50 Delantales de Cocina en Gabardina con Estampado',
+    price: 185.00,
+    regularPrice: 210.00,
+    shortDescription: 'Delantales gastronómicos ajustables con bolsillo frontal doble.',
+    description: 'Delantal de gabardina de alta durabilidad para restaurantes, eventos culinarios y regalos promocionales de cocina.',
+    category: 'Cocina y Hogar',
+    categorySlug: 'cocina-y-hogar',
+    categories: [{ id: '5', name: 'Cocina y Hogar', slug: 'cocina-y-hogar' }],
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop'],
+    stock: 45,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Negro', 'Rojo', 'Marrón'] }]
+  },
+
+  // Mochilas y Maletines
+  {
+    id: 'prod-mochilas-1',
+    slug: 'mochila-ejecutiva-portatil-50u',
+    name: 'Pack 50 Mochilas Ejecutivas para Laptop con Estampado',
+    price: 495.00,
+    regularPrice: 550.00,
+    shortDescription: 'Mochila acolchada impermeable con compartimento para laptop de 15.6" y puerto USB.',
+    description: 'Mochila corporativa de poliéster Oxford impermeable con varios bolsillos organizadores. Impresión de logo sutil y elegante.',
+    category: 'Mochilas y Maletines',
+    categorySlug: 'mochilas-y-maletines',
+    categories: [{ id: '10', name: 'Mochilas y Maletines', slug: 'mochilas-y-maletines' }],
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1000&auto=format&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1000&auto=format&fit=crop'],
+    stock: 30,
+    featured: true,
+    attributes: [{ name: 'Cantidad', options: ['50', '100', '250'] }, { name: 'Color', options: ['Gris Oscuro', 'Negro'] }]
   }
 ];
 
