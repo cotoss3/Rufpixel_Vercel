@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Product } from '@/lib/types';
+import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
-import { X, ShoppingBag, CheckCircle2 } from 'lucide-react';
+import { X, ShoppingBag, CheckCircle2, Info, Tag } from 'lucide-react';
+import Link from 'next/link';
 
 interface QuickAddModalProps {
   product: Product;
@@ -14,6 +15,7 @@ interface QuickAddModalProps {
 export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModalProps) {
   const { addToCart } = useCart();
 
+  // Attribute choices
   const [selectedAttributes, setSelectedAttributes] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
     product.attributes.forEach((attr) => {
@@ -21,6 +23,11 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
         initial[attr.name] = attr.options[0];
       }
     });
+    // Default to 50 units wholesale pack if present, or first option
+    const qtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
+    if (qtyAttr && qtyAttr.options.includes('50')) {
+      initial[qtyAttr.name] = '50';
+    }
     return initial;
   });
 
@@ -29,22 +36,32 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
 
   if (!isOpen) return null;
 
-  // Calculate matching price based on variation
-  const getSelectedVariation = () => {
+  // Selected quantity option (e.g. '1', '50', '100', '250')
+  const selectedQtyOption = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
+  const isSingleUnit = selectedQtyOption === '1' || selectedQtyOption.toLowerCase().includes('1 unidad') || selectedQtyOption.toLowerCase().includes('muestra');
+
+  // Find matching child variation for bulk pack
+  const getSelectedVariation = (): ProductVariation | undefined => {
     if (!product.childVariations || product.childVariations.length === 0) return undefined;
-    const selectedQty = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0];
-    if (selectedQty) {
-      return product.childVariations.find(v => v.quantityOption === selectedQty || v.name.includes(selectedQty));
-    }
-    return product.childVariations[0];
+    const match = product.childVariations.find(v => v.quantityOption === selectedQtyOption || v.name.includes(selectedQtyOption));
+    return match || product.childVariations[0];
   };
 
   const selectedVariation = getSelectedVariation();
-  const currentTotalPrice = selectedVariation ? selectedVariation.price : product.price;
 
-  const selectedQtyStr = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
-  const selectedQtyNum = parseInt(selectedQtyStr, 10) || (currentTotalPrice > 30 ? 50 : 1);
-  const unitPrice = currentTotalPrice / selectedQtyNum;
+  // Base pack price and unit pricing
+  const defaultPackQty = 50;
+  const basePackPrice = selectedVariation ? selectedVariation.price : product.price;
+  const baseQtyNum = parseInt(selectedQtyOption, 10) || defaultPackQty;
+  
+  // Base unit price without surcharge (from 50 pack)
+  const baseUnitPriceFrom50 = product.price / defaultPackQty;
+
+  // Single unit price with +35% surcharge
+  const singleUnitPriceWith35 = baseUnitPriceFrom50 * 1.35;
+
+  // Displayed unit price
+  const displayUnitPrice = isSingleUnit ? singleUnitPriceWith35 : (basePackPrice / baseQtyNum);
 
   const handleAttributeChange = (attrName: string, option: string) => {
     setSelectedAttributes((prev) => ({ ...prev, [attrName]: option }));
@@ -53,7 +70,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
   const handleAddToCart = () => {
     const productToCart = {
       ...product,
-      price: currentTotalPrice,
+      price: isSingleUnit ? singleUnitPriceWith35 : basePackPrice,
     };
     addToCart(productToCart, quantity, selectedAttributes);
     setAddedMessage(true);
@@ -63,124 +80,164 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
     }, 1800);
   };
 
+  // Quantity options available including Single Unit (1 Unidad Muestra)
+  const rawQtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
+  const qtyOptions = ['1', ...(rawQtyAttr?.options.filter((o) => o !== '1') || ['50', '100', '250'])];
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-200 relative animate-scale-up">
+    <div className="fixed inset-[#0000] z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+      <div 
+        className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 relative shadow-2xl border border-gray-100 max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors"
+          className="absolute top-5 right-5 p-2 text-gray-400 hover:text-gray-900 rounded-full hover:bg-gray-100 transition-all"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {/* Modal Header & Image */}
-        <div className="p-6 space-y-5 max-h-[85vh] overflow-y-auto">
-          <div className="bg-gray-50 rounded-2xl aspect-square p-6 flex items-center justify-center border border-gray-100">
-            <img
-              src={selectedVariation?.image || product.image}
-              alt={product.name}
-              className="w-full h-full object-contain p-2"
-            />
+        {/* Product Header Info */}
+        <div className="flex items-start space-x-4">
+          <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gray-50 border border-gray-200 p-2 shrink-0 flex items-center justify-center">
+            <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
           </div>
 
-          <div>
-            <span className="text-[10px] uppercase font-extrabold text-[#FF5E14] bg-[#FF5E14]/10 px-2.5 py-1 rounded-md">
+          <div className="space-y-1 pr-6">
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#FF5E14] bg-[#FF5E14]/10 px-2 py-0.5 rounded-md">
               {product.category}
             </span>
-            <h3 className="text-xl font-extrabold text-gray-900 font-outfit mt-1">
+            <h3 className="text-lg font-bold text-gray-900 font-outfit line-clamp-2 leading-tight">
               {product.name}
             </h3>
-            
-            {/* Unit Price Highlight */}
-            <div className="mt-2 bg-gray-50 p-3.5 rounded-xl border border-gray-200">
-              <div className="flex items-baseline space-x-1.5">
-                <span className="text-xs font-bold text-gray-400 uppercase">Precio Unitario:</span>
-                <span className="text-2xl font-extrabold text-[#FF5E14] font-outfit">
-                  ${unitPrice.toFixed(2)}
+
+            {/* Per-Unit Pricing Breakdown */}
+            <div className="flex items-baseline space-x-1.5 pt-1">
+              <span className="text-xl font-extrabold text-[#FF5E14] font-outfit">
+                ${displayUnitPrice.toFixed(2)}
+              </span>
+              <span className="text-xs font-bold text-gray-500">/ ud</span>
+
+              {!isSingleUnit && baseQtyNum > 1 && (
+                <span className="text-xs text-gray-400 font-medium ml-2">
+                  (Pack x {baseQtyNum}: ${(basePackPrice * quantity).toFixed(2)})
                 </span>
-                <span className="text-xs font-bold text-gray-600">/ ud</span>
-              </div>
-              {selectedQtyNum > 1 && (
-                <div className="text-[11px] text-gray-500 font-medium mt-0.5">
-                  Pack de {selectedQtyNum} uds por ${currentTotalPrice.toFixed(2)} USD
-                </div>
+              )}
+
+              {isSingleUnit && (
+                <span className="text-xs text-gray-400 font-medium ml-2">
+                  (+35% recargo detal)
+                </span>
               )}
             </div>
           </div>
+        </div>
 
-          {/* Attributes Selectors */}
-          {product.attributes.map((attr) => (
-            <div key={attr.name} className="space-y-1.5">
-              <label className="text-xs uppercase font-extrabold text-gray-700 block">
-                Seleccionar {attr.name}:
-              </label>
-              <div className="flex flex-wrap gap-2">
-                {attr.options.map((opt) => {
-                  const isSelected = selectedAttributes[attr.name] === opt;
-                  const optQty = parseInt(opt, 10) || 50;
-                  const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
-                  const optTotal = optVar ? optVar.price : product.price;
-                  const optUnit = optTotal / optQty;
+        {/* Wholesale Specialty Disclaimer Box */}
+        <div className="bg-[#0D0D0D] text-white p-3.5 rounded-2xl border border-gray-800 space-y-1 text-xs">
+          <div className="flex items-center space-x-2 text-[#FF5E14] font-extrabold">
+            <Info className="w-4 h-4 shrink-0" />
+            <span>Especialistas al Por Mayor</span>
+          </div>
+          <p className="text-gray-300 leading-relaxed text-[11px]">
+            Nuestra tienda está especializada al por mayor. Te ofrecemos la opción de pedir <strong>1 unidad individual (muestra +35%)</strong>.
+          </p>
+        </div>
 
-                  return (
-                    <button
-                      key={opt}
-                      onClick={() => handleAttributeChange(attr.name, opt)}
-                      className={`px-3 py-2 rounded-xl text-xs transition-all border text-left ${
-                        isSelected
-                          ? 'bg-[#FF5E14] text-white border-[#FF5E14] font-extrabold'
-                          : 'bg-white text-gray-700 border-gray-300 hover:border-[#FF5E14]'
-                      }`}
-                    >
-                      <div className="font-bold">{opt} uds</div>
-                      {attr.name.toLowerCase() === 'cantidad' && (
-                        <div className={isSelected ? 'text-white/90 text-[10px]' : 'text-gray-500 text-[10px]'}>
-                          ${optUnit.toFixed(2)}/ud
-                        </div>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
+        {/* Quantity Modal Options */}
+        <div className="space-y-2">
+          <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">
+            Seleccionar Cantidad / Modalidad:
+          </label>
+          <div className="grid grid-cols-2 gap-2">
+            {qtyOptions.map((opt) => {
+              const isSelected = selectedQtyOption === opt;
+              const isSingle = opt === '1';
 
-          {/* Quantity Selector & Add Action */}
-          <div className="space-y-3 pt-2">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden bg-white">
+              if (isSingle) {
+                return (
+                  <button
+                    key="1-unit"
+                    onClick={() => handleAttributeChange('Cantidad', '1')}
+                    className={`p-3 rounded-xl text-xs transition-all border text-left ${
+                      isSelected
+                        ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md font-extrabold'
+                        : 'bg-white text-gray-700 border-gray-200 hover:border-[#FF5E14]'
+                    }`}
+                  >
+                    <div className="font-bold">1 Unidad (Muestra)</div>
+                    <div className={isSelected ? 'text-white/90 text-[11px]' : 'text-[#FF5E14] text-[11px] font-bold'}>
+                      ${singleUnitPriceWith35.toFixed(2)}/ud (+35%)
+                    </div>
+                  </button>
+                );
+              }
+
+              const optQty = parseInt(opt, 10) || 50;
+              const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
+              const optTotal = optVar ? optVar.price : product.price;
+              const optUnit = optTotal / optQty;
+
+              return (
                 <button
-                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                  className="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold text-sm"
+                  key={opt}
+                  onClick={() => handleAttributeChange('Cantidad', opt)}
+                  className={`p-3 rounded-xl text-xs transition-all border text-left ${
+                    isSelected
+                      ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md font-extrabold'
+                      : 'bg-white text-gray-700 border-gray-200 hover:border-[#FF5E14]'
+                  }`}
                 >
-                  -
+                  <div className="font-bold">{opt} unidades (Mayorista)</div>
+                  <div className={isSelected ? 'text-white/90 text-[11px]' : 'text-gray-500 text-[11px]'}>
+                    ${optUnit.toFixed(2)}/ud (${optTotal.toFixed(2)})
+                  </div>
                 </button>
-                <span className="px-3 py-2 text-xs font-bold text-gray-900">{quantity}</span>
-                <button
-                  onClick={() => setQuantity((q) => q + 1)}
-                  className="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold text-sm"
-                >
-                  +
-                </button>
-              </div>
+              );
+            })}
+          </div>
+        </div>
 
+        {/* Add to Cart Actions */}
+        <div className="space-y-3 pt-2 border-t border-gray-100">
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden bg-white">
               <button
-                onClick={handleAddToCart}
-                className="flex-grow bg-[#FF5E14] hover:bg-[#E04700] text-white py-3 px-5 rounded-xl font-bold text-xs shadow-md shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                className="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold"
               >
-                <ShoppingBag className="w-4 h-4" />
-                <span>Agregar al Carrito</span>
+                -
+              </button>
+              <span className="px-3 py-2 text-sm font-bold text-gray-900">{quantity}</span>
+              <button
+                onClick={() => setQuantity((q) => q + 1)}
+                className="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold"
+              >
+                +
               </button>
             </div>
 
-            {addedMessage && (
-              <div className="bg-[#0D0D0D] text-white p-3.5 rounded-xl text-xs font-bold flex items-center space-x-2 animate-fade-in border border-[#FF5E14]/50">
-                <CheckCircle2 className="w-4 h-4 text-[#FF5E14]" />
-                <span>¡Agregado al carrito! Cerrando...</span>
-              </div>
-            )}
+            <button
+              onClick={handleAddToCart}
+              className="flex-grow bg-[#FF5E14] hover:bg-[#E04700] text-white py-3.5 px-4 rounded-xl font-bold text-xs shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
+            >
+              <ShoppingBag className="w-4 h-4" />
+              <span>Agregar al Carrito</span>
+            </button>
           </div>
+
+          {addedMessage && (
+            <div className="bg-[#0D0D0D] text-white p-3 rounded-xl text-xs font-medium flex items-center justify-between animate-fade-in">
+              <div className="flex items-center space-x-2">
+                <CheckCircle2 className="w-4 h-4 text-[#FF5E14]" />
+                <span>¡Agregado al carrito!</span>
+              </div>
+              <Link href="/carrito" className="font-bold text-[#FF5E14] hover:underline text-[11px]">
+                Ver Carrito
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
