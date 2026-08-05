@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
   },
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: 'RufPixel — Servicios de Impresión & Diseño Gráfico',
     description: 'Impresión de alta definición para tu marca en Panamá. Tarjetas premium, Gran Formato y cotizador online.',
