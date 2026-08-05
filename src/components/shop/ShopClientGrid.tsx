@@ -21,7 +21,8 @@ export default function ShopClientGrid({
   const [selectedCategory, setSelectedCategory] = useState<string>(activeCategorySlug);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isLoadingCategory, setIsLoadingCategory] = useState<boolean>(false);
-  
+  const perPage = 15;
+
   // Track categories that have already been queried to prevent infinite loading loops
   const checkedCategoriesRef = useRef<Set<string>>(new Set(['todos']));
 
