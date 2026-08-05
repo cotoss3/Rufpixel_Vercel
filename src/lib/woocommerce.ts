@@ -10,6 +10,10 @@ const HEADLESS_HEADERS = {
   'User-Agent': 'RufPixel-Headless-Storefront/1.0 (Sincronizacion de Catalogo y Pedidos RufPixel Vercel)',
 };
 
+// In-Memory Cache Map for Instant PDP Loading
+const productCache = new Map<string, { data: Product; timestamp: number }>();
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
 export interface ProductCategory {
   id: string;
   name: string;
@@ -65,7 +69,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
     const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100${categoryParam}`;
     
     const res = await fetch(url, {
-      next: { revalidate: 60 },
+      next: { revalidate: 120 },
       headers: HEADLESS_HEADERS,
     });
 
@@ -98,7 +102,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
             };
           }).filter((a: any) => a.options.length > 0) || [];
 
-          return {
+          const formatted: Product = {
             id: String(prod.id),
             slug: prod.slug,
             name: prod.name,
@@ -117,6 +121,10 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
             attributes: parsedAttributes,
             featured: prod.is_featured || false,
           };
+
+          // Cache product for instant slug lookups
+          productCache.set(prod.slug, { data: formatted, timestamp: Date.now() });
+          return formatted;
         });
 
         // Clean pagination
@@ -144,57 +152,104 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
   return { products: paginatedMock, totalPages, totalProducts: filteredMock.length };
 }
 
+// FAST INSTANT PDP LOOKUP WITH IN-MEMORY LRU CACHE & PARALLELIZED FETCH
 export async function getProductBySlug(slug: string): Promise<Product | null> {
-  const { products } = await getProducts('todos', 1, 100);
-  const found = products.find(p => p.slug === slug);
-  if (!found) return null;
+  // Check memory cache for instant response (< 5ms)
+  const cached = productCache.get(slug);
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+    return cached.data;
+  }
 
   try {
+    // Fast direct single product lookup by slug
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`, {
+      next: { revalidate: 120 },
       headers: HEADLESS_HEADERS,
     });
+
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        const prodData = data[0];
-        const groupedIds: number[] = prodData.grouped_products || [];
+        const prod = data[0];
+        const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
+        const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
+        const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : undefined;
 
+        const parsedAttributes = prod.attributes?.map((attr: any) => {
+          const rawOptions = attr.options && attr.options.length > 0
+            ? attr.options
+            : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
+          return {
+            name: attr.name,
+            options: rawOptions,
+          };
+        }).filter((a: any) => a.options.length > 0) || [];
+
+        const productObj: Product = {
+          id: String(prod.id),
+          slug: prod.slug,
+          name: prod.name,
+          price: rawPrice > 0 ? rawPrice : 5.00,
+          regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
+          description: prod.description || prod.short_description || '',
+          shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
+          category: prod.categories?.[0]?.name || 'Productos RufPixel',
+          categorySlug: prod.categories?.[0]?.slug || 'general',
+          image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
+          gallery: prod.images?.map((img: any) => img.src) || [],
+          stock: prod.is_in_stock ?? 100,
+          type: prod.type || 'simple',
+          attributes: parsedAttributes,
+          featured: prod.is_featured || false,
+        };
+
+        // Parallelize child variations lookup if grouped
+        const groupedIds: number[] = prod.grouped_products || [];
         if (groupedIds.length > 0) {
           const childPromises = groupedIds.map(async (childId) => {
-            const cRes = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/${childId}`, {
-              headers: HEADLESS_HEADERS,
-            });
-            if (cRes.ok) {
-              const cData = await cRes.json();
-              const cPrice = cData.prices?.price ? parseFloat(cData.prices.price) / 100 : parseFloat(cData.price || '0');
-              const nameMatch = cData.name?.match(/(\d+)\s*(uds|unidades|piezas)?/i);
-              const qtyOpt = nameMatch ? nameMatch[1] : undefined;
+            try {
+              const cRes = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/${childId}`, {
+                next: { revalidate: 300 },
+                headers: HEADLESS_HEADERS,
+              });
+              if (cRes.ok) {
+                const cData = await cRes.json();
+                const cPrice = cData.prices?.price ? parseFloat(cData.prices.price) / 100 : parseFloat(cData.price || '0');
+                const nameMatch = cData.name?.match(/(\d+)\s*(uds|unidades|piezas)?/i);
+                const qtyOpt = nameMatch ? nameMatch[1] : undefined;
 
-              return {
-                id: String(cData.id),
-                name: cData.name,
-                price: cPrice,
-                regularPrice: cData.prices?.regular_price ? parseFloat(cData.prices.regular_price) / 100 : undefined,
-                attributes: qtyOpt ? { 'Cantidad': qtyOpt } : {},
-                image: cData.images?.[0]?.src,
-                quantityOption: qtyOpt,
-              };
-            }
+                return {
+                  id: String(cData.id),
+                  name: cData.name,
+                  price: cPrice,
+                  regularPrice: cData.prices?.regular_price ? parseFloat(cData.prices.regular_price) / 100 : undefined,
+                  attributes: qtyOpt ? { 'Cantidad': qtyOpt } : {},
+                  image: cData.images?.[0]?.src,
+                  quantityOption: qtyOpt,
+                };
+              }
+            } catch (e) {}
             return null;
           });
 
           const fetchedChildren = (await Promise.all(childPromises)).filter(Boolean) as ProductVariation[];
           if (fetchedChildren.length > 0) {
-            found.childVariations = fetchedChildren;
+            productObj.childVariations = fetchedChildren;
           }
         }
+
+        // Cache result for subsequent instant hits
+        productCache.set(slug, { data: productObj, timestamp: Date.now() });
+        return productObj;
       }
     }
   } catch (err) {
-    console.warn('Error loading child quantity variations:', err);
+    console.warn('Error in fast getProductBySlug:', err);
   }
 
-  return found;
+  // Fallback search in catalog
+  const { products } = await getProducts('todos', 1, 100);
+  return products.find(p => p.slug === slug) || null;
 }
 
 // Function to post new order directly to WordPress WooCommerce

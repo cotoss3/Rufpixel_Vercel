@@ -18,8 +18,8 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <>
       <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all group flex flex-col justify-between relative">
-        {/* Tapping photo or card body enters the product page */}
-        <Link href={`/producto/${product.slug}`} className="block flex-1">
+        {/* Next.js prefetch={true} enables background loading for instant opening */}
+        <Link href={`/producto/${product.slug}`} prefetch={true} className="block flex-1">
           {/* Square container with ~30px padding and object-contain */}
           <div className="relative aspect-square bg-gray-50 p-7 flex items-center justify-center overflow-hidden border-b border-gray-100">
             <img
