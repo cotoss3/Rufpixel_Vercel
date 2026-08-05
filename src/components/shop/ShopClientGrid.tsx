@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Product } from '@/lib/types';
 import { ProductCategory } from '@/lib/woocommerce';
 import ProductCard from './ProductCard';
@@ -21,7 +21,9 @@ export default function ShopClientGrid({
   const [selectedCategory, setSelectedCategory] = useState<string>(activeCategorySlug);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isLoadingCategory, setIsLoadingCategory] = useState<boolean>(false);
-  const perPage = 15;
+  
+  // Track categories that have already been queried to prevent infinite loading loops
+  const checkedCategoriesRef = useRef<Set<string>>(new Set(['todos']));
 
   // Robust Client-Side Category Filtering
   const filteredProducts = useMemo(() => {
@@ -55,13 +57,22 @@ export default function ShopClientGrid({
     });
   }, [allProducts, selectedCategory, categories]);
 
-  // Fetch products for category dynamically from internal BDD proxy if not yet loaded
+  // Dynamic BDD Fetching (Only once per category if missing)
   useEffect(() => {
-    if (selectedCategory !== 'todos' && filteredProducts.length === 0 && !isLoadingCategory) {
+    const slug = selectedCategory.toLowerCase().trim();
+
+    if (
+      slug !== 'todos' &&
+      filteredProducts.length === 0 &&
+      !checkedCategoriesRef.current.has(slug) &&
+      !isLoadingCategory
+    ) {
+      checkedCategoriesRef.current.add(slug);
+
       const fetchCategoryProducts = async () => {
         setIsLoadingCategory(true);
         try {
-          const res = await fetch(`/api/products?category=${selectedCategory}`);
+          const res = await fetch(`/api/products?category=${slug}`);
           if (res.ok) {
             const data = await res.json();
             if (data && Array.isArray(data.products) && data.products.length > 0) {
@@ -181,7 +192,7 @@ export default function ShopClientGrid({
           <div className="bg-white rounded-3xl p-16 text-center border border-gray-200 space-y-3 flex flex-col items-center justify-center">
             <Loader2 className="w-10 h-10 text-[#FF5E14] animate-spin" />
             <h3 className="text-base font-bold text-gray-900">Cargando productos de la categoría...</h3>
-            <p className="text-xs text-gray-500">Obteniendo catálogo desde la Base de Datos (BDD)...</p>
+            <p className="text-xs text-gray-500">Obteniendo productos de la Base de Datos (BDD)...</p>
           </div>
         ) : paginatedProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 animate-fade-in">
