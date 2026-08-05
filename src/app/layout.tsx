@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/lib/cartContext';
 import { OrganizationSchema } from '@/components/seo/SchemaOrg';
+import NavigationLoader from '@/components/common/NavigationLoader';
 
 export const metadata: Metadata = {
   title: 'RufPixel — Servicios de Impresión Digital, Gran Formato & Diseño Gráfico en Panamá',
@@ -35,6 +36,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-[#FAFAFA] text-gray-900">
         <CartProvider>
+          <NavigationLoader />
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
