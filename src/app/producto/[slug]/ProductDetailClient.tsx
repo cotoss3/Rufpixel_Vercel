@@ -72,10 +72,14 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Column: Gallery */}
+        {/* Left Column: PDP Image Gallery (Square 1:1 with ~30px padding and object-contain to prevent cropping) */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="rounded-3xl overflow-hidden border border-gray-200 bg-white h-96 sm:h-[450px] relative shadow-md">
-            <img src={selectedImage} alt={product.name} className="w-full h-full object-cover" />
+          <div className="rounded-3xl overflow-hidden border border-gray-200 bg-gray-50 aspect-square p-8 relative shadow-md flex items-center justify-center">
+            <img 
+              src={selectedImage} 
+              alt={product.name} 
+              className="w-full h-full object-contain p-2" 
+            />
           </div>
 
           {product.gallery && product.gallery.length > 1 && (
@@ -84,11 +88,11 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(img)}
-                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
+                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 bg-gray-50 p-2 flex items-center justify-center transition-all shrink-0 ${
                     selectedImage === img ? 'border-[#FF5E14]' : 'border-gray-200'
                   }`}
                 >
-                  <img src={img} alt={`Vista ${idx + 1}`} className="w-full h-full object-cover" />
+                  <img src={img} alt={`Vista ${idx + 1}`} className="w-full h-full object-contain" />
                 </button>
               ))}
             </div>
@@ -176,14 +180,14 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               </button>
             </div>
 
-            {/* Notification message */}
+            {/* RufPixel Branded Notification Badge */}
             {addedMessage && (
-              <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-xl text-xs font-medium flex items-center justify-between animate-fade-in">
+              <div className="bg-[#0D0D0D] border border-[#FF5E14]/40 text-white p-4 rounded-xl text-xs font-medium flex items-center justify-between animate-fade-in shadow-xl">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#FF5E14] shrink-0" />
                   <span>¡Producto agregado al carrito exitosamente!</span>
                 </div>
-                <Link href="/carrito" className="font-bold underline text-emerald-900 flex items-center space-x-1">
+                <Link href="/carrito" className="font-bold text-[#FF5E14] hover:underline flex items-center space-x-1">
                   <span>Ir al Carrito</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
@@ -191,8 +195,8 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             )}
           </div>
 
-          {/* Yappy payment notice */}
-          <div className="bg-gray-900 text-white p-5 rounded-2xl border border-gray-800 space-y-3 text-xs">
+          {/* Yappy payment notice in Jet Black (#0D0D0D) with RufPixel Orange (#FF5E14) accents */}
+          <div className="bg-[#0D0D0D] text-white p-5 rounded-2xl border border-gray-800 space-y-3 text-xs shadow-lg">
             <div className="flex items-center space-x-2 text-[#FF5E14] font-bold">
               <ShieldCheck className="w-4 h-4" />
               <span>Pago Exclusivo vía Yappy Panamá</span>

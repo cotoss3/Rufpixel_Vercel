@@ -1,23 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
 import { Product } from '@/lib/types';
-import { ShoppingBag, ArrowRight } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all group flex flex-col justify-between">
       <div>
-        <div className="relative h-60 bg-gray-100 overflow-hidden">
+        {/* Square container with 30px padding and object-contain to prevent cropping */}
+        <div className="relative aspect-square bg-gray-50 p-7 flex items-center justify-center overflow-hidden border-b border-gray-100">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
           />
-          <span className="absolute top-3 left-3 bg-[#0D0D0D] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
+          <span className="absolute top-3 left-3 bg-[#0D0D0D] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider z-10">
             {product.category}
           </span>
           {product.regularPrice && product.regularPrice > product.price && (
-            <span className="absolute top-3 right-3 bg-[#FF5E14] text-white text-[10px] font-bold px-2 py-1 rounded-md">
+            <span className="absolute top-3 right-3 bg-[#FF5E14] text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
               Oferta
             </span>
           )}
@@ -32,7 +33,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
 
-      <div className="p-5 pt-0 flex items-center justify-between border-t border-gray-100">
+      <div className="p-5 pt-0 flex items-center justify-between border-t border-gray-100 mt-auto">
         <div>
           <span className="text-[11px] text-gray-400 block">Precio:</span>
           <div className="flex items-baseline space-x-2">
