@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import React, { Suspense } from 'react';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -44,7 +45,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-[#FAFAFA] text-gray-900">
         <CartProvider>
-          <NavigationLoader />
+          <Suspense fallback={null}>
+            <NavigationLoader />
+          </Suspense>
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />

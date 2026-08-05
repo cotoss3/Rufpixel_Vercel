@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
 
-export default function NavigationLoader() {
+function NavigationLoaderContent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
@@ -45,5 +45,13 @@ export default function NavigationLoader() {
         <span className="text-xs font-extrabold tracking-wide">Cargando RufPixel...</span>
       </div>
     </>
+  );
+}
+
+export default function NavigationLoader() {
+  return (
+    <Suspense fallback={null}>
+      <NavigationLoaderContent />
+    </Suspense>
   );
 }
