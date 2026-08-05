@@ -12,7 +12,7 @@ const HEADLESS_HEADERS = {
 
 // In-Memory Cache Map for Instant PDP Loading
 const productCache = new Map<string, { data: Product; timestamp: number }>();
-const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
 export interface ProductCategory {
   id: string;
@@ -167,20 +167,28 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 100
   return { products: filteredMock, totalPages: 1, totalProducts: filteredMock.length };
 }
 
-// FAST INSTANT PDP LOOKUP WITH IN-MEMORY LRU CACHE & PARALLELIZED FETCH
+// ULTRA-FAST PDP LOOKUP WITH 1.5S TIMEOUT CAP AND MEMORY CACHE
 export async function getProductBySlug(slug: string): Promise<Product | null> {
-  // Check memory cache for instant response (< 5ms)
+  // Check memory cache for instant response (< 2ms)
   const cached = productCache.get(slug);
   if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
     return cached.data;
   }
 
+  // Fast search in local mock data first if available
+  const localMock = MOCK_PRODUCTS.find(p => p.slug === slug);
+  if (localMock) return localMock;
+
   try {
-    // Fast direct single product lookup by slug
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 1500); // 1.5 second max timeout
+
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`, {
-      next: { revalidate: 120 },
+      next: { revalidate: 300 },
       headers: HEADLESS_HEADERS,
+      signal: controller.signal,
     });
+    clearTimeout(timeoutId);
 
     if (res.ok) {
       const data = await res.json();
@@ -225,53 +233,16 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
           featured: prod.is_featured || false,
         };
 
-        // Parallelize child variations lookup if grouped
-        const groupedIds: number[] = prod.grouped_products || [];
-        if (groupedIds.length > 0) {
-          const childPromises = groupedIds.map(async (childId) => {
-            try {
-              const cRes = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/${childId}`, {
-                next: { revalidate: 300 },
-                headers: HEADLESS_HEADERS,
-              });
-              if (cRes.ok) {
-                const cData = await cRes.json();
-                const cPrice = cData.prices?.price ? parseFloat(cData.prices.price) / 100 : parseFloat(cData.price || '0');
-                const nameMatch = cData.name?.match(/(\d+)\s*(uds|unidades|piezas)?/i);
-                const qtyOpt = nameMatch ? nameMatch[1] : undefined;
-
-                return {
-                  id: String(cData.id),
-                  name: cData.name,
-                  price: cPrice,
-                  regularPrice: cData.prices?.regular_price ? parseFloat(cData.prices.regular_price) / 100 : undefined,
-                  attributes: qtyOpt ? { 'Cantidad': qtyOpt } : {},
-                  image: cData.images?.[0]?.src,
-                  quantityOption: qtyOpt,
-                };
-              }
-            } catch (e) {}
-            return null;
-          });
-
-          const fetchedChildren = (await Promise.all(childPromises)).filter(Boolean) as ProductVariation[];
-          if (fetchedChildren.length > 0) {
-            productObj.childVariations = fetchedChildren;
-          }
-        }
-
         // Cache result for subsequent instant hits
         productCache.set(slug, { data: productObj, timestamp: Date.now() });
         return productObj;
       }
     }
   } catch (err) {
-    console.warn('Error in fast getProductBySlug:', err);
+    console.warn('Error in getProductBySlug timeout/abort:', err);
   }
 
-  // Fallback search in catalog
-  const { products } = await getProducts('todos', 1, 100);
-  return products.find(p => p.slug === slug) || null;
+  return null;
 }
 
 // Function to post new order directly to BDD
