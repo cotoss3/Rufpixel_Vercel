@@ -5,20 +5,24 @@ const LIVE_DOMAIN = 'https://rufpixel.com';
 const CK = process.env.WOOCOMMERCE_CONSUMER_KEY || 'ck_ca97c633f96d52d6b7178f9bef3c1f20fbf21688';
 const CS = process.env.WOOCOMMERCE_CONSUMER_SECRET || 'cs_cf44b18a5302efd0464436c21752fa8c0c56cefc1';
 
-export async function getProducts(categorySlug?: string): Promise<Product[]> {
+export async function getProducts(categorySlug?: string, page = 1, perPage = 15): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
   // Strategy 1: Try WooCommerce Store API (Public, high performance, native format)
   try {
-    const categoryParam = categorySlug ? `?category=${categorySlug}` : '';
-    const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products${categoryParam}`, {
+    const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
+    const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?page=${page}&per_page=${perPage}${categoryParam}`;
+    
+    const res = await fetch(url, {
       next: { revalidate: 60 },
       headers: { 'Accept': 'application/json' },
     });
 
     if (res.ok) {
+      const totalPages = parseInt(res.headers.get('x-wp-totalpages') || '1', 10);
+      const totalProducts = parseInt(res.headers.get('x-wp-total') || '15', 10);
       const data = await res.json();
+
       if (Array.isArray(data) && data.length > 0) {
-        return data.map((prod: any) => {
-          // Parse price from Store API (given in cents integer or float string)
+        const products = data.map((prod: any) => {
           const rawPrice = prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0');
           const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
 
@@ -42,6 +46,8 @@ export async function getProducts(categorySlug?: string): Promise<Product[]> {
             featured: prod.is_featured || false,
           };
         });
+
+        return { products, totalPages, totalProducts };
       }
     }
   } catch (err) {
@@ -51,15 +57,18 @@ export async function getProducts(categorySlug?: string): Promise<Product[]> {
   // Strategy 2: Try REST API v3 with consumer key/secret
   try {
     const authParams = `consumer_key=${CK}&consumer_secret=${CS}`;
-    const categoryParam = categorySlug ? `&category=${categorySlug}` : '';
-    const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/v3/products?per_page=50&${authParams}${categoryParam}`, {
-      next: { revalidate: 60 },
-    });
+    const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
+    const url = `${LIVE_DOMAIN}/wp-json/wc/v3/products?page=${page}&per_page=${perPage}&${authParams}${categoryParam}`;
+    
+    const res = await fetch(url, { next: { revalidate: 60 } });
 
     if (res.ok) {
+      const totalPages = parseInt(res.headers.get('x-wp-totalpages') || '1', 10);
+      const totalProducts = parseInt(res.headers.get('x-wp-total') || '15', 10);
       const data = await res.json();
+
       if (Array.isArray(data) && data.length > 0) {
-        return data.map((prod: any) => ({
+        const products = data.map((prod: any) => ({
           id: String(prod.id),
           slug: prod.slug,
           name: prod.name,
@@ -78,20 +87,27 @@ export async function getProducts(categorySlug?: string): Promise<Product[]> {
           })) || [],
           featured: prod.featured || false,
         }));
+
+        return { products, totalPages, totalProducts };
       }
     }
   } catch (err) {
     console.warn('REST API v3 fetch error', err);
   }
 
-  // Fallback to rich mock data if no products are returned
-  if (categorySlug) {
-    return MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug);
+  // Fallback to Mock Data Paginated
+  let filteredMock = MOCK_PRODUCTS;
+  if (categorySlug && categorySlug !== 'todos') {
+    filteredMock = MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug);
   }
-  return MOCK_PRODUCTS;
+  const startIndex = (page - 1) * perPage;
+  const paginatedMock = filteredMock.slice(startIndex, startIndex + perPage);
+  const totalPages = Math.ceil(filteredMock.length / perPage) || 1;
+
+  return { products: paginatedMock, totalPages, totalProducts: filteredMock.length };
 }
 
 export async function getProductBySlug(slug: string): Promise<Product | null> {
-  const products = await getProducts();
+  const { products } = await getProducts('todos', 1, 100);
   return products.find(p => p.slug === slug) || null;
 }

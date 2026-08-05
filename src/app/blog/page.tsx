@@ -1,15 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { getBlogPosts } from '@/lib/wordpress';
-import { Clock, ArrowRight, BookOpen, Tag } from 'lucide-react';
+import { Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Blog de Impresión & Consejos de Diseño — RufPixel Panamá',
   description: 'Artículos sobre preparación de archivos CMYK, ventajas del acabado soft-touch, impresión en gran formato y estrategias de branding.',
 };
 
-export default async function BlogPage() {
-  const posts = await getBlogPosts();
+export default async function BlogPage({ searchParams }: { searchParams?: { page?: string } }) {
+  const page = parseInt(searchParams?.page || '1', 10);
+  const { posts, totalPages, totalPosts } = await getBlogPosts(page, 15);
 
   const categories = [
     { slug: 'todos', label: 'Todos los Artículos' },
@@ -24,13 +25,13 @@ export default async function BlogPage() {
       <section className="bg-[#0D0D0D] text-white py-14 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
-            WordPress Blog
+            WordPress Blog (15 por página)
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold font-outfit">
             Blog & Guías de Impresión
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-            Aprende cómo preparar tus artes gráficas, seleccionar los mejores sustratos y maximizar el impacto visual de tus productos.
+            Mostrando {posts.length} de {totalPosts} publicaciones disponibles.
           </p>
         </div>
       </section>
@@ -99,6 +100,49 @@ export default async function BlogPage() {
             </article>
           ))}
         </div>
+
+        {/* Blog Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center space-x-2 pt-8 border-t border-gray-200">
+            {page > 1 && (
+              <Link
+                href={`/blog?page=${page - 1}`}
+                className="p-2.5 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 font-bold text-xs flex items-center space-x-1"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                <span>Anterior</span>
+              </Link>
+            )}
+
+            {[...Array(totalPages)].map((_, i) => {
+              const pNum = i + 1;
+              const isCurrent = pNum === page;
+              return (
+                <Link
+                  key={pNum}
+                  href={`/blog?page=${pNum}`}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center text-xs font-extrabold transition-all ${
+                    isCurrent
+                      ? 'bg-[#FF5E14] text-white shadow-md shadow-[#FF5E14]/30'
+                      : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  {pNum}
+                </Link>
+              );
+            })}
+
+            {page < totalPages && (
+              <Link
+                href={`/blog?page=${page + 1}`}
+                className="p-2.5 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 font-bold text-xs flex items-center space-x-1"
+              >
+                <span>Siguiente</span>
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            )}
+          </div>
+        )}
 
       </div>
     </div>
