@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { Product } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
-import { X, ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { X, ShoppingBag, CheckCircle2 } from 'lucide-react';
 
 interface QuickAddModalProps {
   product: Product;
@@ -41,7 +40,11 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
   };
 
   const selectedVariation = getSelectedVariation();
-  const currentPrice = selectedVariation ? selectedVariation.price : product.price;
+  const currentTotalPrice = selectedVariation ? selectedVariation.price : product.price;
+
+  const selectedQtyStr = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
+  const selectedQtyNum = parseInt(selectedQtyStr, 10) || (currentTotalPrice > 30 ? 50 : 1);
+  const unitPrice = currentTotalPrice / selectedQtyNum;
 
   const handleAttributeChange = (attrName: string, option: string) => {
     setSelectedAttributes((prev) => ({ ...prev, [attrName]: option }));
@@ -50,7 +53,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
   const handleAddToCart = () => {
     const productToCart = {
       ...product,
-      price: currentPrice,
+      price: currentTotalPrice,
     };
     addToCart(productToCart, quantity, selectedAttributes);
     setAddedMessage(true);
@@ -72,7 +75,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
         </button>
 
         {/* Modal Header & Image */}
-        <div className="p-6 space-y-6 max-h-[85vh] overflow-y-auto">
+        <div className="p-6 space-y-5 max-h-[85vh] overflow-y-auto">
           <div className="bg-gray-50 rounded-2xl aspect-square p-6 flex items-center justify-center border border-gray-100">
             <img
               src={selectedVariation?.image || product.image}
@@ -88,10 +91,21 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
             <h3 className="text-xl font-extrabold text-gray-900 font-outfit mt-1">
               {product.name}
             </h3>
-            <div className="mt-2 flex items-baseline space-x-2">
-              <span className="text-2xl font-extrabold text-[#FF5E14] font-outfit">
-                ${currentPrice.toFixed(2)} USD
-              </span>
+            
+            {/* Unit Price Highlight */}
+            <div className="mt-2 bg-gray-50 p-3.5 rounded-xl border border-gray-200">
+              <div className="flex items-baseline space-x-1.5">
+                <span className="text-xs font-bold text-gray-400 uppercase">Precio Unitario:</span>
+                <span className="text-2xl font-extrabold text-[#FF5E14] font-outfit">
+                  ${unitPrice.toFixed(2)}
+                </span>
+                <span className="text-xs font-bold text-gray-600">/ ud</span>
+              </div>
+              {selectedQtyNum > 1 && (
+                <div className="text-[11px] text-gray-500 font-medium mt-0.5">
+                  Pack de {selectedQtyNum} uds por ${currentTotalPrice.toFixed(2)} USD
+                </div>
+              )}
             </div>
           </div>
 
@@ -104,17 +118,27 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
               <div className="flex flex-wrap gap-2">
                 {attr.options.map((opt) => {
                   const isSelected = selectedAttributes[attr.name] === opt;
+                  const optQty = parseInt(opt, 10) || 50;
+                  const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
+                  const optTotal = optVar ? optVar.price : product.price;
+                  const optUnit = optTotal / optQty;
+
                   return (
                     <button
                       key={opt}
                       onClick={() => handleAttributeChange(attr.name, opt)}
-                      className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all border ${
+                      className={`px-3 py-2 rounded-xl text-xs transition-all border text-left ${
                         isSelected
-                          ? 'bg-[#FF5E14] text-white border-[#FF5E14]'
+                          ? 'bg-[#FF5E14] text-white border-[#FF5E14] font-extrabold'
                           : 'bg-white text-gray-700 border-gray-300 hover:border-[#FF5E14]'
                       }`}
                     >
-                      {opt} {attr.name.toLowerCase() === 'cantidad' ? 'unidades' : ''}
+                      <div className="font-bold">{opt} uds</div>
+                      {attr.name.toLowerCase() === 'cantidad' && (
+                        <div className={isSelected ? 'text-white/90 text-[10px]' : 'text-gray-500 text-[10px]'}>
+                          ${optUnit.toFixed(2)}/ud
+                        </div>
+                      )}
                     </button>
                   );
                 })}

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
-import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft } from 'lucide-react';
+import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { ProductSchema } from '@/components/seo/SchemaOrg';
 
@@ -37,7 +37,12 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   };
 
   const selectedVariation = getSelectedVariation();
-  const currentPrice = selectedVariation ? selectedVariation.price : product.price;
+  const currentTotalPrice = selectedVariation ? selectedVariation.price : product.price;
+
+  // Calculate per-unit price
+  const selectedQtyStr = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
+  const selectedQtyNum = parseInt(selectedQtyStr, 10) || (currentTotalPrice > 30 ? 50 : 1);
+  const unitPrice = currentTotalPrice / selectedQtyNum;
 
   useEffect(() => {
     if (selectedVariation?.image) {
@@ -52,7 +57,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const handleAddToCart = () => {
     const productToCart = {
       ...product,
-      price: currentPrice,
+      price: currentTotalPrice,
       image: selectedImage,
     };
     addToCart(productToCart, quantity, selectedAttributes);
@@ -80,6 +85,12 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               alt={product.name} 
               className="w-full h-full object-contain p-2" 
             />
+            {selectedQtyNum > 1 && (
+              <span className="absolute top-4 right-4 bg-[#FF5E14] text-white text-xs font-extrabold px-3 py-1.5 rounded-xl shadow-md flex items-center space-x-1.5">
+                <Layers className="w-4 h-4" />
+                <span>Pack x {selectedQtyNum} Unidades</span>
+              </span>
+            )}
           </div>
 
           {product.gallery && product.gallery.length > 1 && (
@@ -108,14 +119,21 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 font-outfit mt-2">
               {product.name}
             </h1>
-            <div className="mt-3 flex items-baseline space-x-3">
-              <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit">
-                ${currentPrice.toFixed(2)} <span className="text-sm font-normal text-gray-500">USD</span>
-              </span>
-              {product.regularPrice && product.regularPrice > currentPrice && (
-                <span className="text-sm text-gray-400 line-through">
-                  ${product.regularPrice.toFixed(2)}
+
+            {/* Price Display with Unit Price Prominent */}
+            <div className="mt-4 bg-gray-50 p-5 rounded-2xl border border-gray-200 space-y-1">
+              <div className="flex items-baseline space-x-2">
+                <span className="text-xs uppercase font-bold text-gray-400">Precio Unitario:</span>
+                <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit">
+                  ${unitPrice.toFixed(2)}
                 </span>
+                <span className="text-sm font-bold text-gray-600">/ ud</span>
+              </div>
+              {selectedQtyNum > 1 && (
+                <div className="text-xs text-gray-500 font-medium flex items-center space-x-2 pt-1 border-t border-gray-200/60 mt-2">
+                  <Tag className="w-3.5 h-3.5 text-[#FF5E14]" />
+                  <span>Total Paquete de <strong>{selectedQtyNum} uds</strong>: <strong>${currentTotalPrice.toFixed(2)} USD</strong></span>
+                </div>
               )}
             </div>
           </div>
@@ -125,7 +143,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             dangerouslySetInnerHTML={{ __html: product.description }}
           />
 
-          {/* Attributes Selectors (Cantidad, Color, etc.) */}
+          {/* Attributes Selectors (Cantidad, Color, etc.) with Per-Unit Breakdown */}
           {product.attributes.map((attr) => (
             <div key={attr.name} className="space-y-2">
               <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">
@@ -134,17 +152,27 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <div className="flex flex-wrap gap-2.5">
                 {attr.options.map((opt) => {
                   const isSelected = selectedAttributes[attr.name] === opt;
+                  const optQty = parseInt(opt, 10) || 50;
+                  const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
+                  const optTotal = optVar ? optVar.price : product.price;
+                  const optUnit = optTotal / optQty;
+
                   return (
                     <button
                       key={opt}
                       onClick={() => handleAttributeChange(attr.name, opt)}
-                      className={`px-5 py-2.5 rounded-xl text-xs font-extrabold transition-all border ${
+                      className={`px-5 py-3 rounded-xl text-xs transition-all border text-left ${
                         isSelected
-                          ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md shadow-[#FF5E14]/25 scale-105'
+                          ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md shadow-[#FF5E14]/25 scale-105 font-extrabold'
                           : 'bg-white text-gray-700 border-gray-300 hover:border-[#FF5E14]'
                       }`}
                     >
-                      {opt} {attr.name.toLowerCase() === 'cantidad' ? 'unidades' : ''}
+                      <div className="font-bold">{opt} unidades</div>
+                      {attr.name.toLowerCase() === 'cantidad' && (
+                        <div className={isSelected ? 'text-white/90 text-[11px]' : 'text-gray-500 text-[11px]'}>
+                          ${optUnit.toFixed(2)}/ud (${optTotal.toFixed(2)})
+                        </div>
+                      )}
                     </button>
                   );
                 })}
