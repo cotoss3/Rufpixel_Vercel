@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { getProducts, getCategories } from '@/lib/woocommerce';
 import ProductCard from '@/components/shop/ProductCard';
-import { ChevronLeft, ChevronRight, Grid } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Grid, Filter, Check } from 'lucide-react';
 
 export const metadata = {
   title: 'Tienda de Impresión Corporativa & Promocionales — RufPixel Panamá',
@@ -19,100 +19,115 @@ export default async function TiendaPage({ searchParams }: { searchParams?: { pa
   ]);
 
   return (
-    <div className="py-12 space-y-10">
+    <div className="py-10 space-y-8">
       {/* Catalog Header in Jet Black (#0D0D0D) & RufPixel Orange (#FF5E14) */}
-      <section className="bg-[#0D0D0D] text-white py-14 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <section className="bg-[#0D0D0D] text-white py-12 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
             Catálogo RufPixel (En Vivo)
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold font-outfit">
-            Tienda & Productos Promocionales
+          <h1 className="text-3xl sm:text-4xl font-extrabold font-outfit">
+            Tienda & Catálogo de Productos
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-gray-400 max-w-2xl mx-auto text-xs sm:text-sm">
             Mostrando {products.length} de {totalProducts} modelos disponibles en nuestro catálogo.
           </p>
         </div>
       </section>
 
-      {/* Main Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
-        {/* Real Live Categories Filter Bar */}
-        <div className="space-y-3">
-          <div className="flex items-center space-x-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
-            <Grid className="w-4 h-4 text-[#FF5E14]" />
-            <span>Categorías del Catálogo:</span>
-          </div>
-          <div className="flex items-center space-x-2 overflow-x-auto pb-4 scrollbar-none border-b border-gray-200">
-            <Link
-              href="/tienda"
-              className="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-[#FF5E14] text-white shadow-md shadow-[#FF5E14]/30"
-            >
-              Todos los Productos
-            </Link>
-            {categories.map((cat) => (
+      {/* Main Container with Left Sidebar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
+          
+          {/* Left Sidebar Categories Navigation */}
+          <aside className="w-full lg:w-72 bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-6 shrink-0 sticky top-28">
+            <div className="flex items-center space-x-2 border-b border-gray-100 pb-4">
+              <Filter className="w-5 h-5 text-[#FF5E14]" />
+              <h2 className="font-extrabold text-gray-900 text-base font-outfit">
+                Categorías de Productos
+              </h2>
+            </div>
+
+            <nav className="space-y-1.5">
               <Link
-                key={cat.slug}
-                href={`/tienda/${cat.slug}`}
-                className="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-[#FF5E14]"
+                href="/tienda"
+                className="flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-extrabold transition-all bg-[#0D0D0D] text-white shadow-md"
               >
-                {cat.name} <span className="text-gray-400 text-[10px]">({cat.count})</span>
+                <div className="flex items-center space-x-2">
+                  <Grid className="w-4 h-4 text-[#FF5E14]" />
+                  <span>Todos los Productos</span>
+                </div>
+                <Check className="w-4 h-4 text-[#FF5E14]" />
               </Link>
-            ))}
-          </div>
-        </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-
-        {/* Pagination Controls (15 items per page) */}
-        {totalPages > 1 && (
-          <div className="flex items-center justify-center space-x-2 pt-8 border-t border-gray-200">
-            {page > 1 && (
-              <Link
-                href={`/tienda?page=${page - 1}`}
-                className="p-2.5 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 font-bold text-xs flex items-center space-x-1"
-              >
-                <ChevronLeft className="w-4 h-4" />
-                <span>Anterior</span>
-              </Link>
-            )}
-
-            {[...Array(totalPages)].map((_, i) => {
-              const pNum = i + 1;
-              const isCurrent = pNum === page;
-              return (
+              {categories.map((cat) => (
                 <Link
-                  key={pNum}
-                  href={`/tienda?page=${pNum}`}
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center text-xs font-extrabold transition-all ${
-                    isCurrent
-                      ? 'bg-[#FF5E14] text-white shadow-md shadow-[#FF5E14]/30'
-                      : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-100'
-                  }`}
+                  key={cat.slug}
+                  href={`/tienda/${cat.slug}`}
+                  className="flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-bold text-gray-700 hover:bg-gray-100 hover:text-[#FF5E14] transition-all border border-transparent hover:border-gray-200 group"
                 >
-                  {pNum}
+                  <span className="truncate pr-2">{cat.name}</span>
+                  <span className="bg-gray-100 group-hover:bg-[#FF5E14]/10 text-gray-500 group-hover:text-[#FF5E14] px-2 py-0.5 rounded-full text-[10px] font-extrabold shrink-0">
+                    {cat.count}
+                  </span>
                 </Link>
-              );
-            })}
+              ))}
+            </nav>
+          </aside>
 
-            {page < totalPages && (
-              <Link
-                href={`/tienda?page=${page + 1}`}
-                className="p-2.5 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 font-bold text-xs flex items-center space-x-1"
-              >
-                <span>Siguiente</span>
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+          {/* Right Area: Product Grid + Pagination */}
+          <main className="flex-1 w-full space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+              {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center space-x-2 pt-6 border-t border-gray-200">
+                {page > 1 && (
+                  <Link
+                    href={`/tienda?page=${page - 1}`}
+                    className="p-2.5 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 font-bold text-xs flex items-center space-x-1"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    <span>Anterior</span>
+                  </Link>
+                )}
+
+                {[...Array(totalPages)].map((_, i) => {
+                  const pNum = i + 1;
+                  const isCurrent = pNum === page;
+                  return (
+                    <Link
+                      key={pNum}
+                      href={`/tienda?page=${pNum}`}
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center text-xs font-extrabold transition-all ${
+                        isCurrent
+                          ? 'bg-[#FF5E14] text-white shadow-md shadow-[#FF5E14]/30'
+                          : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      {pNum}
+                    </Link>
+                  );
+                })}
+
+                {page < totalPages && (
+                  <Link
+                    href={`/tienda?page=${page + 1}`}
+                    className="p-2.5 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 font-bold text-xs flex items-center space-x-1"
+                  >
+                    <span>Siguiente</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                )}
+              </div>
             )}
-          </div>
-        )}
+          </main>
 
+        </div>
       </div>
     </div>
   );
