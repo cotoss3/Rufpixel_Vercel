@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, CartItem, Order } from './types';
+import { createWooCommerceOrder } from './woocommerce';
 
 interface CartContextType {
   cart: CartItem[];
@@ -109,6 +110,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     };
 
     setOrdersHistory((prev) => [newOrder, ...prev]);
+    
+    // Post order asynchronously to WordPress WooCommerce REST API
+    createWooCommerceOrder(newOrder).catch((err) => console.warn('Sync order to WooCommerce warning:', err));
+
     clearCart();
     return newOrder;
   };

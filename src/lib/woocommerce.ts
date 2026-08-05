@@ -1,4 +1,4 @@
-import { Product, ProductVariation } from './types';
+import { Product, ProductVariation, Order } from './types';
 import { MOCK_PRODUCTS } from './mockData';
 
 const LIVE_DOMAIN = 'https://rufpixel.com';
@@ -186,4 +186,59 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   }
 
   return found;
+}
+
+// Function to post new order directly to WordPress WooCommerce
+export async function createWooCommerceOrder(order: Order): Promise<{ success: boolean; wooOrderId?: number }> {
+  try {
+    const nameParts = order.customer.fullName.trim().split(' ');
+    const firstName = nameParts[0] || 'Cliente';
+    const lastName = nameParts.slice(1).join(' ') || 'RufPixel';
+
+    const orderPayload = {
+      payment_method: 'yappy_manual',
+      payment_method_title: 'Yappy Panamá (Validación Humana)',
+      set_paid: false,
+      status: 'pending',
+      billing: {
+        first_name: firstName,
+        last_name: lastName,
+        address_1: order.customer.address,
+        city: order.customer.city || 'Ciudad de Panamá',
+        state: 'Panamá',
+        country: 'PA',
+        email: order.customer.email,
+        phone: order.customer.phone,
+      },
+      shipping: {
+        first_name: firstName,
+        last_name: lastName,
+        address_1: order.customer.address,
+        city: order.customer.city || 'Ciudad de Panamá',
+        state: 'Panamá',
+        country: 'PA',
+      },
+      line_items: order.items.map((item) => ({
+        product_id: parseInt(item.product.id, 10) || 10412,
+        quantity: item.quantity,
+      })),
+      customer_note: `Número de Pedido RufPixel: ${order.orderNumber}. Transacción Yappy ID: ${order.paymentProof?.transactionId || 'Pendiente'}. Comprobante: ${order.paymentProof?.receiptImageUrl || 'No adjunto'}. Notas adicionales: ${order.customer.notes || 'Ninguna'}`,
+    };
+
+    const authParams = `consumer_key=${CK}&consumer_secret=${CS}`;
+    const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/v3/orders?${authParams}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(orderPayload),
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      return { success: true, wooOrderId: data.id };
+    }
+  } catch (err) {
+    console.warn('Could not post order directly to WooCommerce API, order saved in local state', err);
+  }
+
+  return { success: false };
 }
