@@ -5,6 +5,11 @@ const LIVE_DOMAIN = 'https://rufpixel.com';
 const CK = process.env.WOOCOMMERCE_CONSUMER_KEY || 'ck_ca97c633f96d52d6b7178f9bef3c1f20fbf21688';
 const CS = process.env.WOOCOMMERCE_CONSUMER_SECRET || 'cs_cf44b18a5302efd0464436c21752fa8c0c56cefc1';
 
+const HEADLESS_HEADERS = {
+  'Accept': 'application/json',
+  'User-Agent': 'RufPixel-Headless-Storefront/1.0 (Sincronizacion de Catalogo y Pedidos RufPixel Vercel)',
+};
+
 export interface ProductCategory {
   id: string;
   name: string;
@@ -16,7 +21,7 @@ export async function getCategories(): Promise<ProductCategory[]> {
   try {
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/categories?per_page=100`, {
       next: { revalidate: 300 },
-      headers: { 'Accept': 'application/json' },
+      headers: HEADLESS_HEADERS,
     });
 
     if (res.ok) {
@@ -61,7 +66,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
     
     const res = await fetch(url, {
       next: { revalidate: 60 },
-      headers: { 'Accept': 'application/json' },
+      headers: HEADLESS_HEADERS,
     });
 
     if (res.ok) {
@@ -145,7 +150,9 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   if (!found) return null;
 
   try {
-    const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`);
+    const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`, {
+      headers: HEADLESS_HEADERS,
+    });
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
@@ -154,7 +161,9 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
 
         if (groupedIds.length > 0) {
           const childPromises = groupedIds.map(async (childId) => {
-            const cRes = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/${childId}`);
+            const cRes = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/${childId}`, {
+              headers: HEADLESS_HEADERS,
+            });
             if (cRes.ok) {
               const cData = await cRes.json();
               const cPrice = cData.prices?.price ? parseFloat(cData.prices.price) / 100 : parseFloat(cData.price || '0');
@@ -228,7 +237,10 @@ export async function createWooCommerceOrder(order: Order): Promise<{ success: b
     const authParams = `consumer_key=${CK}&consumer_secret=${CS}`;
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/v3/orders?${authParams}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        ...HEADLESS_HEADERS,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(orderPayload),
     });
 
