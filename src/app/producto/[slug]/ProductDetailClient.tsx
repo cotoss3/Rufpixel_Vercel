@@ -6,23 +6,51 @@ import { useCart } from '@/lib/cartContext';
 import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { ProductSchema } from '@/components/seo/SchemaOrg';
+import { getCachedProduct } from '@/lib/productCache';
 
-export default function ProductDetailClient({ product }: { product: Product }) {
+export default function ProductDetailClient({ 
+  product: initialProduct,
+  slug
+}: { 
+  product?: Product;
+  slug?: string;
+}) {
   const { addToCart } = useCart();
+
+  // Instant lookup from client memory cache if user clicked card in shop
+  const cached = slug ? getCachedProduct(slug) : undefined;
+  const product = cached || initialProduct;
 
   const [selectedAttributes, setSelectedAttributes] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
-    product.attributes.forEach((attr) => {
-      if (attr.options.length > 0) {
-        initial[attr.name] = attr.options[0];
-      }
-    });
+    if (product) {
+      product.attributes.forEach((attr) => {
+        if (attr.options.length > 0) {
+          initial[attr.name] = attr.options[0];
+        }
+      });
+    }
     return initial;
   });
 
   const [quantity, setQuantity] = useState(1);
-  const [selectedImage, setSelectedImage] = useState(product.image);
+  const [selectedImage, setSelectedImage] = useState(product?.image || '');
   const [addedMessage, setAddedMessage] = useState(false);
+
+  useEffect(() => {
+    if (product?.image && !selectedImage) {
+      setSelectedImage(product.image);
+    }
+  }, [product, selectedImage]);
+
+  if (!product) {
+    return (
+      <div className="py-24 text-center space-y-4">
+        <h2 className="text-2xl font-bold text-gray-900">Cargando producto...</h2>
+        <p className="text-gray-500 text-sm">Obteniendo detalles de RufPixel...</p>
+      </div>
+    );
+  }
 
   // Find matching child variation based on selected quantity (e.g. Cantidad: 50, 100, 250)
   const getSelectedVariation = (): ProductVariation | undefined => {
@@ -44,12 +72,6 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const selectedQtyNum = parseInt(selectedQtyStr, 10) || (currentTotalPrice > 30 ? 50 : 1);
   const unitPrice = currentTotalPrice / selectedQtyNum;
 
-  useEffect(() => {
-    if (selectedVariation?.image) {
-      setSelectedImage(selectedVariation.image);
-    }
-  }, [selectedVariation]);
-
   const handleAttributeChange = (attrName: string, option: string) => {
     setSelectedAttributes((prev) => ({ ...prev, [attrName]: option }));
   };
@@ -58,7 +80,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
     const productToCart = {
       ...product,
       price: currentTotalPrice,
-      image: selectedImage,
+      image: selectedImage || product.image,
     };
     addToCart(productToCart, quantity, selectedAttributes);
     setAddedMessage(true);
@@ -66,7 +88,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   };
 
   return (
-    <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
       <ProductSchema product={product} />
 
       <div>
@@ -81,7 +103,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <div className="lg:col-span-6 space-y-4">
           <div className="rounded-3xl overflow-hidden border border-gray-200 bg-gray-50 aspect-square p-8 relative shadow-md flex items-center justify-center">
             <img 
-              src={selectedImage} 
+              src={selectedImage || product.image} 
               alt={product.name} 
               className="w-full h-full object-contain p-2" 
             />

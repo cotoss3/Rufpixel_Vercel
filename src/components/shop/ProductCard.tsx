@@ -1,14 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Product } from '@/lib/types';
 import { ShoppingBag, Layers, Loader2 } from 'lucide-react';
 import QuickAddModal from './QuickAddModal';
+import { setCachedProduct } from '@/lib/productCache';
 
 export default function ProductCard({ product }: { product: Product }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
+
+  // Instantly register product in client memory cache when card mounts
+  useEffect(() => {
+    setCachedProduct(product);
+  }, [product]);
 
   const handleOpenModal = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -17,6 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
   };
 
   const handleCardClick = () => {
+    setCachedProduct(product);
     setIsNavigating(true);
   };
 
@@ -28,7 +35,10 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <>
-      <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all group flex flex-col justify-between relative">
+      <div 
+        onMouseEnter={() => setCachedProduct(product)}
+        className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all group flex flex-col justify-between relative"
+      >
         {/* Instant Spinner Overlay on Card Click */}
         {isNavigating && (
           <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px] z-30 flex flex-col items-center justify-center space-y-2 animate-fade-in">
@@ -96,7 +106,7 @@ export default function ProductCard({ product }: { product: Product }) {
           {/* Clicking Orange Button opens Quick Add Pop-Up Modal */}
           <button
             onClick={handleOpenModal}
-            className="p-3 bg-[#FF5E14] text-white rounded-xl hover:bg-[#E04700] transition-colors shadow-md shadow-[#FF5E14]/20 flex items-center space-x-1 font-bold text-xs shrink-0"
+            className="p-[#0D0D0D] p-3 bg-[#FF5E14] text-white rounded-xl hover:bg-[#E04700] transition-colors shadow-md shadow-[#FF5E14]/20 flex items-center space-x-1 font-bold text-xs shrink-0"
             title="Agregar rápido al carrito"
           >
             <ShoppingBag className="w-4 h-4" />
