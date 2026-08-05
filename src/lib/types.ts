@@ -20,6 +20,7 @@ export interface Product {
   shortDescription: string;
   category: string;
   categorySlug: string;
+  categories?: { id: string; name: string; slug: string }[];
   image: string;
   gallery: string[];
   stock: number;

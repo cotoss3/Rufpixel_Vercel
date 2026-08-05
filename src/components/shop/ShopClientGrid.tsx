@@ -1,12 +1,10 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Product } from '@/lib/types';
 import { ProductCategory } from '@/lib/woocommerce';
 import ProductCard from './ProductCard';
-import { ChevronLeft, ChevronRight, Grid, Filter, Check } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Grid, Filter, Check, Loader2 } from 'lucide-react';
 
 interface ShopClientGridProps {
   initialProducts: Product[];
@@ -19,22 +17,117 @@ export default function ShopClientGrid({
   categories,
   activeCategorySlug = 'todos',
 }: ShopClientGridProps) {
-  const router = useRouter();
+  const [allProducts, setAllProducts] = useState<Product[]>(initialProducts);
   const [selectedCategory, setSelectedCategory] = useState<string>(activeCategorySlug);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [isLoadingCategory, setIsLoadingCategory] = useState<boolean>(false);
   const perPage = 15;
 
-  // Instant Client-Side Category Filtering
+  // Robust Client-Side Category Filtering
   const filteredProducts = useMemo(() => {
     if (!selectedCategory || selectedCategory === 'todos') {
-      return initialProducts;
+      return allProducts;
     }
-    return initialProducts.filter(
-      (p) =>
-        p.categorySlug === selectedCategory ||
-        p.category.toLowerCase().includes(selectedCategory.toLowerCase().replace(/-/g, ' '))
-    );
-  }, [initialProducts, selectedCategory]);
+
+    const cleanSlug = selectedCategory.toLowerCase().trim();
+
+    return allProducts.filter((p) => {
+      // 1. Check array of categories
+      if (p.categories && p.categories.some((c) => c.slug.toLowerCase() === cleanSlug)) {
+        return true;
+      }
+
+      // 2. Check main categorySlug
+      if (p.categorySlug && p.categorySlug.toLowerCase() === cleanSlug) {
+        return true;
+      }
+
+      // 3. Fallback name match
+      const targetCat = categories.find((c) => c.slug === cleanSlug);
+      if (targetCat) {
+        const catNameLower = targetCat.name.toLowerCase();
+        if (p.category && p.category.toLowerCase().includes(catNameLower)) {
+          return true;
+        }
+      }
+
+      return false;
+    });
+  }, [allProducts, selectedCategory, categories]);
+
+  // Fetch products for category dynamically if not found in preloaded set
+  useEffect(() => {
+    if (selectedCategory !== 'todos' && filteredProducts.length === 0 && !isLoadingCategory) {
+      const fetchCategoryProducts = async () => {
+        setIsLoadingCategory(true);
+        try {
+          const res = await fetch(`https://rufpixel.com/wp-json/wc/store/v1/products?category=${selectedCategory}&per_page=100`, {
+            headers: {
+              'Accept': 'application/json',
+              'User-Agent': 'RufPixel-Headless-Storefront/1.0',
+            },
+          });
+
+          if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data) && data.length > 0) {
+              const allChildIds = new Set<number>();
+              data.forEach((p: any) => {
+                (p.grouped_products || []).forEach((id: number) => allChildIds.add(id));
+              });
+
+              const rootProducts = data.filter((p: any) => !allChildIds.has(p.id));
+
+              const fetched: Product[] = rootProducts.map((prod: any) => {
+                const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
+                const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
+                const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : undefined;
+
+                const catList = prod.categories?.map((c: any) => ({
+                  id: String(c.id),
+                  name: c.name,
+                  slug: c.slug,
+                })) || [];
+
+                return {
+                  id: String(prod.id),
+                  slug: prod.slug,
+                  name: prod.name,
+                  price: rawPrice > 0 ? rawPrice : 5.00,
+                  regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
+                  description: prod.description || prod.short_description || '',
+                  shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
+                  category: prod.categories?.[0]?.name || 'Productos RufPixel',
+                  categorySlug: prod.categories?.[0]?.slug || 'general',
+                  categories: catList,
+                  image: prod.images?.[0]?.src || '',
+                  gallery: prod.images?.map((img: any) => img.src) || [],
+                  stock: prod.is_in_stock ?? 100,
+                  attributes: prod.attributes?.map((attr: any) => ({
+                    name: attr.name,
+                    options: attr.options || attr.terms?.map((t: any) => t.name) || [],
+                  })) || [],
+                };
+              });
+
+              // Merge fetched products into state deduplicated
+              setAllProducts((prev) => {
+                const existingIds = new Set(prev.map((p) => p.id));
+                const newItems = fetched.filter((p) => !existingIds.has(p.id));
+                return [...prev, ...newItems];
+              });
+            }
+          }
+        } catch (e) {
+          console.warn('Error fetching category products dynamically:', e);
+        } finally {
+          setIsLoadingCategory(false);
+        }
+      };
+
+      fetchCategoryProducts();
+    }
+  }, [selectedCategory, filteredProducts.length, isLoadingCategory]);
 
   // Instant Client-Side Pagination
   const totalProducts = filteredProducts.length;
@@ -44,13 +137,12 @@ export default function ShopClientGrid({
     return filteredProducts.slice(start, start + perPage);
   }, [filteredProducts, currentPage, perPage]);
 
-  // Instant Category Switch Handler (0ms response)
+  // Category Switch Handler
   const handleCategorySelect = (slug: string, e: React.MouseEvent) => {
     e.preventDefault();
     setSelectedCategory(slug);
     setCurrentPage(1);
 
-    // Update URL seamlessly without page reload
     const targetUrl = slug === 'todos' ? '/tienda' : `/tienda/${slug}`;
     window.history.pushState({}, '', targetUrl);
   };
@@ -110,7 +202,7 @@ export default function ShopClientGrid({
         </nav>
       </aside>
 
-      {/* Right Area: Instant Product Grid + Instant Pagination */}
+      {/* Right Area: Product Grid + Pagination */}
       <main className="flex-1 w-full space-y-8">
         <div className="flex items-center justify-between bg-white px-5 py-3.5 rounded-2xl border border-gray-200">
           <span className="text-xs font-bold text-gray-600">
@@ -131,7 +223,13 @@ export default function ShopClientGrid({
           )}
         </div>
 
-        {paginatedProducts.length > 0 ? (
+        {isLoadingCategory ? (
+          <div className="bg-white rounded-3xl p-16 text-center border border-gray-200 space-y-3 flex flex-col items-center justify-center">
+            <Loader2 className="w-10 h-10 text-[#FF5E14] animate-spin" />
+            <h3 className="text-base font-bold text-gray-900">Cargando productos de la categoría...</h3>
+            <p className="text-xs text-gray-500">Obteniendo catálogo completo desde WordPress...</p>
+          </div>
+        ) : paginatedProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 animate-fade-in">
             {paginatedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -151,7 +249,7 @@ export default function ShopClientGrid({
         )}
 
         {/* Instant Pagination Controls */}
-        {totalPages > 1 && (
+        {totalPages > 1 && !isLoadingCategory && (
           <div className="flex items-center justify-center space-x-2 pt-6 border-t border-gray-200">
             {currentPage > 1 && (
               <button

@@ -63,10 +63,10 @@ export async function getCategories(): Promise<ProductCategory[]> {
   ];
 }
 
-export async function getProducts(categorySlug?: string, page = 1, perPage = 15): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
+export async function getProducts(categorySlug?: string, page = 1, perPage = 100): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
-    const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100${categoryParam}`;
+    const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=${perPage}${categoryParam}`;
     
     const res = await fetch(url, {
       next: { revalidate: 120 },
@@ -102,6 +102,12 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
             };
           }).filter((a: any) => a.options.length > 0) || [];
 
+          const catList = prod.categories?.map((c: any) => ({
+            id: String(c.id),
+            name: c.name,
+            slug: c.slug,
+          })) || [];
+
           const formatted: Product = {
             id: String(prod.id),
             slug: prod.slug,
@@ -114,6 +120,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
             shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
             category: prod.categories?.[0]?.name || 'Productos RufPixel',
             categorySlug: prod.categories?.[0]?.slug || 'general',
+            categories: catList,
             image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
             gallery: prod.images?.map((img: any) => img.src) || [],
             stock: prod.is_in_stock ?? 100,
@@ -127,13 +134,10 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
           return formatted;
         });
 
-        // Clean pagination
         const totalProducts = formattedProducts.length;
         const totalPages = Math.ceil(totalProducts / perPage) || 1;
-        const startIndex = (page - 1) * perPage;
-        const paginatedProducts = formattedProducts.slice(startIndex, startIndex + perPage);
 
-        return { products: paginatedProducts, totalPages, totalProducts };
+        return { products: formattedProducts, totalPages, totalProducts };
       }
     }
   } catch (err) {
@@ -145,11 +149,8 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
   if (categorySlug && categorySlug !== 'todos') {
     filteredMock = MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug);
   }
-  const startIndex = (page - 1) * perPage;
-  const paginatedMock = filteredMock.slice(startIndex, startIndex + perPage);
-  const totalPages = Math.ceil(filteredMock.length / perPage) || 1;
 
-  return { products: paginatedMock, totalPages, totalProducts: filteredMock.length };
+  return { products: filteredMock, totalPages: 1, totalProducts: filteredMock.length };
 }
 
 // FAST INSTANT PDP LOOKUP WITH IN-MEMORY LRU CACHE & PARALLELIZED FETCH
@@ -185,6 +186,12 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
           };
         }).filter((a: any) => a.options.length > 0) || [];
 
+        const catList = prod.categories?.map((c: any) => ({
+          id: String(c.id),
+          name: c.name,
+          slug: c.slug,
+        })) || [];
+
         const productObj: Product = {
           id: String(prod.id),
           slug: prod.slug,
@@ -195,6 +202,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
           shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
           category: prod.categories?.[0]?.name || 'Productos RufPixel',
           categorySlug: prod.categories?.[0]?.slug || 'general',
+          categories: catList,
           image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
           gallery: prod.images?.map((img: any) => img.src) || [],
           stock: prod.is_in_stock ?? 100,
