@@ -1,9 +1,21 @@
+export interface ProductVariation {
+  id: string;
+  name: string;
+  price: number;
+  regularPrice?: number;
+  attributes: Record<string, string>;
+  image?: string;
+  quantityOption?: string;
+}
+
 export interface Product {
   id: string;
   slug: string;
   name: string;
   price: number;
   regularPrice?: number;
+  priceMin?: number;
+  priceMax?: number;
   description: string;
   shortDescription: string;
   category: string;
@@ -11,10 +23,12 @@ export interface Product {
   image: string;
   gallery: string[];
   stock: number;
+  type?: 'simple' | 'variable' | 'grouped';
   attributes: {
     name: string;
     options: string[];
   }[];
+  childVariations?: ProductVariation[];
   featured?: boolean;
 }
 
@@ -24,6 +38,7 @@ export interface CartItem {
   selectedAttributes: Record<string, string>;
   customNotes?: string;
   estimatedPrice?: number;
+  selectedVariation?: ProductVariation;
 }
 
 export interface Service {

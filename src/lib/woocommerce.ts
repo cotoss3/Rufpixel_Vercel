@@ -1,4 +1,4 @@
-import { Product } from './types';
+import { Product, ProductVariation } from './types';
 import { MOCK_PRODUCTS } from './mockData';
 
 const LIVE_DOMAIN = 'https://rufpixel.com';
@@ -23,8 +23,22 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
 
       if (Array.isArray(data) && data.length > 0) {
         const products = data.map((prod: any) => {
-          const rawPrice = prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0');
+          // Calculate price and price ranges (in cents or float string)
+          const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
+          const maxAmount = prod.prices?.price_range?.max_amount ? parseFloat(prod.prices.price_range.max_amount) / 100 : undefined;
+          const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
           const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
+
+          // Parse Attributes with fallback to terms
+          const parsedAttributes = prod.attributes?.map((attr: any) => {
+            const rawOptions = attr.options && attr.options.length > 0 
+              ? attr.options 
+              : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
+            return {
+              name: attr.name,
+              options: rawOptions,
+            };
+          }).filter((a: any) => a.options.length > 0) || [];
 
           return {
             id: String(prod.id),
@@ -32,6 +46,8 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
             name: prod.name,
             price: rawPrice > 0 ? rawPrice : 5.00,
             regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
+            priceMin: minAmount,
+            priceMax: maxAmount,
             description: prod.description || prod.short_description || '',
             shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
             category: prod.categories?.[0]?.name || 'Productos RufPixel',
@@ -39,10 +55,8 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
             image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
             gallery: prod.images?.map((img: any) => img.src) || [],
             stock: prod.is_in_stock ?? 100,
-            attributes: prod.attributes?.map((attr: any) => ({
-              name: attr.name,
-              options: attr.options || [],
-            })) || [],
+            type: prod.type || 'simple',
+            attributes: parsedAttributes,
             featured: prod.is_featured || false,
           };
         });
@@ -54,7 +68,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
     console.warn('Store API fetch error, attempting v3 REST API', err);
   }
 
-  // Strategy 2: Try REST API v3 with consumer key/secret
+  // Strategy 2: REST API v3 fallback
   try {
     const authParams = `consumer_key=${CK}&consumer_secret=${CS}`;
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
@@ -81,6 +95,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
           image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
           gallery: prod.images?.map((img: any) => img.src) || [],
           stock: prod.stock_quantity ?? 100,
+          type: prod.type || 'simple',
           attributes: prod.attributes?.map((attr: any) => ({
             name: attr.name,
             options: attr.options || [],
@@ -95,7 +110,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
     console.warn('REST API v3 fetch error', err);
   }
 
-  // Fallback to Mock Data Paginated
+  // Fallback to Mock Data
   let filteredMock = MOCK_PRODUCTS;
   if (categorySlug && categorySlug !== 'todos') {
     filteredMock = MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug);
@@ -109,5 +124,51 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
 
 export async function getProductBySlug(slug: string): Promise<Product | null> {
   const { products } = await getProducts('todos', 1, 100);
-  return products.find(p => p.slug === slug) || null;
+  const found = products.find(p => p.slug === slug);
+  if (!found) return null;
+
+  // Fetch child products / variations if it's a parent product
+  try {
+    const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        const prodData = data[0];
+        const groupedIds: number[] = prodData.grouped_products || [];
+
+        if (groupedIds.length > 0) {
+          const childPromises = groupedIds.map(async (childId) => {
+            const cRes = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/${childId}`);
+            if (cRes.ok) {
+              const cData = await cRes.json();
+              const cPrice = cData.prices?.price ? parseFloat(cData.prices.price) / 100 : parseFloat(cData.price || '0');
+              // Match quantity or variation name (e.g., "50 uds" or "100")
+              const nameMatch = cData.name?.match(/(\d+)\s*(uds|unidades|piezas)?/i);
+              const qtyOpt = nameMatch ? nameMatch[1] : undefined;
+
+              return {
+                id: String(cData.id),
+                name: cData.name,
+                price: cPrice,
+                regularPrice: cData.prices?.regular_price ? parseFloat(cData.prices.regular_price) / 100 : undefined,
+                attributes: qtyOpt ? { 'Cantidad': qtyOpt } : {},
+                image: cData.images?.[0]?.src,
+                quantityOption: qtyOpt,
+              };
+            }
+            return null;
+          });
+
+          const fetchedChildren = (await Promise.all(childPromises)).filter(Boolean) as ProductVariation[];
+          if (fetchedChildren.length > 0) {
+            found.childVariations = fetchedChildren;
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('Error loading child variations:', err);
+  }
+
+  return found;
 }

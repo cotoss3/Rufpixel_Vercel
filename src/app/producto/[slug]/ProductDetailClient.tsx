@@ -1,14 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Product } from '@/lib/types';
+import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
-import { ShoppingBag, CheckCircle2, ShieldCheck, Truck, Clock, ArrowRight } from 'lucide-react';
+import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { ProductSchema } from '@/components/seo/SchemaOrg';
 
 export default function ProductDetailClient({ product }: { product: Product }) {
   const { addToCart } = useCart();
+
   const [selectedAttributes, setSelectedAttributes] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
     product.attributes.forEach((attr) => {
@@ -18,16 +19,38 @@ export default function ProductDetailClient({ product }: { product: Product }) {
     });
     return initial;
   });
+
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(product.image);
   const [addedMessage, setAddedMessage] = useState(false);
+
+  // Find matching child variation based on selected attributes (e.g. Cantidad: 50, 100)
+  const getSelectedVariation = (): ProductVariation | undefined => {
+    if (!product.childVariations || product.childVariations.length === 0) return undefined;
+    
+    // Check quantity attribute match
+    const selectedQty = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0];
+    if (selectedQty) {
+      const match = product.childVariations.find(v => v.quantityOption === selectedQty || v.name.includes(selectedQty));
+      if (match) return match;
+    }
+    return product.childVariations[0];
+  };
+
+  const selectedVariation = getSelectedVariation();
+  const currentPrice = selectedVariation ? selectedVariation.price : product.price;
 
   const handleAttributeChange = (attrName: string, option: string) => {
     setSelectedAttributes((prev) => ({ ...prev, [attrName]: option }));
   };
 
   const handleAddToCart = () => {
-    addToCart(product, quantity, selectedAttributes);
+    // Create product instance with current variation price
+    const productToCart = {
+      ...product,
+      price: currentPrice,
+    };
+    addToCart(productToCart, quantity, selectedAttributes);
     setAddedMessage(true);
     setTimeout(() => setAddedMessage(false), 4000);
   };
@@ -35,6 +58,13 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   return (
     <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <ProductSchema product={product} />
+
+      <div>
+        <Link href="/tienda" className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:underline">
+          <ArrowLeft className="w-4 h-4" />
+          <span>Volver a la tienda</span>
+        </Link>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Column: Gallery */}
@@ -71,9 +101,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             </h1>
             <div className="mt-3 flex items-baseline space-x-3">
               <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit">
-                ${product.price.toFixed(2)} <span className="text-sm font-normal text-gray-500">USD</span>
+                ${currentPrice.toFixed(2)} <span className="text-sm font-normal text-gray-500">USD</span>
               </span>
-              {product.regularPrice && product.regularPrice > product.price && (
+              {product.regularPrice && product.regularPrice > currentPrice && (
                 <span className="text-sm text-gray-400 line-through">
                   ${product.regularPrice.toFixed(2)}
                 </span>
@@ -81,30 +111,31 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             </div>
           </div>
 
-          <p className="text-gray-600 text-sm leading-relaxed border-t border-b border-gray-200 py-4">
-            {product.description}
-          </p>
+          <div
+            className="text-gray-600 text-sm leading-relaxed border-t border-b border-gray-200 py-4 prose prose-sm max-w-none"
+            dangerouslySetInnerHTML={{ __html: product.description }}
+          />
 
-          {/* Attributes Selectors */}
+          {/* Attributes & Variations Selectors */}
           {product.attributes.map((attr) => (
             <div key={attr.name} className="space-y-2">
-              <label className="text-xs uppercase font-bold text-gray-700 tracking-wider">
-                {attr.name}: <span className="text-[#FF5E14]">{selectedAttributes[attr.name]}</span>
+              <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">
+                Seleccionar {attr.name}: <span className="text-[#FF5E14] font-bold">{selectedAttributes[attr.name]}</span>
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {attr.options.map((opt) => {
                   const isSelected = selectedAttributes[attr.name] === opt;
                   return (
                     <button
                       key={opt}
                       onClick={() => handleAttributeChange(attr.name, opt)}
-                      className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
+                      className={`px-5 py-2.5 rounded-xl text-xs font-extrabold transition-all border ${
                         isSelected
-                          ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md shadow-[#FF5E14]/20'
-                          : 'bg-white text-gray-700 border-gray-200 hover:border-[#FF5E14]'
+                          ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md shadow-[#FF5E14]/25 scale-105'
+                          : 'bg-white text-gray-700 border-gray-300 hover:border-[#FF5E14]'
                       }`}
                     >
-                      {opt}
+                      {opt} {attr.name.toLowerCase() === 'cantidad' ? 'unidades' : ''}
                     </button>
                   );
                 })}
@@ -145,7 +176,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-xl text-xs font-medium flex items-center justify-between animate-fade-in">
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                  <span>¡Producto agregado al carrito exitosamente!</span>
+                  <span>¡Producto ({selectedAttributes['Cantidad'] || ''}) agregado al carrito exitosamente!</span>
                 </div>
                 <Link href="/carrito" className="font-bold underline text-emerald-900 flex items-center space-x-1">
                   <span>Ir al Carrito</span>
