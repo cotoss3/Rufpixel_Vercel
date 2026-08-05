@@ -63,91 +63,105 @@ export async function getCategories(): Promise<ProductCategory[]> {
   ];
 }
 
-export async function getProducts(categorySlug?: string, page = 1, perPage = 300): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
+// Fetch all pages in parallel using max allowed per_page=100 per request
+export async function getProducts(categorySlug?: string, page = 1, perPage = 100): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
-    const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=${perPage}${categoryParam}`;
     
-    const res = await fetch(url, {
-      next: { revalidate: 120 },
-      headers: HEADLESS_HEADERS,
+    // WooCommerce Store API limits per_page to 100. We fetch Page 1, Page 2, Page 3 in parallel to collect all 250+ products across 7+ pages.
+    const pagesToFetch = categorySlug && categorySlug !== 'todos' ? [1, 2] : [1, 2, 3, 4];
+    
+    const pagePromises = pagesToFetch.map(async (pNum) => {
+      try {
+        const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100&page=${pNum}${categoryParam}`;
+        const res = await fetch(url, {
+          next: { revalidate: 120 },
+          headers: HEADLESS_HEADERS,
+        });
+        if (res.ok) {
+          const data = await res.json();
+          return Array.isArray(data) ? data : [];
+        }
+      } catch (e) {}
+      return [];
     });
 
-    if (res.ok) {
-      const data = await res.json();
+    const pageResults = await Promise.all(pagePromises);
+    const rawData = pageResults.flat();
 
-      if (Array.isArray(data) && data.length > 0) {
-        // Collect all child quantity item IDs referenced in grouped_products
-        const allChildIds = new Set<number>();
-        data.forEach(p => {
-          (p.grouped_products || []).forEach((id: number) => allChildIds.add(id));
-        });
+    if (rawData.length > 0) {
+      // Collect all child quantity item IDs referenced in grouped_products
+      const allChildIds = new Set<number>();
+      rawData.forEach((p: any) => {
+        (p.grouped_products || []).forEach((id: number) => allChildIds.add(id));
+      });
 
-        // Keep ONLY root parent product models
-        const rootProducts = data.filter(p => !allChildIds.has(p.id));
+      // Keep ONLY root parent product models
+      const rootProducts = rawData.filter((p: any) => !allChildIds.has(p.id));
 
-        const formattedProducts: Product[] = rootProducts.map((prod: any) => {
-          const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
-          const maxAmount = prod.prices?.price_range?.max_amount ? parseFloat(prod.prices.price_range.max_amount) / 100 : undefined;
-          const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
-          const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
+      const formattedProducts: Product[] = rootProducts.map((prod: any) => {
+        const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
+        const maxAmount = prod.prices?.price_range?.max_amount ? parseFloat(prod.prices.price_range.max_amount) / 100 : undefined;
+        const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
+        const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
 
-          const parsedAttributes = prod.attributes?.map((attr: any) => {
-            const rawOptions = attr.options && attr.options.length > 0
-              ? attr.options
-              : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
-            return {
-              name: attr.name,
-              options: rawOptions,
-            };
-          }).filter((a: any) => a.options.length > 0) || [];
-
-          const catList = prod.categories?.map((c: any) => ({
-            id: String(c.id),
-            name: c.name,
-            slug: c.slug,
-          })) || [];
-
-          const formatted: Product = {
-            id: String(prod.id),
-            slug: prod.slug,
-            name: prod.name,
-            price: rawPrice > 0 ? rawPrice : 5.00,
-            regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
-            priceMin: minAmount,
-            priceMax: maxAmount,
-            description: prod.description || prod.short_description || '',
-            shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
-            category: prod.categories?.[0]?.name || 'Productos RufPixel',
-            categorySlug: prod.categories?.[0]?.slug || 'general',
-            categories: catList,
-            image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-            gallery: prod.images?.map((img: any) => img.src) || [],
-            stock: prod.is_in_stock ?? 100,
-            type: prod.type || 'simple',
-            attributes: parsedAttributes,
-            featured: prod.is_featured || false,
+        const parsedAttributes = prod.attributes?.map((attr: any) => {
+          const rawOptions = attr.options && attr.options.length > 0
+            ? attr.options
+            : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
+          return {
+            name: attr.name,
+            options: rawOptions,
           };
+        }).filter((a: any) => a.options.length > 0) || [];
 
-          // Cache product for instant slug lookups
-          productCache.set(prod.slug, { data: formatted, timestamp: Date.now() });
-          return formatted;
-        });
+        const catList = prod.categories?.map((c: any) => ({
+          id: String(c.id),
+          name: c.name,
+          slug: c.slug,
+        })) || [];
 
-        const totalProducts = formattedProducts.length;
-        const totalPages = Math.ceil(totalProducts / perPage) || 1;
+        const formatted: Product = {
+          id: String(prod.id),
+          slug: prod.slug,
+          name: prod.name,
+          price: rawPrice > 0 ? rawPrice : 5.00,
+          regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
+          priceMin: minAmount,
+          priceMax: maxAmount,
+          description: prod.description || prod.short_description || '',
+          shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
+          category: prod.categories?.[0]?.name || 'Productos RufPixel',
+          categorySlug: prod.categories?.[0]?.slug || 'general',
+          categories: catList,
+          image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
+          gallery: prod.images?.map((img: any) => img.src) || [],
+          stock: prod.is_in_stock ?? 100,
+          type: prod.type || 'simple',
+          attributes: parsedAttributes,
+          featured: prod.is_featured || false,
+        };
 
-        return { products: formattedProducts, totalPages, totalProducts };
-      }
+        // Cache product for instant slug lookups
+        productCache.set(prod.slug, { data: formatted, timestamp: Date.now() });
+        return formatted;
+      });
+
+      // Deduplicate products by id
+      const uniqueProductsMap = new Map<string, Product>();
+      formattedProducts.forEach(p => uniqueProductsMap.set(p.id, p));
+      const uniqueProducts = Array.from(uniqueProductsMap.values());
+
+      return { products: uniqueProducts, totalPages: 1, totalProducts: uniqueProducts.length };
     }
   } catch (err) {
-    console.warn('Store API deduplication fetch error', err);
+    console.warn('Store API multi-page fetch error', err);
   }
 
   // Fallback Mock Data
   let filteredMock = MOCK_PRODUCTS;
   if (categorySlug && categorySlug !== 'todos') {
-    filteredMock = MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug);
+    filteredMock = MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug || p.categories?.some(c => c.slug === categorySlug));
   }
 
   return { products: filteredMock, totalPages: 1, totalProducts: filteredMock.length };
@@ -256,7 +270,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   }
 
   // Fallback search in catalog
-  const { products } = await getProducts('todos', 1, 300);
+  const { products } = await getProducts('todos', 1, 100);
   return products.find(p => p.slug === slug) || null;
 }
 
