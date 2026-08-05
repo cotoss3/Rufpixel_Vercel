@@ -6,10 +6,10 @@ const CK = process.env.WOOCOMMERCE_CONSUMER_KEY || 'ck_ca97c633f96d52d6b7178f9be
 const CS = process.env.WOOCOMMERCE_CONSUMER_SECRET || 'cs_cf44b18a5302efd0464436c21752fa8c0c56cefc1';
 
 export async function getProducts(categorySlug?: string, page = 1, perPage = 15): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
-  // Strategy 1: WooCommerce Store API
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
-    const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?page=${page}&per_page=${perPage}${categoryParam}`;
+    // Fetch top 100 catalog products to filter out quantity sub-product duplicates
+    const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100${categoryParam}`;
     
     const res = await fetch(url, {
       next: { revalidate: 60 },
@@ -17,19 +17,25 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
     });
 
     if (res.ok) {
-      const totalPages = parseInt(res.headers.get('x-wp-totalpages') || '1', 10);
-      const totalProducts = parseInt(res.headers.get('x-wp-total') || '15', 10);
       const data = await res.json();
 
       if (Array.isArray(data) && data.length > 0) {
-        const products = data.map((prod: any) => {
-          // Calculate prices (cents to dollars)
+        // Collect all child quantity item IDs referenced in grouped_products
+        const allChildIds = new Set<number>();
+        data.forEach(p => {
+          (p.grouped_products || []).forEach((id: number) => allChildIds.add(id));
+        });
+
+        // Keep ONLY the parent product models (eliminating 50/100/250 units duplicate cards)
+        const rootProducts = data.filter(p => !allChildIds.has(p.id));
+
+        const formattedProducts: Product[] = rootProducts.map((prod: any) => {
           const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
           const maxAmount = prod.prices?.price_range?.max_amount ? parseFloat(prod.prices.price_range.max_amount) / 100 : undefined;
           const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
           const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
 
-          // Parse attributes (Cantidades and Colores)
+          // Parse Cantidad & Color attributes
           const parsedAttributes = prod.attributes?.map((attr: any) => {
             const rawOptions = attr.options && attr.options.length > 0
               ? attr.options
@@ -61,53 +67,17 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 15)
           };
         });
 
-        return { products, totalPages, totalProducts };
+        // Apply clean pagination
+        const totalProducts = formattedProducts.length;
+        const totalPages = Math.ceil(totalProducts / perPage) || 1;
+        const startIndex = (page - 1) * perPage;
+        const paginatedProducts = formattedProducts.slice(startIndex, startIndex + perPage);
+
+        return { products: paginatedProducts, totalPages, totalProducts };
       }
     }
   } catch (err) {
-    console.warn('Store API fetch error, attempting v3 REST API', err);
-  }
-
-  // Strategy 2: REST API v3 fallback
-  try {
-    const authParams = `consumer_key=${CK}&consumer_secret=${CS}`;
-    const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
-    const url = `${LIVE_DOMAIN}/wp-json/wc/v3/products?page=${page}&per_page=${perPage}&${authParams}${categoryParam}`;
-    
-    const res = await fetch(url, { next: { revalidate: 60 } });
-
-    if (res.ok) {
-      const totalPages = parseInt(res.headers.get('x-wp-totalpages') || '1', 10);
-      const totalProducts = parseInt(res.headers.get('x-wp-total') || '15', 10);
-      const data = await res.json();
-
-      if (Array.isArray(data) && data.length > 0) {
-        const products = data.map((prod: any) => ({
-          id: String(prod.id),
-          slug: prod.slug,
-          name: prod.name,
-          price: parseFloat(prod.price || prod.regular_price || '0'),
-          regularPrice: prod.regular_price ? parseFloat(prod.regular_price) : undefined,
-          description: prod.description || prod.short_description || '',
-          shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
-          category: prod.categories?.[0]?.name || 'Productos RufPixel',
-          categorySlug: prod.categories?.[0]?.slug || 'general',
-          image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-          gallery: prod.images?.map((img: any) => img.src) || [],
-          stock: prod.stock_quantity ?? 100,
-          type: prod.type || 'simple',
-          attributes: prod.attributes?.map((attr: any) => ({
-            name: attr.name,
-            options: attr.options || [],
-          })) || [],
-          featured: prod.featured || false,
-        }));
-
-        return { products, totalPages, totalProducts };
-      }
-    }
-  } catch (err) {
-    console.warn('REST API v3 fetch error', err);
+    console.warn('Store API deduplication fetch error', err);
   }
 
   // Fallback Mock Data Paginated
