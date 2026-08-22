@@ -27,10 +27,8 @@ export default function CotizadorPage() {
   // Preset Sizes
   const presetSizes: Record<string, SizeOption[]> = {
     DTF: [
-      { id: 'dtf-carta', name: 'Carta', dimensions: '8.3" × 11"', price: 2.50 },
-      { id: 'dtf-tabloide', name: 'Tabloide', dimensions: '11" × 16"', price: 4.00 },
-      { id: 'dtf-pie', name: 'Pie', dimensions: '11" × 12"', price: 3.00 },
-      { id: 'dtf-yarda-promo', name: 'Yarda Promo', dimensions: '23" × 36"', price: 9.00, promo: true, promoBadge: 'PROMO DESTACADA' },
+      { id: 'dtf-a4', name: 'A4', dimensions: '8.27" × 11"', price: 2.94 },
+      { id: 'dtf-yarda-lineal', name: 'Yarda Lineal', dimensions: '11" × 36"', price: 6.42 },
     ],
     UVDTF: [
       { id: 'uv-mini', name: 'Planilla A4', dimensions: '8.2" × 11.6"', price: 5.50 },
@@ -48,7 +46,7 @@ export default function CotizadorPage() {
     ],
   };
 
-  const [selectedSizeId, setSelectedSizeId] = useState<string>('dtf-yarda-promo');
+  const [selectedSizeId, setSelectedSizeId] = useState<string>('dtf-a4');
   const [quantity, setQuantity] = useState<number>(1);
   
   // Custom Size State
@@ -298,38 +296,40 @@ export default function CotizadorPage() {
               </div>
 
               {/* MEDIDA PERSONALIZADA BUTTON (DASHED BORDER) */}
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={handleSelectCustom}
-                  className={`w-full p-5 rounded-2xl border-2 border-dashed text-left transition-all flex flex-col sm:flex-row items-center justify-between gap-4 ${
-                    isCustomSize
-                      ? 'bg-[#FFF5F0] border-[#FF5E14] ring-2 ring-[#FF5E14]/20'
-                      : 'bg-gray-50 border-gray-300 hover:border-[#FF5E14] hover:bg-white'
-                  }`}
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2.5 bg-[#FF5E14]/10 rounded-xl text-[#FF5E14]">
-                      <Ruler className="w-5 h-5" />
+              {activeTab !== 'DTF' && (
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={handleSelectCustom}
+                    className={`w-full p-5 rounded-2xl border-2 border-dashed text-left transition-all flex flex-col sm:flex-row items-center justify-between gap-4 ${
+                      isCustomSize
+                        ? 'bg-[#FFF5F0] border-[#FF5E14] ring-2 ring-[#FF5E14]/20'
+                        : 'bg-gray-50 border-gray-300 hover:border-[#FF5E14] hover:bg-white'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2.5 bg-[#FF5E14]/10 rounded-xl text-[#FF5E14]">
+                        <Ruler className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-extrabold text-gray-900 text-sm font-outfit">
+                          📐 Medida Personalizada
+                        </h4>
+                        <span className="text-xs text-gray-500">
+                          Ingresa tu ancho y alto exacto en cm, m o pulgadas
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-extrabold text-gray-900 text-sm font-outfit">
-                        📐 Medida Personalizada
-                      </h4>
-                      <span className="text-xs text-gray-500">
-                        Ingresa tu ancho y alto exacto en cm, m o pulgadas
-                      </span>
-                    </div>
-                  </div>
 
-                  <span className="text-xs font-bold text-[#FF5E14] bg-white px-3 py-1.5 rounded-lg border border-gray-200">
-                    {isCustomSize ? '✓ Seleccionado' : 'Cotizar Medida'}
-                  </span>
-                </button>
-              </div>
+                    <span className="text-xs font-bold text-[#FF5E14] bg-white px-3 py-1.5 rounded-lg border border-gray-200">
+                      {isCustomSize ? '✓ Seleccionado' : 'Cotizar Medida'}
+                    </span>
+                  </button>
+                </div>
+              )}
 
               {/* CUSTOM DIMENSIONS EXPANDABLE INPUTS */}
-              {isCustomSize && (
+              {isCustomSize && activeTab !== 'DTF' && (
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 animate-fade-in text-xs">
                   <span className="font-bold text-gray-900 block">Especificar Dimensiones:</span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
