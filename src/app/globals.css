@@ -1,0 +1,79 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-outfit: 'Outfit', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: #FAFAFA;
+  color: #1F2937;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF5E14;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E04700;
+}
+
+/* Printfix Micro-animations & Glassmorphism */
+.glass-header {
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ruf-badge-orange {
+  background: linear-gradient(135deg, #FF5E14 0%, #FF8C52 100%);
+}
+
+.ruf-button-primary {
+  background-color: #FF5E14;
+  color: #FFFFFF;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 14px rgba(255, 94, 20, 0.3);
+}
+
+.ruf-button-primary:hover {
+  background-color: #E04700;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 94, 20, 0.45);
+}
+
+.ruf-button-outline {
+  border: 2px solid #FF5E14;
+  color: #FF5E14;
+  transition: all 0.25s ease-in-out;
+}
+
+.ruf-button-outline:hover {
+  background-color: #FF5E14;
+  color: #FFFFFF;
+}
+
+/* Smooth Image Zoom */
+.zoom-on-hover {
+  transition: transform 0.5s ease;
+}
+.zoom-on-hover:hover {
+  transform: scale(1.05);
+}
