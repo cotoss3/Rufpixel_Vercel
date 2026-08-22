@@ -2,47 +2,96 @@
 
 import React, { useState, useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Sparkles } from 'lucide-react';
 
 function NavigationLoaderContent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
 
-  // Listen to path or searchParam changes to stop loading
+  // Stop loading when route or search params change
   useEffect(() => {
     setIsLoading(false);
   }, [pathname, searchParams]);
 
-  // Listen to global click events on internal links
+  // Safety timeout: auto-hide loader after 6 seconds max
+  useEffect(() => {
+    if (isLoading) {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+
+  // Global click listener for instant visual loading feedback
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+      if (!target) return;
+
       const anchor = target.closest('a');
-      if (anchor && anchor.href && anchor.href.startsWith(window.location.origin)) {
-        const url = new URL(anchor.href);
-        // Only trigger loading spinner if navigating to a new path
-        if (url.pathname !== window.location.pathname || url.search !== window.location.search) {
-          setIsLoading(true);
+      if (anchor) {
+        const href = anchor.getAttribute('href');
+        const targetAttr = anchor.getAttribute('target');
+        
+        // Skip external, new tab, hash, tel, mailto or javascript links
+        if (
+          targetAttr === '_blank' || 
+          !href || 
+          href.startsWith('#') ||
+          href.startsWith('tel:') || 
+          href.startsWith('mailto:') || 
+          href.startsWith('javascript:') ||
+          (href.startsWith('http') && !href.startsWith(window.location.origin))
+        ) {
+          return;
         }
+
+        try {
+          const url = new URL(anchor.href, window.location.origin);
+          const currentUrl = new URL(window.location.href);
+
+          // Trigger loading spinner if destination path or query parameters differ
+          if (url.pathname !== currentUrl.pathname || url.search !== currentUrl.search) {
+            setIsLoading(true);
+          }
+        } catch (err) {}
       }
     };
 
-    document.addEventListener('click', handleLinkClick);
-    return () => document.removeEventListener('click', handleLinkClick);
+    const handlePopState = () => {
+      setIsLoading(true);
+    };
+
+    // Use capture phase so we capture clicks before any stopPropagation
+    document.addEventListener('click', handleLinkClick, true);
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      document.removeEventListener('click', handleLinkClick, true);
+      window.removeEventListener('popstate', handlePopState);
+    };
   }, []);
 
   if (!isLoading) return null;
 
   return (
     <>
-      {/* Top Loading Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-[#FF5E14] animate-pulse shadow-md shadow-[#FF5E14]/50" />
+      {/* 1. Top High-Visibility Glowing Progress Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[99999] h-1.5 bg-[#FF5E14] shadow-lg shadow-[#FF5E14]/60 animate-pulse pointer-events-none" />
 
-      {/* Floating Center Spinner Overlay */}
-      <div className="fixed bottom-6 right-6 z-50 bg-[#0D0D0D] text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center space-x-3 border border-[#FF5E14]/40 animate-bounce">
-        <Loader2 className="w-5 h-5 text-[#FF5E14] animate-spin" />
-        <span className="text-xs font-extrabold tracking-wide">Cargando RufPixel...</span>
+      {/* 2. Light Backdrop Dimmer for Instant Navigation Feedback */}
+      <div className="fixed inset-0 z-[99998] bg-black/15 backdrop-blur-[1px] pointer-events-none animate-fade-in" />
+
+      {/* 3. Prominent Top-Center Floating Badge */}
+      <div className="fixed top-5 left-1/2 -translate-x-1/2 z-[99999] bg-[#0D0D0D] text-white px-5 py-2.5 rounded-full shadow-2xl border border-[#FF5E14] flex items-center space-x-3 text-xs font-bold animate-fade-in pointer-events-none">
+        <Loader2 className="w-4 h-4 text-[#FF5E14] animate-spin shrink-0" />
+        <span className="font-outfit tracking-wide font-extrabold text-white">Cargando página...</span>
+        <span className="bg-[#FF5E14]/20 text-[#FF5E14] text-[10px] px-2 py-0.5 rounded-md font-extrabold flex items-center space-x-1">
+          <Sparkles className="w-3 h-3" />
+          <span>RufPixel</span>
+        </span>
       </div>
     </>
   );
