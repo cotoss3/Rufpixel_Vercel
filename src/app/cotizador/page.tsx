@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   Printer, Sparkles, Tag, Ruler, Upload, CheckCircle2, 
-  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors
+  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 
@@ -21,9 +21,10 @@ interface SizeOption {
 export default function CotizadorPage() {
   const { addToCart } = useCart();
 
-  // Top Category Tabs (DTF, UVDTF, Gran Formato, Stickers, Promos)
-  const [activeTab, setActiveTab] = useState<'DTF' | 'UVDTF' | 'GRAN_FORMATO' | 'STICKERS' | 'PROMOS'>('DTF');
+  // Top Category Tabs (DTF, UVDTF, Gran Formato, Stickers, Papelería)
+  const [activeTab, setActiveTab] = useState<'DTF' | 'UVDTF' | 'GRAN_FORMATO' | 'STICKERS' | 'PAPELERIA'>('DTF');
   const [stickerFilter, setStickerFilter] = useState<'ALL' | '2X2' | '3X3' | '4X4'>('ALL');
+  const [papeleriaFilter, setPapeleriaFilter] = useState<'ALL' | 'VOLANTES' | 'LIBRETAS' | 'TARJETAS'>('ALL');
 
   // Preset Sizes
   const presetSizes: Record<string, SizeOption[]> = {
@@ -56,9 +57,28 @@ export default function CotizadorPage() {
       { id: 'stk-4x4-500', name: 'Sticker 4" × 4"', dimensions: 'Pack 500 unidades', price: 58.85, promo: true, promoBadge: 'POPULAR' },
       { id: 'stk-4x4-1000', name: 'Sticker 4" × 4"', dimensions: 'Pack 1,000 unidades', price: 96.30, promo: true, promoBadge: 'MEJOR PRECIO' },
     ],
-    PROMOS: [
-      { id: 'p-yarda', name: 'Yarda Promo RufPixel', dimensions: '23" × 36"', price: 9.00, promo: true, promoBadge: 'ESPECIAL' },
-      { id: 'p-pack-tarjetas', name: '100 Tarjetas Soft-Touch', dimensions: '3.5" × 2.0"', price: 25.00, promo: true, promoBadge: 'PACK POPULAR' },
+    PAPELERIA: [
+      // Volantes
+      { id: 'pap-volante-quarter-100', name: 'Volante 1/4 de Página', dimensions: 'Pack 100 unidades', price: 9.95 },
+      { id: 'pap-volante-quarter-500', name: 'Volante 1/4 de Página', dimensions: 'Pack 500 unidades', price: 24.95, promo: true, promoBadge: 'POPULAR' },
+
+      { id: 'pap-volante-half-100', name: 'Volante 1/2 Página', dimensions: 'Pack 100 unidades', price: 12.95 },
+      { id: 'pap-volante-half-500', name: 'Volante 1/2 Página', dimensions: 'Pack 500 unidades', price: 44.95, promo: true, promoBadge: 'POPULAR' },
+
+      // Libretas de Factura 1/4 Página
+      { id: 'pap-factura-quarter-1', name: 'Libreta de Factura 1/4 Página', dimensions: '1 Unidad', price: 9.95 },
+      { id: 'pap-factura-quarter-2', name: 'Libretas de Factura 1/4 Página', dimensions: '2 Unidades', price: 14.95 },
+      { id: 'pap-factura-quarter-4', name: 'Libretas de Factura 1/4 Página', dimensions: '4 Unidades', price: 24.95, promo: true, promoBadge: 'AHORRO' },
+
+      // Libretas de Factura 1/2 Página
+      { id: 'pap-factura-half-1', name: 'Libreta de Factura 1/2 Página', dimensions: '1 Unidad', price: 14.95 },
+      { id: 'pap-factura-half-2', name: 'Libretas de Factura 1/2 Página', dimensions: '2 Unidades', price: 24.95 },
+      { id: 'pap-factura-half-4', name: 'Libretas de Factura 1/2 Página', dimensions: '4 Unidades', price: 47.96, promo: true, promoBadge: 'AHORRO' },
+
+      // Tarjetas de Presentación
+      { id: 'pap-tarjetas-100', name: 'Tarjetas de Presentación', dimensions: 'Pack 100 unidades', price: 12.50 },
+      { id: 'pap-tarjetas-300', name: 'Tarjetas de Presentación', dimensions: 'Pack 300 unidades', price: 21.50 },
+      { id: 'pap-tarjetas-500', name: 'Tarjetas de Presentación', dimensions: 'Pack 500 unidades', price: 35.00, promo: true, promoBadge: 'PACK POPULAR' },
     ],
   };
 
@@ -77,15 +97,20 @@ export default function CotizadorPage() {
 
   const rawSizes = presetSizes[activeTab] || presetSizes.DTF;
 
-  // Filter stickers by size if selected
-  const currentSizes = activeTab === 'STICKERS' 
-    ? rawSizes.filter(s => {
-        if (stickerFilter === '2X2') return s.id.includes('2x2');
-        if (stickerFilter === '3X3') return s.id.includes('3x3');
-        if (stickerFilter === '4X4') return s.id.includes('4x4');
-        return true;
-      })
-    : rawSizes;
+  // Filter stickers or papeleria by sub-type
+  const currentSizes = rawSizes.filter(s => {
+    if (activeTab === 'STICKERS') {
+      if (stickerFilter === '2X2') return s.id.includes('2x2');
+      if (stickerFilter === '3X3') return s.id.includes('3x3');
+      if (stickerFilter === '4X4') return s.id.includes('4x4');
+    }
+    if (activeTab === 'PAPELERIA') {
+      if (papeleriaFilter === 'VOLANTES') return s.id.includes('volante');
+      if (papeleriaFilter === 'LIBRETAS') return s.id.includes('factura');
+      if (papeleriaFilter === 'TARJETAS') return s.id.includes('tarjetas');
+    }
+    return true;
+  });
 
   const currentSelectedOption = rawSizes.find((s) => s.id === selectedSizeId);
 
@@ -169,7 +194,7 @@ export default function CotizadorPage() {
           Nuevo pedido
         </h1>
         <p className="text-gray-600 text-sm">
-          Arma tu orden seleccionando la medida y cantidad en paquetes predeterminados.
+          Arma tu orden seleccionando la categoría y cantidad en paquetes predeterminados.
         </p>
       </div>
 
@@ -194,7 +219,7 @@ export default function CotizadorPage() {
               <span className="font-bold text-gray-900">{submittedOrder.type}</span>
             </div>
             <div className="flex justify-between border-b border-gray-200 pb-2">
-              <span className="text-gray-500">Medida Seleccionada:</span>
+              <span className="text-gray-500">Medida / Paquete Seleccionado:</span>
               <span className="font-bold text-[#FF5E14]">{submittedOrder.sizeLabel}</span>
             </div>
             <div className="flex justify-between border-b border-gray-200 pb-2">
@@ -237,7 +262,7 @@ export default function CotizadorPage() {
               { id: 'UVDTF', label: 'UVDTF', icon: <Sparkles className="w-4 h-4" /> },
               { id: 'GRAN_FORMATO', label: 'Gran Formato', icon: <Ruler className="w-4 h-4" /> },
               { id: 'STICKERS', label: 'Stickers', icon: <Scissors className="w-4 h-4" /> },
-              { id: 'PROMOS', label: 'Ofertas', icon: <Tag className="w-4 h-4" /> },
+              { id: 'PAPELERIA', label: 'Papelería', icon: <FileText className="w-4 h-4" /> },
             ].map((tab) => {
               const active = activeTab === tab.id;
               return (
@@ -274,8 +299,8 @@ export default function CotizadorPage() {
                 TIPO SELECCIONADO
               </label>
               <div className="w-full bg-[#0D0D0D] text-white font-extrabold py-3.5 px-6 rounded-2xl text-center text-lg font-outfit tracking-wider shadow-inner border border-gray-800 flex items-center justify-center space-x-2">
-                <span className="text-[#FF5E14]">PAQUETES</span>
-                <span>{activeTab === 'STICKERS' ? 'STICKERS TROQUELADOS' : activeTab}</span>
+                <span className="text-[#FF5E14]">IMPRESIÓN</span>
+                <span>{activeTab === 'STICKERS' ? 'STICKERS TROQUELADOS' : activeTab === 'PAPELERIA' ? 'PAPELERÍA CORPORATIVA' : activeTab}</span>
               </div>
             </div>
 
@@ -309,10 +334,44 @@ export default function CotizadorPage() {
               </div>
             )}
 
+            {/* PAPELERIA FILTER SUB-TABS */}
+            {activeTab === 'PAPELERIA' && (
+              <div className="space-y-2">
+                <label className="text-xs uppercase font-extrabold text-gray-500 tracking-wider block">
+                  Filtrar por Tipo de Papelería:
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { id: 'ALL', label: 'Todos los productos' },
+                    { id: 'VOLANTES', label: 'Volantes' },
+                    { id: 'LIBRETAS', label: 'Libretas de Factura' },
+                    { id: 'TARJETAS', label: 'Tarjetas de Presentación' },
+                  ].map((f) => (
+                    <button
+                      key={f.id}
+                      type="button"
+                      onClick={() => setPapeleriaFilter(f.id as any)}
+                      className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
+                        papeleriaFilter === f.id
+                          ? 'bg-[#0D0D0D] text-white border-[#0D0D0D]'
+                          : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
+                      }`}
+                    >
+                      {f.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* TAMAÑO PRE-DETERMINADO GRID */}
             <div className="space-y-3">
               <label className="text-xs uppercase font-extrabold text-gray-400 tracking-wider block">
-                {activeTab === 'STICKERS' ? 'SELECCIONA TU PAQUETE DE STICKERS' : 'TAMAÑO PREDETERMINADO'}
+                {activeTab === 'STICKERS' 
+                  ? 'SELECCIONA TU PAQUETE DE STICKERS' 
+                  : activeTab === 'PAPELERIA' 
+                  ? 'SELECCIONA TU PRODUCTO DE PAPELERÍA' 
+                  : 'TAMAÑO PREDETERMINADO'}
               </label>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -356,7 +415,7 @@ export default function CotizadorPage() {
               </div>
 
               {/* MEDIDA PERSONALIZADA BUTTON (DASHED BORDER) */}
-              {!['DTF', 'UVDTF', 'GRAN_FORMATO', 'STICKERS'].includes(activeTab) && (
+              {!['DTF', 'UVDTF', 'GRAN_FORMATO', 'STICKERS', 'PAPELERIA'].includes(activeTab) && (
                 <div className="pt-2">
                   <button
                     type="button"
@@ -389,7 +448,7 @@ export default function CotizadorPage() {
               )}
 
               {/* CUSTOM DIMENSIONS EXPANDABLE INPUTS */}
-              {isCustomSize && !['DTF', 'UVDTF', 'GRAN_FORMATO', 'STICKERS'].includes(activeTab) && (
+              {isCustomSize && !['DTF', 'UVDTF', 'GRAN_FORMATO', 'STICKERS', 'PAPELERIA'].includes(activeTab) && (
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 animate-fade-in text-xs">
                   <span className="font-bold text-gray-900 block">Especificar Dimensiones:</span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -456,7 +515,7 @@ export default function CotizadorPage() {
                   </button>
                 </div>
                 <span className="text-xs text-gray-500 font-medium">
-                  {activeTab === 'STICKERS' ? `Total de paquetes seleccionados` : `Mínimo 1 paquete u orden`}
+                  {['STICKERS', 'PAPELERIA'].includes(activeTab) ? `Total de paquetes seleccionados` : `Mínimo 1 paquete u orden`}
                 </span>
               </div>
             </div>
