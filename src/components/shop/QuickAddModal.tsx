@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
 import { X, ShoppingBag, CheckCircle2, Clock, Sparkles, ShieldCheck, Truck } from 'lucide-react';
@@ -13,7 +14,23 @@ interface QuickAddModalProps {
 }
 
 export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModalProps) {
+  const [mounted, setMounted] = useState(false);
   const { addToCart } = useCart();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const [selectedAttributes, setSelectedAttributes] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
@@ -32,7 +49,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
   const [quantity, setQuantity] = useState(1);
   const [addedMessage, setAddedMessage] = useState(false);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const selectedQtyOption = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
   const isSingleUnit = selectedQtyOption === '1' || selectedQtyOption.toLowerCase().includes('1 unidad') || selectedQtyOption.toLowerCase().includes('muestra');
@@ -74,10 +91,13 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
   const rawQtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
   const qtyOptions = ['1', ...(rawQtyAttr?.options.filter((o) => o !== '1') || ['50', '100', '250'])];
 
-  return (
-    <div className="fixed inset-[#0000] z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+  return createPortal(
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-fade-in"
+      onClick={onClose}
+    >
       <div 
-        className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 relative shadow-2xl border border-gray-100 max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 relative shadow-2xl border border-gray-100 max-h-[85vh] sm:max-h-[90vh] overflow-y-auto my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -240,6 +260,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

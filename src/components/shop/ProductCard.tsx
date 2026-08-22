@@ -96,7 +96,7 @@ export default function ProductCard({ product }: { product: Product }) {
           {/* Clicking Orange Button opens Quick Add Pop-Up Modal */}
           <button
             onClick={handleOpenModal}
-            className="p-[#0D0D0D] p-3 bg-[#FF5E14] text-white rounded-xl hover:bg-[#E04700] transition-colors shadow-md shadow-[#FF5E14]/20 flex items-center space-x-1 font-bold text-xs shrink-0"
+            className="p-3 bg-[#FF5E14] text-white rounded-xl hover:bg-[#E04700] transition-colors shadow-md shadow-[#FF5E14]/20 flex items-center space-x-1 font-bold text-xs shrink-0"
             title="Agregar rápido al carrito"
           >
             <ShoppingBag className="w-4 h-4" />
