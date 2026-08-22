@@ -13,7 +13,7 @@ interface CartContextType {
   totalItems: number;
   subtotal: number;
   ordersHistory: Order[];
-  createYappyOrder: (customer: Order['customer'], proof: { transactionId: string; receiptImageUrl?: string }) => Order;
+  createYappyOrder: (customer: Order['customer'], proof: { transactionId: string; receiptImageUrl?: string }, paymentMethod?: 'YAPPY_HUMAN_VALIDATION' | 'ACH_TRANSFER') => Order;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -89,7 +89,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
 
-  const createYappyOrder = (customer: Order['customer'], proof: { transactionId: string; receiptImageUrl?: string }): Order => {
+  const createYappyOrder = (
+    customer: Order['customer'],
+    proof: { transactionId: string; receiptImageUrl?: string },
+    paymentMethod: 'YAPPY_HUMAN_VALIDATION' | 'ACH_TRANSFER' = 'YAPPY_HUMAN_VALIDATION'
+  ): Order => {
     const orderNumber = `RUF-${Math.floor(100000 + Math.random() * 900000)}`;
     const newOrder: Order = {
       id: `ord-${Date.now()}`,
@@ -99,7 +103,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       subtotal,
       shippingFee: 0,
       total: subtotal,
-      paymentMethod: 'YAPPY_HUMAN_VALIDATION',
+      paymentMethod,
       paymentProof: {
         transactionId: proof.transactionId,
         receiptImageUrl: proof.receiptImageUrl || '',

@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/cartContext';
-import { ShieldCheck, Upload, CheckCircle2, QrCode, Phone, Copy, ArrowLeft, ShoppingBag } from 'lucide-react';
+import { ShieldCheck, Upload, CheckCircle2, QrCode, Phone, Copy, ArrowLeft, ShoppingBag, Landmark, Smartphone } from 'lucide-react';
 import { Order } from '@/lib/types';
 
 export default function CheckoutPage() {
   const { cart, subtotal, createYappyOrder } = useCart();
+
+  const [selectedMethod, setSelectedMethod] = useState<'YAPPY' | 'ACH'>('YAPPY');
 
   const [customer, setCustomer] = useState({
     fullName: '',
@@ -21,11 +23,13 @@ export default function CheckoutPage() {
   const [transactionId, setTransactionId] = useState('');
   const [receiptFileName, setReceiptFileName] = useState('');
   const [copiedYappy, setCopiedYappy] = useState(false);
+  const [copiedAch, setCopiedAch] = useState(false);
   const [createdOrder, setCreatedOrder] = useState<Order | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
   if (createdOrder) {
+    const isAch = createdOrder.paymentMethod === 'ACH_TRANSFER';
     return (
       <div className="py-16 max-w-3xl mx-auto px-4 space-y-8">
         <div className="bg-white p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-xl text-center space-y-6">
@@ -35,13 +39,13 @@ export default function CheckoutPage() {
 
           <div className="space-y-2">
             <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
-              Pedido Recibido Exitosa
+              Pedido Recibido Exitosamente
             </span>
             <h1 className="text-3xl font-extrabold text-gray-900 font-outfit">
               ¡Gracias por tu pedido, {createdOrder.customer.fullName.split(' ')[0]}!
             </h1>
             <p className="text-gray-600 text-sm max-w-lg mx-auto">
-              Tu pedido ha sido creado con éxito bajo el número de referencia <strong className="text-gray-900 font-mono font-bold">{createdOrder.orderNumber}</strong>.
+              Tu pedido ha sido registrado bajo el número de orden <strong className="text-gray-900 font-mono font-bold">{createdOrder.orderNumber}</strong>.
             </p>
           </div>
 
@@ -49,21 +53,25 @@ export default function CheckoutPage() {
           <div className="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-amber-900 text-xs space-y-1">
             <div className="font-bold uppercase tracking-wider flex items-center justify-center space-x-1">
               <ShieldCheck className="w-4 h-4 text-amber-600" />
-              <span>Estado: Pendiente de Validación Humana</span>
+              <span>Estado: Pendiente de Validación ({isAch ? 'Transferencia ACH' : 'Yappy'})</span>
             </div>
             <p>
-              Un operador de RufPixel revisará tu transferencia Yappy y actualizará el estado de tu orden en breve. Te notificaremos a tu correo: <strong>{createdOrder.customer.email}</strong>.
+              Un operador de RufPixel verificará tu {isAch ? 'transferencia bancaria ACH' : 'transferencia Yappy'} y actualizará el estado de tu orden en breve. Te notificaremos a tu correo: <strong>{createdOrder.customer.email}</strong>.
             </p>
           </div>
 
           {/* Details breakdown */}
           <div className="bg-gray-50 p-6 rounded-2xl text-left text-xs text-gray-700 space-y-2 border border-gray-200">
             <div className="flex justify-between border-b border-gray-200 pb-2 font-bold text-gray-900">
-              <span>Detalles de Transacción Yappy</span>
-              <span>Ref: {createdOrder.paymentProof?.transactionId}</span>
+              <span>Método Seleccionado:</span>
+              <span className="text-[#FF5E14]">{isAch ? 'Transferencia Bancaria Directa (ACH)' : 'Yappy Panamá'}</span>
+            </div>
+            <div className="flex justify-between border-b border-gray-200 pb-2 font-bold text-gray-900">
+              <span>Número de Referencia / Confirmación:</span>
+              <span className="font-mono text-gray-900">{createdOrder.paymentProof?.transactionId}</span>
             </div>
             <div className="flex justify-between pt-1">
-              <span>Total Pagado:</span>
+              <span>Total a Pagar:</span>
               <span className="font-extrabold text-gray-900 text-sm font-outfit">${createdOrder.total.toFixed(2)} USD</span>
             </div>
           </div>
@@ -99,9 +107,15 @@ export default function CheckoutPage() {
   }
 
   const handleCopyYappy = () => {
-    navigator.clipboard.writeText('60000000');
+    navigator.clipboard.writeText('64454084');
     setCopiedYappy(true);
     setTimeout(() => setCopiedYappy(false), 3000);
+  };
+
+  const handleCopyAch = () => {
+    navigator.clipboard.writeText('0301012948192');
+    setCopiedAch(true);
+    setTimeout(() => setCopiedAch(false), 3000);
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -120,16 +134,17 @@ export default function CheckoutPage() {
     }
 
     if (!transactionId) {
-      setErrorMsg('Por favor ingresa el número de referencia o transacción de Yappy.');
+      setErrorMsg(`Por favor ingresa el número de referencia de ${selectedMethod === 'YAPPY' ? 'Yappy' : 'la transferencia ACH'}.`);
       return;
     }
 
     setIsSubmitting(true);
     setTimeout(() => {
+      const methodKey = selectedMethod === 'YAPPY' ? 'YAPPY_HUMAN_VALIDATION' : 'ACH_TRANSFER';
       const newOrder = createYappyOrder(customer, {
         transactionId,
         receiptImageUrl: receiptFileName ? `/uploads/${receiptFileName}` : '',
-      });
+      }, methodKey);
       setCreatedOrder(newOrder);
       setIsSubmitting(false);
     }, 1000);
@@ -143,13 +158,13 @@ export default function CheckoutPage() {
           <span>Volver al carrito</span>
         </Link>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 font-outfit mt-2">
-          Checkout — Pago vía Yappy
+          Checkout — Métodos de Pago (Yappy & ACH)
         </h1>
       </div>
 
       <form onSubmit={handleSubmitOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         
-        {/* Left Column: Customer Form & Yappy Instructions */}
+        {/* Left Column: Customer Form & Payment Instructions */}
         <div className="lg:col-span-7 space-y-8">
           
           {/* Step 1: Customer Contact Data */}
@@ -168,7 +183,7 @@ export default function CheckoutPage() {
                   placeholder="Ej. Fernando Contreras / RufPixel PA"
                   value={customer.fullName}
                   onChange={(e) => setCustomer({ ...customer, fullName: e.target.value })}
-                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none"
+                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none font-medium"
                 />
               </div>
 
@@ -180,7 +195,7 @@ export default function CheckoutPage() {
                   placeholder="cliente@ejemplo.com"
                   value={customer.email}
                   onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
-                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none"
+                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none font-medium"
                 />
               </div>
 
@@ -189,10 +204,10 @@ export default function CheckoutPage() {
                 <input
                   type="tel"
                   required
-                  placeholder="+507 6525-6015"
+                  placeholder="+507 6445-4084"
                   value={customer.phone}
                   onChange={(e) => setCustomer({ ...customer, phone: e.target.value })}
-                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none"
+                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none font-medium"
                 />
               </div>
 
@@ -200,65 +215,150 @@ export default function CheckoutPage() {
                 <label className="font-bold text-gray-700">Dirección de Entrega o Sucursal de Retiro</label>
                 <textarea
                   rows={2}
-                  placeholder="Indica si deseas envío a domicilio en Panamá o retirar en nuestra imprenta."
+                  placeholder="Indica si deseas envío a domicilio en Ciudad de Panamá o retirar en nuestra imprenta."
                   value={customer.address}
                   onChange={(e) => setCustomer({ ...customer, address: e.target.value })}
-                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none"
+                  className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] focus:ring-1 focus:ring-[#FF5E14] outline-none font-medium"
                 />
               </div>
             </div>
           </div>
 
 
-          {/* Step 2: Yappy Payment Box & Receipt Attachment */}
+          {/* Step 2: Payment Method Selection & Instructions */}
           <div className="bg-[#0D0D0D] text-white p-6 sm:p-8 rounded-3xl border border-gray-800 shadow-xl space-y-6">
             <div className="flex items-center justify-between border-b border-gray-800 pb-3">
               <h2 className="text-xl font-bold font-outfit text-white flex items-center space-x-2">
                 <ShieldCheck className="w-5 h-5 text-[#FF5E14]" />
-                <span>2. Instrucciones de Pago por Yappy</span>
+                <span>2. Seleccionar Método de Pago</span>
               </h2>
               <span className="text-xs text-[#FF5E14] font-bold">Validación Humana</span>
             </div>
 
-            <p className="text-xs text-gray-300 leading-relaxed">
-              Abre la aplicación de tu banco en tu celular, ingresa a la sección <strong>Yappy</strong> y realiza la transferencia por el total exacto de la orden:
-            </p>
-
-            {/* Yappy Account Card */}
-            <div className="bg-gray-900 p-5 rounded-2xl border border-gray-800 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <span className="text-[11px] text-gray-400 block uppercase font-semibold">Directorio / Número Yappy</span>
-                  <span className="text-lg font-extrabold text-white font-mono tracking-wider">
-                    @RufPixel <span className="text-xs text-gray-400 font-sans">(+507 6525-6015 / 6445-4084)</span>
-                  </span>
+            {/* Payment Method Selector Tabs: Yappy vs ACH */}
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setSelectedMethod('YAPPY')}
+                className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between space-y-2 ${
+                  selectedMethod === 'YAPPY'
+                    ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-lg shadow-[#FF5E14]/25 scale-[1.02]'
+                    : 'bg-gray-900 text-gray-300 border-gray-800 hover:border-gray-700'
+                }`}
+              >
+                <div className="flex items-center space-x-2">
+                  <Smartphone className="w-5 h-5 shrink-0" />
+                  <span className="font-extrabold text-sm font-outfit">Yappy Panamá</span>
                 </div>
-                <button
-                  type="button"
-                  onClick={handleCopyYappy}
-                  className="p-2.5 bg-gray-800 hover:bg-[#FF5E14] text-white rounded-xl text-xs font-bold transition-colors flex items-center space-x-1"
-                >
-                  <Copy className="w-4 h-4" />
-                  <span>{copiedYappy ? '¡Copiado!' : 'Copiar'}</span>
-                </button>
-              </div>
+                <span className="text-[11px] opacity-90 block">Transferencia móvil rápida @RufPixel</span>
+              </button>
 
-              <div className="text-[11px] text-gray-400 border-t border-gray-800 pt-2 flex items-center justify-between">
-                <span>Titular de la cuenta: <strong>RufPixel Impresiones S.A.</strong></span>
-                <span>Banco: <strong>Banco General</strong></span>
-              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedMethod('ACH')}
+                className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between space-y-2 ${
+                  selectedMethod === 'ACH'
+                    ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-lg shadow-[#FF5E14]/25 scale-[1.02]'
+                    : 'bg-gray-900 text-gray-300 border-gray-800 hover:border-gray-700'
+                }`}
+              >
+                <div className="flex items-center space-x-2">
+                  <Landmark className="w-5 h-5 shrink-0" />
+                  <span className="font-extrabold text-sm font-outfit">Transferencia ACH</span>
+                </div>
+                <span className="text-[11px] opacity-90 block">Transferencia bancaria directa</span>
+              </button>
             </div>
+
+            {/* Dynamic Payment Details */}
+            {selectedMethod === 'YAPPY' ? (
+              <div className="space-y-4 animate-fade-in">
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  Abre la aplicación de tu banco en tu celular, ingresa a la sección <strong>Yappy</strong> y realiza la transferencia por el total de tu pedido:
+                </p>
+
+                {/* Yappy Account Card */}
+                <div className="bg-gray-900 p-5 rounded-2xl border border-gray-800 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
+                      <span className="text-[11px] text-gray-400 block uppercase font-semibold">Directorio / Número Yappy</span>
+                      <span className="text-lg font-extrabold text-white font-mono tracking-wider">
+                        @RufPixel <span className="text-xs text-gray-400 font-sans">(+507 6445-4084 / 6525-6015)</span>
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleCopyYappy}
+                      className="p-2.5 bg-gray-800 hover:bg-[#FF5E14] text-white rounded-xl text-xs font-bold transition-colors flex items-center space-x-1"
+                    >
+                      <Copy className="w-4 h-4" />
+                      <span>{copiedYappy ? '¡Copiado!' : 'Copiar'}</span>
+                    </button>
+                  </div>
+
+                  <div className="text-[11px] text-gray-400 border-t border-gray-800 pt-2 flex items-center justify-between">
+                    <span>Titular de la cuenta: <strong>RufPixel Impresiones S.A.</strong></span>
+                    <span>Banco: <strong>Banco General</strong></span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-4 animate-fade-in">
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  Realiza una transferencia bancaria electrónica (ACH) desde la banca en línea de tu banco con la siguiente información:
+                </p>
+
+                {/* ACH Bank Account Card */}
+                <div className="bg-gray-900 p-5 rounded-2xl border border-gray-800 space-y-3 text-xs">
+                  <div className="flex items-center justify-between border-b border-gray-800 pb-2">
+                    <div>
+                      <span className="text-gray-400 text-[11px] block">Banco Receptor:</span>
+                      <strong className="text-white text-sm font-outfit">Banco General Panamá</strong>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleCopyAch}
+                      className="p-2 bg-gray-800 hover:bg-[#FF5E14] text-white rounded-xl text-xs font-bold transition-colors flex items-center space-x-1"
+                    >
+                      <Copy className="w-4 h-4" />
+                      <span>{copiedAch ? '¡Copiado!' : 'Copiar Cuenta'}</span>
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-300">
+                    <div>
+                      <span className="text-gray-400 text-[10px] block">Tipo de Cuenta:</span>
+                      <span className="font-bold text-white">Cuenta Corriente</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 text-[10px] block">Número de Cuenta:</span>
+                      <span className="font-bold font-mono text-[#FF5E14] text-sm">03-01-01-294819-2</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 text-[10px] block">Titular / Empresa:</span>
+                      <span className="font-bold text-white">RufPixel Impresiones S.A.</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 text-[10px] block">Correo para Notificación ACH:</span>
+                      <span className="font-bold text-white font-mono">ventas@rufpixel.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Receipt & Transaction ID inputs */}
             <div className="space-y-4 pt-2">
               <div className="space-y-1 text-xs">
                 <label className="font-bold text-white block">
-                  Número de Transacción / Referencia Yappy *
+                  {selectedMethod === 'YAPPY' 
+                    ? 'Número de Transacción / Referencia Yappy *' 
+                    : 'Número de Confirmación / Referencia ACH *'}
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="Ej. YAP-9847201 o número de confirmación"
+                  placeholder={selectedMethod === 'YAPPY' ? 'Ej. YAP-9847201' : 'Ej. ACH-48192048 o comprobante bancario'}
                   value={transactionId}
                   onChange={(e) => setTransactionId(e.target.value)}
                   className="w-full p-3 rounded-xl bg-gray-900 border border-gray-700 text-white focus:border-[#FF5E14] outline-none font-mono"
@@ -267,7 +367,7 @@ export default function CheckoutPage() {
 
               <div className="space-y-1 text-xs">
                 <label className="font-bold text-white block">
-                  Adjuntar Comprobante de Pago (Captura de Yappy - Opcional)
+                  Adjuntar Comprobante de Pago (Captura de Yappy o Comprobante ACH - Opcional)
                 </label>
                 <div className="relative border-2 border-dashed border-gray-700 hover:border-[#FF5E14] rounded-2xl p-4 text-center cursor-pointer bg-gray-900 transition-colors">
                   <input
@@ -279,7 +379,7 @@ export default function CheckoutPage() {
                   <div className="flex flex-col items-center space-y-1">
                     <Upload className="w-6 h-6 text-[#FF5E14]" />
                     <span className="text-gray-300 font-medium">
-                      {receiptFileName ? `Archivo seleccionado: ${receiptFileName}` : 'Haz clic para subir la captura del pago'}
+                      {receiptFileName ? `Archivo seleccionado: ${receiptFileName}` : 'Haz clic para subir la captura o comprobante de pago'}
                     </span>
                     <span className="text-[10px] text-gray-500">Formatos permitidos: JPG, PNG, PDF (Máx. 5MB)</span>
                   </div>
@@ -319,7 +419,9 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>Método de Pago:</span>
-                <span className="font-bold text-[#FF5E14]">Yappy (Validación Humana)</span>
+                <span className="font-bold text-[#FF5E14]">
+                  {selectedMethod === 'YAPPY' ? 'Yappy Panamá' : 'Transferencia ACH'}
+                </span>
               </div>
               <div className="flex justify-between text-base font-extrabold text-gray-900 pt-2 border-t border-gray-100 font-outfit">
                 <span>Total a Pagar:</span>
@@ -343,7 +445,7 @@ export default function CheckoutPage() {
               ) : (
                 <>
                   <ShieldCheck className="w-5 h-5" />
-                  <span>Confirmar Pedido vía Yappy</span>
+                  <span>Confirmar Pedido vía {selectedMethod === 'YAPPY' ? 'Yappy' : 'ACH'}</span>
                 </>
               )}
             </button>

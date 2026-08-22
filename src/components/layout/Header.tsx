@@ -69,7 +69,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <span className="flex items-center text-gray-400">
               <ShieldCheck className="w-3.5 h-3.5 text-[#FF5E14] mr-1" />
-              Pagos seguros vía <strong className="text-white ml-1">Yappy Panamá</strong>
+              Pagos seguros vía <strong className="text-white ml-1">Yappy & Transferencia ACH</strong>
             </span>
             <Link href="/mi-cuenta" className="hover:text-[#FF5E14] transition-colors text-white font-medium">
               Consultar Pedido
@@ -193,7 +193,7 @@ export default function Header() {
             </Link>
             <div className="text-xs text-gray-400 text-center space-y-1">
               <p>📞 WhatsApp: +507 6525-6015 / 6445-4084</p>
-              <p>💳 Pago Yappy con validación humana</p>
+              <p>💳 Pagos Yappy & ACH con validación humana</p>
             </div>
           </div>
         </div>

@@ -156,7 +156,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
             </div>
             <div className="flex items-center space-x-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />
-              <span>Pagos Vía Yappy</span>
+              <span>Pagos Vía Yappy & ACH</span>
             </div>
             <div className="flex items-center space-x-1.5">
               <Truck className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />

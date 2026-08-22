@@ -190,7 +190,7 @@ export default function CotizadorPage() {
               className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-[#FF5E14]/30 flex items-center space-x-2"
             >
               <ShoppingBag className="w-4 h-4" />
-              <span>Ir al Carrito & Pagar Yappy</span>
+              <span>Ir al Carrito & Pagar (Yappy / ACH)</span>
             </Link>
             <button
               onClick={() => setSubmittedOrder(null)}

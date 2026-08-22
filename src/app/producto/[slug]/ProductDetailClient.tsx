@@ -243,7 +243,7 @@ export default function ProductDetailClient({
               <div className="flex items-start space-x-2">
                 <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-bold">Pago Seguro vía Yappy</strong>
+                  <strong className="text-white block font-bold">Pago Seguro vía Yappy & ACH</strong>
                   <span className="text-[11px] text-gray-400">Validación humana e inmediata de tu pago.</span>
                 </div>
               </div>

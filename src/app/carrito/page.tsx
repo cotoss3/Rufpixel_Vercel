@@ -150,17 +150,16 @@ export default function CarritoPage() {
               href="/checkout"
               className="w-full bg-[#FF5E14] hover:bg-[#E04700] text-white py-4 px-6 rounded-xl font-extrabold text-center block shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
             >
-              <span>Proceder al Checkout (Yappy)</span>
-              <ArrowRight className="w-5 h-5" />
+              <span>Proceder al Checkout (Yappy & ACH)</span>
             </Link>
 
-            <div className="bg-gray-50 p-4 rounded-xl border border-gray-200 text-xs text-gray-600 space-y-2">
-              <div className="flex items-center space-x-2 text-gray-900 font-bold">
+            <div className="bg-gray-50 p-4 rounded-2xl border border-gray-200 text-xs space-y-1">
+              <div className="font-bold text-gray-900 flex items-center space-x-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#FF5E14]" />
-                <span>Instrucciones de Pago Yappy</span>
+                <span>Instrucciones de Pago (Yappy & ACH)</span>
               </div>
-              <p>
-                En el siguiente paso completarás tus datos y se mostrará el QR y número telefónico de Yappy RufPixel para realizar tu pago.
+              <p className="text-gray-500 leading-relaxed text-[11px]">
+                En el siguiente paso podrás elegir pagar vía Yappy Panamá (@RufPixel) o Transferencia Bancaria ACH Directa.
               </p>
             </div>
           </div>

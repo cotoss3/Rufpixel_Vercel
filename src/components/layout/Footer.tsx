@@ -24,7 +24,7 @@ export default function Footer() {
             {/* Yappy Notice Pill */}
             <div className="inline-flex items-center space-x-2 bg-gray-900 border border-gray-800 rounded-lg px-3 py-2 text-xs text-gray-300">
               <ShieldCheck className="w-4 h-4 text-[#FF5E14]" />
-              <span>Aceptamos <strong className="text-white">Yappy</strong> con validación humana instantánea</span>
+              <span>Aceptamos <strong className="text-white">Yappy & Transferencia ACH</strong> con validación humana instantánea</span>
             </div>
           </div>
 

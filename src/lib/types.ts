@@ -84,7 +84,7 @@ export interface Order {
   subtotal: number;
   shippingFee: number;
   total: number;
-  paymentMethod: 'YAPPY_HUMAN_VALIDATION';
+  paymentMethod: 'YAPPY_HUMAN_VALIDATION' | 'ACH_TRANSFER' | string;
   paymentProof?: {
     transactionId: string;
     receiptImageUrl?: string;
