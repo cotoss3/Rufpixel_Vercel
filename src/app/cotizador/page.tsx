@@ -296,7 +296,7 @@ export default function CotizadorPage() {
               </div>
 
               {/* MEDIDA PERSONALIZADA BUTTON (DASHED BORDER) */}
-              {!['DTF', 'UVDTF'].includes(activeTab) && (
+              {!['DTF', 'UVDTF', 'GRAN_FORMATO'].includes(activeTab) && (
                 <div className="pt-2">
                   <button
                     type="button"
@@ -329,7 +329,7 @@ export default function CotizadorPage() {
               )}
 
               {/* CUSTOM DIMENSIONS EXPANDABLE INPUTS */}
-              {isCustomSize && !['DTF', 'UVDTF'].includes(activeTab) && (
+              {isCustomSize && !['DTF', 'UVDTF', 'GRAN_FORMATO'].includes(activeTab) && (
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 animate-fade-in text-xs">
                   <span className="font-bold text-gray-900 block">Especificar Dimensiones:</span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
