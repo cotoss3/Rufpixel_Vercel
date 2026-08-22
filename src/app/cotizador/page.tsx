@@ -35,9 +35,10 @@ export default function CotizadorPage() {
       { id: 'uv-yarda-lineal', name: 'Yarda Lineal', dimensions: '11" × 36"', price: 10.70 },
     ],
     GRAN_FORMATO: [
-      { id: 'gf-rollup', name: 'Banner Roll-Up Standard', dimensions: '33" × 78" (85x200cm)', price: 55.00 },
-      { id: 'gf-banner-small', name: 'Banner Pequeño', dimensions: '36" × 48" (90x120cm)', price: 22.00 },
-      { id: 'gf-banner-medium', name: 'Lona Comercial', dimensions: '48" × 96" (120x240cm)', price: 38.00, promo: true, promoBadge: 'MÁS VENDIDO' },
+      { id: 'gf-3x2', name: 'Banner 3 × 2 ft', dimensions: '36" × 24"', price: 9.63 },
+      { id: 'gf-4x4', name: 'Banner 4 × 4 ft', dimensions: '48" × 48"', price: 25.68 },
+      { id: 'gf-6x4', name: 'Banner 6 × 4 ft', dimensions: '72" × 48"', price: 38.52 },
+      { id: 'gf-8x4', name: 'Banner 8 × 4 ft', dimensions: '96" × 48"', price: 44.94, promo: true, promoBadge: 'MÁS POPULAR' },
     ],
     PROMOS: [
       { id: 'p-yarda', name: 'Yarda Promo RufPixel', dimensions: '23" × 36"', price: 9.00, promo: true, promoBadge: 'ESPECIAL' },
