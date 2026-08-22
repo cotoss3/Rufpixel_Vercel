@@ -93,24 +93,27 @@ export default async function HomePage() {
 
             {/* Right Feature Card Image Preview */}
             <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl bg-[#070707] group p-2 flex items-center justify-center">
+              <Link
+                href="/tienda/botellas-y-termos"
+                className="block relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl bg-[#070707] group p-2 flex items-center justify-center"
+              >
                 <img
                   src="/images/hero-home.jpg"
-                  alt="Impresión Digital & Gran Formato RufPixel"
+                  alt="Botellas y Termos Personalizados RufPixel"
                   className="w-full h-auto max-h-[480px] object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
                 />
                 
                 {/* Floating Glass Accent Badge */}
                 <div className="absolute bottom-4 left-4 right-4 bg-[#0D0D0D]/90 backdrop-blur-md p-3.5 rounded-xl border border-gray-800 flex items-center justify-between shadow-lg">
                   <div>
-                    <span className="text-[11px] uppercase font-extrabold tracking-wider text-[#FF5E14]">Servicio Destacado</span>
-                    <h3 className="text-white font-bold text-sm font-outfit">Impresión Digital & Gran Formato</h3>
+                    <span className="text-[11px] uppercase font-extrabold tracking-wider text-[#FF5E14]">Destacado de la Semana</span>
+                    <h3 className="text-white font-bold text-sm font-outfit">Botellas y Termos Personalizados</h3>
                   </div>
-                  <Link href="/cotizador" className="p-2 bg-[#FF5E14] text-white rounded-lg hover:bg-[#E04700] transition-colors" aria-label="Ir al Cotizador">
+                  <div className="p-2 bg-[#FF5E14] text-white rounded-lg group-hover:bg-[#E04700] transition-colors">
                     <ArrowUpRight className="w-5 h-5" />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
           </div>
