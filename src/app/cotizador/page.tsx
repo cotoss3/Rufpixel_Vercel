@@ -40,6 +40,8 @@ export default function CotizadorPage() {
       { id: 'gf-4x4', name: 'Banner 4 × 4 ft', dimensions: '48" × 48"', price: 25.68 },
       { id: 'gf-6x4', name: 'Banner 6 × 4 ft', dimensions: '72" × 48"', price: 38.52 },
       { id: 'gf-8x4', name: 'Banner 8 × 4 ft', dimensions: '96" × 48"', price: 44.94, promo: true, promoBadge: 'MÁS POPULAR' },
+      { id: 'gf-aranita', name: 'Estructura Arañita', dimensions: '24" × 36"', price: 37.45 },
+      { id: 'gf-rollup', name: 'Banner Roll-Up Standard', dimensions: '33" × 79"', price: 69.55, promo: true, promoBadge: 'ESTRUCTURA + IMPRESIÓN' },
     ],
     STICKERS: [
       { id: 'stk-2x2-100', name: 'Sticker 2" × 2"', dimensions: 'Pack 100 unidades', price: 8.56 },
