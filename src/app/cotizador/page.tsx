@@ -31,9 +31,8 @@ export default function CotizadorPage() {
       { id: 'dtf-yarda-lineal', name: 'Yarda Lineal', dimensions: '11" × 36"', price: 6.42 },
     ],
     UVDTF: [
-      { id: 'uv-mini', name: 'Planilla A4', dimensions: '8.2" × 11.6"', price: 5.50 },
-      { id: 'uv-tabloide', name: 'Tabloide UV', dimensions: '11" × 16.5"', price: 8.50 },
-      { id: 'uv-metro', name: 'Metro UV Lineal', dimensions: '23" × 39"', price: 18.00, promo: true, promoBadge: 'MEJOR PRECIO' },
+      { id: 'uv-a4', name: 'A4', dimensions: '8.2" × 11"', price: 5.32 },
+      { id: 'uv-yarda-lineal', name: 'Yarda Lineal', dimensions: '11" × 36"', price: 10.70 },
     ],
     GRAN_FORMATO: [
       { id: 'gf-rollup', name: 'Banner Roll-Up Standard', dimensions: '33" × 78" (85x200cm)', price: 55.00 },
@@ -296,7 +295,7 @@ export default function CotizadorPage() {
               </div>
 
               {/* MEDIDA PERSONALIZADA BUTTON (DASHED BORDER) */}
-              {activeTab !== 'DTF' && (
+              {!['DTF', 'UVDTF'].includes(activeTab) && (
                 <div className="pt-2">
                   <button
                     type="button"
@@ -329,7 +328,7 @@ export default function CotizadorPage() {
               )}
 
               {/* CUSTOM DIMENSIONS EXPANDABLE INPUTS */}
-              {isCustomSize && activeTab !== 'DTF' && (
+              {isCustomSize && !['DTF', 'UVDTF'].includes(activeTab) && (
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 animate-fade-in text-xs">
                   <span className="font-bold text-gray-900 block">Especificar Dimensiones:</span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
