@@ -23,10 +23,15 @@ export interface ProductCategory {
 
 export async function getCategories(): Promise<ProductCategory[]> {
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/categories?per_page=100`, {
       next: { revalidate: 300 },
       headers: HEADLESS_HEADERS,
+      signal: controller.signal,
     });
+    clearTimeout(timeoutId);
 
     if (res.ok) {
       const data = await res.json();
@@ -70,6 +75,9 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 100
     
     // Fetch all 6 pages (598 total items) in parallel
     const pagesToFetch = [1, 2, 3, 4, 5, 6];
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3500);
     
     const pagePromises = pagesToFetch.map(async (pNum) => {
       try {
@@ -77,6 +85,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 100
         const res = await fetch(url, {
           next: { revalidate: 120 },
           headers: HEADLESS_HEADERS,
+          signal: controller.signal,
         });
         if (res.ok) {
           const data = await res.json();
@@ -87,6 +96,7 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 100
     });
 
     const pageResults = await Promise.all(pagePromises);
+    clearTimeout(timeoutId);
     const rawData = pageResults.flat();
 
     if (rawData.length > 0) {

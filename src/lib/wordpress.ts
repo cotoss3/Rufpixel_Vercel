@@ -5,11 +5,17 @@ const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://rufpixe
 
 export async function getBlogPosts(page = 1, perPage = 15): Promise<{ posts: BlogPost[]; totalPages: number; totalPosts: number }> {
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
+
     const url = `${WP_API_URL}/posts?_embed&page=${page}&per_page=${perPage}`;
     const res = await fetch(url, {
       next: { revalidate: 60 },
       headers: { 'Accept': 'application/json' },
+      signal: controller.signal,
     });
+    clearTimeout(timeoutId);
+
     if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
 
     const totalPages = parseInt(res.headers.get('x-wp-totalpages') || '1', 10);
@@ -37,7 +43,7 @@ export async function getBlogPosts(page = 1, perPage = 15): Promise<{ posts: Blo
 
     return { posts, totalPages, totalPosts };
   } catch (error) {
-    console.warn('Error fetching live WordPress blog posts:', error);
+    console.warn('Error fetching live WordPress blog posts (using mock fallback):', error);
     const startIndex = (page - 1) * perPage;
     const paginatedMock = MOCK_BLOG_POSTS.slice(startIndex, startIndex + perPage);
     const totalPages = Math.ceil(MOCK_BLOG_POSTS.length / perPage) || 1;
