@@ -42,17 +42,17 @@ export default function CotizadorPage() {
       { id: 'gf-8x4', name: 'Banner 8 × 4 ft', dimensions: '96" × 48"', price: 44.94, promo: true, promoBadge: 'MÁS POPULAR' },
     ],
     STICKERS: [
-      { id: 'stk-2x2-100', name: 'Sticker 2" × 2"', dimensions: 'Pack 100 unidades', price: 100.00 },
-      { id: 'stk-2x2-500', name: 'Sticker 2" × 2"', dimensions: 'Pack 500 unidades', price: 500.00, promo: true, promoBadge: 'POPULAR' },
-      { id: 'stk-2x2-1000', name: 'Sticker 2" × 2"', dimensions: 'Pack 1,000 unidades', price: 1000.00, promo: true, promoBadge: 'MEJOR PRECIO' },
+      { id: 'stk-2x2-100', name: 'Sticker 2" × 2"', dimensions: 'Pack 100 unidades', price: 8.56 },
+      { id: 'stk-2x2-500', name: 'Sticker 2" × 2"', dimensions: 'Pack 500 unidades', price: 26.75, promo: true, promoBadge: 'POPULAR' },
+      { id: 'stk-2x2-1000', name: 'Sticker 2" × 2"', dimensions: 'Pack 1,000 unidades', price: 48.15, promo: true, promoBadge: 'MEJOR PRECIO' },
 
-      { id: 'stk-3x3-100', name: 'Sticker 3" × 3"', dimensions: 'Pack 100 unidades', price: 100.00 },
-      { id: 'stk-3x3-500', name: 'Sticker 3" × 3"', dimensions: 'Pack 500 unidades', price: 500.00, promo: true, promoBadge: 'POPULAR' },
-      { id: 'stk-3x3-1000', name: 'Sticker 3" × 3"', dimensions: 'Pack 1,000 unidades', price: 1000.00, promo: true, promoBadge: 'MEJOR PRECIO' },
+      { id: 'stk-3x3-100', name: 'Sticker 3" × 3"', dimensions: 'Pack 100 unidades', price: 12.84 },
+      { id: 'stk-3x3-500', name: 'Sticker 3" × 3"', dimensions: 'Pack 500 unidades', price: 42.80, promo: true, promoBadge: 'POPULAR' },
+      { id: 'stk-3x3-1000', name: 'Sticker 3" × 3"', dimensions: 'Pack 1,000 unidades', price: 74.90, promo: true, promoBadge: 'MEJOR PRECIO' },
 
-      { id: 'stk-4x4-100', name: 'Sticker 4" × 4"', dimensions: 'Pack 100 unidades', price: 100.00 },
-      { id: 'stk-4x4-500', name: 'Sticker 4" × 4"', dimensions: 'Pack 500 unidades', price: 500.00, promo: true, promoBadge: 'POPULAR' },
-      { id: 'stk-4x4-1000', name: 'Sticker 4" × 4"', dimensions: 'Pack 1,000 unidades', price: 1000.00, promo: true, promoBadge: 'MEJOR PRECIO' },
+      { id: 'stk-4x4-100', name: 'Sticker 4" × 4"', dimensions: 'Pack 100 unidades', price: 14.98 },
+      { id: 'stk-4x4-500', name: 'Sticker 4" × 4"', dimensions: 'Pack 500 unidades', price: 58.85, promo: true, promoBadge: 'POPULAR' },
+      { id: 'stk-4x4-1000', name: 'Sticker 4" × 4"', dimensions: 'Pack 1,000 unidades', price: 96.30, promo: true, promoBadge: 'MEJOR PRECIO' },
     ],
     PROMOS: [
       { id: 'p-yarda', name: 'Yarda Promo RufPixel', dimensions: '23" × 36"', price: 9.00, promo: true, promoBadge: 'ESPECIAL' },
