@@ -93,20 +93,20 @@ export default async function HomePage() {
 
             {/* Right Feature Card Image Preview */}
             <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl bg-gray-900 group">
+              <div className="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl bg-[#070707] group p-2 flex items-center justify-center">
                 <img
                   src="/images/hero-home.jpg"
                   alt="Impresión Digital & Gran Formato RufPixel"
-                  className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-auto max-h-[480px] object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
                 />
                 
                 {/* Floating Glass Accent Badge */}
-                <div className="absolute bottom-4 left-4 right-4 bg-[#0D0D0D]/90 backdrop-blur-md p-4 rounded-xl border border-gray-800 flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 bg-[#0D0D0D]/90 backdrop-blur-md p-3.5 rounded-xl border border-gray-800 flex items-center justify-between shadow-lg">
                   <div>
-                    <span className="text-xs uppercase font-bold tracking-wider text-[#FF5E14]">Destacado de la semana</span>
-                    <h3 className="text-white font-bold text-base font-outfit">Tarjetas Soft-Touch Premium</h3>
+                    <span className="text-[11px] uppercase font-extrabold tracking-wider text-[#FF5E14]">Servicio Destacado</span>
+                    <h3 className="text-white font-bold text-sm font-outfit">Impresión Digital & Gran Formato</h3>
                   </div>
-                  <Link href="/producto/tarjetas-premium-soft-touch-100u" className="p-2.5 bg-[#FF5E14] text-white rounded-lg hover:bg-[#E04700]">
+                  <Link href="/cotizador" className="p-2 bg-[#FF5E14] text-white rounded-lg hover:bg-[#E04700] transition-colors" aria-label="Ir al Cotizador">
                     <ArrowUpRight className="w-5 h-5" />
                   </Link>
                 </div>
