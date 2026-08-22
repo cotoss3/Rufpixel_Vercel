@@ -5,7 +5,7 @@ import { Search, X, Layers, ChevronRight, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { Product } from '@/lib/types';
 import { ProductCategory } from '@/lib/woocommerce';
-import { getCachedProduct } from '@/lib/productCache';
+import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
 
 interface ProductSearchProps {
   products?: Product[];
@@ -168,7 +168,11 @@ export default function ProductSearch({
                   <Link
                     key={prod.id}
                     href={`/producto/${prod.slug}`}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      setCachedProduct(prod);
+                      setIsOpen(false);
+                    }}
+                    onMouseEnter={() => setCachedProduct(prod)}
                     className="flex items-center space-x-3 p-2.5 hover:bg-gray-50 rounded-xl transition-all group"
                   >
                     <div className="w-14 h-14 rounded-xl overflow-hidden bg-gray-50 border border-gray-200 p-1 shrink-0 flex items-center justify-center">

@@ -233,6 +233,16 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     console.warn('Error in getProductBySlug timeout/abort:', err);
   }
 
+  // Fallback: search in full products list if slug fetch produced no match
+  try {
+    const { products } = await getProducts('todos', 1, 300);
+    const found = products.find((p) => p.slug === slug || p.id === slug);
+    if (found) {
+      productCache.set(slug, { data: found, timestamp: Date.now() });
+      return found;
+    }
+  } catch (err) {}
+
   return null;
 }
 

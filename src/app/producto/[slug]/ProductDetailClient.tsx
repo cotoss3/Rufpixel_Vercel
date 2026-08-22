@@ -6,7 +6,7 @@ import { useCart } from '@/lib/cartContext';
 import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck } from 'lucide-react';
 import Link from 'next/link';
 import { ProductSchema } from '@/components/seo/SchemaOrg';
-import { getCachedProduct } from '@/lib/productCache';
+import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
 
 export default function ProductDetailClient({ 
   product: initialProduct,
@@ -17,9 +17,27 @@ export default function ProductDetailClient({
 }) {
   const { addToCart } = useCart();
 
-  // Instant lookup from client memory cache if user clicked card in shop
+  const [fetchedProduct, setFetchedProduct] = useState<Product | undefined>(undefined);
   const cached = slug ? getCachedProduct(slug) : undefined;
-  const product = cached || initialProduct;
+  const product = cached || initialProduct || fetchedProduct;
+
+  // Fallback client-side fetch if product isn't pre-loaded
+  useEffect(() => {
+    if (!product && slug) {
+      fetch('/api/products')
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && data.products && Array.isArray(data.products)) {
+            const found = data.products.find((p: Product) => p.slug === slug || p.id === slug);
+            if (found) {
+              setCachedProduct(found);
+              setFetchedProduct(found);
+            }
+          }
+        })
+        .catch(() => {});
+    }
+  }, [product, slug]);
 
   // Initial attribute selections
   const [selectedAttributes, setSelectedAttributes] = useState<Record<string, string>>(() => {
@@ -43,10 +61,25 @@ export default function ProductDetailClient({
   const [addedMessage, setAddedMessage] = useState(false);
 
   useEffect(() => {
-    if (product?.image && !selectedImage) {
-      setSelectedImage(product.image);
+    if (product) {
+      if (product.image && !selectedImage) {
+        setSelectedImage(product.image);
+      }
+      if (Object.keys(selectedAttributes).length === 0 && product.attributes) {
+        const initial: Record<string, string> = {};
+        product.attributes.forEach((attr) => {
+          if (attr.options.length > 0) {
+            initial[attr.name] = attr.options[0];
+          }
+        });
+        const qtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
+        if (qtyAttr && qtyAttr.options.includes('50')) {
+          initial[qtyAttr.name] = '50';
+        }
+        setSelectedAttributes(initial);
+      }
     }
-  }, [product, selectedImage]);
+  }, [product, selectedImage, selectedAttributes]);
 
   if (!product) {
     return (
