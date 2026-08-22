@@ -6,6 +6,23 @@ import Link from 'next/link';
 import { Product } from '@/lib/types';
 import { ProductCategory } from '@/lib/woocommerce';
 import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
+import { MOCK_PRODUCTS } from '@/lib/mockData';
+
+const DEFAULT_CATEGORIES: ProductCategory[] = [
+  { id: '1', name: 'Accesorios de Escritorio', slug: 'accesorios-de-escritorio', count: 9 },
+  { id: '2', name: 'Bolígrafos y Plumas', slug: 'boligrafos-y-plumas', count: 24 },
+  { id: '3', name: 'Bolsas y Totes', slug: 'bolsas-y-totes', count: 18 },
+  { id: '4', name: 'Botellas y Termos', slug: 'botellas-y-termos', count: 14 },
+  { id: '5', name: 'Cocina y Hogar', slug: 'cocina-y-hogar', count: 16 },
+  { id: '6', name: 'Gorras y Accesorios de Cabeza', slug: 'gorras-y-accesorios-de-cabeza', count: 11 },
+  { id: '7', name: 'Libretas y Cuadernos', slug: 'libretas-y-cuadernos', count: 14 },
+  { id: '8', name: 'Llaveros', slug: 'llaveros', count: 9 },
+  { id: '9', name: 'Loncheras Térmicas', slug: 'loncheras-termicas', count: 5 },
+  { id: '10', name: 'Mochilas y Maletines', slug: 'mochilas-y-maletines', count: 6 },
+  { id: '11', name: 'Sets y Regalos', slug: 'sets-y-regalos', count: 2 },
+  { id: '12', name: 'Textiles y Ropa', slug: 'textiles-y-ropa', count: 15 },
+  { id: '13', name: 'Vasos y Tazas', slug: 'vasos-y-tazas', count: 16 },
+];
 
 interface ProductSearchProps {
   products?: Product[];
@@ -24,7 +41,33 @@ export default function ProductSearch({
 }: ProductSearchProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Auto-fetch products if parent hasn't passed them yet
+  useEffect(() => {
+    if ((!products || products.length === 0) && fetchedProducts.length === 0) {
+      fetch('/api/products')
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && data.products && Array.isArray(data.products) && data.products.length > 0) {
+            setFetchedProducts(data.products);
+          }
+        })
+        .catch(() => {});
+    }
+  }, [products, fetchedProducts]);
+
+  const activeProducts = useMemo(() => {
+    if (products && products.length > 0) return products;
+    if (fetchedProducts && fetchedProducts.length > 0) return fetchedProducts;
+    return MOCK_PRODUCTS;
+  }, [products, fetchedProducts]);
+
+  const activeCategories = useMemo(() => {
+    if (categories && categories.length > 0) return categories;
+    return DEFAULT_CATEGORIES;
+  }, [categories]);
 
   // Close preview dropdown when clicking outside
   useEffect(() => {
@@ -49,36 +92,56 @@ export default function ProductSearch({
   }, []);
 
   const cleanTerm = searchTerm.toLowerCase().trim();
+  const normalizedTerm = useMemo(() => {
+    return cleanTerm.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }, [cleanTerm]);
 
-  // Instant Matching Categories
+  const tokens = useMemo(() => {
+    if (!normalizedTerm) return [];
+    return normalizedTerm.split(/\s+/).filter(Boolean);
+  }, [normalizedTerm]);
+
+  // Smart Matching Categories (Accent insensitive + partial match)
   const matchedCategories = useMemo(() => {
-    if (!cleanTerm) return [];
-    return categories.filter((c) => c.name.toLowerCase().includes(cleanTerm) || c.slug.includes(cleanTerm)).slice(0, 4);
-  }, [categories, cleanTerm]);
-
-  // Instant Matching Products
-  const matchedProducts = useMemo(() => {
-    if (!cleanTerm) return [];
-    return products
-      .filter((p) => {
-        const nameMatch = p.name.toLowerCase().includes(cleanTerm);
-        const descMatch = p.shortDescription.toLowerCase().includes(cleanTerm);
-        const catMatch = p.category.toLowerCase().includes(cleanTerm);
-        return nameMatch || descMatch || catMatch;
+    if (!normalizedTerm) return [];
+    return activeCategories
+      .filter((c) => {
+        const catNorm = c.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const slugNorm = c.slug.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return tokens.every((tok) => {
+          const baseTok = tok.length > 3 && tok.endsWith('s') ? tok.slice(0, -1) : tok;
+          return catNorm.includes(tok) || catNorm.includes(baseTok) || slugNorm.includes(tok) || slugNorm.includes(baseTok);
+        });
       })
-      .slice(0, 6);
-  }, [products, cleanTerm]);
+      .slice(0, 4);
+  }, [activeCategories, normalizedTerm, tokens]);
 
-  const totalMatches = useMemo(() => {
-    if (!cleanTerm) return 0;
-    return products.filter((p) => {
-      return (
-        p.name.toLowerCase().includes(cleanTerm) ||
-        p.shortDescription.toLowerCase().includes(cleanTerm) ||
-        p.category.toLowerCase().includes(cleanTerm)
-      );
-    }).length;
-  }, [products, cleanTerm]);
+  // Smart Matching Products (Accent-free, plural-free, multi-token matching)
+  const allMatchedProducts = useMemo(() => {
+    if (!tokens.length) return [];
+    return activeProducts.filter((p) => {
+      const nameNorm = p.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const descNorm = (p.shortDescription || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const catNorm = (p.category || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const slugNorm = (p.slug || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+      return tokens.every((tok) => {
+        const baseTok = tok.length > 3 && tok.endsWith('s') ? tok.slice(0, -1) : tok;
+        return (
+          nameNorm.includes(tok) || nameNorm.includes(baseTok) ||
+          descNorm.includes(tok) || descNorm.includes(baseTok) ||
+          catNorm.includes(tok) || catNorm.includes(baseTok) ||
+          slugNorm.includes(tok) || slugNorm.includes(baseTok)
+        );
+      });
+    });
+  }, [activeProducts, tokens]);
+
+  const matchedProducts = useMemo(() => {
+    return allMatchedProducts.slice(0, 6);
+  }, [allMatchedProducts]);
+
+  const totalMatches = allMatchedProducts.length;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);

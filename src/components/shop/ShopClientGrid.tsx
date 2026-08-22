@@ -65,13 +65,27 @@ export default function ShopClientGrid({
     // 2. Search Term Filter
     if (searchTerm.trim()) {
       const cleanTerm = searchTerm.toLowerCase().trim();
-      result = result.filter((p) => {
-        return (
-          p.name.toLowerCase().includes(cleanTerm) ||
-          p.shortDescription.toLowerCase().includes(cleanTerm) ||
-          p.category.toLowerCase().includes(cleanTerm)
-        );
-      });
+      const normTerm = cleanTerm.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const tokens = normTerm.split(/\s+/).filter(Boolean);
+
+      if (tokens.length > 0) {
+        result = result.filter((p) => {
+          const nameNorm = p.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          const descNorm = (p.shortDescription || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          const catNorm = (p.category || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          const slugNorm = (p.slug || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+          return tokens.every((tok) => {
+            const baseTok = tok.length > 3 && tok.endsWith('s') ? tok.slice(0, -1) : tok;
+            return (
+              nameNorm.includes(tok) || nameNorm.includes(baseTok) ||
+              descNorm.includes(tok) || descNorm.includes(baseTok) ||
+              catNorm.includes(tok) || catNorm.includes(baseTok) ||
+              slugNorm.includes(tok) || slugNorm.includes(baseTok)
+            );
+          });
+        });
+      }
     }
 
     return result;
