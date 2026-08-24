@@ -10,10 +10,6 @@ const HEADLESS_HEADERS = {
   'User-Agent': 'RufPixel-Headless-Storefront/1.0 (Sincronizacion de Catalogo y Pedidos RufPixel Vercel)',
 };
 
-// In-Memory Cache Map for Instant PDP Loading
-const productCache = new Map<string, { data: Product; timestamp: number }>();
-const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
-
 export interface ProductCategory {
   id: string;
   name: string;
@@ -21,13 +17,26 @@ export interface ProductCategory {
   count: number;
 }
 
+// In-Memory Global Server Caches
+const productCache = new Map<string, { data: Product; timestamp: number }>();
+let globalCatalogCache: { products: Product[]; timestamp: number } | null = null;
+let globalCategoriesCache: { categories: ProductCategory[]; timestamp: number } | null = null;
+
+const CATALOG_CACHE_TTL = 15 * 60 * 1000; // 15 minutes
+const PDP_CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+
 export async function getCategories(): Promise<ProductCategory[]> {
+  // 1. Serve from Server Memory Cache if valid (< 1ms)
+  if (globalCategoriesCache && Date.now() - globalCategoriesCache.timestamp < CATALOG_CACHE_TTL) {
+    return globalCategoriesCache.categories;
+  }
+
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 3000);
 
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/categories?per_page=100`, {
-      next: { revalidate: 300 },
+      next: { revalidate: 900 },
       headers: HEADLESS_HEADERS,
       signal: controller.signal,
     });
@@ -36,7 +45,7 @@ export async function getCategories(): Promise<ProductCategory[]> {
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        return data
+        const categories = data
           .filter((c: any) => c.slug !== 'sin-categorizar' && c.count > 0)
           .map((c: any) => ({
             id: String(c.id),
@@ -44,14 +53,17 @@ export async function getCategories(): Promise<ProductCategory[]> {
             slug: c.slug,
             count: c.count,
           }));
+
+        globalCategoriesCache = { categories, timestamp: Date.now() };
+        return categories;
       }
     }
   } catch (err) {
-    console.warn('Error fetching live categories:', err);
+    console.warn('Error fetching live categories, using cache/fallback:', err);
   }
 
-  // Fallback category list
-  return [
+  // Fallback category list if API times out
+  const fallbackCategories: ProductCategory[] = [
     { id: '1', name: 'Accesorios de Escritorio', slug: 'accesorios-de-escritorio', count: 9 },
     { id: '2', name: 'Bolígrafos y Plumas', slug: 'boligrafos-y-plumas', count: 24 },
     { id: '3', name: 'Bolsas y Totes', slug: 'bolsas-y-totes', count: 18 },
@@ -66,14 +78,31 @@ export async function getCategories(): Promise<ProductCategory[]> {
     { id: '12', name: 'Textiles y Ropa', slug: 'textiles-y-ropa', count: 15 },
     { id: '13', name: 'Vasos y Tazas', slug: 'vasos-y-tazas', count: 16 },
   ];
+
+  return fallbackCategories;
 }
 
-// Fetch all 598 products across Pages 1 to 6 in parallel to include 100% of all WordPress items and URLs
-export async function getProducts(categorySlug?: string, page = 1, perPage = 100): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
+// ULTRA-FAST & RESILIENT PRODUCT CATALOG FETCHING WITH IN-MEMORY SERVER CACHING
+export async function getProducts(
+  categorySlug?: string,
+  page = 1,
+  perPage = 100
+): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
+  // 1. Return from In-Memory Server Cache instantly (< 1ms) if fresh
+  if (globalCatalogCache && Date.now() - globalCatalogCache.timestamp < CATALOG_CACHE_TTL) {
+    const allCached = globalCatalogCache.products;
+    const filtered = filterProductsByCategory(allCached, categorySlug);
+    return {
+      products: filtered,
+      totalPages: Math.ceil(filtered.length / 32) || 1,
+      totalProducts: filtered.length,
+    };
+  }
+
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
     
-    // Fetch all 6 pages (598 total items) in parallel
+    // Batch fetch pages smoothly (Pages 1 to 6) with 3.5s timeout controller to prevent hanging
     const pagesToFetch = [1, 2, 3, 4, 5, 6];
 
     const controller = new AbortController();
@@ -81,12 +110,17 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 100
     
     const pagePromises = pagesToFetch.map(async (pNum) => {
       try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3500);
+
         const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100&page=${pNum}${categoryParam}`;
         const res = await fetch(url, {
-          next: { revalidate: 120 },
+          next: { revalidate: 900 },
           headers: HEADLESS_HEADERS,
           signal: controller.signal,
         });
+        clearTimeout(timeoutId);
+
         if (res.ok) {
           const data = await res.json();
           return Array.isArray(data) ? data : [];
@@ -153,30 +187,56 @@ export async function getProducts(categorySlug?: string, page = 1, perPage = 100
       formattedProducts.forEach(p => uniqueProductsMap.set(p.id, p));
       const uniqueProducts = Array.from(uniqueProductsMap.values());
 
-      return { products: uniqueProducts, totalPages: Math.ceil(uniqueProducts.length / 32) || 1, totalProducts: uniqueProducts.length };
+      // Save to global server memory cache
+      globalCatalogCache = { products: uniqueProducts, timestamp: Date.now() };
+
+      const filtered = filterProductsByCategory(uniqueProducts, categorySlug);
+      return { products: filtered, totalPages: Math.ceil(filtered.length / 32) || 1, totalProducts: filtered.length };
     }
   } catch (err) {
-    console.warn('Store API multi-page fetch error', err);
+    console.warn('Store API multi-page fetch warning:', err);
   }
 
-  // Fallback Mock Data
-  let filteredMock = MOCK_PRODUCTS;
-  if (categorySlug && categorySlug !== 'todos') {
-    filteredMock = MOCK_PRODUCTS.filter(p => p.categorySlug === categorySlug || p.categories?.some(c => c.slug === categorySlug));
+  // If server fetch failed or timed out, use stale cache if available
+  if (globalCatalogCache) {
+    const staleProducts = filterProductsByCategory(globalCatalogCache.products, categorySlug);
+    return { products: staleProducts, totalPages: Math.ceil(staleProducts.length / 32) || 1, totalProducts: staleProducts.length };
   }
 
+  // Fallback Mock Data as absolute safety net
+  let filteredMock = filterProductsByCategory(MOCK_PRODUCTS, categorySlug);
   return { products: filteredMock, totalPages: 1, totalProducts: filteredMock.length };
+}
+
+// Helper to filter products by category slug
+function filterProductsByCategory(products: Product[], categorySlug?: string): Product[] {
+  if (!categorySlug || categorySlug === 'todos') return products;
+  const cleanSlug = categorySlug.toLowerCase().trim();
+  return products.filter((p) => {
+    if (p.categories && p.categories.some((c) => c.slug.toLowerCase() === cleanSlug)) return true;
+    if (p.categorySlug && p.categorySlug.toLowerCase() === cleanSlug) return true;
+    return false;
+  });
 }
 
 // ULTRA-FAST PDP LOOKUP WITH MEMORY CACHE & UNFILTERED SLUG FALLBACK
 export async function getProductBySlug(slug: string): Promise<Product | null> {
-  // Check memory cache for instant response (< 2ms)
+  // 1. Check memory cache for instant response (< 1ms)
   const cached = productCache.get(slug);
-  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+  if (cached && Date.now() - cached.timestamp < PDP_CACHE_TTL) {
     return cached.data;
   }
 
-  // Fast search in local mock data first if available
+  // 2. Check if product exists in global catalog cache
+  if (globalCatalogCache) {
+    const foundInCatalog = globalCatalogCache.products.find(p => p.slug === slug);
+    if (foundInCatalog) {
+      productCache.set(slug, { data: foundInCatalog, timestamp: Date.now() });
+      return foundInCatalog;
+    }
+  }
+
+  // 3. Fast search in local mock data
   const localMock = MOCK_PRODUCTS.find(p => p.slug === slug);
   if (localMock) return localMock;
 
@@ -185,7 +245,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     const timeoutId = setTimeout(() => controller.abort(), 2000);
 
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`, {
-      next: { revalidate: 300 },
+      next: { revalidate: 900 },
       headers: HEADLESS_HEADERS,
       signal: controller.signal,
     });

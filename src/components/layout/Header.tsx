@@ -16,15 +16,28 @@ export default function Header() {
   const pathname = usePathname();
   const { totalItems } = useCart();
 
-  // Pre-fetch lightweight catalog for global Header Search bar
+  // Pre-fetch lightweight catalog for global Header Search bar with sessionStorage cache
   useEffect(() => {
     async function loadSearchData() {
       try {
+        const cachedStr = typeof window !== 'undefined' ? sessionStorage.getItem('rufpixel_search_catalog') : null;
+        if (cachedStr) {
+          const parsed = JSON.parse(cachedStr);
+          if (parsed.products && parsed.categories) {
+            setProducts(parsed.products);
+            setCategories(parsed.categories);
+            return;
+          }
+        }
+
         const res = await fetch('/api/products');
         if (res.ok) {
           const data = await res.json();
           if (data.products) setProducts(data.products);
           if (data.categories) setCategories(data.categories);
+          if (typeof window !== 'undefined' && data.products) {
+            sessionStorage.setItem('rufpixel_search_catalog', JSON.stringify({ products: data.products, categories: data.categories }));
+          }
         }
       } catch (e) {}
     }
