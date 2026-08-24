@@ -7,7 +7,7 @@ const CS = process.env.WOOCOMMERCE_CONSUMER_SECRET || 'cs_cf44b18a5302efd0464436
 
 const HEADLESS_HEADERS = {
   'Accept': 'application/json',
-  'User-Agent': 'RufPixel-Headless-Storefront/1.0 (Sincronizacion de Catalogo y Pedidos RufPixel Vercel)',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 RufPixel-Headless/1.0',
 };
 
 export interface ProductCategory {
@@ -21,9 +21,10 @@ export interface ProductCategory {
 const productCache = new Map<string, { data: Product; timestamp: number }>();
 let globalCatalogCache: { products: Product[]; timestamp: number } | null = null;
 let globalCategoriesCache: { categories: ProductCategory[]; timestamp: number } | null = null;
+let isFetchingBackgroundCatalog = false;
 
-const CATALOG_CACHE_TTL = 15 * 60 * 1000; // 15 minutes
-const PDP_CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+const CATALOG_CACHE_TTL = 30 * 60 * 1000; // 30 minutes memory TTL
+const FETCH_TIMEOUT_MS = 12000; // 12 seconds safe timeout for WordPress REST API
 
 export async function getCategories(): Promise<ProductCategory[]> {
   // 1. Serve from Server Memory Cache if valid (< 1ms)
@@ -33,10 +34,10 @@ export async function getCategories(): Promise<ProductCategory[]> {
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3000);
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products/categories?per_page=100`, {
-      next: { revalidate: 900 },
+      next: { revalidate: 1800 },
       headers: HEADLESS_HEADERS,
       signal: controller.signal,
     });
@@ -82,13 +83,13 @@ export async function getCategories(): Promise<ProductCategory[]> {
   return fallbackCategories;
 }
 
-// ULTRA-FAST & RESILIENT PRODUCT CATALOG FETCHING WITH IN-MEMORY SERVER CACHING
+// ULTRA-FAST & RESILIENT PRODUCT CATALOG FETCHING
 export async function getProducts(
   categorySlug?: string,
   page = 1,
   perPage = 100
 ): Promise<{ products: Product[]; totalPages: number; totalProducts: number }> {
-  // 1. Return from In-Memory Server Cache instantly (< 1ms) if fresh
+  // 1. Return from In-Memory Server Cache instantly (< 1ms) if available and fresh
   if (globalCatalogCache && Date.now() - globalCatalogCache.timestamp < CATALOG_CACHE_TTL) {
     const allCached = globalCatalogCache.products;
     const filtered = filterProductsByCategory(allCached, categorySlug);
@@ -101,103 +102,48 @@ export async function getProducts(
 
   try {
     const categoryParam = categorySlug && categorySlug !== 'todos' ? `&category=${categorySlug}` : '';
-    
-    // Batch fetch pages smoothly (Pages 1 to 6) with 3.5s timeout controller to prevent hanging
-    const pagesToFetch = [1, 2, 3, 4, 5, 6];
 
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500);
-    
-    const pagePromises = pagesToFetch.map(async (pNum) => {
-      try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3500);
+    // Fetch Page 1 first (100 items) with generous 12s timeout
+    const controllerP1 = new AbortController();
+    const timeoutP1 = setTimeout(() => controllerP1.abort(), FETCH_TIMEOUT_MS);
 
-        const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100&page=${pNum}${categoryParam}`;
-        const res = await fetch(url, {
-          next: { revalidate: 900 },
-          headers: HEADLESS_HEADERS,
-          signal: controller.signal,
-        });
-        clearTimeout(timeoutId);
-
-        if (res.ok) {
-          const data = await res.json();
-          return Array.isArray(data) ? data : [];
-        }
-      } catch (e) {}
-      return [];
+    const p1Url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100&page=1${categoryParam}`;
+    const p1Res = await fetch(p1Url, {
+      next: { revalidate: 1800 },
+      headers: HEADLESS_HEADERS,
+      signal: controllerP1.signal,
     });
+    clearTimeout(timeoutP1);
 
-    const pageResults = await Promise.all(pagePromises);
-    clearTimeout(timeoutId);
-    const rawData = pageResults.flat();
+    if (p1Res.ok) {
+      const p1Data = await p1Res.json();
+      if (Array.isArray(p1Data) && p1Data.length > 0) {
+        const formattedP1 = formatRawProducts(p1Data);
 
-    if (rawData.length > 0) {
-      const formattedProducts: Product[] = rawData.map((prod: any) => {
-        const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
-        const maxAmount = prod.prices?.price_range?.max_amount ? parseFloat(prod.prices.price_range.max_amount) / 100 : undefined;
-        const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
-        const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
+        // Save Page 1 to cache immediately
+        globalCatalogCache = { products: formattedP1, timestamp: Date.now() };
 
-        const parsedAttributes = prod.attributes?.map((attr: any) => {
-          const rawOptions = attr.options && attr.options.length > 0
-            ? attr.options
-            : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
-          return {
-            name: attr.name,
-            options: rawOptions,
-          };
-        }).filter((a: any) => a.options.length > 0) || [];
+        // Asynchronously fetch remaining pages (Pages 2 to 6) in background
+        if (!isFetchingBackgroundCatalog && (!categorySlug || categorySlug === 'todos')) {
+          isFetchingBackgroundCatalog = true;
+          fetchRemainingPages(formattedP1).finally(() => {
+            isFetchingBackgroundCatalog = false;
+          });
+        }
 
-        const catList = prod.categories?.map((c: any) => ({
-          id: String(c.id),
-          name: c.name,
-          slug: c.slug,
-        })) || [];
-
-        const formatted: Product = {
-          id: String(prod.id),
-          slug: prod.slug,
-          name: prod.name,
-          price: rawPrice > 0 ? rawPrice : 5.00,
-          regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
-          priceMin: minAmount,
-          priceMax: maxAmount,
-          description: prod.description || prod.short_description || '',
-          shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
-          category: prod.categories?.[0]?.name || 'Productos RufPixel',
-          categorySlug: prod.categories?.[0]?.slug || 'general',
-          categories: catList,
-          image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-          gallery: prod.images?.map((img: any) => img.src) || [],
-          stock: prod.is_in_stock ?? 100,
-          type: prod.type || 'simple',
-          attributes: parsedAttributes,
-          featured: prod.is_featured || false,
+        const filtered = filterProductsByCategory(formattedP1, categorySlug);
+        return {
+          products: filtered,
+          totalPages: Math.ceil(filtered.length / 32) || 1,
+          totalProducts: filtered.length,
         };
-
-        // Cache product for instant slug lookups
-        productCache.set(prod.slug, { data: formatted, timestamp: Date.now() });
-        return formatted;
-      });
-
-      // Deduplicate products by id
-      const uniqueProductsMap = new Map<string, Product>();
-      formattedProducts.forEach(p => uniqueProductsMap.set(p.id, p));
-      const uniqueProducts = Array.from(uniqueProductsMap.values());
-
-      // Save to global server memory cache
-      globalCatalogCache = { products: uniqueProducts, timestamp: Date.now() };
-
-      const filtered = filterProductsByCategory(uniqueProducts, categorySlug);
-      return { products: filtered, totalPages: Math.ceil(filtered.length / 32) || 1, totalProducts: filtered.length };
+      }
     }
   } catch (err) {
-    console.warn('Store API multi-page fetch warning:', err);
+    console.warn('Store API page 1 fetch warning:', err);
   }
 
-  // If server fetch failed or timed out, use stale cache if available
+  // If live fetch failed, use stale cache if available
   if (globalCatalogCache) {
     const staleProducts = filterProductsByCategory(globalCatalogCache.products, categorySlug);
     return { products: staleProducts, totalPages: Math.ceil(staleProducts.length / 32) || 1, totalProducts: staleProducts.length };
@@ -206,6 +152,94 @@ export async function getProducts(
   // Fallback Mock Data as absolute safety net
   let filteredMock = filterProductsByCategory(MOCK_PRODUCTS, categorySlug);
   return { products: filteredMock, totalPages: 1, totalProducts: filteredMock.length };
+}
+
+// Background worker to fetch Pages 2 to 6 without blocking user requests
+async function fetchRemainingPages(initialP1Products: Product[]) {
+  try {
+    const remainingPages = [2, 3, 4, 5, 6];
+    const promises = remainingPages.map(async (pNum) => {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+        const url = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100&page=${pNum}`;
+        const res = await fetch(url, {
+          next: { revalidate: 1800 },
+          headers: HEADLESS_HEADERS,
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          return Array.isArray(data) ? formatRawProducts(data) : [];
+        }
+      } catch (e) {}
+      return [];
+    });
+
+    const results = await Promise.all(promises);
+    const allProducts = [initialP1Products, ...results].flat();
+
+    // Deduplicate by ID
+    const uniqueMap = new Map<string, Product>();
+    allProducts.forEach((p) => uniqueMap.set(p.id, p));
+    const fullCatalog = Array.from(uniqueMap.values());
+
+    globalCatalogCache = { products: fullCatalog, timestamp: Date.now() };
+  } catch (e) {
+    console.warn('Error fetching background pages:', e);
+  }
+}
+
+// Helper to format raw WooCommerce store products
+function formatRawProducts(rawData: any[]): Product[] {
+  return rawData.map((prod: any) => {
+    const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
+    const maxAmount = prod.prices?.price_range?.max_amount ? parseFloat(prod.prices.price_range.max_amount) / 100 : undefined;
+    const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
+    const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
+
+    const parsedAttributes = prod.attributes?.map((attr: any) => {
+      const rawOptions = attr.options && attr.options.length > 0
+        ? attr.options
+        : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
+      return {
+        name: attr.name,
+        options: rawOptions,
+      };
+    }).filter((a: any) => a.options.length > 0) || [];
+
+    const catList = prod.categories?.map((c: any) => ({
+      id: String(c.id),
+      name: c.name,
+      slug: c.slug,
+    })) || [];
+
+    const formatted: Product = {
+      id: String(prod.id),
+      slug: prod.slug,
+      name: prod.name,
+      price: rawPrice > 0 ? rawPrice : 5.00,
+      regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
+      priceMin: minAmount,
+      priceMax: maxAmount,
+      description: prod.description || prod.short_description || '',
+      shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
+      category: prod.categories?.[0]?.name || 'Productos RufPixel',
+      categorySlug: prod.categories?.[0]?.slug || 'general',
+      categories: catList,
+      image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
+      gallery: prod.images?.map((img: any) => img.src) || [],
+      stock: prod.is_in_stock ?? 100,
+      type: prod.type || 'simple',
+      attributes: parsedAttributes,
+      featured: prod.is_featured || false,
+    };
+
+    // Cache product for instant slug lookups
+    productCache.set(prod.slug, { data: formatted, timestamp: Date.now() });
+    return formatted;
+  });
 }
 
 // Helper to filter products by category slug
@@ -223,7 +257,7 @@ function filterProductsByCategory(products: Product[], categorySlug?: string): P
 export async function getProductBySlug(slug: string): Promise<Product | null> {
   // 1. Check memory cache for instant response (< 1ms)
   const cached = productCache.get(slug);
-  if (cached && Date.now() - cached.timestamp < PDP_CACHE_TTL) {
+  if (cached && Date.now() - cached.timestamp < CATALOG_CACHE_TTL) {
     return cached.data;
   }
 
@@ -242,10 +276,10 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`, {
-      next: { revalidate: 900 },
+      next: { revalidate: 1800 },
       headers: HEADLESS_HEADERS,
       signal: controller.signal,
     });
@@ -254,64 +288,16 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        const prod = data[0];
-        const minAmount = prod.prices?.price_range?.min_amount ? parseFloat(prod.prices.price_range.min_amount) / 100 : undefined;
-        const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
-        const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : undefined;
-
-        const parsedAttributes = prod.attributes?.map((attr: any) => {
-          const rawOptions = attr.options && attr.options.length > 0
-            ? attr.options
-            : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
-          return {
-            name: attr.name,
-            options: rawOptions,
-          };
-        }).filter((a: any) => a.options.length > 0) || [];
-
-        const catList = prod.categories?.map((c: any) => ({
-          id: String(c.id),
-          name: c.name,
-          slug: c.slug,
-        })) || [];
-
-        const productObj: Product = {
-          id: String(prod.id),
-          slug: prod.slug,
-          name: prod.name,
-          price: rawPrice > 0 ? rawPrice : 5.00,
-          regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
-          description: prod.description || prod.short_description || '',
-          shortDescription: (prod.short_description || prod.description || '').replace(/<[^>]+>/g, '').slice(0, 150),
-          category: prod.categories?.[0]?.name || 'Productos RufPixel',
-          categorySlug: prod.categories?.[0]?.slug || 'general',
-          categories: catList,
-          image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-          gallery: prod.images?.map((img: any) => img.src) || [],
-          stock: prod.is_in_stock ?? 100,
-          type: prod.type || 'simple',
-          attributes: parsedAttributes,
-          featured: prod.is_featured || false,
-        };
-
-        // Cache result for subsequent instant hits
-        productCache.set(slug, { data: productObj, timestamp: Date.now() });
-        return productObj;
+        const formatted = formatRawProducts(data)[0];
+        if (formatted) {
+          productCache.set(slug, { data: formatted, timestamp: Date.now() });
+          return formatted;
+        }
       }
     }
   } catch (err) {
     console.warn('Error in getProductBySlug timeout/abort:', err);
   }
-
-  // Fallback: search in full products list if slug fetch produced no match
-  try {
-    const { products } = await getProducts('todos', 1, 300);
-    const found = products.find((p) => p.slug === slug || p.id === slug);
-    if (found) {
-      productCache.set(slug, { data: found, timestamp: Date.now() });
-      return found;
-    }
-  } catch (err) {}
 
   return null;
 }
