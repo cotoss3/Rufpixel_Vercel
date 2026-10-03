@@ -24,7 +24,7 @@ export default function Footer() {
             {/* Yappy Notice Pill */}
             <div className="inline-flex items-center space-x-2 bg-gray-900 border border-gray-800 rounded-lg px-3 py-2 text-xs text-gray-300">
               <ShieldCheck className="w-4 h-4 text-[#FF5E14]" />
-              <span>Aceptamos <strong className="text-white">Yappy & Transferencia ACH</strong> con validación humana instantánea</span>
+              <span>Pagos seguros vía <strong className="text-white">YAPPY COMERCIAL & TRANSFERENCIA ACH</strong></span>
             </div>
           </div>
 
@@ -35,8 +35,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-gray-300">
               <li>
-                <Link href="/servicios/tarjetas-de-presentacion" className="hover:text-[#FF5E14] transition-colors flex items-center">
-                  <span>Tarjetas de Presentación</span>
+                <Link href="/servicios/grabados-laser" className="hover:text-[#FF5E14] transition-colors flex items-center">
+                  <span>Grabados Láser Premium</span>
                 </Link>
               </li>
               <li>
@@ -46,17 +46,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/servicios/flyers-y-folletos" className="hover:text-[#FF5E14] transition-colors flex items-center">
-                  <span>Flyers & Volantes</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicios/stickers-y-etiquetas" className="hover:text-[#FF5E14] transition-colors flex items-center">
-                  <span>Stickers & Etiquetas</span>
+                  <span>Flyers & Folletos</span>
                 </Link>
               </li>
               <li>
                 <Link href="/servicios/material-promocional-pop" className="hover:text-[#FF5E14] transition-colors flex items-center">
-                  <span>Gift Cards & POP</span>
+                  <span>Material Promocional & POP</span>
                 </Link>
               </li>
             </ul>
@@ -68,9 +63,9 @@ export default function Footer() {
               Navegación
             </h4>
             <ul className="space-y-2.5 text-sm text-gray-300">
-              <li><Link href="/tienda" className="hover:text-[#FF5E14] transition-colors">Catálogo de Productos</Link></li>
+              <li><Link href="/tienda" className="hover:text-[#FF5E14] transition-colors">Catálogo de Tienda</Link></li>
               <li><Link href="/cotizador" className="hover:text-[#FF5E14] transition-colors">Cotizador de Pre-orden</Link></li>
-              <li><Link href="/blog" className="hover:text-[#FF5E14] transition-colors">Artículos del Blog</Link></li>
+              <li><Link href="/galeria" className="hover:text-[#FF5E14] transition-colors">Galería de Trabajos</Link></li>
               <li><Link href="/nosotros" className="hover:text-[#FF5E14] transition-colors">Acerca de RufPixel</Link></li>
               <li><Link href="/contacto" className="hover:text-[#FF5E14] transition-colors">Contacto & Ubicación</Link></li>
               <li><Link href="/mi-cuenta" className="hover:text-[#FF5E14] transition-colors">Consultar Pedido</Link></li>
@@ -85,15 +80,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-[#FF5E14] shrink-0 mt-0.5" />
-                <span>Ciudad de Panamá, Vía España, Edificio RufPixel</span>
+                <span>Ciudad de La Chorrera - Panamá Oeste - Calle Arnoldo Cano - Barrio Colón - Local 1.</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                <span>+507 6525-6015 / 6445-4084</span>
+                <span>+507 6445-4084</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                <span>ventas@rufpixel.com</span>
+                <span>ventas@rufpixel.com / info@rufpixel.com</span>
               </li>
             </ul>
 

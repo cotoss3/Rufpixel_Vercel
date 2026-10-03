@@ -17,6 +17,7 @@ export default async function HomePage() {
   const recentPosts = posts.slice(0, 3);
 
   const iconMap: Record<string, React.ReactNode> = {
+    Sparkles: <Sparkles className="w-8 h-8 text-[#FF5E14]" />,
     CreditCard: <CreditCard className="w-8 h-8 text-[#FF5E14]" />,
     Maximize2: <Maximize2 className="w-8 h-8 text-[#FF5E14]" />,
     FileText: <FileText className="w-8 h-8 text-[#FF5E14]" />,
@@ -74,10 +75,10 @@ export default async function HomePage() {
               </div>
 
               {/* Features Micro-bar */}
-              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-gray-800 text-xs text-gray-400">
+              <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gray-800 text-xs text-gray-400">
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Calidad de Impresión 1440 DPI</span>
+                  <span>Calidad de impresión</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#FF5E14] shrink-0" />
@@ -85,7 +86,7 @@ export default async function HomePage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Pagos Seguros vía Yappy</span>
+                  <span>Pagos seguros vía YAPPY COMERCIAL & TRANSFERENCIA ACH</span>
                 </div>
               </div>
 
@@ -94,12 +95,12 @@ export default async function HomePage() {
             {/* Right Feature Card Image Preview */}
             <div className="lg:col-span-5 relative">
               <Link
-                href="/tienda/botellas-y-termos"
+                href="/tienda?category=grabados-laser"
                 className="block relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl bg-[#070707] group p-2 flex items-center justify-center"
               >
                 <img
                   src="/images/hero-home.jpg"
-                  alt="Botellas y Termos Personalizados RufPixel"
+                  alt="Grabados Láser Personalizados RufPixel"
                   className="w-full h-auto max-h-[480px] object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
                 />
                 
@@ -107,7 +108,8 @@ export default async function HomePage() {
                 <div className="absolute bottom-4 left-4 right-4 bg-[#0D0D0D]/90 backdrop-blur-md p-3.5 rounded-xl border border-gray-800 flex items-center justify-between shadow-lg">
                   <div>
                     <span className="text-[11px] uppercase font-extrabold tracking-wider text-[#FF5E14]">Destacado de la Semana</span>
-                    <h3 className="text-white font-bold text-sm font-outfit">Botellas y Termos Personalizados</h3>
+                    <h3 className="text-white font-bold text-sm font-outfit">GRABADOS LÁSER PERSONALIZADOS</h3>
+                    <p className="text-xs text-gray-400">Botellas, Termos y Artículos Corporativos</p>
                   </div>
                   <div className="p-2 bg-[#FF5E14] text-white rounded-lg group-hover:bg-[#E04700] transition-colors">
                     <ArrowUpRight className="w-5 h-5" />
@@ -325,60 +327,82 @@ export default async function HomePage() {
       </section>
 
 
-      {/* 6. RECENT BLOG POSTS (WORDPRESS) */}
+      {/* 6. GALERÍA DE TRABAJOS REALIZADOS (@rufpixel) */}
       <section className="bg-white py-16 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
             <div>
-              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E14]">Blog & Artículos</span>
+              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E14]">Portafolio Real — @rufpixel</span>
               <h2 className="text-3xl font-extrabold text-gray-900 font-outfit mt-1">
-                Consejos de Impresión & Diseño
+                Galería de Trabajos Realizados
               </h2>
+              <p className="text-gray-500 text-sm mt-1">
+                Proyectos entregados con acabados profesionales en Panamá Oeste y Ciudad de Panamá.
+              </p>
             </div>
             <Link
-              href="/blog"
+              href="/galeria"
               className="mt-4 md:mt-0 text-sm font-bold text-[#FF5E14] hover:text-[#E04700] flex items-center space-x-1"
             >
-              <span>Ver todos los artículos</span>
+              <span>Ver galería completa de trabajos</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {recentPosts.map((post) => (
-              <article key={post.id} className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 flex flex-col justify-between group">
-                <div>
-                  <div className="h-48 overflow-hidden relative">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-3 left-3 bg-[#FF5E14] text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">
-                      {post.category}
-                    </span>
-                  </div>
-                  <div className="p-6 space-y-2">
-                    <span className="text-xs text-gray-400">{post.date} · {post.readTime}</span>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#FF5E14] transition-colors font-outfit line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-xs text-gray-600 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Grabados Láser en Botellas & Termos',
+                category: 'Grabados Láser',
+                image: '/images/banners/banner-grabados-laser.jpg',
+                tag: 'Acabado Imborrable',
+              },
+              {
+                title: 'Impresión Gran Formato & Roll-Up',
+                category: 'Gran Formato',
+                image: '/images/banners/banner-gran-formato.jpg',
+                tag: 'Lona 13oz & Tintas Eco-Solventes',
+              },
+              {
+                title: 'Transfer UV DTF de Alta Resistencia',
+                category: 'UVDTF',
+                image: '/images/banners/banner-uvdtf.jpg',
+                tag: 'Relieve Táctil & Full Color',
+              },
+              {
+                title: 'Stickers Troquelados Personalizados',
+                category: 'Stickers',
+                image: '/images/banners/banner-stickers.jpg',
+                tag: 'Vinil Impermeable',
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 group hover:shadow-lg transition-all flex flex-col justify-between">
+                <div className="h-48 overflow-hidden relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#0D0D0D]/90 backdrop-blur-sm text-[#FF5E14] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-gray-800">
+                    {item.category}
+                  </span>
                 </div>
-
-                <div className="p-6 pt-0">
+                <div className="p-5 space-y-2">
+                  <span className="text-[11px] text-gray-400 font-medium">{item.tag}</span>
+                  <h3 className="font-bold text-gray-900 text-sm font-outfit group-hover:text-[#FF5E14] transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
+                <div className="p-5 pt-0">
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href="/galeria"
                     className="text-xs font-bold text-[#FF5E14] hover:text-[#E04700] flex items-center space-x-1"
                   >
-                    <span>Leer artículo completo</span>
+                    <span>Ver proyecto</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>

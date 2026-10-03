@@ -2,54 +2,63 @@ import { Product, Service, BlogPost } from './types';
 
 export const MOCK_SERVICES: Service[] = [
   {
-    id: 'serv-1',
-    slug: 'tarjetas-de-presentacion',
-    title: 'Tarjetas de Presentación Premium',
-    shortDesc: 'Impresión de alta definición en papeles finos, con laminados mate, brillante, soft-touch o barniz UV sectorizado.',
-    fullDesc: 'Destaca desde el primer contacto comercial con nuestras tarjetas corporativas de máxima calidad. Contamos con una amplia variedad de sustratos que van desde opalina 300g hasta cartulinas texturizadas ecológicas y plásticos durables. Opción de esquinas redondeadas, troquelados personalizados y detalles en pan de oro / plata.',
-    iconName: 'CreditCard',
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-    features: ['Papel Opalina 300g o Couclé 350g', 'Laminado Soft-Touch o Mate', 'Barniz UV Sectorizado', 'Corte Recto o Esquinas Redondeadas', 'Entrega rápida en 24-48 horas']
+    id: 'serv-grabados-laser',
+    slug: 'grabados-laser',
+    title: 'Grabados Láser de Alta Precisión & Personalización Premium',
+    shortDesc: 'Grabado y marcado láser de máxima precisión sobre una amplia gama de materiales rígidos y orgánicos con acabados limpios e imborrables.',
+    fullDesc: 'Ofrecemos un servicio de grabado y marcado láser de máxima precisión, diseñado para plasmar logotipos, nombres, vectores e ilustraciones personalizadas sobre una amplia gama de materiales rígidos y orgánicos. Utilizando tecnología láser de punta, garantizamos acabados limpios, permanentes e imborrables que elevan la calidad estética y el valor percibido de tus productos, regalos ejecutivos o material publicitario.',
+    iconName: 'Sparkles',
+    image: '/images/banners/banner-grabados-laser.jpg',
+    features: [
+      'Detalles ultra finos, trazos delgados y microtextos sin alterar la integridad del producto base.',
+      'Acabado Permanente e Imborrable.',
+      'Flexibilidad para trabajar desde piezas unitarias exclusivas hasta grandes volúmenes para marcas o eventos corporativos.'
+    ]
   },
   {
-    id: 'serv-2',
+    id: 'serv-impresion-gran-formato',
     slug: 'impresion-gran-formato',
     title: 'Impresión Gran Formato & Banners',
-    shortDesc: 'Banners en lona vinílica, viniles adhesivos para vitrinas, microperforados y estructuras en L o Roll-Up.',
+    shortDesc: 'Soluciones publicitarias de gran impacto visual para interiores y exteriores resistentes al sol y la humedad de Panamá.',
     fullDesc: 'Soluciones publicitarias de gran impacto visual para interiores y exteriores. Utilizamos tintas solventes y eco-solventes de alta durabilidad resistentes al sol y la humedad de Panamá. Ideal para ferias, eventos comerciales, señaléctica corporativa y remodelación de fachadas.',
     iconName: 'Maximize2',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop',
-    features: ['Lona Mesh y Lona Frontlit 13oz', 'Estructuras Roll-Up de Aluminio', 'Vinil Microperforado para vidrios', 'Ojales de bronce y bastillado reforzado', 'Impresión Full Color 1440 DPI']
+    image: '/images/banners/banner-gran-formato.jpg',
+    features: [
+      'Lona Mesh y Lona Baner de 13oz',
+      'Estructuras Roll-Up y banner arañas.',
+      'Vinil adhesivos y Microperforados',
+      'Rotulaciones Comerciales',
+      'Letreros Publicitarios.'
+    ]
   },
   {
-    id: 'serv-3',
+    id: 'serv-flyers-folletos',
     slug: 'flyers-y-folletos',
     title: 'Flyers & Folletos Publicitarios',
-    shortDesc: 'Volantes, dípticos y trípticos promocionales impresos a todo color en excelente resolución.',
-    fullDesc: 'Comunica tus ofertas y lanzamientos de forma directa e impactante. Imprimimos volantes en papel glacé 115g, 150g o 200g con plegados precisos. Perfectos para buzoneo, eventos masivos y material corporativo de ventas.',
+    shortDesc: 'Comunica tus ofertas y lanzamientos de forma directa e impactante. Imprimimos volantes en papel satinado de 80 y 100 lbs.',
+    fullDesc: 'Comunica tus ofertas y lanzamientos de forma directa e impactante. Imprimimos volantes en papel satinado de 80 y 100 lbs. Perfectos para distribución en eventos masivos y material corporativo de ventas.',
     iconName: 'FileText',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop',
-    features: ['Formatos Media Carta, Carta, Trípticos', 'Papel Glacé/Cuché 150g', 'Tirajes desde 100 hasta 50,000 unidades', 'Plegado automático de precisión', 'Calidad offset y digital rápida']
+    features: [
+      'Formatos Media Carta, Carta, Trípticos',
+      'Afiches',
+      'Volantes',
+      'Saltarines Publicitarios'
+    ]
   },
   {
-    id: 'serv-4',
-    slug: 'stickers-y-etiquetas',
-    title: 'Stickers Troquelados & Etiquetas',
-    shortDesc: 'Adhesivos personalizados troquelados a la forma de tu logo en vinil impermeable o papel kraft.',
-    fullDesc: 'Etiquetas para empaques de alimentos, botellas, packaging de envíos y stickers promocionales. Troquelado digital exacto sin necesidad de troqueles físicos costosos. Acabados mate, brillante o holográfico en vinil a prueba de agua.',
-    iconName: 'Tag',
-    image: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?q=80&w=1000&auto=format&fit=crop',
-    features: ['Vinil Blanco, Transparente u Holográfico', 'Resistentes al agua y refrigeración', 'Corte individual o en pliego', 'Aptos para envases y productos']
-  },
-  {
-    id: 'serv-5',
+    id: 'serv-material-promocional-pop',
     slug: 'material-promocional-pop',
-    title: 'Material Promocional & POP',
-    shortDesc: 'Gift cards, carpetas corporativas, talonarios, sellos y material personalizado para marcas.',
-    fullDesc: 'Completa la identidad corporativa de tu empresa con carpetas institucionales con bolsillo, talonarios autocopiativos para facturación o entregas, gift cards en pvc rígido y bolígrafos / tazas impresas.',
+    title: 'Material Promocional & POP Premium',
+    shortDesc: 'Soluciones corporativas y exhibidores de Punto de Venta (POP) diseñados para destacar tu marca con acabados de alta fidelidad.',
+    fullDesc: 'Impulsa el posicionamiento e impacto de tu marca con soluciones corporativas y exhibidores de Punto de Venta (POP) diseñados para destacar. Desarrollamos merchandising exclusivo, regalos ejecutivos y elementos de exhibición comercial con acabados de alta fidelidad que transmiten profesionalismo, elegancia y funcionalidad en cada evento, campaña o punto de venta.',
     iconName: 'Gift',
     image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000&auto=format&fit=crop',
-    features: ['Carpetas institucionales con bolsillo', 'Talonarios Autocopiativos 2 o 3 vías', 'Gift Cards en PVC rígido tipo tarjeta de crédito', 'Diseño personalizado adaptado']
+    features: [
+      'Variedad de Catálogo Corporativo: Amplia gama de artículos de merchandising (libretas, bolígrafos metálicos, termos, memorias USB y accesorios de oficina).',
+      'Integración de marcas corporativas mediante grabado láser, tampografía, serigrafía y estampado digital según las necesidades del producto.',
+      'Capacidad de respuesta y producción tanto para entregas corporativas exclusivas de bajo tiraje como para campañas masivas.'
+    ]
   }
 ];
 

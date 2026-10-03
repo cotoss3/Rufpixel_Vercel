@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { MOCK_SERVICES } from '@/lib/mockData';
-import { CreditCard, Maximize2, FileText, Tag, Gift, CheckCircle2, ArrowRight } from 'lucide-react';
+import { CreditCard, Maximize2, FileText, Tag, Gift, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata = {
   title: 'Servicios de Impresión Digital & Gran Formato — RufPixel Panamá',
@@ -10,6 +10,7 @@ export const metadata = {
 
 export default function ServiciosPage() {
   const iconMap: Record<string, React.ReactNode> = {
+    Sparkles: <Sparkles className="w-8 h-8 text-[#FF5E14]" />,
     CreditCard: <CreditCard className="w-8 h-8 text-[#FF5E14]" />,
     Maximize2: <Maximize2 className="w-8 h-8 text-[#FF5E14]" />,
     FileText: <FileText className="w-8 h-8 text-[#FF5E14]" />,

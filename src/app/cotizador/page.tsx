@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   Printer, Sparkles, Tag, Ruler, Upload, CheckCircle2, 
-  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText
+  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText, Zap
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 
@@ -18,31 +18,70 @@ interface SizeOption {
   isCustom?: boolean;
 }
 
+type PreOrderTab = 'DTF_TEXTIL' | 'UVDTF' | 'BANNERS_ESTRUCTURAS' | 'STICKERS' | 'PAPELERIA_COMERCIAL' | 'GRABADOS_LASER';
+
 export default function CotizadorPage() {
   const { addToCart } = useCart();
 
-  // Top Category Tabs (DTF, UVDTF, Gran Formato, Stickers, Papelería)
-  const [activeTab, setActiveTab] = useState<'DTF' | 'UVDTF' | 'GRAN_FORMATO' | 'STICKERS' | 'PAPELERIA'>('DTF');
+  // Top Category Tabs (Exact match to PDF Page 3)
+  const [activeTab, setActiveTab] = useState<PreOrderTab>('DTF_TEXTIL');
   const [stickerFilter, setStickerFilter] = useState<'ALL' | '2X2' | '3X3' | '4X4'>('ALL');
   const [papeleriaFilter, setPapeleriaFilter] = useState<'ALL' | 'VOLANTES' | 'LIBRETAS' | 'TARJETAS'>('ALL');
+  const [laserFilter, setLaserFilter] = useState<'ALL' | 'TERMOS' | 'BOLIGRAFOS' | 'PLACAS'>('ALL');
+
+  // Category Banners mapping (from uploaded media banners)
+  const categoryBanners: Record<PreOrderTab, { image: string; title: string; subtitle: string }> = {
+    DTF_TEXTIL: {
+      image: '/images/banners/banner-dtf.jpg',
+      title: 'IMPRESIÓN DTF TEXTIL',
+      subtitle: 'Transfer digital textil de alta adherencia y elasticidad para prendas oscuras y claras',
+    },
+    UVDTF: {
+      image: '/images/banners/banner-uvdtf.jpg',
+      title: 'IMPRESIÓN UVDTF',
+      subtitle: 'Transfer UV adhesivo con relieve 3D, barniz brillante y máxima resistencia en rígidos',
+    },
+    BANNERS_ESTRUCTURAS: {
+      image: '/images/banners/banner-gran-formato.jpg',
+      title: 'BANNERS Y ESTRUCTURAS',
+      subtitle: 'Lonas publicitarias 13oz, Roll-Up retráctiles y estructuras arañita de gran impacto',
+    },
+    STICKERS: {
+      image: '/images/banners/banner-stickers.jpg',
+      title: 'STICKERS PERSONALIZADOS',
+      subtitle: 'Vinil troquelado de alta precisión impermeable para marcas, packaging y empaques',
+    },
+    PAPELERIA_COMERCIAL: {
+      image: '/images/banners/banner-papeleria.jpg',
+      title: 'PAPELERÍA COMERCIAL',
+      subtitle: 'Volantes publicitarios, talonarios de factura y tarjetas de presentación ejecutivas',
+    },
+    GRABADOS_LASER: {
+      image: '/images/banners/banner-grabados-laser.jpg',
+      title: 'GRABADOS LÁSER PERSONALIZADOS',
+      subtitle: 'Grabado y marcado láser de máxima precisión en botellas, termos, metal y madera',
+    },
+  };
 
   // Preset Sizes
-  const presetSizes: Record<string, SizeOption[]> = {
-    DTF: [
-      { id: 'dtf-a4', name: 'A4', dimensions: '8.27" × 11"', price: 2.94 },
-      { id: 'dtf-yarda-lineal', name: 'Yarda Lineal', dimensions: '11" × 36"', price: 6.42 },
+  const presetSizes: Record<PreOrderTab, SizeOption[]> = {
+    DTF_TEXTIL: [
+      { id: 'dtf-a4', name: 'Formato A4', dimensions: '8.27" × 11"', price: 2.94 },
+      { id: 'dtf-yarda-lineal', name: 'Yarda Lineal DTF', dimensions: '11" × 36"', price: 6.42, promo: true, promoBadge: 'MÁS VENDIDO' },
+      { id: 'dtf-metro-lineal', name: 'Metro Lineal DTF', dimensions: '22" × 39"', price: 11.50 },
     ],
     UVDTF: [
-      { id: 'uv-a4', name: 'A4', dimensions: '8.2" × 11"', price: 5.32 },
-      { id: 'uv-yarda-lineal', name: 'Yarda Lineal', dimensions: '11" × 36"', price: 10.70 },
+      { id: 'uv-a4', name: 'Formato A4 UV DTF', dimensions: '8.2" × 11"', price: 5.32 },
+      { id: 'uv-yarda-lineal', name: 'Yarda Lineal UV DTF', dimensions: '11" × 36"', price: 10.70, promo: true, promoBadge: 'ALTA DURABILIDAD' },
+      { id: 'uv-metro', name: 'Metro Lineal UV DTF', dimensions: '22" × 39"', price: 18.90 },
     ],
-    GRAN_FORMATO: [
-      { id: 'gf-3x2', name: 'Banner 3 × 2 ft', dimensions: '36" × 24"', price: 9.63 },
-      { id: 'gf-4x4', name: 'Banner 4 × 4 ft', dimensions: '48" × 48"', price: 25.68 },
-      { id: 'gf-6x4', name: 'Banner 6 × 4 ft', dimensions: '72" × 48"', price: 38.52 },
-      { id: 'gf-8x4', name: 'Banner 8 × 4 ft', dimensions: '96" × 48"', price: 44.94, promo: true, promoBadge: 'MÁS POPULAR' },
-      { id: 'gf-aranita', name: 'Estructura Arañita', dimensions: '24" × 36"', price: 37.45 },
-      { id: 'gf-rollup', name: 'Banner Roll-Up Standard', dimensions: '33" × 79"', price: 69.55, promo: true, promoBadge: 'ESTRUCTURA + IMPRESIÓN' },
+    BANNERS_ESTRUCTURAS: [
+      { id: 'gf-3x2', name: 'Banner Lona 13oz 3 × 2 ft', dimensions: '36" × 24"', price: 9.63 },
+      { id: 'gf-4x4', name: 'Banner Lona 13oz 4 × 4 ft', dimensions: '48" × 48"', price: 25.68 },
+      { id: 'gf-6x4', name: 'Banner Lona 13oz 6 × 4 ft', dimensions: '72" × 48"', price: 38.52 },
+      { id: 'gf-8x4', name: 'Banner Lona 13oz 8 × 4 ft', dimensions: '96" × 48"', price: 44.94, promo: true, promoBadge: 'MÁS POPULAR' },
+      { id: 'gf-aranita', name: 'Estructura Arañita + Impresión', dimensions: '24" × 36"', price: 37.45 },
+      { id: 'gf-rollup', name: 'Banner Roll-Up Standard Retráctil', dimensions: '33" × 79"', price: 69.55, promo: true, promoBadge: 'ESTRUCTURA + IMPRESIÓN' },
     ],
     STICKERS: [
       { id: 'stk-2x2-100', name: 'Sticker 2" × 2"', dimensions: 'Pack 100 unidades', price: 8.56 },
@@ -57,7 +96,7 @@ export default function CotizadorPage() {
       { id: 'stk-4x4-500', name: 'Sticker 4" × 4"', dimensions: 'Pack 500 unidades', price: 58.85, promo: true, promoBadge: 'POPULAR' },
       { id: 'stk-4x4-1000', name: 'Sticker 4" × 4"', dimensions: 'Pack 1,000 unidades', price: 96.30, promo: true, promoBadge: 'MEJOR PRECIO' },
     ],
-    PAPELERIA: [
+    PAPELERIA_COMERCIAL: [
       // Volantes
       { id: 'pap-volante-quarter-100', name: 'Volante 1/4 de Página', dimensions: 'Pack 100 unidades', price: 9.95 },
       { id: 'pap-volante-quarter-500', name: 'Volante 1/4 de Página', dimensions: 'Pack 500 unidades', price: 24.95, promo: true, promoBadge: 'POPULAR' },
@@ -80,6 +119,14 @@ export default function CotizadorPage() {
       { id: 'pap-tarjetas-300', name: 'Tarjetas de Presentación', dimensions: 'Pack 300 unidades', price: 21.50 },
       { id: 'pap-tarjetas-500', name: 'Tarjetas de Presentación', dimensions: 'Pack 500 unidades', price: 35.00, promo: true, promoBadge: 'PACK POPULAR' },
     ],
+    GRABADOS_LASER: [
+      { id: 'gl-termo-1', name: 'Grabado en Termo / Botella', dimensions: '1 Unidad (Personal / Muestra)', price: 4.50 },
+      { id: 'gl-termo-12', name: 'Grabado en Termos (Docena)', dimensions: 'Pack 12 unidades', price: 36.00, promo: true, promoBadge: 'DOCENA' },
+      { id: 'gl-termo-50', name: 'Grabado en Termos Corporativos', dimensions: 'Pack 50 unidades', price: 125.00, promo: true, promoBadge: 'EMPRESARIAL' },
+      { id: 'gl-boligrafos-50', name: 'Grabado Láser en Bolígrafos Metálicos', dimensions: 'Pack 50 unidades', price: 45.00 },
+      { id: 'gl-boligrafos-100', name: 'Grabado Láser en Bolígrafos Metálicos', dimensions: 'Pack 100 unidades', price: 75.00, promo: true, promoBadge: 'MEJOR PRECIO' },
+      { id: 'gl-placa-madera', name: 'Grabado en Placa / Madera / Acrílico', dimensions: 'Hasta 15 × 20 cm', price: 12.00 },
+    ],
   };
 
   const [selectedSizeId, setSelectedSizeId] = useState<string>('dtf-a4');
@@ -95,19 +142,24 @@ export default function CotizadorPage() {
   const [fileName, setFileName] = useState<string>('');
   const [submittedOrder, setSubmittedOrder] = useState<any>(null);
 
-  const rawSizes = presetSizes[activeTab] || presetSizes.DTF;
+  const rawSizes = presetSizes[activeTab] || presetSizes.DTF_TEXTIL;
 
-  // Filter stickers or papeleria by sub-type
+  // Filter stickers, papeleria, laser by sub-type
   const currentSizes = rawSizes.filter(s => {
     if (activeTab === 'STICKERS') {
       if (stickerFilter === '2X2') return s.id.includes('2x2');
       if (stickerFilter === '3X3') return s.id.includes('3x3');
       if (stickerFilter === '4X4') return s.id.includes('4x4');
     }
-    if (activeTab === 'PAPELERIA') {
+    if (activeTab === 'PAPELERIA_COMERCIAL') {
       if (papeleriaFilter === 'VOLANTES') return s.id.includes('volante');
       if (papeleriaFilter === 'LIBRETAS') return s.id.includes('factura');
       if (papeleriaFilter === 'TARJETAS') return s.id.includes('tarjetas');
+    }
+    if (activeTab === 'GRABADOS_LASER') {
+      if (laserFilter === 'TERMOS') return s.id.includes('termo');
+      if (laserFilter === 'BOLIGRAFOS') return s.id.includes('boligrafo');
+      if (laserFilter === 'PLACAS') return s.id.includes('placa');
     }
     return true;
   });
@@ -147,6 +199,7 @@ export default function CotizadorPage() {
   const handleAddToCartOrOrder = (e: React.FormEvent) => {
     e.preventDefault();
 
+    const categoryInfo = categoryBanners[activeTab];
     const sizeLabel = isCustomSize 
       ? `Medida Personalizada (${customWidth} × ${customHeight} ${customUnit})` 
       : `${currentSelectedOption?.name} (${currentSelectedOption?.dimensions})`;
@@ -154,26 +207,26 @@ export default function CotizadorPage() {
     const customProduct = {
       id: `preorder-${Date.now()}`,
       slug: `preorden-${activeTab.toLowerCase()}`,
-      name: `Impresión ${activeTab} — ${sizeLabel}`,
+      name: `${categoryInfo.title} — ${sizeLabel}`,
       price: unitPrice,
-      description: `Pedido de pre-orden ${activeTab}. Archivo: ${fileName || 'Pendiente'}`,
+      description: `Pedido de pre-orden ${categoryInfo.title}. Archivo: ${fileName || 'Pendiente'}`,
       shortDescription: `Tamaño: ${sizeLabel}`,
-      category: activeTab,
+      category: categoryInfo.title,
       categorySlug: activeTab.toLowerCase(),
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop',
+      image: categoryInfo.image,
       gallery: [],
       stock: 999,
       attributes: [
-        { name: 'Tipo', options: [activeTab] },
+        { name: 'Categoría', options: [categoryInfo.title] },
         { name: 'Medida', options: [sizeLabel] }
       ],
     };
 
-    addToCart(customProduct, quantity, { Tipo: activeTab, Medida: sizeLabel }, fileName ? `Archivo: ${fileName}` : '');
+    addToCart(customProduct, quantity, { Categoría: categoryInfo.title, Medida: sizeLabel }, fileName ? `Archivo: ${fileName}` : '');
 
     setSubmittedOrder({
       id: `PRE-${Math.floor(100000 + Math.random() * 900000)}`,
-      type: activeTab,
+      type: categoryInfo.title,
       sizeLabel,
       quantity,
       unitPrice,
@@ -182,8 +235,17 @@ export default function CotizadorPage() {
     });
   };
 
+  const navTabs: { id: PreOrderTab; label: string; icon: React.ReactNode }[] = [
+    { id: 'DTF_TEXTIL', label: 'DTF - TEXTIL', icon: <Printer className="w-4 h-4" /> },
+    { id: 'UVDTF', label: 'UVDTF', icon: <Sparkles className="w-4 h-4" /> },
+    { id: 'BANNERS_ESTRUCTURAS', label: 'BANNERS Y ESTRUCTURAS', icon: <Ruler className="w-4 h-4" /> },
+    { id: 'STICKERS', label: 'STICKERS', icon: <Scissors className="w-4 h-4" /> },
+    { id: 'PAPELERIA_COMERCIAL', label: 'PAPELERIA COMERCIAL', icon: <FileText className="w-4 h-4" /> },
+    { id: 'GRABADOS_LASER', label: 'GRABADOS LASER', icon: <Zap className="w-4 h-4" /> },
+  ];
+
   return (
-    <div className="py-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div className="py-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 animate-fade-in">
       
       {/* Header */}
       <div className="space-y-2">
@@ -242,7 +304,7 @@ export default function CotizadorPage() {
               className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-[#FF5E14]/30 flex items-center space-x-2"
             >
               <ShoppingBag className="w-4 h-4" />
-              <span>Ir al Carrito & Pagar (Yappy / ACH)</span>
+              <span>Ir al Carrito & Pagar (YAPPY COMERCIAL & ACH)</span>
             </Link>
             <button
               onClick={() => setSubmittedOrder(null)}
@@ -255,29 +317,23 @@ export default function CotizadorPage() {
       ) : (
         <form onSubmit={handleAddToCartOrOrder} className="space-y-8">
           
-          {/* 1. TOP TAB CATEGORIES (Black Bar with Brand Orange Active Accent) */}
-          <div className="bg-[#0D0D0D] p-2 rounded-2xl flex items-center justify-between border border-gray-800 shadow-xl overflow-x-auto">
-            {[
-              { id: 'DTF', label: 'DTF', icon: <Printer className="w-4 h-4" /> },
-              { id: 'UVDTF', label: 'UVDTF', icon: <Sparkles className="w-4 h-4" /> },
-              { id: 'GRAN_FORMATO', label: 'Gran Formato', icon: <Ruler className="w-4 h-4" /> },
-              { id: 'STICKERS', label: 'Stickers', icon: <Scissors className="w-4 h-4" /> },
-              { id: 'PAPELERIA', label: 'Papelería', icon: <FileText className="w-4 h-4" /> },
-            ].map((tab) => {
+          {/* 1. TOP TAB CATEGORIES (Exact PDF Page 3 list of 6 buttons) */}
+          <div className="bg-[#0D0D0D] p-2 rounded-2xl flex items-center justify-between border border-gray-800 shadow-xl overflow-x-auto gap-1">
+            {navTabs.map((tab) => {
               const active = activeTab === tab.id;
               return (
                 <button
                   type="button"
                   key={tab.id}
                   onClick={() => {
-                    setActiveTab(tab.id as any);
+                    setActiveTab(tab.id);
                     const firstSize = presetSizes[tab.id]?.[0];
                     if (firstSize) {
                       setSelectedSizeId(firstSize.id);
                       setIsCustomSize(false);
                     }
                   }}
-                  className={`flex-1 min-w-[75px] flex items-center justify-center space-x-2 py-3 px-3 rounded-xl text-xs font-bold transition-all ${
+                  className={`flex-1 min-w-[130px] sm:min-w-[150px] flex items-center justify-center space-x-1.5 py-3 px-3 rounded-xl text-xs font-extrabold transition-all text-center whitespace-nowrap ${
                     active
                       ? 'bg-[#FF5E14] text-white shadow-lg shadow-[#FF5E14]/30 scale-[1.02]'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
@@ -293,14 +349,27 @@ export default function CotizadorPage() {
           {/* Main Card Container */}
           <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-xl space-y-8">
             
-            {/* TIPO HEADER */}
-            <div className="space-y-2">
-              <label className="text-xs uppercase font-extrabold text-gray-400 tracking-wider block">
-                TIPO SELECCIONADO
-              </label>
-              <div className="w-full bg-[#0D0D0D] text-white font-extrabold py-3.5 px-6 rounded-2xl text-center text-lg font-outfit tracking-wider shadow-inner border border-gray-800 flex items-center justify-center space-x-2">
-                <span className="text-[#FF5E14]">IMPRESIÓN</span>
-                <span>{activeTab === 'STICKERS' ? 'STICKERS TROQUELADOS' : activeTab === 'PAPELERIA' ? 'PAPELERÍA CORPORATIVA' : activeTab}</span>
+            {/* 2. CATEGORY BANNER FOR PRE-ORDER TITLES (Exact PDF Page 3 requirement) */}
+            <div className="w-full rounded-2xl overflow-hidden shadow-lg border border-gray-800 relative bg-[#0D0D0D] group">
+              <div className="relative w-full h-36 sm:h-48 md:h-52">
+                <img
+                  src={categoryBanners[activeTab].image}
+                  alt={categoryBanners[activeTab].title}
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex items-end p-5 sm:p-6">
+                  <div className="space-y-1">
+                    <span className="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-black/70 px-3 py-1 rounded-md border border-[#FF5E14]/40 inline-block backdrop-blur-sm">
+                      Pre-Orden Activa
+                    </span>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white font-outfit">
+                      {categoryBanners[activeTab].title}
+                    </h2>
+                    <p className="text-gray-300 text-xs sm:text-sm max-w-xl font-light hidden sm:block">
+                      {categoryBanners[activeTab].subtitle}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -335,7 +404,7 @@ export default function CotizadorPage() {
             )}
 
             {/* PAPELERIA FILTER SUB-TABS */}
-            {activeTab === 'PAPELERIA' && (
+            {activeTab === 'PAPELERIA_COMERCIAL' && (
               <div className="space-y-2">
                 <label className="text-xs uppercase font-extrabold text-gray-500 tracking-wider block">
                   Filtrar por Tipo de Papelería:
@@ -364,13 +433,45 @@ export default function CotizadorPage() {
               </div>
             )}
 
+            {/* GRABADOS LASER FILTER SUB-TABS */}
+            {activeTab === 'GRABADOS_LASER' && (
+              <div className="space-y-2">
+                <label className="text-xs uppercase font-extrabold text-gray-500 tracking-wider block">
+                  Filtrar por Artículo de Grabado:
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { id: 'ALL', label: 'Todos los artículos' },
+                    { id: 'TERMOS', label: 'Botellas & Termos' },
+                    { id: 'BOLIGRAFOS', label: 'Bolígrafos Metálicos' },
+                    { id: 'PLACAS', label: 'Placas & Madera' },
+                  ].map((f) => (
+                    <button
+                      key={f.id}
+                      type="button"
+                      onClick={() => setLaserFilter(f.id as any)}
+                      className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
+                        laserFilter === f.id
+                          ? 'bg-[#0D0D0D] text-white border-[#0D0D0D]'
+                          : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
+                      }`}
+                    >
+                      {f.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* TAMAÑO PRE-DETERMINADO GRID */}
             <div className="space-y-3">
               <label className="text-xs uppercase font-extrabold text-gray-400 tracking-wider block">
                 {activeTab === 'STICKERS' 
                   ? 'SELECCIONA TU PAQUETE DE STICKERS' 
-                  : activeTab === 'PAPELERIA' 
+                  : activeTab === 'PAPELERIA_COMERCIAL' 
                   ? 'SELECCIONA TU PRODUCTO DE PAPELERÍA' 
+                  : activeTab === 'GRABADOS_LASER'
+                  ? 'SELECCIONA TU PACK DE GRABADO LÁSER'
                   : 'TAMAÑO PREDETERMINADO'}
               </label>
 
@@ -413,86 +514,12 @@ export default function CotizadorPage() {
                   );
                 })}
               </div>
-
-              {/* MEDIDA PERSONALIZADA BUTTON (DASHED BORDER) */}
-              {!['DTF', 'UVDTF', 'GRAN_FORMATO', 'STICKERS', 'PAPELERIA'].includes(activeTab) && (
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    onClick={handleSelectCustom}
-                    className={`w-full p-5 rounded-2xl border-2 border-dashed text-left transition-all flex flex-col sm:flex-row items-center justify-between gap-4 ${
-                      isCustomSize
-                        ? 'bg-[#FFF5F0] border-[#FF5E14] ring-2 ring-[#FF5E14]/20'
-                        : 'bg-gray-50 border-gray-300 hover:border-[#FF5E14] hover:bg-white'
-                    }`}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <div className="p-2.5 bg-[#FF5E14]/10 rounded-xl text-[#FF5E14]">
-                        <Ruler className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-extrabold text-gray-900 text-sm font-outfit">
-                          📐 Medida Personalizada
-                        </h4>
-                        <span className="text-xs text-gray-500">
-                          Ingresa tu ancho y alto exacto en cm, m o pulgadas
-                        </span>
-                      </div>
-                    </div>
-
-                    <span className="text-xs font-bold text-[#FF5E14] bg-white px-3 py-1.5 rounded-lg border border-gray-200">
-                      {isCustomSize ? '✓ Seleccionado' : 'Cotizar Medida'}
-                    </span>
-                  </button>
-                </div>
-              )}
-
-              {/* CUSTOM DIMENSIONS EXPANDABLE INPUTS */}
-              {isCustomSize && !['DTF', 'UVDTF', 'GRAN_FORMATO', 'STICKERS', 'PAPELERIA'].includes(activeTab) && (
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 animate-fade-in text-xs">
-                  <span className="font-bold text-gray-900 block">Especificar Dimensiones:</span>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="space-y-1">
-                      <label className="font-semibold text-gray-600">Ancho</label>
-                      <input
-                        type="number"
-                        min="1"
-                        value={customWidth}
-                        onChange={(e) => setCustomWidth(parseFloat(e.target.value) || 1)}
-                        className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] outline-none bg-white font-mono"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="font-semibold text-gray-600">Alto</label>
-                      <input
-                        type="number"
-                        min="1"
-                        value={customHeight}
-                        onChange={(e) => setCustomHeight(parseFloat(e.target.value) || 1)}
-                        className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] outline-none bg-white font-mono"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="font-semibold text-gray-600">Unidad</label>
-                      <select
-                        value={customUnit}
-                        onChange={(e) => setCustomUnit(e.target.value as any)}
-                        className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] outline-none bg-white font-bold"
-                      >
-                        <option value="cm">Centímetros (cm)</option>
-                        <option value="pulgadas">Pulgadas (in)</option>
-                        <option value="m">Metros (m)</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* CANTIDAD SELECTOR */}
             <div className="space-y-2 pt-2 border-t border-gray-100">
               <label className="text-xs uppercase font-extrabold text-gray-400 tracking-wider block">
-                CANTIDAD DE PAQUETES
+                CANTIDAD DE PAQUETES / ÓRDENES
               </label>
               <div className="flex items-center space-x-4">
                 <div className="flex items-center bg-gray-100 rounded-2xl p-1.5 border border-gray-200">
@@ -515,7 +542,7 @@ export default function CotizadorPage() {
                   </button>
                 </div>
                 <span className="text-xs text-gray-500 font-medium">
-                  {['STICKERS', 'PAPELERIA'].includes(activeTab) ? `Total de paquetes seleccionados` : `Mínimo 1 paquete u orden`}
+                  Total de paquetes u órdenes seleccionadas
                 </span>
               </div>
             </div>
@@ -528,7 +555,7 @@ export default function CotizadorPage() {
               <div className="relative border-2 border-dashed border-gray-300 hover:border-[#FF5E14] rounded-2xl p-6 text-center cursor-pointer bg-gray-50 hover:bg-[#FFF5F0] transition-colors">
                 <input
                   type="file"
-                  accept="image/*,.pdf,.ai,.psd,.pdf"
+                  accept="image/*,.pdf,.ai,.psd,.eps"
                   onChange={handleFileUpload}
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                 />
@@ -552,7 +579,7 @@ export default function CotizadorPage() {
                   </span>
                 </div>
                 <div className="text-right text-xs text-gray-400">
-                  <span className="block font-bold text-white">Pagos Yappy & ACH</span>
+                  <span className="block font-bold text-white">Pagos seguros vía YAPPY COMERCIAL & ACH</span>
                   <span>Impuestos incluidos</span>
                 </div>
               </div>

@@ -25,13 +25,13 @@ export default async function BlogPage({ searchParams }: { searchParams?: { page
       <section className="bg-[#0D0D0D] text-white py-14 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
-            WordPress Blog (15 por página)
+            RufPixel Contenidos
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold font-outfit">
-            Blog & Guías de Impresión
+            Blog & Galería de Trabajos
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-            Mostrando {posts.length} de {totalPosts} publicaciones disponibles.
+            ¿Buscas fotos y ejemplos de proyectos reales entregados? Visita nuestra sección de <Link href="/galeria" className="text-[#FF5E14] underline font-bold">Galería de Trabajos Realizados</Link>.
           </p>
         </div>
       </section>

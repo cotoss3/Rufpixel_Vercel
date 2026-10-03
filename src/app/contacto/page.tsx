@@ -38,7 +38,7 @@ export default function ContactoPage() {
               </div>
               <div>
                 <strong className="text-white block font-outfit text-base">Ubicación física</strong>
-                <span>Ciudad de Panamá, Vía España, Edificio RufPixel</span>
+                <span>Ciudad de La Chorrera - Panamá Oeste - Calle Arnoldo Cano - Barrio Colón - Local 1.</span>
               </div>
             </div>
 
@@ -48,7 +48,7 @@ export default function ContactoPage() {
               </div>
               <div>
                 <strong className="text-white block font-outfit text-base">Teléfonos / WhatsApp</strong>
-                <span>+507 6525-6015 / 6445-4084</span>
+                <span>+507 6445-4084</span>
               </div>
             </div>
 
@@ -59,6 +59,7 @@ export default function ContactoPage() {
               <div>
                 <strong className="text-white block font-outfit text-base">Correo electrónico</strong>
                 <span>ventas@rufpixel.com</span>
+                <span className="block text-gray-400">info@rufpixel.com</span>
               </div>
             </div>
 
@@ -68,7 +69,7 @@ export default function ContactoPage() {
               </div>
               <div>
                 <strong className="text-white block font-outfit text-base">Horario de atención</strong>
-                <span>Lunes a Viernes: 8:00 AM - 6:00 PM</span>
+                <span>Lunes a Viernes: 9:00 AM - 5:00 PM</span>
                 <span className="block">Sábados: 9:00 AM - 2:00 PM</span>
               </div>
             </div>
@@ -76,7 +77,7 @@ export default function ContactoPage() {
 
           <div className="pt-4 border-t border-gray-800 text-xs text-gray-400 flex items-center space-x-2">
             <ShieldCheck className="w-4 h-4 text-[#FF5E14]" />
-            <span>Consultas sobre estado de pago Yappy respondidas en minutos</span>
+            <span>Consultas y validación de YAPPY COMERCIAL & TRANSFERENCIA ACH respondidas al instante</span>
           </div>
         </div>
 
@@ -131,7 +132,7 @@ export default function ContactoPage() {
                 <label className="font-bold text-gray-700">Teléfono / WhatsApp</label>
                 <input
                   type="tel"
-                  placeholder="+507 6525-6015"
+                  placeholder="+507 6445-4084"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full p-3 rounded-xl border border-gray-300 focus:border-[#FF5E14] outline-none"

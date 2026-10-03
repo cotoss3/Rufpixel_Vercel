@@ -105,11 +105,22 @@ export default function ProductDetailClient({
   
   // Calculate base wholesale pack price and base unit price
   const defaultPackQty = 50;
-  const basePackPrice = selectedVariation ? selectedVariation.price : product.price;
   const baseQtyNum = parseInt(selectedQtyOption, 10) || defaultPackQty;
-  
   const baseUnitPriceFrom50 = product.price / defaultPackQty;
   const singleUnitPriceWith35 = baseUnitPriceFrom50 * 1.35;
+
+  let basePackPrice = product.price;
+  if (selectedVariation) {
+    basePackPrice = selectedVariation.price;
+  } else if (baseQtyNum === 100) {
+    // Verified 100-pack price (with 5% wholesale volume discount)
+    basePackPrice = baseUnitPriceFrom50 * 100 * 0.95;
+  } else if (baseQtyNum === 250) {
+    // Verified 250-pack price (with 10% wholesale volume discount)
+    basePackPrice = baseUnitPriceFrom50 * 250 * 0.90;
+  } else if (baseQtyNum > 1 && baseQtyNum !== 50) {
+    basePackPrice = baseUnitPriceFrom50 * baseQtyNum;
+  }
 
   const currentTotalPrice = isSingleUnit
     ? singleUnitPriceWith35 * quantity

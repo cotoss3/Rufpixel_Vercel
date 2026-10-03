@@ -49,7 +49,7 @@ export default function Header() {
     { href: '/servicios', label: 'Servicios' },
     { href: '/tienda', label: 'Tienda' },
     { href: '/cotizador', label: 'Cotizador (Pre-Orden)' },
-    { href: '/blog', label: 'Blog' },
+    { href: '/galeria', label: 'Galería' },
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/contacto', label: 'Contacto' },
   ];
@@ -68,7 +68,7 @@ export default function Header() {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="w-3.5 h-3.5 text-[#FF5E14]" />
-              <span>+507 6525-6015 / 6445-4084</span>
+              <span>+507 6445-4084</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-3.5 h-3.5 text-[#FF5E14]" />
@@ -76,13 +76,13 @@ export default function Header() {
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="w-3.5 h-3.5 text-[#FF5E14]" />
-              <span>Lun - Vie: 8:00 AM - 6:00 PM | Sáb: 9:00 AM - 2:00 PM</span>
+              <span>Lun - Vie: 9:00 AM - 5:00 PM | Sáb: 9:00 AM - 2:00 PM</span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
             <span className="flex items-center text-gray-400">
               <ShieldCheck className="w-3.5 h-3.5 text-[#FF5E14] mr-1" />
-              Pagos seguros vía <strong className="text-white ml-1">Yappy & Transferencia ACH</strong>
+              Pagos seguros vía <strong className="text-white ml-1">YAPPY COMERCIAL & TRANSFERENCIA ACH</strong>
             </span>
             <Link href="/mi-cuenta" className="hover:text-[#FF5E14] transition-colors text-white font-medium">
               Consultar Pedido
@@ -205,8 +205,8 @@ export default function Header() {
               <span>Cotizar Arte / Pre-orden</span>
             </Link>
             <div className="text-xs text-gray-400 text-center space-y-1">
-              <p>📞 WhatsApp: +507 6525-6015 / 6445-4084</p>
-              <p>💳 Pagos Yappy & ACH con validación humana</p>
+              <p>📞 WhatsApp: +507 6445-4084</p>
+              <p>💳 Pagos seguros vía YAPPY COMERCIAL & TRANSFERENCIA ACH</p>
             </div>
           </div>
         </div>
