@@ -1,4 +1,5 @@
 import { Product, Service, BlogPost } from './types';
+import catalogData from './catalogData.json';
 
 export const MOCK_SERVICES: Service[] = [
   {
@@ -62,7 +63,7 @@ export const MOCK_SERVICES: Service[] = [
   }
 ];
 
-export const MOCK_PRODUCTS: Product[] = [];
+export const MOCK_PRODUCTS: Product[] = catalogData as unknown as Product[];
 
 export const MOCK_BLOG_POSTS: BlogPost[] = [
   {

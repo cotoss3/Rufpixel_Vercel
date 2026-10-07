@@ -248,7 +248,10 @@ export function isProductInCategory(
 
 // In-Memory Global Server Caches
 const productCache = new Map<string, { data: Product; timestamp: number }>();
-let globalCatalogCache: { products: Product[]; timestamp: number } | null = null;
+let globalCatalogCache: { products: Product[]; timestamp: number } | null = {
+  products: MOCK_PRODUCTS,
+  timestamp: Date.now(),
+};
 let globalCategoriesCache: { categories: ProductCategory[]; timestamp: number } | null = null;
 let isFetchingBackgroundCatalog = false;
 

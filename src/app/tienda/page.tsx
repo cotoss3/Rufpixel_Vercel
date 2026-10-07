@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { getProducts, getCategories } from '@/lib/woocommerce';
+import { MOCK_PRODUCTS } from '@/lib/mockData';
 import ShopClientGrid from '@/components/shop/ShopClientGrid';
 
 export const metadata = {
@@ -9,10 +10,12 @@ export const metadata = {
 
 export default async function TiendaPage() {
   // Fetch full catalog for instant 0ms client-side category filtering
-  const [{ products, totalProducts }, categories] = await Promise.all([
+  const [{ products }, categories] = await Promise.all([
     getProducts('todos', 1, 100),
     getCategories(),
   ]);
+
+  const activeProducts = products && products.length > 0 ? products : MOCK_PRODUCTS;
 
   return (
     <div className="py-10 space-y-8">
@@ -26,7 +29,7 @@ export default async function TiendaPage() {
             Tienda & Catálogo de Productos
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-xs sm:text-sm">
-            Explora {totalProducts} modelos disponibles con filtros instantáneos por categoría.
+            Explora {activeProducts.length} modelos disponibles con filtros instantáneos por categoría.
           </p>
         </div>
       </section>
@@ -39,7 +42,7 @@ export default async function TiendaPage() {
             <p className="text-xs font-bold text-gray-500 font-outfit">Cargando catálogo RufPixel...</p>
           </div>
         }>
-          <ShopClientGrid initialProducts={products} categories={categories} activeCategorySlug="todos" />
+          <ShopClientGrid initialProducts={activeProducts} categories={categories} activeCategorySlug="todos" />
         </Suspense>
       </div>
     </div>

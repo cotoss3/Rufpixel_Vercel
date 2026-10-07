@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Product } from '@/lib/types';
 import { ProductCategory, isProductInCategory, resolveCategory } from '@/lib/woocommerce';
+import { MOCK_PRODUCTS } from '@/lib/mockData';
 import ProductCard from './ProductCard';
 import ProductSearch from './ProductSearch';
 import { ChevronLeft, ChevronRight, Grid, Filter, Check, ChevronDown, ChevronUp } from 'lucide-react';
@@ -56,8 +57,10 @@ export default function ShopClientGrid({
   }, [activeCategorySlug]);
 
   // 100% Synchronous Instant Client-Side Category & Search Filtering
+  const baseProducts = initialProducts && initialProducts.length > 0 ? initialProducts : MOCK_PRODUCTS;
+
   const filteredProducts = useMemo(() => {
-    let result = initialProducts;
+    let result = baseProducts;
 
     // 1. Category Filter with Robust Multi-Alias Support
     if (selectedCategory && selectedCategory !== 'todos') {
@@ -279,7 +282,7 @@ export default function ShopClientGrid({
       <main className="flex-1 w-full space-y-6">
         {/* Intelligent Live Search Bar */}
         <ProductSearch
-          products={initialProducts}
+          products={baseProducts}
           categories={categories}
           onSearchSubmit={handleSearchSubmit}
         />

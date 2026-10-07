@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { getProducts, getCategories, resolveCategory, isProductInCategory } from '@/lib/woocommerce';
+import { MOCK_PRODUCTS } from '@/lib/mockData';
 import ShopClientGrid from '@/components/shop/ShopClientGrid';
 
 export async function generateMetadata({ params }: { params: { categoria: string } }) {
@@ -25,7 +26,7 @@ export default async function CategoriaTiendaPage({ params }: { params: { catego
     getCategories(),
   ]);
 
-  let catalogProducts = products;
+  let catalogProducts = products && products.length > 0 ? products : MOCK_PRODUCTS;
   // If the category is not yet in the general catalog, fetch it directly and merge
   if (def && !catalogProducts.some((p) => isProductInCategory(p, canonicalSlug))) {
     const { products: catProducts } = await getProducts(canonicalSlug);
