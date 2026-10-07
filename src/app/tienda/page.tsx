@@ -4,11 +4,11 @@ import ShopClientGrid from '@/components/shop/ShopClientGrid';
 
 export const metadata = {
   title: 'Tienda de Impresión Corporativa & Promocionales — RufPixel Panamá',
-  description: 'Catálogo de productos e impresos corporativos: Llaveros, Tazas, Botellas, Bolígrafos, Gorras, Mochilas y Sets Ejecutivos.',
+  description: 'Catálogo de productos e impresos corporativos: Agendas, Libretas, Llaveros, Tazas, Botellas, Bolígrafos, Gorras, Mochilas y Sets Ejecutivos.',
 };
 
 export default async function TiendaPage() {
-  // Fetch full catalog (100 items) for instant 0ms client-side category filtering
+  // Fetch full catalog for instant 0ms client-side category filtering
   const [{ products, totalProducts }, categories] = await Promise.all([
     getProducts('todos', 1, 100),
     getCategories(),

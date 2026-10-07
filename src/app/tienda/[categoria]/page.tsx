@@ -1,11 +1,14 @@
 import React, { Suspense } from 'react';
-import { getProducts, getCategories } from '@/lib/woocommerce';
+import { getProducts, getCategories, resolveCategory, isProductInCategory } from '@/lib/woocommerce';
 import ShopClientGrid from '@/components/shop/ShopClientGrid';
 
 export async function generateMetadata({ params }: { params: { categoria: string } }) {
   const categories = await getCategories();
-  const category = categories.find((c) => c.slug === params.categoria);
-  const catName = category ? category.name : params.categoria;
+  const def = resolveCategory(params.categoria);
+  const activeCat = def
+    ? categories.find((c) => c.slug === def.canonicalSlug || c.id === def.id)
+    : categories.find((c) => c.slug === params.categoria);
+  const catName = def ? def.name : (activeCat ? activeCat.name : params.categoria.replace(/-/g, ' '));
 
   return {
     title: `${catName} — Tienda RufPixel Panamá`,
@@ -14,13 +17,27 @@ export async function generateMetadata({ params }: { params: { categoria: string
 }
 
 export default async function CategoriaTiendaPage({ params }: { params: { categoria: string } }) {
+  const def = resolveCategory(params.categoria);
+  const canonicalSlug = def ? def.canonicalSlug : params.categoria;
+
   const [{ products }, categories] = await Promise.all([
     getProducts('todos', 1, 100),
     getCategories(),
   ]);
 
-  const activeCat = categories.find((c) => c.slug === params.categoria);
-  const catName = activeCat ? activeCat.name : params.categoria.replace(/-/g, ' ');
+  let catalogProducts = products;
+  // If the category is not yet in the general catalog, fetch it directly and merge
+  if (def && !catalogProducts.some((p) => isProductInCategory(p, canonicalSlug))) {
+    const { products: catProducts } = await getProducts(canonicalSlug);
+    if (catProducts && catProducts.length > 0) {
+      catalogProducts = [...catProducts, ...catalogProducts];
+    }
+  }
+
+  const activeCat = def
+    ? categories.find((c) => c.slug === def.canonicalSlug || c.id === def.id)
+    : categories.find((c) => c.slug === params.categoria);
+  const catName = def ? def.name : (activeCat ? activeCat.name : params.categoria.replace(/-/g, ' '));
 
   return (
     <div className="py-10 space-y-8">
@@ -48,9 +65,9 @@ export default async function CategoriaTiendaPage({ params }: { params: { catego
           </div>
         }>
           <ShopClientGrid
-            initialProducts={products}
+            initialProducts={catalogProducts}
             categories={categories}
-            activeCategorySlug={params.categoria}
+            activeCategorySlug={canonicalSlug}
           />
         </Suspense>
       </div>

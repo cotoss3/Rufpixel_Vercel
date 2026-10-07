@@ -2,10 +2,10 @@
 
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Product } from '@/lib/types';
-import { ProductCategory } from '@/lib/woocommerce';
+import { ProductCategory, isProductInCategory, resolveCategory } from '@/lib/woocommerce';
 import ProductCard from './ProductCard';
 import ProductSearch from './ProductSearch';
-import { ChevronLeft, ChevronRight, Grid, Filter, Check, ChevronDown, ChevronUp, Layers } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Grid, Filter, Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
 interface ShopClientGridProps {
@@ -25,11 +25,14 @@ export default function ShopClientGrid({
 
   const initialPageFromUrl = pageParam ? Math.max(1, parseInt(pageParam, 10) || 1) : 1;
 
-  const [selectedCategory, setSelectedCategory] = useState<string>(activeCategorySlug);
+  const resolvedInitialCat = resolveCategory(activeCategorySlug);
+  const canonicalInitialSlug = resolvedInitialCat ? resolvedInitialCat.canonicalSlug : activeCategorySlug;
+
+  const [selectedCategory, setSelectedCategory] = useState<string>(canonicalInitialSlug);
   const [currentPage, setCurrentPage] = useState<number>(initialPageFromUrl);
   const [searchTerm, setSearchTerm] = useState<string>(searchQueryParam || '');
-  
-  // Category Collapsible Drawer State: Closed by default on start as requested
+
+  // Category Collapsible Drawer State: Closed by default on start
   const [isCategoryOpen, setIsCategoryOpen] = useState<boolean>(false);
 
   const perPage = 32;
@@ -46,23 +49,22 @@ export default function ShopClientGrid({
     }
   }, [pageParam, searchQueryParam]);
 
+  // Sync if activeCategorySlug changes from outside
+  useEffect(() => {
+    const def = resolveCategory(activeCategorySlug);
+    setSelectedCategory(def ? def.canonicalSlug : activeCategorySlug);
+  }, [activeCategorySlug]);
+
   // 100% Synchronous Instant Client-Side Category & Search Filtering
   const filteredProducts = useMemo(() => {
     let result = initialProducts;
 
-    // 1. Category Filter
+    // 1. Category Filter with Robust Multi-Alias Support
     if (selectedCategory && selectedCategory !== 'todos') {
-      const cleanSlug = selectedCategory.toLowerCase().trim();
-      result = result.filter((p) => {
-        if (p.categories && p.categories.some((c) => c.slug.toLowerCase() === cleanSlug)) return true;
-        if (p.categorySlug && p.categorySlug.toLowerCase() === cleanSlug) return true;
-        const targetCat = categories.find((c) => c.slug === cleanSlug);
-        if (targetCat && p.category && p.category.toLowerCase().includes(targetCat.name.toLowerCase())) return true;
-        return false;
-      });
+      result = result.filter((p) => isProductInCategory(p, selectedCategory, categories));
     }
 
-    // 2. Search Term Filter
+    // 2. Search Term Filter with Token & Alias Support
     if (searchTerm.trim()) {
       const cleanTerm = searchTerm.toLowerCase().trim();
       const normTerm = cleanTerm.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -74,14 +76,24 @@ export default function ShopClientGrid({
           const descNorm = (p.shortDescription || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
           const catNorm = (p.category || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
           const slugNorm = (p.slug || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          const catListNorm = (p.categories || []).map((c) => `${c.name} ${c.slug}`).join(' ').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
           return tokens.every((tok) => {
             const baseTok = tok.length > 3 && tok.endsWith('s') ? tok.slice(0, -1) : tok;
+
+            // Also check if token matches an alias of this product's category
+            const matchesAlias = p.categories?.some((c) => {
+              const def = resolveCategory(c.slug) || resolveCategory(String(c.id));
+              return def && def.aliases.some((a) => a.includes(tok) || a.includes(baseTok));
+            });
+
             return (
+              matchesAlias ||
               nameNorm.includes(tok) || nameNorm.includes(baseTok) ||
               descNorm.includes(tok) || descNorm.includes(baseTok) ||
               catNorm.includes(tok) || catNorm.includes(baseTok) ||
-              slugNorm.includes(tok) || slugNorm.includes(baseTok)
+              slugNorm.includes(tok) || slugNorm.includes(baseTok) ||
+              catListNorm.includes(tok) || catListNorm.includes(baseTok)
             );
           });
         });
@@ -131,11 +143,14 @@ export default function ShopClientGrid({
   // Category Switch Handler
   const handleCategorySelect = (slug: string, e: React.MouseEvent) => {
     e.preventDefault();
-    setSelectedCategory(slug);
+    const def = resolveCategory(slug);
+    const targetSlug = def ? def.canonicalSlug : slug;
+
+    setSelectedCategory(targetSlug);
     setCurrentPage(1);
     setIsCategoryOpen(false); // Close category accordion after selecting
 
-    const baseUrl = slug === 'todos' ? '/tienda' : `/tienda/${slug}`;
+    const baseUrl = targetSlug === 'todos' ? '/tienda' : `/tienda/${targetSlug}`;
     const queryString = searchTerm ? `?search=${encodeURIComponent(searchTerm)}` : '';
     window.history.pushState({}, '', `${baseUrl}${queryString}`);
   };
@@ -165,7 +180,13 @@ export default function ShopClientGrid({
     return items.filter((item, index, arr) => item !== '...' || arr[index - 1] !== '...');
   }, [totalPages, currentPage]);
 
-  const activeCategoryObj = categories.find((c) => c.slug === selectedCategory);
+  const resolvedActive = resolveCategory(selectedCategory);
+  const activeCategoryObj = categories.find((c) => {
+    if (resolvedActive) {
+      return c.slug === resolvedActive.canonicalSlug || c.id === resolvedActive.id;
+    }
+    return c.slug === selectedCategory;
+  });
 
   return (
     <div ref={mainGridRef} className="flex flex-col lg:flex-row gap-8 items-start scroll-mt-28">
@@ -185,7 +206,7 @@ export default function ShopClientGrid({
                 Categorías de Productos
               </h2>
               <span className="text-[11px] text-gray-500 font-medium">
-                {selectedCategory === 'todos' ? 'Todas las categorías' : activeCategoryObj?.name || selectedCategory}
+                {selectedCategory === 'todos' ? 'Todas las categorías' : activeCategoryObj?.name || resolvedActive?.name || selectedCategory}
               </span>
             </div>
           </div>
@@ -221,7 +242,12 @@ export default function ShopClientGrid({
             </button>
 
             {categories.map((cat) => {
-              const isSelected = selectedCategory === cat.slug;
+              const def = resolveCategory(cat.slug) || resolveCategory(cat.id);
+              const isSelected =
+                selectedCategory === cat.slug ||
+                (resolvedActive && def && resolvedActive.id === def.id) ||
+                (resolvedActive && resolvedActive.canonicalSlug === cat.slug);
+
               return (
                 <button
                   key={cat.slug}
@@ -263,7 +289,7 @@ export default function ShopClientGrid({
             Mostrando <strong>{paginatedProducts.length}</strong> de <strong>{totalProducts}</strong> productos (Página {currentPage} de {totalPages})
             {selectedCategory !== 'todos' && (
               <span className="text-[#FF5E14] font-extrabold ml-1">
-                en {activeCategoryObj?.name || selectedCategory}
+                en {activeCategoryObj?.name || resolvedActive?.name || selectedCategory}
               </span>
             )}
             {searchTerm && (

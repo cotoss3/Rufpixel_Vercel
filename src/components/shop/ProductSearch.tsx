@@ -1,28 +1,12 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { Search, X, Layers, ChevronRight, Tag } from 'lucide-react';
+import { Search, X, ChevronRight, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { Product } from '@/lib/types';
-import { ProductCategory } from '@/lib/woocommerce';
-import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
+import { ProductCategory, FALLBACK_CATEGORIES, resolveCategory } from '@/lib/woocommerce';
+import { setCachedProduct } from '@/lib/productCache';
 import { MOCK_PRODUCTS } from '@/lib/mockData';
-
-const DEFAULT_CATEGORIES: ProductCategory[] = [
-  { id: '1', name: 'Accesorios de Escritorio', slug: 'accesorios-de-escritorio', count: 9 },
-  { id: '2', name: 'Bolígrafos y Plumas', slug: 'boligrafos-y-plumas', count: 24 },
-  { id: '3', name: 'Bolsas y Totes', slug: 'bolsas-y-totes', count: 18 },
-  { id: '4', name: 'Botellas y Termos', slug: 'botellas-y-termos', count: 14 },
-  { id: '5', name: 'Cocina y Hogar', slug: 'cocina-y-hogar', count: 16 },
-  { id: '6', name: 'Gorras y Accesorios de Cabeza', slug: 'gorras-y-accesorios-de-cabeza', count: 11 },
-  { id: '7', name: 'Libretas y Cuadernos', slug: 'libretas-y-cuadernos', count: 14 },
-  { id: '8', name: 'Llaveros', slug: 'llaveros', count: 9 },
-  { id: '9', name: 'Loncheras Térmicas', slug: 'loncheras-termicas', count: 5 },
-  { id: '10', name: 'Mochilas y Maletines', slug: 'mochilas-y-maletines', count: 6 },
-  { id: '11', name: 'Sets y Regalos', slug: 'sets-y-regalos', count: 2 },
-  { id: '12', name: 'Textiles y Ropa', slug: 'textiles-y-ropa', count: 15 },
-  { id: '13', name: 'Vasos y Tazas', slug: 'vasos-y-tazas', count: 16 },
-];
 
 interface ProductSearchProps {
   products?: Product[];
@@ -35,7 +19,7 @@ interface ProductSearchProps {
 export default function ProductSearch({
   products = [],
   categories = [],
-  placeholder = 'Buscar productos o categorías (ej. tazas, bolsas, bolígrafos)...',
+  placeholder = 'Buscar productos o categorías (ej. agendas, tazas, bolsas, bolígrafos)...',
   className = '',
   onSearchSubmit,
 }: ProductSearchProps) {
@@ -66,7 +50,7 @@ export default function ProductSearch({
 
   const activeCategories = useMemo(() => {
     if (categories && categories.length > 0) return categories;
-    return DEFAULT_CATEGORIES;
+    return FALLBACK_CATEGORIES;
   }, [categories]);
 
   // Close preview dropdown when clicking outside
@@ -101,22 +85,32 @@ export default function ProductSearch({
     return normalizedTerm.split(/\s+/).filter(Boolean);
   }, [normalizedTerm]);
 
-  // Smart Matching Categories (Accent insensitive + partial match)
+  // Smart Matching Categories (Accent insensitive + alias aware matching)
   const matchedCategories = useMemo(() => {
     if (!normalizedTerm) return [];
     return activeCategories
       .filter((c) => {
         const catNorm = c.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const slugNorm = c.slug.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const def = resolveCategory(c.slug) || resolveCategory(String(c.id));
+        const aliases = def ? def.aliases : [];
+
         return tokens.every((tok) => {
           const baseTok = tok.length > 3 && tok.endsWith('s') ? tok.slice(0, -1) : tok;
-          return catNorm.includes(tok) || catNorm.includes(baseTok) || slugNorm.includes(tok) || slugNorm.includes(baseTok);
+          const matchAlias = aliases.some((a) => a.includes(tok) || a.includes(baseTok));
+          return (
+            matchAlias ||
+            catNorm.includes(tok) ||
+            catNorm.includes(baseTok) ||
+            slugNorm.includes(tok) ||
+            slugNorm.includes(baseTok)
+          );
         });
       })
       .slice(0, 4);
   }, [activeCategories, normalizedTerm, tokens]);
 
-  // Smart Matching Products (Accent-free, plural-free, multi-token matching)
+  // Smart Matching Products (Accent-free, plural-free, multi-token and category-alias aware)
   const allMatchedProducts = useMemo(() => {
     if (!tokens.length) return [];
     return activeProducts.filter((p) => {
@@ -127,11 +121,23 @@ export default function ProductSearch({
 
       return tokens.every((tok) => {
         const baseTok = tok.length > 3 && tok.endsWith('s') ? tok.slice(0, -1) : tok;
+
+        // Check if token matches an alias of this product's category (e.g. "agenda" matches notebooks)
+        const matchAlias = p.categories?.some((c) => {
+          const def = resolveCategory(c.slug) || resolveCategory(String(c.id));
+          return def && def.aliases.some((a) => a.includes(tok) || a.includes(baseTok));
+        });
+
         return (
-          nameNorm.includes(tok) || nameNorm.includes(baseTok) ||
-          descNorm.includes(tok) || descNorm.includes(baseTok) ||
-          catNorm.includes(tok) || catNorm.includes(baseTok) ||
-          slugNorm.includes(tok) || slugNorm.includes(baseTok)
+          matchAlias ||
+          nameNorm.includes(tok) ||
+          nameNorm.includes(baseTok) ||
+          descNorm.includes(tok) ||
+          descNorm.includes(baseTok) ||
+          catNorm.includes(tok) ||
+          catNorm.includes(baseTok) ||
+          slugNorm.includes(tok) ||
+          slugNorm.includes(baseTok)
         );
       });
     });
@@ -270,7 +276,7 @@ export default function ProductSearch({
           ) : (
             <div className="p-6 text-center space-y-2">
               <p className="text-xs font-bold text-gray-600">No se encontraron productos para "{searchTerm}"</p>
-              <p className="text-[11px] text-gray-400">Prueba buscando por categoría como bolígrafos, tazas o bolsas.</p>
+              <p className="text-[11px] text-gray-400">Prueba buscando por categoría como agendas, bolígrafos, tazas o bolsas.</p>
             </div>
           )}
 
