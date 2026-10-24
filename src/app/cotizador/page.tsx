@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   Printer, Sparkles, Tag, Ruler, Upload, CheckCircle2, 
-  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText, Zap, Shirt
+  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText, Zap, Flame
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 
@@ -18,7 +18,7 @@ interface SizeOption {
   isCustom?: boolean;
 }
 
-type PreOrderTab = 'DTF_TEXTIL' | 'UVDTF' | 'BANNERS_ESTRUCTURAS' | 'STICKERS' | 'PAPELERIA_COMERCIAL' | 'GRABADOS_LASER' | 'BORDADOS';
+type PreOrderTab = 'DTF_TEXTIL' | 'UVDTF' | 'BANNERS_ESTRUCTURAS' | 'STICKERS' | 'PAPELERIA_COMERCIAL' | 'OFERTAS_ESPECIALES';
 
 export default function CotizadorPage() {
   const { addToCart } = useCart();
@@ -55,15 +55,10 @@ export default function CotizadorPage() {
       title: 'PAPELERÍA COMERCIAL',
       subtitle: 'Talonarios de factura autocopiativos, volantes y tarjetas de presentación para tu negocio.',
     },
-    GRABADOS_LASER: {
-      image: '/images/banners/banner-grabados-laser.webp',
-      title: 'GRABADOS LÁSER PERSONALIZADOS',
-      subtitle: 'Grabado en termo ($8.00), Plumas personalizadas incluye pluma ($5.00) y Tabla de madera incluye tabla ($15.00). Todo desde 1 pieza.',
-    },
-    BORDADOS: {
-      image: '/images/banners/banner-bordados.webp',
-      title: 'BORDADOS COMPUTARIZADOS',
-      subtitle: 'Suéter Polo bordado ($10.00), Gorra Panamá 7 bordada ($6.50) y Digitalización de matriz ($10.00).',
+    OFERTAS_ESPECIALES: {
+      image: '/images/hero-home.jpg',
+      title: 'OFERTAS ESPECIALES',
+      subtitle: 'Combos y promociones por tiempo limitado en impresión digital, stickers, DTF y banners.',
     },
   };
 
@@ -121,15 +116,11 @@ export default function CotizadorPage() {
       { id: 'pap-tarjetas-300', name: 'Tarjetas de Presentación', dimensions: 'Pack 300 unidades', price: 21.50 },
       { id: 'pap-tarjetas-500', name: 'Tarjetas de Presentación', dimensions: 'Pack 500 unidades', price: 35.00, promo: true, promoBadge: 'PACK POPULAR' },
     ],
-    GRABADOS_LASER: [
-      { id: 'gl-termo-personalizado', name: 'Grabado Personalizado en Termo', dimensions: '1 Unidad (Grabado láser permanente en termo)', price: 8.00, promo: true, promoBadge: 'MÁS VENDIDO' },
-      { id: 'gl-plumas-personalizadas', name: 'Plumas Personalizadas', dimensions: '1 Unidad (Incluye la pluma + grabado láser)', price: 5.00, promo: true, promoBadge: 'INCLUYE PLUMA' },
-      { id: 'gl-tabla-madera', name: 'Tabla de Madera Personalizada', dimensions: '1 Unidad (Incluye la tabla de madera + grabado láser)', price: 15.00, promo: true, promoBadge: 'INCLUYE TABLA' },
-    ],
-    BORDADOS: [
-      { id: 'bor-polo-bordado', name: 'Suéter Polo Bordado', dimensions: 'Prenda tipo Polo + Bordado de logotipo incluido', price: 10.00, promo: true, promoBadge: 'MÁS PEDIDO' },
-      { id: 'bor-gorra-panama-7', name: 'Gorra Bordada Modelo Panamá 7', dimensions: 'Gorra modelo Panamá 7 Paneles con bordado frontal', price: 6.50, promo: true, promoBadge: 'POPULAR' },
-      { id: 'bor-digitalizacion-matriz', name: 'Digitalización de Matriz', dimensions: 'Conversión de logotipo a matriz de bordado (DST / PES)', price: 10.00 },
+    OFERTAS_ESPECIALES: [
+      { id: 'oferta-combo-emprendedor', name: 'Combo Emprendedor', dimensions: '100 Stickers 2"×2" + 100 Tarjetas de Presentación', price: 18.95, promo: true, promoBadge: 'SUPER PACK' },
+      { id: 'oferta-yarda-dtf-promo', name: 'Promo Yarda DTF Textil', dimensions: '11" × 36" (Impresión directa lista para transferir)', price: 5.95, promo: true, promoBadge: 'OFERTA FLASH' },
+      { id: 'oferta-pack-stickers-500', name: 'Super Pack 500 Stickers 2"×2"', dimensions: 'Vinil troquelado laminado impermeable', price: 23.50, promo: true, promoBadge: 'PRECIO ESPECIAL' },
+      { id: 'oferta-banner-express', name: 'Banner Promo 4 × 3 ft', dimensions: 'Lona 13oz con 4 ojales reforzados', price: 15.00, promo: true, promoBadge: 'DESTACADO' },
     ],
   };
 
@@ -240,8 +231,7 @@ export default function CotizadorPage() {
     { id: 'BANNERS_ESTRUCTURAS', label: 'Banners & Lonas', icon: <Ruler className="w-4 h-4 shrink-0" /> },
     { id: 'STICKERS', label: 'Stickers', icon: <Scissors className="w-4 h-4 shrink-0" /> },
     { id: 'PAPELERIA_COMERCIAL', label: 'Papelería', icon: <FileText className="w-4 h-4 shrink-0" /> },
-    { id: 'GRABADOS_LASER', label: 'Grabados Láser', icon: <Zap className="w-4 h-4 shrink-0" /> },
-    { id: 'BORDADOS', label: 'Bordados', icon: <Shirt className="w-4 h-4 shrink-0" /> },
+    { id: 'OFERTAS_ESPECIALES', label: 'OFERTAS ESPECIALES', icon: <Flame className="w-4 h-4 shrink-0 text-amber-300" /> },
   ];
 
   return (
@@ -263,7 +253,7 @@ export default function CotizadorPage() {
           Zona Pixel — Impresiones Digitales
         </h1>
         <p className="text-gray-600 text-sm max-w-3xl leading-relaxed">
-          Pide desde 1 sola pieza o por metro lineal sin cantidades mínimas. Si necesitas DTF textil, stickers troquelados, UV DTF, banners o bordados, selecciona tu categoría, adjunta tu diseño y calcula tu precio en segundos.
+          Pide desde 1 sola pieza sin cantidades mínimas. Si necesitas DTF textil, stickers troquelados, UV DTF, banners o papelería comercial, selecciona tu categoría, adjunta tu diseño y calcula tu precio en segundos.
         </p>
 
         {/* Guidance Notice Banner */}
@@ -345,7 +335,7 @@ export default function CotizadorPage() {
           
           {/* 1. TOP TAB CATEGORIES - Spacious & Responsive Grid */}
           <div className="bg-[#0D0D0D] p-3 rounded-2xl border border-gray-800 shadow-xl">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2">
               {navTabs.map((tab) => {
                 const active = activeTab === tab.id;
                 return (
@@ -468,10 +458,8 @@ export default function CotizadorPage() {
                   ? 'SELECCIONA TU PAQUETE DE STICKERS' 
                   : activeTab === 'PAPELERIA_COMERCIAL' 
                   ? 'SELECCIONA TU PRODUCTO DE PAPELERÍA' 
-                  : activeTab === 'GRABADOS_LASER'
-                  ? 'SELECCIONA TU ARTÍCULO DE GRABADO LÁSER (DESDE 1 PIEZA)'
-                  : activeTab === 'BORDADOS'
-                  ? 'SELECCIONA TU ARTÍCULO DE BORDADO'
+                  : activeTab === 'OFERTAS_ESPECIALES'
+                  ? 'SELECCIONA TU OFERTA ESPECIAL'
                   : 'TAMAÑO PREDETERMINADO'}
               </label>
 

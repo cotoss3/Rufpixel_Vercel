@@ -330,14 +330,14 @@ export default async function HomePage() {
 
             <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
               <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Shirt className="w-4.5 h-4.5" />
+                <FileText className="w-4.5 h-4.5" />
               </div>
               <div className="space-y-0.5">
-                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $6.50 USD</span>
-                <h3 className="text-sm font-bold text-white font-outfit">Bordados Computarizados</h3>
+                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Talonarios y Tarjetas</span>
+                <h3 className="text-sm font-bold text-white font-outfit">Papelería Comercial</h3>
               </div>
               <p className="text-[11px] text-gray-400 leading-relaxed">
-                Suéter Polo bordado ($10.00), Gorra Panamá 7 bordada ($6.50) y digitalización de matriz ($10.00).
+                Talonarios de factura autocopiativos desde 1 unidad, volantes publicitarios y tarjetas de presentación con acabado profesional.
               </p>
             </div>
 
