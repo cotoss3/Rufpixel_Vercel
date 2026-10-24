@@ -71,7 +71,7 @@ export default async function HomePage() {
                   className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white border border-gray-700 hover:border-[#FF5E14] px-8 py-4 rounded-xl font-semibold text-base transition-all flex items-center justify-center space-x-2 group"
                 >
                   <Zap className="w-5 h-5 text-[#FF5E14] group-hover:scale-110 transition-transform" />
-                  <span>Zona Pixel (Venta al Detal)</span>
+                  <span>Zona Pixel</span>
                 </Link>
               </div>
 
@@ -247,7 +247,7 @@ export default async function HomePage() {
       </section>
 
 
-      {/* 4. ZONA PIXEL - VENTA AL DETAL, METROS Y PIEZAS SUELTAS */}
+      {/* 4. ZONA PIXEL - IMPRESIONES DIGITALES */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0A0A0A] rounded-3xl border-2 border-gray-800 p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl space-y-8">
           <div className="absolute -right-20 -top-20 w-96 h-96 bg-[#FF5E14]/15 blur-3xl rounded-full pointer-events-none" />
@@ -257,13 +257,13 @@ export default async function HomePage() {
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center space-x-2 bg-[#FF5E14]/15 border border-[#FF5E14]/30 px-3.5 py-1 rounded-full text-xs font-extrabold text-[#FF5E14] tracking-wider uppercase">
                 <Zap className="w-3.5 h-3.5 fill-[#FF5E14]" />
-                <span>Zona Pixel · Venta al Detal & A Medida</span>
+                <span>Zona Pixel · Impresiones Digitales</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-outfit text-white leading-tight">
                 ¿Solo necesitas 1 unidad o pocos metros? <span className="text-[#FF5E14]">Aquí no te exigimos paquetes de 100.</span>
               </h2>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
-                En nuestra tienda mayorista vendemos por volumen para empresas. Pero si estás probando una marca nueva, necesitas validar una muestra con tu cliente o te salió un evento este fin de semana, en <strong>Zona Pixel</strong> compras al detal, por metro lineal o por pliego exacto.
+                En nuestra tienda mayorista vendemos por volumen para empresas. Pero si estás probando una marca nueva, necesitas validar una muestra con tu cliente o te salió un evento este fin de semana, en <strong>Zona Pixel</strong> compras por unidad, por metro lineal o por pliego exacto.
               </p>
             </div>
 
@@ -276,7 +276,7 @@ export default async function HomePage() {
                 <span>Entrar a Zona Pixel</span>
               </Link>
               <a
-                href="https://wa.me/50764454084?text=Hola%20RufPixel,%20tengo%20un%20pedido%20al%20detal%20para%20Zona%20Pixel"
+                href="https://wa.me/50764454084?text=Hola%20RufPixel,%20tengo%20una%20consulta%20para%20Zona%20Pixel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-900 hover:bg-gray-800 text-gray-200 border border-gray-700 px-6 py-4 rounded-2xl font-semibold text-sm transition-all flex items-center justify-center space-x-2"
@@ -287,7 +287,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* 5 Detal / Retail Pillars */}
+          {/* 5 Impresiones Digitales Pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 relative z-10">
             <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
               <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
@@ -321,7 +321,7 @@ export default async function HomePage() {
               </div>
               <div className="space-y-0.5">
                 <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Packs cortos desde $8.56</span>
-                <h3 className="text-sm font-bold text-white font-outfit">Stickers al Detal</h3>
+                <h3 className="text-sm font-bold text-white font-outfit">Stickers Personalizados</h3>
               </div>
               <p className="text-[11px] text-gray-400 leading-relaxed">
                 Vinil troquelado a la silueta de tu logo. Pide pocos stickers para probar el empaque de tu marca antes de mandar a hacer miles.

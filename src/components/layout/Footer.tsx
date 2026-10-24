@@ -64,7 +64,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-gray-300">
               <li><Link href="/tienda" className="hover:text-[#FF5E14] transition-colors">Catálogo de Tienda</Link></li>
-              <li><Link href="/cotizador" className="hover:text-[#FF5E14] transition-colors font-bold text-[#FF5E14]">Zona Pixel (Venta al Detal)</Link></li>
+              <li><Link href="/cotizador" className="hover:text-[#FF5E14] transition-colors font-bold text-[#FF5E14]">Zona Pixel</Link></li>
               <li><Link href="/galeria" className="hover:text-[#FF5E14] transition-colors">Galería de Trabajos</Link></li>
               <li><Link href="/nosotros" className="hover:text-[#FF5E14] transition-colors">Acerca de RufPixel</Link></li>
               <li><Link href="/contacto" className="hover:text-[#FF5E14] transition-colors">Contacto & Ubicación</Link></li>

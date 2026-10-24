@@ -16,7 +16,7 @@ export default function CarritoPage() {
         </div>
         <h1 className="text-3xl font-extrabold text-gray-900 font-outfit">Tu carrito está vacío</h1>
         <p className="text-gray-500 max-w-md mx-auto text-sm">
-          Explora nuestro catálogo mayorista o pide al detal sin mínimos en Zona Pixel.
+          Explora nuestro catálogo mayorista o pide sin mínimos en Zona Pixel.
         </p>
         <div className="flex justify-center space-x-4">
           <Link
@@ -29,7 +29,7 @@ export default function CarritoPage() {
             href="/cotizador"
             className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold text-sm border border-gray-800"
           >
-            Zona Pixel (Al Detal)
+            Zona Pixel — Impresiones Digitales
           </Link>
         </div>
       </div>

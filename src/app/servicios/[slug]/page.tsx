@@ -66,7 +66,7 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
           <div className="bg-[#0D0D0D] text-white p-8 rounded-3xl border border-gray-800 space-y-6 shadow-2xl">
             <h3 className="text-xl font-bold font-outfit text-white">¿Solo necesitas 1 pieza o pocos metros?</h3>
             <p className="text-xs text-gray-300 leading-relaxed">
-              En Zona Pixel compras al detal sin mínimos obligatorios. Pide desde 1 unidad, metros lineales sueltos o muestras antes de mandar a producir volumen.
+              En Zona Pixel compras impresiones digitales sin mínimos obligatorios. Pide desde 1 unidad, metros lineales sueltos o muestras antes de mandar a producir volumen.
             </p>
 
             <div className="space-y-3">
@@ -75,11 +75,11 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
                 className="w-full bg-[#FF5E14] hover:bg-[#E04700] text-white py-3.5 px-4 rounded-xl font-bold text-sm shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
               >
                 <Calculator className="w-5 h-5" />
-                <span>Calcular en Zona Pixel (Al Detal)</span>
+                <span>Calcular en Zona Pixel</span>
               </Link>
 
               <a
-                href="https://wa.me/50760000000?text=Hola,%20quisiera%20cotizar%20el%20servicio%20de%20"
+                href={`https://wa.me/50764454084?text=${encodeURIComponent(`Hola RufPixel, quisiera consultar sobre el servicio de ${service.title} en Zona Pixel.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3.5 px-4 rounded-xl font-semibold text-sm border border-gray-700 flex items-center justify-center space-x-2"

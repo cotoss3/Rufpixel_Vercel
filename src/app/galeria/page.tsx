@@ -162,7 +162,7 @@ export default function GaleriaPage() {
               className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-5 py-2 rounded-xl font-bold transition-all shadow-md shadow-[#FF5E14]/30 flex items-center space-x-1.5"
             >
               <Zap className="w-3.5 h-3.5" />
-              <span>Zona Pixel (Pedir al Detal)</span>
+              <span>Zona Pixel — Impresiones Digitales</span>
             </Link>
           </div>
         </div>
@@ -269,7 +269,7 @@ export default function GaleriaPage() {
               <Link
                 href="/cotizador"
                 className="p-2 bg-gray-900 hover:bg-[#FF5E14] text-white rounded-xl transition-colors shadow-sm"
-                title="Zona Pixel (Venta al Detal)"
+                title="Zona Pixel — Impresiones Digitales"
               >
                 <ShoppingBag className="w-4 h-4" />
               </Link>
@@ -358,7 +358,7 @@ export default function GaleriaPage() {
                   onClick={() => setActiveModalItem(null)}
                   className="bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-xl font-bold text-xs text-center"
                 >
-                  Zona Pixel (Al Detal)
+                  Zona Pixel — Impresiones Digitales
                 </Link>
               </div>
             </div>

@@ -137,7 +137,7 @@ export default function Header() {
             <Link
               href="/cotizador"
               className="flex items-center space-x-1.5 bg-[#FF5E14] hover:bg-[#E04700] text-white px-3 py-2 sm:px-4 sm:py-2 rounded-xl text-xs font-extrabold shadow-md shadow-[#FF5E14]/25 transition-all hover:scale-105 shrink-0"
-              title="Zona Pixel - Venta al Detal"
+              title="Zona Pixel"
             >
               <Zap className="w-4 h-4 shrink-0 text-white fill-white" />
               <span>Zona Pixel</span>
@@ -202,7 +202,7 @@ export default function Header() {
               className="w-full flex items-center justify-center space-x-2 bg-[#FF5E14] text-white py-3 rounded-lg font-bold text-xs shadow-md"
             >
               <Zap className="w-4 h-4" />
-              <span>Zona Pixel — Pedidos al Detal</span>
+              <span>Zona Pixel</span>
             </Link>
             <div className="text-xs text-gray-400 text-center space-y-1">
               <p>📞 WhatsApp: +507 6445-4084</p>

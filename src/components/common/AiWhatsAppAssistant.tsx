@@ -44,7 +44,7 @@ export default function AiWhatsAppAssistant() {
   ];
 
   const quantityOptions = [
-    '1 Unidad (Muestra / Detal)',
+    '1 Unidad (Muestra / Individual)',
     '50 Unidades (Pack Mayorista)',
     '100 Unidades',
     '250+ Unidades (Volumen Alto)',

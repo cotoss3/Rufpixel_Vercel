@@ -210,8 +210,8 @@ export default function CotizadorPage() {
       slug: `zonapixel-${activeTab.toLowerCase()}`,
       name: `Zona Pixel: ${categoryInfo.title} — ${sizeLabel}`,
       price: unitPrice,
-      description: `Pedido al detal Zona Pixel ${categoryInfo.title}. Archivo: ${fileName || 'Pendiente por adjuntar'}`,
-      shortDescription: `Medida / Detal: ${sizeLabel}`,
+      description: `Pedido Zona Pixel ${categoryInfo.title}. Archivo: ${fileName || 'Pendiente por adjuntar'}`,
+      shortDescription: `Medida: ${sizeLabel}`,
       category: categoryInfo.title,
       categorySlug: activeTab.toLowerCase(),
       image: categoryInfo.image,
@@ -257,15 +257,15 @@ export default function CotizadorPage() {
             <span>Zona Pixel</span>
           </span>
           <span className="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-md border border-gray-200">
-            Venta al Detal & Sin Cantidad Mínima
+            Impresiones Digitales
           </span>
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 font-outfit">
-          Pide al Detal: Desde 1 Sola Pieza o por Metro
+          Zona Pixel — Impresiones Digitales
         </h1>
         <p className="text-gray-600 text-sm max-w-3xl leading-relaxed">
-          Aquí compras suelto. Si necesitas estampar una sola camiseta, pedir 1 metro de DTF para probar cómo queda tu arte, o sacar pocos stickers para tus empaques, no tienes que pagar por un paquete mayorista de 100 piezas. Elige la categoría, sube tu archivo si lo tienes y calcula tu precio en segundos.
+          Pide desde 1 sola pieza o por metro lineal sin cantidades mínimas. Si necesitas DTF textil, stickers troquelados, UV DTF, banners o bordados, selecciona tu categoría, adjunta tu diseño y calcula tu precio en segundos.
         </p>
 
         {/* Guidance Notice Banner */}
@@ -309,7 +309,7 @@ export default function CotizadorPage() {
               <span className="font-bold text-gray-900">{submittedOrder.type}</span>
             </div>
             <div className="flex justify-between border-b border-gray-200 pb-2">
-              <span className="text-gray-500">Medida / Detal Seleccionado:</span>
+              <span className="text-gray-500">Medida / Formato:</span>
               <span className="font-bold text-[#FF5E14]">{submittedOrder.sizeLabel}</span>
             </div>
             <div className="flex justify-between border-b border-gray-200 pb-2">
@@ -338,7 +338,7 @@ export default function CotizadorPage() {
               onClick={() => setSubmittedOrder(null)}
               className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3.5 rounded-xl font-bold text-sm"
             >
-              Agregar Otro Ítem al Detal
+              Agregar Otro Producto
             </button>
           </div>
         </div>
@@ -390,7 +390,7 @@ export default function CotizadorPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex items-end p-5 sm:p-6">
                   <div className="space-y-1">
                     <span className="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-black/70 px-3 py-1 rounded-md border border-[#FF5E14]/40 inline-block backdrop-blur-sm">
-                      Zona Pixel · Venta al Detal
+                      Zona Pixel · Impresiones Digitales
                     </span>
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white font-outfit">
                       {categoryBanners[activeTab].title}
@@ -592,7 +592,7 @@ export default function CotizadorPage() {
                   className="flex-1 bg-[#FF5E14] hover:bg-[#E04700] text-white py-4 px-6 rounded-2xl font-extrabold text-sm shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
                 >
                   <ShoppingBag className="w-5 h-5" />
-                  <span>Agregar Pedido al Detal al Carrito</span>
+                  <span>Agregar a Zona Pixel</span>
                 </button>
               </div>
             </div>
