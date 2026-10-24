@@ -48,7 +48,7 @@ export default async function HomePage() {
               </div>
 
               {/* Title */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-outfit tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-outfit tracking-tight leading-tight text-white">
                 Impresión Corporativa de <span className="text-[#FF5E14] underline decoration-[#FF5E14]/40">Máxima Calidad</span> para tu Marca
               </h1>
 
