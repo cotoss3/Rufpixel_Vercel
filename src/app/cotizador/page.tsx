@@ -27,7 +27,6 @@ export default function CotizadorPage() {
   const [activeTab, setActiveTab] = useState<PreOrderTab>('DTF_TEXTIL');
   const [stickerFilter, setStickerFilter] = useState<'ALL' | '2X2' | '3X3' | '4X4'>('ALL');
   const [papeleriaFilter, setPapeleriaFilter] = useState<'ALL' | 'VOLANTES' | 'LIBRETAS' | 'TARJETAS'>('ALL');
-  const [laserFilter, setLaserFilter] = useState<'ALL' | 'TERMOS' | 'BOLIGRAFOS' | 'PLACAS'>('ALL');
 
   // Category Banners mapping (from uploaded media banners)
   const categoryBanners: Record<PreOrderTab, { image: string; title: string; subtitle: string }> = {
@@ -59,7 +58,7 @@ export default function CotizadorPage() {
     GRABADOS_LASER: {
       image: '/images/banners/banner-grabados-laser.webp',
       title: 'GRABADOS LÁSER PERSONALIZADOS',
-      subtitle: 'Marcado y grabado láser de alta precisión en botellas, termos, metal y madera sin mínimo de piezas.',
+      subtitle: 'Grabado en termo ($8.00), Plumas personalizadas incluye pluma ($5.00) y Tabla de madera incluye tabla ($15.00). Todo desde 1 pieza.',
     },
     BORDADOS: {
       image: '/images/banners/banner-bordados.webp',
@@ -125,12 +124,9 @@ export default function CotizadorPage() {
       { id: 'pap-tarjetas-500', name: 'Tarjetas de Presentación', dimensions: 'Pack 500 unidades', price: 35.00, promo: true, promoBadge: 'PACK POPULAR' },
     ],
     GRABADOS_LASER: [
-      { id: 'gl-termo-1', name: 'Grabado en Termo / Botella', dimensions: '1 Unidad (Personal / Muestra)', price: 4.50 },
-      { id: 'gl-termo-12', name: 'Grabado en Termos (Docena)', dimensions: 'Pack 12 unidades', price: 36.00, promo: true, promoBadge: 'DOCENA' },
-      { id: 'gl-termo-50', name: 'Grabado en Termos Corporativos', dimensions: 'Pack 50 unidades', price: 125.00, promo: true, promoBadge: 'EMPRESARIAL' },
-      { id: 'gl-boligrafos-50', name: 'Grabado Láser en Bolígrafos Metálicos', dimensions: 'Pack 50 unidades', price: 45.00 },
-      { id: 'gl-boligrafos-100', name: 'Grabado Láser en Bolígrafos Metálicos', dimensions: 'Pack 100 unidades', price: 75.00, promo: true, promoBadge: 'MEJOR PRECIO' },
-      { id: 'gl-placa-madera', name: 'Grabado en Placa / Madera / Acrílico', dimensions: 'Hasta 15 × 20 cm', price: 12.00 },
+      { id: 'gl-termo-personalizado', name: 'Grabado Personalizado en Termo', dimensions: '1 Unidad (Grabado láser permanente en termo)', price: 8.00, promo: true, promoBadge: 'MÁS VENDIDO' },
+      { id: 'gl-plumas-personalizadas', name: 'Plumas Personalizadas', dimensions: '1 Unidad (Incluye la pluma + grabado láser)', price: 5.00, promo: true, promoBadge: 'INCLUYE PLUMA' },
+      { id: 'gl-tabla-madera', name: 'Tabla de Madera Personalizada', dimensions: '1 Unidad (Incluye la tabla de madera + grabado láser)', price: 15.00, promo: true, promoBadge: 'INCLUYE TABLA' },
     ],
     BORDADOS: [
       { id: 'bor-polo-bordado', name: 'Suéter Polo Bordado', dimensions: 'Prenda tipo Polo + Bordado de logotipo incluido', price: 10.00, promo: true, promoBadge: 'MÁS PEDIDO' },
@@ -165,11 +161,6 @@ export default function CotizadorPage() {
       if (papeleriaFilter === 'VOLANTES') return s.id.includes('volante');
       if (papeleriaFilter === 'LIBRETAS') return s.id.includes('factura');
       if (papeleriaFilter === 'TARJETAS') return s.id.includes('tarjetas');
-    }
-    if (activeTab === 'GRABADOS_LASER') {
-      if (laserFilter === 'TERMOS') return s.id.includes('termo');
-      if (laserFilter === 'BOLIGRAFOS') return s.id.includes('boligrafo');
-      if (laserFilter === 'PLACAS') return s.id.includes('placa');
     }
     return true;
   });
@@ -472,36 +463,6 @@ export default function CotizadorPage() {
               </div>
             )}
 
-            {/* GRABADOS LASER FILTER SUB-TABS */}
-            {activeTab === 'GRABADOS_LASER' && (
-              <div className="space-y-2">
-                <label className="text-xs uppercase font-extrabold text-gray-500 tracking-wider block">
-                  Filtrar por Artículo de Grabado:
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { id: 'ALL', label: 'Todos los artículos' },
-                    { id: 'TERMOS', label: 'Botellas & Termos' },
-                    { id: 'BOLIGRAFOS', label: 'Bolígrafos Metálicos' },
-                    { id: 'PLACAS', label: 'Placas & Madera' },
-                  ].map((f) => (
-                    <button
-                      key={f.id}
-                      type="button"
-                      onClick={() => setLaserFilter(f.id as any)}
-                      className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
-                        laserFilter === f.id
-                          ? 'bg-[#0D0D0D] text-white border-[#0D0D0D]'
-                          : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
-                      }`}
-                    >
-                      {f.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* TAMAÑO PRE-DETERMINADO GRID */}
             <div className="space-y-3">
               <label className="text-xs uppercase font-extrabold text-gray-400 tracking-wider block">
@@ -510,7 +471,7 @@ export default function CotizadorPage() {
                   : activeTab === 'PAPELERIA_COMERCIAL' 
                   ? 'SELECCIONA TU PRODUCTO DE PAPELERÍA' 
                   : activeTab === 'GRABADOS_LASER'
-                  ? 'SELECCIONA TU PACK DE GRABADO LÁSER'
+                  ? 'SELECCIONA TU ARTÍCULO DE GRABADO LÁSER (DESDE 1 PIEZA)'
                   : activeTab === 'BORDADOS'
                   ? 'SELECCIONA TU ARTÍCULO DE BORDADO'
                   : 'TAMAÑO PREDETERMINADO'}
