@@ -71,7 +71,7 @@ export default async function HomePage() {
                   className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white border border-gray-700 hover:border-[#FF5E14] px-8 py-4 rounded-xl font-semibold text-base transition-all flex items-center justify-center space-x-2 group"
                 >
                   <Zap className="w-5 h-5 text-[#FF5E14] group-hover:scale-110 transition-transform" />
-                  <span>Zona Pixel</span>
+                  <span>Zona Pixel — Impresiones Digitales</span>
                 </Link>
               </div>
 
@@ -263,7 +263,7 @@ export default async function HomePage() {
                 ¿Solo necesitas 1 unidad o pocos metros? <span className="text-[#FF5E14]">Aquí no te exigimos paquetes de 100.</span>
               </h2>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
-                En nuestra tienda mayorista vendemos por volumen para empresas. Pero si estás probando una marca nueva, necesitas validar una muestra con tu cliente o te salió un evento este fin de semana, en <strong>Zona Pixel</strong> compras por unidad, por metro lineal o por pliego exacto.
+                En nuestra tienda mayorista vendemos por volumen para empresas. Pero si estás probando una marca nueva, necesitas validar una muestra con tu cliente o te salió un evento este fin de semana, en <strong>Zona Pixel (Impresiones Digitales)</strong> compras por unidad, por metro lineal o por pliego exacto.
               </p>
             </div>
 
@@ -273,10 +273,10 @@ export default async function HomePage() {
                 className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-7 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-[#FF5E14]/30 transition-all hover:scale-105 flex items-center justify-center space-x-2"
               >
                 <Calculator className="w-5 h-5" />
-                <span>Entrar a Zona Pixel</span>
+                <span>Entrar a Zona Pixel — Impresiones Digitales</span>
               </Link>
               <a
-                href="https://wa.me/50764454084?text=Hola%20RufPixel,%20tengo%20una%20consulta%20para%20Zona%20Pixel"
+                href="https://wa.me/50764454084?text=Hola%20RufPixel,%20tengo%20una%20consulta%20para%20Zona%20Pixel%20Impresiones%20Digitales"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-900 hover:bg-gray-800 text-gray-200 border border-gray-700 px-6 py-4 rounded-2xl font-semibold text-sm transition-all flex items-center justify-center space-x-2"
