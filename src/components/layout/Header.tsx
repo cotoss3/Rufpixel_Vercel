@@ -47,8 +47,7 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: 'Inicio' },
     { href: '/servicios', label: 'Servicios' },
-    { href: '/tienda', label: 'Tienda Mayorista' },
-    { href: '/cotizador', label: 'Zona Pixel (Al Detal)' },
+    { href: '/tienda', label: 'Tienda' },
     { href: '/galeria', label: 'Galería' },
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/contacto', label: 'Contacto' },
@@ -134,13 +133,14 @@ export default function Header() {
 
           {/* Right Header Actions */}
           <div className="flex items-center space-x-3 shrink-0">
-            {/* Quick Zona Pixel CTA */}
+            {/* Quick Zona Pixel CTA Button */}
             <Link
               href="/cotizador"
-              className="flex items-center space-x-1.5 bg-[#FF5E14] hover:bg-[#E04700] text-white px-2.5 py-2 sm:px-3.5 sm:py-2 rounded-xl text-xs font-extrabold shadow-md shadow-[#FF5E14]/25 transition-all"
+              className="flex items-center space-x-1.5 bg-[#FF5E14] hover:bg-[#E04700] text-white px-3 py-2 sm:px-4 sm:py-2 rounded-xl text-xs font-extrabold shadow-md shadow-[#FF5E14]/25 transition-all hover:scale-105 shrink-0"
+              title="Zona Pixel - Venta al Detal"
             >
-              <Zap className="w-4 h-4 shrink-0 text-white" />
-              <span className="hidden xs:inline sm:inline">Zona Pixel</span>
+              <Zap className="w-4 h-4 shrink-0 text-white fill-white" />
+              <span>Zona Pixel</span>
             </Link>
 
             {/* Cart Icon */}
