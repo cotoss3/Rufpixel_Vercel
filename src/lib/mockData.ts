@@ -9,7 +9,7 @@ export const MOCK_SERVICES: Service[] = [
     shortDesc: 'Grabado y marcado láser de máxima precisión sobre una amplia gama de materiales rígidos y orgánicos con acabados limpios e imborrables.',
     fullDesc: 'Ofrecemos un servicio de grabado y marcado láser de máxima precisión, diseñado para plasmar logotipos, nombres, vectores e ilustraciones personalizadas sobre una amplia gama de materiales rígidos y orgánicos. Utilizando tecnología láser de punta, garantizamos acabados limpios, permanentes e imborrables que elevan la calidad estética y el valor percibido de tus productos, regalos ejecutivos o material publicitario.',
     iconName: 'Sparkles',
-    image: '/images/banners/banner-grabados-laser.jpg',
+    image: '/images/banners/banner-grabados-laser.webp',
     features: [
       'Detalles ultra finos, trazos delgados y microtextos sin alterar la integridad del producto base.',
       'Acabado Permanente e Imborrable.',
@@ -23,7 +23,7 @@ export const MOCK_SERVICES: Service[] = [
     shortDesc: 'Soluciones publicitarias de gran impacto visual para interiores y exteriores resistentes al sol y la humedad de Panamá.',
     fullDesc: 'Soluciones publicitarias de gran impacto visual para interiores y exteriores. Utilizamos tintas solventes y eco-solventes de alta durabilidad resistentes al sol y la humedad de Panamá. Ideal para ferias, eventos comerciales, señaléctica corporativa y remodelación de fachadas.',
     iconName: 'Maximize2',
-    image: '/images/banners/banner-gran-formato.jpg',
+    image: '/images/banners/banner-gran-formato.webp',
     features: [
       'Lona Mesh y Lona Baner de 13oz',
       'Estructuras Roll-Up y banner arañas.',

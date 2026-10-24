@@ -32,34 +32,34 @@ export default function CotizadorPage() {
   // Category Banners mapping (from uploaded media banners)
   const categoryBanners: Record<PreOrderTab, { image: string; title: string; subtitle: string }> = {
     DTF_TEXTIL: {
-      image: '/images/banners/banner-dtf.jpg',
+      image: '/images/banners/banner-dtf.webp',
       title: 'IMPRESIÓN DTF TEXTIL',
-      subtitle: 'Transfer digital textil de alta adherencia y elasticidad para prendas oscuras y claras',
+      subtitle: 'Transfer textil por metro lineal (60cm de ancho) o pliegos A4. Estampa tus camisetas en casa o en taller.',
     },
     UVDTF: {
-      image: '/images/banners/banner-uvdtf.jpg',
+      image: '/images/banners/banner-uvdtf.webp',
       title: 'IMPRESIÓN UVDTF',
-      subtitle: 'Transfer UV adhesivo con relieve 3D, barniz brillante y máxima resistencia en rígidos',
+      subtitle: 'Stickers con relieve táctil 3D y barniz brillante para pegar en frío sobre termos, tazas y rígidos.',
     },
     BANNERS_ESTRUCTURAS: {
-      image: '/images/banners/banner-gran-formato.jpg',
+      image: '/images/banners/banner-gran-formato.webp',
       title: 'BANNERS Y ESTRUCTURAS',
-      subtitle: 'Lonas publicitarias 13oz, Roll-Up retráctiles y estructuras arañita de gran impacto',
+      subtitle: 'Lona gruesa de 13oz con ojales o roll-up retráctil de aluminio listo para tu evento o feria.',
     },
     STICKERS: {
-      image: '/images/banners/banner-stickers.jpg',
+      image: '/images/banners/banner-stickers.webp',
       title: 'STICKERS PERSONALIZADOS',
-      subtitle: 'Vinil troquelado de alta precisión impermeable para marcas, packaging y empaques',
+      subtitle: 'Vinil troquelado a la silueta de tu logo. Pide tirajes cortos para validar tu producto con clientes.',
     },
     PAPELERIA_COMERCIAL: {
-      image: '/images/banners/banner-papeleria.jpg',
+      image: '/images/banners/banner-papeleria.webp',
       title: 'PAPELERÍA COMERCIAL',
-      subtitle: 'Volantes publicitarios, talonarios de factura y tarjetas de presentación ejecutivas',
+      subtitle: 'Talonarios de factura autocopiativos, volantes y tarjetas de presentación para tu negocio.',
     },
     GRABADOS_LASER: {
-      image: '/images/banners/banner-grabados-laser.jpg',
+      image: '/images/banners/banner-grabados-laser.webp',
       title: 'GRABADOS LÁSER PERSONALIZADOS',
-      subtitle: 'Grabado y marcado láser de máxima precisión en botellas, termos, metal y madera',
+      subtitle: 'Marcado y grabado láser de alta precisión en botellas, termos, metal y madera sin mínimo de piezas.',
     },
   };
 
@@ -205,12 +205,12 @@ export default function CotizadorPage() {
       : `${currentSelectedOption?.name} (${currentSelectedOption?.dimensions})`;
 
     const customProduct = {
-      id: `preorder-${Date.now()}`,
-      slug: `preorden-${activeTab.toLowerCase()}`,
-      name: `${categoryInfo.title} — ${sizeLabel}`,
+      id: `zonapixel-${Date.now()}`,
+      slug: `zonapixel-${activeTab.toLowerCase()}`,
+      name: `Zona Pixel: ${categoryInfo.title} — ${sizeLabel}`,
       price: unitPrice,
-      description: `Pedido de pre-orden ${categoryInfo.title}. Archivo: ${fileName || 'Pendiente'}`,
-      shortDescription: `Tamaño: ${sizeLabel}`,
+      description: `Pedido al detal Zona Pixel ${categoryInfo.title}. Archivo: ${fileName || 'Pendiente por adjuntar'}`,
+      shortDescription: `Medida / Detal: ${sizeLabel}`,
       category: categoryInfo.title,
       categorySlug: activeTab.toLowerCase(),
       image: categoryInfo.image,
@@ -225,7 +225,7 @@ export default function CotizadorPage() {
     addToCart(customProduct, quantity, { Categoría: categoryInfo.title, Medida: sizeLabel }, fileName ? `Archivo: ${fileName}` : '');
 
     setSubmittedOrder({
-      id: `PRE-${Math.floor(100000 + Math.random() * 900000)}`,
+      id: `ZP-${Math.floor(100000 + Math.random() * 900000)}`,
       type: categoryInfo.title,
       sizeLabel,
       quantity,
@@ -248,16 +248,42 @@ export default function CotizadorPage() {
     <div className="py-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 animate-fade-in">
       
       {/* Header */}
-      <div className="space-y-2">
-        <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
-          Cotizador de Pre-Orden
-        </span>
+      <div className="space-y-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md flex items-center space-x-1.5">
+            <Zap className="w-3.5 h-3.5 fill-[#FF5E14]" />
+            <span>Zona Pixel</span>
+          </span>
+          <span className="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-md border border-gray-200">
+            Venta al Detal & Sin Cantidad Mínima
+          </span>
+        </div>
+
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 font-outfit">
-          Nuevo pedido
+          Pide al Detal: Desde 1 Sola Pieza o por Metro
         </h1>
-        <p className="text-gray-600 text-sm">
-          Arma tu orden seleccionando la categoría y cantidad en paquetes predeterminados.
+        <p className="text-gray-600 text-sm max-w-3xl leading-relaxed">
+          Aquí compras suelto. Si necesitas estampar una sola camiseta, pedir 1 metro de DTF para probar cómo queda tu arte, o sacar pocos stickers para tus empaques, no tienes que pagar por un paquete mayorista de 100 piezas. Elige la categoría, sube tu archivo si lo tienes y calcula tu precio en segundos.
         </p>
+
+        {/* Guidance Notice Banner */}
+        <div className="bg-[#FFF8F5] border border-[#FF5E14]/25 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-gray-700">
+          <div className="flex items-center space-x-3">
+            <div className="w-7 h-7 rounded-lg bg-[#FF5E14] text-white flex items-center justify-center shrink-0 font-bold">
+              <ShoppingBag className="w-4 h-4" />
+            </div>
+            <div>
+              <strong className="text-gray-900 block">¿Necesitas pedidos grandes por volumen corporativo?</strong>
+              <span>Para paquetes de 50, 100 y 250 unidades con precio mayorista por bulto, visita la tienda general.</span>
+            </div>
+          </div>
+          <Link
+            href="/tienda"
+            className="shrink-0 bg-white hover:bg-gray-50 border border-gray-300 text-gray-900 px-3.5 py-1.5 rounded-xl font-bold hover:text-[#FF5E14] transition-colors"
+          >
+            Ver Tienda Mayorista
+          </Link>
+        </div>
       </div>
 
       {submittedOrder ? (
@@ -268,10 +294,10 @@ export default function CotizadorPage() {
           
           <div className="space-y-2">
             <h2 className="text-2xl font-extrabold text-gray-900 font-outfit">
-              ¡Agregado al Carrito & Pre-Orden Lista!
+              ¡Listo! Tu pedido de Zona Pixel fue agregado al carrito
             </h2>
             <p className="text-gray-600 text-sm">
-              Código de Pre-orden: <strong className="font-mono text-gray-900 font-bold">{submittedOrder.id}</strong>
+              Código de Pedido: <strong className="font-mono text-gray-900 font-bold">{submittedOrder.id}</strong>
             </p>
           </div>
 
@@ -281,12 +307,12 @@ export default function CotizadorPage() {
               <span className="font-bold text-gray-900">{submittedOrder.type}</span>
             </div>
             <div className="flex justify-between border-b border-gray-200 pb-2">
-              <span className="text-gray-500">Medida / Paquete Seleccionado:</span>
+              <span className="text-gray-500">Medida / Detal Seleccionado:</span>
               <span className="font-bold text-[#FF5E14]">{submittedOrder.sizeLabel}</span>
             </div>
             <div className="flex justify-between border-b border-gray-200 pb-2">
-              <span className="text-gray-500">Cantidad de Paquetes:</span>
-              <span className="font-bold">{submittedOrder.quantity} paquete(s)</span>
+              <span className="text-gray-500">Cantidad:</span>
+              <span className="font-bold">{submittedOrder.quantity} unidad(es)</span>
             </div>
             <div className="flex justify-between border-b border-gray-200 pb-2">
               <span className="text-gray-500">Archivo Adjunto:</span>
@@ -304,13 +330,13 @@ export default function CotizadorPage() {
               className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md shadow-[#FF5E14]/30 flex items-center space-x-2"
             >
               <ShoppingBag className="w-4 h-4" />
-              <span>Ir al Carrito & Pagar (YAPPY COMERCIAL & ACH)</span>
+              <span>Ir al Carrito & Pagar (YAPPY & ACH)</span>
             </Link>
             <button
               onClick={() => setSubmittedOrder(null)}
               className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3.5 rounded-xl font-bold text-sm"
             >
-              Agregar Otro Ítem
+              Agregar Otro Ítem al Detal
             </button>
           </div>
         </div>
@@ -360,7 +386,7 @@ export default function CotizadorPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex items-end p-5 sm:p-6">
                   <div className="space-y-1">
                     <span className="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-black/70 px-3 py-1 rounded-md border border-[#FF5E14]/40 inline-block backdrop-blur-sm">
-                      Pre-Orden Activa
+                      Zona Pixel · Venta al Detal
                     </span>
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white font-outfit">
                       {categoryBanners[activeTab].title}
@@ -573,7 +599,7 @@ export default function CotizadorPage() {
             <div className="bg-[#0D0D0D] text-white p-6 sm:p-8 rounded-3xl space-y-4 shadow-2xl border border-gray-800">
               <div className="flex items-center justify-between border-b border-gray-800 pb-4">
                 <div>
-                  <span className="text-xs text-gray-400 font-medium block">Total Estimado de la Pre-Orden:</span>
+                  <span className="text-xs text-gray-400 font-medium block">Total Estimado en Zona Pixel:</span>
                   <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit">
                     ${totalPrice.toFixed(2)} USD
                   </span>
@@ -590,7 +616,7 @@ export default function CotizadorPage() {
                   className="flex-1 bg-[#FF5E14] hover:bg-[#E04700] text-white py-4 px-6 rounded-2xl font-extrabold text-sm shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
                 >
                   <ShoppingBag className="w-5 h-5" />
-                  <span>Agregar Pre-Orden al Carrito</span>
+                  <span>Agregar Pedido al Detal al Carrito</span>
                 </button>
               </div>
             </div>

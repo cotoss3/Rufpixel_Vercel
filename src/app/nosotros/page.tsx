@@ -123,7 +123,7 @@ export default function NosotrosPage() {
 
               <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-[#0D0D0D] p-2">
                 <img
-                  src="/images/banners/banner-grabados-laser.jpg"
+                  src="/images/banners/banner-grabados-laser.webp"
                   alt="Grabados Láser RufPixel"
                   className="w-full h-auto rounded-xl object-cover"
                 />
@@ -158,7 +158,7 @@ export default function NosotrosPage() {
 
               <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-[#0D0D0D] p-2">
                 <img
-                  src="/images/banners/banner-gran-formato.jpg"
+                  src="/images/banners/banner-gran-formato.webp"
                   alt="Maquinaria Gran Formato RufPixel"
                   className="w-full h-auto rounded-xl object-cover"
                 />
@@ -241,7 +241,7 @@ export default function NosotrosPage() {
 
               <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-[#0D0D0D] p-2">
                 <img
-                  src="/images/banners/banner-uvdtf.jpg"
+                  src="/images/banners/banner-uvdtf.webp"
                   alt="Compromiso de Calidad RufPixel"
                   className="w-full h-auto rounded-xl object-cover"
                 />

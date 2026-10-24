@@ -28,4 +28,7 @@ Thumbs.db
 
 # Scratch files
 /scratch/
+*.csv
+*.xls
+scripts_export_excel.js
 

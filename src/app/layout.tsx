@@ -10,8 +10,8 @@ import AiWhatsAppAssistant from '@/components/common/AiWhatsAppAssistant';
 
 export const metadata: Metadata = {
   title: 'RufPixel — Servicios de Impresión Digital, Gran Formato & Diseño Gráfico en Panamá',
-  description: 'Impresión corporativa en Panamá: Tarjetas de presentación soft-touch, Banners Roll-up, Flyers, Stickers troquelados, Gift cards y cotizaciones de pre-orden. Pagos por Yappy.',
-  keywords: ['Impresión Panamá', 'Tarjetas de presentación', 'Banners Panamá', 'Imprenta Panamá', 'Stickers personalizados', 'Yappy', 'RufPixel'],
+  description: 'Impresión en Panamá: Catálogo mayorista para empresas y Zona Pixel para venta al detal sin mínimos. DTF textil por metros, stickers troquelados, banners roll-up y pagos por Yappy comercial.',
+  keywords: ['Impresión Panamá', 'DTF textil Panamá', 'Stickers personalizados', 'Banners Panamá', 'Zona Pixel', 'Venta al detal imprenta', 'Yappy Comercial', 'RufPixel'],
   metadataBase: new URL('https://rufpixel.com'),
   alternates: {
     canonical: './',

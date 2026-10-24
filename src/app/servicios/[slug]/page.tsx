@@ -64,9 +64,9 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
         {/* Right Sidebar: Inquiry & Pre-order Widget */}
         <div className="lg:col-span-4 space-y-6">
           <div className="bg-[#0D0D0D] text-white p-8 rounded-3xl border border-gray-800 space-y-6 shadow-2xl">
-            <h3 className="text-xl font-bold font-outfit text-white">¿Necesitas una cotización?</h3>
+            <h3 className="text-xl font-bold font-outfit text-white">¿Solo necesitas 1 pieza o pocos metros?</h3>
             <p className="text-xs text-gray-300 leading-relaxed">
-              Si conoces las dimensiones aproximadas o tienes tu archivo listo, puedes cotizarlo inmediatamente en nuestro sistema de pre-orden.
+              En Zona Pixel compras al detal sin mínimos obligatorios. Pide desde 1 unidad, metros lineales sueltos o muestras antes de mandar a producir volumen.
             </p>
 
             <div className="space-y-3">
@@ -75,7 +75,7 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
                 className="w-full bg-[#FF5E14] hover:bg-[#E04700] text-white py-3.5 px-4 rounded-xl font-bold text-sm shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
               >
                 <Calculator className="w-5 h-5" />
-                <span>Cotizar con Tamaño & Archivo</span>
+                <span>Calcular en Zona Pixel (Al Detal)</span>
               </Link>
 
               <a

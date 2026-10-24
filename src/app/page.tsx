@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   CreditCard, Maximize2, FileText, Tag, Gift, ArrowRight, ShieldCheck, 
-  Sparkles, CheckCircle2, Clock, Truck, Calculator, Star, ShoppingBag, ArrowUpRight
+  Sparkles, CheckCircle2, Clock, Truck, Calculator, Star, ShoppingBag, ArrowUpRight,
+  Zap, Scissors, Printer, Layers, MessageCircle
 } from 'lucide-react';
 import { MOCK_SERVICES, MOCK_TESTIMONIALS } from '@/lib/mockData';
 import { getProducts } from '@/lib/woocommerce';
@@ -62,15 +63,15 @@ export default async function HomePage() {
                   className="w-full sm:w-auto bg-[#FF5E14] hover:bg-[#E04700] text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg shadow-[#FF5E14]/30 transition-all hover:-translate-y-0.5 flex items-center justify-center space-x-2"
                 >
                   <ShoppingBag className="w-5 h-5" />
-                  <span>Ver Catálogo de Tienda</span>
+                  <span>Catálogo Mayorista (Packs)</span>
                 </Link>
 
                 <Link
                   href="/cotizador"
-                  className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white border border-gray-700 hover:border-[#FF5E14] px-8 py-4 rounded-xl font-semibold text-base transition-all flex items-center justify-center space-x-2"
+                  className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white border border-gray-700 hover:border-[#FF5E14] px-8 py-4 rounded-xl font-semibold text-base transition-all flex items-center justify-center space-x-2 group"
                 >
-                  <Calculator className="w-5 h-5 text-[#FF5E14]" />
-                  <span>Cotizar Medidas (Pre-Orden)</span>
+                  <Zap className="w-5 h-5 text-[#FF5E14] group-hover:scale-110 transition-transform" />
+                  <span>Zona Pixel (Venta al Detal)</span>
                 </Link>
               </div>
 
@@ -246,32 +247,114 @@ export default async function HomePage() {
       </section>
 
 
-      {/* 4. PRE-ORDER BANNER (FASE 6 SCALABILITY) */}
+      {/* 4. ZONA PIXEL - VENTA AL DETAL, METROS Y PIEZAS SUELTAS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-[#0D0D0D] to-[#1F1F1F] rounded-3xl p-8 sm:p-12 text-white border border-gray-800 relative overflow-hidden shadow-2xl">
-          <div className="absolute right-0 top-0 w-96 h-96 bg-[#FF5E14]/10 blur-3xl rounded-full pointer-events-none" />
+        <div className="bg-[#0A0A0A] rounded-3xl border-2 border-gray-800 p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl space-y-8">
+          <div className="absolute -right-20 -top-20 w-96 h-96 bg-[#FF5E14]/15 blur-3xl rounded-full pointer-events-none" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-8 space-y-4">
-              <span className="inline-block text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
-                Cotizador en Línea
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-outfit leading-tight">
-                ¿Tienes un archivo con dimensiones específicas?
+          {/* Header of Zona Pixel */}
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-gray-800/80 pb-8">
+            <div className="space-y-3 max-w-2xl">
+              <div className="inline-flex items-center space-x-2 bg-[#FF5E14]/15 border border-[#FF5E14]/30 px-3.5 py-1 rounded-full text-xs font-extrabold text-[#FF5E14] tracking-wider uppercase">
+                <Zap className="w-3.5 h-3.5 fill-[#FF5E14]" />
+                <span>Zona Pixel · Venta al Detal & A Medida</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-outfit text-white leading-tight">
+                ¿Solo necesitas 1 unidad o pocos metros? <span className="text-[#FF5E14]">Aquí no te exigimos paquetes de 100.</span>
               </h2>
-              <p className="text-gray-300 text-sm sm:text-base max-w-xl">
-                Envía tu arte (PDF, AI, PNG) con las medidas en centímetros o metros. El sistema calculará una estimación de precio y creará tu <strong>pre-orden</strong> para revisión inmediata.
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+                En nuestra tienda mayorista vendemos por volumen para empresas. Pero si estás probando una marca nueva, necesitas validar una muestra con tu cliente o te salió un evento este fin de semana, en <strong>Zona Pixel</strong> compras al detal, por metro lineal o por pliego exacto.
               </p>
             </div>
 
-            <div className="lg:col-span-4 flex justify-start lg:justify-end">
+            <div className="shrink-0 flex flex-col sm:flex-row gap-3">
               <Link
                 href="/cotizador"
-                className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-8 py-4 rounded-2xl font-extrabold text-base shadow-xl shadow-[#FF5E14]/30 transition-all hover:scale-105 flex items-center space-x-3"
+                className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-7 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-[#FF5E14]/30 transition-all hover:scale-105 flex items-center justify-center space-x-2"
               >
-                <Calculator className="w-6 h-6" />
-                <span>Iniciar Pre-Orden</span>
+                <Calculator className="w-5 h-5" />
+                <span>Entrar a Zona Pixel</span>
               </Link>
+              <a
+                href="https://wa.me/50764454084?text=Hola%20RufPixel,%20tengo%20un%20pedido%20al%20detal%20para%20Zona%20Pixel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 hover:bg-gray-800 text-gray-200 border border-gray-700 px-6 py-4 rounded-2xl font-semibold text-sm transition-all flex items-center justify-center space-x-2"
+              >
+                <MessageCircle className="w-5 h-5 text-emerald-400" />
+                <span>Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          {/* 4 Detal / Retail Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Printer className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">Desde $2.94 USD</span>
+                <h3 className="text-base font-bold text-white font-outfit">DTF Textil por Metros</h3>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Pide desde 1 formato A4 o metros lineales sueltos (60cm de ancho). Trae tu arte y estampa camisetas sin comprar un lote entero.
+              </p>
+            </div>
+
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">Desde $5.32 USD</span>
+                <h3 className="text-base font-bold text-white font-outfit">UV DTF para Rígidos</h3>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Stickers con relieve 3D que pegas en frío sobre termos, tazas o acrílico. No necesitas plancha térmica ni máquinas especiales.
+              </p>
+            </div>
+
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Scissors className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">Packs cortos desde $8.56</span>
+                <h3 className="text-base font-bold text-white font-outfit">Stickers al Detal</h3>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Troquelados a la silueta de tu logo en vinil impermeable. Ideal para probar cómo queda el empaque de tu producto antes de ordenar miles.
+              </p>
+            </div>
+
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Maximize2 className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">1 sola pieza o estructura</span>
+                <h3 className="text-base font-bold text-white font-outfit">Banners & Roll-Ups</h3>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Lona gruesa de 13oz con ojales o roll-up retráctil de aluminio listo para armar. Te lo entregamos en 24 a 48 horas en Panamá.
+              </p>
+            </div>
+          </div>
+
+          {/* Micro Guarantee footer */}
+          <div className="pt-4 border-t border-gray-800/80 flex flex-wrap items-center justify-between text-xs text-gray-400 gap-4">
+            <div className="flex items-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-[#FF5E14]" />
+              <span>Calculas tu precio en segundos con tus medidas</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Clock className="w-4 h-4 text-[#FF5E14]" />
+              <span>Despachos y retiros rápidos en 24 a 48 horas</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <ShieldCheck className="w-4 h-4 text-[#FF5E14]" />
+              <span>Pagos directos por Yappy Comercial y ACH Banco General</span>
             </div>
           </div>
         </div>
@@ -354,25 +437,25 @@ export default async function HomePage() {
               {
                 title: 'Grabados Láser en Botellas & Termos',
                 category: 'Grabados Láser',
-                image: '/images/banners/banner-grabados-laser.jpg',
+                image: '/images/banners/banner-grabados-laser.webp',
                 tag: 'Acabado Imborrable',
               },
               {
                 title: 'Impresión Gran Formato & Roll-Up',
                 category: 'Gran Formato',
-                image: '/images/banners/banner-gran-formato.jpg',
+                image: '/images/banners/banner-gran-formato.webp',
                 tag: 'Lona 13oz & Tintas Eco-Solventes',
               },
               {
                 title: 'Transfer UV DTF de Alta Resistencia',
                 category: 'UVDTF',
-                image: '/images/banners/banner-uvdtf.jpg',
+                image: '/images/banners/banner-uvdtf.webp',
                 tag: 'Relieve Táctil & Full Color',
               },
               {
                 title: 'Stickers Troquelados Personalizados',
                 category: 'Stickers',
-                image: '/images/banners/banner-stickers.jpg',
+                image: '/images/banners/banner-stickers.webp',
                 tag: 'Vinil Impermeable',
               },
             ].map((item, idx) => (

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Menu, X, Phone, Mail, Clock, Calculator, ShieldCheck } from 'lucide-react';
+import { ShoppingBag, Menu, X, Phone, Mail, Clock, Calculator, ShieldCheck, Zap } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 import ProductSearch from '../shop/ProductSearch';
 import { Product } from '@/lib/types';
@@ -47,8 +47,8 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: 'Inicio' },
     { href: '/servicios', label: 'Servicios' },
-    { href: '/tienda', label: 'Tienda' },
-    { href: '/cotizador', label: 'Cotizador (Pre-Orden)' },
+    { href: '/tienda', label: 'Tienda Mayorista' },
+    { href: '/cotizador', label: 'Zona Pixel (Al Detal)' },
     { href: '/galeria', label: 'Galería' },
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/contacto', label: 'Contacto' },
@@ -134,13 +134,13 @@ export default function Header() {
 
           {/* Right Header Actions */}
           <div className="flex items-center space-x-3 shrink-0">
-            {/* Quick Pre-order CTA */}
+            {/* Quick Zona Pixel CTA */}
             <Link
               href="/cotizador"
               className="flex items-center space-x-1.5 bg-[#FF5E14] hover:bg-[#E04700] text-white px-2.5 py-2 sm:px-3.5 sm:py-2 rounded-xl text-xs font-extrabold shadow-md shadow-[#FF5E14]/25 transition-all"
             >
-              <Calculator className="w-4 h-4 shrink-0" />
-              <span className="hidden xs:inline sm:inline">Pre-orden</span>
+              <Zap className="w-4 h-4 shrink-0 text-white" />
+              <span className="hidden xs:inline sm:inline">Zona Pixel</span>
             </Link>
 
             {/* Cart Icon */}
@@ -199,10 +199,10 @@ export default function Header() {
             <Link
               href="/cotizador"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center space-x-2 bg-[#FF5E14] text-white py-3 rounded-lg font-bold text-xs"
+              className="w-full flex items-center justify-center space-x-2 bg-[#FF5E14] text-white py-3 rounded-lg font-bold text-xs shadow-md"
             >
-              <Calculator className="w-4 h-4" />
-              <span>Cotizar Arte / Pre-orden</span>
+              <Zap className="w-4 h-4" />
+              <span>Zona Pixel — Pedidos al Detal</span>
             </Link>
             <div className="text-xs text-gray-400 text-center space-y-1">
               <p>📞 WhatsApp: +507 6445-4084</p>

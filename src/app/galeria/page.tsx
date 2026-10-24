@@ -25,7 +25,7 @@ const GALLERY_PROJECTS: ProjectItem[] = [
     title: 'Grabados Láser en Botellas Térmicas de Acero Inoxidable',
     category: 'grabados',
     categoryLabel: 'Grabados Láser',
-    image: '/images/banners/banner-grabados-laser.jpg',
+    image: '/images/banners/banner-grabados-laser.webp',
     description: 'Marcado y grabado láser de alta fidelidad con vectorizado limpio de logotipo corporativo sobre termo mate.',
     materials: 'Acero Inoxidable con pintura electrostática, grabado por fibra láser',
     client: 'Cliente Corporativo — Panamá',
@@ -36,7 +36,7 @@ const GALLERY_PROJECTS: ProjectItem[] = [
     title: 'Estructuras Roll-Up y Lonas Publicitarias para Evento Comercial',
     category: 'gran-formato',
     categoryLabel: 'Gran Formato & Banners',
-    image: '/images/banners/banner-gran-formato.jpg',
+    image: '/images/banners/banner-gran-formato.webp',
     description: 'Impresión de alta durabilidad en lona Frontlit de 13oz con tintas eco-solventes y estructura retráctil de aluminio reforzado.',
     materials: 'Lona Frontlit 13oz + Estructura Roll-Up de Aluminio',
     client: 'Feria Empresarial Panamá Oeste',
@@ -47,7 +47,7 @@ const GALLERY_PROJECTS: ProjectItem[] = [
     title: 'Transferencia UVDTF para Superficies Rígidas y Mugs',
     category: 'uvdtf',
     categoryLabel: 'UVDTF',
-    image: '/images/banners/banner-uvdtf.jpg',
+    image: '/images/banners/banner-uvdtf.webp',
     description: 'Stickers de transferencia directa UV DTF con relieve táctil 3D, barniz transparente y adherencia permanente sin calor.',
     materials: 'Film UV DTF con adhesivo acrílico de alta resistencia y barniz brillante',
     client: 'Marca Creativa @rufpixel',
@@ -58,7 +58,7 @@ const GALLERY_PROJECTS: ProjectItem[] = [
     title: 'Stickers Troquelados Holográficos y Vinil Mate',
     category: 'stickers',
     categoryLabel: 'Stickers & Etiquetas',
-    image: '/images/banners/banner-stickers.jpg',
+    image: '/images/banners/banner-stickers.webp',
     description: 'Troquelado computarizado milimétrico en vinil impermeable a prueba de agua y refrigeración con corte a la forma del arte.',
     materials: 'Vinil Adhesivo Laminado Resistente al Sol y Agua',
     client: 'Emprendimientos & Packaging',
@@ -69,7 +69,7 @@ const GALLERY_PROJECTS: ProjectItem[] = [
     title: 'Estampados DTF Textil para Uniformes y Ropa de Marca',
     category: 'textil',
     categoryLabel: 'DTF Textil',
-    image: '/images/banners/banner-dtf.jpg',
+    image: '/images/banners/banner-dtf.webp',
     description: 'Transferencia digital DTF textil de máxima elasticidad y suavidad al tacto en camisetas 100% algodón y poliéster.',
     materials: 'Film DTF + Poliamida Elástica + Tinta Textil CMYK + Blanco Puro',
     client: 'Marca de Ropa & Uniformes Corporativos',
@@ -80,7 +80,7 @@ const GALLERY_PROJECTS: ProjectItem[] = [
     title: 'Papelería Corporativa: Volantes, Talonarios y Tarjetas Soft-Touch',
     category: 'papeleria',
     categoryLabel: 'Papelería Comercial & POP',
-    image: '/images/banners/banner-papeleria.jpg',
+    image: '/images/banners/banner-papeleria.webp',
     description: 'Producción de papelería institucional con acabados satinados, plegados de precisión y talonarios autocopiativos.',
     materials: 'Papel Satinado 100 lbs + Cartulina Opalina 300g con Soft-Touch',
     client: 'Empresas Corporativas Panamá',
@@ -162,7 +162,7 @@ export default function GaleriaPage() {
               className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-5 py-2 rounded-xl font-bold transition-all shadow-md shadow-[#FF5E14]/30 flex items-center space-x-1.5"
             >
               <Zap className="w-3.5 h-3.5" />
-              <span>Cotizar mi Proyecto (Pre-Orden)</span>
+              <span>Zona Pixel (Pedir al Detal)</span>
             </Link>
           </div>
         </div>
@@ -269,7 +269,7 @@ export default function GaleriaPage() {
               <Link
                 href="/cotizador"
                 className="p-2 bg-gray-900 hover:bg-[#FF5E14] text-white rounded-xl transition-colors shadow-sm"
-                title="Iniciar Pre-Orden"
+                title="Zona Pixel (Venta al Detal)"
               >
                 <ShoppingBag className="w-4 h-4" />
               </Link>
@@ -358,7 +358,7 @@ export default function GaleriaPage() {
                   onClick={() => setActiveModalItem(null)}
                   className="bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-xl font-bold text-xs text-center"
                 >
-                  Cotizador Pre-Orden
+                  Zona Pixel (Al Detal)
                 </Link>
               </div>
             </div>
