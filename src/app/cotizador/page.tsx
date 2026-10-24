@@ -33,7 +33,7 @@ export default function CotizadorPage() {
     DTF_TEXTIL: {
       image: '/images/banners/banner-dtf.webp',
       title: 'IMPRESIÓN DTF TEXTIL',
-      subtitle: 'Transfer textil por metro lineal (60cm de ancho) o pliegos A4. Estampa tus camisetas en casa o en taller.',
+      subtitle: 'Transfer textil por pliego o yarda lineal. Estampa tus camisetas en casa o en taller.',
     },
     UVDTF: {
       image: '/images/banners/banner-uvdtf.webp',
@@ -72,7 +72,6 @@ export default function CotizadorPage() {
     DTF_TEXTIL: [
       { id: 'dtf-a4', name: 'Formato A4', dimensions: '8.27" × 11"', price: 2.94 },
       { id: 'dtf-yarda-lineal', name: 'Yarda Lineal DTF', dimensions: '11" × 36"', price: 6.42, promo: true, promoBadge: 'MÁS VENDIDO' },
-      { id: 'dtf-metro-lineal', name: 'Metro Lineal DTF', dimensions: '22" × 39"', price: 11.50 },
     ],
     UVDTF: [
       { id: 'uv-a4', name: 'Formato A4 UV DTF', dimensions: '8.2" × 11"', price: 5.32 },

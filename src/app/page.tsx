@@ -295,10 +295,10 @@ export default async function HomePage() {
               </div>
               <div className="space-y-0.5">
                 <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $2.94 USD</span>
-                <h3 className="text-sm font-bold text-white font-outfit">DTF Textil por Metro</h3>
+                <h3 className="text-sm font-bold text-white font-outfit">DTF Textil</h3>
               </div>
               <p className="text-[11px] text-gray-400 leading-relaxed">
-                Desde formato A4 o metros lineales sueltos (60cm de ancho). Trae tu arte y estampa camisetas sin comprar paquetes de 100.
+                Desde formato A4 o yarda lineal. Trae tu arte y estampa camisetas sin comprar paquetes de 100.
               </p>
             </div>
 
