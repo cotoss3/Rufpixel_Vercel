@@ -76,7 +76,6 @@ export default function CotizadorPage() {
     UVDTF: [
       { id: 'uv-a4', name: 'Formato A4 UV DTF', dimensions: '8.2" × 11"', price: 5.32 },
       { id: 'uv-yarda-lineal', name: 'Yarda Lineal UV DTF', dimensions: '11" × 36"', price: 10.70, promo: true, promoBadge: 'ALTA DURABILIDAD' },
-      { id: 'uv-metro', name: 'Metro Lineal UV DTF', dimensions: '22" × 39"', price: 18.90 },
     ],
     BANNERS_ESTRUCTURAS: [
       { id: 'gf-3x2', name: 'Banner Lona 13oz 3 × 2 ft', dimensions: '36" × 24"', price: 9.63 },
