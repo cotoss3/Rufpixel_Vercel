@@ -333,11 +333,11 @@ export default async function HomePage() {
                 <Shirt className="w-4.5 h-4.5" />
               </div>
               <div className="space-y-0.5">
-                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $5.00 USD</span>
+                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $6.50 USD</span>
                 <h3 className="text-sm font-bold text-white font-outfit">Bordados Computarizados</h3>
               </div>
               <p className="text-[11px] text-gray-400 leading-relaxed">
-                Bordado directo en gorras, polos corporativos, camisas y parches térmicos. Muestras desde 1 sola pieza para tu equipo.
+                Suéter Polo bordado ($10.00), Gorra Panamá 7 bordada ($6.50) y digitalización de matriz ($10.00).
               </p>
             </div>
 

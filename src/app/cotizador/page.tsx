@@ -28,7 +28,6 @@ export default function CotizadorPage() {
   const [stickerFilter, setStickerFilter] = useState<'ALL' | '2X2' | '3X3' | '4X4'>('ALL');
   const [papeleriaFilter, setPapeleriaFilter] = useState<'ALL' | 'VOLANTES' | 'LIBRETAS' | 'TARJETAS'>('ALL');
   const [laserFilter, setLaserFilter] = useState<'ALL' | 'TERMOS' | 'BOLIGRAFOS' | 'PLACAS'>('ALL');
-  const [bordadoFilter, setBordadoFilter] = useState<'ALL' | 'GORRAS' | 'POLOS' | 'PARCHES' | 'MATRIZ'>('ALL');
 
   // Category Banners mapping (from uploaded media banners)
   const categoryBanners: Record<PreOrderTab, { image: string; title: string; subtitle: string }> = {
@@ -65,7 +64,7 @@ export default function CotizadorPage() {
     BORDADOS: {
       image: '/images/banners/banner-bordados.webp',
       title: 'BORDADOS COMPUTARIZADOS',
-      subtitle: 'Bordado directo en gorras, polos corporativos, camisas, sudaderas y parches con relieve o plano.',
+      subtitle: 'Suéter Polo bordado ($10.00), Gorra Panamá 7 bordada ($6.50) y Digitalización de matriz ($10.00).',
     },
   };
 
@@ -134,13 +133,9 @@ export default function CotizadorPage() {
       { id: 'gl-placa-madera', name: 'Grabado en Placa / Madera / Acrílico', dimensions: 'Hasta 15 × 20 cm', price: 12.00 },
     ],
     BORDADOS: [
-      { id: 'bor-gorra-1', name: 'Bordado en Gorra (Frontal)', dimensions: '1 Unidad (Muestra o Detal)', price: 6.50, promo: true, promoBadge: 'MÁS PEDIDO' },
-      { id: 'bor-gorra-12', name: 'Bordado en Gorras (Docena)', dimensions: 'Pack 12 unidades', price: 54.00, promo: true, promoBadge: 'DOCENA' },
-      { id: 'bor-pecho-1', name: 'Bordado Pecho / Bolsillo en Polo o Camisa', dimensions: 'Hasta 10 × 10 cm (1 Unidad)', price: 5.00 },
-      { id: 'bor-pecho-12', name: 'Bordado Pecho en Polos / Camisas (Docena)', dimensions: 'Pack 12 unidades', price: 42.00, promo: true, promoBadge: 'EMPRESAS' },
-      { id: 'bor-espalda-1', name: 'Bordado Espalda Completa (Chaqueta o Sudadera)', dimensions: 'Hasta 25 × 25 cm (1 Unidad)', price: 14.50 },
-      { id: 'bor-parches-10', name: 'Parches Bordados con Borde Remallado', dimensions: 'Pack 10 unidades (con termoadhesivo)', price: 28.00, promo: true, promoBadge: 'CON TERMOADHESIVO' },
-      { id: 'bor-ponchado', name: 'Ponchado / Digitalización de Matriz', dimensions: 'Archivo DST / PES listo para bordar', price: 10.00 },
+      { id: 'bor-polo-bordado', name: 'Suéter Polo Bordado', dimensions: 'Prenda tipo Polo + Bordado de logotipo incluido', price: 10.00, promo: true, promoBadge: 'MÁS PEDIDO' },
+      { id: 'bor-gorra-panama-7', name: 'Gorra Bordada Modelo Panamá 7', dimensions: 'Gorra modelo Panamá 7 Paneles con bordado frontal', price: 6.50, promo: true, promoBadge: 'POPULAR' },
+      { id: 'bor-digitalizacion-matriz', name: 'Digitalización de Matriz', dimensions: 'Conversión de logotipo a matriz de bordado (DST / PES)', price: 10.00 },
     ],
   };
 
@@ -175,12 +170,6 @@ export default function CotizadorPage() {
       if (laserFilter === 'TERMOS') return s.id.includes('termo');
       if (laserFilter === 'BOLIGRAFOS') return s.id.includes('boligrafo');
       if (laserFilter === 'PLACAS') return s.id.includes('placa');
-    }
-    if (activeTab === 'BORDADOS') {
-      if (bordadoFilter === 'GORRAS') return s.id.includes('gorra');
-      if (bordadoFilter === 'POLOS') return s.id.includes('pecho');
-      if (bordadoFilter === 'PARCHES') return s.id.includes('parche');
-      if (bordadoFilter === 'MATRIZ') return s.id.includes('ponchado') || s.id.includes('espalda');
     }
     return true;
   });
@@ -513,37 +502,6 @@ export default function CotizadorPage() {
               </div>
             )}
 
-            {/* BORDADOS FILTER SUB-TABS */}
-            {activeTab === 'BORDADOS' && (
-              <div className="space-y-2">
-                <label className="text-xs uppercase font-extrabold text-gray-500 tracking-wider block">
-                  Filtrar por Tipo de Bordado:
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { id: 'ALL', label: 'Todos los bordados' },
-                    { id: 'GORRAS', label: 'Gorras' },
-                    { id: 'POLOS', label: 'Pecho / Polos' },
-                    { id: 'PARCHES', label: 'Parches con Borde' },
-                    { id: 'MATRIZ', label: 'Espalda & Matriz' },
-                  ].map((f) => (
-                    <button
-                      key={f.id}
-                      type="button"
-                      onClick={() => setBordadoFilter(f.id as any)}
-                      className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
-                        bordadoFilter === f.id
-                          ? 'bg-[#0D0D0D] text-white border-[#0D0D0D]'
-                          : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
-                      }`}
-                    >
-                      {f.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* TAMAÑO PRE-DETERMINADO GRID */}
             <div className="space-y-3">
               <label className="text-xs uppercase font-extrabold text-gray-400 tracking-wider block">
@@ -554,7 +512,7 @@ export default function CotizadorPage() {
                   : activeTab === 'GRABADOS_LASER'
                   ? 'SELECCIONA TU PACK DE GRABADO LÁSER'
                   : activeTab === 'BORDADOS'
-                  ? 'SELECCIONA TU PRENDA O SERVICIO DE BORDADO'
+                  ? 'SELECCIONA TU ARTÍCULO DE BORDADO'
                   : 'TAMAÑO PREDETERMINADO'}
               </label>
 
