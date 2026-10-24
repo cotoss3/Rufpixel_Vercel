@@ -6,6 +6,7 @@ import {
   Sparkles, CheckCircle2, Clock, Truck, Calculator, Star, ShoppingBag, ArrowUpRight,
   Zap, Scissors, Printer, Layers, MessageCircle, Shirt
 } from 'lucide-react';
+import { StickerIcon } from '@/components/icons/StickerIcon';
 import { MOCK_SERVICES, MOCK_TESTIMONIALS } from '@/lib/mockData';
 import { getProducts } from '@/lib/woocommerce';
 import { getBlogPosts } from '@/lib/wordpress';
@@ -317,7 +318,7 @@ export default async function HomePage() {
 
             <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
               <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Scissors className="w-4.5 h-4.5" />
+                <StickerIcon className="w-4.5 h-4.5" />
               </div>
               <div className="space-y-0.5">
                 <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Packs cortos desde $8.56</span>

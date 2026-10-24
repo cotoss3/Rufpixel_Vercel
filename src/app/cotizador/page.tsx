@@ -7,6 +7,7 @@ import {
   ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText, Zap, Flame
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
+import { StickerIcon } from '@/components/icons/StickerIcon';
 
 interface SizeOption {
   id: string;
@@ -229,7 +230,7 @@ export default function CotizadorPage() {
     { id: 'DTF_TEXTIL', label: 'DTF Textil', icon: <Printer className="w-4 h-4 shrink-0" /> },
     { id: 'UVDTF', label: 'UV DTF', icon: <Sparkles className="w-4 h-4 shrink-0" /> },
     { id: 'BANNERS_ESTRUCTURAS', label: 'Banners & Lonas', icon: <Ruler className="w-4 h-4 shrink-0" /> },
-    { id: 'STICKERS', label: 'Stickers', icon: <Scissors className="w-4 h-4 shrink-0" /> },
+    { id: 'STICKERS', label: 'Stickers', icon: <StickerIcon className="w-4 h-4 shrink-0" /> },
     { id: 'PAPELERIA_COMERCIAL', label: 'Papelería', icon: <FileText className="w-4 h-4 shrink-0" /> },
     { id: 'OFERTAS_ESPECIALES', label: 'OFERTAS ESPECIALES', icon: <Flame className="w-4 h-4 shrink-0 text-amber-300" /> },
   ];
