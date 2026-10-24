@@ -59,7 +59,7 @@ export default function CotizadorPage() {
     OFERTAS_ESPECIALES: {
       image: '/images/hero-home.jpg',
       title: 'OFERTAS ESPECIALES',
-      subtitle: 'Combos y promociones por tiempo limitado en impresión digital, stickers, DTF y banners.',
+      subtitle: 'Aprovecha nuestro Combo Emprendedor: stickers troquelados y tarjetas de presentación para impulsar tu marca.',
     },
   };
 
@@ -119,9 +119,6 @@ export default function CotizadorPage() {
     ],
     OFERTAS_ESPECIALES: [
       { id: 'oferta-combo-emprendedor', name: 'Combo Emprendedor', dimensions: '100 Stickers 2"×2" + 100 Tarjetas de Presentación', price: 18.95, promo: true, promoBadge: 'SUPER PACK' },
-      { id: 'oferta-yarda-dtf-promo', name: 'Promo Yarda DTF Textil', dimensions: '11" × 36" (Impresión directa lista para transferir)', price: 5.95, promo: true, promoBadge: 'OFERTA FLASH' },
-      { id: 'oferta-pack-stickers-500', name: 'Super Pack 500 Stickers 2"×2"', dimensions: 'Vinil troquelado laminado impermeable', price: 23.50, promo: true, promoBadge: 'PRECIO ESPECIAL' },
-      { id: 'oferta-banner-express', name: 'Banner Promo 4 × 3 ft', dimensions: 'Lona 13oz con 4 ojales reforzados', price: 15.00, promo: true, promoBadge: 'DESTACADO' },
     ],
   };
 
