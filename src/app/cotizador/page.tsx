@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   Printer, Sparkles, Tag, Ruler, Upload, CheckCircle2, 
-  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText, Zap
+  ShieldCheck, Calculator, ArrowRight, ShoppingBag, Plus, Minus, Layers, Scissors, FileText, Zap, Shirt
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 
@@ -18,16 +18,17 @@ interface SizeOption {
   isCustom?: boolean;
 }
 
-type PreOrderTab = 'DTF_TEXTIL' | 'UVDTF' | 'BANNERS_ESTRUCTURAS' | 'STICKERS' | 'PAPELERIA_COMERCIAL' | 'GRABADOS_LASER';
+type PreOrderTab = 'DTF_TEXTIL' | 'UVDTF' | 'BANNERS_ESTRUCTURAS' | 'STICKERS' | 'PAPELERIA_COMERCIAL' | 'GRABADOS_LASER' | 'BORDADOS';
 
 export default function CotizadorPage() {
   const { addToCart } = useCart();
 
-  // Top Category Tabs (Exact match to PDF Page 3)
+  // Top Category Tabs
   const [activeTab, setActiveTab] = useState<PreOrderTab>('DTF_TEXTIL');
   const [stickerFilter, setStickerFilter] = useState<'ALL' | '2X2' | '3X3' | '4X4'>('ALL');
   const [papeleriaFilter, setPapeleriaFilter] = useState<'ALL' | 'VOLANTES' | 'LIBRETAS' | 'TARJETAS'>('ALL');
   const [laserFilter, setLaserFilter] = useState<'ALL' | 'TERMOS' | 'BOLIGRAFOS' | 'PLACAS'>('ALL');
+  const [bordadoFilter, setBordadoFilter] = useState<'ALL' | 'GORRAS' | 'POLOS' | 'PARCHES' | 'MATRIZ'>('ALL');
 
   // Category Banners mapping (from uploaded media banners)
   const categoryBanners: Record<PreOrderTab, { image: string; title: string; subtitle: string }> = {
@@ -60,6 +61,11 @@ export default function CotizadorPage() {
       image: '/images/banners/banner-grabados-laser.webp',
       title: 'GRABADOS LÁSER PERSONALIZADOS',
       subtitle: 'Marcado y grabado láser de alta precisión en botellas, termos, metal y madera sin mínimo de piezas.',
+    },
+    BORDADOS: {
+      image: '/images/banners/banner-bordados.webp',
+      title: 'BORDADOS COMPUTARIZADOS',
+      subtitle: 'Bordado directo en gorras, polos corporativos, camisas, sudaderas y parches con relieve o plano.',
     },
   };
 
@@ -127,6 +133,15 @@ export default function CotizadorPage() {
       { id: 'gl-boligrafos-100', name: 'Grabado Láser en Bolígrafos Metálicos', dimensions: 'Pack 100 unidades', price: 75.00, promo: true, promoBadge: 'MEJOR PRECIO' },
       { id: 'gl-placa-madera', name: 'Grabado en Placa / Madera / Acrílico', dimensions: 'Hasta 15 × 20 cm', price: 12.00 },
     ],
+    BORDADOS: [
+      { id: 'bor-gorra-1', name: 'Bordado en Gorra (Frontal)', dimensions: '1 Unidad (Muestra o Detal)', price: 6.50, promo: true, promoBadge: 'MÁS PEDIDO' },
+      { id: 'bor-gorra-12', name: 'Bordado en Gorras (Docena)', dimensions: 'Pack 12 unidades', price: 54.00, promo: true, promoBadge: 'DOCENA' },
+      { id: 'bor-pecho-1', name: 'Bordado Pecho / Bolsillo en Polo o Camisa', dimensions: 'Hasta 10 × 10 cm (1 Unidad)', price: 5.00 },
+      { id: 'bor-pecho-12', name: 'Bordado Pecho en Polos / Camisas (Docena)', dimensions: 'Pack 12 unidades', price: 42.00, promo: true, promoBadge: 'EMPRESAS' },
+      { id: 'bor-espalda-1', name: 'Bordado Espalda Completa (Chaqueta o Sudadera)', dimensions: 'Hasta 25 × 25 cm (1 Unidad)', price: 14.50 },
+      { id: 'bor-parches-10', name: 'Parches Bordados con Borde Remallado', dimensions: 'Pack 10 unidades (con termoadhesivo)', price: 28.00, promo: true, promoBadge: 'CON TERMOADHESIVO' },
+      { id: 'bor-ponchado', name: 'Ponchado / Digitalización de Matriz', dimensions: 'Archivo DST / PES listo para bordar', price: 10.00 },
+    ],
   };
 
   const [selectedSizeId, setSelectedSizeId] = useState<string>('dtf-a4');
@@ -160,6 +175,12 @@ export default function CotizadorPage() {
       if (laserFilter === 'TERMOS') return s.id.includes('termo');
       if (laserFilter === 'BOLIGRAFOS') return s.id.includes('boligrafo');
       if (laserFilter === 'PLACAS') return s.id.includes('placa');
+    }
+    if (activeTab === 'BORDADOS') {
+      if (bordadoFilter === 'GORRAS') return s.id.includes('gorra');
+      if (bordadoFilter === 'POLOS') return s.id.includes('pecho');
+      if (bordadoFilter === 'PARCHES') return s.id.includes('parche');
+      if (bordadoFilter === 'MATRIZ') return s.id.includes('ponchado') || s.id.includes('espalda');
     }
     return true;
   });
@@ -236,12 +257,13 @@ export default function CotizadorPage() {
   };
 
   const navTabs: { id: PreOrderTab; label: string; icon: React.ReactNode }[] = [
-    { id: 'DTF_TEXTIL', label: 'DTF - TEXTIL', icon: <Printer className="w-4 h-4" /> },
-    { id: 'UVDTF', label: 'UVDTF', icon: <Sparkles className="w-4 h-4" /> },
-    { id: 'BANNERS_ESTRUCTURAS', label: 'BANNERS Y ESTRUCTURAS', icon: <Ruler className="w-4 h-4" /> },
-    { id: 'STICKERS', label: 'STICKERS', icon: <Scissors className="w-4 h-4" /> },
-    { id: 'PAPELERIA_COMERCIAL', label: 'PAPELERIA COMERCIAL', icon: <FileText className="w-4 h-4" /> },
-    { id: 'GRABADOS_LASER', label: 'GRABADOS LASER', icon: <Zap className="w-4 h-4" /> },
+    { id: 'DTF_TEXTIL', label: 'DTF Textil', icon: <Printer className="w-4 h-4 shrink-0" /> },
+    { id: 'UVDTF', label: 'UV DTF', icon: <Sparkles className="w-4 h-4 shrink-0" /> },
+    { id: 'BANNERS_ESTRUCTURAS', label: 'Banners & Lonas', icon: <Ruler className="w-4 h-4 shrink-0" /> },
+    { id: 'STICKERS', label: 'Stickers', icon: <Scissors className="w-4 h-4 shrink-0" /> },
+    { id: 'PAPELERIA_COMERCIAL', label: 'Papelería', icon: <FileText className="w-4 h-4 shrink-0" /> },
+    { id: 'GRABADOS_LASER', label: 'Grabados Láser', icon: <Zap className="w-4 h-4 shrink-0" /> },
+    { id: 'BORDADOS', label: 'Bordados', icon: <Shirt className="w-4 h-4 shrink-0" /> },
   ];
 
   return (
@@ -343,33 +365,35 @@ export default function CotizadorPage() {
       ) : (
         <form onSubmit={handleAddToCartOrOrder} className="space-y-8">
           
-          {/* 1. TOP TAB CATEGORIES (Exact PDF Page 3 list of 6 buttons) */}
-          <div className="bg-[#0D0D0D] p-2 rounded-2xl flex items-center justify-between border border-gray-800 shadow-xl overflow-x-auto gap-1">
-            {navTabs.map((tab) => {
-              const active = activeTab === tab.id;
-              return (
-                <button
-                  type="button"
-                  key={tab.id}
-                  onClick={() => {
-                    setActiveTab(tab.id);
-                    const firstSize = presetSizes[tab.id]?.[0];
-                    if (firstSize) {
-                      setSelectedSizeId(firstSize.id);
-                      setIsCustomSize(false);
-                    }
-                  }}
-                  className={`flex-1 min-w-[130px] sm:min-w-[150px] flex items-center justify-center space-x-1.5 py-3 px-3 rounded-xl text-xs font-extrabold transition-all text-center whitespace-nowrap ${
-                    active
-                      ? 'bg-[#FF5E14] text-white shadow-lg shadow-[#FF5E14]/30 scale-[1.02]'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {tab.icon}
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
+          {/* 1. TOP TAB CATEGORIES - Spacious & Responsive Grid */}
+          <div className="bg-[#0D0D0D] p-3 rounded-2xl border border-gray-800 shadow-xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2">
+              {navTabs.map((tab) => {
+                const active = activeTab === tab.id;
+                return (
+                  <button
+                    type="button"
+                    key={tab.id}
+                    onClick={() => {
+                      setActiveTab(tab.id);
+                      const firstSize = presetSizes[tab.id]?.[0];
+                      if (firstSize) {
+                        setSelectedSizeId(firstSize.id);
+                        setIsCustomSize(false);
+                      }
+                    }}
+                    className={`flex items-center justify-center space-x-2 py-3 px-2.5 rounded-xl text-xs font-bold transition-all text-center ${
+                      active
+                        ? 'bg-[#FF5E14] text-white shadow-lg shadow-[#FF5E14]/30 ring-2 ring-[#FF5E14]/40 scale-[1.02]'
+                        : 'bg-[#141414] text-gray-300 hover:text-white hover:bg-[#1F1F1F] border border-gray-800/80 hover:border-gray-700'
+                    }`}
+                  >
+                    {tab.icon}
+                    <span className="truncate">{tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Main Card Container */}
@@ -489,6 +513,37 @@ export default function CotizadorPage() {
               </div>
             )}
 
+            {/* BORDADOS FILTER SUB-TABS */}
+            {activeTab === 'BORDADOS' && (
+              <div className="space-y-2">
+                <label className="text-xs uppercase font-extrabold text-gray-500 tracking-wider block">
+                  Filtrar por Tipo de Bordado:
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { id: 'ALL', label: 'Todos los bordados' },
+                    { id: 'GORRAS', label: 'Gorras' },
+                    { id: 'POLOS', label: 'Pecho / Polos' },
+                    { id: 'PARCHES', label: 'Parches con Borde' },
+                    { id: 'MATRIZ', label: 'Espalda & Matriz' },
+                  ].map((f) => (
+                    <button
+                      key={f.id}
+                      type="button"
+                      onClick={() => setBordadoFilter(f.id as any)}
+                      className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
+                        bordadoFilter === f.id
+                          ? 'bg-[#0D0D0D] text-white border-[#0D0D0D]'
+                          : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
+                      }`}
+                    >
+                      {f.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* TAMAÑO PRE-DETERMINADO GRID */}
             <div className="space-y-3">
               <label className="text-xs uppercase font-extrabold text-gray-400 tracking-wider block">
@@ -498,6 +553,8 @@ export default function CotizadorPage() {
                   ? 'SELECCIONA TU PRODUCTO DE PAPELERÍA' 
                   : activeTab === 'GRABADOS_LASER'
                   ? 'SELECCIONA TU PACK DE GRABADO LÁSER'
+                  : activeTab === 'BORDADOS'
+                  ? 'SELECCIONA TU PRENDA O SERVICIO DE BORDADO'
                   : 'TAMAÑO PREDETERMINADO'}
               </label>
 

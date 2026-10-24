@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { 
   CreditCard, Maximize2, FileText, Tag, Gift, ArrowRight, ShieldCheck, 
   Sparkles, CheckCircle2, Clock, Truck, Calculator, Star, ShoppingBag, ArrowUpRight,
-  Zap, Scissors, Printer, Layers, MessageCircle
+  Zap, Scissors, Printer, Layers, MessageCircle, Shirt
 } from 'lucide-react';
 import { MOCK_SERVICES, MOCK_TESTIMONIALS } from '@/lib/mockData';
 import { getProducts } from '@/lib/woocommerce';
@@ -287,57 +287,70 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* 4 Detal / Retail Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Printer className="w-5 h-5" />
+          {/* 5 Detal / Retail Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 relative z-10">
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Printer className="w-4.5 h-4.5" />
               </div>
-              <div className="space-y-1">
-                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">Desde $2.94 USD</span>
-                <h3 className="text-base font-bold text-white font-outfit">DTF Textil por Metros</h3>
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $2.94 USD</span>
+                <h3 className="text-sm font-bold text-white font-outfit">DTF Textil por Metro</h3>
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Pide desde 1 formato A4 o metros lineales sueltos (60cm de ancho). Trae tu arte y estampa camisetas sin comprar un lote entero.
+              <p className="text-[11px] text-gray-400 leading-relaxed">
+                Desde formato A4 o metros lineales sueltos (60cm de ancho). Trae tu arte y estampa camisetas sin comprar paquetes de 100.
               </p>
             </div>
 
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Sparkles className="w-5 h-5" />
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Sparkles className="w-4.5 h-4.5" />
               </div>
-              <div className="space-y-1">
-                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">Desde $5.32 USD</span>
-                <h3 className="text-base font-bold text-white font-outfit">UV DTF para Rígidos</h3>
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $5.32 USD</span>
+                <h3 className="text-sm font-bold text-white font-outfit">UV DTF para Rígidos</h3>
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Stickers con relieve 3D que pegas en frío sobre termos, tazas o acrílico. No necesitas plancha térmica ni máquinas especiales.
+              <p className="text-[11px] text-gray-400 leading-relaxed">
+                Stickers con relieve 3D que pegas en frío sobre termos, tazas o acrílico sin plancha térmica ni máquinas pesadas.
               </p>
             </div>
 
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Scissors className="w-5 h-5" />
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Scissors className="w-4.5 h-4.5" />
               </div>
-              <div className="space-y-1">
-                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">Packs cortos desde $8.56</span>
-                <h3 className="text-base font-bold text-white font-outfit">Stickers al Detal</h3>
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Packs cortos desde $8.56</span>
+                <h3 className="text-sm font-bold text-white font-outfit">Stickers al Detal</h3>
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Troquelados a la silueta de tu logo en vinil impermeable. Ideal para probar cómo queda el empaque de tu producto antes de ordenar miles.
+              <p className="text-[11px] text-gray-400 leading-relaxed">
+                Vinil troquelado a la silueta de tu logo. Pide pocos stickers para probar el empaque de tu marca antes de mandar a hacer miles.
               </p>
             </div>
 
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-5 space-y-3 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Maximize2 className="w-5 h-5" />
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Shirt className="w-4.5 h-4.5" />
               </div>
-              <div className="space-y-1">
-                <span className="text-[11px] font-mono text-[#FF5E14] font-semibold">1 sola pieza o estructura</span>
-                <h3 className="text-base font-bold text-white font-outfit">Banners & Roll-Ups</h3>
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $5.00 USD</span>
+                <h3 className="text-sm font-bold text-white font-outfit">Bordados Computarizados</h3>
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Lona gruesa de 13oz con ojales o roll-up retráctil de aluminio listo para armar. Te lo entregamos en 24 a 48 horas en Panamá.
+              <p className="text-[11px] text-gray-400 leading-relaxed">
+                Bordado directo en gorras, polos corporativos, camisas y parches térmicos. Muestras desde 1 sola pieza para tu equipo.
+              </p>
+            </div>
+
+            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
+              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
+                <Maximize2 className="w-4.5 h-4.5" />
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">1 sola pieza lista</span>
+                <h3 className="text-sm font-bold text-white font-outfit">Banners & Roll-Ups</h3>
+              </div>
+              <p className="text-[11px] text-gray-400 leading-relaxed">
+                Lona gruesa de 13oz con ojales o roll-up retráctil de aluminio listo para armar. Te lo entregamos en 24 a 48h en Panamá.
               </p>
             </div>
           </div>
