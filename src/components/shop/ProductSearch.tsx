@@ -231,7 +231,7 @@ export default function ProductSearch({
               {matchedProducts.map((prod) => {
                 const qtyAttr = prod.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
                 const baseQty = parseInt(qtyAttr?.options?.[0] || '50', 10) || 50;
-                const unitPrice = prod.price / baseQty;
+                const unitPrice = prod.pricePacks?.pack50?.unit || (prod.price / baseQty);
 
                 return (
                   <Link

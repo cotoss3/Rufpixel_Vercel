@@ -247,10 +247,43 @@ export function isProductInCategory(
   return false;
 }
 
+export function convertLocalToProduct(lp: any): Product {
+  const catDef = resolveCategory(lp.category);
+  const catDisplayName = catDef ? catDef.name : (lp.category || 'Productos RufPixel');
+  const catSlug = catDef ? catDef.canonicalSlug : 'general';
+  const pack50Total = lp.price_packs?.pack50?.total || (lp.unit_price * 50);
+
+  return {
+    id: String(lp.id),
+    slug: lp.slug || lp.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    sku: lp.sku,
+    name: lp.name,
+    price: pack50Total,
+    pricePacks: lp.price_packs,
+    techniques: lp.techniques || [],
+    description: `<p><strong>${lp.name}</strong></p><p>Personalización de alta definición para tu marca corporativa y eventos en Panamá.</p>`,
+    shortDescription: `Personalización corporativa en paquetes de 50, 100 y 250 unidades. Técnicas recomendadas: ${(lp.techniques || []).join(', ')}.`,
+    category: catDisplayName,
+    categorySlug: catSlug,
+    categories: catDef ? [{ id: catDef.id, name: catDef.name, slug: catDef.canonicalSlug }] : [],
+    image: lp.photo ? (lp.photo.startsWith('http') ? lp.photo : `https://rufpixel.com${lp.photo}`) : 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
+    gallery: lp.photo ? [(lp.photo.startsWith('http') ? lp.photo : `https://rufpixel.com${lp.photo}`)] : [],
+    stock: 100,
+    type: 'simple',
+    attributes: [
+      { name: 'Cantidad', options: ['50', '100', '250'] },
+      ...(lp.techniques && lp.techniques.length > 0 ? [{ name: 'Técnica', options: lp.techniques }] : [])
+    ],
+    featured: false,
+  };
+}
+
+export const VERIFIED_LOCAL_PRODUCTS: Product[] = (localProductsDb as any[]).map(convertLocalToProduct);
+
 // In-Memory Global Server Caches
 const productCache = new Map<string, { data: Product; timestamp: number }>();
 let globalCatalogCache: { products: Product[]; timestamp: number } | null = {
-  products: MOCK_PRODUCTS,
+  products: VERIFIED_LOCAL_PRODUCTS,
   timestamp: Date.now(),
 };
 let globalCategoriesCache: { categories: ProductCategory[]; timestamp: number } | null = null;
@@ -448,9 +481,9 @@ export async function getProducts(
     };
   }
 
-  // Fallback Mock Data as absolute safety net
-  const filteredMock = filterProductsByCategory(MOCK_PRODUCTS, canonicalSlug);
-  return { products: filteredMock, totalPages: 1, totalProducts: filteredMock.length };
+  // Fallback Verified Local Products as absolute safety net
+  const filteredLocal = filterProductsByCategory(VERIFIED_LOCAL_PRODUCTS, canonicalSlug);
+  return { products: filteredLocal, totalPages: Math.ceil(filteredLocal.length / 32) || 1, totalProducts: filteredLocal.length };
 }
 
 // Background worker to fetch Pages 3 to 6 without blocking user requests
