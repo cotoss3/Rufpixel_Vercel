@@ -1,3 +1,4 @@
+import localProductsDb from './products-db.json';
 import { Product, ProductVariation, Order } from './types';
 import { MOCK_PRODUCTS } from './mockData';
 
@@ -521,7 +522,15 @@ function formatRawProducts(rawData: any[]): Product[] {
     const catDisplayName = def ? def.name : (mainCat?.name || 'Productos RufPixel');
     const catSlug = def ? def.canonicalSlug : (mainCat?.slug || 'general');
 
+    const localMatch = (localProductsDb as any[]).find((lp: any) => 
+      lp.id === String(prod.id) || 
+      lp.name.toLowerCase().trim() === (prod.name || '').toLowerCase().trim()
+    );
+
     const formatted: Product = {
+      pricePacks: localMatch?.price_packs,
+      techniques: localMatch?.techniques || [],
+      sku: localMatch?.sku || prod.sku,
       id: String(prod.id),
       slug: prod.slug,
       name: prod.name,

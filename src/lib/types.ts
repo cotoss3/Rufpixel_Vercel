@@ -31,6 +31,13 @@ export interface Product {
   }[];
   childVariations?: ProductVariation[];
   featured?: boolean;
+  pricePacks?: {
+    pack50?: { total: number | null; unit: number | null };
+    pack100?: { total: number | null; unit: number | null };
+    pack250?: { total: number | null; unit: number | null };
+  };
+  techniques?: string[];
+  sku?: string;
 }
 
 export interface CartItem {

@@ -110,13 +110,21 @@ export default function ProductDetailClient({
   const singleUnitPriceWith35 = baseUnitPriceFrom50 * 1.35;
 
   let basePackPrice = product.price;
-  if (selectedVariation) {
+  if (product.pricePacks) {
+    if (baseQtyNum === 50 && product.pricePacks.pack50?.total) {
+      basePackPrice = product.pricePacks.pack50.total;
+    } else if (baseQtyNum === 100 && product.pricePacks.pack100?.total) {
+      basePackPrice = product.pricePacks.pack100.total;
+    } else if (baseQtyNum === 250 && product.pricePacks.pack250?.total) {
+      basePackPrice = product.pricePacks.pack250.total;
+    } else if (selectedVariation) {
+      basePackPrice = selectedVariation.price;
+    }
+  } else if (selectedVariation) {
     basePackPrice = selectedVariation.price;
   } else if (baseQtyNum === 100) {
-    // Verified 100-pack price (with 5% wholesale volume discount)
     basePackPrice = baseUnitPriceFrom50 * 100 * 0.95;
   } else if (baseQtyNum === 250) {
-    // Verified 250-pack price (with 10% wholesale volume discount)
     basePackPrice = baseUnitPriceFrom50 * 250 * 0.90;
   } else if (baseQtyNum > 1 && baseQtyNum !== 50) {
     basePackPrice = baseUnitPriceFrom50 * baseQtyNum;
@@ -305,9 +313,27 @@ export default function ProductDetailClient({
                 }
 
                 const optQty = parseInt(opt, 10) || 50;
-                const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
-                const optTotal = optVar ? optVar.price : product.price;
-                const optUnit = optTotal / optQty;
+                let optTotal = product.price;
+                let optUnit = optTotal / optQty;
+
+                if (product.pricePacks) {
+                  if (optQty === 50 && product.pricePacks.pack50?.total) {
+                    optTotal = product.pricePacks.pack50.total;
+                    optUnit = product.pricePacks.pack50.unit || (optTotal / 50);
+                  } else if (optQty === 100 && product.pricePacks.pack100?.total) {
+                    optTotal = product.pricePacks.pack100.total;
+                    optUnit = product.pricePacks.pack100.unit || (optTotal / 100);
+                  } else if (optQty === 250 && product.pricePacks.pack250?.total) {
+                    optTotal = product.pricePacks.pack250.total;
+                    optUnit = product.pricePacks.pack250.unit || (optTotal / 250);
+                  }
+                } else {
+                  const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
+                  if (optVar) {
+                    optTotal = optVar.price;
+                    optUnit = optTotal / optQty;
+                  }
+                }
 
                 return (
                   <button

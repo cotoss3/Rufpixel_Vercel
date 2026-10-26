@@ -1,0 +1,4323 @@
+[
+  {
+    "id": "10284",
+    "sku": "Rf-120",
+    "name": "Libreta Espiral Reciclada con Bolígrafo",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 162.5,
+        "unit": 3.25
+      },
+      "pack100": {
+        "total": 300,
+        "unit": 3
+      },
+      "pack250": {
+        "total": 687.5,
+        "unit": 2.75
+      }
+    },
+    "unit_price": 3,
+    "photo": "/uploads/RF-120.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10278",
+    "sku": "Rf-406",
+    "name": "Cuaderno de Cuero con Portapluma y Costuras Blancas",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 250,
+        "unit": 5
+      },
+      "pack100": {
+        "total": 475,
+        "unit": 4.75
+      },
+      "pack250": {
+        "total": 1125,
+        "unit": 4.5
+      }
+    },
+    "unit_price": 4.75,
+    "photo": "/uploads/RF-406.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10288",
+    "sku": "Rf-427",
+    "name": "Cuaderno Reciclado con Post-It y Bolígrafo",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-427.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10287",
+    "sku": "Rf-528",
+    "name": "Cuaderno Espiral de Bambú con Set de Accesorios",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 187.5,
+        "unit": 3.75
+      },
+      "pack100": {
+        "total": 350,
+        "unit": 3.5
+      },
+      "pack250": {
+        "total": 812.5,
+        "unit": 3.25
+      }
+    },
+    "unit_price": 3.5,
+    "photo": "/uploads/RF-528.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10279",
+    "sku": "Rf-664",
+    "name": "Cuaderno de Cuero de Color con Cierre Elástico",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-664.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10283",
+    "sku": "Rf-670",
+    "name": "Cuaderno de Cuero para Sublimación",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 450,
+        "unit": 9
+      },
+      "pack100": {
+        "total": 875,
+        "unit": 8.75
+      },
+      "pack250": {
+        "total": 2125,
+        "unit": 8.5
+      }
+    },
+    "unit_price": 8.75,
+    "photo": "/uploads/RF-670.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10282",
+    "sku": "Rf-726",
+    "name": "Cuaderno de Cuero Dos Tonos con Cierre Elástico",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-726.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10281",
+    "sku": "Rf-731",
+    "name": "Cuaderno Cuero y Corcho con Portapluma",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-731.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10285",
+    "sku": "Rf-740",
+    "name": "Cuaderno Espiral Reciclado con Bolígrafo",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-740.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10276",
+    "sku": "Rf-741",
+    "name": "Libreta Ejecutiva de Cuero con Cierre Magnético",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-741.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10286",
+    "sku": "Rf-742",
+    "name": "Cuaderno Espiral con Costuras y Bolígrafo Reciclado",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-742.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10277",
+    "sku": "Rf-743",
+    "name": "Libreta Ejecutiva Gamuza Dos Tonos con Cierre Magnético",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 275,
+        "unit": 5.5
+      },
+      "pack100": {
+        "total": 525,
+        "unit": 5.25
+      },
+      "pack250": {
+        "total": 1250,
+        "unit": 5
+      }
+    },
+    "unit_price": 5.25,
+    "photo": "/uploads/RF-743.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10280",
+    "sku": "Rf-814",
+    "name": "Cuaderno Rígido de Tela con Soporte para Celular en Bambú",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-814.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10289",
+    "sku": "Rf-854",
+    "name": "Libreta Reciclada con Franja de Color y Bolígrafo",
+    "category": "AGENDAS Y LIBRETAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 150,
+        "unit": 3
+      },
+      "pack100": {
+        "total": 275,
+        "unit": 2.75
+      },
+      "pack250": {
+        "total": 625,
+        "unit": 2.5
+      }
+    },
+    "unit_price": 2.75,
+    "photo": "/uploads/RF-854.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10273",
+    "sku": "Rf-191",
+    "name": "Bolígrafo Satín Plateado con Grip Traslúcido",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-191.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10272",
+    "sku": "Rf-192",
+    "name": "Bolígrafo con Grip Traslúcido y Banda Horizontal",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-192.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10260",
+    "sku": "Rf-327",
+    "name": "Bolígrafo Plástico con Inserto de Color",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 75,
+        "unit": 1.5
+      },
+      "pack100": {
+        "total": 125,
+        "unit": 1.25
+      },
+      "pack250": {
+        "total": 237.5,
+        "unit": 0.95
+      }
+    },
+    "unit_price": 1.25,
+    "photo": "/uploads/RF-327.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10259",
+    "sku": "Rf-403",
+    "name": "Bolígrafo de Metal con Stylus",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 87.5,
+        "unit": 1.75
+      },
+      "pack100": {
+        "total": 165,
+        "unit": 1.65
+      },
+      "pack250": {
+        "total": 375,
+        "unit": 1.5
+      }
+    },
+    "unit_price": 1.65,
+    "photo": "/uploads/RF-403.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10257",
+    "sku": "Rf-404",
+    "name": "Bolígrafo Ejecutivo de Metal",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 87.5,
+        "unit": 1.75
+      },
+      "pack100": {
+        "total": 165,
+        "unit": 1.65
+      },
+      "pack250": {
+        "total": 375,
+        "unit": 1.5
+      }
+    },
+    "unit_price": 1.65,
+    "photo": "/uploads/RF-404.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10265",
+    "sku": "Rf-514",
+    "name": "Bolígrafo Metalizado con Soporte para Celular",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-514.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10275",
+    "sku": "Rf-515",
+    "name": "Bolígrafo Slim con Stylus y Clip Blanco",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-515.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10261",
+    "sku": "Rf-545",
+    "name": "Bolígrafo Plástico Blanco con Clip Plano",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-545.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10258",
+    "sku": "Rf-588",
+    "name": "Bolígrafo Triangular de Metal",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-588.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10252",
+    "sku": "Rf-679",
+    "name": "Bolígrafo de Aluminio Liso",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 105,
+        "unit": 2.1
+      },
+      "pack100": {
+        "total": 185,
+        "unit": 1.85
+      },
+      "pack250": {
+        "total": 412.5,
+        "unit": 1.65
+      }
+    },
+    "unit_price": 1.85,
+    "photo": "/uploads/RF-679.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10255",
+    "sku": "Rf-680",
+    "name": "Bolígrafo Ejecutivo de Aluminio",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 105,
+        "unit": 2.1
+      },
+      "pack100": {
+        "total": 185,
+        "unit": 1.85
+      },
+      "pack250": {
+        "total": 412.5,
+        "unit": 1.65
+      }
+    },
+    "unit_price": 1.85,
+    "photo": "/uploads/RF-680.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10266",
+    "sku": "Rf-764",
+    "name": "Bolígrafo Plástico Metalizado con Clip Negro",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-764.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10274",
+    "sku": "Rf-765",
+    "name": "Bolígrafo Plástico con Cuerpo Metalizado",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 105,
+        "unit": 2.1
+      },
+      "pack100": {
+        "total": 185,
+        "unit": 1.85
+      },
+      "pack250": {
+        "total": 412.5,
+        "unit": 1.65
+      }
+    },
+    "unit_price": 1.85,
+    "photo": "/uploads/RF-765.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10269",
+    "sku": "Rf-766",
+    "name": "Bolígrafo Metalizado Giratorio con Clip Plateado",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-766.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10262",
+    "sku": "Rf-767",
+    "name": "Bolígrafo Plástico Blanco Giratorio",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-767.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10253",
+    "sku": "Rf-816",
+    "name": "Bolígrafo de Metal con Grip de Goma Mate",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 112.5,
+        "unit": 2.25
+      },
+      "pack100": {
+        "total": 200,
+        "unit": 2
+      },
+      "pack250": {
+        "total": 437.5,
+        "unit": 1.75
+      }
+    },
+    "unit_price": 2,
+    "photo": "/uploads/RF-816.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10264",
+    "sku": "Rf-817",
+    "name": "Bolígrafo Plástico Promocional Económico",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 42.5,
+        "unit": 0.85
+      },
+      "pack100": {
+        "total": 75,
+        "unit": 0.75
+      },
+      "pack250": {
+        "total": 162.5,
+        "unit": 0.65
+      }
+    },
+    "unit_price": 0.75,
+    "photo": "/uploads/RF-817.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10256",
+    "sku": "Rf-828",
+    "name": "Bolígrafo Ejecutivo de Aluminio Premium",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 105,
+        "unit": 2.1
+      },
+      "pack100": {
+        "total": 185,
+        "unit": 1.85
+      },
+      "pack250": {
+        "total": 412.5,
+        "unit": 1.65
+      }
+    },
+    "unit_price": 1.85,
+    "photo": "/uploads/RF-828.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10263",
+    "sku": "Rf-848",
+    "name": "Bolígrafo Plástico Blanco con Detalle de Color",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-848.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10268",
+    "sku": "Rf-849",
+    "name": "Bolígrafo Brillante con Clip y Punta Plateada",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-849.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10271",
+    "sku": "Rf-850",
+    "name": "Bolígrafo Plateado Brillante con Clip de Color",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-850.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10267",
+    "sku": "Rf-851",
+    "name": "Bolígrafo Multiuso Brillante con Detalles Negros",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 75,
+        "unit": 1.5
+      },
+      "pack100": {
+        "total": 135,
+        "unit": 1.35
+      },
+      "pack250": {
+        "total": 300,
+        "unit": 1.2
+      }
+    },
+    "unit_price": 1.35,
+    "photo": "/uploads/RF-851.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10254",
+    "sku": "Rf-852",
+    "name": "Bolígrafo de Bambú con Detalles Grises",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 72.5,
+        "unit": 1.45
+      },
+      "pack100": {
+        "total": 125,
+        "unit": 1.25
+      },
+      "pack250": {
+        "total": 250,
+        "unit": 1
+      }
+    },
+    "unit_price": 1.25,
+    "photo": "/uploads/RF-852.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10270",
+    "sku": "Rf-853",
+    "name": "Bolígrafo Cuadrado Plateado con Detalles de Color",
+    "category": "BOLÍGRAFOS Y PLUMAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-853.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10300",
+    "sku": "Rf-065",
+    "name": "Bolsa Reciclada de Polipropileno Clásica",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 62.5,
+        "unit": 1.25
+      },
+      "pack100": {
+        "total": 115,
+        "unit": 1.15
+      },
+      "pack250": {
+        "total": 247.5,
+        "unit": 0.99
+      }
+    },
+    "unit_price": 1.15,
+    "photo": "/uploads/RF-065.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10299",
+    "sku": "Rf-067",
+    "name": "Bolsa Reciclada de Congreso para Catálogo",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 62.5,
+        "unit": 1.25
+      },
+      "pack100": {
+        "total": 110,
+        "unit": 1.1
+      },
+      "pack250": {
+        "total": 237.5,
+        "unit": 0.95
+      }
+    },
+    "unit_price": 1.1,
+    "photo": "/uploads/RF-067.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10295",
+    "sku": "Rf-069",
+    "name": "Bolsa Tote Clásica de Yute Natural",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-069.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10292",
+    "sku": "Rf-070",
+    "name": "Bolsa Tote de Manta Natural",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 167.5,
+        "unit": 3.35
+      },
+      "pack100": {
+        "total": 300,
+        "unit": 3
+      },
+      "pack250": {
+        "total": 687.5,
+        "unit": 2.75
+      }
+    },
+    "unit_price": 3,
+    "photo": "/uploads/RF-070.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10291",
+    "sku": "Rf-071",
+    "name": "Bolsa de Canvas Natural con Asas de Cordón",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-071.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10301",
+    "sku": "Rf-074",
+    "name": "Bolsa Reciclada Jumbo con Cierre de Botón",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 87.5,
+        "unit": 1.75
+      },
+      "pack100": {
+        "total": 150,
+        "unit": 1.5
+      },
+      "pack250": {
+        "total": 312.5,
+        "unit": 1.25
+      }
+    },
+    "unit_price": 1.5,
+    "photo": "/uploads/RF-074.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10298",
+    "sku": "Rf-075",
+    "name": "Bolsa Reciclada con Cierre de Botón y Fuelle",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 80,
+        "unit": 1.6
+      },
+      "pack100": {
+        "total": 135,
+        "unit": 1.35
+      },
+      "pack250": {
+        "total": 275,
+        "unit": 1.1
+      }
+    },
+    "unit_price": 1.35,
+    "photo": "/uploads/RF-075.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10303",
+    "sku": "Rf-076",
+    "name": "Bolsa Drawstring de Nylon Delgada con Cordón",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 125,
+        "unit": 2.5
+      },
+      "pack100": {
+        "total": 225,
+        "unit": 2.25
+      },
+      "pack250": {
+        "total": 500,
+        "unit": 2
+      }
+    },
+    "unit_price": 2.25,
+    "photo": "/uploads/RF-076.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10311",
+    "sku": "Rf-330",
+    "name": "Lonchera Térmica de Nylon con Interior de Aluminio",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-330.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10312",
+    "sku": "Rf-364",
+    "name": "Lonchera Térmica con Porta Botella Lateral",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 262.5,
+        "unit": 5.25
+      },
+      "pack100": {
+        "total": 500,
+        "unit": 5
+      },
+      "pack250": {
+        "total": 1187.5,
+        "unit": 4.75
+      }
+    },
+    "unit_price": 5,
+    "photo": "/uploads/RF-364.jpg",
+    "techniques": [
+      "DTF Textil",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10297",
+    "sku": "Rf-421",
+    "name": "Bolsa Reciclada Chica con Cierre de Botón",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 62.5,
+        "unit": 1.25
+      },
+      "pack100": {
+        "total": 110,
+        "unit": 1.1
+      },
+      "pack250": {
+        "total": 237.5,
+        "unit": 0.95
+      }
+    },
+    "unit_price": 1.1,
+    "photo": "/uploads/RF-421.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10304",
+    "sku": "Rf-479",
+    "name": "Bolsa de Nylon Cuadrada con Zipper y Salida para Audífonos",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 150,
+        "unit": 3
+      },
+      "pack100": {
+        "total": 275,
+        "unit": 2.75
+      },
+      "pack250": {
+        "total": 625,
+        "unit": 2.5
+      }
+    },
+    "unit_price": 2.75,
+    "photo": "/uploads/RF-479.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10306",
+    "sku": "Rf-563",
+    "name": "Bolsa Drawstring de Canvas Negro",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-563.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10296",
+    "sku": "Rf-582",
+    "name": "Bolsa Organizadora de Basura para Auto",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-582.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10307",
+    "sku": "Rf-707",
+    "name": "Bolsa Drawstring de Canvas con Base de Corcho",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-707.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10290",
+    "sku": "Rf-721",
+    "name": "Bolsa Tote de Canvas Poli-Cotton Grande",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 250,
+        "unit": 5
+      },
+      "pack100": {
+        "total": 475,
+        "unit": 4.75
+      },
+      "pack250": {
+        "total": 1125,
+        "unit": 4.5
+      }
+    },
+    "unit_price": 4.75,
+    "photo": "/uploads/RF-721.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10309",
+    "sku": "Rf-754",
+    "name": "Lonchera de Nylon Insulada con Bolsillo Exterior",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 325,
+        "unit": 6.5
+      },
+      "pack100": {
+        "total": 625,
+        "unit": 6.25
+      },
+      "pack250": {
+        "total": 1500,
+        "unit": 6
+      }
+    },
+    "unit_price": 6.25,
+    "photo": "/uploads/RF-754.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10293",
+    "sku": "Rf-802",
+    "name": "Bolsa de Canvas Natural con Asa Tejida",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 262.5,
+        "unit": 5.25
+      },
+      "pack100": {
+        "total": 500,
+        "unit": 5
+      },
+      "pack250": {
+        "total": 1187.5,
+        "unit": 4.75
+      }
+    },
+    "unit_price": 5,
+    "photo": "/uploads/RF-802.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10294",
+    "sku": "Rf-803",
+    "name": "Bolsa Tote de Canvas 12 oz con Asa Integrada",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 287.5,
+        "unit": 5.75
+      },
+      "pack100": {
+        "total": 550,
+        "unit": 5.5
+      },
+      "pack250": {
+        "total": 1312.5,
+        "unit": 5.25
+      }
+    },
+    "unit_price": 5.5,
+    "photo": "/uploads/RF-803.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10308",
+    "sku": "Rf-842",
+    "name": "Lonchera Térmica con Doble Compartimiento y Porta ID",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 262.5,
+        "unit": 5.25
+      },
+      "pack100": {
+        "total": 500,
+        "unit": 5
+      },
+      "pack250": {
+        "total": 1187.5,
+        "unit": 4.75
+      }
+    },
+    "unit_price": 5,
+    "photo": "/uploads/RF-842.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10302",
+    "sku": "Rf-856",
+    "name": "Bolsa Drawstring con Cordón",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 87.5,
+        "unit": 1.75
+      },
+      "pack100": {
+        "total": 150,
+        "unit": 1.5
+      },
+      "pack250": {
+        "total": 312.5,
+        "unit": 1.25
+      }
+    },
+    "unit_price": 1.5,
+    "photo": "/uploads/RF-856.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10305",
+    "sku": "Rf-888",
+    "name": "Bolsa Drawstring de Nylon Grueso con Bolsillo y Zipper",
+    "category": "BOLSAS Y LONCHERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-888.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10372",
+    "sku": "Rf-222",
+    "name": "Gorra Lacrosse Max Dry de Mallita con Velcro",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-222.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10366",
+    "sku": "Rf-227",
+    "name": "Bandana Tipo Headband",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 87.5,
+        "unit": 1.75
+      },
+      "pack100": {
+        "total": 150,
+        "unit": 1.5
+      },
+      "pack250": {
+        "total": 312.5,
+        "unit": 1.25
+      }
+    },
+    "unit_price": 1.5,
+    "photo": "/uploads/RF-227.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10365",
+    "sku": "Rf-243",
+    "name": "Bandana de Algodón",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 100,
+        "unit": 2
+      },
+      "pack100": {
+        "total": 185,
+        "unit": 1.85
+      },
+      "pack250": {
+        "total": 375,
+        "unit": 1.5
+      }
+    },
+    "unit_price": 1.85,
+    "photo": "/uploads/RF-243.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10369",
+    "sku": "Rf-341",
+    "name": "Gorra Lacrosse Max Dry con Mallas y Velcro",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-341.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10370",
+    "sku": "Rf-371",
+    "name": "Gorra Lacrosse Max Dry Deportiva con Hebilla",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-371.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10371",
+    "sku": "Rf-440",
+    "name": "Gorra Lacrosse Premium 6 Paños Color Sólido",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 287.5,
+        "unit": 5.75
+      },
+      "pack100": {
+        "total": 550,
+        "unit": 5.5
+      },
+      "pack250": {
+        "total": 1312.5,
+        "unit": 5.25
+      }
+    },
+    "unit_price": 5.5,
+    "photo": "/uploads/RF-440.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10375",
+    "sku": "Rf-467",
+    "name": "Gorra Trucker con Malla Lateral",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-467.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10374",
+    "sku": "Rf-468",
+    "name": "Gorra Camionero Dos Tonos con Malla",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-468.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10367",
+    "sku": "Rf-523",
+    "name": "Sombrero Tipo Pescador",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 297.5,
+        "unit": 5.95
+      },
+      "pack100": {
+        "total": 550,
+        "unit": 5.5
+      },
+      "pack250": {
+        "total": 1250,
+        "unit": 5
+      }
+    },
+    "unit_price": 5.5,
+    "photo": "/uploads/RF-523.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10368",
+    "sku": "Rf-529",
+    "name": "Visera de Algodón",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 300,
+        "unit": 3
+      },
+      "pack250": {
+        "total": 687.5,
+        "unit": 2.75
+      }
+    },
+    "unit_price": 3,
+    "photo": "/uploads/RF-529.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10373",
+    "sku": "Rf-573",
+    "name": "Gorra Flex Fit Deportiva 6 Paños Dry Fit",
+    "category": "GORRAS Y SOMBREROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 325,
+        "unit": 6.5
+      },
+      "pack100": {
+        "total": 625,
+        "unit": 6.25
+      },
+      "pack250": {
+        "total": 1500,
+        "unit": 6
+      }
+    },
+    "unit_price": 6.25,
+    "photo": "/uploads/RF-573.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10411",
+    "sku": "Rf-003",
+    "name": "Cordón Porta ID de Nylon con Clip Desprendible",
+    "category": "IDENTIFICACIONES",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 72.5,
+        "unit": 1.45
+      },
+      "pack100": {
+        "total": 125,
+        "unit": 1.25
+      },
+      "pack250": {
+        "total": 110,
+        "unit": 1.1
+      }
+    },
+    "unit_price": 1.25,
+    "photo": "/uploads/RF-003.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10410",
+    "sku": "Rf-006",
+    "name": "Cordón Porta ID Satinado con Clip Desprendible",
+    "category": "IDENTIFICACIONES",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 72.5,
+        "unit": 1.45
+      },
+      "pack100": {
+        "total": 125,
+        "unit": 1.25
+      },
+      "pack250": {
+        "total": 110,
+        "unit": 1.1
+      }
+    },
+    "unit_price": 1.25,
+    "photo": "/uploads/RF-006.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10400",
+    "sku": "Rf-023",
+    "name": "Llavero de Aluminio Abrebotellas y Abre Latas",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 87.5,
+        "unit": 1.75
+      },
+      "pack100": {
+        "total": 150,
+        "unit": 1.5
+      },
+      "pack250": {
+        "total": 337.5,
+        "unit": 1.35
+      }
+    },
+    "unit_price": 1.5,
+    "photo": "/uploads/RF-023.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10399",
+    "sku": "Rf-247",
+    "name": "Llavero Plástico de Color con Gancho",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 47.5,
+        "unit": 0.95
+      },
+      "pack100": {
+        "total": 85,
+        "unit": 0.85
+      },
+      "pack250": {
+        "total": 187.5,
+        "unit": 0.75
+      }
+    },
+    "unit_price": 0.85,
+    "photo": "/uploads/RF-247.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10395",
+    "sku": "Rf-415",
+    "name": "Llavero Rectangular de MDF para Sublimación",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 112.5,
+        "unit": 2.25
+      },
+      "pack100": {
+        "total": 200,
+        "unit": 2
+      },
+      "pack250": {
+        "total": 437.5,
+        "unit": 1.75
+      }
+    },
+    "unit_price": 2,
+    "photo": "/uploads/RF-415.jpg",
+    "techniques": [
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10397",
+    "sku": "Rf-416",
+    "name": "Llavero de Metal Ovalado para Sublimación",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 162.5,
+        "unit": 3.25
+      },
+      "pack100": {
+        "total": 300,
+        "unit": 3
+      },
+      "pack250": {
+        "total": 687.5,
+        "unit": 2.75
+      }
+    },
+    "unit_price": 3,
+    "photo": "/uploads/RF-416.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10398",
+    "sku": "Rf-712",
+    "name": "Llavero Mosquetón Plateado para Sublimación",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 187.5,
+        "unit": 3.75
+      },
+      "pack100": {
+        "total": 350,
+        "unit": 3.5
+      },
+      "pack250": {
+        "total": 812.5,
+        "unit": 3.25
+      }
+    },
+    "unit_price": 3.5,
+    "photo": "/uploads/RF-712.jpg",
+    "techniques": [
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10396",
+    "sku": "Rf-730",
+    "name": "Llavero de Cuero Blanco Rectangular para Sublimar",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 187.5,
+        "unit": 3.75
+      },
+      "pack100": {
+        "total": 350,
+        "unit": 3.5
+      },
+      "pack250": {
+        "total": 812.5,
+        "unit": 3.25
+      }
+    },
+    "unit_price": 3.5,
+    "photo": "/uploads/RF-730.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10392",
+    "sku": "Rf-823",
+    "name": "Llavero de Madera Redondo con Detalles en Acero",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 125,
+        "unit": 2.5
+      },
+      "pack100": {
+        "total": 225,
+        "unit": 2.25
+      },
+      "pack250": {
+        "total": 500,
+        "unit": 2
+      }
+    },
+    "unit_price": 2.25,
+    "photo": "/uploads/RF-823.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10393",
+    "sku": "Rf-824",
+    "name": "Llavero de Madera Rectangular con Detalles en Acero",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 125,
+        "unit": 2.5
+      },
+      "pack100": {
+        "total": 225,
+        "unit": 2.25
+      },
+      "pack250": {
+        "total": 500,
+        "unit": 2
+      }
+    },
+    "unit_price": 2.25,
+    "photo": "/uploads/RF-824.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10394",
+    "sku": "Rf-825",
+    "name": "Llavero de Madera Curvo con Detalles en Acero",
+    "category": "LLAVEROS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 125,
+        "unit": 2.5
+      },
+      "pack100": {
+        "total": 225,
+        "unit": 2.25
+      },
+      "pack250": {
+        "total": 500,
+        "unit": 2
+      }
+    },
+    "unit_price": 2.25,
+    "photo": "/uploads/RF-825.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10384",
+    "sku": "Rf-052",
+    "name": "Caja Porta Vino con Accesorios en la Tapa",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 997.5,
+        "unit": 19.95
+      },
+      "pack100": {
+        "total": 1900,
+        "unit": 19
+      },
+      "pack250": {
+        "total": 4500,
+        "unit": 18
+      }
+    },
+    "unit_price": 19,
+    "photo": "/uploads/RF-052.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10385",
+    "sku": "Rf-057",
+    "name": "Caja de Madera con Abrebotellas",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 597.5,
+        "unit": 11.95
+      },
+      "pack100": {
+        "total": 1095,
+        "unit": 10.95
+      },
+      "pack250": {
+        "total": 2500,
+        "unit": 10
+      }
+    },
+    "unit_price": 10.95,
+    "photo": "/uploads/RF-057.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10382",
+    "sku": "Rf-290",
+    "name": "Set de Cuchillos para Quesos en Caja de Madera",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 1050,
+        "unit": 21
+      },
+      "pack100": {
+        "total": 2050,
+        "unit": 20.5
+      },
+      "pack250": {
+        "total": 4987.5,
+        "unit": 19.95
+      }
+    },
+    "unit_price": 20.5,
+    "photo": "/uploads/RF-290.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10386",
+    "sku": "Rf-405",
+    "name": "Caja Cuadrada de Accesorios para Vino",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 597.5,
+        "unit": 11.95
+      },
+      "pack100": {
+        "total": 1095,
+        "unit": 10.95
+      },
+      "pack250": {
+        "total": 2500,
+        "unit": 10
+      }
+    },
+    "unit_price": 10.95,
+    "photo": "/uploads/RF-405.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10381",
+    "sku": "Rf-650",
+    "name": "Tabla para Quesos Ovalada con 3 Accesorios",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 687.5,
+        "unit": 13.75
+      },
+      "pack100": {
+        "total": 1325,
+        "unit": 13.25
+      },
+      "pack250": {
+        "total": 3250,
+        "unit": 13
+      }
+    },
+    "unit_price": 13.25,
+    "photo": "/uploads/RF-650.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10383",
+    "sku": "Rf-651",
+    "name": "Tabla Grande para Quesos",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 1050,
+        "unit": 21
+      },
+      "pack100": {
+        "total": 2050,
+        "unit": 20.5
+      },
+      "pack250": {
+        "total": 5000,
+        "unit": 20
+      }
+    },
+    "unit_price": 20.5,
+    "photo": "/uploads/RF-651.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10379",
+    "sku": "Rf-653",
+    "name": "Tabla de Cortar de Bambú Rectangular",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 437.5,
+        "unit": 8.75
+      },
+      "pack100": {
+        "total": 850,
+        "unit": 8.5
+      },
+      "pack250": {
+        "total": 2000,
+        "unit": 8
+      }
+    },
+    "unit_price": 8.5,
+    "photo": "/uploads/RF-653.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10378",
+    "sku": "Rf-654",
+    "name": "Tabla de Cortar de Bambú Rectangular con Mango",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-654.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10391",
+    "sku": "Rf-676",
+    "name": "Set de Accesorios para Vino Modelo Torre",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 575,
+        "unit": 11.5
+      },
+      "pack100": {
+        "total": null,
+        "unit": null
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 11.5,
+    "photo": "/uploads/RF-676.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10390",
+    "sku": "Rf-677",
+    "name": "Set de Accesorios para Vino Modelo Barril",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 637.5,
+        "unit": 12.75
+      },
+      "pack100": {
+        "total": null,
+        "unit": null
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 12.75,
+    "photo": "/uploads/RF-677.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10387",
+    "sku": "Rf-715",
+    "name": "Botellero Triangular para 6 Botellas de Vino",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 950,
+        "unit": 19
+      },
+      "pack100": {
+        "total": null,
+        "unit": null
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 19,
+    "photo": "/uploads/RF-715.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10389",
+    "sku": "Rf-716",
+    "name": "Portabotellas y Copas de Bambú",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 950,
+        "unit": 19
+      },
+      "pack100": {
+        "total": null,
+        "unit": null
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 19,
+    "photo": "/uploads/RF-716.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10388",
+    "sku": "Rf-719",
+    "name": "Botellero para 3 Botellas de Vino",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 837.5,
+        "unit": 16.75
+      },
+      "pack100": {
+        "total": null,
+        "unit": null
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 16.75,
+    "photo": "/uploads/RF-719.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10380",
+    "sku": "Rf-732",
+    "name": "Tabla de Cortar de Bambú Redonda con Mango",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-732.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10377",
+    "sku": "Rf-858",
+    "name": "Set de BBQ en Tela con Tabla y Utensilios de Madera",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 687.5,
+        "unit": 13.75
+      },
+      "pack100": {
+        "total": 1325,
+        "unit": 13.25
+      },
+      "pack250": {
+        "total": 3250,
+        "unit": 13
+      }
+    },
+    "unit_price": 13.25,
+    "photo": "/uploads/RF-858.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10376",
+    "sku": "Rf-859",
+    "name": "Set de BBQ 5 Piezas con Estuche Negro y Tabla",
+    "category": "MADERA Y BAMBÚ",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 687.5,
+        "unit": 13.75
+      },
+      "pack100": {
+        "total": 1325,
+        "unit": 13.25
+      },
+      "pack250": {
+        "total": 3250,
+        "unit": 13
+      }
+    },
+    "unit_price": 13.25,
+    "photo": "/uploads/RF-859.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10403",
+    "sku": "Rf-718",
+    "name": "Soporte para Celular de Bambú para Escritorio",
+    "category": "MADERA Y BAMBÚ, OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 325
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 325,
+    "photo": "/uploads/RF-718.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10317",
+    "sku": "Rf-445",
+    "name": "Cangurera de Nylon con Doble Zipper y Gran Área de Impresión",
+    "category": "MOCHILAS Y CANGURERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-445.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10313",
+    "sku": "Rf-552",
+    "name": "Mochila Antirrobo con Puerto USB y Porta Laptop",
+    "category": "MOCHILAS Y CANGURERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 1000,
+        "unit": 20
+      },
+      "pack100": {
+        "total": 1950,
+        "unit": 19.5
+      },
+      "pack250": {
+        "total": 4750,
+        "unit": 19
+      }
+    },
+    "unit_price": 19.5,
+    "photo": "/uploads/RF-552.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10314",
+    "sku": "Rf-610",
+    "name": "Mochila Negra de Nylon 600D con Franja Reflectiva",
+    "category": "MOCHILAS Y CANGURERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 550,
+        "unit": 11
+      },
+      "pack100": {
+        "total": 1075,
+        "unit": 10.75
+      },
+      "pack250": {
+        "total": 2625,
+        "unit": 10.5
+      }
+    },
+    "unit_price": 10.75,
+    "photo": "/uploads/RF-610.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10315",
+    "sku": "Rf-722",
+    "name": "Mochila Ejecutiva con Porta Laptop y Triple Zipper",
+    "category": "MOCHILAS Y CANGURERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 662.5,
+        "unit": 13.25
+      },
+      "pack100": {
+        "total": 1275,
+        "unit": 12.75
+      },
+      "pack250": {
+        "total": 3125,
+        "unit": 12.5
+      }
+    },
+    "unit_price": 12.75,
+    "photo": "/uploads/RF-722.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10318",
+    "sku": "Rf-761",
+    "name": "Cangurera Deportiva de Neoprene con Porta Botella",
+    "category": "MOCHILAS Y CANGURERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-761.jpg",
+    "techniques": [
+      "DTF Textil",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10316",
+    "sku": "Rf-841",
+    "name": "Set de Mochila Ejecutiva 3 Piezas con Porta Laptop",
+    "category": "MOCHILAS Y CANGURERAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 762.5,
+        "unit": 15.25
+      },
+      "pack100": {
+        "total": 1475,
+        "unit": 14.75
+      },
+      "pack250": {
+        "total": 3625,
+        "unit": 14.5
+      }
+    },
+    "unit_price": 14.75,
+    "photo": "/uploads/RF-841.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10408",
+    "sku": "Rf-040",
+    "name": "Mouse Pad Rectangular de Tela para Sublimación",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 150,
+        "unit": 3
+      },
+      "pack100": {
+        "total": 275,
+        "unit": 2.75
+      },
+      "pack250": {
+        "total": 625,
+        "unit": 2.5
+      }
+    },
+    "unit_price": 2.75,
+    "photo": "/uploads/RF-040.jpg",
+    "techniques": [
+      "DTF Textil",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10409",
+    "sku": "Rf-265",
+    "name": "Mouse Pad Redondo de Tela para Sublimación",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 150,
+        "unit": 3
+      },
+      "pack100": {
+        "total": 275,
+        "unit": 2.75
+      },
+      "pack250": {
+        "total": 625,
+        "unit": 2.5
+      }
+    },
+    "unit_price": 2.75,
+    "photo": "/uploads/RF-265.jpg",
+    "techniques": [
+      "DTF Textil",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10405",
+    "sku": "Rf-298",
+    "name": "Mouse Pad de Tela en Forma de Riñón",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 335,
+        "unit": 3.35
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.35,
+    "photo": "/uploads/RF-298.jpg",
+    "techniques": [
+      "DTF Textil",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10406",
+    "sku": "Rf-299",
+    "name": "Mouse Pad de Tela Cuadrado",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-299.jpg",
+    "techniques": [
+      "DTF Textil",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10310",
+    "sku": "Rf-559",
+    "name": "Lonchera Térmica de Neoprene con Cierre Zipper",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 350,
+        "unit": 7
+      },
+      "pack100": {
+        "total": 675,
+        "unit": 6.75
+      },
+      "pack250": {
+        "total": 1625,
+        "unit": 6.5
+      }
+    },
+    "unit_price": 6.75,
+    "photo": "/uploads/RF-559.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10404",
+    "sku": "Rf-746",
+    "name": "Soporte Expansible para Celular o Tablet",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 150,
+        "unit": 3
+      },
+      "pack100": {
+        "total": 275,
+        "unit": 2.75
+      },
+      "pack250": {
+        "total": 500,
+        "unit": 2
+      }
+    },
+    "unit_price": 2.75,
+    "photo": "/uploads/RF-746.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10401",
+    "sku": "Rf-749",
+    "name": "Portaplumas con Reloj Digital para Escritorio",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1250,
+        "unit": 5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-749.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10402",
+    "sku": "Rf-819",
+    "name": "Portaplumas de Bambú Rectangular para Escritorio",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-819.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10407",
+    "sku": "Rf-820",
+    "name": "Mouse Pad de Cuero Estilo Gamuza",
+    "category": "OFICINA Y ESCRITORIO",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 475,
+        "unit": 9.5
+      },
+      "pack100": {
+        "total": 925,
+        "unit": 9.25
+      },
+      "pack250": {
+        "total": 2250,
+        "unit": 9
+      }
+    },
+    "unit_price": 9.25,
+    "photo": "/uploads/RF-820.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "DTF Textil",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10412",
+    "sku": "Rf-752",
+    "name": "Paraguas de Bolso Compacto 10 Paneles",
+    "category": "PARAGUAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 400,
+        "unit": 8
+      },
+      "pack100": {
+        "total": 775,
+        "unit": 7.75
+      },
+      "pack250": {
+        "total": 1875,
+        "unit": 7.5
+      }
+    },
+    "unit_price": 7.75,
+    "photo": "/uploads/RF-752.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10486",
+    "sku": "Rf-806",
+    "name": "SET EJECUTIVO 2",
+    "category": "REGALOS CORPORATIVOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 1000,
+        "unit": 20
+      },
+      "pack100": {
+        "total": 1900,
+        "unit": 19
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 19,
+    "photo": "/uploads/806.png",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10319",
+    "sku": "Rf-843",
+    "name": "SET EJECUTIVO 1",
+    "category": "REGALOS CORPORATIVOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 975,
+        "unit": 20
+      },
+      "pack100": {
+        "total": 1900,
+        "unit": 19
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 19,
+    "photo": "/uploads/RF-843.jpg",
+    "techniques": [
+      "Grabado Láser"
+    ]
+  },
+  {
+    "id": "10360",
+    "sku": "Rf-211",
+    "name": "Polo Max Dry de Alto Rendimiento",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 475,
+        "unit": 9.5
+      },
+      "pack100": {
+        "total": 875,
+        "unit": 8.75
+      },
+      "pack250": {
+        "total": 2125,
+        "unit": 8.5
+      }
+    },
+    "unit_price": 8.75,
+    "photo": "/uploads/RF-211.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10362",
+    "sku": "Rf-212",
+    "name": "Polo de Algodón",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 475,
+        "unit": 9.5
+      },
+      "pack100": {
+        "total": 875,
+        "unit": 8.75
+      },
+      "pack250": {
+        "total": 2125,
+        "unit": 8.5
+      }
+    },
+    "unit_price": 8.75,
+    "photo": "/uploads/RF-212.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10357",
+    "sku": "Rf-214",
+    "name": "Camiseta de Algodón Lacrosse Manga Larga 180g",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 312.5,
+        "unit": 6.25
+      },
+      "pack100": {
+        "total": 600,
+        "unit": 6
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 6,
+    "photo": "/uploads/RF-214.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10355",
+    "sku": "Rf-215",
+    "name": "Camiseta de Algodón Lacrosse 180g Cuello Redondo",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 237.5,
+        "unit": 4.75
+      },
+      "pack100": {
+        "total": 450,
+        "unit": 4.5
+      },
+      "pack250": {
+        "total": 1062.5,
+        "unit": 4.25
+      }
+    },
+    "unit_price": 4.5,
+    "photo": "/uploads/RF-215.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10363",
+    "sku": "Rf-216",
+    "name": "Camisa Pescador Lacrosse Ultralite con Dos Bolsillos",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 1225,
+        "unit": 24.5
+      },
+      "pack100": {
+        "total": 2350,
+        "unit": 23.5
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 23.5,
+    "photo": "/uploads/RF-216.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10364",
+    "sku": "Rf-216L",
+    "name": "Camisa Pescador Lacrosse Manga Larga Ultralite",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 1350,
+        "unit": 27
+      },
+      "pack100": {
+        "total": 2600,
+        "unit": 26
+      },
+      "pack250": {
+        "total": null,
+        "unit": null
+      }
+    },
+    "unit_price": 26,
+    "photo": "/uploads/RF-216L.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10361",
+    "sku": "Rf-217",
+    "name": "Polo Dry Fit Dos Tonos",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 475,
+        "unit": 9.5
+      },
+      "pack100": {
+        "total": 875,
+        "unit": 8.75
+      },
+      "pack250": {
+        "total": 2125,
+        "unit": 8.5
+      }
+    },
+    "unit_price": 8.75,
+    "photo": "/uploads/RF-217.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10352",
+    "sku": "Rf-534",
+    "name": "Delantal de Poliéster con Bolsillo para Adultos",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 187.5,
+        "unit": 3.75
+      },
+      "pack100": {
+        "total": 350,
+        "unit": 3.5
+      },
+      "pack250": {
+        "total": 812.5,
+        "unit": 3.25
+      }
+    },
+    "unit_price": 3.5,
+    "photo": "/uploads/RF-534.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10356",
+    "sku": "Rf-551",
+    "name": "Camiseta de Algodón Lacrosse 180g Cuello V",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 275,
+        "unit": 5.5
+      },
+      "pack100": {
+        "total": 525,
+        "unit": 5.25
+      },
+      "pack250": {
+        "total": 1250,
+        "unit": 5
+      }
+    },
+    "unit_price": 5.25,
+    "photo": "/uploads/RF-551.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10358",
+    "sku": "Rf-592",
+    "name": "Camiseta 100% Poliéster",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-592.jpg",
+    "techniques": [
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10359",
+    "sku": "Rf-638",
+    "name": "Camiseta para Sublimación",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 262.5,
+        "unit": 5.25
+      },
+      "pack100": {
+        "total": 500,
+        "unit": 5
+      },
+      "pack250": {
+        "total": 1125,
+        "unit": 4.5
+      }
+    },
+    "unit_price": 5,
+    "photo": "/uploads/RF-638.jpg",
+    "techniques": [
+      "DTF Textil",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10350",
+    "sku": "Rf-688",
+    "name": "Toalla de Cara Blanca",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 275,
+        "unit": 5.5
+      },
+      "pack100": {
+        "total": 525,
+        "unit": 5.25
+      },
+      "pack250": {
+        "total": 1250,
+        "unit": 5
+      }
+    },
+    "unit_price": 5.25,
+    "photo": "/uploads/RF-688.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10353",
+    "sku": "Rf-777",
+    "name": "Delantal de Denim con Portaplumas y Bolsillos",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 325,
+        "unit": 6.5
+      },
+      "pack100": {
+        "total": 625,
+        "unit": 6.25
+      },
+      "pack250": {
+        "total": 1500,
+        "unit": 6
+      }
+    },
+    "unit_price": 6.25,
+    "photo": "/uploads/RF-777.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10354",
+    "sku": "Rf-778",
+    "name": "Delantal de Canvas Denim con Portaplumas",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 475,
+        "unit": 9.5
+      },
+      "pack100": {
+        "total": 925,
+        "unit": 9.25
+      },
+      "pack250": {
+        "total": 2250,
+        "unit": 9
+      }
+    },
+    "unit_price": 9.25,
+    "photo": "/uploads/RF-778.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10351",
+    "sku": "Rf-902",
+    "name": "Toalla de Golf de Microfibra con Mosquetón",
+    "category": "TEXTILES Y ACCESORIOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-902.jpg",
+    "techniques": [
+      "Bordado",
+      "DTF Textil"
+    ]
+  },
+  {
+    "id": "10325",
+    "sku": "Rf-135",
+    "name": "Botella de Aluminio Mate con Clip Mosquetón",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 237.5,
+        "unit": 4.75
+      },
+      "pack100": {
+        "total": 450,
+        "unit": 4.5
+      },
+      "pack250": {
+        "total": 1062.5,
+        "unit": 4.25
+      }
+    },
+    "unit_price": 4.5,
+    "photo": "/uploads/RF-135.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10346",
+    "sku": "Rf-380",
+    "name": "Botella Deportiva Rígida de 24 oz",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-380.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10348",
+    "sku": "Rf-507",
+    "name": "Botella Plástica de 24 oz Pared Sencilla",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 187.5,
+        "unit": 3.75
+      },
+      "pack100": {
+        "total": 350,
+        "unit": 3.5
+      },
+      "pack250": {
+        "total": 812.5,
+        "unit": 3.25
+      }
+    },
+    "unit_price": 3.5,
+    "photo": "/uploads/RF-507.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10322",
+    "sku": "Rf-508",
+    "name": "Botella de Aluminio para Sublimación Estilo Swell",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 375,
+        "unit": 7.5
+      },
+      "pack100": {
+        "total": 725,
+        "unit": 7.25
+      },
+      "pack250": {
+        "total": 1750,
+        "unit": 7
+      }
+    },
+    "unit_price": 7.25,
+    "photo": "/uploads/RF-508.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10321",
+    "sku": "Rf-509",
+    "name": "Botella de Aluminio Estilo Swell con Cuerpo Satinado",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 300,
+        "unit": 6
+      },
+      "pack100": {
+        "total": 575,
+        "unit": 5.75
+      },
+      "pack250": {
+        "total": 1375,
+        "unit": 5.5
+      }
+    },
+    "unit_price": 5.75,
+    "photo": "/uploads/RF-509.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10320",
+    "sku": "Rf-662",
+    "name": "Botella de Acero Doble Pared con Tapa Rosca",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 375,
+        "unit": 7.5
+      },
+      "pack100": {
+        "total": 725,
+        "unit": 7.25
+      },
+      "pack250": {
+        "total": 1750,
+        "unit": 7
+      }
+    },
+    "unit_price": 7.25,
+    "photo": "/uploads/RF-662.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10345",
+    "sku": "Rf-705",
+    "name": "Botella Plástica Cilíndrica",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 175,
+        "unit": 3.5
+      },
+      "pack100": {
+        "total": 325,
+        "unit": 3.25
+      },
+      "pack250": {
+        "total": 750,
+        "unit": 3
+      }
+    },
+    "unit_price": 3.25,
+    "photo": "/uploads/RF-705.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10326",
+    "sku": "Rf-733",
+    "name": "Botella de Metal Doble Pared para Sublimación",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 350,
+        "unit": 7
+      },
+      "pack100": {
+        "total": 675,
+        "unit": 6.75
+      },
+      "pack250": {
+        "total": 1625,
+        "unit": 6.5
+      }
+    },
+    "unit_price": 6.75,
+    "photo": "/uploads/RF-733.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10324",
+    "sku": "Rf-773",
+    "name": "Botella de Acero Doble Pared Antiderrame",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 475,
+        "unit": 9.5
+      },
+      "pack100": {
+        "total": 925,
+        "unit": 9.25
+      },
+      "pack250": {
+        "total": 2250,
+        "unit": 9
+      }
+    },
+    "unit_price": 9.25,
+    "photo": "/uploads/RF-773.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10329",
+    "sku": "Rf-796",
+    "name": "Botella Térmica con Tapa Antiderrame y Carrizo",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 525,
+        "unit": 10.5
+      },
+      "pack100": {
+        "total": 1025,
+        "unit": 10.25
+      },
+      "pack250": {
+        "total": 2500,
+        "unit": 10
+      }
+    },
+    "unit_price": 10.25,
+    "photo": "/uploads/RF-796.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10323",
+    "sku": "Rf-863",
+    "name": "Botella de Acero Metalizada con Tapa Rosca",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 250,
+        "unit": 5
+      },
+      "pack100": {
+        "total": 475,
+        "unit": 4.75
+      },
+      "pack250": {
+        "total": 1125,
+        "unit": 4.5
+      }
+    },
+    "unit_price": 4.75,
+    "photo": "/uploads/RF-863.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10327",
+    "sku": "Rf-864",
+    "name": "Botella de Acero Blanca para Sublimación Dos Tonos",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 250,
+        "unit": 5
+      },
+      "pack100": {
+        "total": 475,
+        "unit": 4.75
+      },
+      "pack250": {
+        "total": 1125,
+        "unit": 4.5
+      }
+    },
+    "unit_price": 4.75,
+    "photo": "/uploads/RF-864.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10349",
+    "sku": "Rf-885",
+    "name": "Botella Deportiva Plástica Traslúcida",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 125,
+        "unit": 2.5
+      },
+      "pack100": {
+        "total": 225,
+        "unit": 2.25
+      },
+      "pack250": {
+        "total": 500,
+        "unit": 2
+      }
+    },
+    "unit_price": 2.25,
+    "photo": "/uploads/RF-885.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10328",
+    "sku": "Rf-886",
+    "name": "Botella de Acero Doble Pared Cuerpo Mate",
+    "category": "VASOS BOTELLAS Y TERMOS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 375,
+        "unit": 7.5
+      },
+      "pack100": {
+        "total": 725,
+        "unit": 7.25
+      },
+      "pack250": {
+        "total": 1750,
+        "unit": 7
+      }
+    },
+    "unit_price": 7.25,
+    "photo": "/uploads/RF-886.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10343",
+    "sku": "Rf-020",
+    "name": "Taza Térmica de Acrílico con Tapa Snap Doble Pared",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 212.5,
+        "unit": 4.25
+      },
+      "pack100": {
+        "total": 400,
+        "unit": 4
+      },
+      "pack250": {
+        "total": 937.5,
+        "unit": 3.75
+      }
+    },
+    "unit_price": 4,
+    "photo": "/uploads/RF-020.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10336",
+    "sku": "Rf-153",
+    "name": "Taza de Cerámica para Sublimación con Interior de Color",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-153.jpg",
+    "techniques": [
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10335",
+    "sku": "Rf-155",
+    "name": "Taza de Cerámica Blanca para Sublimación con Caja",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 197.5,
+        "unit": 3.95
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-155.jpg",
+    "techniques": [
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10344",
+    "sku": "Rf-375",
+    "name": "Vaso Acrílico de 18 oz con Doble Insulación",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 187.5,
+        "unit": 3.75
+      },
+      "pack100": {
+        "total": 350,
+        "unit": 3.5
+      },
+      "pack250": {
+        "total": 812.5,
+        "unit": 3.25
+      }
+    },
+    "unit_price": 3.5,
+    "photo": "/uploads/RF-375.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10331",
+    "sku": "Rf-571",
+    "name": "Vaso Curvo para Vino Doble Pared con Tapa",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 325,
+        "unit": 6.5
+      },
+      "pack100": {
+        "total": 625,
+        "unit": 6.25
+      },
+      "pack250": {
+        "total": 1500,
+        "unit": 6
+      }
+    },
+    "unit_price": 6.25,
+    "photo": "/uploads/RF-571.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10330",
+    "sku": "Rf-571-Sub",
+    "name": "Vaso para Vino Doble Pared para Sublimación",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 400,
+        "unit": 8
+      },
+      "pack100": {
+        "total": 775,
+        "unit": 7.75
+      },
+      "pack250": {
+        "total": 1875,
+        "unit": 7.5
+      }
+    },
+    "unit_price": 7.75,
+    "photo": "/uploads/RF-571-SUB.jpg",
+    "techniques": [
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10341",
+    "sku": "Rf-622",
+    "name": "Taza de Acero Mate Doble Pared con Cuchara",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 325,
+        "unit": 6.5
+      },
+      "pack100": {
+        "total": 625,
+        "unit": 6.25
+      },
+      "pack250": {
+        "total": 1500,
+        "unit": 6
+      }
+    },
+    "unit_price": 6.25,
+    "photo": "/uploads/RF-622.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10334",
+    "sku": "Rf-666",
+    "name": "Porta Lata de Acero Doble Pared para Sublimación",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 425,
+        "unit": 8.5
+      },
+      "pack100": {
+        "total": 825,
+        "unit": 8.25
+      },
+      "pack250": {
+        "total": 2000,
+        "unit": 8
+      }
+    },
+    "unit_price": 8.25,
+    "photo": "/uploads/RF-666.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10339",
+    "sku": "Rf-695",
+    "name": "Taza de Cerámica Mate con Base de Corcho Removible",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 325,
+        "unit": 6.5
+      },
+      "pack100": {
+        "total": 525,
+        "unit": 5.25
+      },
+      "pack250": {
+        "total": 1250,
+        "unit": 5
+      }
+    },
+    "unit_price": 5.25,
+    "photo": "/uploads/RF-695.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10342",
+    "sku": "Rf-696",
+    "name": "Taza Viajera de Acero Inoxidable",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 400,
+        "unit": 8
+      },
+      "pack100": {
+        "total": 775,
+        "unit": 7.75
+      },
+      "pack250": {
+        "total": 1875,
+        "unit": 7.5
+      }
+    },
+    "unit_price": 7.75,
+    "photo": "/uploads/RF-696.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10337",
+    "sku": "Rf-697",
+    "name": "Taza de Cerámica con Cucharita para Sublimar",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 287.5,
+        "unit": 5.75
+      },
+      "pack100": {
+        "total": 525,
+        "unit": 5.25
+      },
+      "pack250": {
+        "total": 1250,
+        "unit": 5
+      }
+    },
+    "unit_price": 5.25,
+    "photo": "/uploads/RF-697.jpg",
+    "techniques": [
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10332",
+    "sku": "Rf-771",
+    "name": "Vaso Térmico de Acero Doble Pared con Tapa",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 375,
+        "unit": 7.5
+      },
+      "pack100": {
+        "total": 725,
+        "unit": 7.25
+      },
+      "pack250": {
+        "total": 1750,
+        "unit": 7
+      }
+    },
+    "unit_price": 7.25,
+    "photo": "/uploads/RF-771.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10333",
+    "sku": "Rf-771-Sub",
+    "name": "Vaso Térmico 12 oz Blanco para Sublimación",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 425,
+        "unit": 8.5
+      },
+      "pack100": {
+        "total": 825,
+        "unit": 8.25
+      },
+      "pack250": {
+        "total": 2000,
+        "unit": 8
+      }
+    },
+    "unit_price": 8.25,
+    "photo": "/uploads/RF-771-SUB.jpg",
+    "techniques": [
+      "UVDTF",
+      "Sublimación"
+    ]
+  },
+  {
+    "id": "10338",
+    "sku": "Rf-809",
+    "name": "Taza de Cerámica con Tapa de Bambú y Cuchara",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 325,
+        "unit": 6.5
+      },
+      "pack100": {
+        "total": 625,
+        "unit": 6.25
+      },
+      "pack250": {
+        "total": 1500,
+        "unit": 6
+      }
+    },
+    "unit_price": 6.25,
+    "photo": "/uploads/RF-809.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10347",
+    "sku": "Rf-861",
+    "name": "Taza Plástica de Pared Doble",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 200,
+        "unit": 4
+      },
+      "pack100": {
+        "total": 375,
+        "unit": 3.75
+      },
+      "pack250": {
+        "total": 875,
+        "unit": 3.5
+      }
+    },
+    "unit_price": 3.75,
+    "photo": "/uploads/RF-861.jpg",
+    "techniques": [
+      "UVDTF"
+    ]
+  },
+  {
+    "id": "10340",
+    "sku": "Rf-862",
+    "name": "Taza Plástica con Interior de Acero y Tapa",
+    "category": "VASOS Y TAZAS",
+    "status": "En existencia",
+    "price_packs": {
+      "pack50": {
+        "total": 225,
+        "unit": 4.5
+      },
+      "pack100": {
+        "total": 425,
+        "unit": 4.25
+      },
+      "pack250": {
+        "total": 1000,
+        "unit": 4
+      }
+    },
+    "unit_price": 4.25,
+    "photo": "/uploads/RF-862.jpg",
+    "techniques": [
+      "Grabado Láser",
+      "UVDTF"
+    ]
+  }
+]
