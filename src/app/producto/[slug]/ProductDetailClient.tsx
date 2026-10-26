@@ -106,7 +106,7 @@ export default function ProductDetailClient({
   // Calculate base wholesale pack price and base unit price
   const defaultPackQty = 50;
   const baseQtyNum = parseInt(selectedQtyOption, 10) || defaultPackQty;
-  const baseUnitPriceFrom50 = product.price / defaultPackQty;
+  const baseUnitPriceFrom50 = product.pricePacks?.pack50?.unit || (product.price / defaultPackQty);
   const singleUnitPriceWith35 = baseUnitPriceFrom50 * 1.35;
 
   let basePackPrice = product.price;

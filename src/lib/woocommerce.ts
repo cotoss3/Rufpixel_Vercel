@@ -541,6 +541,11 @@ function formatRawProducts(rawData: any[]): Product[] {
       lp.name.toLowerCase().trim() === (prod.name || '').toLowerCase().trim()
     );
 
+    const basePack50Price = localMatch?.price_packs?.pack50?.total;
+    const effectivePrice = basePack50Price && basePack50Price > 0
+      ? basePack50Price
+      : (rawPrice > 0 ? rawPrice : (localMatch?.unit_price ? localMatch.unit_price * 50 : 5.00));
+
     const formatted: Product = {
       pricePacks: localMatch?.price_packs,
       techniques: localMatch?.techniques || [],
@@ -548,7 +553,7 @@ function formatRawProducts(rawData: any[]): Product[] {
       id: String(prod.id),
       slug: prod.slug,
       name: prod.name,
-      price: rawPrice > 0 ? rawPrice : 5.00,
+      price: effectivePrice,
       regularPrice: rawRegPrice && rawRegPrice > rawPrice ? rawRegPrice : undefined,
       priceMin: minAmount,
       priceMax: maxAmount,
@@ -603,7 +608,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`, {
-      next: { revalidate: 1800 },
+      cache: 'no-store',
       headers: HEADLESS_HEADERS,
       signal: controller.signal,
     });
