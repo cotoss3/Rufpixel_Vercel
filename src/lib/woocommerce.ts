@@ -247,11 +247,26 @@ export function isProductInCategory(
   return false;
 }
 
+export function formatImageUrl(photo?: string): string {
+  if (!photo) return 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop';
+  if (photo.startsWith('http')) {
+    if (photo.includes('rufpixel.com/uploads/')) {
+      return photo.replace('rufpixel.com/uploads/', 'rufpixel.com/wp-content/uploads/');
+    }
+    return photo;
+  }
+  const clean = photo.startsWith('/') ? photo : `/${photo}`;
+  if (clean.startsWith('/wp-content/')) return `https://rufpixel.com${clean}`;
+  if (clean.startsWith('/uploads/')) return `https://rufpixel.com/wp-content${clean}`;
+  return `https://rufpixel.com/wp-content/uploads${clean}`;
+}
+
 export function convertLocalToProduct(lp: any): Product {
   const catDef = resolveCategory(lp.category);
   const catDisplayName = catDef ? catDef.name : (lp.category || 'Productos RufPixel');
   const catSlug = catDef ? catDef.canonicalSlug : 'general';
   const pack50Total = lp.price_packs?.pack50?.total || (lp.unit_price * 50);
+  const validImg = formatImageUrl(lp.photo);
 
   return {
     id: String(lp.id),
@@ -266,8 +281,8 @@ export function convertLocalToProduct(lp: any): Product {
     category: catDisplayName,
     categorySlug: catSlug,
     categories: catDef ? [{ id: catDef.id, name: catDef.name, slug: catDef.canonicalSlug }] : [],
-    image: lp.photo ? (lp.photo.startsWith('http') ? lp.photo : `https://rufpixel.com${lp.photo}`) : 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-    gallery: lp.photo ? [(lp.photo.startsWith('http') ? lp.photo : `https://rufpixel.com${lp.photo}`)] : [],
+    image: validImg,
+    gallery: [validImg],
     stock: 100,
     type: 'simple',
     attributes: [
@@ -595,8 +610,8 @@ function formatRawProducts(rawData: any[]): Product[] {
       category: catDisplayName,
       categorySlug: catSlug,
       categories: catList,
-      image: prod.images?.[0]?.src || 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-      gallery: prod.images?.map((img: any) => img.src) || [],
+      image: prod.images?.[0]?.src || formatImageUrl(localMatch?.photo),
+      gallery: prod.images && prod.images.length > 0 ? prod.images.map((img: any) => img.src) : [formatImageUrl(localMatch?.photo)],
       stock: prod.is_in_stock ?? 100,
       type: prod.type || 'simple',
       attributes: parsedAttributes,
@@ -634,6 +649,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   if (localMatch) {
     const pack50Total = localMatch.price_packs?.pack50?.total || (localMatch.unit_price * 50);
     const catDef = resolveCategory(localMatch.category);
+    const validImg = formatImageUrl(localMatch.photo);
     initialBase = {
       id: String(localMatch.id),
       slug: localMatch.slug || slug,
@@ -647,8 +663,8 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
       category: catDef ? catDef.name : (localMatch.category || 'Productos RufPixel'),
       categorySlug: catDef ? catDef.canonicalSlug : 'general',
       categories: catDef ? [{ id: catDef.id, name: catDef.name, slug: catDef.canonicalSlug }] : [],
-      image: localMatch.photo ? (localMatch.photo.startsWith('http') ? localMatch.photo : `https://rufpixel.com${localMatch.photo}`) : 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-      gallery: localMatch.photo ? [(localMatch.photo.startsWith('http') ? localMatch.photo : `https://rufpixel.com${localMatch.photo}`)] : [],
+      image: validImg,
+      gallery: [validImg],
       stock: 100,
       type: 'simple',
       attributes: [
