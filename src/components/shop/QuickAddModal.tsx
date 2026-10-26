@@ -52,7 +52,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
   if (!isOpen || !mounted) return null;
 
   const selectedQtyOption = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
-  const isSingleUnit = selectedQtyOption === '1' || selectedQtyOption.toLowerCase().includes('1 unidad') || selectedQtyOption.toLowerCase().includes('muestra');
+  const isSingleUnit = false;
 
   const getSelectedVariation = (): ProductVariation | undefined => {
     if (!product.childVariations || product.childVariations.length === 0) return undefined;
@@ -68,13 +68,21 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
   const singleUnitPriceWith35 = baseUnitPriceFrom50 * 1.35;
 
   let basePackPrice = product.price;
-  if (selectedVariation) {
+  if (product.pricePacks) {
+    if (baseQtyNum === 50 && product.pricePacks.pack50?.total) {
+      basePackPrice = product.pricePacks.pack50.total;
+    } else if (baseQtyNum === 100 && product.pricePacks.pack100?.total) {
+      basePackPrice = product.pricePacks.pack100.total;
+    } else if (baseQtyNum === 250 && product.pricePacks.pack250?.total) {
+      basePackPrice = product.pricePacks.pack250.total;
+    } else if (selectedVariation) {
+      basePackPrice = selectedVariation.price;
+    }
+  } else if (selectedVariation) {
     basePackPrice = selectedVariation.price;
   } else if (baseQtyNum === 100) {
-    // Verified 100-pack price (with 5% wholesale volume discount)
     basePackPrice = baseUnitPriceFrom50 * 100 * 0.95;
   } else if (baseQtyNum === 250) {
-    // Verified 250-pack price (with 10% wholesale volume discount)
     basePackPrice = baseUnitPriceFrom50 * 250 * 0.90;
   } else if (baseQtyNum > 1 && baseQtyNum !== 50) {
     basePackPrice = baseUnitPriceFrom50 * baseQtyNum;
@@ -99,8 +107,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
     }, 1800);
   };
 
-  const rawQtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
-  const qtyOptions = ['1', ...(rawQtyAttr?.options.filter((o) => o !== '1') || ['50', '100', '250'])];
+  const qtyOptions = ['50', '100', '250'];
 
   return createPortal(
     <div 
@@ -184,31 +191,28 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
           <div className="grid grid-cols-2 gap-2">
             {qtyOptions.map((opt) => {
               const isSelected = selectedQtyOption === opt;
-              const isSingle = opt === '1';
-
-              if (isSingle) {
-                return (
-                  <button
-                    key="1-unit"
-                    onClick={() => handleAttributeChange('Cantidad', '1')}
-                    className={`p-3 rounded-xl text-xs transition-all border text-left ${
-                      isSelected
-                        ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md font-extrabold'
-                        : 'bg-white text-gray-700 border-gray-200 hover:border-[#FF5E14]'
-                    }`}
-                  >
-                    <div className="font-bold">1 Unidad (Muestra)</div>
-                    <div className={isSelected ? 'text-white/90 text-[11px]' : 'text-[#FF5E14] text-[11px] font-bold'}>
-                      ${singleUnitPriceWith35.toFixed(2)}/ud
-                    </div>
-                  </button>
-                );
-              }
-
               const optQty = parseInt(opt, 10) || 50;
-              const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
-              const optTotal = optVar ? optVar.price : product.price;
-              const optUnit = optTotal / optQty;
+              let optTotal = product.price;
+              let optUnit = optTotal / optQty;
+
+              if (product.pricePacks) {
+                if (optQty === 50 && product.pricePacks.pack50?.total) {
+                  optTotal = product.pricePacks.pack50.total;
+                  optUnit = product.pricePacks.pack50.unit || (optTotal / 50);
+                } else if (optQty === 100 && product.pricePacks.pack100?.total) {
+                  optTotal = product.pricePacks.pack100.total;
+                  optUnit = product.pricePacks.pack100.unit || (optTotal / 100);
+                } else if (optQty === 250 && product.pricePacks.pack250?.total) {
+                  optTotal = product.pricePacks.pack250.total;
+                  optUnit = product.pricePacks.pack250.unit || (optTotal / 250);
+                }
+              } else {
+                const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
+                if (optVar) {
+                  optTotal = optVar.price;
+                  optUnit = optTotal / optQty;
+                }
+              }
 
               return (
                 <button

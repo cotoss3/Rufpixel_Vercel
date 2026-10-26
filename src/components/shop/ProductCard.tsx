@@ -25,11 +25,15 @@ export default function ProductCard({ product }: { product: Product }) {
     setCachedProduct(product);
   };
 
-  // Determine base quantity
-  const qtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
-  const baseQtyStr = qtyAttr?.options?.[0] || '50';
-  const baseQty = parseInt(baseQtyStr, 10) || (product.price > 30 ? 50 : 1);
-  const unitPrice = product.price / baseQty;
+  // Determine base quantity (50, 100, 250)
+  const baseQty = 50;
+  let unitPrice = product.price / baseQty;
+  let packTotalPrice = product.price;
+
+  if (product.pricePacks?.pack50?.unit) {
+    unitPrice = product.pricePacks.pack50.unit;
+    packTotalPrice = product.pricePacks.pack50.total || (unitPrice * 50);
+  }
 
   return (
     <>
@@ -88,7 +92,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
             {baseQty > 1 && (
               <span className="text-[11px] text-gray-400 font-medium block mt-0.5">
-                (${product.price.toFixed(2)} pack de {baseQty} uds)
+                (${packTotalPrice.toFixed(2)} pack de {baseQty} uds)
               </span>
             )}
           </div>

@@ -498,15 +498,29 @@ function formatRawProducts(rawData: any[]): Product[] {
     const rawPrice = minAmount ?? (prod.prices?.price ? parseFloat(prod.prices.price) / 100 : parseFloat(prod.price || '0'));
     const rawRegPrice = prod.prices?.regular_price ? parseFloat(prod.prices.regular_price) / 100 : (prod.regular_price ? parseFloat(prod.regular_price) : undefined);
 
-    const parsedAttributes = prod.attributes?.map((attr: any) => {
-      const rawOptions = attr.options && attr.options.length > 0
+    let parsedAttributes = prod.attributes?.map((attr: any) => {
+      let rawOptions = attr.options && attr.options.length > 0
         ? attr.options
         : attr.terms?.map((t: any) => typeof t === 'string' ? t : t.name) || [];
+      
+      // Si el atributo es Cantidad, forzar estrictamente paquetes de 50, 100 y 250 (eliminar 1 unidad)
+      if (attr.name && attr.name.toLowerCase() === 'cantidad') {
+        rawOptions = ['50', '100', '250'];
+      }
+
       return {
         name: attr.name,
         options: rawOptions,
       };
     }).filter((a: any) => a.options.length > 0) || [];
+
+    // Si el producto no tiene atributo Cantidad explícito, agregarlo para packs de 50, 100 y 250
+    if (!parsedAttributes.some((a: any) => a.name.toLowerCase() === 'cantidad')) {
+      parsedAttributes.push({
+        name: 'Cantidad',
+        options: ['50', '100', '250']
+      });
+    }
 
     const catList = prod.categories?.map((c: any) => {
       const def = resolveCategory(c.slug) || resolveCategory(String(c.id));

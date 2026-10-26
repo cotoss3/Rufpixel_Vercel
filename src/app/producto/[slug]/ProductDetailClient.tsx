@@ -92,7 +92,7 @@ export default function ProductDetailClient({
 
   // Selected quantity option (e.g., '1', '50', '100', '250')
   const selectedQtyOption = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
-  const isSingleUnit = selectedQtyOption === '1' || selectedQtyOption.toLowerCase().includes('1 unidad') || selectedQtyOption.toLowerCase().includes('muestra');
+  const isSingleUnit = false;
 
   // Find matching child variation for bulk pack
   const getSelectedVariation = (): ProductVariation | undefined => {
@@ -151,8 +151,7 @@ export default function ProductDetailClient({
     setTimeout(() => setAddedMessage(false), 4000);
   };
 
-  const rawQtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
-  const qtyOptions = ['1', ...(rawQtyAttr?.options.filter((o) => o !== '1') || ['50', '100', '250'])];
+  const qtyOptions = ['50', '100', '250'];
 
   return (
     <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
@@ -176,7 +175,7 @@ export default function ProductDetailClient({
             />
             <span className="absolute top-4 right-4 bg-[#FF5E14] text-white text-xs font-extrabold px-3 py-1.5 rounded-xl shadow-md flex items-center space-x-1.5">
               <Layers className="w-4 h-4" />
-              <span>{isSingleUnit ? '1 Unidad' : `Pack x ${baseQtyNum} Unidades`}</span>
+              <span>Pack x {baseQtyNum} Unidades</span>
             </span>
           </div>
 
@@ -211,7 +210,7 @@ export default function ProductDetailClient({
             <div className="mt-4 bg-gray-50 p-5 rounded-2xl border border-gray-200 space-y-1">
               <div className="flex items-baseline space-x-2">
                 <span className="text-xs uppercase font-bold text-gray-400">
-                  {isSingleUnit ? 'Precio Unidad Individual:' : 'Precio Unitario al por Mayor:'}
+                  Precio Unitario al por Mayor:
                 </span>
                 <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit">
                   ${displayUnitPrice.toFixed(2)}
@@ -285,33 +284,12 @@ export default function ProductDetailClient({
           {/* Quantity Selector Option Buttons */}
           <div className="space-y-2">
             <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">
-              Seleccionar Cantidad: <span className="text-[#FF5E14] font-bold">{selectedQtyOption === '1' ? '1 Unidad (Muestra)' : `${selectedQtyOption} unidades`}</span>
+              Seleccionar Cantidad: <span className="text-[#FF5E14] font-bold">{selectedQtyOption} unidades</span>
             </label>
 
             <div className="flex flex-wrap gap-2.5">
               {qtyOptions.map((opt) => {
                 const isSelected = selectedQtyOption === opt;
-                const isSingle = opt === '1';
-
-                if (isSingle) {
-                  return (
-                    <button
-                      key="1-unit"
-                      onClick={() => handleAttributeChange('Cantidad', '1')}
-                      className={`px-4 py-3 rounded-xl text-xs transition-all border text-left ${
-                        isSelected
-                          ? 'bg-[#FF5E14] text-white border-[#FF5E14] shadow-md shadow-[#FF5E14]/25 scale-105 font-extrabold'
-                          : 'bg-white text-gray-700 border-gray-300 hover:border-[#FF5E14]'
-                      }`}
-                    >
-                      <div className="font-bold">1 Unidad (Muestra)</div>
-                      <div className={isSelected ? 'text-white/90 text-[11px]' : 'text-[#FF5E14] text-[11px] font-bold'}>
-                        ${singleUnitPriceWith35.toFixed(2)}/ud
-                      </div>
-                    </button>
-                  );
-                }
-
                 const optQty = parseInt(opt, 10) || 50;
                 let optTotal = product.price;
                 let optUnit = optTotal / optQty;
