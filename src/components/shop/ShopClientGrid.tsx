@@ -34,7 +34,7 @@ export default function ShopClientGrid({
   const [searchTerm, setSearchTerm] = useState<string>(searchQueryParam || '');
 
   // Category Collapsible Drawer State: Closed by default on start
-  const [isCategoryOpen, setIsCategoryOpen] = useState<boolean>(false);
+  const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState<boolean>(false);
 
   const perPage = 32;
   const mainGridRef = useRef<HTMLDivElement>(null);
@@ -151,7 +151,7 @@ export default function ShopClientGrid({
 
     setSelectedCategory(targetSlug);
     setCurrentPage(1);
-    setIsCategoryOpen(false); // Close category accordion after selecting
+    setIsMobileCategoryOpen(false);
 
     const baseUrl = targetSlug === 'todos' ? '/tienda' : `/tienda/${targetSlug}`;
     const queryString = searchTerm ? `?search=${encodeURIComponent(searchTerm)}` : '';
@@ -194,12 +194,9 @@ export default function ShopClientGrid({
   return (
     <div ref={mainGridRef} className="flex flex-col lg:flex-row gap-8 items-start scroll-mt-28">
       {/* Collapsible Left Sidebar Categories Navigation (Closed by Default) */}
-      <aside className="w-full lg:w-72 bg-white rounded-3xl border border-gray-200 shadow-sm shrink-0 sticky top-28 overflow-hidden transition-all">
-        {/* Accordion Toggle Header */}
-        <button
-          onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-          className="w-full flex items-center justify-between p-5 bg-white hover:bg-gray-50 transition-colors border-b border-gray-100 text-left"
-        >
+      <aside className="w-full lg:w-72 bg-white rounded-3xl border border-gray-200 shadow-sm shrink-0 lg:sticky lg:top-28 transition-all overflow-hidden">
+        {/* Header: Static on Desktop, Toggle on Mobile */}
+        <div className="p-5 bg-white border-b border-gray-100 flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
             <div className="p-2 bg-[#0D0D0D] text-[#FF5E14] rounded-xl">
               <Filter className="w-4 h-4" />
@@ -214,68 +211,64 @@ export default function ShopClientGrid({
             </div>
           </div>
 
-          <div className="flex items-center space-x-2">
-            <span className="text-[10px] font-extrabold uppercase bg-gray-100 text-gray-600 px-2 py-0.5 rounded-md">
-              {isCategoryOpen ? 'Ocultar' : 'Ver Categorías'}
-            </span>
-            {isCategoryOpen ? (
-              <ChevronUp className="w-4 h-4 text-gray-500" />
-            ) : (
-              <ChevronDown className="w-4 h-4 text-gray-500" />
-            )}
-          </div>
-        </button>
+          {/* Mobile Only Toggle Button */}
+          <button
+            onClick={() => setIsMobileCategoryOpen(!isMobileCategoryOpen)}
+            className="lg:hidden flex items-center space-x-1 text-xs font-bold bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-xl transition-colors"
+          >
+            <span>{isMobileCategoryOpen ? 'Ocultar' : 'Ver'}</span>
+            {isMobileCategoryOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          </button>
+        </div>
 
-        {/* Collapsible Category List (Closed by Default) */}
-        {isCategoryOpen && (
-          <div className="p-5 space-y-1.5 bg-gray-50/50 max-h-96 overflow-y-auto animate-fade-in border-t border-gray-100">
-            <button
-              onClick={(e) => handleCategorySelect('todos', e)}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-extrabold transition-all text-left ${
-                selectedCategory === 'todos'
-                  ? 'bg-[#0D0D0D] text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:text-[#FF5E14]'
-              }`}
-            >
-              <div className="flex items-center space-x-2">
-                <Grid className="w-4 h-4 text-[#FF5E14]" />
-                <span>Todos los Productos</span>
-              </div>
-              {selectedCategory === 'todos' && <Check className="w-4 h-4 text-[#FF5E14]" />}
-            </button>
+        {/* Category List: Always open on Desktop (lg:block), toggleable on Mobile */}
+        <div className={`p-4 space-y-1 bg-white ${isMobileCategoryOpen ? 'block' : 'hidden lg:block'}`}>
+          <button
+            onClick={(e) => handleCategorySelect('todos', e)}
+            className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-extrabold transition-all text-left ${
+              selectedCategory === 'todos'
+                ? 'bg-[#0D0D0D] text-white shadow-sm'
+                : 'bg-white text-gray-700 hover:bg-gray-100 hover:text-[#FF5E14]'
+            }`}
+          >
+            <div className="flex items-center space-x-2">
+              <Grid className="w-4 h-4 text-[#FF5E14]" />
+              <span>Todos los Productos</span>
+            </div>
+            {selectedCategory === 'todos' && <Check className="w-3.5 h-3.5 text-[#FF5E14]" />}
+          </button>
 
-            {categories.map((cat) => {
-              const def = resolveCategory(cat.slug) || resolveCategory(cat.id);
-              const isSelected =
-                selectedCategory === cat.slug ||
-                (resolvedActive && def && resolvedActive.id === def.id) ||
-                (resolvedActive && resolvedActive.canonicalSlug === cat.slug);
+          {categories.map((cat) => {
+            const def = resolveCategory(cat.slug) || resolveCategory(cat.id);
+            const isSelected =
+              selectedCategory === cat.slug ||
+              (resolvedActive && def && resolvedActive.id === def.id) ||
+              (resolvedActive && resolvedActive.canonicalSlug === cat.slug);
 
-              return (
-                <button
-                  key={cat.slug}
-                  onClick={(e) => handleCategorySelect(cat.slug, e)}
-                  className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-bold transition-all text-left group ${
+            return (
+              <button
+                key={cat.slug}
+                onClick={(e) => handleCategorySelect(cat.slug, e)}
+                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all text-left group ${
+                  isSelected
+                    ? 'bg-[#FF5E14] text-white shadow-sm font-extrabold'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 hover:text-[#FF5E14]'
+                }`}
+              >
+                <span className="truncate pr-2">{cat.name}</span>
+                <span
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold shrink-0 ${
                     isSelected
-                      ? 'bg-[#FF5E14] text-white shadow-md font-extrabold'
-                      : 'bg-white text-gray-700 hover:bg-gray-100 hover:text-[#FF5E14]'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-gray-100 text-gray-500 group-hover:bg-[#FF5E14]/10 group-hover:text-[#FF5E14]'
                   }`}
                 >
-                  <span className="truncate pr-2">{cat.name}</span>
-                  <span
-                    className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold shrink-0 ${
-                      isSelected
-                        ? 'bg-white/20 text-white'
-                        : 'bg-gray-100 text-gray-500 group-hover:bg-[#FF5E14]/10 group-hover:text-[#FF5E14]'
-                    }`}
-                  >
-                    {cat.count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        )}
+                  {cat.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </aside>
 
       {/* Right Area: Intelligent Search Bar + Product Grid (3 Columns) + Dynamic URL Pagination */}
