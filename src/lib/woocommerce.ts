@@ -582,7 +582,7 @@ export function filterProductsByCategory(products: Product[], categorySlug?: str
   return products.filter((p) => isProductInCategory(p, categorySlug));
 }
 
-// ULTRA-FAST PDP LOOKUP WITH MEMORY CACHE & UNFILTERED SLUG FALLBACK
+// ULTRA-FAST PDP LOOKUP WITH MEMORY CACHE & LOCAL DB FIRST (100% ACCURATE EXCEL PRICING)
 export async function getProductBySlug(slug: string): Promise<Product | null> {
   // 1. Check memory cache for instant response (< 1ms)
   const cached = productCache.get(slug);
@@ -590,22 +590,46 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     return cached.data;
   }
 
-  // 2. Check if product exists in global catalog cache
-  if (globalCatalogCache) {
-    const foundInCatalog = globalCatalogCache.products.find((p) => p.slug === slug);
-    if (foundInCatalog) {
-      productCache.set(slug, { data: foundInCatalog, timestamp: Date.now() });
-      return foundInCatalog;
-    }
+  // 2. Fast search in local verified products database (100% accurate prices & packs from Excel)
+  const localMatch = (localProductsDb as any[]).find((lp: any) => 
+    lp.slug === slug || 
+    lp.id === slug || 
+    lp.sku?.toLowerCase() === slug.toLowerCase()
+  );
+
+  let initialBase: Product | null = null;
+  if (localMatch) {
+    const pack50Total = localMatch.price_packs?.pack50?.total || (localMatch.unit_price * 50);
+    const catDef = resolveCategory(localMatch.category);
+    initialBase = {
+      id: String(localMatch.id),
+      slug: localMatch.slug || slug,
+      sku: localMatch.sku,
+      name: localMatch.name,
+      price: pack50Total,
+      pricePacks: localMatch.price_packs,
+      techniques: localMatch.techniques || [],
+      description: `<p><strong>${localMatch.name}</strong></p><p>Personalización de alta definición para tu marca corporativa y eventos en Panamá.</p>`,
+      shortDescription: `Personalización corporativa en paquetes de 50, 100 y 250 unidades. Técnicas recomendadas: ${(localMatch.techniques || []).join(', ')}.`,
+      category: catDef ? catDef.name : (localMatch.category || 'Productos RufPixel'),
+      categorySlug: catDef ? catDef.canonicalSlug : 'general',
+      categories: catDef ? [{ id: catDef.id, name: catDef.name, slug: catDef.canonicalSlug }] : [],
+      image: localMatch.photo ? (localMatch.photo.startsWith('http') ? localMatch.photo : `https://rufpixel.com${localMatch.photo}`) : 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
+      gallery: localMatch.photo ? [(localMatch.photo.startsWith('http') ? localMatch.photo : `https://rufpixel.com${localMatch.photo}`)] : [],
+      stock: 100,
+      type: 'simple',
+      attributes: [
+        { name: 'Cantidad', options: ['50', '100', '250'] },
+        ...(localMatch.techniques && localMatch.techniques.length > 0 ? [{ name: 'Técnica', options: localMatch.techniques }] : [])
+      ],
+      featured: false,
+    };
   }
 
-  // 3. Fast search in local mock data
-  const localMock = MOCK_PRODUCTS.find((p) => p.slug === slug);
-  if (localMock) return localMock;
-
+  // 3. Try to enrich with live WooCommerce API (for extra gallery images or description), but preserve local prices & packs
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    const timeoutId = setTimeout(() => controller.abort(), 4000); // Safe 4s timeout
 
     const res = await fetch(`${LIVE_DOMAIN}/wp-json/wc/store/v1/products?slug=${slug}`, {
       cache: 'no-store',
@@ -617,16 +641,39 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        const formatted = formatRawProducts(data)[0];
-        if (formatted) {
-          productCache.set(slug, { data: formatted, timestamp: Date.now() });
-          return formatted;
+        const liveFormatted = formatRawProducts(data)[0];
+        if (liveFormatted) {
+          const merged: Product = {
+            ...(initialBase || liveFormatted),
+            ...liveFormatted,
+            // Ensure verified prices and packs always take precedence
+            price: initialBase?.price || liveFormatted.price,
+            pricePacks: initialBase?.pricePacks || liveFormatted.pricePacks,
+            techniques: initialBase?.techniques && initialBase.techniques.length > 0 ? initialBase.techniques : liveFormatted.techniques,
+            image: liveFormatted.image || initialBase?.image || '',
+            gallery: liveFormatted.gallery && liveFormatted.gallery.length > 0 ? liveFormatted.gallery : initialBase?.gallery || [],
+          };
+          productCache.set(slug, { data: merged, timestamp: Date.now() });
+          return merged;
         }
       }
     }
   } catch (err) {
-    console.warn('Error in getProductBySlug timeout/abort:', err);
+    // If live API times out or fails, serve initialBase directly
   }
+
+  if (initialBase) {
+    productCache.set(slug, { data: initialBase, timestamp: Date.now() });
+    return initialBase;
+  }
+
+  // 4. Fallback search in global catalog cache or mock
+  if (globalCatalogCache) {
+    const found = globalCatalogCache.products.find((p) => p.slug === slug);
+    if (found) return found;
+  }
+  const localMock = MOCK_PRODUCTS.find((p) => p.slug === slug);
+  if (localMock) return localMock;
 
   return null;
 }
