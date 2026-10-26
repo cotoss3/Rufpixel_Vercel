@@ -183,6 +183,30 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
           </div>
         </div>
 
+        {/* Técnicas de personalización disponibles (Informativo, decisión final por producción) */}
+        {product.techniques && product.techniques.length > 0 && (
+          <div className="bg-orange-50/50 border border-[#FF5E14]/20 rounded-2xl p-3.5 space-y-2">
+            <div className="flex items-center space-x-1.5 text-xs font-extrabold text-gray-900 uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-[#FF5E14]" />
+              <span>Este producto se puede trabajar en:</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {product.techniques.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-flex items-center bg-white border border-[#FF5E14]/30 px-2.5 py-1 rounded-lg text-xs font-bold text-gray-900 shadow-sm"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF5E14] mr-1.5"></span>
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <p className="text-[10px] text-gray-500 font-medium">
+              * Nuestro equipo técnico define la técnica óptima según tu diseño y logotipo.
+            </p>
+          </div>
+        )}
+
         {/* Quantity Modal Options */}
         <div className="space-y-2">
           <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">

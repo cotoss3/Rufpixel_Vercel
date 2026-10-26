@@ -287,7 +287,6 @@ export function convertLocalToProduct(lp: any): Product {
     type: 'simple',
     attributes: [
       { name: 'Cantidad', options: ['50', '100', '250'] },
-      ...(lp.techniques && lp.techniques.length > 0 ? [{ name: 'Técnica', options: lp.techniques }] : [])
     ],
     featured: false,
   };
@@ -562,6 +561,12 @@ function formatRawProducts(rawData: any[]): Product[] {
       };
     }).filter((a: any) => a.options.length > 0) || [];
 
+    // Excluir atributos de Técnica o Personalización de la selección interactiva
+    parsedAttributes = parsedAttributes.filter((a: any) => {
+      const n = (a.name || '').toLowerCase();
+      return !n.includes('técnica') && !n.includes('tecnica') && !n.includes('personalización') && !n.includes('personalizacion');
+    });
+
     // Si el producto no tiene atributo Cantidad explícito, agregarlo para packs de 50, 100 y 250
     if (!parsedAttributes.some((a: any) => a.name.toLowerCase() === 'cantidad')) {
       parsedAttributes.push({
@@ -669,7 +674,6 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
       type: 'simple',
       attributes: [
         { name: 'Cantidad', options: ['50', '100', '250'] },
-        ...(localMatch.techniques && localMatch.techniques.length > 0 ? [{ name: 'Técnica', options: localMatch.techniques }] : [])
       ],
       featured: false,
     };

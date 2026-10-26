@@ -281,6 +281,30 @@ export default function ProductDetailClient({
             dangerouslySetInnerHTML={{ __html: product.description }}
           />
 
+          {/* Técnicas de personalización disponibles (Informativo, decisión final por producción) */}
+          {product.techniques && product.techniques.length > 0 && (
+            <div className="bg-orange-50/60 border border-[#FF5E14]/20 rounded-2xl p-4 sm:p-5 space-y-2.5">
+              <div className="flex items-center space-x-2 text-xs font-extrabold text-gray-900 uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-[#FF5E14]" />
+                <span>Este producto se puede trabajar en:</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {product.techniques.map((tech) => (
+                  <span
+                    key={tech}
+                    className="inline-flex items-center bg-white border border-[#FF5E14]/30 px-3.5 py-1.5 rounded-xl text-xs font-extrabold text-gray-900 shadow-sm"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-[#FF5E14] mr-2"></span>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <p className="text-[11px] text-gray-500 font-medium leading-relaxed">
+                * Nuestro equipo de producción evalúa y define la mejor técnica según los detalles y colores de tu diseño o logotipo.
+              </p>
+            </div>
+          )}
+
           {/* Quantity Selector Option Buttons */}
           <div className="space-y-2">
             <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">
@@ -334,8 +358,10 @@ export default function ProductDetailClient({
           </div>
 
           {/* Other Attributes Selectors (Color, etc.) */}
-          {product.attributes
-            .filter((a) => a.name.toLowerCase() !== 'cantidad')
+          {product.attributes.filter((a) => {
+              const n = a.name.toLowerCase();
+              return n !== 'cantidad' && !n.includes('técnica') && !n.includes('tecnica') && !n.includes('personalización') && !n.includes('personalizacion');
+            })
             .map((attr) => (
               <div key={attr.name} className="space-y-2">
                 <label className="text-xs uppercase font-extrabold text-gray-700 tracking-wider block">
