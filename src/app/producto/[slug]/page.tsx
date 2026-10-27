@@ -1,18 +1,18 @@
-import React from 'react';
-import { getProductBySlug } from '@/lib/woocommerce';
-import ProductDetailClient from './ProductDetailClient';
+import { permanentRedirect } from 'next/navigation';
+import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const product = await getProductBySlug(params.slug);
-  if (!product) return { title: 'Producto — RufPixel' };
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   return {
-    title: `${product.name} — RufPixel Impresión`,
-    description: product.shortDescription,
+    alternates: {
+      canonical: `https://rufpixel.com/productos/${params.slug}/`,
+    },
+    robots: {
+      index: false,
+      follow: true,
+    },
   };
 }
 
-export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const product = await getProductBySlug(params.slug);
-
-  return <ProductDetailClient product={product || undefined} slug={params.slug} />;
+export default function LegacyProductPage({ params }: { params: { slug: string } }) {
+  permanentRedirect(`/productos/${params.slug}`);
 }

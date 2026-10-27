@@ -43,7 +43,7 @@ export default function ProductCard({ product }: { product: Product }) {
       >
         {/* Tapping photo or card body enters the product page */}
         <Link
-          href={`/producto/${product.slug}`}
+          href={`/productos/${product.slug}`}
           prefetch={true}
           onClick={handleCardClick}
           className="block flex-1"

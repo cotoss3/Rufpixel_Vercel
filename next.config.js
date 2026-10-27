@@ -12,15 +12,15 @@ const nextConfig = {
   // 301 Permanent SEO Redirects to preserve 100% Google traffic and prevent 404 errors
   async redirects() {
     return [
-      // 1. Old WordPress Product URLs (/productos/[slug] -> /producto/[slug])
+      // 1. WordPress Canonical Product URLs (/productos/[slug]) - Preserve 100% SEO traffic
       {
-        source: '/productos/:slug*',
-        destination: '/producto/:slug*',
+        source: '/producto/:slug*',
+        destination: '/productos/:slug*',
         permanent: true,
       },
       {
         source: '/product/:slug*',
-        destination: '/producto/:slug*',
+        destination: '/productos/:slug*',
         permanent: true,
       },
       // 2. Old WordPress Category URLs (/categoria-producto/[slug] -> /tienda/[slug])

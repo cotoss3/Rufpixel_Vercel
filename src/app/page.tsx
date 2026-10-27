@@ -234,7 +234,7 @@ export default async function HomePage() {
                     </span>
                   </div>
                   <Link
-                    href={`/producto/${product.slug}`}
+                    href={`/productos/${product.slug}`}
                     className="p-2.5 bg-[#FF5E14] text-white rounded-xl hover:bg-[#E04700] transition-colors shadow-md shadow-[#FF5E14]/20"
                     aria-label={`Ver ${product.name}`}
                   >

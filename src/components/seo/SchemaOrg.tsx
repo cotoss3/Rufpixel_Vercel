@@ -34,15 +34,25 @@ export function ProductSchema({ product }: { product: Product }) {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: [product.image, ...product.gallery],
-    description: product.description.replace(/<[^>]+>/g, ''),
-    sku: product.id,
+    image: [product.image, ...product.gallery].filter(Boolean),
+    description: (product.shortDescription || product.description || '').replace(/<[^>]+>/g, '').trim(),
+    sku: product.sku || product.id,
+    brand: {
+      '@type': 'Brand',
+      name: 'RufPixel',
+    },
     offers: {
       '@type': 'Offer',
-      url: `https://rufpixel.com/producto/${product.slug}`,
+      url: `https://rufpixel.com/productos/${product.slug}/`,
       priceCurrency: 'USD',
       price: product.price,
+      priceValidUntil: '2027-12-31',
+      itemCondition: 'https://schema.org/NewCondition',
       availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'RufPixel',
+      },
     },
   };
 

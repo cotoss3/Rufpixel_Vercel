@@ -236,7 +236,7 @@ export default function ProductSearch({
                 return (
                   <Link
                     key={prod.id}
-                    href={`/producto/${prod.slug}`}
+                    href={`/productos/${prod.slug}`}
                     onClick={() => {
                       setCachedProduct(prod);
                       setIsOpen(false);
