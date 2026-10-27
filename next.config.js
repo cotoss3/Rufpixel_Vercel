@@ -68,14 +68,10 @@ const nextConfig = {
       },
     ];
   },
-  // Transparent Proxy Rewrites: forward /wp-content, /wp-admin, /wp-login.php, /wp-json to WordPress host
+  // Transparent Proxy Rewrites: forward /wp-admin, /wp-login.php, /wp-json to WordPress host
   async rewrites() {
     const wpOrigin = process.env.WORDPRESS_BACKEND_ORIGIN || 'https://backend.rufpixel.com';
     return [
-      {
-        source: '/wp-content/:path*',
-        destination: `${wpOrigin}/wp-content/:path*`,
-      },
       {
         source: '/wp-admin/:path*',
         destination: `${wpOrigin}/wp-admin/:path*`,
