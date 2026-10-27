@@ -68,6 +68,28 @@ const nextConfig = {
       },
     ];
   },
+  // Transparent Proxy Rewrites: forward /wp-content, /wp-admin, /wp-login.php, /wp-json to WordPress host
+  async rewrites() {
+    const wpOrigin = process.env.WORDPRESS_BACKEND_ORIGIN || 'https://backend.rufpixel.com';
+    return [
+      {
+        source: '/wp-content/:path*',
+        destination: `${wpOrigin}/wp-content/:path*`,
+      },
+      {
+        source: '/wp-admin/:path*',
+        destination: `${wpOrigin}/wp-admin/:path*`,
+      },
+      {
+        source: '/wp-login.php',
+        destination: `${wpOrigin}/wp-login.php`,
+      },
+      {
+        source: '/wp-json/:path*',
+        destination: `${wpOrigin}/wp-json/:path*`,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

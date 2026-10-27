@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/checkout/', '/mi-cuenta/'],
+      disallow: ['/checkout/', '/mi-cuenta/', '/cotizacion/'],
     },
     sitemap: 'https://rufpixel.com/sitemap.xml',
   };
