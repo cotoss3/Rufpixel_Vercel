@@ -77,3 +77,26 @@ h1, h2, h3, h4, h5, h6 {
 .zoom-on-hover:hover {
   transform: scale(1.05);
 }
+
+/* Print Optimization for Quotations (A4 / Letter clean layout) */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  header, footer, nav, aside, .print-hidden, [class*="AiWhatsAppAssistant"] {
+    display: none !important;
+  }
+  #printable-quotation {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  @page {
+    margin: 12mm 15mm 12mm 15mm;
+    size: letter portrait;
+  }
+}

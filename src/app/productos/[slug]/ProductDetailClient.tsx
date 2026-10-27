@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
-import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck } from 'lucide-react';
+import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck, FileText, Send } from 'lucide-react';
 import Link from 'next/link';
 import { ProductSchema } from '@/components/seo/SchemaOrg';
 import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
+import QuoteModal from '@/components/shop/QuoteModal';
+import { QuoteItem } from '@/lib/types';
 
 export default function ProductDetailClient({ 
   product: initialProduct,
@@ -59,6 +61,7 @@ export default function ProductDetailClient({
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(product?.image || '');
   const [addedMessage, setAddedMessage] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   useEffect(() => {
     if (product) {
@@ -149,6 +152,36 @@ export default function ProductDetailClient({
     addToCart(productToCart, quantity, selectedAttributes);
     setAddedMessage(true);
     setTimeout(() => setAddedMessage(false), 4000);
+  };
+
+  const handleWhatsAppQuote = () => {
+    const currentUnits = isSingleUnit ? quantity : (baseQtyNum * quantity);
+    const currentTotal = Number(((isSingleUnit ? singleUnitPriceWith35 : basePackPrice) * quantity).toFixed(2));
+    const productUrl = `https://rufpixel.com/productos/${product.slug}/`;
+    const text = encodeURIComponent(
+      `¡Hola RufPixel! 👋 Quiero cotizar este producto:\n\n` +
+      `📦 *Producto:* ${product.name}\n` +
+      `🔢 *Cantidad:* ${currentUnits} unidades\n` +
+      `💰 *Precio Estimado:* $${currentTotal.toFixed(2)} USD ($${displayUnitPrice.toFixed(2)}/ud)\n` +
+      (product.techniques?.length ? `🎨 *Técnica:* ${product.techniques.join(', ')}\n` : '') +
+      `🔗 *Enlace:* ${productUrl}`
+    );
+    window.open(`https://wa.me/50765256015?text=${text}`, '_blank');
+  };
+
+  const quoteItem: QuoteItem = {
+    productId: product.id,
+    slug: product.slug,
+    name: product.name,
+    sku: product.sku,
+    image: selectedImage || product.image,
+    category: product.category,
+    technique: product.techniques?.[0],
+    quantityUnits: isSingleUnit ? quantity : (baseQtyNum * quantity),
+    packageQty: selectedAttributes['Cantidad'] || '50',
+    unitPrice: displayUnitPrice,
+    totalPrice: Number(((isSingleUnit ? singleUnitPriceWith35 : basePackPrice) * quantity).toFixed(2)),
+    selectedAttributes: selectedAttributes,
   };
 
   const qtyOptions = ['50', '100', '250'];
@@ -416,6 +449,27 @@ export default function ProductDetailClient({
               </button>
             </div>
 
+            {/* Direct Quotation Buttons */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button
+                type="button"
+                onClick={handleWhatsAppQuote}
+                className="w-full py-3 px-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-xl text-xs font-extrabold transition-all flex items-center justify-center space-x-2 shadow-md shadow-green-900/20"
+              >
+                <Send className="w-4 h-4" />
+                <span>Cotizar por WhatsApp</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="w-full py-3 px-4 bg-[#0D0D0D] hover:bg-gray-800 text-white rounded-xl text-xs font-extrabold transition-all flex items-center justify-center space-x-2 shadow-md border border-gray-800"
+              >
+                <FileText className="w-4 h-4 text-[#FF5E14]" />
+                <span>Generar Cotización (PDF)</span>
+              </button>
+            </div>
+
             {addedMessage && (
               <div className="bg-[#0D0D0D] border border-[#FF5E14]/40 text-white p-4 rounded-xl text-xs font-medium flex items-center justify-between animate-fade-in shadow-xl">
                 <div className="flex items-center space-x-2">
@@ -431,6 +485,13 @@ export default function ProductDetailClient({
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        items={[quoteItem]}
+      />
     </div>
   );
 }

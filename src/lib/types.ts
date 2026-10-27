@@ -114,3 +114,42 @@ export interface PreOrderRequest {
   notes?: string;
   estimatedPrice: number;
 }
+
+export interface QuoteCustomer {
+  fullName: string;
+  company?: string;
+  ruc?: string;
+  email: string;
+  phone: string;
+  notes?: string;
+}
+
+export interface QuoteItem {
+  productId: string;
+  slug: string;
+  name: string;
+  sku?: string;
+  image: string;
+  category: string;
+  technique?: string;
+  quantityUnits: number;
+  packageQty?: string;
+  unitPrice: number;
+  totalPrice: number;
+  selectedAttributes: Record<string, string>;
+  notes?: string;
+}
+
+export interface Quote {
+  id: string;
+  quoteNumber: string;
+  createdAt: string;
+  validUntil: string;
+  customer: QuoteCustomer;
+  items: QuoteItem[];
+  subtotal: number;
+  tax: number;
+  total: number;
+  status: 'PENDIENTE' | 'APROBADA' | 'PAGADA' | 'VENCIDA';
+  token?: string;
+}

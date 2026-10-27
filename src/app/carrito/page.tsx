@@ -1,12 +1,35 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/cartContext';
-import { Trash2, ShoppingBag, ArrowRight, ArrowLeft, ShieldCheck } from 'lucide-react';
+import { Trash2, ShoppingBag, ArrowRight, ArrowLeft, ShieldCheck, FileText } from 'lucide-react';
+import QuoteModal from '@/components/shop/QuoteModal';
+import { QuoteItem } from '@/lib/types';
 
 export default function CarritoPage() {
   const { cart, removeFromCart, updateQuantity, subtotal, clearCart } = useCart();
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+
+  const quoteItems: QuoteItem[] = cart.map((item) => {
+    const qtyAttr = item.product.attributes?.find((a) => a.name.toLowerCase() === 'cantidad');
+    const baseQtyNum = parseInt(item.selectedAttributes['Cantidad'] || qtyAttr?.options?.[0] || '50', 10) || 50;
+    return {
+      productId: item.product.id,
+      slug: item.product.slug,
+      name: item.product.name,
+      sku: item.product.sku,
+      image: item.product.image,
+      category: item.product.category,
+      technique: item.product.techniques?.[0],
+      quantityUnits: baseQtyNum * item.quantity,
+      packageQty: item.selectedAttributes['Cantidad'] || '50',
+      unitPrice: item.product.pricePacks?.pack50?.unit || (item.product.price / baseQtyNum),
+      totalPrice: item.product.price * item.quantity,
+      selectedAttributes: item.selectedAttributes,
+      notes: item.customNotes,
+    };
+  });
 
   if (cart.length === 0) {
     return (
@@ -146,12 +169,23 @@ export default function CarritoPage() {
               </div>
             </div>
 
-            <Link
-              href="/checkout"
-              className="w-full bg-[#FF5E14] hover:bg-[#E04700] text-white py-4 px-6 rounded-xl font-extrabold text-center block shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
-            >
-              <span>Proceder al Checkout (Yappy & ACH)</span>
-            </Link>
+            <div className="space-y-3">
+              <Link
+                href="/checkout"
+                className="w-full bg-[#FF5E14] hover:bg-[#E04700] text-white py-4 px-6 rounded-xl font-extrabold text-center block shadow-lg shadow-[#FF5E14]/30 transition-all flex items-center justify-center space-x-2"
+              >
+                <span>Proceder al Checkout (Yappy & ACH)</span>
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setIsQuoteModalOpen(true)}
+                className="w-full bg-[#0D0D0D] hover:bg-gray-800 text-white py-3.5 px-6 rounded-xl font-bold text-center block shadow-md transition-all flex items-center justify-center space-x-2 text-xs uppercase tracking-wider border border-gray-800"
+              >
+                <FileText className="w-4 h-4 text-[#FF5E14]" />
+                <span>📄 Generar Cotización Formal (PDF)</span>
+              </button>
+            </div>
 
             <div className="bg-gray-50 p-4 rounded-2xl border border-gray-200 text-xs space-y-1">
               <div className="font-bold text-gray-900 flex items-center space-x-1.5">
@@ -165,6 +199,13 @@ export default function CarritoPage() {
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        items={quoteItems}
+      />
     </div>
   );
 }
