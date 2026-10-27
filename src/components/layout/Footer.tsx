@@ -106,7 +106,18 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 space-y-4 md:space-y-0">
-          <p>© {new Date().getFullYear()} RufPixel.com — Todos los derechos reservados. Desarrollado con Next.js Headless.</p>
+          <p>
+            © {new Date().getFullYear()} RufPixel.com — Todos los derechos reservados. Desarrollado por{' '}
+            <a
+              href="https://datakorex.com"
+              target="_blank"
+              rel="noopener"
+              title="DataKorex — Desarrollo Web y Software a Medida en Panamá"
+              className="font-bold text-gray-300 hover:text-[#FF5E14] transition-colors underline decoration-gray-700 hover:decoration-[#FF5E14]"
+            >
+              DataKorex
+            </a>
+          </p>
           <div className="flex space-x-6">
             <Link href="/privacidad" className="hover:text-[#FF5E14] transition-colors">Política de Privacidad</Link>
             <Link href="/terminos" className="hover:text-[#FF5E14] transition-colors">Términos y Condiciones</Link>
