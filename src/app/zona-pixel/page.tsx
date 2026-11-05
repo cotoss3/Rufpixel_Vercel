@@ -1,1 +1,3 @@
-export { default } from '../cotizador/page';
+import CotizadorPage from '../cotizador/page';
+
+export default CotizadorPage;

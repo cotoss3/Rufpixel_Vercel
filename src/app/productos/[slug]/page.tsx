@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { getProductBySlug } from '@/lib/woocommerce';
 import ProductDetailClient from './ProductDetailClient';
+import { ProductSchema } from '@/components/seo/SchemaOrg';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const product = await getProductBySlug(params.slug);
@@ -73,5 +74,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function ProductosDetailPage({ params }: { params: { slug: string } }) {
   const product = await getProductBySlug(params.slug);
 
-  return <ProductDetailClient product={product || undefined} slug={params.slug} />;
+  return (
+    <>
+      {product && <ProductSchema product={product} />}
+      <ProductDetailClient product={product || undefined} slug={params.slug} />
+    </>
+  );
 }

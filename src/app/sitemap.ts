@@ -1,17 +1,25 @@
 import { MetadataRoute } from 'next';
-import { getProducts, getCategories } from '@/lib/woocommerce';
+import { getCategories } from '@/lib/woocommerce';
 import { MOCK_SERVICES, MOCK_BLOG_POSTS } from '@/lib/mockData';
+import localProductsDb from '@/lib/products-db.json';
+import catalogData from '@/lib/catalogData.json';
 
 export const revalidate = 86400; // Revalidate sitemap daily
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rufpixel.com';
 
-  // Fetch all 598 products and categories
-  const [{ products }, categories] = await Promise.all([
-    getProducts('todos', 1, 100),
-    getCategories(),
-  ]);
+  const categories = await getCategories();
+
+  // Deduplicate all product slugs from local verified database and catalogData
+  const productSlugs = new Set<string>();
+  (localProductsDb as any[]).forEach((p) => {
+    if (p.slug) productSlugs.add(p.slug);
+    else if (p.handle) productSlugs.add(p.handle);
+  });
+  (catalogData as any[]).forEach((p) => {
+    if (p.slug) productSlugs.add(p.slug);
+  });
 
   // Static core routes
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -31,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/cotizador`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/zona-pixel`,
@@ -41,6 +49,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/servicios`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/galeria`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -64,12 +78,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/mi-cuenta`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
       url: `${baseUrl}/privacidad`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -91,9 +99,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // Product URLs (/producto/[slug])
-  const productRoutes: MetadataRoute.Sitemap = products.map((prod) => ({
-    url: `${baseUrl}/productos/${prod.slug}/`,
+  // Complete Product URLs (/productos/[slug]/) for all catalog items
+  const productRoutes: MetadataRoute.Sitemap = Array.from(productSlugs).map((slug) => ({
+    url: `${baseUrl}/productos/${slug}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,

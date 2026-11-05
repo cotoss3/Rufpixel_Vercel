@@ -50,10 +50,70 @@ const nextConfig = {
         destination: '/tienda',
         permanent: true,
       },
-      // 4. Old English / WordPress utility pages
+      // 4. Old English & High-Impression WordPress Legacy Landing Pages (from GSC)
+      {
+        source: '/about',
+        destination: '/nosotros',
+        permanent: true,
+      },
       {
         source: '/contact',
         destination: '/contacto',
+        permanent: true,
+      },
+      {
+        source: '/services',
+        destination: '/servicios',
+        permanent: true,
+      },
+      {
+        source: '/impresiones-digitales',
+        destination: '/zona-pixel',
+        permanent: true,
+      },
+      {
+        source: '/impresiones-digitales-2',
+        destination: '/zona-pixel',
+        permanent: true,
+      },
+      {
+        source: '/impresiones',
+        destination: '/zona-pixel',
+        permanent: true,
+      },
+      {
+        source: '/articulos-promocionales',
+        destination: '/tienda',
+        permanent: true,
+      },
+      {
+        source: '/articulos-promocionale',
+        destination: '/tienda',
+        permanent: true,
+      },
+      {
+        source: '/diseno-grafico',
+        destination: '/servicios/diseno-grafico-vectorizacion',
+        permanent: true,
+      },
+      {
+        source: '/activaciones',
+        destination: '/servicios/impresion-gran-formato',
+        permanent: true,
+      },
+      {
+        source: '/request-quote',
+        destination: '/cotizador',
+        permanent: true,
+      },
+      {
+        source: '/3090-2',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/diseno-web',
+        destination: '/servicios',
         permanent: true,
       },
       {
