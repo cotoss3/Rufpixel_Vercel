@@ -128,6 +128,12 @@ const nextConfig = {
         destination: '/checkout',
         permanent: true,
       },
+      // WordPress Yoast Sitemap alias (/sitemap_index.xml -> /sitemap.xml)
+      {
+        source: '/sitemap_index.xml',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
       // 5. Google Search Console Legacy Pack URLs (/productos/[slug]-[cantidad]-uds) -> Base Product
       ...gscPackRedirects,
     ];
