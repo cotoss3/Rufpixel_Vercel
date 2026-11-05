@@ -228,10 +228,38 @@ export default async function HomePage() {
 
                 <div className="p-5 pt-0 flex items-center justify-between border-t border-gray-100">
                   <div>
-                    <span className="text-xs text-gray-400 block">Precio desde:</span>
-                    <span className="text-xl font-extrabold text-gray-900 font-outfit">
-                      ${product.price.toFixed(2)} <span className="text-xs font-normal text-gray-500">USD</span>
-                    </span>
+                    {(() => {
+                      const packs = product.pricePacks;
+                      let minQty = 50;
+                      let unitPrice = 0;
+
+                      if (packs?.pack50?.total) {
+                        minQty = 50;
+                        unitPrice = packs.pack50.unit || (packs.pack50.total / 50);
+                      } else if (packs?.pack100?.total) {
+                        minQty = 100;
+                        unitPrice = packs.pack100.unit || (packs.pack100.total / 100);
+                      } else if (packs?.pack250?.total) {
+                        minQty = 250;
+                        unitPrice = packs.pack250.unit || (packs.pack250.total / 250);
+                      } else {
+                        unitPrice = product.price;
+                      }
+
+                      return (
+                        <>
+                          <div className="flex items-baseline space-x-1">
+                            <span className="text-xl font-extrabold text-gray-900 font-outfit">
+                              ${unitPrice.toFixed(2)}
+                            </span>
+                            <span className="text-xs font-semibold text-gray-500">/ unidad</span>
+                          </div>
+                          <span className="text-[11px] font-bold text-[#FF5E14] block mt-0.5">
+                            Mínimo {minQty} unidades
+                          </span>
+                        </>
+                      );
+                    })()}
                   </div>
                   <Link
                     href={`/productos/${product.slug}`}
