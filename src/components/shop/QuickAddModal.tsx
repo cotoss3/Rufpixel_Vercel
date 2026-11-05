@@ -166,7 +166,7 @@ export default function QuickAddModal({ product, isOpen, onClose }: QuickAddModa
           <div className="grid grid-cols-2 gap-2 text-gray-300 text-[11px]">
             <div className="flex items-center space-x-1.5">
               <Clock className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />
-              <span>Entrega en 24 a 48h</span>
+              <span>Despacho y entrega rápida</span>
             </div>
             <div className="flex items-center space-x-1.5">
               <Sparkles className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />

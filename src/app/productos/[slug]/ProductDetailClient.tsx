@@ -278,8 +278,8 @@ export default function ProductDetailClient({
               <div className="flex items-start space-x-2">
                 <Clock className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-bold">Entrega en 24 a 48 horas</strong>
-                  <span className="text-[11px] text-gray-400">Despachos rápidos en Ciudad de Panamá.</span>
+                  <strong className="text-white block font-bold">Despacho y Entrega</strong>
+                  <span className="text-[11px] text-gray-400">Envíos directos en Ciudad de Panamá y todo el país.</span>
                 </div>
               </div>
 

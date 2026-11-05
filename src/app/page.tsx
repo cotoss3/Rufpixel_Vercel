@@ -84,7 +84,7 @@ export default async function HomePage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Entregas Rápida 24 - 48h</span>
+                  <span>Despachos a nivel nacional</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0" />
@@ -379,7 +379,7 @@ export default async function HomePage() {
                 <h3 className="text-sm font-bold text-white font-outfit">Banners & Roll-Ups</h3>
               </div>
               <p className="text-[11px] text-gray-400 leading-relaxed">
-                Lona gruesa de 13oz con ojales o roll-up retráctil de aluminio listo para armar. Te lo entregamos en 24 a 48h en Panamá.
+                Lona gruesa de 13oz con ojales o roll-up retráctil de aluminio listo para armar. Te lo entregamos listo para instalar en Panamá.
               </p>
             </div>
           </div>
@@ -392,7 +392,7 @@ export default async function HomePage() {
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="w-4 h-4 text-[#FF5E14]" />
-              <span>Despachos y retiros rápidos en 24 a 48 horas</span>
+              <span>Despachos y retiros rápidos en taller</span>
             </div>
             <div className="flex items-center space-x-2">
               <ShieldCheck className="w-4 h-4 text-[#FF5E14]" />

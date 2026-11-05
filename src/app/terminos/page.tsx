@@ -28,7 +28,7 @@ export default function TerminosPage() {
 
         <h3 className="text-lg font-bold text-gray-900 font-outfit">3. Tiempos de Entrega</h3>
         <p>
-          Los tiempos estándar de producción oscilan entre 24 a 48 horas hábiles contadas a partir de la confirmación del pago en Yappy y la aprobación del arte digital.
+          Los tiempos de producción y entrega se coordinan según el tipo de producto, volumen y confirmación de pago del cliente.
         </p>
       </div>
     </div>

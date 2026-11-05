@@ -207,7 +207,7 @@ export default function NosotrosPage() {
                     <span className="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-extrabold text-xs">
                       4
                     </span>
-                    <strong className="text-gray-900 block font-outfit text-sm">Entrega 24-48h</strong>
+                    <strong className="text-gray-900 block font-outfit text-sm">Despacho y Entrega</strong>
                     <p className="text-gray-500">Retiro en local o envío a nivel nacional rápido y seguro.</p>
                   </div>
                 </div>
@@ -259,8 +259,8 @@ export default function NosotrosPage() {
           <span className="text-xs text-gray-400">Proyectos Entregados</span>
         </div>
         <div className="bg-[#0D0D0D] text-white p-6 rounded-3xl border border-gray-800 text-center space-y-1">
-          <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit block">24-48h</span>
-          <span className="text-xs text-gray-400">Tiempos de Producción</span>
+          <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit block">Ágil</span>
+          <span className="text-xs text-gray-400">Producción y Despacho</span>
         </div>
         <div className="bg-[#0D0D0D] text-white p-6 rounded-3xl border border-gray-800 text-center space-y-1">
           <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit block">5.0 ★</span>

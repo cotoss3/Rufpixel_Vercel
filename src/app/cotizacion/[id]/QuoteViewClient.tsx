@@ -362,7 +362,7 @@ export default function QuoteViewClient({ quote, quoteUrl }: QuoteViewClientProp
                 <span>Condiciones de Entrega y Producción</span>
               </span>
               <p className="text-amber-950 text-[11px] leading-relaxed">
-                • <strong>Tiempo de producción:</strong> 24 a 48 horas tras aprobación formal del montaje digital y confirmación de pago.
+                • <strong>Tiempo de producción:</strong> A coordinar con el cliente tras aprobación del montaje digital y confirmación de pago.
               </p>
               <p className="text-amber-950 text-[11px] leading-relaxed">
                 • <strong>Muestra Digital:</strong> Se enviará simulación virtual de su diseño previo a la impresión final sin costo adicional.
