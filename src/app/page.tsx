@@ -318,72 +318,183 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* 5 Impresiones Digitales Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 relative z-10">
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Printer className="w-4.5 h-4.5" />
+          {/* Zona Pixel Specialties - Clean Spacious 3-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+            
+            {/* Card 1: DTF Textil */}
+            <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF5E14]/10 text-[#FF5E14] group-hover:bg-[#FF5E14] group-hover:text-white transition-all flex items-center justify-center">
+                    <Printer className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-mono text-[#FF5E14] font-bold bg-[#FF5E14]/10 px-3 py-1 rounded-full border border-[#FF5E14]/20">
+                    Desde $2.94 USD
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
+                    DTF Textil Directo
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
+                    Impresión por pliego A4 o yarda lineal continua. Trae tu arte y estampa prendas al instante sin exigencia de paquetes de 100.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $2.94 USD</span>
-                <h3 className="text-sm font-bold text-white font-outfit">DTF Textil</h3>
-              </div>
-              <p className="text-[11px] text-gray-400 leading-relaxed">
-                Desde formato A4 o yarda lineal. Trae tu arte y estampa camisetas sin comprar paquetes de 100.
-              </p>
+              <Link 
+                href="/cotizador"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
+              >
+                <span>Calcular precio en línea</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
 
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Sparkles className="w-4.5 h-4.5" />
+            {/* Card 2: UV DTF */}
+            <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF5E14]/10 text-[#FF5E14] group-hover:bg-[#FF5E14] group-hover:text-white transition-all flex items-center justify-center">
+                    <Sparkles className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-mono text-[#FF5E14] font-bold bg-[#FF5E14]/10 px-3 py-1 rounded-full border border-[#FF5E14]/20">
+                    Desde $5.32 USD
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
+                    UV DTF para Rígidos
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
+                    Stickers de transferencia con relieve 3D táctil y barniz brillante. Pégalos en frío sobre termos, tazas o acrílico sin planchas.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Desde $5.32 USD</span>
-                <h3 className="text-sm font-bold text-white font-outfit">UV DTF para Rígidos</h3>
-              </div>
-              <p className="text-[11px] text-gray-400 leading-relaxed">
-                Stickers con relieve 3D que pegas en frío sobre termos, tazas o acrílico sin plancha térmica ni máquinas pesadas.
-              </p>
+              <Link 
+                href="/cotizador"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
+              >
+                <span>Calcular precio en línea</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
 
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <StickerIcon className="w-4.5 h-4.5" />
+            {/* Card 3: Grabado Láser */}
+            <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF5E14]/10 text-[#FF5E14] group-hover:bg-[#FF5E14] group-hover:text-white transition-all flex items-center justify-center">
+                    <Sparkles className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-mono text-[#FF5E14] font-bold bg-[#FF5E14]/10 px-3 py-1 rounded-full border border-[#FF5E14]/20">
+                    Desde 1 pieza
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
+                    Grabado Láser de Precisión
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
+                    Personalización imborrable para tu termo Stanley, vaso térmico o accesorio de madera y metal. Trae tu pieza o cotiza al detal.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Packs cortos desde $8.56</span>
-                <h3 className="text-sm font-bold text-white font-outfit">Stickers Personalizados</h3>
-              </div>
-              <p className="text-[11px] text-gray-400 leading-relaxed">
-                Vinil troquelado a la silueta de tu logo. Pide pocos stickers para probar el empaque de tu marca antes de mandar a hacer miles.
-              </p>
+              <Link 
+                href="/servicios/grabados-laser"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
+              >
+                <span>Ver detalles del servicio</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
 
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <FileText className="w-4.5 h-4.5" />
+            {/* Card 4: Stickers Personalizados */}
+            <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF5E14]/10 text-[#FF5E14] group-hover:bg-[#FF5E14] group-hover:text-white transition-all flex items-center justify-center">
+                    <StickerIcon className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-mono text-[#FF5E14] font-bold bg-[#FF5E14]/10 px-3 py-1 rounded-full border border-[#FF5E14]/20">
+                    Packs desde $8.56
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
+                    Stickers Personalizados
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
+                    Vinil troquelado a la forma exacta de tu logo. Pide tirajes cortos para probar el empaque de tu marca antes de mandar a hacer millares.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">Talonarios y Tarjetas</span>
-                <h3 className="text-sm font-bold text-white font-outfit">Papelería Comercial</h3>
-              </div>
-              <p className="text-[11px] text-gray-400 leading-relaxed">
-                Talonarios de factura autocopiativos desde 1 unidad, volantes publicitarios y tarjetas de presentación con acabado profesional.
-              </p>
+              <Link 
+                href="/cotizador"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
+              >
+                <span>Calcular precio en línea</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
 
-            <div className="bg-[#141414] border border-gray-800 rounded-2xl p-4.5 space-y-2.5 hover:border-[#FF5E14]/50 transition-all group">
-              <div className="w-9 h-9 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] flex items-center justify-center font-bold">
-                <Maximize2 className="w-4.5 h-4.5" />
+            {/* Card 5: Papelería Comercial */}
+            <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF5E14]/10 text-[#FF5E14] group-hover:bg-[#FF5E14] group-hover:text-white transition-all flex items-center justify-center">
+                    <FileText className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-mono text-[#FF5E14] font-bold bg-[#FF5E14]/10 px-3 py-1 rounded-full border border-[#FF5E14]/20">
+                    Desde 1 unidad
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
+                    Papelería Comercial
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
+                    Talonarios de factura autocopiativos desde 1 unidad, volantes satinados y tarjetas de presentación con acabado profesional para tu negocio.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[10px] font-mono text-[#FF5E14] font-semibold">1 sola pieza lista</span>
-                <h3 className="text-sm font-bold text-white font-outfit">Banners & Roll-Ups</h3>
-              </div>
-              <p className="text-[11px] text-gray-400 leading-relaxed">
-                Lona gruesa de 13oz con ojales o roll-up retráctil de aluminio listo para armar. Te lo entregamos listo para instalar en Panamá.
-              </p>
+              <Link 
+                href="/servicios/flyers-y-folletos"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
+              >
+                <span>Ver opciones de papelería</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
+
+            {/* Card 6: Banners & Roll-Ups */}
+            <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF5E14]/10 text-[#FF5E14] group-hover:bg-[#FF5E14] group-hover:text-white transition-all flex items-center justify-center">
+                    <Maximize2 className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-mono text-[#FF5E14] font-bold bg-[#FF5E14]/10 px-3 py-1 rounded-full border border-[#FF5E14]/20">
+                    1 sola pieza lista
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
+                    Banners & Roll-Ups
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
+                    Lona gruesa de 13oz con ojales o estructura Roll-Up retráctil de aluminio con estuche de lona. Listo para armar en tu evento o stand.
+                  </p>
+                </div>
+              </div>
+              <Link 
+                href="/servicios/impresion-gran-formato"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
+              >
+                <span>Ver gran formato</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
           </div>
 
           {/* Micro Guarantee footer */}
