@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
-import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck, FileText, Send } from 'lucide-react';
+import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck, FileText, Send, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import { ProductSchema } from '@/components/seo/SchemaOrg';
 import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
@@ -468,6 +468,32 @@ export default function ProductDetailClient({
                 <FileText className="w-4 h-4 text-[#FF5E14]" />
                 <span>Generar Cotización (PDF)</span>
               </button>
+            </div>
+
+            {/* Custom / Lower Quantity WhatsApp Disclaimer */}
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/90 rounded-2xl p-4 sm:p-4.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs shadow-sm">
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 rounded-xl bg-[#25D366]/15 text-[#1EBE5D] flex items-center justify-center shrink-0 font-bold mt-0.5">
+                  <MessageCircle className="w-4.5 h-4.5" />
+                </div>
+                <div className="space-y-0.5">
+                  <strong className="text-gray-900 font-extrabold block text-xs">
+                    ¿Necesitas menos unidades o una cantidad personalizada?
+                  </strong>
+                  <p className="text-gray-600 text-[11px] leading-relaxed">
+                    Los precios en web aplican a paquetes mayoristas. Si necesitas un tiraje menor o una muestra inicial, contáctanos directo a WhatsApp y con gusto te cotizamos.
+                  </p>
+                </div>
+              </div>
+              <a
+                href={`https://wa.me/50764454084?text=${encodeURIComponent(`Hola RufPixel, me interesa el producto "${product.name}" pero necesito una cantidad menor a ${selectedQtyOption} unidades. ¿Podrían apoyarme con una cotización personalizada?`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-4 py-2.5 rounded-xl text-[11px] font-extrabold transition-all shadow-sm hover:scale-[1.02]"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>Consultar por WhatsApp</span>
+              </a>
             </div>
 
             {addedMessage && (
