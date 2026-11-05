@@ -53,11 +53,17 @@ export interface Service {
   id: string;
   slug: string;
   title: string;
+  metaTitle?: string;
+  metaDesc?: string;
   shortDesc: string;
   fullDesc: string;
+  detalText?: string;
+  wholesaleText?: string;
   iconName: string;
   image: string;
   features: string[];
+  detalFeatures?: string[];
+  wholesaleFeatures?: string[];
   gallery?: string[];
 }
 

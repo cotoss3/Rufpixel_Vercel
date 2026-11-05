@@ -4,8 +4,11 @@ import { MOCK_SERVICES } from '@/lib/mockData';
 import { CreditCard, Maximize2, FileText, Tag, Gift, CheckCircle2, ArrowRight, Sparkles, Printer, Shirt } from 'lucide-react';
 
 export const metadata = {
-  title: 'Servicios de Impresión Digital & Gran Formato — RufPixel Panamá',
-  description: 'Descubre nuestros servicios de impresión: DTF textil, UV DTF, Bordados computarizados, Grabados láser, Banners Roll-up y Volantes.',
+  title: 'Imprenta en Panamá al Por Mayor y Detal | RufPixel',
+  description: 'Bordados en Panamá, impresión DTF textil, stickers UV DTF, grabado láser de termos y banners roll-up. Cotiza al detal o lotes mayoristas con envíos.',
+  alternates: {
+    canonical: 'https://rufpixel.com/servicios',
+  },
 };
 
 export default function ServiciosPage() {
@@ -26,13 +29,13 @@ export default function ServiciosPage() {
       <section className="bg-[#0D0D0D] text-white py-16 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
-            Catálogo Corporativo
+            Producción en Panamá — Al Por Mayor & Detal
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold font-outfit">
-            Nuestros Servicios de Impresión
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-outfit">
+            Servicios de Impresión, DTF & Bordados en Panamá
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-base">
-            Soluciones completas de impresión offset digital y publicidad exterior adaptadas a las exigencias de tu empresa.
+          <p className="text-gray-300 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
+            Producción gráfica y personalización directa desde nuestro taller en La Chorrera con envíos a todo Panamá. Pide desde 1 sola pieza en Zona Pixel hasta grandes tirajes mayoristas con escala de descuentos.
           </p>
         </div>
       </section>

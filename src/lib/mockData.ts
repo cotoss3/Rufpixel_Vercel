@@ -3,90 +3,165 @@ import catalogData from './catalogData.json';
 
 export const MOCK_SERVICES: Service[] = [
   {
-    id: 'serv-grabados-laser',
-    slug: 'grabados-laser',
-    title: 'Grabados Láser de Alta Precisión & Personalización Premium',
-    shortDesc: 'Grabado y marcado láser de máxima precisión sobre una amplia gama de materiales rígidos y orgánicos con acabados limpios e imborrables.',
-    fullDesc: 'Ofrecemos un servicio de grabado y marcado láser de máxima precisión, diseñado para plasmar logotipos, nombres, vectores e ilustraciones personalizadas sobre una amplia gama de materiales rígidos y orgánicos. Utilizando tecnología láser de punta, garantizamos acabados limpios, permanentes e imborrables que elevan la calidad estética y el valor percibido de tus productos, regalos ejecutivos o material publicitario.',
-    iconName: 'Sparkles',
-    image: '/images/banners/banner-grabados-laser.webp',
-    features: [
-      'Detalles ultra finos, trazos delgados y microtextos sin alterar la integridad del producto base.',
-      'Acabado Permanente e Imborrable.',
-      'Flexibilidad para trabajar desde piezas unitarias exclusivas hasta grandes volúmenes para marcas o eventos corporativos.'
+    "id": "serv-bordados-computarizados",
+    "slug": "bordados-computarizados",
+    "metaTitle": "Bordados en Panamá al Por Mayor y Detal | RufPixel",
+    "metaDesc": "Bordados de alta definición en polos, gorras y camisas de trabajo. Desde 1 unidad hasta volumen mayorista. Paga con Yappy y recibe en todo Panamá.",
+    "title": "Bordados Computarizados en Panamá al Por Mayor y Detal",
+    "shortDesc": "Bordamos suéteres tipo polo, gorras estructuradas y uniformes corporativos con hilos industriales de alta durabilidad que no pierden color.",
+    "fullDesc": "Personalizamos tus prendas con matrices de ponchado computarizado de alta precisión. Reproducimos logotipos complejos, nombres corporativos y escudos sobre gorras modelo Panamá 7, suéteres polo, camisas tipo pescador/oxford, delantales y chalecos de seguridad. Si solo necesitas 1 suéter para ti o una muestra, te lo bordamos en Zona Pixel. Si requieres dotar a todo tu personal, aplicamos tarifas con escala de descuento por volumen y ponchado bonificado.",
+    "iconName": "Shirt",
+    "image": "/images/banners/banner-bordados.webp",
+    "detalFeatures": [
+      "Desde 1 sola pieza sin mínimos obligatorios.",
+      "Ponchado y muestra previa aprobada antes de bordar.",
+      "Ideal para emprendedores, muestras y uso personal."
+    ],
+    "wholesaleFeatures": [
+      "Tarifas especiales para pedidos de 25, 50, 100 y 500+ piezas.",
+      "Matrices de bordado bonificadas en pedidos mayoristas.",
+      "Facturación fiscal y entregas corporativas en todo Panamá."
+    ],
+    "features": [
+      "Hilos industriales resistentes al lavado rudo y sol tropical",
+      "Bordado frontal y lateral en gorras estructuradas",
+      "Digitalización y ponchado profesional de logotipos",
+      "Entrega ágil y envíos a todo Panamá"
     ]
   },
   {
-    id: 'serv-impresion-gran-formato',
-    slug: 'impresion-gran-formato',
-    title: 'Impresión Gran Formato & Banners',
-    shortDesc: 'Soluciones publicitarias de gran impacto visual para interiores y exteriores resistentes al sol y la humedad de Panamá.',
-    fullDesc: 'Soluciones publicitarias de gran impacto visual para interiores y exteriores. Utilizamos tintas solventes y eco-solventes de alta durabilidad resistentes al sol y la humedad de Panamá. Ideal para ferias, eventos comerciales, señaléctica corporativa y remodelación de fachadas.',
-    iconName: 'Maximize2',
-    image: '/images/banners/banner-gran-formato.webp',
-    features: [
-      'Lona Mesh y Lona Baner de 13oz',
-      'Estructuras Roll-Up y banner arañas.',
-      'Vinil adhesivos y Microperforados',
-      'Rotulaciones Comerciales',
-      'Letreros Publicitarios.'
+    "id": "serv-dtf-textil",
+    "slug": "dtf-textil",
+    "metaTitle": "Impresión DTF Textil en Panamá por Metros | RufPixel",
+    "metaDesc": "Transfer DTF textil directo con base blanca sólida y colores vivos. Sin mínimos: pide desde 1 pliego o yardas al por mayor. Despachos a todo Panamá.",
+    "title": "Impresión DTF Textil Directo en Panamá (Metros y Pliegos)",
+    "shortDesc": "Transfer textil digital full color con base blanca de alta opacidad y máxima elasticidad. Pégalo en cualquier tela con tu plancha térmica.",
+    "fullDesc": "La mejor tecnología de estampado textil en Panamá. Olvídate del vinil textil grueso que se cuartea o del descarte engorroso: el DTF (Direct to Film) reproduce degradados fotográficos, microtextos y líneas finas con tacto suave y gran elasticidad. Apto para algodón 100%, poliéster, dril o licra, tanto en telas claras como oscuras. Pide tus pliegos A4 sueltos o encarga yardas lineales continuas para producción masiva de tu marca de ropa o uniformes.",
+    "iconName": "Printer",
+    "image": "/images/banners/banner-dtf.webp",
+    "detalFeatures": [
+      "Pide desde 1 pliego A4 o medio metro para pruebas rápidas.",
+      "Sin costo por número de colores ni cobro por plancha de corte.",
+      "Listo para estampar con tu plancha térmica casera o taller."
+    ],
+    "wholesaleFeatures": [
+      "Precio preferencial por yarda y metro lineal continuo para talleres.",
+      "Rendimiento optimizado para marcas de ropa y uniformes.",
+      "Entregas en rollos protegidos con despacho a todo el país."
+    ],
+    "features": [
+      "Tacto suave, elástico y alta resistencia a más de 50 lavadas",
+      "Base blanca sólida ultra opaca para telas negras o de color",
+      "Compatible con algodón, poliéster, mezclas, canvas y dril",
+      "Revisión y optimización técnica de tu archivo sin costo adicional"
     ]
   },
   {
-    id: 'serv-dtf-textil',
-    slug: 'dtf-textil',
-    title: 'Impresión DTF Textil Directo',
-    shortDesc: 'Transfer textil digital por pliegos o yardas lineales de alta elasticidad, colores vibrantes y máxima resistencia al lavado.',
-    fullDesc: 'El servicio de DTF Textil (Direct to Film) es la tecnología líder para estampado de prendas en Panamá. Permite transferir gráficos full color con base blanca sólida sobre cualquier tipo de tela (algodón, poliéster, mezclas o dril) sin necesidad de descarte ni cortes complejos. Perfecto para uniformes de empresas, marcas de ropa y eventos.',
-    iconName: 'Printer',
-    image: '/images/banners/banner-dtf.webp',
-    features: [
-      'Impresión por pliego A4 o yarda lineal continua.',
-      'Tacto suave, elástico y alta durabilidad tras múltiples lavadas.',
-      'Apto para telas claras y oscuras en algodón o sintéticos.'
+    "id": "serv-uvdtf",
+    "slug": "uv-dtf",
+    "metaTitle": "Stickers UV DTF en Panamá: Relieve 3D | RufPixel",
+    "metaDesc": "Personaliza termos, tazas y acrílico en frío sin plancha térmica. Relieve 3D con barniz brillante y adherencia ultra fuerte. Cotiza directo a WhatsApp.",
+    "title": "Transfer UV DTF en Panamá: Stickers 3D para Superficies Rígidas",
+    "shortDesc": "Calcomanías de transferencia directa en frío con relieve táctil 3D y barniz brillante curado UV. Pega tu logo en termos, vidrio y acrílico sin calor.",
+    "fullDesc": "Revoluciona el marcaje de tus productos promocionales con la tecnología UV DTF. Generamos calcomanías de alta adherencia con tintas curadas instantáneamente por luz ultravioleta y un acabado con barniz protector transparente que crea un elegante efecto tridimensional al tacto. Se aplica en segundos por presión manual, sin necesidad de planchas térmicas ni hornos. Perfecto para termos de acero, tazas de cerámica, artículos de madera, estuches de plástico, acrílico y envases de vidrio.",
+    "iconName": "Sparkles",
+    "image": "/images/banners/banner-uvdtf.webp",
+    "detalFeatures": [
+      "Pide planchas de stickers desde 1 pliego para personalizar tus piezas.",
+      "Fácil aplicación manual: desprende el film, presiona y retira.",
+      "Excelente para regalos personalizados unitarios o prototipos."
+    ],
+    "wholesaleFeatures": [
+      "Precios por pliegos múltiples al por mayor para empresas de promocionales.",
+      "Marcaje masivo de termos y souvenirs sin riesgo de dañar el producto con calor.",
+      "Ahorro sustancial en mano de obra y tiempos de armado."
+    ],
+    "features": [
+      "Relieve táctil 3D con barniz brillante de alta durabilidad",
+      "Adhesión ultra resistente al agua, grasa y rozamiento diario",
+      "Aplicación en frío sobre metal, vidrio, cerámica, madera y acrílico",
+      "Colores CMYK nítidos con base blanca y barniz localizado"
     ]
   },
   {
-    id: 'serv-uvdtf',
-    slug: 'uv-dtf',
-    title: 'Transfer UV DTF para Rígidos',
-    shortDesc: 'Stickers de transferencia directa con relieve 3D táctil, barniz brillante y adherencia ultra fuerte sin calor.',
-    fullDesc: 'La tecnología UV DTF revoluciona el marcaje de productos rígidos y promocionales. Combina tintas UV curadas instantáneamente con barniz transparente que genera un elegante relieve 3D. Se adhiere en frío por presión directa sobre termos de acero, tazas, acrílico, vidrio, madera y plástico sin necesidad de planchas térmicas.',
-    iconName: 'Sparkles',
-    image: '/images/banners/banner-uvdtf.webp',
-    features: [
-      'Relieve táctil 3D y acabado con barniz brillante protector.',
-      'Aplicación en frío sin plancha ni calor directo.',
-      'Resistente al agua, rozamiento diario y uso rudo en termos y tazas.'
+    "id": "serv-grabados-laser",
+    "slug": "grabados-laser",
+    "metaTitle": "Grabado Láser en Panamá: Termos y Metales | RufPixel",
+    "metaDesc": "Personalización láser imborrable para termos Stanley, bolígrafos y regalos corporativos. Precios al detal y por lote para empresas. Envíos en Panamá.",
+    "title": "Grabado y Marcado Láser de Precisión en Panamá",
+    "shortDesc": "Marcado láser permanente e indestructible sobre acero inoxidable, aluminio, madera, cuero y acrílico. Detalles finos y logotipos corporativos.",
+    "fullDesc": "El grabado láser es el estándar de máxima distinción y durabilidad para personalización corporativa y ejecutiva en Panamá. Mediante tecnología láser de fibra óptica y CO2, removemos microcapas superficiales para revelar el material base con una nitidez absoluta, garantizando que el grabado no se borre, no se despegue ni se deteriore con el uso intensivo ni el lavado. Grabamos desde 1 termo Stanley o botella individual hasta lotes de cientos de bolígrafos y libretas corporativas.",
+    "iconName": "Sparkles",
+    "image": "/images/banners/banner-grabados-laser.webp",
+    "detalFeatures": [
+      "Graba tu propio termo, vaso térmico o accesorio desde 1 pieza.",
+      "Simulación digital previa para confirmar posición y tamaño del logo.",
+      "Entrega rápida en taller para regalos y fechas especiales."
+    ],
+    "wholesaleFeatures": [
+      "Tarifas preferenciales por lote para regalos corporativos de fin de año.",
+      "Capacidad para tirajes de cientos o miles de piezas en tiempos pactados.",
+      "Factura fiscal y control de calidad unitario antes de despachar."
+    ],
+    "features": [
+      "Marcado limpio e imborrable que dura toda la vida útil del producto",
+      "Microtextos, números de serie y vectores ultra definidos",
+      "Apto para termos de acero, aluminio anodizado, madera, corcho y cuero",
+      "Precisión milimétrica sin contacto mecánico ni desgaste de la pieza"
     ]
   },
   {
-    id: 'serv-bordados-computarizados',
-    slug: 'bordados-computarizados',
-    title: 'Bordados Computarizados & Ponchados',
-    shortDesc: 'Bordado industrial de logotipos de alta definición en suéteres polo, gorras panamá, camisas de trabajo y uniformes.',
-    fullDesc: 'Personalización textil mediante bordado computarizado industrial de máxima durabilidad y prestigio visual. Digitalizamos tu matriz o logotipo para reproducirlo con hilos de alta resistencia al desgaste y decoloración en gorras estructuradas, suéteres tipo polo, camisas tipo pescador, delantales y chalecos corporativos.',
-    iconName: 'Shirt',
-    image: '/images/banners/banner-bordados.webp',
-    features: [
-      'Digitalización y conversión de logotipos a matriz de bordado.',
-      'Bordado frontal en gorras modelo Panamá 7 y clásicas.',
-      'Acabado elegante e indestructible para uniformes corporativos.'
+    "id": "serv-impresion-gran-formato",
+    "slug": "impresion-gran-formato",
+    "metaTitle": "Banners Roll-Up y Gran Formato en Panamá | RufPixel",
+    "metaDesc": "Impresión de lonas banner 13oz, microperforados y estructuras Roll-Up de aluminio para ferias y eventos. Calidad resistente al exterior. Pide cotización.",
+    "title": "Impresión en Gran Formato, Lonas y Banners Roll-Up en Panamá",
+    "shortDesc": "Publicidad visual de gran impacto resistente al sol y lluvia de Panamá. Lona banner 13oz con ojales, vinil adhesivo, microperforado y Roll-Ups para eventos.",
+    "fullDesc": "Haz visible tu marca con impresiones de gran escala que no se decoloran con el clima tropical de Panamá. Producimos lonas publicitarias reforzadas de 13oz con ojales perimetrales, microperforados para cristales de locales y vehículos, viniles adhesivos troquelados y estructuras portátiles Roll-Up de aluminio con estuche de lona. Si necesitas 1 banner para una inauguración o stand de feria, te lo entregamos listo para instalar; si eres agencia o cadena comercial, manejamos precios por volumen y metros cuadrados continuos.",
+    "iconName": "Maximize2",
+    "image": "/images/banners/banner-gran-formato.webp",
+    "detalFeatures": [
+      "Estructuras Roll-Up completas (impresión + estuche) desde 1 unidad.",
+      "Lonas de cumpleaños, eventos o promociones temporales a medida.",
+      "Revisión de resolución de imagen para evitar que salga pixelada."
+    ],
+    "wholesaleFeatures": [
+      "Tarifas por volumen en m² para agencias de publicidad y remodelaciones.",
+      "Despacho de lonas con refuerzo perimetral y ojales para cuadrillas de instalación.",
+      "Envíos a proyectos en el interior y provincias centrales."
+    ],
+    "features": [
+      "Lona banner reforzada de 13oz con tintas resistentes a rayos UV y lluvia",
+      "Roll-Ups retráctiles de aluminio anodizado con bolso de transporte",
+      "Viniles adhesivos brillantes, mate y microperforados para vidrieras",
+      "Acabados con ojales de acero inoxidable y bolsillo para colgar"
     ]
   },
   {
-    id: 'serv-flyers-folletos',
-    slug: 'flyers-y-folletos',
-    title: 'Flyers & Folletos Publicitarios',
-    shortDesc: 'Comunica tus ofertas y lanzamientos de forma directa e impactante. Imprimimos volantes en papel satinado de 80 y 100 lbs.',
-    fullDesc: 'Comunica tus ofertas y lanzamientos de forma directa e impactante. Imprimimos volantes en papel satinado de 80 y 100 lbs. Perfectos para distribución en eventos masivos y material corporativo de ventas.',
-    iconName: 'FileText',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop',
-    features: [
-      'Formatos Media Carta, Carta, Trípticos',
-      'Afiches publicitarios de alto impacto',
-      'Volantes en papel satinado de 80 y 100 lbs',
-      'Talonarios de factura y notas de entrega'
+    "id": "serv-flyers-folletos",
+    "slug": "flyers-y-folletos",
+    "metaTitle": "Flyers y Volantes en Panamá [Precios B2B] | RufPixel",
+    "metaDesc": "Impresión digital de volantes satinados de 80 y 100 lbs, trípticos y afiches. Precios de imprenta por millares y tirajes cortos. Envíos a todo Panamá.",
+    "title": "Impresión de Flyers, Volantes y Papelería Corporativa en Panamá",
+    "shortDesc": "Impresión nítida en papel satinado brillante de 80 y 100 lbs. Volantes media carta, cartas, trípticos informativos y afiches para campañas efectivas.",
+    "fullDesc": "Comunica las promociones y aperturas de tu negocio con material publicitario impreso en colores vivos y papel de excelente tacto. En RufPixel imprimimos volantes publicitarios, dípticos, trípticos corporativos, afiches y tarjetas de presentación con acabados de primera categoría. Ofrecemos tirajes cortos digitales para promociones puntuales sin inventario estancado, y producción masiva por millares con precios directos de imprenta para distribución masiva en Panamá.",
+    "iconName": "FileText",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop",
+    "detalFeatures": [
+      "Tirajes cortos desde 100 o 250 volantes para probar promociones.",
+      "Ideal para eventos locales, restaurantes, salones y nuevos negocios.",
+      "Asesoría para ajustar sangrado y márgenes de corte antes de imprimir."
+    ],
+    "wholesaleFeatures": [
+      "Precios de escala por millares (1.000, 2.500, 5.000+ unidades) con máximo ahorro.",
+      "Papeles de 80 lbs y 100 lbs en acabado satinado o mate.",
+      "Empacado en fajos etiquetados y listos para reparto."
+    ],
+    "features": [
+      "Papel satinado de 80 lbs y 100 lbs con brillo o acabado mate",
+      "Formatos Media Carta (5.5x8.5 pulgadas), Carta completa (8.5x11 pulgadas) y Trípticos plegados",
+      "Impresión full color por una cara (tiro) o ambas caras (tiro y retiro)",
+      "Cortes limpios y entrega puntual con envíos a todo Panamá"
     ]
   }
 ];

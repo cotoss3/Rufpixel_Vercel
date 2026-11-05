@@ -9,8 +9,8 @@ import NavigationLoader from '@/components/common/NavigationLoader';
 import AiWhatsAppAssistant from '@/components/common/AiWhatsAppAssistant';
 
 export const metadata: Metadata = {
-  title: 'RufPixel — Imprenta Digital, Gran Formato, DTF & Bordados en Panamá',
-  description: 'Taller de impresión y personalización en La Chorrera, Panamá Oeste. Especialistas en DTF textil, UV DTF para rígidos, bordados computarizados, grabado láser, banners publicitarios y artículos promocionales con envíos a todo Panamá.',
+  title: 'Imprenta en Panamá: DTF, Bordados y Banners | RufPixel',
+  description: 'Taller de impresión y personalización en Panamá. DTF textil, UV DTF, bordados computarizados, grabado láser y promocionales. Envíos rápidos a todo el país.',
   keywords: [
     'Impresión Panamá', 'Imprenta en La Chorrera', 'DTF textil Panamá', 'UV DTF Panamá',
     'Bordados computarizados Panamá', 'Grabado láser Panamá', 'Stickers personalizados Panamá',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'RufPixel — Imprenta Digital, DTF, Bordados & Gran Formato en Panamá',
-    description: 'Taller de producción e impresión gráfica en La Chorrera, Panamá Oeste. DTF textil, UV DTF, bordados computarizados, grabado láser, banners y artículos promocionales con envíos a todo Panamá.',
+    title: 'Imprenta en Panamá: DTF, Bordados y Banners | RufPixel',
+    description: 'Taller de impresión y personalización en Panamá. DTF textil, UV DTF, bordados computarizados, grabado láser y promocionales. Envíos rápidos a todo el país.',
     url: 'https://rufpixel.com',
     siteName: 'RufPixel',
     locale: 'es_PA',
