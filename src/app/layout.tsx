@@ -4,14 +4,18 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/lib/cartContext';
-import { OrganizationSchema } from '@/components/seo/SchemaOrg';
+import { OrganizationSchema, GeoFaqSchema } from '@/components/seo/SchemaOrg';
 import NavigationLoader from '@/components/common/NavigationLoader';
 import AiWhatsAppAssistant from '@/components/common/AiWhatsAppAssistant';
 
 export const metadata: Metadata = {
-  title: 'RufPixel — Servicios de Impresión Digital, Gran Formato & Diseño Gráfico en Panamá',
-  description: 'Impresión en Panamá: Catálogo mayorista para empresas y Zona Pixel para impresiones digitales sin mínimos. DTF textil por metros, stickers troquelados, banners roll-up y pagos por Yappy comercial.',
-  keywords: ['Impresión Panamá', 'DTF textil Panamá', 'Stickers personalizados', 'Banners Panamá', 'Zona Pixel', 'Impresiones digitales Panamá', 'Yappy Comercial', 'RufPixel'],
+  title: 'RufPixel — Imprenta Digital, Gran Formato, DTF & Bordados en Panamá',
+  description: 'Taller de impresión y personalización en La Chorrera, Panamá Oeste. Especialistas en DTF textil, UV DTF para rígidos, bordados computarizados, grabado láser, banners publicitarios y artículos promocionales con envíos a todo Panamá.',
+  keywords: [
+    'Impresión Panamá', 'Imprenta en La Chorrera', 'DTF textil Panamá', 'UV DTF Panamá',
+    'Bordados computarizados Panamá', 'Grabado láser Panamá', 'Stickers personalizados Panamá',
+    'Banners roll-up Panamá', 'Zona Pixel', 'Artículos promocionales Panamá Oeste', 'Yappy Comercial', 'RufPixel'
+  ],
   metadataBase: new URL('https://rufpixel.com'),
   alternates: {
     canonical: './',
@@ -25,12 +29,18 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'RufPixel — Servicios de Impresión & Diseño Gráfico',
-    description: 'Impresión de alta definición para tu marca en Panamá. Tarjetas premium, Gran Formato y cotizador online.',
+    title: 'RufPixel — Imprenta Digital, DTF, Bordados & Gran Formato en Panamá',
+    description: 'Taller de producción e impresión gráfica en La Chorrera, Panamá Oeste. DTF textil, UV DTF, bordados computarizados, grabado láser, banners y artículos promocionales con envíos a todo Panamá.',
     url: 'https://rufpixel.com',
     siteName: 'RufPixel',
     locale: 'es_PA',
     type: 'website',
+  },
+  other: {
+    'geo.region': 'PA-13',
+    'geo.placename': 'La Chorrera, Panamá Oeste, Panamá',
+    'geo.position': '8.8803;-79.7833',
+    'ICBM': '8.8803, -79.7833',
   },
   verification: {
     google: 'NRrRFsZ5D8GG2H_6kq8-FAwC-HWgrB6w_TO18jBufUY',
@@ -46,6 +56,7 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <OrganizationSchema />
+        <GeoFaqSchema />
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-[#FAFAFA] text-gray-900">
         <CartProvider>

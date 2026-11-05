@@ -284,7 +284,7 @@ export default function NosotrosPage() {
           <div className="space-y-1.5 text-xs text-gray-600">
             <p className="flex items-center space-x-2">
               <MapPin className="w-4 h-4 text-[#FF5E14] shrink-0" />
-              <span>Ciudad de La Chorrera - Panamá Oeste - Calle Arnoldo Cano - Barrio Colón - Local 1.</span>
+              <span>Calle Arnoldo Cano, Barrio Colón (entrando por COMASA, Local 1), La Chorrera, Panamá Oeste. Envíos a todo Panamá.</span>
             </p>
             <p className="flex items-center space-x-2">
               <Clock className="w-4 h-4 text-[#FF5E14] shrink-0" />

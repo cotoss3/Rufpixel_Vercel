@@ -38,7 +38,7 @@ export default function ContactoPage() {
               </div>
               <div>
                 <strong className="text-white block font-outfit text-base">Ubicación física</strong>
-                <span>Ciudad de La Chorrera - Panamá Oeste - Calle Arnoldo Cano - Barrio Colón - Local 1.</span>
+                <span>Calle Arnoldo Cano, Barrio Colón (entrando por COMASA, Local 1), La Chorrera, Panamá Oeste. Envíos a todo Panamá.</span>
               </div>
             </div>
 
