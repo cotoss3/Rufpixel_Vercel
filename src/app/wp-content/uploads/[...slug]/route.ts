@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import http from 'http';
+import productsDb from '@/lib/products-db.json';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,7 +9,19 @@ export async function GET(
   { params }: { params: { slug: string[] } }
 ) {
   const filePath = (params.slug || []).join('/');
+  const fileName = (params.slug || []).pop() || '';
+  const baseName = fileName.replace(/-\d+x\d+/, '').replace(/\.[^/.]+$/, '').toLowerCase();
 
+  // If we have an optimized local WebP image for this SKU or product slug, redirect permanently (301)
+  const matchedProduct = (productsDb as any[]).find(
+    (p) => p.sku?.toLowerCase() === baseName || p.slug?.toLowerCase() === baseName
+  );
+
+  if (matchedProduct?.image && matchedProduct.image.startsWith('/images/')) {
+    return NextResponse.redirect(new URL(matchedProduct.image, request.url), 301);
+  }
+
+  // Fallback to proxying from legacy WordPress if no local WebP was matched
   return new Promise<NextResponse>((resolve) => {
     const req = http.request(
       {

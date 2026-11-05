@@ -655,7 +655,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   if (localMatch) {
     const pack50Total = localMatch.price_packs?.pack50?.total || (localMatch.unit_price * 50);
     const catDef = resolveCategory(localMatch.category);
-    const validImg = formatImageUrl(localMatch.photo);
+    const validImg = `/images/products/${localMatch.slug || slug}.webp`;
     initialBase = {
       id: String(localMatch.id),
       slug: localMatch.slug || slug,
@@ -704,8 +704,8 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
             price: initialBase?.price || liveFormatted.price,
             pricePacks: initialBase?.pricePacks || liveFormatted.pricePacks,
             techniques: initialBase?.techniques && initialBase.techniques.length > 0 ? initialBase.techniques : liveFormatted.techniques,
-            image: liveFormatted.image || initialBase?.image || '',
-            gallery: liveFormatted.gallery && liveFormatted.gallery.length > 0 ? liveFormatted.gallery : initialBase?.gallery || [],
+            image: initialBase?.image || ('/images/products/' + slug + '.webp'),
+            gallery: (initialBase?.gallery && initialBase.gallery.length > 0) ? initialBase.gallery : [initialBase?.image || ('/images/products/' + slug + '.webp')],
           };
           productCache.set(slug, { data: merged, timestamp: Date.now() });
           return merged;
