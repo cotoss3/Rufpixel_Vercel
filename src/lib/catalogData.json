@@ -17,9 +17,9 @@
         "slug": "sets-y-regalos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/806.png",
+    "image": "/images/products/set-ejecutivo-2.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/806.png"
+      "/images/products/set-ejecutivo-2-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -52,9 +52,9 @@
         "slug": "paraguas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-752.jpg",
+    "image": "/images/products/paraguas-de-bolso-compacto-10-paneles.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-752.jpg"
+      "/images/products/paraguas-de-bolso-compacto-10-paneles-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -86,9 +86,9 @@
         "slug": "identificacion-y-correas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-003.jpg",
+    "image": "/images/products/cordon-porta-id-de-nylon-con-clip-desprendible.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-003.jpg"
+      "/images/products/cordon-porta-id-de-nylon-con-clip-desprendible-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -120,9 +120,9 @@
         "slug": "identificacion-y-correas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-006.jpg",
+    "image": "/images/products/cordon-porta-id-satinado-con-clip-desprendible.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-006.jpg"
+      "/images/products/cordon-porta-id-satinado-con-clip-desprendible-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -156,9 +156,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-265.jpg",
+    "image": "/images/products/mouse-pad-redondo-de-tela-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-265.jpg"
+      "/images/products/mouse-pad-redondo-de-tela-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -192,9 +192,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-040.jpg",
+    "image": "/images/products/mouse-pad-rectangular-de-tela-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-040.jpg"
+      "/images/products/mouse-pad-rectangular-de-tela-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -228,10 +228,10 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/820_mouse.jpg",
+    "image": "/images/products/mouse-pad-de-cuero-estilo-gamuza.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/820_mouse.jpg",
-      "https://rufpixel.com/wp-content/uploads/820_mouse.jpg"
+      "/images/products/mouse-pad-de-cuero-estilo-gamuza-gal-1.webp",
+      "/images/products/mouse-pad-de-cuero-estilo-gamuza-gal-2.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -265,9 +265,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/299_royal01.jpg",
+    "image": "/images/products/mouse-pad-de-tela-cuadrado.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/299_royal01.jpg"
+      "/images/products/mouse-pad-de-tela-cuadrado-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -301,9 +301,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/298_ROJO-1.jpg",
+    "image": "/images/products/mouse-pad-de-tela-en-forma-de-rinon.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/298_ROJO-1.jpg"
+      "/images/products/mouse-pad-de-tela-en-forma-de-rinon-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -337,9 +337,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-746.jpg",
+    "image": "/images/products/soporte-expansible-para-celular-o-tablet.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-746.jpg"
+      "/images/products/soporte-expansible-para-celular-o-tablet-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -376,9 +376,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-718.jpg",
+    "image": "/images/products/soporte-para-celular-de-bambu-para-escritorio.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-718.jpg"
+      "/images/products/soporte-para-celular-de-bambu-para-escritorio-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -410,9 +410,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-819.jpg",
+    "image": "/images/products/portaplumas-de-bambu-rectangular-para-escritorio.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-819.jpg"
+      "/images/products/portaplumas-de-bambu-rectangular-para-escritorio-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -444,9 +444,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-749.jpg",
+    "image": "/images/products/portaplumas-con-reloj-digital-para-escritorio.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-749.jpg"
+      "/images/products/portaplumas-con-reloj-digital-para-escritorio-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -478,9 +478,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-023.jpg",
+    "image": "/images/products/llavero-de-aluminio-abrebotellas-y-abre-latas.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-023.jpg"
+      "/images/products/llavero-de-aluminio-abrebotellas-y-abre-latas-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -514,9 +514,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-247.jpg",
+    "image": "/images/products/llavero-plastico-de-color-con-gancho.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-247.jpg"
+      "/images/products/llavero-plastico-de-color-con-gancho-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -550,9 +550,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-712.jpg",
+    "image": "/images/products/llavero-mosqueton-plateado-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-712.jpg"
+      "/images/products/llavero-mosqueton-plateado-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -586,9 +586,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-416.jpg",
+    "image": "/images/products/llavero-de-metal-ovalado-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-416.jpg"
+      "/images/products/llavero-de-metal-ovalado-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -622,9 +622,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-730.jpg",
+    "image": "/images/products/llavero-de-cuero-blanco-rectangular-para-sublimar.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-730.jpg"
+      "/images/products/llavero-de-cuero-blanco-rectangular-para-sublimar-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -658,9 +658,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-415.jpg",
+    "image": "/images/products/llavero-rectangular-de-mdf-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-415.jpg"
+      "/images/products/llavero-rectangular-de-mdf-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -694,9 +694,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-825.jpg",
+    "image": "/images/products/llavero-de-madera-curvo-con-detalles-en-acero.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-825.jpg"
+      "/images/products/llavero-de-madera-curvo-con-detalles-en-acero-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -730,9 +730,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-824.jpg",
+    "image": "/images/products/llavero-de-madera-rectangular-con-detalles-en-acero.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-824.jpg"
+      "/images/products/llavero-de-madera-rectangular-con-detalles-en-acero-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -766,9 +766,9 @@
         "slug": "llaveros"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-823.jpg",
+    "image": "/images/products/llavero-de-madera-redondo-con-detalles-en-acero.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-823.jpg"
+      "/images/products/llavero-de-madera-redondo-con-detalles-en-acero-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -802,9 +802,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-676.jpg",
+    "image": "/images/products/set-de-accesorios-para-vino-modelo-torre.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-676.jpg"
+      "/images/products/set-de-accesorios-para-vino-modelo-torre-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -836,9 +836,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-677.jpg",
+    "image": "/images/products/set-de-accesorios-para-vino-modelo-barril.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-677.jpg"
+      "/images/products/set-de-accesorios-para-vino-modelo-barril-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -870,9 +870,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-716.jpg",
+    "image": "/images/products/portabotellas-y-copas-de-bambu.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-716.jpg"
+      "/images/products/portabotellas-y-copas-de-bambu-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -904,9 +904,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-719.jpg",
+    "image": "/images/products/botellero-para-3-botellas-de-vino.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-719.jpg"
+      "/images/products/botellero-para-3-botellas-de-vino-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -938,9 +938,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-715.jpg",
+    "image": "/images/products/botellero-triangular-para-6-botellas-de-vino.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-715.jpg"
+      "/images/products/botellero-triangular-para-6-botellas-de-vino-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -972,9 +972,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-405.jpg",
+    "image": "/images/products/caja-cuadrada-de-accesorios-para-vino.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-405.jpg"
+      "/images/products/caja-cuadrada-de-accesorios-para-vino-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1006,9 +1006,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-057.jpg",
+    "image": "/images/products/caja-de-madera-con-abrebotellas.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-057.jpg"
+      "/images/products/caja-de-madera-con-abrebotellas-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1040,9 +1040,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-052.jpg",
+    "image": "/images/products/caja-porta-vino-con-accesorios-en-la-tapa.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-052.jpg"
+      "/images/products/caja-porta-vino-con-accesorios-en-la-tapa-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1074,9 +1074,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-651.jpg",
+    "image": "/images/products/tabla-grande-para-quesos.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-651.jpg"
+      "/images/products/tabla-grande-para-quesos-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1108,9 +1108,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-290.jpg",
+    "image": "/images/products/set-de-cuchillos-para-quesos-en-caja-de-madera.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-290.jpg"
+      "/images/products/set-de-cuchillos-para-quesos-en-caja-de-madera-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1142,9 +1142,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-650.jpg",
+    "image": "/images/products/tabla-para-quesos-ovalada-con-3-accesorios.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-650.jpg"
+      "/images/products/tabla-para-quesos-ovalada-con-3-accesorios-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1178,9 +1178,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-732.jpg",
+    "image": "/images/products/tabla-de-cortar-de-bambu-redonda-con-mango.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-732.jpg"
+      "/images/products/tabla-de-cortar-de-bambu-redonda-con-mango-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1214,9 +1214,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-653.jpg",
+    "image": "/images/products/tabla-de-cortar-de-bambu-rectangular.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-653.jpg"
+      "/images/products/tabla-de-cortar-de-bambu-rectangular-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1250,9 +1250,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-654.jpg",
+    "image": "/images/products/tabla-de-cortar-de-bambu-rectangular-con-mango.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-654.jpg"
+      "/images/products/tabla-de-cortar-de-bambu-rectangular-con-mango-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1286,9 +1286,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-858.jpg",
+    "image": "/images/products/set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-858.jpg"
+      "/images/products/set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1322,9 +1322,9 @@
         "slug": "cocina-y-hogar"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-859.jpg",
+    "image": "/images/products/set-de-bbq-5-piezas-con-estuche-negro-y-tabla.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-859.jpg"
+      "/images/products/set-de-bbq-5-piezas-con-estuche-negro-y-tabla-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1358,9 +1358,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-467.jpg",
+    "image": "/images/products/gorra-trucker-con-malla-lateral.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-467.jpg"
+      "/images/products/gorra-trucker-con-malla-lateral-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1392,9 +1392,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-468.jpg",
+    "image": "/images/products/gorra-camionero-dos-tonos-con-malla.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-468.jpg"
+      "/images/products/gorra-camionero-dos-tonos-con-malla-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1426,9 +1426,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-573.jpg",
+    "image": "/images/products/gorra-flex-fit-deportiva-6-panos-dry-fit.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-573.jpg"
+      "/images/products/gorra-flex-fit-deportiva-6-panos-dry-fit-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1460,9 +1460,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-222.jpg",
+    "image": "/images/products/gorra-lacrosse-max-dry-de-mallita-con-velcro.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-222.jpg"
+      "/images/products/gorra-lacrosse-max-dry-de-mallita-con-velcro-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1494,9 +1494,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-440.jpg",
+    "image": "/images/products/gorra-lacrosse-premium-6-panos-color-solido.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-440.jpg"
+      "/images/products/gorra-lacrosse-premium-6-panos-color-solido-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1528,9 +1528,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-371.jpg",
+    "image": "/images/products/gorra-lacrosse-max-dry-deportiva-con-hebilla.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-371.jpg"
+      "/images/products/gorra-lacrosse-max-dry-deportiva-con-hebilla-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1562,9 +1562,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-341.jpg",
+    "image": "/images/products/gorra-lacrosse-max-dry-con-mallas-y-velcro.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-341.jpg"
+      "/images/products/gorra-lacrosse-max-dry-con-mallas-y-velcro-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1596,9 +1596,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-529.jpg",
+    "image": "/images/products/visera-de-algodon.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-529.jpg"
+      "/images/products/visera-de-algodon-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1632,9 +1632,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-523.jpg",
+    "image": "/images/products/sombrero-tipo-pescador.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-523.jpg"
+      "/images/products/sombrero-tipo-pescador-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1668,9 +1668,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-227.jpg",
+    "image": "/images/products/bandana-tipo-headband.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-227.jpg"
+      "/images/products/bandana-tipo-headband-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1704,9 +1704,9 @@
         "slug": "gorras-y-accesorios-de-cabeza"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-243.jpg",
+    "image": "/images/products/bandana-de-algodon.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-243.jpg"
+      "/images/products/bandana-de-algodon-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1740,9 +1740,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-216L.jpg",
+    "image": "/images/products/camisa-pescador-lacrosse-manga-larga-ultralite.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-216L.jpg"
+      "/images/products/camisa-pescador-lacrosse-manga-larga-ultralite-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1775,9 +1775,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-216.jpg",
+    "image": "/images/products/camisa-pescador-lacrosse-ultralite-con-dos-bolsillos.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-216.jpg"
+      "/images/products/camisa-pescador-lacrosse-ultralite-con-dos-bolsillos-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1810,9 +1810,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-212.jpg",
+    "image": "/images/products/polo-de-algodon.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-212.jpg"
+      "/images/products/polo-de-algodon-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1846,9 +1846,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-217.jpg",
+    "image": "/images/products/polo-dry-fit-dos-tonos.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-217.jpg"
+      "/images/products/polo-dry-fit-dos-tonos-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1882,9 +1882,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-211.jpg",
+    "image": "/images/products/polo-max-dry-de-alto-rendimiento.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-211.jpg"
+      "/images/products/polo-max-dry-de-alto-rendimiento-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1918,9 +1918,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-638.jpg",
+    "image": "/images/products/camiseta-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-638.jpg"
+      "/images/products/camiseta-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1954,9 +1954,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-592.jpg",
+    "image": "/images/products/camiseta-100-poliester.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-592.jpg"
+      "/images/products/camiseta-100-poliester-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -1990,9 +1990,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-214.jpg",
+    "image": "/images/products/camiseta-de-algodon-lacrosse-manga-larga-180g.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-214.jpg"
+      "/images/products/camiseta-de-algodon-lacrosse-manga-larga-180g-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2026,9 +2026,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-551.jpg",
+    "image": "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-v.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-551.jpg"
+      "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-v-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2062,9 +2062,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-215.jpg",
+    "image": "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-redondo.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-215.jpg"
+      "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-redondo-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2098,9 +2098,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-778.jpg",
+    "image": "/images/products/delantal-de-canvas-denim-con-portaplumas.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-778.jpg"
+      "/images/products/delantal-de-canvas-denim-con-portaplumas-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2134,9 +2134,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-777.jpg",
+    "image": "/images/products/delantal-de-denim-con-portaplumas-y-bolsillos.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-777.jpg"
+      "/images/products/delantal-de-denim-con-portaplumas-y-bolsillos-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2170,9 +2170,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-534.jpg",
+    "image": "/images/products/delantal-de-poliester-con-bolsillo-para-adultos.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-534.jpg"
+      "/images/products/delantal-de-poliester-con-bolsillo-para-adultos-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2206,9 +2206,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-902.jpg",
+    "image": "/images/products/toalla-de-golf-de-microfibra-con-mosqueton.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-902.jpg"
+      "/images/products/toalla-de-golf-de-microfibra-con-mosqueton-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2242,9 +2242,9 @@
         "slug": "textiles-y-ropa"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-688.jpg",
+    "image": "/images/products/toalla-de-cara-blanca.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-688.jpg"
+      "/images/products/toalla-de-cara-blanca-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2278,9 +2278,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-885.jpg",
+    "image": "/images/products/botella-deportiva-plastica-traslucida.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-885.jpg"
+      "/images/products/botella-deportiva-plastica-traslucida-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2314,9 +2314,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-507.jpg",
+    "image": "/images/products/botella-plastica-de-24-oz-pared-sencilla.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-507.jpg"
+      "/images/products/botella-plastica-de-24-oz-pared-sencilla-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2350,9 +2350,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-861.jpg",
+    "image": "/images/products/taza-plastica-de-pared-doble.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-861.jpg"
+      "/images/products/taza-plastica-de-pared-doble-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2386,9 +2386,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-380.jpg",
+    "image": "/images/products/botella-deportiva-rigida-de-24-oz.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-380.jpg"
+      "/images/products/botella-deportiva-rigida-de-24-oz-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2422,9 +2422,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-705.jpg",
+    "image": "/images/products/botella-plastica-cilindrica.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-705.jpg"
+      "/images/products/botella-plastica-cilindrica-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2458,9 +2458,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-375.jpg",
+    "image": "/images/products/vaso-acrilico-de-18-oz-con-doble-insulacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-375.jpg"
+      "/images/products/vaso-acrilico-de-18-oz-con-doble-insulacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2494,9 +2494,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-020.jpg",
+    "image": "/images/products/taza-termica-de-acrilico-con-tapa-snap-doble-pared.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-020.jpg"
+      "/images/products/taza-termica-de-acrilico-con-tapa-snap-doble-pared-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2530,9 +2530,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-696.jpg",
+    "image": "/images/products/taza-viajera-de-acero-inoxidable.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-696.jpg"
+      "/images/products/taza-viajera-de-acero-inoxidable-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2566,9 +2566,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-622.jpg",
+    "image": "/images/products/taza-de-acero-mate-doble-pared-con-cuchara.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-622.jpg"
+      "/images/products/taza-de-acero-mate-doble-pared-con-cuchara-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2602,9 +2602,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-862.jpg",
+    "image": "/images/products/taza-plastica-con-interior-de-acero-y-tapa.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-862.jpg"
+      "/images/products/taza-plastica-con-interior-de-acero-y-tapa-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2638,9 +2638,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-695.jpg",
+    "image": "/images/products/taza-de-ceramica-mate-con-base-de-corcho-removible.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-695.jpg"
+      "/images/products/taza-de-ceramica-mate-con-base-de-corcho-removible-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2674,9 +2674,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-809.jpg",
+    "image": "/images/products/taza-de-ceramica-con-tapa-de-bambu-y-cuchara.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-809.jpg"
+      "/images/products/taza-de-ceramica-con-tapa-de-bambu-y-cuchara-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2710,9 +2710,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-697.jpg",
+    "image": "/images/products/taza-de-ceramica-con-cucharita-para-sublimar.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-697.jpg"
+      "/images/products/taza-de-ceramica-con-cucharita-para-sublimar-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2746,9 +2746,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-153.jpg",
+    "image": "/images/products/taza-de-ceramica-para-sublimacion-con-interior-de-color.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-153.jpg"
+      "/images/products/taza-de-ceramica-para-sublimacion-con-interior-de-color-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2782,9 +2782,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-155.jpg",
+    "image": "/images/products/taza-de-ceramica-blanca-para-sublimacion-con-caja.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-155.jpg"
+      "/images/products/taza-de-ceramica-blanca-para-sublimacion-con-caja-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2818,9 +2818,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-666.jpg",
+    "image": "/images/products/porta-lata-de-acero-doble-pared-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-666.jpg"
+      "/images/products/porta-lata-de-acero-doble-pared-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2854,9 +2854,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-771-SUB.jpg",
+    "image": "/images/products/vaso-termico-12-oz-blanco-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-771-SUB.jpg"
+      "/images/products/vaso-termico-12-oz-blanco-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2890,9 +2890,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-771.jpg",
+    "image": "/images/products/vaso-termico-de-acero-doble-pared-con-tapa.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-771.jpg"
+      "/images/products/vaso-termico-de-acero-doble-pared-con-tapa-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2926,9 +2926,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-571.jpg",
+    "image": "/images/products/vaso-curvo-para-vino-doble-pared-con-tapa.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-571.jpg"
+      "/images/products/vaso-curvo-para-vino-doble-pared-con-tapa-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2962,9 +2962,9 @@
         "slug": "vasos-y-tazas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-571-SUB.jpg",
+    "image": "/images/products/vaso-para-vino-doble-pared-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-571-SUB.jpg"
+      "/images/products/vaso-para-vino-doble-pared-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -2998,9 +2998,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-796.jpg",
+    "image": "/images/products/botella-termica-con-tapa-antiderrame-y-carrizo.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-796.jpg"
+      "/images/products/botella-termica-con-tapa-antiderrame-y-carrizo-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3034,9 +3034,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-886.jpg",
+    "image": "/images/products/botella-de-acero-doble-pared-cuerpo-mate.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-886.jpg"
+      "/images/products/botella-de-acero-doble-pared-cuerpo-mate-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3070,9 +3070,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-864.jpg",
+    "image": "/images/products/botella-de-acero-blanca-para-sublimacion-dos-tonos.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-864.jpg"
+      "/images/products/botella-de-acero-blanca-para-sublimacion-dos-tonos-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3106,9 +3106,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-733.jpg",
+    "image": "/images/products/botella-de-metal-doble-pared-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-733.jpg"
+      "/images/products/botella-de-metal-doble-pared-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3142,9 +3142,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-135.jpg",
+    "image": "/images/products/botella-de-aluminio-mate-con-clip-mosqueton.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-135.jpg"
+      "/images/products/botella-de-aluminio-mate-con-clip-mosqueton-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3178,9 +3178,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-773.jpg",
+    "image": "/images/products/botella-de-acero-doble-pared-antiderrame.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-773.jpg"
+      "/images/products/botella-de-acero-doble-pared-antiderrame-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3214,9 +3214,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-863.jpg",
+    "image": "/images/products/botella-de-acero-metalizada-con-tapa-rosca.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-863.jpg"
+      "/images/products/botella-de-acero-metalizada-con-tapa-rosca-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3250,9 +3250,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-508.jpg",
+    "image": "/images/products/botella-de-aluminio-para-sublimacion-estilo-swell.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-508.jpg"
+      "/images/products/botella-de-aluminio-para-sublimacion-estilo-swell-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3286,9 +3286,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-509.jpg",
+    "image": "/images/products/botella-de-aluminio-estilo-swell-con-cuerpo-satinado.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-509.jpg"
+      "/images/products/botella-de-aluminio-estilo-swell-con-cuerpo-satinado-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3322,9 +3322,9 @@
         "slug": "tazas-botellas-y-termos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-662.jpg",
+    "image": "/images/products/botella-de-acero-doble-pared-con-tapa-rosca.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-662.jpg"
+      "/images/products/botella-de-acero-doble-pared-con-tapa-rosca-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3358,9 +3358,9 @@
         "slug": "sets-y-regalos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/ref-843.png",
+    "image": "/images/products/set-de-regalo-libreta-boligrafo-metalico-y-botella-termica.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/ref-843.png"
+      "/images/products/set-de-regalo-libreta-boligrafo-metalico-y-botella-termica-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3393,9 +3393,9 @@
         "slug": "mochilas-y-maletines"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-761.jpg",
+    "image": "/images/products/cangurera-deportiva-de-neoprene-con-porta-botella.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-761.jpg"
+      "/images/products/cangurera-deportiva-de-neoprene-con-porta-botella-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3429,9 +3429,9 @@
         "slug": "mochilas-y-maletines"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-445.jpg",
+    "image": "/images/products/cangurera-de-nylon-con-doble-zipper-y-gran-area-de-impresion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-445.jpg"
+      "/images/products/cangurera-de-nylon-con-doble-zipper-y-gran-area-de-impresion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3465,9 +3465,9 @@
         "slug": "mochilas-y-maletines"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-841.jpg",
+    "image": "/images/products/set-de-mochila-ejecutiva-3-piezas-con-porta-laptop.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-841.jpg"
+      "/images/products/set-de-mochila-ejecutiva-3-piezas-con-porta-laptop-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3501,9 +3501,9 @@
         "slug": "mochilas-y-maletines"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-722.jpg",
+    "image": "/images/products/mochila-ejecutiva-con-porta-laptop-y-triple-zipper.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-722.jpg"
+      "/images/products/mochila-ejecutiva-con-porta-laptop-y-triple-zipper-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3537,9 +3537,9 @@
         "slug": "mochilas-y-maletines"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-610.jpg",
+    "image": "/images/products/mochila-negra-de-nylon-600d-con-franja-reflectiva.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-610.jpg"
+      "/images/products/mochila-negra-de-nylon-600d-con-franja-reflectiva-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3573,9 +3573,9 @@
         "slug": "mochilas-y-maletines"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-552.jpg",
+    "image": "/images/products/mochila-antirrobo-con-puerto-usb-y-porta-laptop.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-552.jpg"
+      "/images/products/mochila-antirrobo-con-puerto-usb-y-porta-laptop-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3609,9 +3609,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-364.jpg",
+    "image": "/images/products/lonchera-termica-con-porta-botella-lateral.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-364.jpg"
+      "/images/products/lonchera-termica-con-porta-botella-lateral-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3645,9 +3645,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-330.jpg",
+    "image": "/images/products/lonchera-termica-de-nylon-con-interior-de-aluminio.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-330.jpg"
+      "/images/products/lonchera-termica-de-nylon-con-interior-de-aluminio-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3681,9 +3681,9 @@
         "slug": "articulos-promocionales-de-oficina"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-559.jpg",
+    "image": "/images/products/lonchera-termica-de-neoprene-con-cierre-zipper.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-559.jpg"
+      "/images/products/lonchera-termica-de-neoprene-con-cierre-zipper-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3717,9 +3717,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-754.jpg",
+    "image": "/images/products/lonchera-de-nylon-insulada-con-bolsillo-exterior.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-754.jpg"
+      "/images/products/lonchera-de-nylon-insulada-con-bolsillo-exterior-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3753,9 +3753,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-842.jpg",
+    "image": "/images/products/lonchera-termica-con-doble-compartimiento-y-porta-id.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-842.jpg"
+      "/images/products/lonchera-termica-con-doble-compartimiento-y-porta-id-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3789,9 +3789,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-707.jpg",
+    "image": "/images/products/bolsa-drawstring-de-canvas-con-base-de-corcho.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-707.jpg"
+      "/images/products/bolsa-drawstring-de-canvas-con-base-de-corcho-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3825,9 +3825,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-563.jpg",
+    "image": "/images/products/bolsa-drawstring-de-canvas-negro.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-563.jpg"
+      "/images/products/bolsa-drawstring-de-canvas-negro-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3861,9 +3861,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-888.jpg",
+    "image": "/images/products/bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-888.jpg"
+      "/images/products/bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3897,9 +3897,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-479.jpg",
+    "image": "/images/products/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-479.jpg"
+      "/images/products/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3933,9 +3933,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-076.jpg",
+    "image": "/images/products/bolsa-drawstring-de-nylon-delgada-con-cordon.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-076.jpg"
+      "/images/products/bolsa-drawstring-de-nylon-delgada-con-cordon-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -3969,9 +3969,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-856.jpg",
+    "image": "/images/products/bolsa-drawstring-con-cordon.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-856.jpg"
+      "/images/products/bolsa-drawstring-con-cordon-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4005,9 +4005,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-074.jpg",
+    "image": "/images/products/bolsa-reciclada-jumbo-con-cierre-de-boton.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-074.jpg"
+      "/images/products/bolsa-reciclada-jumbo-con-cierre-de-boton-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4041,9 +4041,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-065.jpg",
+    "image": "/images/products/bolsa-reciclada-de-polipropileno-clasica.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-065.jpg"
+      "/images/products/bolsa-reciclada-de-polipropileno-clasica-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4077,9 +4077,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-067.jpg",
+    "image": "/images/products/bolsa-reciclada-de-congreso-para-catalogo.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-067.jpg"
+      "/images/products/bolsa-reciclada-de-congreso-para-catalogo-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4113,9 +4113,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-075.jpg",
+    "image": "/images/products/bolsa-reciclada-con-cierre-de-boton-y-fuelle.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-075.jpg"
+      "/images/products/bolsa-reciclada-con-cierre-de-boton-y-fuelle-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4149,9 +4149,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-421.jpg",
+    "image": "/images/products/bolsa-reciclada-chica-con-cierre-de-boton.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-421.jpg"
+      "/images/products/bolsa-reciclada-chica-con-cierre-de-boton-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4185,9 +4185,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-582.jpg",
+    "image": "/images/products/bolsa-organizadora-de-basura-para-auto.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-582.jpg"
+      "/images/products/bolsa-organizadora-de-basura-para-auto-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4221,9 +4221,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-069.jpg",
+    "image": "/images/products/bolsa-tote-clasica-de-yute-natural.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-069.jpg"
+      "/images/products/bolsa-tote-clasica-de-yute-natural-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4257,9 +4257,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-803.jpg",
+    "image": "/images/products/bolsa-tote-de-canvas-12-oz-con-asa-integrada.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-803.jpg"
+      "/images/products/bolsa-tote-de-canvas-12-oz-con-asa-integrada-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4293,9 +4293,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-802.jpg",
+    "image": "/images/products/bolsa-de-canvas-natural-con-asa-tejida.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-802.jpg"
+      "/images/products/bolsa-de-canvas-natural-con-asa-tejida-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4329,9 +4329,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-070.jpg",
+    "image": "/images/products/bolsa-tote-de-manta-natural.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-070.jpg"
+      "/images/products/bolsa-tote-de-manta-natural-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4365,9 +4365,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-071.jpg",
+    "image": "/images/products/bolsa-de-canvas-natural-con-asas-de-cordon.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-071.jpg"
+      "/images/products/bolsa-de-canvas-natural-con-asas-de-cordon-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4401,9 +4401,9 @@
         "slug": "bolsas-y-totes"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-721.jpg",
+    "image": "/images/products/bolsa-tote-de-canvas-poli-cotton-grande.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-721.jpg"
+      "/images/products/bolsa-tote-de-canvas-poli-cotton-grande-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4437,9 +4437,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-854.jpg",
+    "image": "/images/products/libreta-reciclada-con-franja-de-color-y-boligrafo.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-854.jpg"
+      "/images/products/libreta-reciclada-con-franja-de-color-y-boligrafo-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4473,9 +4473,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-427.jpg",
+    "image": "/images/products/cuaderno-reciclado-con-post-it-y-boligrafo.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-427.jpg"
+      "/images/products/cuaderno-reciclado-con-post-it-y-boligrafo-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4509,9 +4509,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-528.jpg",
+    "image": "/images/products/cuaderno-espiral-de-bambu-con-set-de-accesorios.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-528.jpg"
+      "/images/products/cuaderno-espiral-de-bambu-con-set-de-accesorios-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4545,9 +4545,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-742.jpg",
+    "image": "/images/products/cuaderno-espiral-con-costuras-y-boligrafo-reciclado.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-742.jpg"
+      "/images/products/cuaderno-espiral-con-costuras-y-boligrafo-reciclado-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4581,9 +4581,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-740.jpg",
+    "image": "/images/products/cuaderno-espiral-reciclado-con-boligrafo.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-740.jpg"
+      "/images/products/cuaderno-espiral-reciclado-con-boligrafo-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4617,9 +4617,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-120.jpg",
+    "image": "/images/products/libreta-espiral-reciclada-con-boligrafo.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-120.jpg"
+      "/images/products/libreta-espiral-reciclada-con-boligrafo-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4653,9 +4653,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-670.jpg",
+    "image": "/images/products/cuaderno-de-cuero-para-sublimacion.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-670.jpg"
+      "/images/products/cuaderno-de-cuero-para-sublimacion-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4689,9 +4689,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-726.jpg",
+    "image": "/images/products/cuaderno-de-cuero-dos-tonos-con-cierre-elastico.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-726.jpg"
+      "/images/products/cuaderno-de-cuero-dos-tonos-con-cierre-elastico-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4725,9 +4725,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-731.jpg",
+    "image": "/images/products/cuaderno-cuero-y-corcho-con-portapluma.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-731.jpg"
+      "/images/products/cuaderno-cuero-y-corcho-con-portapluma-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4761,9 +4761,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-814.jpg",
+    "image": "/images/products/cuaderno-rigido-de-tela-con-soporte-para-celular-en-bambu.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-814.jpg"
+      "/images/products/cuaderno-rigido-de-tela-con-soporte-para-celular-en-bambu-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4797,9 +4797,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-664.jpg",
+    "image": "/images/products/cuaderno-de-cuero-de-color-con-cierre-elastico.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-664.jpg"
+      "/images/products/cuaderno-de-cuero-de-color-con-cierre-elastico-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4833,9 +4833,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-406.jpg",
+    "image": "/images/products/cuaderno-de-cuero-con-portapluma-y-costuras-blancas.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-406.jpg"
+      "/images/products/cuaderno-de-cuero-con-portapluma-y-costuras-blancas-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4869,9 +4869,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-743.jpg",
+    "image": "/images/products/libreta-ejecutiva-gamuza-dos-tonos-con-cierre-magnetico.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-743.jpg"
+      "/images/products/libreta-ejecutiva-gamuza-dos-tonos-con-cierre-magnetico-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4905,9 +4905,9 @@
         "slug": "libretas-y-cuadernos"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-741.jpg",
+    "image": "/images/products/libreta-ejecutiva-de-cuero-con-cierre-magnetico.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-741.jpg"
+      "/images/products/libreta-ejecutiva-de-cuero-con-cierre-magnetico-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4941,9 +4941,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-515.jpg",
+    "image": "/images/products/boligrafo-slim-con-stylus-y-clip-blanco.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-515.jpg"
+      "/images/products/boligrafo-slim-con-stylus-y-clip-blanco-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -4977,9 +4977,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-765.jpg",
+    "image": "/images/products/boligrafo-plastico-con-cuerpo-metalizado.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-765.jpg"
+      "/images/products/boligrafo-plastico-con-cuerpo-metalizado-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5013,9 +5013,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-191.jpg",
+    "image": "/images/products/boligrafo-satin-plateado-con-grip-traslucido.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-191.jpg"
+      "/images/products/boligrafo-satin-plateado-con-grip-traslucido-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5049,9 +5049,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-192.jpg",
+    "image": "/images/products/boligrafo-con-grip-traslucido-y-banda-horizontal.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-192.jpg"
+      "/images/products/boligrafo-con-grip-traslucido-y-banda-horizontal-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5085,9 +5085,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-850.jpg",
+    "image": "/images/products/boligrafo-plateado-brillante-con-clip-de-color.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-850.jpg"
+      "/images/products/boligrafo-plateado-brillante-con-clip-de-color-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5121,9 +5121,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-853.jpg",
+    "image": "/images/products/boligrafo-cuadrado-plateado-con-detalles-de-color.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-853.jpg"
+      "/images/products/boligrafo-cuadrado-plateado-con-detalles-de-color-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5157,9 +5157,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-766.jpg",
+    "image": "/images/products/boligrafo-metalizado-giratorio-con-clip-plateado.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-766.jpg"
+      "/images/products/boligrafo-metalizado-giratorio-con-clip-plateado-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5193,9 +5193,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-849.jpg",
+    "image": "/images/products/boligrafo-brillante-con-clip-y-punta-plateada.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-849.jpg"
+      "/images/products/boligrafo-brillante-con-clip-y-punta-plateada-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5229,9 +5229,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-851.jpg",
+    "image": "/images/products/boligrafo-multiuso-brillante-con-detalles-negros.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-851.jpg"
+      "/images/products/boligrafo-multiuso-brillante-con-detalles-negros-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5265,9 +5265,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-764.jpg",
+    "image": "/images/products/boligrafo-plastico-metalizado-con-clip-negro.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-764.jpg"
+      "/images/products/boligrafo-plastico-metalizado-con-clip-negro-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5301,9 +5301,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-514.jpg",
+    "image": "/images/products/boligrafo-metalizado-con-soporte-para-celular.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-514.jpg"
+      "/images/products/boligrafo-metalizado-con-soporte-para-celular-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5337,9 +5337,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-817.jpg",
+    "image": "/images/products/boligrafo-plastico-promocional-economico.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-817.jpg"
+      "/images/products/boligrafo-plastico-promocional-economico-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5371,9 +5371,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-848.jpg",
+    "image": "/images/products/boligrafo-plastico-blanco-con-detalle-de-color.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-848.jpg"
+      "/images/products/boligrafo-plastico-blanco-con-detalle-de-color-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5407,9 +5407,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-767.jpg",
+    "image": "/images/products/boligrafo-plastico-blanco-giratorio.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-767.jpg"
+      "/images/products/boligrafo-plastico-blanco-giratorio-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5443,9 +5443,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-545.jpg",
+    "image": "/images/products/boligrafo-plastico-blanco-con-clip-plano.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-545.jpg"
+      "/images/products/boligrafo-plastico-blanco-con-clip-plano-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5479,9 +5479,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-327.jpg",
+    "image": "/images/products/boligrafo-plastico-con-inserto-de-color.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-327.jpg"
+      "/images/products/boligrafo-plastico-con-inserto-de-color-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5515,9 +5515,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-403.jpg",
+    "image": "/images/products/boligrafo-de-metal-con-stylus.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-403.jpg"
+      "/images/products/boligrafo-de-metal-con-stylus-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5551,9 +5551,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-588.jpg",
+    "image": "/images/products/boligrafo-triangular-de-metal.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-588.jpg"
+      "/images/products/boligrafo-triangular-de-metal-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5587,9 +5587,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-404.jpg",
+    "image": "/images/products/boligrafo-ejecutivo-de-metal.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-404.jpg"
+      "/images/products/boligrafo-ejecutivo-de-metal-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5623,9 +5623,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-828.jpg",
+    "image": "/images/products/boligrafo-ejecutivo-de-aluminio-premium.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-828.jpg"
+      "/images/products/boligrafo-ejecutivo-de-aluminio-premium-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5659,9 +5659,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-680.jpg",
+    "image": "/images/products/boligrafo-ejecutivo-de-aluminio.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-680.jpg"
+      "/images/products/boligrafo-ejecutivo-de-aluminio-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5695,9 +5695,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-852.jpg",
+    "image": "/images/products/boligrafo-de-bambu-con-detalles-grises.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-852.jpg"
+      "/images/products/boligrafo-de-bambu-con-detalles-grises-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5731,9 +5731,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-816.jpg",
+    "image": "/images/products/boligrafo-de-metal-con-grip-de-goma-mate.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-816.jpg"
+      "/images/products/boligrafo-de-metal-con-grip-de-goma-mate-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5767,9 +5767,9 @@
         "slug": "boligrafos-y-plumas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-679.jpg",
+    "image": "/images/products/boligrafo-de-aluminio-liso.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-679.jpg"
+      "/images/products/boligrafo-de-aluminio-liso-gal-1.webp"
     ],
     "stock": 100,
     "type": "grouped",
@@ -5801,9 +5801,9 @@
         "slug": "paraguas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-752.jpg",
+    "image": "/images/products/paraguas-de-bolso-compacto-10-paneles-250-uds.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-752.jpg"
+      "/images/products/paraguas-de-bolso-compacto-10-paneles-250-uds-gal-1.webp"
     ],
     "stock": 100,
     "type": "simple",
@@ -5833,9 +5833,9 @@
         "slug": "paraguas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-752.jpg",
+    "image": "/images/products/paraguas-de-bolso-compacto-10-paneles-100-uds.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-752.jpg"
+      "/images/products/paraguas-de-bolso-compacto-10-paneles-100-uds-gal-1.webp"
     ],
     "stock": 100,
     "type": "simple",
@@ -5865,9 +5865,9 @@
         "slug": "paraguas"
       }
     ],
-    "image": "https://rufpixel.com/wp-content/uploads/RF-752.jpg",
+    "image": "/images/products/paraguas-de-bolso-compacto-10-paneles-50-uds.webp",
     "gallery": [
-      "https://rufpixel.com/wp-content/uploads/RF-752.jpg"
+      "/images/products/paraguas-de-bolso-compacto-10-paneles-50-uds-gal-1.webp"
     ],
     "stock": 100,
     "type": "simple",

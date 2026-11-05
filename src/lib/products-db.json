@@ -25,7 +25,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "libreta-espiral-reciclada-con-boligrafo"
+    "slug": "libreta-espiral-reciclada-con-boligrafo",
+    "image": "/images/products/libreta-espiral-reciclada-con-boligrafo.webp",
+    "gallery": [
+      "/images/products/libreta-espiral-reciclada-con-boligrafo-gal-1.webp"
+    ]
   },
   {
     "id": "10278",
@@ -52,7 +56,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "cuaderno-de-cuero-con-portapluma-y-costuras-blancas"
+    "slug": "cuaderno-de-cuero-con-portapluma-y-costuras-blancas",
+    "image": "/images/products/cuaderno-de-cuero-con-portapluma-y-costuras-blancas.webp",
+    "gallery": [
+      "/images/products/cuaderno-de-cuero-con-portapluma-y-costuras-blancas-gal-1.webp"
+    ]
   },
   {
     "id": "10288",
@@ -80,7 +88,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "cuaderno-reciclado-con-post-it-y-boligrafo"
+    "slug": "cuaderno-reciclado-con-post-it-y-boligrafo",
+    "image": "/images/products/cuaderno-reciclado-con-post-it-y-boligrafo.webp",
+    "gallery": [
+      "/images/products/cuaderno-reciclado-con-post-it-y-boligrafo-gal-1.webp"
+    ]
   },
   {
     "id": "10287",
@@ -107,7 +119,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "cuaderno-espiral-de-bambu-con-set-de-accesorios"
+    "slug": "cuaderno-espiral-de-bambu-con-set-de-accesorios",
+    "image": "/images/products/cuaderno-espiral-de-bambu-con-set-de-accesorios.webp",
+    "gallery": [
+      "/images/products/cuaderno-espiral-de-bambu-con-set-de-accesorios-gal-1.webp"
+    ]
   },
   {
     "id": "10279",
@@ -134,7 +150,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "cuaderno-de-cuero-de-color-con-cierre-elastico"
+    "slug": "cuaderno-de-cuero-de-color-con-cierre-elastico",
+    "image": "/images/products/cuaderno-de-cuero-de-color-con-cierre-elastico.webp",
+    "gallery": [
+      "/images/products/cuaderno-de-cuero-de-color-con-cierre-elastico-gal-1.webp"
+    ]
   },
   {
     "id": "10283",
@@ -162,7 +182,11 @@
       "Grabado Láser",
       "Sublimación"
     ],
-    "slug": "cuaderno-de-cuero-para-sublimacion"
+    "slug": "cuaderno-de-cuero-para-sublimacion",
+    "image": "/images/products/cuaderno-de-cuero-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/cuaderno-de-cuero-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10282",
@@ -189,7 +213,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "cuaderno-de-cuero-dos-tonos-con-cierre-elastico"
+    "slug": "cuaderno-de-cuero-dos-tonos-con-cierre-elastico",
+    "image": "/images/products/cuaderno-de-cuero-dos-tonos-con-cierre-elastico.webp",
+    "gallery": [
+      "/images/products/cuaderno-de-cuero-dos-tonos-con-cierre-elastico-gal-1.webp"
+    ]
   },
   {
     "id": "10281",
@@ -216,7 +244,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "cuaderno-cuero-y-corcho-con-portapluma"
+    "slug": "cuaderno-cuero-y-corcho-con-portapluma",
+    "image": "/images/products/cuaderno-cuero-y-corcho-con-portapluma.webp",
+    "gallery": [
+      "/images/products/cuaderno-cuero-y-corcho-con-portapluma-gal-1.webp"
+    ]
   },
   {
     "id": "10285",
@@ -244,7 +276,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "cuaderno-espiral-reciclado-con-boligrafo"
+    "slug": "cuaderno-espiral-reciclado-con-boligrafo",
+    "image": "/images/products/cuaderno-espiral-reciclado-con-boligrafo.webp",
+    "gallery": [
+      "/images/products/cuaderno-espiral-reciclado-con-boligrafo-gal-1.webp"
+    ]
   },
   {
     "id": "10276",
@@ -271,7 +307,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "libreta-ejecutiva-de-cuero-con-cierre-magnetico"
+    "slug": "libreta-ejecutiva-de-cuero-con-cierre-magnetico",
+    "image": "/images/products/libreta-ejecutiva-de-cuero-con-cierre-magnetico.webp",
+    "gallery": [
+      "/images/products/libreta-ejecutiva-de-cuero-con-cierre-magnetico-gal-1.webp"
+    ]
   },
   {
     "id": "10286",
@@ -299,7 +339,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "cuaderno-espiral-con-costuras-y-boligrafo-reciclado"
+    "slug": "cuaderno-espiral-con-costuras-y-boligrafo-reciclado",
+    "image": "/images/products/cuaderno-espiral-con-costuras-y-boligrafo-reciclado.webp",
+    "gallery": [
+      "/images/products/cuaderno-espiral-con-costuras-y-boligrafo-reciclado-gal-1.webp"
+    ]
   },
   {
     "id": "10277",
@@ -326,7 +370,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "libreta-ejecutiva-gamuza-dos-tonos-con-cierre-magnetico"
+    "slug": "libreta-ejecutiva-gamuza-dos-tonos-con-cierre-magnetico",
+    "image": "/images/products/libreta-ejecutiva-gamuza-dos-tonos-con-cierre-magnetico.webp",
+    "gallery": [
+      "/images/products/libreta-ejecutiva-gamuza-dos-tonos-con-cierre-magnetico-gal-1.webp"
+    ]
   },
   {
     "id": "10280",
@@ -354,7 +402,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "cuaderno-rigido-de-tela-con-soporte-para-celular-en-bambu"
+    "slug": "cuaderno-rigido-de-tela-con-soporte-para-celular-en-bambu",
+    "image": "/images/products/cuaderno-rigido-de-tela-con-soporte-para-celular-en-bambu.webp",
+    "gallery": [
+      "/images/products/cuaderno-rigido-de-tela-con-soporte-para-celular-en-bambu-gal-1.webp"
+    ]
   },
   {
     "id": "10289",
@@ -382,7 +434,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "libreta-reciclada-con-franja-de-color-y-boligrafo"
+    "slug": "libreta-reciclada-con-franja-de-color-y-boligrafo",
+    "image": "/images/products/libreta-reciclada-con-franja-de-color-y-boligrafo.webp",
+    "gallery": [
+      "/images/products/libreta-reciclada-con-franja-de-color-y-boligrafo-gal-1.webp"
+    ]
   },
   {
     "id": "10273",
@@ -409,7 +465,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-satin-plateado-con-grip-traslucido"
+    "slug": "boligrafo-satin-plateado-con-grip-traslucido",
+    "image": "/images/products/boligrafo-satin-plateado-con-grip-traslucido.webp",
+    "gallery": [
+      "/images/products/boligrafo-satin-plateado-con-grip-traslucido-gal-1.webp"
+    ]
   },
   {
     "id": "10272",
@@ -436,7 +496,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-con-grip-traslucido-y-banda-horizontal"
+    "slug": "boligrafo-con-grip-traslucido-y-banda-horizontal",
+    "image": "/images/products/boligrafo-con-grip-traslucido-y-banda-horizontal.webp",
+    "gallery": [
+      "/images/products/boligrafo-con-grip-traslucido-y-banda-horizontal-gal-1.webp"
+    ]
   },
   {
     "id": "10260",
@@ -463,7 +527,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-plastico-con-inserto-de-color"
+    "slug": "boligrafo-plastico-con-inserto-de-color",
+    "image": "/images/products/boligrafo-plastico-con-inserto-de-color.webp",
+    "gallery": [
+      "/images/products/boligrafo-plastico-con-inserto-de-color-gal-1.webp"
+    ]
   },
   {
     "id": "10259",
@@ -491,7 +559,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-de-metal-con-stylus"
+    "slug": "boligrafo-de-metal-con-stylus",
+    "image": "/images/products/boligrafo-de-metal-con-stylus.webp",
+    "gallery": [
+      "/images/products/boligrafo-de-metal-con-stylus-gal-1.webp"
+    ]
   },
   {
     "id": "10257",
@@ -519,7 +591,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-ejecutivo-de-metal"
+    "slug": "boligrafo-ejecutivo-de-metal",
+    "image": "/images/products/boligrafo-ejecutivo-de-metal.webp",
+    "gallery": [
+      "/images/products/boligrafo-ejecutivo-de-metal-gal-1.webp"
+    ]
   },
   {
     "id": "10265",
@@ -547,7 +623,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-metalizado-con-soporte-para-celular"
+    "slug": "boligrafo-metalizado-con-soporte-para-celular",
+    "image": "/images/products/boligrafo-metalizado-con-soporte-para-celular.webp",
+    "gallery": [
+      "/images/products/boligrafo-metalizado-con-soporte-para-celular-gal-1.webp"
+    ]
   },
   {
     "id": "10275",
@@ -574,7 +654,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-slim-con-stylus-y-clip-blanco"
+    "slug": "boligrafo-slim-con-stylus-y-clip-blanco",
+    "image": "/images/products/boligrafo-slim-con-stylus-y-clip-blanco.webp",
+    "gallery": [
+      "/images/products/boligrafo-slim-con-stylus-y-clip-blanco-gal-1.webp"
+    ]
   },
   {
     "id": "10261",
@@ -601,7 +685,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-plastico-blanco-con-clip-plano"
+    "slug": "boligrafo-plastico-blanco-con-clip-plano",
+    "image": "/images/products/boligrafo-plastico-blanco-con-clip-plano.webp",
+    "gallery": [
+      "/images/products/boligrafo-plastico-blanco-con-clip-plano-gal-1.webp"
+    ]
   },
   {
     "id": "10258",
@@ -629,7 +717,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-triangular-de-metal"
+    "slug": "boligrafo-triangular-de-metal",
+    "image": "/images/products/boligrafo-triangular-de-metal.webp",
+    "gallery": [
+      "/images/products/boligrafo-triangular-de-metal-gal-1.webp"
+    ]
   },
   {
     "id": "10252",
@@ -657,7 +749,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-de-aluminio-liso"
+    "slug": "boligrafo-de-aluminio-liso",
+    "image": "/images/products/boligrafo-de-aluminio-liso.webp",
+    "gallery": [
+      "/images/products/boligrafo-de-aluminio-liso-gal-1.webp"
+    ]
   },
   {
     "id": "10255",
@@ -685,7 +781,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-ejecutivo-de-aluminio"
+    "slug": "boligrafo-ejecutivo-de-aluminio",
+    "image": "/images/products/boligrafo-ejecutivo-de-aluminio.webp",
+    "gallery": [
+      "/images/products/boligrafo-ejecutivo-de-aluminio-gal-1.webp"
+    ]
   },
   {
     "id": "10266",
@@ -713,7 +813,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-plastico-metalizado-con-clip-negro"
+    "slug": "boligrafo-plastico-metalizado-con-clip-negro",
+    "image": "/images/products/boligrafo-plastico-metalizado-con-clip-negro.webp",
+    "gallery": [
+      "/images/products/boligrafo-plastico-metalizado-con-clip-negro-gal-1.webp"
+    ]
   },
   {
     "id": "10274",
@@ -741,7 +845,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-plastico-con-cuerpo-metalizado"
+    "slug": "boligrafo-plastico-con-cuerpo-metalizado",
+    "image": "/images/products/boligrafo-plastico-con-cuerpo-metalizado.webp",
+    "gallery": [
+      "/images/products/boligrafo-plastico-con-cuerpo-metalizado-gal-1.webp"
+    ]
   },
   {
     "id": "10269",
@@ -769,7 +877,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-metalizado-giratorio-con-clip-plateado"
+    "slug": "boligrafo-metalizado-giratorio-con-clip-plateado",
+    "image": "/images/products/boligrafo-metalizado-giratorio-con-clip-plateado.webp",
+    "gallery": [
+      "/images/products/boligrafo-metalizado-giratorio-con-clip-plateado-gal-1.webp"
+    ]
   },
   {
     "id": "10262",
@@ -796,7 +908,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-plastico-blanco-giratorio"
+    "slug": "boligrafo-plastico-blanco-giratorio",
+    "image": "/images/products/boligrafo-plastico-blanco-giratorio.webp",
+    "gallery": [
+      "/images/products/boligrafo-plastico-blanco-giratorio-gal-1.webp"
+    ]
   },
   {
     "id": "10253",
@@ -824,7 +940,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-de-metal-con-grip-de-goma-mate"
+    "slug": "boligrafo-de-metal-con-grip-de-goma-mate",
+    "image": "/images/products/boligrafo-de-metal-con-grip-de-goma-mate.webp",
+    "gallery": [
+      "/images/products/boligrafo-de-metal-con-grip-de-goma-mate-gal-1.webp"
+    ]
   },
   {
     "id": "10264",
@@ -851,7 +971,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-plastico-promocional-economico"
+    "slug": "boligrafo-plastico-promocional-economico",
+    "image": "/images/products/boligrafo-plastico-promocional-economico.webp",
+    "gallery": [
+      "/images/products/boligrafo-plastico-promocional-economico-gal-1.webp"
+    ]
   },
   {
     "id": "10256",
@@ -879,7 +1003,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-ejecutivo-de-aluminio-premium"
+    "slug": "boligrafo-ejecutivo-de-aluminio-premium",
+    "image": "/images/products/boligrafo-ejecutivo-de-aluminio-premium.webp",
+    "gallery": [
+      "/images/products/boligrafo-ejecutivo-de-aluminio-premium-gal-1.webp"
+    ]
   },
   {
     "id": "10263",
@@ -906,7 +1034,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-plastico-blanco-con-detalle-de-color"
+    "slug": "boligrafo-plastico-blanco-con-detalle-de-color",
+    "image": "/images/products/boligrafo-plastico-blanco-con-detalle-de-color.webp",
+    "gallery": [
+      "/images/products/boligrafo-plastico-blanco-con-detalle-de-color-gal-1.webp"
+    ]
   },
   {
     "id": "10268",
@@ -933,7 +1065,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-brillante-con-clip-y-punta-plateada"
+    "slug": "boligrafo-brillante-con-clip-y-punta-plateada",
+    "image": "/images/products/boligrafo-brillante-con-clip-y-punta-plateada.webp",
+    "gallery": [
+      "/images/products/boligrafo-brillante-con-clip-y-punta-plateada-gal-1.webp"
+    ]
   },
   {
     "id": "10271",
@@ -960,7 +1096,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-plateado-brillante-con-clip-de-color"
+    "slug": "boligrafo-plateado-brillante-con-clip-de-color",
+    "image": "/images/products/boligrafo-plateado-brillante-con-clip-de-color.webp",
+    "gallery": [
+      "/images/products/boligrafo-plateado-brillante-con-clip-de-color-gal-1.webp"
+    ]
   },
   {
     "id": "10267",
@@ -987,7 +1127,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-multiuso-brillante-con-detalles-negros"
+    "slug": "boligrafo-multiuso-brillante-con-detalles-negros",
+    "image": "/images/products/boligrafo-multiuso-brillante-con-detalles-negros.webp",
+    "gallery": [
+      "/images/products/boligrafo-multiuso-brillante-con-detalles-negros-gal-1.webp"
+    ]
   },
   {
     "id": "10254",
@@ -1015,7 +1159,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "boligrafo-de-bambu-con-detalles-grises"
+    "slug": "boligrafo-de-bambu-con-detalles-grises",
+    "image": "/images/products/boligrafo-de-bambu-con-detalles-grises.webp",
+    "gallery": [
+      "/images/products/boligrafo-de-bambu-con-detalles-grises-gal-1.webp"
+    ]
   },
   {
     "id": "10270",
@@ -1042,7 +1190,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "boligrafo-cuadrado-plateado-con-detalles-de-color"
+    "slug": "boligrafo-cuadrado-plateado-con-detalles-de-color",
+    "image": "/images/products/boligrafo-cuadrado-plateado-con-detalles-de-color.webp",
+    "gallery": [
+      "/images/products/boligrafo-cuadrado-plateado-con-detalles-de-color-gal-1.webp"
+    ]
   },
   {
     "id": "10300",
@@ -1069,7 +1221,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-reciclada-de-polipropileno-clasica"
+    "slug": "bolsa-reciclada-de-polipropileno-clasica",
+    "image": "/images/products/bolsa-reciclada-de-polipropileno-clasica.webp",
+    "gallery": [
+      "/images/products/bolsa-reciclada-de-polipropileno-clasica-gal-1.webp"
+    ]
   },
   {
     "id": "10299",
@@ -1096,7 +1252,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-reciclada-de-congreso-para-catalogo"
+    "slug": "bolsa-reciclada-de-congreso-para-catalogo",
+    "image": "/images/products/bolsa-reciclada-de-congreso-para-catalogo.webp",
+    "gallery": [
+      "/images/products/bolsa-reciclada-de-congreso-para-catalogo-gal-1.webp"
+    ]
   },
   {
     "id": "10295",
@@ -1123,7 +1283,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-tote-clasica-de-yute-natural"
+    "slug": "bolsa-tote-clasica-de-yute-natural",
+    "image": "/images/products/bolsa-tote-clasica-de-yute-natural.webp",
+    "gallery": [
+      "/images/products/bolsa-tote-clasica-de-yute-natural-gal-1.webp"
+    ]
   },
   {
     "id": "10292",
@@ -1150,7 +1314,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-tote-de-manta-natural"
+    "slug": "bolsa-tote-de-manta-natural",
+    "image": "/images/products/bolsa-tote-de-manta-natural.webp",
+    "gallery": [
+      "/images/products/bolsa-tote-de-manta-natural-gal-1.webp"
+    ]
   },
   {
     "id": "10291",
@@ -1178,7 +1346,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bolsa-de-canvas-natural-con-asas-de-cordon"
+    "slug": "bolsa-de-canvas-natural-con-asas-de-cordon",
+    "image": "/images/products/bolsa-de-canvas-natural-con-asas-de-cordon.webp",
+    "gallery": [
+      "/images/products/bolsa-de-canvas-natural-con-asas-de-cordon-gal-1.webp"
+    ]
   },
   {
     "id": "10301",
@@ -1205,7 +1377,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-reciclada-jumbo-con-cierre-de-boton"
+    "slug": "bolsa-reciclada-jumbo-con-cierre-de-boton",
+    "image": "/images/products/bolsa-reciclada-jumbo-con-cierre-de-boton.webp",
+    "gallery": [
+      "/images/products/bolsa-reciclada-jumbo-con-cierre-de-boton-gal-1.webp"
+    ]
   },
   {
     "id": "10298",
@@ -1232,7 +1408,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-reciclada-con-cierre-de-boton-y-fuelle"
+    "slug": "bolsa-reciclada-con-cierre-de-boton-y-fuelle",
+    "image": "/images/products/bolsa-reciclada-con-cierre-de-boton-y-fuelle.webp",
+    "gallery": [
+      "/images/products/bolsa-reciclada-con-cierre-de-boton-y-fuelle-gal-1.webp"
+    ]
   },
   {
     "id": "10303",
@@ -1259,7 +1439,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-drawstring-de-nylon-delgada-con-cordon"
+    "slug": "bolsa-drawstring-de-nylon-delgada-con-cordon",
+    "image": "/images/products/bolsa-drawstring-de-nylon-delgada-con-cordon.webp",
+    "gallery": [
+      "/images/products/bolsa-drawstring-de-nylon-delgada-con-cordon-gal-1.webp"
+    ]
   },
   {
     "id": "10311",
@@ -1287,7 +1471,11 @@
       "Grabado Láser",
       "DTF Textil"
     ],
-    "slug": "lonchera-termica-de-nylon-con-interior-de-aluminio"
+    "slug": "lonchera-termica-de-nylon-con-interior-de-aluminio",
+    "image": "/images/products/lonchera-termica-de-nylon-con-interior-de-aluminio.webp",
+    "gallery": [
+      "/images/products/lonchera-termica-de-nylon-con-interior-de-aluminio-gal-1.webp"
+    ]
   },
   {
     "id": "10312",
@@ -1315,7 +1503,11 @@
       "DTF Textil",
       "UVDTF"
     ],
-    "slug": "lonchera-termica-con-porta-botella-lateral"
+    "slug": "lonchera-termica-con-porta-botella-lateral",
+    "image": "/images/products/lonchera-termica-con-porta-botella-lateral.webp",
+    "gallery": [
+      "/images/products/lonchera-termica-con-porta-botella-lateral-gal-1.webp"
+    ]
   },
   {
     "id": "10297",
@@ -1342,7 +1534,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-reciclada-chica-con-cierre-de-boton"
+    "slug": "bolsa-reciclada-chica-con-cierre-de-boton",
+    "image": "/images/products/bolsa-reciclada-chica-con-cierre-de-boton.webp",
+    "gallery": [
+      "/images/products/bolsa-reciclada-chica-con-cierre-de-boton-gal-1.webp"
+    ]
   },
   {
     "id": "10304",
@@ -1369,7 +1565,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos"
+    "slug": "bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos",
+    "image": "/images/products/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos.webp",
+    "gallery": [
+      "/images/products/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos-gal-1.webp"
+    ]
   },
   {
     "id": "10306",
@@ -1397,7 +1597,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bolsa-drawstring-de-canvas-negro"
+    "slug": "bolsa-drawstring-de-canvas-negro",
+    "image": "/images/products/bolsa-drawstring-de-canvas-negro.webp",
+    "gallery": [
+      "/images/products/bolsa-drawstring-de-canvas-negro-gal-1.webp"
+    ]
   },
   {
     "id": "10296",
@@ -1424,7 +1628,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-organizadora-de-basura-para-auto"
+    "slug": "bolsa-organizadora-de-basura-para-auto",
+    "image": "/images/products/bolsa-organizadora-de-basura-para-auto.webp",
+    "gallery": [
+      "/images/products/bolsa-organizadora-de-basura-para-auto-gal-1.webp"
+    ]
   },
   {
     "id": "10307",
@@ -1453,7 +1661,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bolsa-drawstring-de-canvas-con-base-de-corcho"
+    "slug": "bolsa-drawstring-de-canvas-con-base-de-corcho",
+    "image": "/images/products/bolsa-drawstring-de-canvas-con-base-de-corcho.webp",
+    "gallery": [
+      "/images/products/bolsa-drawstring-de-canvas-con-base-de-corcho-gal-1.webp"
+    ]
   },
   {
     "id": "10290",
@@ -1481,7 +1693,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bolsa-tote-de-canvas-poli-cotton-grande"
+    "slug": "bolsa-tote-de-canvas-poli-cotton-grande",
+    "image": "/images/products/bolsa-tote-de-canvas-poli-cotton-grande.webp",
+    "gallery": [
+      "/images/products/bolsa-tote-de-canvas-poli-cotton-grande-gal-1.webp"
+    ]
   },
   {
     "id": "10309",
@@ -1508,7 +1724,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "lonchera-de-nylon-insulada-con-bolsillo-exterior"
+    "slug": "lonchera-de-nylon-insulada-con-bolsillo-exterior",
+    "image": "/images/products/lonchera-de-nylon-insulada-con-bolsillo-exterior.webp",
+    "gallery": [
+      "/images/products/lonchera-de-nylon-insulada-con-bolsillo-exterior-gal-1.webp"
+    ]
   },
   {
     "id": "10293",
@@ -1536,7 +1756,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bolsa-de-canvas-natural-con-asa-tejida"
+    "slug": "bolsa-de-canvas-natural-con-asa-tejida",
+    "image": "/images/products/bolsa-de-canvas-natural-con-asa-tejida.webp",
+    "gallery": [
+      "/images/products/bolsa-de-canvas-natural-con-asa-tejida-gal-1.webp"
+    ]
   },
   {
     "id": "10294",
@@ -1564,7 +1788,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bolsa-tote-de-canvas-12-oz-con-asa-integrada"
+    "slug": "bolsa-tote-de-canvas-12-oz-con-asa-integrada",
+    "image": "/images/products/bolsa-tote-de-canvas-12-oz-con-asa-integrada.webp",
+    "gallery": [
+      "/images/products/bolsa-tote-de-canvas-12-oz-con-asa-integrada-gal-1.webp"
+    ]
   },
   {
     "id": "10308",
@@ -1591,7 +1819,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "lonchera-termica-con-doble-compartimiento-y-porta-id"
+    "slug": "lonchera-termica-con-doble-compartimiento-y-porta-id",
+    "image": "/images/products/lonchera-termica-con-doble-compartimiento-y-porta-id.webp",
+    "gallery": [
+      "/images/products/lonchera-termica-con-doble-compartimiento-y-porta-id-gal-1.webp"
+    ]
   },
   {
     "id": "10302",
@@ -1618,7 +1850,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-drawstring-con-cordon"
+    "slug": "bolsa-drawstring-con-cordon",
+    "image": "/images/products/bolsa-drawstring-con-cordon.webp",
+    "gallery": [
+      "/images/products/bolsa-drawstring-con-cordon-gal-1.webp"
+    ]
   },
   {
     "id": "10305",
@@ -1645,7 +1881,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper"
+    "slug": "bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper",
+    "image": "/images/products/bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper.webp",
+    "gallery": [
+      "/images/products/bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper-gal-1.webp"
+    ]
   },
   {
     "id": "10372",
@@ -1673,7 +1913,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "gorra-lacrosse-max-dry-de-mallita-con-velcro"
+    "slug": "gorra-lacrosse-max-dry-de-mallita-con-velcro",
+    "image": "/images/products/gorra-lacrosse-max-dry-de-mallita-con-velcro.webp",
+    "gallery": [
+      "/images/products/gorra-lacrosse-max-dry-de-mallita-con-velcro-gal-1.webp"
+    ]
   },
   {
     "id": "10366",
@@ -1701,7 +1945,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bandana-tipo-headband"
+    "slug": "bandana-tipo-headband",
+    "image": "/images/products/bandana-tipo-headband.webp",
+    "gallery": [
+      "/images/products/bandana-tipo-headband-gal-1.webp"
+    ]
   },
   {
     "id": "10365",
@@ -1729,7 +1977,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "bandana-de-algodon"
+    "slug": "bandana-de-algodon",
+    "image": "/images/products/bandana-de-algodon.webp",
+    "gallery": [
+      "/images/products/bandana-de-algodon-gal-1.webp"
+    ]
   },
   {
     "id": "10369",
@@ -1757,7 +2009,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "gorra-lacrosse-max-dry-con-mallas-y-velcro"
+    "slug": "gorra-lacrosse-max-dry-con-mallas-y-velcro",
+    "image": "/images/products/gorra-lacrosse-max-dry-con-mallas-y-velcro.webp",
+    "gallery": [
+      "/images/products/gorra-lacrosse-max-dry-con-mallas-y-velcro-gal-1.webp"
+    ]
   },
   {
     "id": "10370",
@@ -1785,7 +2041,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "gorra-lacrosse-max-dry-deportiva-con-hebilla"
+    "slug": "gorra-lacrosse-max-dry-deportiva-con-hebilla",
+    "image": "/images/products/gorra-lacrosse-max-dry-deportiva-con-hebilla.webp",
+    "gallery": [
+      "/images/products/gorra-lacrosse-max-dry-deportiva-con-hebilla-gal-1.webp"
+    ]
   },
   {
     "id": "10371",
@@ -1813,7 +2073,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "gorra-lacrosse-premium-6-panos-color-solido"
+    "slug": "gorra-lacrosse-premium-6-panos-color-solido",
+    "image": "/images/products/gorra-lacrosse-premium-6-panos-color-solido.webp",
+    "gallery": [
+      "/images/products/gorra-lacrosse-premium-6-panos-color-solido-gal-1.webp"
+    ]
   },
   {
     "id": "10375",
@@ -1841,7 +2105,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "gorra-trucker-con-malla-lateral"
+    "slug": "gorra-trucker-con-malla-lateral",
+    "image": "/images/products/gorra-trucker-con-malla-lateral.webp",
+    "gallery": [
+      "/images/products/gorra-trucker-con-malla-lateral-gal-1.webp"
+    ]
   },
   {
     "id": "10374",
@@ -1869,7 +2137,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "gorra-camionero-dos-tonos-con-malla"
+    "slug": "gorra-camionero-dos-tonos-con-malla",
+    "image": "/images/products/gorra-camionero-dos-tonos-con-malla.webp",
+    "gallery": [
+      "/images/products/gorra-camionero-dos-tonos-con-malla-gal-1.webp"
+    ]
   },
   {
     "id": "10367",
@@ -1897,7 +2169,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "sombrero-tipo-pescador"
+    "slug": "sombrero-tipo-pescador",
+    "image": "/images/products/sombrero-tipo-pescador.webp",
+    "gallery": [
+      "/images/products/sombrero-tipo-pescador-gal-1.webp"
+    ]
   },
   {
     "id": "10368",
@@ -1925,7 +2201,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "visera-de-algodon"
+    "slug": "visera-de-algodon",
+    "image": "/images/products/visera-de-algodon.webp",
+    "gallery": [
+      "/images/products/visera-de-algodon-gal-1.webp"
+    ]
   },
   {
     "id": "10373",
@@ -1953,7 +2233,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "gorra-flex-fit-deportiva-6-panos-dry-fit"
+    "slug": "gorra-flex-fit-deportiva-6-panos-dry-fit",
+    "image": "/images/products/gorra-flex-fit-deportiva-6-panos-dry-fit.webp",
+    "gallery": [
+      "/images/products/gorra-flex-fit-deportiva-6-panos-dry-fit-gal-1.webp"
+    ]
   },
   {
     "id": "10411",
@@ -1980,7 +2264,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "cordon-porta-id-de-nylon-con-clip-desprendible"
+    "slug": "cordon-porta-id-de-nylon-con-clip-desprendible",
+    "image": "/images/products/cordon-porta-id-de-nylon-con-clip-desprendible.webp",
+    "gallery": [
+      "/images/products/cordon-porta-id-de-nylon-con-clip-desprendible-gal-1.webp"
+    ]
   },
   {
     "id": "10410",
@@ -2007,7 +2295,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "cordon-porta-id-satinado-con-clip-desprendible"
+    "slug": "cordon-porta-id-satinado-con-clip-desprendible",
+    "image": "/images/products/cordon-porta-id-satinado-con-clip-desprendible.webp",
+    "gallery": [
+      "/images/products/cordon-porta-id-satinado-con-clip-desprendible-gal-1.webp"
+    ]
   },
   {
     "id": "10400",
@@ -2035,7 +2327,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "llavero-de-aluminio-abrebotellas-y-abre-latas"
+    "slug": "llavero-de-aluminio-abrebotellas-y-abre-latas",
+    "image": "/images/products/llavero-de-aluminio-abrebotellas-y-abre-latas.webp",
+    "gallery": [
+      "/images/products/llavero-de-aluminio-abrebotellas-y-abre-latas-gal-1.webp"
+    ]
   },
   {
     "id": "10399",
@@ -2062,7 +2358,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "llavero-plastico-de-color-con-gancho"
+    "slug": "llavero-plastico-de-color-con-gancho",
+    "image": "/images/products/llavero-plastico-de-color-con-gancho.webp",
+    "gallery": [
+      "/images/products/llavero-plastico-de-color-con-gancho-gal-1.webp"
+    ]
   },
   {
     "id": "10395",
@@ -2090,7 +2390,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "llavero-rectangular-de-mdf-para-sublimacion"
+    "slug": "llavero-rectangular-de-mdf-para-sublimacion",
+    "image": "/images/products/llavero-rectangular-de-mdf-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/llavero-rectangular-de-mdf-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10397",
@@ -2119,7 +2423,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "llavero-de-metal-ovalado-para-sublimacion"
+    "slug": "llavero-de-metal-ovalado-para-sublimacion",
+    "image": "/images/products/llavero-de-metal-ovalado-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/llavero-de-metal-ovalado-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10398",
@@ -2147,7 +2455,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "llavero-mosqueton-plateado-para-sublimacion"
+    "slug": "llavero-mosqueton-plateado-para-sublimacion",
+    "image": "/images/products/llavero-mosqueton-plateado-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/llavero-mosqueton-plateado-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10396",
@@ -2176,7 +2488,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "llavero-de-cuero-blanco-rectangular-para-sublimar"
+    "slug": "llavero-de-cuero-blanco-rectangular-para-sublimar",
+    "image": "/images/products/llavero-de-cuero-blanco-rectangular-para-sublimar.webp",
+    "gallery": [
+      "/images/products/llavero-de-cuero-blanco-rectangular-para-sublimar-gal-1.webp"
+    ]
   },
   {
     "id": "10392",
@@ -2204,7 +2520,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "llavero-de-madera-redondo-con-detalles-en-acero"
+    "slug": "llavero-de-madera-redondo-con-detalles-en-acero",
+    "image": "/images/products/llavero-de-madera-redondo-con-detalles-en-acero.webp",
+    "gallery": [
+      "/images/products/llavero-de-madera-redondo-con-detalles-en-acero-gal-1.webp"
+    ]
   },
   {
     "id": "10393",
@@ -2232,7 +2552,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "llavero-de-madera-rectangular-con-detalles-en-acero"
+    "slug": "llavero-de-madera-rectangular-con-detalles-en-acero",
+    "image": "/images/products/llavero-de-madera-rectangular-con-detalles-en-acero.webp",
+    "gallery": [
+      "/images/products/llavero-de-madera-rectangular-con-detalles-en-acero-gal-1.webp"
+    ]
   },
   {
     "id": "10394",
@@ -2260,7 +2584,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "llavero-de-madera-curvo-con-detalles-en-acero"
+    "slug": "llavero-de-madera-curvo-con-detalles-en-acero",
+    "image": "/images/products/llavero-de-madera-curvo-con-detalles-en-acero.webp",
+    "gallery": [
+      "/images/products/llavero-de-madera-curvo-con-detalles-en-acero-gal-1.webp"
+    ]
   },
   {
     "id": "10384",
@@ -2288,7 +2616,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "caja-porta-vino-con-accesorios-en-la-tapa"
+    "slug": "caja-porta-vino-con-accesorios-en-la-tapa",
+    "image": "/images/products/caja-porta-vino-con-accesorios-en-la-tapa.webp",
+    "gallery": [
+      "/images/products/caja-porta-vino-con-accesorios-en-la-tapa-gal-1.webp"
+    ]
   },
   {
     "id": "10385",
@@ -2316,7 +2648,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "caja-de-madera-con-abrebotellas"
+    "slug": "caja-de-madera-con-abrebotellas",
+    "image": "/images/products/caja-de-madera-con-abrebotellas.webp",
+    "gallery": [
+      "/images/products/caja-de-madera-con-abrebotellas-gal-1.webp"
+    ]
   },
   {
     "id": "10382",
@@ -2344,7 +2680,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "set-de-cuchillos-para-quesos-en-caja-de-madera"
+    "slug": "set-de-cuchillos-para-quesos-en-caja-de-madera",
+    "image": "/images/products/set-de-cuchillos-para-quesos-en-caja-de-madera.webp",
+    "gallery": [
+      "/images/products/set-de-cuchillos-para-quesos-en-caja-de-madera-gal-1.webp"
+    ]
   },
   {
     "id": "10386",
@@ -2372,7 +2712,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "caja-cuadrada-de-accesorios-para-vino"
+    "slug": "caja-cuadrada-de-accesorios-para-vino",
+    "image": "/images/products/caja-cuadrada-de-accesorios-para-vino.webp",
+    "gallery": [
+      "/images/products/caja-cuadrada-de-accesorios-para-vino-gal-1.webp"
+    ]
   },
   {
     "id": "10381",
@@ -2399,7 +2743,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "tabla-para-quesos-ovalada-con-3-accesorios"
+    "slug": "tabla-para-quesos-ovalada-con-3-accesorios",
+    "image": "/images/products/tabla-para-quesos-ovalada-con-3-accesorios.webp",
+    "gallery": [
+      "/images/products/tabla-para-quesos-ovalada-con-3-accesorios-gal-1.webp"
+    ]
   },
   {
     "id": "10383",
@@ -2426,7 +2774,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "tabla-grande-para-quesos"
+    "slug": "tabla-grande-para-quesos",
+    "image": "/images/products/tabla-grande-para-quesos.webp",
+    "gallery": [
+      "/images/products/tabla-grande-para-quesos-gal-1.webp"
+    ]
   },
   {
     "id": "10379",
@@ -2453,7 +2805,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "tabla-de-cortar-de-bambu-rectangular"
+    "slug": "tabla-de-cortar-de-bambu-rectangular",
+    "image": "/images/products/tabla-de-cortar-de-bambu-rectangular.webp",
+    "gallery": [
+      "/images/products/tabla-de-cortar-de-bambu-rectangular-gal-1.webp"
+    ]
   },
   {
     "id": "10378",
@@ -2480,7 +2836,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "tabla-de-cortar-de-bambu-rectangular-con-mango"
+    "slug": "tabla-de-cortar-de-bambu-rectangular-con-mango",
+    "image": "/images/products/tabla-de-cortar-de-bambu-rectangular-con-mango.webp",
+    "gallery": [
+      "/images/products/tabla-de-cortar-de-bambu-rectangular-con-mango-gal-1.webp"
+    ]
   },
   {
     "id": "10391",
@@ -2507,7 +2867,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "set-de-accesorios-para-vino-modelo-torre"
+    "slug": "set-de-accesorios-para-vino-modelo-torre",
+    "image": "/images/products/set-de-accesorios-para-vino-modelo-torre.webp",
+    "gallery": [
+      "/images/products/set-de-accesorios-para-vino-modelo-torre-gal-1.webp"
+    ]
   },
   {
     "id": "10390",
@@ -2534,7 +2898,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "set-de-accesorios-para-vino-modelo-barril"
+    "slug": "set-de-accesorios-para-vino-modelo-barril",
+    "image": "/images/products/set-de-accesorios-para-vino-modelo-barril.webp",
+    "gallery": [
+      "/images/products/set-de-accesorios-para-vino-modelo-barril-gal-1.webp"
+    ]
   },
   {
     "id": "10387",
@@ -2562,7 +2930,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botellero-triangular-para-6-botellas-de-vino"
+    "slug": "botellero-triangular-para-6-botellas-de-vino",
+    "image": "/images/products/botellero-triangular-para-6-botellas-de-vino.webp",
+    "gallery": [
+      "/images/products/botellero-triangular-para-6-botellas-de-vino-gal-1.webp"
+    ]
   },
   {
     "id": "10389",
@@ -2590,7 +2962,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "portabotellas-y-copas-de-bambu"
+    "slug": "portabotellas-y-copas-de-bambu",
+    "image": "/images/products/portabotellas-y-copas-de-bambu.webp",
+    "gallery": [
+      "/images/products/portabotellas-y-copas-de-bambu-gal-1.webp"
+    ]
   },
   {
     "id": "10388",
@@ -2618,7 +2994,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botellero-para-3-botellas-de-vino"
+    "slug": "botellero-para-3-botellas-de-vino",
+    "image": "/images/products/botellero-para-3-botellas-de-vino.webp",
+    "gallery": [
+      "/images/products/botellero-para-3-botellas-de-vino-gal-1.webp"
+    ]
   },
   {
     "id": "10380",
@@ -2645,7 +3025,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "tabla-de-cortar-de-bambu-redonda-con-mango"
+    "slug": "tabla-de-cortar-de-bambu-redonda-con-mango",
+    "image": "/images/products/tabla-de-cortar-de-bambu-redonda-con-mango.webp",
+    "gallery": [
+      "/images/products/tabla-de-cortar-de-bambu-redonda-con-mango-gal-1.webp"
+    ]
   },
   {
     "id": "10377",
@@ -2672,7 +3056,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera"
+    "slug": "set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera",
+    "image": "/images/products/set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera.webp",
+    "gallery": [
+      "/images/products/set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera-gal-1.webp"
+    ]
   },
   {
     "id": "10376",
@@ -2699,7 +3087,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "set-de-bbq-5-piezas-con-estuche-negro-y-tabla"
+    "slug": "set-de-bbq-5-piezas-con-estuche-negro-y-tabla",
+    "image": "/images/products/set-de-bbq-5-piezas-con-estuche-negro-y-tabla.webp",
+    "gallery": [
+      "/images/products/set-de-bbq-5-piezas-con-estuche-negro-y-tabla-gal-1.webp"
+    ]
   },
   {
     "id": "10403",
@@ -2727,7 +3119,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "soporte-para-celular-de-bambu-para-escritorio"
+    "slug": "soporte-para-celular-de-bambu-para-escritorio",
+    "image": "/images/products/soporte-para-celular-de-bambu-para-escritorio.webp",
+    "gallery": [
+      "/images/products/soporte-para-celular-de-bambu-para-escritorio-gal-1.webp"
+    ]
   },
   {
     "id": "10317",
@@ -2754,7 +3150,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "cangurera-de-nylon-con-doble-zipper-y-gran-area-de-impresion"
+    "slug": "cangurera-de-nylon-con-doble-zipper-y-gran-area-de-impresion",
+    "image": "/images/products/cangurera-de-nylon-con-doble-zipper-y-gran-area-de-impresion.webp",
+    "gallery": [
+      "/images/products/cangurera-de-nylon-con-doble-zipper-y-gran-area-de-impresion-gal-1.webp"
+    ]
   },
   {
     "id": "10313",
@@ -2782,7 +3182,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "mochila-antirrobo-con-puerto-usb-y-porta-laptop"
+    "slug": "mochila-antirrobo-con-puerto-usb-y-porta-laptop",
+    "image": "/images/products/mochila-antirrobo-con-puerto-usb-y-porta-laptop.webp",
+    "gallery": [
+      "/images/products/mochila-antirrobo-con-puerto-usb-y-porta-laptop-gal-1.webp"
+    ]
   },
   {
     "id": "10314",
@@ -2810,7 +3214,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "mochila-negra-de-nylon-600d-con-franja-reflectiva"
+    "slug": "mochila-negra-de-nylon-600d-con-franja-reflectiva",
+    "image": "/images/products/mochila-negra-de-nylon-600d-con-franja-reflectiva.webp",
+    "gallery": [
+      "/images/products/mochila-negra-de-nylon-600d-con-franja-reflectiva-gal-1.webp"
+    ]
   },
   {
     "id": "10315",
@@ -2838,7 +3246,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "mochila-ejecutiva-con-porta-laptop-y-triple-zipper"
+    "slug": "mochila-ejecutiva-con-porta-laptop-y-triple-zipper",
+    "image": "/images/products/mochila-ejecutiva-con-porta-laptop-y-triple-zipper.webp",
+    "gallery": [
+      "/images/products/mochila-ejecutiva-con-porta-laptop-y-triple-zipper-gal-1.webp"
+    ]
   },
   {
     "id": "10318",
@@ -2866,7 +3278,11 @@
       "DTF Textil",
       "UVDTF"
     ],
-    "slug": "cangurera-deportiva-de-neoprene-con-porta-botella"
+    "slug": "cangurera-deportiva-de-neoprene-con-porta-botella",
+    "image": "/images/products/cangurera-deportiva-de-neoprene-con-porta-botella.webp",
+    "gallery": [
+      "/images/products/cangurera-deportiva-de-neoprene-con-porta-botella-gal-1.webp"
+    ]
   },
   {
     "id": "10316",
@@ -2894,7 +3310,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "set-de-mochila-ejecutiva-3-piezas-con-porta-laptop"
+    "slug": "set-de-mochila-ejecutiva-3-piezas-con-porta-laptop",
+    "image": "/images/products/set-de-mochila-ejecutiva-3-piezas-con-porta-laptop.webp",
+    "gallery": [
+      "/images/products/set-de-mochila-ejecutiva-3-piezas-con-porta-laptop-gal-1.webp"
+    ]
   },
   {
     "id": "10408",
@@ -2923,7 +3343,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "mouse-pad-rectangular-de-tela-para-sublimacion"
+    "slug": "mouse-pad-rectangular-de-tela-para-sublimacion",
+    "image": "/images/products/mouse-pad-rectangular-de-tela-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/mouse-pad-rectangular-de-tela-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10409",
@@ -2952,7 +3376,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "mouse-pad-redondo-de-tela-para-sublimacion"
+    "slug": "mouse-pad-redondo-de-tela-para-sublimacion",
+    "image": "/images/products/mouse-pad-redondo-de-tela-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/mouse-pad-redondo-de-tela-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10405",
@@ -2980,7 +3408,11 @@
       "DTF Textil",
       "UVDTF"
     ],
-    "slug": "mouse-pad-de-tela-en-forma-de-rinon"
+    "slug": "mouse-pad-de-tela-en-forma-de-rinon",
+    "image": "/images/products/mouse-pad-de-tela-en-forma-de-rinon.webp",
+    "gallery": [
+      "/images/products/mouse-pad-de-tela-en-forma-de-rinon-gal-1.webp"
+    ]
   },
   {
     "id": "10406",
@@ -3008,7 +3440,11 @@
       "DTF Textil",
       "UVDTF"
     ],
-    "slug": "mouse-pad-de-tela-cuadrado"
+    "slug": "mouse-pad-de-tela-cuadrado",
+    "image": "/images/products/mouse-pad-de-tela-cuadrado.webp",
+    "gallery": [
+      "/images/products/mouse-pad-de-tela-cuadrado-gal-1.webp"
+    ]
   },
   {
     "id": "10310",
@@ -3035,7 +3471,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "lonchera-termica-de-neoprene-con-cierre-zipper"
+    "slug": "lonchera-termica-de-neoprene-con-cierre-zipper",
+    "image": "/images/products/lonchera-termica-de-neoprene-con-cierre-zipper.webp",
+    "gallery": [
+      "/images/products/lonchera-termica-de-neoprene-con-cierre-zipper-gal-1.webp"
+    ]
   },
   {
     "id": "10404",
@@ -3062,7 +3502,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "soporte-expansible-para-celular-o-tablet"
+    "slug": "soporte-expansible-para-celular-o-tablet",
+    "image": "/images/products/soporte-expansible-para-celular-o-tablet.webp",
+    "gallery": [
+      "/images/products/soporte-expansible-para-celular-o-tablet-gal-1.webp"
+    ]
   },
   {
     "id": "10401",
@@ -3089,7 +3533,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "portaplumas-con-reloj-digital-para-escritorio"
+    "slug": "portaplumas-con-reloj-digital-para-escritorio",
+    "image": "/images/products/portaplumas-con-reloj-digital-para-escritorio.webp",
+    "gallery": [
+      "/images/products/portaplumas-con-reloj-digital-para-escritorio-gal-1.webp"
+    ]
   },
   {
     "id": "10402",
@@ -3117,7 +3565,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "portaplumas-de-bambu-rectangular-para-escritorio"
+    "slug": "portaplumas-de-bambu-rectangular-para-escritorio",
+    "image": "/images/products/portaplumas-de-bambu-rectangular-para-escritorio.webp",
+    "gallery": [
+      "/images/products/portaplumas-de-bambu-rectangular-para-escritorio-gal-1.webp"
+    ]
   },
   {
     "id": "10407",
@@ -3146,7 +3598,12 @@
       "DTF Textil",
       "UVDTF"
     ],
-    "slug": "mouse-pad-de-cuero-estilo-gamuza"
+    "slug": "mouse-pad-de-cuero-estilo-gamuza",
+    "image": "/images/products/mouse-pad-de-cuero-estilo-gamuza.webp",
+    "gallery": [
+      "/images/products/mouse-pad-de-cuero-estilo-gamuza-gal-1.webp",
+      "/images/products/mouse-pad-de-cuero-estilo-gamuza-gal-2.webp"
+    ]
   },
   {
     "id": "10412",
@@ -3173,7 +3630,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "paraguas-de-bolso-compacto-10-paneles"
+    "slug": "paraguas-de-bolso-compacto-10-paneles",
+    "image": "/images/products/paraguas-de-bolso-compacto-10-paneles.webp",
+    "gallery": [
+      "/images/products/paraguas-de-bolso-compacto-10-paneles-gal-1.webp"
+    ]
   },
   {
     "id": "10486",
@@ -3200,7 +3661,11 @@
     "techniques": [
       "Grabado Láser"
     ],
-    "slug": "set-ejecutivo-2"
+    "slug": "set-ejecutivo-2",
+    "image": "/images/products/set-ejecutivo-2.webp",
+    "gallery": [
+      "/images/products/set-ejecutivo-2-gal-1.webp"
+    ]
   },
   {
     "id": "10319",
@@ -3255,7 +3720,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "polo-max-dry-de-alto-rendimiento"
+    "slug": "polo-max-dry-de-alto-rendimiento",
+    "image": "/images/products/polo-max-dry-de-alto-rendimiento.webp",
+    "gallery": [
+      "/images/products/polo-max-dry-de-alto-rendimiento-gal-1.webp"
+    ]
   },
   {
     "id": "10362",
@@ -3283,7 +3752,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "polo-de-algodon"
+    "slug": "polo-de-algodon",
+    "image": "/images/products/polo-de-algodon.webp",
+    "gallery": [
+      "/images/products/polo-de-algodon-gal-1.webp"
+    ]
   },
   {
     "id": "10357",
@@ -3310,7 +3783,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "camiseta-de-algodon-lacrosse-manga-larga-180g"
+    "slug": "camiseta-de-algodon-lacrosse-manga-larga-180g",
+    "image": "/images/products/camiseta-de-algodon-lacrosse-manga-larga-180g.webp",
+    "gallery": [
+      "/images/products/camiseta-de-algodon-lacrosse-manga-larga-180g-gal-1.webp"
+    ]
   },
   {
     "id": "10355",
@@ -3337,7 +3814,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "camiseta-de-algodon-lacrosse-180g-cuello-redondo"
+    "slug": "camiseta-de-algodon-lacrosse-180g-cuello-redondo",
+    "image": "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-redondo.webp",
+    "gallery": [
+      "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-redondo-gal-1.webp"
+    ]
   },
   {
     "id": "10363",
@@ -3365,7 +3846,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "camisa-pescador-lacrosse-ultralite-con-dos-bolsillos"
+    "slug": "camisa-pescador-lacrosse-ultralite-con-dos-bolsillos",
+    "image": "/images/products/camisa-pescador-lacrosse-ultralite-con-dos-bolsillos.webp",
+    "gallery": [
+      "/images/products/camisa-pescador-lacrosse-ultralite-con-dos-bolsillos-gal-1.webp"
+    ]
   },
   {
     "id": "10364",
@@ -3393,7 +3878,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "camisa-pescador-lacrosse-manga-larga-ultralite"
+    "slug": "camisa-pescador-lacrosse-manga-larga-ultralite",
+    "image": "/images/products/camisa-pescador-lacrosse-manga-larga-ultralite.webp",
+    "gallery": [
+      "/images/products/camisa-pescador-lacrosse-manga-larga-ultralite-gal-1.webp"
+    ]
   },
   {
     "id": "10361",
@@ -3421,7 +3910,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "polo-dry-fit-dos-tonos"
+    "slug": "polo-dry-fit-dos-tonos",
+    "image": "/images/products/polo-dry-fit-dos-tonos.webp",
+    "gallery": [
+      "/images/products/polo-dry-fit-dos-tonos-gal-1.webp"
+    ]
   },
   {
     "id": "10352",
@@ -3449,7 +3942,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "delantal-de-poliester-con-bolsillo-para-adultos"
+    "slug": "delantal-de-poliester-con-bolsillo-para-adultos",
+    "image": "/images/products/delantal-de-poliester-con-bolsillo-para-adultos.webp",
+    "gallery": [
+      "/images/products/delantal-de-poliester-con-bolsillo-para-adultos-gal-1.webp"
+    ]
   },
   {
     "id": "10356",
@@ -3476,7 +3973,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "camiseta-de-algodon-lacrosse-180g-cuello-v"
+    "slug": "camiseta-de-algodon-lacrosse-180g-cuello-v",
+    "image": "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-v.webp",
+    "gallery": [
+      "/images/products/camiseta-de-algodon-lacrosse-180g-cuello-v-gal-1.webp"
+    ]
   },
   {
     "id": "10358",
@@ -3503,7 +4004,11 @@
     "techniques": [
       "DTF Textil"
     ],
-    "slug": "camiseta-100-poliester"
+    "slug": "camiseta-100-poliester",
+    "image": "/images/products/camiseta-100-poliester.webp",
+    "gallery": [
+      "/images/products/camiseta-100-poliester-gal-1.webp"
+    ]
   },
   {
     "id": "10359",
@@ -3531,7 +4036,11 @@
       "DTF Textil",
       "Sublimación"
     ],
-    "slug": "camiseta-para-sublimacion"
+    "slug": "camiseta-para-sublimacion",
+    "image": "/images/products/camiseta-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/camiseta-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10350",
@@ -3559,7 +4068,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "toalla-de-cara-blanca"
+    "slug": "toalla-de-cara-blanca",
+    "image": "/images/products/toalla-de-cara-blanca.webp",
+    "gallery": [
+      "/images/products/toalla-de-cara-blanca-gal-1.webp"
+    ]
   },
   {
     "id": "10353",
@@ -3588,7 +4101,11 @@
       "DTF Textil",
       "UVDTF"
     ],
-    "slug": "delantal-de-denim-con-portaplumas-y-bolsillos"
+    "slug": "delantal-de-denim-con-portaplumas-y-bolsillos",
+    "image": "/images/products/delantal-de-denim-con-portaplumas-y-bolsillos.webp",
+    "gallery": [
+      "/images/products/delantal-de-denim-con-portaplumas-y-bolsillos-gal-1.webp"
+    ]
   },
   {
     "id": "10354",
@@ -3617,7 +4134,11 @@
       "DTF Textil",
       "UVDTF"
     ],
-    "slug": "delantal-de-canvas-denim-con-portaplumas"
+    "slug": "delantal-de-canvas-denim-con-portaplumas",
+    "image": "/images/products/delantal-de-canvas-denim-con-portaplumas.webp",
+    "gallery": [
+      "/images/products/delantal-de-canvas-denim-con-portaplumas-gal-1.webp"
+    ]
   },
   {
     "id": "10351",
@@ -3645,7 +4166,11 @@
       "Bordado",
       "DTF Textil"
     ],
-    "slug": "toalla-de-golf-de-microfibra-con-mosqueton"
+    "slug": "toalla-de-golf-de-microfibra-con-mosqueton",
+    "image": "/images/products/toalla-de-golf-de-microfibra-con-mosqueton.webp",
+    "gallery": [
+      "/images/products/toalla-de-golf-de-microfibra-con-mosqueton-gal-1.webp"
+    ]
   },
   {
     "id": "10325",
@@ -3673,7 +4198,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botella-de-aluminio-mate-con-clip-mosqueton"
+    "slug": "botella-de-aluminio-mate-con-clip-mosqueton",
+    "image": "/images/products/botella-de-aluminio-mate-con-clip-mosqueton.webp",
+    "gallery": [
+      "/images/products/botella-de-aluminio-mate-con-clip-mosqueton-gal-1.webp"
+    ]
   },
   {
     "id": "10346",
@@ -3700,7 +4229,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "botella-deportiva-rigida-de-24-oz"
+    "slug": "botella-deportiva-rigida-de-24-oz",
+    "image": "/images/products/botella-deportiva-rigida-de-24-oz.webp",
+    "gallery": [
+      "/images/products/botella-deportiva-rigida-de-24-oz-gal-1.webp"
+    ]
   },
   {
     "id": "10348",
@@ -3727,7 +4260,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "botella-plastica-de-24-oz-pared-sencilla"
+    "slug": "botella-plastica-de-24-oz-pared-sencilla",
+    "image": "/images/products/botella-plastica-de-24-oz-pared-sencilla.webp",
+    "gallery": [
+      "/images/products/botella-plastica-de-24-oz-pared-sencilla-gal-1.webp"
+    ]
   },
   {
     "id": "10322",
@@ -3756,7 +4293,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "botella-de-aluminio-para-sublimacion-estilo-swell"
+    "slug": "botella-de-aluminio-para-sublimacion-estilo-swell",
+    "image": "/images/products/botella-de-aluminio-para-sublimacion-estilo-swell.webp",
+    "gallery": [
+      "/images/products/botella-de-aluminio-para-sublimacion-estilo-swell-gal-1.webp"
+    ]
   },
   {
     "id": "10321",
@@ -3784,7 +4325,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botella-de-aluminio-estilo-swell-con-cuerpo-satinado"
+    "slug": "botella-de-aluminio-estilo-swell-con-cuerpo-satinado",
+    "image": "/images/products/botella-de-aluminio-estilo-swell-con-cuerpo-satinado.webp",
+    "gallery": [
+      "/images/products/botella-de-aluminio-estilo-swell-con-cuerpo-satinado-gal-1.webp"
+    ]
   },
   {
     "id": "10320",
@@ -3812,7 +4357,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botella-de-acero-doble-pared-con-tapa-rosca"
+    "slug": "botella-de-acero-doble-pared-con-tapa-rosca",
+    "image": "/images/products/botella-de-acero-doble-pared-con-tapa-rosca.webp",
+    "gallery": [
+      "/images/products/botella-de-acero-doble-pared-con-tapa-rosca-gal-1.webp"
+    ]
   },
   {
     "id": "10345",
@@ -3839,7 +4388,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "botella-plastica-cilindrica"
+    "slug": "botella-plastica-cilindrica",
+    "image": "/images/products/botella-plastica-cilindrica.webp",
+    "gallery": [
+      "/images/products/botella-plastica-cilindrica-gal-1.webp"
+    ]
   },
   {
     "id": "10326",
@@ -3868,7 +4421,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "botella-de-metal-doble-pared-para-sublimacion"
+    "slug": "botella-de-metal-doble-pared-para-sublimacion",
+    "image": "/images/products/botella-de-metal-doble-pared-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/botella-de-metal-doble-pared-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10324",
@@ -3896,7 +4453,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botella-de-acero-doble-pared-antiderrame"
+    "slug": "botella-de-acero-doble-pared-antiderrame",
+    "image": "/images/products/botella-de-acero-doble-pared-antiderrame.webp",
+    "gallery": [
+      "/images/products/botella-de-acero-doble-pared-antiderrame-gal-1.webp"
+    ]
   },
   {
     "id": "10329",
@@ -3923,7 +4484,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "botella-termica-con-tapa-antiderrame-y-carrizo"
+    "slug": "botella-termica-con-tapa-antiderrame-y-carrizo",
+    "image": "/images/products/botella-termica-con-tapa-antiderrame-y-carrizo.webp",
+    "gallery": [
+      "/images/products/botella-termica-con-tapa-antiderrame-y-carrizo-gal-1.webp"
+    ]
   },
   {
     "id": "10323",
@@ -3951,7 +4516,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botella-de-acero-metalizada-con-tapa-rosca"
+    "slug": "botella-de-acero-metalizada-con-tapa-rosca",
+    "image": "/images/products/botella-de-acero-metalizada-con-tapa-rosca.webp",
+    "gallery": [
+      "/images/products/botella-de-acero-metalizada-con-tapa-rosca-gal-1.webp"
+    ]
   },
   {
     "id": "10327",
@@ -3980,7 +4549,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "botella-de-acero-blanca-para-sublimacion-dos-tonos"
+    "slug": "botella-de-acero-blanca-para-sublimacion-dos-tonos",
+    "image": "/images/products/botella-de-acero-blanca-para-sublimacion-dos-tonos.webp",
+    "gallery": [
+      "/images/products/botella-de-acero-blanca-para-sublimacion-dos-tonos-gal-1.webp"
+    ]
   },
   {
     "id": "10349",
@@ -4007,7 +4580,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "botella-deportiva-plastica-traslucida"
+    "slug": "botella-deportiva-plastica-traslucida",
+    "image": "/images/products/botella-deportiva-plastica-traslucida.webp",
+    "gallery": [
+      "/images/products/botella-deportiva-plastica-traslucida-gal-1.webp"
+    ]
   },
   {
     "id": "10328",
@@ -4035,7 +4612,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "botella-de-acero-doble-pared-cuerpo-mate"
+    "slug": "botella-de-acero-doble-pared-cuerpo-mate",
+    "image": "/images/products/botella-de-acero-doble-pared-cuerpo-mate.webp",
+    "gallery": [
+      "/images/products/botella-de-acero-doble-pared-cuerpo-mate-gal-1.webp"
+    ]
   },
   {
     "id": "10343",
@@ -4062,7 +4643,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "taza-termica-de-acrilico-con-tapa-snap-doble-pared"
+    "slug": "taza-termica-de-acrilico-con-tapa-snap-doble-pared",
+    "image": "/images/products/taza-termica-de-acrilico-con-tapa-snap-doble-pared.webp",
+    "gallery": [
+      "/images/products/taza-termica-de-acrilico-con-tapa-snap-doble-pared-gal-1.webp"
+    ]
   },
   {
     "id": "10336",
@@ -4090,7 +4675,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "taza-de-ceramica-para-sublimacion-con-interior-de-color"
+    "slug": "taza-de-ceramica-para-sublimacion-con-interior-de-color",
+    "image": "/images/products/taza-de-ceramica-para-sublimacion-con-interior-de-color.webp",
+    "gallery": [
+      "/images/products/taza-de-ceramica-para-sublimacion-con-interior-de-color-gal-1.webp"
+    ]
   },
   {
     "id": "10335",
@@ -4118,7 +4707,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "taza-de-ceramica-blanca-para-sublimacion-con-caja"
+    "slug": "taza-de-ceramica-blanca-para-sublimacion-con-caja",
+    "image": "/images/products/taza-de-ceramica-blanca-para-sublimacion-con-caja.webp",
+    "gallery": [
+      "/images/products/taza-de-ceramica-blanca-para-sublimacion-con-caja-gal-1.webp"
+    ]
   },
   {
     "id": "10344",
@@ -4145,7 +4738,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "vaso-acrilico-de-18-oz-con-doble-insulacion"
+    "slug": "vaso-acrilico-de-18-oz-con-doble-insulacion",
+    "image": "/images/products/vaso-acrilico-de-18-oz-con-doble-insulacion.webp",
+    "gallery": [
+      "/images/products/vaso-acrilico-de-18-oz-con-doble-insulacion-gal-1.webp"
+    ]
   },
   {
     "id": "10331",
@@ -4172,7 +4769,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "vaso-curvo-para-vino-doble-pared-con-tapa"
+    "slug": "vaso-curvo-para-vino-doble-pared-con-tapa",
+    "image": "/images/products/vaso-curvo-para-vino-doble-pared-con-tapa.webp",
+    "gallery": [
+      "/images/products/vaso-curvo-para-vino-doble-pared-con-tapa-gal-1.webp"
+    ]
   },
   {
     "id": "10330",
@@ -4200,7 +4801,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "vaso-para-vino-doble-pared-para-sublimacion"
+    "slug": "vaso-para-vino-doble-pared-para-sublimacion",
+    "image": "/images/products/vaso-para-vino-doble-pared-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/vaso-para-vino-doble-pared-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10341",
@@ -4228,7 +4833,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "taza-de-acero-mate-doble-pared-con-cuchara"
+    "slug": "taza-de-acero-mate-doble-pared-con-cuchara",
+    "image": "/images/products/taza-de-acero-mate-doble-pared-con-cuchara.webp",
+    "gallery": [
+      "/images/products/taza-de-acero-mate-doble-pared-con-cuchara-gal-1.webp"
+    ]
   },
   {
     "id": "10334",
@@ -4257,7 +4866,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "porta-lata-de-acero-doble-pared-para-sublimacion"
+    "slug": "porta-lata-de-acero-doble-pared-para-sublimacion",
+    "image": "/images/products/porta-lata-de-acero-doble-pared-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/porta-lata-de-acero-doble-pared-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10339",
@@ -4285,7 +4898,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "taza-de-ceramica-mate-con-base-de-corcho-removible"
+    "slug": "taza-de-ceramica-mate-con-base-de-corcho-removible",
+    "image": "/images/products/taza-de-ceramica-mate-con-base-de-corcho-removible.webp",
+    "gallery": [
+      "/images/products/taza-de-ceramica-mate-con-base-de-corcho-removible-gal-1.webp"
+    ]
   },
   {
     "id": "10342",
@@ -4313,7 +4930,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "taza-viajera-de-acero-inoxidable"
+    "slug": "taza-viajera-de-acero-inoxidable",
+    "image": "/images/products/taza-viajera-de-acero-inoxidable.webp",
+    "gallery": [
+      "/images/products/taza-viajera-de-acero-inoxidable-gal-1.webp"
+    ]
   },
   {
     "id": "10337",
@@ -4341,7 +4962,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "taza-de-ceramica-con-cucharita-para-sublimar"
+    "slug": "taza-de-ceramica-con-cucharita-para-sublimar",
+    "image": "/images/products/taza-de-ceramica-con-cucharita-para-sublimar.webp",
+    "gallery": [
+      "/images/products/taza-de-ceramica-con-cucharita-para-sublimar-gal-1.webp"
+    ]
   },
   {
     "id": "10332",
@@ -4369,7 +4994,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "vaso-termico-de-acero-doble-pared-con-tapa"
+    "slug": "vaso-termico-de-acero-doble-pared-con-tapa",
+    "image": "/images/products/vaso-termico-de-acero-doble-pared-con-tapa.webp",
+    "gallery": [
+      "/images/products/vaso-termico-de-acero-doble-pared-con-tapa-gal-1.webp"
+    ]
   },
   {
     "id": "10333",
@@ -4397,7 +5026,11 @@
       "UVDTF",
       "Sublimación"
     ],
-    "slug": "vaso-termico-12-oz-blanco-para-sublimacion"
+    "slug": "vaso-termico-12-oz-blanco-para-sublimacion",
+    "image": "/images/products/vaso-termico-12-oz-blanco-para-sublimacion.webp",
+    "gallery": [
+      "/images/products/vaso-termico-12-oz-blanco-para-sublimacion-gal-1.webp"
+    ]
   },
   {
     "id": "10338",
@@ -4425,7 +5058,11 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "taza-de-ceramica-con-tapa-de-bambu-y-cuchara"
+    "slug": "taza-de-ceramica-con-tapa-de-bambu-y-cuchara",
+    "image": "/images/products/taza-de-ceramica-con-tapa-de-bambu-y-cuchara.webp",
+    "gallery": [
+      "/images/products/taza-de-ceramica-con-tapa-de-bambu-y-cuchara-gal-1.webp"
+    ]
   },
   {
     "id": "10347",
@@ -4452,7 +5089,11 @@
     "techniques": [
       "UVDTF"
     ],
-    "slug": "taza-plastica-de-pared-doble"
+    "slug": "taza-plastica-de-pared-doble",
+    "image": "/images/products/taza-plastica-de-pared-doble.webp",
+    "gallery": [
+      "/images/products/taza-plastica-de-pared-doble-gal-1.webp"
+    ]
   },
   {
     "id": "10340",
@@ -4480,6 +5121,10 @@
       "Grabado Láser",
       "UVDTF"
     ],
-    "slug": "taza-plastica-con-interior-de-acero-y-tapa"
+    "slug": "taza-plastica-con-interior-de-acero-y-tapa",
+    "image": "/images/products/taza-plastica-con-interior-de-acero-y-tapa.webp",
+    "gallery": [
+      "/images/products/taza-plastica-con-interior-de-acero-y-tapa-gal-1.webp"
+    ]
   }
 ]
