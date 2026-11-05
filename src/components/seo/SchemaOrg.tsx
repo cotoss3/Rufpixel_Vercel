@@ -59,6 +59,70 @@ export function OrganizationSchema() {
       'https://www.instagram.com/rufpixel',
       'https://www.facebook.com/rufpixel',
     ],
+    knowsAbout: [
+      'Impresión DTF Textil Directo',
+      'Transfer UV DTF para Rígidos',
+      'Bordados Computarizados y Ponchados',
+      'Grabados Láser de Alta Precisión',
+      'Impresión en Gran Formato y Banners Roll-Up',
+      'Artículos Promocionales Corporativos al por Mayor',
+      'Stickers Troquelados y Etiquetas Adhesivas',
+      'Sublimación y Regalos Publicitarios'
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Impresión & Catálogo Promocional',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Impresión DTF Textil Directo',
+            url: 'https://rufpixel.com/servicios/dtf-textil',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Transfer UV DTF para Rígidos',
+            url: 'https://rufpixel.com/servicios/uv-dtf',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Bordados Computarizados & Ponchados',
+            url: 'https://rufpixel.com/servicios/bordados-computarizados',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Grabados Láser de Alta Precisión',
+            url: 'https://rufpixel.com/servicios/grabados-laser',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Impresión Gran Formato & Banners',
+            url: 'https://rufpixel.com/servicios/impresion-gran-formato',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Flyers & Folletos Publicitarios',
+            url: 'https://rufpixel.com/servicios/flyers-y-folletos',
+          },
+        },
+      ],
+    },
   };
 
   return (
