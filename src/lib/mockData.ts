@@ -33,6 +33,48 @@ export const MOCK_SERVICES: Service[] = [
     ]
   },
   {
+    id: 'serv-dtf-textil',
+    slug: 'dtf-textil',
+    title: 'Impresión DTF Textil Directo',
+    shortDesc: 'Transfer textil digital por pliegos o yardas lineales de alta elasticidad, colores vibrantes y máxima resistencia al lavado.',
+    fullDesc: 'El servicio de DTF Textil (Direct to Film) es la tecnología líder para estampado de prendas en Panamá. Permite transferir gráficos full color con base blanca sólida sobre cualquier tipo de tela (algodón, poliéster, mezclas o dril) sin necesidad de descarte ni cortes complejos. Perfecto para uniformes de empresas, marcas de ropa y eventos.',
+    iconName: 'Printer',
+    image: '/images/banners/banner-dtf.webp',
+    features: [
+      'Impresión por pliego A4 o yarda lineal continua.',
+      'Tacto suave, elástico y alta durabilidad tras múltiples lavadas.',
+      'Apto para telas claras y oscuras en algodón o sintéticos.'
+    ]
+  },
+  {
+    id: 'serv-uvdtf',
+    slug: 'uv-dtf',
+    title: 'Transfer UV DTF para Rígidos',
+    shortDesc: 'Stickers de transferencia directa con relieve 3D táctil, barniz brillante y adherencia ultra fuerte sin calor.',
+    fullDesc: 'La tecnología UV DTF revoluciona el marcaje de productos rígidos y promocionales. Combina tintas UV curadas instantáneamente con barniz transparente que genera un elegante relieve 3D. Se adhiere en frío por presión directa sobre termos de acero, tazas, acrílico, vidrio, madera y plástico sin necesidad de planchas térmicas.',
+    iconName: 'Sparkles',
+    image: '/images/banners/banner-uvdtf.webp',
+    features: [
+      'Relieve táctil 3D y acabado con barniz brillante protector.',
+      'Aplicación en frío sin plancha ni calor directo.',
+      'Resistente al agua, rozamiento diario y uso rudo en termos y tazas.'
+    ]
+  },
+  {
+    id: 'serv-bordados-computarizados',
+    slug: 'bordados-computarizados',
+    title: 'Bordados Computarizados & Ponchados',
+    shortDesc: 'Bordado industrial de logotipos de alta definición en suéteres polo, gorras panamá, camisas de trabajo y uniformes.',
+    fullDesc: 'Personalización textil mediante bordado computarizado industrial de máxima durabilidad y prestigio visual. Digitalizamos tu matriz o logotipo para reproducirlo con hilos de alta resistencia al desgaste y decoloración en gorras estructuradas, suéteres tipo polo, camisas tipo pescador, delantales y chalecos corporativos.',
+    iconName: 'Shirt',
+    image: '/images/banners/banner-bordados.webp',
+    features: [
+      'Digitalización y conversión de logotipos a matriz de bordado.',
+      'Bordado frontal en gorras modelo Panamá 7 y clásicas.',
+      'Acabado elegante e indestructible para uniformes corporativos.'
+    ]
+  },
+  {
     id: 'serv-flyers-folletos',
     slug: 'flyers-y-folletos',
     title: 'Flyers & Folletos Publicitarios',
@@ -42,23 +84,9 @@ export const MOCK_SERVICES: Service[] = [
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop',
     features: [
       'Formatos Media Carta, Carta, Trípticos',
-      'Afiches',
-      'Volantes',
-      'Saltarines Publicitarios'
-    ]
-  },
-  {
-    id: 'serv-material-promocional-pop',
-    slug: 'material-promocional-pop',
-    title: 'Material Promocional & POP Premium',
-    shortDesc: 'Soluciones corporativas y exhibidores de Punto de Venta (POP) diseñados para destacar tu marca con acabados de alta fidelidad.',
-    fullDesc: 'Impulsa el posicionamiento e impacto de tu marca con soluciones corporativas y exhibidores de Punto de Venta (POP) diseñados para destacar. Desarrollamos merchandising exclusivo, regalos ejecutivos y elementos de exhibición comercial con acabados de alta fidelidad que transmiten profesionalismo, elegancia y funcionalidad en cada evento, campaña o punto de venta.',
-    iconName: 'Gift',
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000&auto=format&fit=crop',
-    features: [
-      'Variedad de Catálogo Corporativo: Amplia gama de artículos de merchandising (libretas, bolígrafos metálicos, termos, memorias USB y accesorios de oficina).',
-      'Integración de marcas corporativas mediante grabado láser, tampografía, serigrafía y estampado digital según las necesidades del producto.',
-      'Capacidad de respuesta y producción tanto para entregas corporativas exclusivas de bajo tiraje como para campañas masivas.'
+      'Afiches publicitarios de alto impacto',
+      'Volantes en papel satinado de 80 y 100 lbs',
+      'Talonarios de factura y notas de entrega'
     ]
   }
 ];
@@ -88,39 +116,53 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 'post-2',
-    slug: 'ventajas-del-laminado-soft-touch-en-tarjetas',
-    title: '¿Qué es el acabado Soft-Touch y por qué revoluciona las tarjetas de presentación?',
-    excerpt: 'El tacto es uno de los sentidos más potentes al hacer networking. Conoce cómo el laminado Soft-Touch le da un valor percibido de lujo a tu marca.',
-    content: `<p>En un mundo saturado de tarjetas impresas en papeles delgados, la experiencia táctil se ha convertido en un diferenciador clave.</p>
-    <p>El laminado <strong>Soft-Touch</strong> aplica una película microscópica que otorga una textura aterciopelada al tacto, similar a la piel de un melocotón o la gamuza fina.</p>
-    <p>Además del aspecto táctil, este laminado protege el impreso de huellas dactilares, rayones ligeros y humedad, manteniendo tus tarjetas impecables en la billetera de tu cliente por meses.</p>`,
-    category: 'Materiales & Acabados',
-    categorySlug: 'materiales',
-    date: '28 de Julio, 2026',
-    author: 'Fernando (RufPixel)',
+    slug: 'acabados-premium-en-tarjetas-de-presentacion',
+    title: 'Tarjetas de Presentación que Venden: Acabados Premium que Elevan tu Marca',
+    excerpt: 'Conoce el laminado Soft-Touch, el barniz UV brillante localizado y el hot-stamping metálico para causar una primera impresión imborrable.',
+    content: `<p>En el mundo empresarial, tu tarjeta de presentación sigue siendo uno de los puntos de contacto físico más relevantes. No se trata solo de entregar un papel con tus datos, sino de transmitir solidez y confianza en cuestión de segundos.</p>
+    <h3>El poder del tacto: Laminado Soft-Touch</h3>
+    <p>El acabado aterciopelado tipo Soft-Touch ofrece una experiencia táctil placentera que destaca inmediatamente frente a las tarjetas convencionales.</p>
+    <h3>Brillo localizado (Spot UV)</h3>
+    <p>Aplicar un barniz UV brillante exclusivamente sobre el logotipo o detalles clave genera un contraste elegante entre la superficie mate y las zonas reflectoras.</p>`,
+    category: 'Papelería Corporativa',
+    categorySlug: 'corporativo',
+    date: '10 de Agosto, 2026',
+    author: 'Equipo RufPixel',
     readTime: '3 min de lectura',
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop',
     tags: ['Soft-Touch', 'Tarjetas', 'Branding']
   },
   {
     id: 'post-3',
-    slug: 'banners-rollup-vs-lona-simple-para-eventos',
-    title: 'Roll-Up vs Lona Convencional: ¿Cuál elegir para tu próximo evento en Panamá?',
-    excerpt: 'Comparamos costos, portabilidad y tiempos de montaje entre estructuras Roll-Up retráctiles y lonas con ojales tradicionales.',
-    content: `<p>Al planificar tu presencia en una feria o evento corporativo en Panamá, la elección del material promocional en gran formato es decisiva.</p>
-    <p>Los <strong>Banners Roll-Up</strong> ofrecen una presentación extremadamente profesional y se arman en menos de 30 segundos sin herramientas. Incluyen su propio estuche acolchado y protegen la gráfica durante el transporte.</p>
-    <p>Por otro lado, las <strong>lonas con ojales</strong> son ideales para colgar en paredes externas, toldos o rejas donde el espacio vertical no cuenta con piso plano de apoyo.</p>`,
+    slug: 'rollup-vs-banner-arana-cual-elegir-para-tu-evento',
+    title: 'Roll-Up Retráctil vs Banner Araña: ¿Cuál conviene más para tu evento o stand?',
+    excerpt: 'Analizamos costos, durabilidad, facilidad de armado y portabilidad para que elijas la estructura publicitaria ideal para ferias.',
+    content: `<p>Cuando organizas la presencia de tu empresa en una feria o evento corporativo en Panamá, la visibilidad es fundamental. Dos de las soluciones portátiles más populares son el Banner Roll-Up y la estructura tipo Araña.</p>
+    <h3>Roll-Up Retráctil de Aluminio</h3>
+    <p><strong>Ventajas:</strong> Su mecanismo retráctil protege la lona durante el transporte, se arma en menos de 30 segundos y ofrece una base elegante y estable con estuche de lona reforzado.</p>
+    <h3>Banner tipo Araña (X-Banner)</h3>
+    <p><strong>Ventajas:</strong> Es una opción sumamente económica y ligera, perfecta si cuentas con un presupuesto ajustado o necesitas renovar el arte con mucha frecuencia.</p>`,
     category: 'Gran Formato',
     categorySlug: 'gran-formato',
-    date: '15 de Julio, 2026',
+    date: '18 de Agosto, 2026',
     author: 'Equipo RufPixel',
     readTime: '5 min de lectura',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop',
     tags: ['Eventos', 'Banners', 'Publicidad']
   }
 ];
 
-export const MOCK_TESTIMONIALS = [
+export interface Testimonial {
+  id: string;
+  name: string;
+  company: string;
+  quote: string;
+  rating: number;
+  avatar: string;
+  googleVerified?: boolean;
+}
+
+export const MOCK_TESTIMONIALS: Testimonial[] = [
   {
     id: 't-1',
     name: 'Johaneth Amestoy',
@@ -158,3 +200,4 @@ export const MOCK_TESTIMONIALS = [
     googleVerified: true
   }
 ];
+

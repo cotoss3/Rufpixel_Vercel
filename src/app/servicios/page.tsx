@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { MOCK_SERVICES } from '@/lib/mockData';
-import { CreditCard, Maximize2, FileText, Tag, Gift, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { CreditCard, Maximize2, FileText, Tag, Gift, CheckCircle2, ArrowRight, Sparkles, Printer, Shirt } from 'lucide-react';
 
 export const metadata = {
   title: 'Servicios de Impresión Digital & Gran Formato — RufPixel Panamá',
-  description: 'Descubre nuestros servicios de impresión: Tarjetas de presentación, Banners Roll-up, Volantes, Stickers troquelados y Gift cards.',
+  description: 'Descubre nuestros servicios de impresión: DTF textil, UV DTF, Bordados computarizados, Grabados láser, Banners Roll-up y Volantes.',
 };
 
 export default function ServiciosPage() {
@@ -16,6 +16,8 @@ export default function ServiciosPage() {
     FileText: <FileText className="w-8 h-8 text-[#FF5E14]" />,
     Tag: <Tag className="w-8 h-8 text-[#FF5E14]" />,
     Gift: <Gift className="w-8 h-8 text-[#FF5E14]" />,
+    Printer: <Printer className="w-8 h-8 text-[#FF5E14]" />,
+    Shirt: <Shirt className="w-8 h-8 text-[#FF5E14]" />,
   };
 
   return (

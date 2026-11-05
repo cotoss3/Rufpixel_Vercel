@@ -25,6 +25,8 @@ export default async function HomePage() {
     FileText: <FileText className="w-8 h-8 text-[#FF5E14]" />,
     Tag: <Tag className="w-8 h-8 text-[#FF5E14]" />,
     Gift: <Gift className="w-8 h-8 text-[#FF5E14]" />,
+    Printer: <Printer className="w-8 h-8 text-[#FF5E14]" />,
+    Shirt: <Shirt className="w-8 h-8 text-[#FF5E14]" />,
   };
 
   return (

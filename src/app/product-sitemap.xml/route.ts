@@ -34,7 +34,7 @@ export async function GET() {
 ${productSlugs
   .map(
     (slug) => `  <url>
-    <loc>${baseUrl}/productos/${slug}/</loc>
+    <loc>${baseUrl}/productos/${slug}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
