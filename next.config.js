@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const gscPackRedirects = require('./src/lib/gsc-pack-redirects.json');
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -9,10 +11,10 @@ const nextConfig = {
       },
     ],
   },
-  // 301 Permanent SEO Redirects to preserve 100% Google traffic and prevent 404 errors
+  // 301 Permanent SEO Redirects to preserve 100% Google traffic and eliminate 404 errors
   async redirects() {
     return [
-      // 1. WordPress Canonical Product URLs (/productos/[slug]) - Preserve 100% SEO traffic
+      // 1. WordPress Canonical Product URLs (/producto/[slug]) - Preserve 100% SEO traffic
       {
         source: '/producto/:slug*',
         destination: '/productos/:slug*',
@@ -126,6 +128,8 @@ const nextConfig = {
         destination: '/checkout',
         permanent: true,
       },
+      // 5. Google Search Console Legacy Pack URLs (/productos/[slug]-[cantidad]-uds) -> Base Product
+      ...gscPackRedirects,
     ];
   },
   // Transparent Proxy Rewrites: forward /wp-admin, /wp-login.php, /wp-json to WordPress host
