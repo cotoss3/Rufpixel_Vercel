@@ -249,6 +249,7 @@ export function isProductInCategory(
 
 export function formatImageUrl(photo?: string): string {
   if (!photo) return 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop';
+  if (photo.startsWith('/images/')) return photo;
   if (photo.startsWith('http')) {
     if (photo.includes('rufpixel.com/uploads/')) {
       return photo.replace('rufpixel.com/uploads/', 'rufpixel.com/wp-content/uploads/');
@@ -615,8 +616,8 @@ function formatRawProducts(rawData: any[]): Product[] {
       category: catDisplayName,
       categorySlug: catSlug,
       categories: catList,
-      image: prod.images?.[0]?.src || formatImageUrl(localMatch?.photo),
-      gallery: prod.images && prod.images.length > 0 ? prod.images.map((img: any) => img.src) : [formatImageUrl(localMatch?.photo)],
+      image: localMatch?.image || `/images/products/${prod.slug}.webp` || prod.images?.[0]?.src,
+      gallery: (localMatch?.gallery && localMatch.gallery.length > 0) ? localMatch.gallery : [localMatch?.image || `/images/products/${prod.slug}.webp`],
       stock: prod.is_in_stock ?? 100,
       type: prod.type || 'simple',
       attributes: parsedAttributes,
