@@ -11,7 +11,7 @@ export const MOCK_SERVICES: Service[] = [
     "shortDesc": "Bordamos suéteres tipo polo, gorras estructuradas y uniformes corporativos con hilos industriales de alta durabilidad que no pierden color.",
     "fullDesc": "Personalizamos tus prendas con matrices de ponchado computarizado de alta precisión. Reproducimos logotipos complejos, nombres corporativos y escudos sobre gorras modelo Panamá 7, suéteres polo, camisas tipo pescador/oxford, delantales y chalecos de seguridad. Si solo necesitas 1 suéter para ti o una muestra, te lo bordamos en Zona Pixel. Si requieres dotar a todo tu personal, aplicamos tarifas con escala de descuento por volumen y ponchado bonificado.",
     "iconName": "Shirt",
-    "image": "/images/banners/banner-bordados.webp",
+    "image": "/images/services/bordados-computarizados-polo-panama.webp",
     "detalFeatures": [
       "Desde 1 sola pieza sin mínimos obligatorios.",
       "Ponchado y muestra previa aprobada antes de bordar.",
@@ -92,7 +92,7 @@ export const MOCK_SERVICES: Service[] = [
     "shortDesc": "Marcado láser permanente e indestructible sobre acero inoxidable, aluminio, madera, cuero y acrílico. Detalles finos y logotipos corporativos.",
     "fullDesc": "El grabado láser es el estándar de máxima distinción y durabilidad para personalización corporativa y ejecutiva en Panamá. Mediante tecnología láser de fibra óptica y CO2, removemos microcapas superficiales para revelar el material base con una nitidez absoluta, garantizando que el grabado no se borre, no se despegue ni se deteriore con el uso intensivo ni el lavado. Grabamos desde 1 termo Stanley o botella individual hasta lotes de cientos de bolígrafos y libretas corporativas.",
     "iconName": "Sparkles",
-    "image": "/images/banners/banner-grabados-laser.webp",
+    "image": "/images/services/grabado-laser-termos-vasos-panama.webp",
     "detalFeatures": [
       "Graba tu propio termo, vaso térmico o accesorio desde 1 pieza.",
       "Simulación digital previa para confirmar posición y tamaño del logo.",
@@ -146,7 +146,7 @@ export const MOCK_SERVICES: Service[] = [
     "shortDesc": "Impresión nítida en papel satinado brillante de 80 y 100 lbs. Volantes media carta, cartas, trípticos informativos y afiches para campañas efectivas.",
     "fullDesc": "Comunica las promociones y aperturas de tu negocio con material publicitario impreso en colores vivos y papel de excelente tacto. En RufPixel imprimimos volantes publicitarios, dípticos, trípticos corporativos, afiches y tarjetas de presentación con acabados de primera categoría. Ofrecemos tirajes cortos digitales para promociones puntuales sin inventario estancado, y producción masiva por millares con precios directos de imprenta para distribución masiva en Panamá.",
     "iconName": "FileText",
-    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop",
+    "image": "/images/services/papeleria-corporativa-libretas-panama.webp",
     "detalFeatures": [
       "Tirajes cortos desde 100 o 250 volantes para probar promociones.",
       "Ideal para eventos locales, restaurantes, salones y nuevos negocios.",
@@ -186,7 +186,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '2 de Agosto, 2026',
     author: 'Equipo RufPixel',
     readTime: '4 min de lectura',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop',
+    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
     tags: ['Pre-prensa', 'CMYK', 'Diseño Gráfico', 'Tutorial']
   },
   {
