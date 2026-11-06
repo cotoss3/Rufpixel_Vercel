@@ -15,8 +15,6 @@ ${MOCK_BLOG_POSTS
     (p) => `  <url>
     <loc>${baseUrl}/blog/${p.slug}</loc>
     <lastmod>${now}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>`
   )
   .join('\n')}

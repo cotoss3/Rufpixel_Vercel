@@ -2,7 +2,70 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { getProductBySlug } from '@/lib/woocommerce';
 import ProductDetailClient from './ProductDetailClient';
-import { ProductSchema } from '@/components/seo/SchemaOrg';
+
+/**
+ * Generador matemático de títulos SEO (Regla 1: 50 a 60 caracteres exactos)
+ * Fórmula: [Keyword Principal]: [Ángulo Concreto / Precios] | RufPixel
+ */
+function buildSeoTitle(name: string): string {
+  const brand = ' | RufPixel'; // 11 chars
+  const availableLength = 59 - brand.length; // 48 chars max for body
+
+  // Base options based on length
+  const option1 = `${name}: Precios al Mayor${brand}`;
+  if (option1.length >= 50 && option1.length <= 60) return option1;
+
+  const option2 = `${name} al Mayor en Panamá${brand}`;
+  if (option2.length >= 50 && option2.length <= 60) return option2;
+
+  const option3 = `${name}: Paquetes por Mayor${brand}`;
+  if (option3.length >= 50 && option3.length <= 60) return option3;
+
+  if (name.length + brand.length >= 50 && name.length + brand.length <= 60) {
+    return `${name}${brand}`;
+  }
+
+  // If too short, pad
+  if (name.length + brand.length < 50) {
+    const padded = `${name} Personalizado en Panamá${brand}`;
+    if (padded.length >= 50 && padded.length <= 60) return padded;
+    const padded2 = `${name}: Impresión Corporativa${brand}`;
+    if (padded2.length >= 50 && padded2.length <= 60) return padded2;
+    return `${name} - Catálogo Mayorista${brand}`.slice(0, 59);
+  }
+
+  // If too long, truncate name with ellipsis
+  const trimmedName = name.slice(0, availableLength - 3).trim();
+  return `${trimmedName}...${brand}`;
+}
+
+/**
+ * Generador de meta description (Regla 2: 120 a 155 caracteres exactos)
+ * Incluye keyword al inicio, precios/datos numéricos reales y CTA directo. Cero clichés.
+ */
+function buildSeoDescription(name: string, unitPrice: number, techniques: string[]): string {
+  const priceStr = unitPrice > 0 ? `$${unitPrice.toFixed(2)}/ud` : 'precio mayorista';
+  const techStr = techniques && techniques.length > 0 ? techniques[0] : 'personalizado';
+
+  // Construct target message
+  let desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds. Impresión en ${techStr} con entrega en 24-48h en Panamá. ¡Cotiza por WhatsApp!`;
+
+  if (desc.length > 155) {
+    desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds con entrega en 24-48h en Panamá. ¡Cotiza por WhatsApp!`;
+  }
+
+  if (desc.length > 155) {
+    const maxNameLen = 155 - `Compra  desde ${priceStr} por mayor en Panamá. ¡Cotiza por WhatsApp!`.length;
+    desc = `Compra ${name.slice(0, maxNameLen)} desde ${priceStr} por mayor en Panamá. ¡Cotiza por WhatsApp!`;
+  }
+
+  // If too short (< 120)
+  if (desc.length < 120) {
+    desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds. Impresión profesional con entrega en 24 a 48h en Panamá. ¡Cotiza por WhatsApp ahora!`;
+  }
+
+  return desc.slice(0, 155);
+}
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const product = await getProductBySlug(params.slug);
@@ -13,21 +76,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
-  const cleanDescription = (product.shortDescription || product.description || '')
-    .replace(/<[^>]+>/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-
-  // Exact Yoast/RankMath WordPress meta description structure
-  const seoDescription = cleanDescription.length > 5
-    ? `Compra ${product.name} al mejor precio. ${cleanDescription}. Calidad premium en RufPixel. ¡Cotiza ahora!`
-    : `Compra ${product.name} al por mayor en RufPixel Panamá. Personalización corporativa en alta definición con técnicas profesionales. ¡Cotiza ahora!`;
-
+  const seoTitle = buildSeoTitle(product.name);
+  const seoDescription = buildSeoDescription(product.name, product.price, product.techniques || []);
   const canonicalUrl = `https://rufpixel.com/productos/${product.slug}/`;
 
   return {
-    title: `${product.name} | RufPixel`,
-    description: seoDescription.slice(0, 160),
+    title: seoTitle,
+    description: seoDescription,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -39,8 +94,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       'max-video-preview': -1,
     },
     openGraph: {
-      title: `${product.name} | RufPixel`,
-      description: seoDescription.slice(0, 160),
+      title: seoTitle,
+      description: seoDescription,
       url: canonicalUrl,
       siteName: 'RufPixel',
       locale: 'es_PA',
@@ -56,8 +111,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${product.name} | RufPixel`,
-      description: seoDescription.slice(0, 160),
+      title: seoTitle,
+      description: seoDescription,
       images: [product.image],
     },
     keywords: [
@@ -71,13 +126,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function ProductosDetailPage({ params }: { params: { slug: string } }) {
+export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
   const product = await getProductBySlug(params.slug);
+
+  if (!product) {
+    return (
+      <div className="min-h-[60vh] flex flex-col items-center justify-center p-4">
+        <h1 className="text-2xl font-bold font-outfit text-gray-900 mb-2">Producto no encontrado</h1>
+        <p className="text-gray-500 mb-6">El producto que buscas no existe o ha sido retirado del catálogo.</p>
+      </div>
+    );
+  }
 
   return (
     <>
-      {product && <ProductSchema product={product} />}
-      <ProductDetailClient product={product || undefined} slug={params.slug} />
+      <ProductDetailClient product={product} />
     </>
   );
 }

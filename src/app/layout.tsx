@@ -10,7 +10,7 @@ import AiWhatsAppAssistant from '@/components/common/AiWhatsAppAssistant';
 
 export const metadata: Metadata = {
   title: 'Imprenta en Panamá: DTF, Bordados y Banners | RufPixel',
-  description: 'Taller de impresión y personalización en Panamá. DTF textil, UV DTF, bordados computarizados, grabado láser y promocionales. Envíos rápidos a todo el país.',
+  description: 'Taller de imprenta en Panamá: DTF textil, bordados, grabado láser y promocionales al por mayor. Entregas en 24-48h. ¡Cotiza por WhatsApp!',
   keywords: [
     'Impresión Panamá', 'Imprenta en La Chorrera', 'DTF textil Panamá', 'UV DTF Panamá',
     'Bordados computarizados Panamá', 'Grabado láser Panamá', 'Stickers personalizados Panamá',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL('https://rufpixel.com'),
   alternates: {
-    canonical: './',
+    canonical: 'https://rufpixel.com/',
   },
   icons: {
     icon: [

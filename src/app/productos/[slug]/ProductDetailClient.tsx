@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
-import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck, FileText, Send, MessageCircle } from 'lucide-react';
+import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck, FileText, Send, MessageCircle, AlertTriangle, HelpCircle, Check } from 'lucide-react';
 import Link from 'next/link';
-import { ProductSchema } from '@/components/seo/SchemaOrg';
+import { ProductSchema, BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
 import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
 import QuoteModal from '@/components/shop/QuoteModal';
 import { QuoteItem } from '@/lib/types';
@@ -186,9 +186,48 @@ export default function ProductDetailClient({
 
   const qtyOptions = ['50', '100', '250'];
 
+  const breadcrumbs = [
+    { name: 'Inicio', url: 'https://rufpixel.com' },
+    { name: 'Tienda', url: 'https://rufpixel.com/tienda' },
+    { name: product.category || 'Catálogo', url: `https://rufpixel.com/tienda/${(product.category || '').toLowerCase().replace(/\s+/g, '-')}` },
+    { name: product.name, url: `https://rufpixel.com/productos/${product.slug}` },
+  ];
+
+  const productFaqs = [
+    {
+      question: `¿Cuál es el tiempo de entrega de ${product.name} en Panamá?`,
+      answer: 'El tiempo promedio de producción y entrega es de 24 a 48 horas laborables una vez aprobado el arte digital y validado el anticipo. Envíos disponibles a Ciudad de Panamá y todo el interior.'
+    },
+    {
+      question: `¿Puedo pedir una muestra previa de ${product.name} antes de la orden mayorista?`,
+      answer: 'Sí. Siempre enviamos una prueba digital 100% fiel de tu diseño antes de imprimir. Si requieres muestra física en taller, podemos gestionarla vía WhatsApp al +507 6445-4084.'
+    },
+    {
+      question: '¿Qué métodos de pago aceptan para pedidos corporativos?',
+      answer: 'Aceptamos Yappy Comercial directo, transferencias ACH bancarias en Panamá y pagos contraentrega previa confirmación del pedido.'
+    },
+    {
+      question: '¿En qué formatos deben enviar el logotipo para personalización?',
+      answer: 'Recomendamos archivos vectoriales en formato PDF, AI, EPS o imágenes PNG en alta resolución (mínimo 300 DPI) con fondo transparente para máxima fidelidad de color.'
+    }
+  ];
+
   return (
     <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
       <ProductSchema product={product} />
+      <BreadcrumbListSchema items={breadcrumbs} />
+
+      <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs text-gray-500 flex-wrap">
+        <Link href="/" className="hover:text-[#FF5E14] transition-colors">Inicio</Link>
+        <span>/</span>
+        <Link href="/tienda" className="hover:text-[#FF5E14] transition-colors">Tienda</Link>
+        <span>/</span>
+        <Link href={`https://rufpixel.com/tienda/${(product.category || '').toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-[#FF5E14] transition-colors">
+          {product.category}
+        </Link>
+        <span>/</span>
+        <span className="text-gray-900 font-semibold truncate max-w-xs">{product.name}</span>
+      </nav>
 
       <div>
         <Link href="/tienda" className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:underline">
@@ -200,7 +239,7 @@ export default function ProductDetailClient({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Column: PDP Image Gallery */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="rounded-3xl overflow-hidden border border-gray-200 bg-gray-50 aspect-square p-8 relative shadow-md flex items-center justify-center">
+          <div className="rounded-3xl overflow-hidden border border-gray-200 bg-gray-50 aspect-square min-h-[360px] p-8 relative shadow-md flex items-center justify-center">
             <img 
               src={selectedImage || product.image} 
               alt={product.name} 
@@ -509,6 +548,30 @@ export default function ProductDetailClient({
               </div>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* Regla 16: FAQPage Schema & Bloque de Preguntas Frecuentes Reales */}
+      <FAQPageSchema questions={productFaqs} />
+
+      <div className="mt-16 pt-12 border-t border-gray-200 space-y-6">
+        <div className="flex items-center space-x-2 text-[#FF5E14]">
+          <HelpCircle className="w-5 h-5" />
+          <h2 className="text-xl font-extrabold text-gray-900 font-outfit">
+            Preguntas Frecuentes sobre {product.name}
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {productFaqs.map((faq, i) => (
+            <div key={i} className="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
+              <h3 className="font-bold text-sm text-gray-900 font-outfit">
+                {faq.question}
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 

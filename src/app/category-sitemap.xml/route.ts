@@ -27,8 +27,6 @@ ${uniqueCategories
     (c) => `  <url>
     <loc>${baseUrl}/tienda/${c.slug}</loc>
     <lastmod>${now}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>`
   )
   .join('\n')}

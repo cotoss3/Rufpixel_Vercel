@@ -15,8 +15,6 @@ ${MOCK_SERVICES
     (s) => `  <url>
     <loc>${baseUrl}/servicios/${s.slug}</loc>
     <lastmod>${now}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>`
   )
   .join('\n')}

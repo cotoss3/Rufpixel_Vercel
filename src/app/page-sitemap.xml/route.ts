@@ -28,8 +28,6 @@ ${pages
     (p) => `  <url>
     <loc>${p.url}</loc>
     <lastmod>${now}</lastmod>
-    <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
   </url>`
   )
   .join('\n')}

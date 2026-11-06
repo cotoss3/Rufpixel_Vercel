@@ -36,8 +36,6 @@ ${productSlugs
     (slug) => `  <url>
     <loc>${baseUrl}/productos/${slug}</loc>
     <lastmod>${now}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>`
   )
   .join('\n')}
