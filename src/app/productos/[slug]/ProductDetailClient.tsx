@@ -306,6 +306,55 @@ export default function ProductDetailClient({
             </div>
           </div>
 
+          
+          {/* Regla 9: Caja Ejecutiva "Lo esencial, por si no lees todo" (dk-takeaways) */}
+          <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 sm:p-5 space-y-2 text-xs">
+            <div className="flex items-center space-x-2 text-amber-900 font-extrabold uppercase tracking-wider text-[11px]">
+              <Tag className="w-3.5 h-3.5 text-[#FF5E14]" />
+              <span>Lo esencial, por si no lees todo</span>
+            </div>
+            <ul className="space-y-1.5 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Pedido mínimo:</strong> Paquetes mayoristas a partir de <strong>50 unidades</strong> (tramos de 50, 100 y 250).</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Técnicas recomendadas:</strong> {product.techniques?.join(', ') || 'Personalización de alta resistencia en taller'}.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Tiempos de entrega:</strong> 24 a 48 horas tras aprobación del arte digital en Ciudad de Panamá y Panamá Oeste.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Precios transparentes:</strong> Desde <strong>${displayUnitPrice.toFixed(2)} USD</strong> por unidad con descuentos automáticos por volumen.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Regla 8: Módulo de Honestidad Radical "Lo que este producto NO resuelve" */}
+          <div className="bg-red-50/50 border border-red-200/70 rounded-2xl p-4 sm:p-5 space-y-2 text-xs">
+            <div className="flex items-center space-x-2 text-red-900 font-extrabold uppercase tracking-wider text-[11px]">
+              <AlertTriangle className="w-3.5 h-3.5 text-red-500" />
+              <span>Lo que este producto o técnica NO resuelve</span>
+            </div>
+            <ul className="space-y-1.5 text-gray-700">
+              <li className="flex items-start space-x-2">
+                <span className="text-red-500 font-bold shrink-0">•</span>
+                <span>No sustituye un proceso de vectorizado profesional si el logotipo suministrado se encuentra en baja resolución o pixelado.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-red-500 font-bold shrink-0">•</span>
+                <span>No es adecuado para entregas de emergencia de menos de 12 horas sin validación previa de stock y capacidad en máquinas.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-red-500 font-bold shrink-0">•</span>
+                <span>Los colores en pantalla (RGB) pueden tener ligeras variaciones físicas al imprimirse en tintas de taller o transferencias textiles.</span>
+              </li>
+            </ul>
+          </div>
+
           {/* Company Bullet Points & Benefits (Replaces wholesale disclaimer) */}
           <div className="bg-[#0D0D0D] text-white p-5 rounded-2xl border border-gray-800 space-y-3 text-xs shadow-lg">
             <div className="flex items-center space-x-2 text-[#FF5E14] font-extrabold text-sm border-b border-gray-800 pb-2">
