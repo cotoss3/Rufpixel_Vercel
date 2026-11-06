@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   return {
     alternates: {
-      canonical: `https://rufpixel.com/productos/${params.slug}/`,
+      canonical: `https://rufpixel.com/productos/${params.slug}`,
     },
     robots: {
       index: false,

@@ -50,8 +50,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/servicios/material-promocional-pop" className="hover:text-[#FF5E14] transition-colors flex items-center">
-                  <span>Material Promocional & POP</span>
+                <Link href="/servicios/dtf-textil" className="hover:text-[#FF5E14] transition-colors flex items-center">
+                  <span>DTF Textil & UV DTF</span>
                 </Link>
               </li>
             </ul>

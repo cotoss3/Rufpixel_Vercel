@@ -41,6 +41,12 @@ const nextConfig = {
         destination: '/tienda/:slug*',
         permanent: true,
       },
+      // Fix legacy service URL
+      {
+        source: '/servicios/material-promocional-pop',
+        destination: '/tienda',
+        permanent: true,
+      },
       // 3. Old Shop / Catalog pages
       {
         source: '/shop',

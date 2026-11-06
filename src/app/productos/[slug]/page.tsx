@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const seoTitle = buildSeoTitle(product.name);
   const seoDescription = buildSeoDescription(product.name, product.price, product.techniques || []);
-  const canonicalUrl = `https://rufpixel.com/productos/${product.slug}/`;
+  const canonicalUrl = `https://rufpixel.com/productos/${product.slug}`;
 
   return {
     title: seoTitle,
