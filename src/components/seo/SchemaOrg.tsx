@@ -67,7 +67,8 @@ export function OrganizationSchema() {
       'Impresión en Gran Formato y Banners Roll-Up',
       'Artículos Promocionales Corporativos al por Mayor',
       'Stickers Troquelados y Etiquetas Adhesivas',
-      'Sublimación y Regalos Publicitarios'
+      'Sublimación y Regalos Publicitarios',
+      'Tomas Aéreas y Grabación con Drones 4K'
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -119,6 +120,14 @@ export function OrganizationSchema() {
             '@type': 'Service',
             name: 'Flyers & Folletos Publicitarios',
             url: 'https://rufpixel.com/servicios/flyers-y-folletos',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Tomas Aéreas y Grabación con Drones 4K',
+            url: 'https://rufpixel.com/servicios/tomas-aereas-drones',
           },
         },
       ],

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { MOCK_SERVICES } from '@/lib/mockData';
-import { CreditCard, Maximize2, FileText, Tag, Gift, CheckCircle2, ArrowRight, Sparkles, Printer, Shirt } from 'lucide-react';
+import { CreditCard, Maximize2, FileText, Tag, Gift, CheckCircle2, ArrowRight, Sparkles, Printer, Shirt, Video } from 'lucide-react';
 
 export const metadata = {
   title: 'Imprenta en Panamá al Por Mayor y Detal | RufPixel',
@@ -21,6 +21,7 @@ export default function ServiciosPage() {
     Gift: <Gift className="w-8 h-8 text-[#FF5E14]" />,
     Printer: <Printer className="w-8 h-8 text-[#FF5E14]" />,
     Shirt: <Shirt className="w-8 h-8 text-[#FF5E14]" />,
+    Video: <Video className="w-8 h-8 text-[#FF5E14]" />,
   };
 
   return (

@@ -163,6 +163,33 @@ export const MOCK_SERVICES: Service[] = [
       "Impresión full color por una cara (tiro) o ambas caras (tiro y retiro)",
       "Cortes limpios y entrega puntual con envíos a todo Panamá"
     ]
+  },
+  {
+    "id": "serv-tomas-aereas-drones",
+    "slug": "tomas-aereas-drones",
+    "metaTitle": "Tomas Aéreas y Drones en Panamá en 4K | RufPixel",
+    "metaDesc": "Servicio de tomas aéreas y video con drones en Panamá en 4K. Cobertura de eventos, bienes raíces y obras. Pagos por Yappy y ACH. ¡Cotiza por WhatsApp!",
+    "title": "Tomas Aéreas y Grabación con Drones en Panamá",
+    "shortDesc": "Fotografía y video aéreo en resolución 4K a 60fps para bienes raíces, avance de obras civiles, eventos corporativos y comerciales en Panamá.",
+    "fullDesc": "Capturamos perspectivas aéreas de alto impacto para destacar proyectos residenciales, eventos corporativos, avance de obras civiles y producciones comerciales en Ciudad de Panamá, Panamá Oeste y provincias centrales. Operamos con drones profesionales equipados con sensores de video 4K a 60fps, perfiles planos D-Log para corrección de color y estabilización giroscópica de 3 ejes. Ofrecemos paquetes flexibles desde vuelos rápidos para terrenos hasta jornadas completas de grabación con entrega de archivos en bruto o reels editados listos para redes sociales.",
+    "iconName": "Video",
+    "image": "/images/services/tomas-aereas-drones-panama.webp",
+    "detalFeatures": [
+      "Vuelo puntual para fotografía de terrenos, casas o inspección de techos.",
+      "Fotografías aéreas en alta resolución (RAW + JPEG) con retoque básico.",
+      "Entrega rápida de archivos digitales en bruto por Google Drive o WeTransfer."
+    ],
+    "wholesaleFeatures": [
+      "Jornadas de grabación media o completa para constructoras y eventos corporativos.",
+      "Seguimiento periódico programado de avance de obra (mensual o quincenal).",
+      "Video editado 4K con musicalización con derechos comerciales y factura fiscal panameña."
+    ],
+    "features": [
+      "Grabación de video en 4K a 60fps con perfiles de color cinemático D-Log",
+      "Estabilización giroscópica de 3 ejes para tomas fluidas sin vibraciones",
+      "Cobertura en Ciudad de Panamá, Panamá Oeste y provincias centrales",
+      "Operación responsable y cumplimiento de normativas de la AAC de Panamá"
+    ]
   }
 ];
 

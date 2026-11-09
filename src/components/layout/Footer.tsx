@@ -54,6 +54,11 @@ export default function Footer() {
                   <span>DTF Textil & UV DTF</span>
                 </Link>
               </li>
+              <li>
+                <Link href="/servicios/tomas-aereas-drones" className="hover:text-[#FF5E14] transition-colors flex items-center">
+                  <span>Tomas Aéreas con Drones</span>
+                </Link>
+              </li>
             </ul>
           </div>
 

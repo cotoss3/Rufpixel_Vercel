@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { 
   CreditCard, Maximize2, FileText, Tag, Gift, ArrowRight, ShieldCheck, 
   Sparkles, CheckCircle2, Clock, Truck, Calculator, Star, ShoppingBag, ArrowUpRight,
-  Zap, Scissors, Printer, Layers, MessageCircle, Shirt
+  Zap, Scissors, Printer, Layers, MessageCircle, Shirt, Video
 } from 'lucide-react';
 import { StickerIcon } from '@/components/icons/StickerIcon';
 import { MOCK_SERVICES, MOCK_TESTIMONIALS } from '@/lib/mockData';
@@ -27,6 +27,7 @@ export default async function HomePage() {
     Gift: <Gift className="w-8 h-8 text-[#FF5E14]" />,
     Printer: <Printer className="w-8 h-8 text-[#FF5E14]" />,
     Shirt: <Shirt className="w-8 h-8 text-[#FF5E14]" />,
+    Video: <Video className="w-8 h-8 text-[#FF5E14]" />,
   };
 
   return (
@@ -147,7 +148,7 @@ export default async function HomePage() {
             >
               <div className="space-y-4">
                 <div className="w-14 h-14 rounded-2xl bg-[#FF5E14]/10 flex items-center justify-center group-hover:bg-[#FF5E14] transition-colors">
-                  {React.cloneElement(iconMap[service.iconName] as React.ReactElement, {
+                  {React.cloneElement((iconMap[service.iconName] || iconMap.Sparkles) as React.ReactElement, {
                     className: "w-7 h-7 text-[#FF5E14] group-hover:text-white transition-colors"
                   })}
                 </div>
