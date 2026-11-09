@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/checkout/', '/mi-cuenta/', '/cotizacion/'],
+        disallow: ['/checkout', '/mi-cuenta', '/cotizacion'],
       },
       {
         userAgent: [
@@ -20,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
           'anthropic-ai',
         ],
         allow: ['/', '/llms.txt'],
-        disallow: ['/checkout/', '/mi-cuenta/', '/cotizacion/'],
+        disallow: ['/checkout', '/mi-cuenta', '/cotizacion'],
       },
     ],
     sitemap: 'https://rufpixel.com/sitemap.xml',

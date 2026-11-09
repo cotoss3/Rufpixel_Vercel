@@ -101,7 +101,7 @@ const nextConfig = {
       },
       {
         source: '/diseno-grafico',
-        destination: '/servicios/diseno-grafico-vectorizacion',
+        destination: '/servicios',
         permanent: true,
       },
       {
