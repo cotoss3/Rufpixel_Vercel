@@ -18,7 +18,7 @@ function buildCategoryTitle(catName: string): string {
 
 function buildCategoryDescription(catName: string): string {
   const clean = catName.trim();
-  const desc = `Compra ${clean.toLowerCase()} al por mayor en Panamá desde 50 unidades. Personalización con logo, entrega en 24-48h y pagos por Yappy y ACH. ¡Cotiza por WhatsApp!`;
+  const desc = `Compra ${clean.toLowerCase()} al por mayor en Panamá desde 50 unidades. Personalización con logo, plazos según volumen y pagos por Yappy y ACH. ¡Cotiza!`;
   if (desc.length >= 120 && desc.length <= 155) return desc;
   if (desc.length > 155) return desc.slice(0, 151) + '...';
   return (desc + ' Envíos a todo el país.').slice(0, 155);

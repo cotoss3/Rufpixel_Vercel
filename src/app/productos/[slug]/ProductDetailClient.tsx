@@ -196,7 +196,7 @@ export default function ProductDetailClient({
   const productFaqs = [
     {
       question: `¿Cuál es el tiempo de entrega de ${product.name} en Panamá?`,
-      answer: 'El tiempo promedio de producción y entrega es de 24 a 48 horas laborables una vez aprobado el arte digital y validado el anticipo. Envíos disponibles a Ciudad de Panamá y todo el interior.'
+      answer: 'El tiempo de producción se calcula según el volumen de unidades y la técnica seleccionada una vez aprobado el arte digital. Coordinamos los plazos directamente vía WhatsApp.'
     },
     {
       question: `¿Puedo pedir una muestra previa de ${product.name} antes de la orden mayorista?`,
@@ -324,7 +324,7 @@ export default function ProductDetailClient({
               </li>
               <li className="flex items-start space-x-2">
                 <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Tiempos de entrega:</strong> 24 a 48 horas tras aprobación del arte digital en Ciudad de Panamá y Panamá Oeste.</span>
+                <span><strong>Tiempos de entrega:</strong> Plazos definidos según volumen y técnica tras aprobación del arte digital.</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />

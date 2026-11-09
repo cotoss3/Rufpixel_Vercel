@@ -48,10 +48,10 @@ function buildSeoDescription(name: string, unitPrice: number, techniques: string
   const techStr = techniques && techniques.length > 0 ? techniques[0] : 'personalizado';
 
   // Construct target message
-  let desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds. Impresión en ${techStr} con entrega en 24-48h en Panamá. ¡Cotiza por WhatsApp!`;
+  let desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds. Impresión en ${techStr}. Plazos según volumen y técnica. ¡Cotiza por WhatsApp!`;
 
   if (desc.length > 155) {
-    desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds con entrega en 24-48h en Panamá. ¡Cotiza por WhatsApp!`;
+    desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds. Plazos según volumen y técnica. ¡Cotiza por WhatsApp!`;
   }
 
   if (desc.length > 155) {
@@ -61,7 +61,7 @@ function buildSeoDescription(name: string, unitPrice: number, techniques: string
 
   // If too short (< 120)
   if (desc.length < 120) {
-    desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds. Impresión profesional con entrega en 24 a 48h en Panamá. ¡Cotiza por WhatsApp ahora!`;
+    desc = `Compra ${name} desde ${priceStr} en paquetes de 50 a 250 uds. Plazos según volumen y técnica en taller. ¡Cotiza por WhatsApp ahora!`;
   }
 
   return desc.slice(0, 155);

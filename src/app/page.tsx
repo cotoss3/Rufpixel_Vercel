@@ -86,7 +86,7 @@ export default async function HomePage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Entrega en 24-48h en Panamá</span>
+                  <span>Plazos según volumen y técnica</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0" />
