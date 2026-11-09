@@ -127,7 +127,7 @@ export function OrganizationSchema() {
           itemOffered: {
             '@type': 'Service',
             name: 'Tomas Aéreas y Grabación con Drones 4K',
-            url: 'https://rufpixel.com/servicios/tomas-aereas-drones',
+            url: 'https://rufpixel.com/tomas-aereas-panama',
           },
         },
       ],

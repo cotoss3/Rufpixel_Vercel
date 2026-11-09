@@ -86,19 +86,30 @@ export default function ServiciosPage() {
 
                 <div className="pt-4 flex flex-wrap gap-4">
                   <Link
-                    href={`/servicios/${service.slug}`}
+                    href={service.slug === 'tomas-aereas-drones' ? '/tomas-aereas-panama' : `/servicios/${service.slug}`}
                     className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3 rounded-xl text-sm font-bold shadow-md shadow-[#FF5E14]/20 transition-all flex items-center space-x-2"
                   >
-                    <span>Ver Detalles de {service.title}</span>
+                    <span>{service.slug === 'tomas-aereas-drones' ? 'Ver Landing Dedicada de Tomas Aéreas' : `Ver Detalles de ${service.title}`}</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
 
-                  <Link
-                    href="/cotizador"
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-xl text-sm font-semibold border border-gray-800 transition-all"
-                  >
-                    Cotizar con Medidas
-                  </Link>
+                  {service.slug === 'tomas-aereas-drones' ? (
+                    <a
+                      href="https://wa.me/50764454084?text=Hola%20RufPixel,%20quisiera%20cotizar%20un%20servicio%20de%20tomas%20aereas%20con%20drone%20en%20Panam%C3%A1."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-xl text-sm font-semibold border border-gray-800 transition-all flex items-center space-x-2"
+                    >
+                      Cotizar Vuelo en WhatsApp
+                    </a>
+                  ) : (
+                    <Link
+                      href="/cotizador"
+                      className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-xl text-sm font-semibold border border-gray-800 transition-all"
+                    >
+                      Cotizar con Medidas
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { MOCK_SERVICES } from '@/lib/mockData';
 import { CheckCircle2, ArrowLeft, PhoneCall, Calculator, ShieldCheck, Truck, Layers, Building2, User } from 'lucide-react';
 
@@ -32,6 +32,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function ServicioDetailPage({ params }: { params: { slug: string } }) {
+  if (params.slug === 'tomas-aereas-drones') {
+    redirect('/tomas-aereas-panama');
+  }
+
   const service = MOCK_SERVICES.find((s) => s.slug === params.slug);
 
   if (!service) {

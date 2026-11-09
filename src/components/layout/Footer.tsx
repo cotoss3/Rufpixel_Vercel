@@ -55,7 +55,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/servicios/tomas-aereas-drones" className="hover:text-[#FF5E14] transition-colors flex items-center">
+                <Link href="/tomas-aereas-panama" className="hover:text-[#FF5E14] transition-colors flex items-center">
                   <span>Tomas Aéreas con Drones</span>
                 </Link>
               </li>
