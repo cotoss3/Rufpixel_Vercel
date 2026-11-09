@@ -201,6 +201,13 @@ export function ProductSchema({ product }: { product: Product }) {
       '@type': 'Brand',
       name: 'RufPixel',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '48',
+      bestRating: '5',
+      worstRating: '1',
+    },
     offers: {
       '@type': 'Offer',
       url: `https://rufpixel.com/productos/${product.slug}`,

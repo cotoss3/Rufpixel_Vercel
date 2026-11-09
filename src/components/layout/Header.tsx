@@ -65,14 +65,24 @@ export default function Header() {
       <div className="bg-[#070707] text-xs text-gray-300 border-b border-gray-800 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center">
           <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
+            <a 
+              href="https://wa.me/50764454084?text=Hola%20RufPixel,%20deseo%20hacer%20una%20consulta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-[#FF5E14] transition-colors"
+              title="Escribir al WhatsApp de ventas"
+            >
               <Phone className="w-3.5 h-3.5 text-[#FF5E14]" />
-              <span>+507 6445-4084</span>
-            </div>
-            <div className="flex items-center space-x-2">
+              <span className="font-semibold text-white hover:text-[#FF5E14]">+507 6445-4084 (WhatsApp)</span>
+            </a>
+            <a 
+              href="mailto:ventas@rufpixel.com"
+              className="flex items-center space-x-2 hover:text-[#FF5E14] transition-colors"
+              title="Enviar correo"
+            >
               <Mail className="w-3.5 h-3.5 text-[#FF5E14]" />
               <span>ventas@rufpixel.com</span>
-            </div>
+            </a>
             <div className="flex items-center space-x-2">
               <Clock className="w-3.5 h-3.5 text-[#FF5E14]" />
               <span>Lun - Vie: 9:00 AM - 5:00 PM | Sáb: 9:00 AM - 2:00 PM</span>
@@ -204,9 +214,17 @@ export default function Header() {
               <Zap className="w-4 h-4" />
               <span>Zona Pixel</span>
             </Link>
-            <div className="text-xs text-gray-400 text-center space-y-1">
-              <p>📞 WhatsApp: +507 6445-4084</p>
-              <p>💳 Pagos seguros vía YAPPY COMERCIAL & TRANSFERENCIA ACH</p>
+            <a
+              href="https://wa.me/50764454084?text=Hola%20RufPixel,%20deseo%20hacer%20una%20consulta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white py-3 rounded-lg font-bold text-xs shadow-md transition-all"
+            >
+              <Phone className="w-4 h-4" />
+              <span>WhatsApp Directo: +507 6445-4084</span>
+            </a>
+            <div className="text-xs text-gray-400 text-center pt-1">
+              <p>💳 Pagos seguros vía YAPPY COMERCIAL & ACH</p>
             </div>
           </div>
         </div>

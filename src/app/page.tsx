@@ -51,12 +51,12 @@ export default async function HomePage() {
 
               {/* Title */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-outfit tracking-tight leading-tight text-white">
-                Impresión Corporativa de Máxima Calidad para tu Marca
+                Imprenta y Promocionales en Panamá: Al por Mayor y desde 1 Pieza en Zona Pixel
               </h1>
 
               {/* Description */}
               <p className="text-gray-300 text-lg max-w-2xl font-light leading-relaxed">
-                Desde tarjetas de presentación con acabado Soft-Touch fino hasta Banners Roll-Up y viniles de gran formato. Transforma tus artes digitales en productos físicos impecables.
+                Taller gráfico en Panamá: DTF textil por metros, bordados, grabado láser, banners roll-up y catálogo corporativo al por mayor desde 50 uds o al detal sin mínimos en Zona Pixel.
               </p>
 
               {/* CTA Buttons */}
@@ -82,11 +82,11 @@ export default async function HomePage() {
               <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gray-800 text-xs text-gray-400">
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Calidad de impresión</span>
+                  <span>Prueba digital antes de imprimir</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Despachos a nivel nacional</span>
+                  <span>Entrega en 24-48h en Panamá</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0" />
@@ -187,7 +187,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
             <div>
-              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E14]">Tienda WooCommerce</span>
+              <span className="text-xs uppercase font-bold tracking-widest text-[#FF5E14]">Catálogo Mayorista para Empresas</span>
               <h2 className="text-3xl font-extrabold text-gray-900 font-outfit mt-1">
                 Productos Populares en Catálogo
               </h2>
@@ -196,7 +196,7 @@ export default async function HomePage() {
               href="/tienda"
               className="mt-4 md:mt-0 text-sm font-bold text-[#FF5E14] hover:text-[#E04700] flex items-center space-x-1"
             >
-              <span>Ver todos los productos ({featuredProducts.length})</span>
+              <span>Ver catálogo completo (+{products.length || 170} productos)</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

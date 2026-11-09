@@ -213,7 +213,7 @@ export default function ProductDetailClient({
   ];
 
   return (
-    <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
+    <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in pb-28 lg:pb-12">
       <ProductSchema product={product} />
       <BreadcrumbListSchema items={breadcrumbs} />
 
@@ -630,6 +630,44 @@ export default function ProductDetailClient({
         onClose={() => setIsQuoteModalOpen(false)}
         items={[quoteItem]}
       />
+    
+      {/* Mobile Sticky Action Bar for Instant Conversion */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 shadow-[0_-4px_25px_rgba(0,0,0,0.12)] flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <span className="text-[10px] uppercase font-bold text-gray-500 block leading-tight">
+            Precio {isSingleUnit ? '1 ud' : `Pack x ${selectedQtyOption}`}:
+          </span>
+          <div className="flex items-baseline space-x-1">
+            <span className="text-lg font-black text-[#FF5E14] font-outfit">
+              ${displayUnitPrice.toFixed(2)}
+            </span>
+            <span className="text-[11px] font-bold text-gray-500">/ud</span>
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-2 shrink-0">
+          <button
+            type="button"
+            onClick={handleWhatsAppQuote}
+            className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all"
+            title="Cotizar por WhatsApp"
+          >
+            <Send className="w-3.5 h-3.5" />
+            <span>WhatsApp</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleAddToCart}
+            className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all"
+            title="Agregar al Carrito"
+          >
+            <ShoppingBag className="w-3.5 h-3.5" />
+            <span>Comprar</span>
+          </button>
+        </div>
+      </div>
+
     </div>
   );
 }
