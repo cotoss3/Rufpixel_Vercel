@@ -2,15 +2,18 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { 
-  Sparkles, Camera, Layers, Zap, CheckCircle2, 
-  ArrowRight, ExternalLink, Filter, MessageCircle, Ruler, ShoppingBag, Eye, X
+import {
+  Camera, Zap, ExternalLink, MessageCircle, ShoppingBag, Eye, X
 } from 'lucide-react';
 
 interface ProjectItem {
   id: string;
   title: string;
-  category: 'grabados' | 'gran-formato' | 'uvdtf' | 'stickers' | 'textil' | 'papeleria';
+  imgTitle: string;
+  alt: string;
+  width: number;
+  height: number;
+  category: 'grabados' | 'gran-formato' | 'sets' | 'kits';
   categoryLabel: string;
   image: string;
   description: string;
@@ -21,114 +24,154 @@ interface ProjectItem {
 
 const GALLERY_PROJECTS: ProjectItem[] = [
   {
-    id: 'proj-1',
-    title: 'Grabados Láser en Botellas Térmicas de Acero Inoxidable',
+    id: 'foto-3',
+    title: 'Vasos térmicos con grabado láser',
+    imgTitle: 'Vasos térmicos con grabado láser',
+    alt: 'Vasos térmicos de acero negro, blanco y plateado con logo corporativo grabado a láser',
+    width: 1050,
+    height: 1400,
     category: 'grabados',
     categoryLabel: 'Grabados Láser',
-    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
-    description: 'Marcado y grabado láser de alta fidelidad con vectorizado limpio de logotipo corporativo sobre termo mate.',
-    materials: 'Acero Inoxidable con pintura electrostática, grabado por fibra láser',
-    client: 'Cliente Corporativo — Panamá',
-    tags: ['Fibra Láser', 'Botellas Térmicas', 'Acabado Imborrable', 'Merchandising'],
+    image: '/images/trabajos/vasos-termicos-acero-grabado-laser-logo-corporativo-panama.jpg',
+    description: 'Marcado láser de fibra óptica sobre vasos térmicos de acero inoxidable en acabado negro mate, blanco y acero cepillado con contraste metálico permanente.',
+    materials: 'Acero inoxidable doble pared con recubrimiento en polvo + Grabado láser de fibra',
+    client: 'Pedido Corporativo — Panamá',
+    tags: ['Grabado Láser', 'Vasos Térmicos', 'Acero Inoxidable', 'Promocionales'],
   },
   {
-    id: 'proj-2',
-    title: 'Estructuras Roll-Up y Lonas Publicitarias para Evento Comercial',
+    id: 'foto-10',
+    title: 'Vasos térmicos con escudo grabado',
+    imgTitle: 'Vasos térmicos con escudo grabado',
+    alt: 'Vasos térmicos negros con escudo grabado a láser, llavero y bolígrafo personalizados',
+    width: 1050,
+    height: 1400,
+    category: 'grabados',
+    categoryLabel: 'Grabados Láser & Kits',
+    image: '/images/trabajos/vasos-termicos-negros-grabado-laser-escudo-llavero-boligrafo-panama.jpg',
+    description: 'Conjunto institucional compuesto por vasos térmicos negros, llavero metálico y bolígrafo ejecutivo personalizados con escudo de alta definición.',
+    materials: 'Vasos térmicos de acero + Llavero metálico + Bolígrafo de aluminio grabado a láser',
+    client: 'Dotación Institucional — Panamá',
+    tags: ['Escudos Grabados', 'Vasos Térmicos', 'Llaveros', 'Bolígrafos'],
+  },
+  {
+    id: 'foto-7',
+    title: 'Set ejecutivo en bambú grabado',
+    imgTitle: 'Set ejecutivo en bambú grabado',
+    alt: 'Set ejecutivo con libreta de bambú, bolígrafo y llavero de madera grabados a láser en caja negra',
+    width: 1050,
+    height: 1400,
+    category: 'sets',
+    categoryLabel: 'Sets & Regalos Ejecutivos',
+    image: '/images/trabajos/set-regalo-libreta-bambu-boligrafo-llavero-grabado-laser-panama.jpg',
+    description: 'Estuche ejecutivo de presentación con libreta ecológica de portada en bambú, bolígrafo y llavero grabados a láser listos para entrega directiva.',
+    materials: 'Bambú natural seleccionado, madera y estuche rígido negro con cuna interior',
+    client: 'Regalos Corporativos — Panamá',
+    tags: ['Set Ejecutivo', 'Libreta Bambú', 'Regalos de Fin de Año', 'Grabado Láser'],
+  },
+  {
+    id: 'foto-6',
+    title: 'Roll-up banners para evento',
+    imgTitle: 'Roll-up banners para evento',
+    alt: 'Cuatro roll-up banners impresos para un evento, impresión de gran formato en Panamá',
+    width: 1400,
+    height: 1050,
     category: 'gran-formato',
     categoryLabel: 'Gran Formato & Banners',
-    image: '/images/banners/banner-gran-formato.webp',
-    description: 'Impresión de alta durabilidad en lona Frontlit de 13oz con tintas eco-solventes y estructura retráctil de aluminio reforzado.',
-    materials: 'Lona Frontlit 13oz + Estructura Roll-Up de Aluminio',
-    client: 'Feria Empresarial Panamá Oeste',
-    tags: ['Roll-Up', 'Lona 13oz', 'Tintas Eco-Solventes', 'Publicidad Exterior'],
+    image: '/images/trabajos/roll-up-banners-impresos-para-evento-panama.jpg',
+    description: 'Producción de serie de cuatro estructuras Roll-Up retráctiles de aluminio con impresión en alta resolución para feria y congreso empresarial.',
+    materials: 'Estructura Roll-Up de aluminio 0.85 × 2.00 m + Impresión full color con maletín',
+    client: 'Evento Corporativo — Panamá',
+    tags: ['Roll-Up Banner', 'Gran Formato', 'Eventos y Ferias', 'Estructuras Portátiles'],
   },
   {
-    id: 'proj-3',
-    title: 'Transferencia UVDTF para Superficies Rígidas y Mugs',
-    category: 'uvdtf',
-    categoryLabel: 'UVDTF',
-    image: '/images/banners/banner-uvdtf.webp',
-    description: 'Stickers de transferencia directa UV DTF con relieve táctil 3D, barniz transparente y adherencia permanente sin calor.',
-    materials: 'Film UV DTF con adhesivo acrílico de alta resistencia y barniz brillante',
-    client: 'Marca Creativa @rufpixel',
-    tags: ['UVDTF', 'Relieve 3D', 'Barniz Brillante', 'Sin Calor'],
-  },
-  {
-    id: 'proj-4',
-    title: 'Stickers Troquelados Holográficos y Vinil Mate',
-    category: 'stickers',
-    categoryLabel: 'Stickers & Etiquetas',
-    image: '/images/banners/banner-stickers.webp',
-    description: 'Troquelado computarizado milimétrico en vinil impermeable a prueba de agua y refrigeración con corte a la forma del arte.',
-    materials: 'Vinil Adhesivo Laminado Resistente al Sol y Agua',
-    client: 'Emprendimientos & Packaging',
-    tags: ['Vinil Troquelado', 'Resistente al Agua', 'Stickers', 'Full Color'],
-  },
-  {
-    id: 'proj-5',
-    title: 'Estampados DTF Textil para Uniformes y Ropa de Marca',
-    category: 'textil',
-    categoryLabel: 'DTF Textil',
-    image: '/images/banners/banner-dtf.webp',
-    description: 'Transferencia digital DTF textil de máxima elasticidad y suavidad al tacto en camisetas 100% algodón y poliéster.',
-    materials: 'Film DTF + Poliamida Elástica + Tinta Textil CMYK + Blanco Puro',
-    client: 'Marca de Ropa & Uniformes Corporativos',
-    tags: ['DTF Textil', 'Suave al Tacto', 'Ultra Durable', 'Algodón y Sintéticos'],
-  },
-  {
-    id: 'proj-6',
-    title: 'Papelería Corporativa: Volantes, Talonarios y Tarjetas Soft-Touch',
-    category: 'papeleria',
-    categoryLabel: 'Papelería Comercial & POP',
-    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
-    description: 'Producción de papelería institucional con acabados satinados, plegados de precisión y talonarios autocopiativos.',
-    materials: 'Papel Satinado 100 lbs + Cartulina Opalina 300g con Soft-Touch',
-    client: 'Empresas Corporativas Panamá',
-    tags: ['Soft-Touch', 'Talonarios Factura', 'Tarjetas Premium', 'Offset Digital'],
-  },
-  {
-    id: 'proj-7',
-    title: 'Grabados Láser en Bolígrafos Metálicos y Accesorios Ejecutivos',
+    id: 'foto-2',
+    title: 'Botellas térmicas con grabado láser',
+    imgTitle: 'Botellas térmicas con grabado láser',
+    alt: 'Botellas térmicas negras con logo grabado a láser para empresa en Panamá',
+    width: 1050,
+    height: 1400,
     category: 'grabados',
     categoryLabel: 'Grabados Láser',
-    image: '/images/services/kit-ejecutivo-corporativo-rufpixel.webp',
-    description: 'Personalización de bolígrafos de aluminio con micrograbado de nombres individuales y logotipos con nitidez total.',
-    materials: 'Aluminio anodizado y acero inoxidable',
-    client: 'Regalos Corporativos de Fin de Año',
-    tags: ['Bolígrafos Metálicos', 'Micrograbado', 'Regalos Ejecutivos'],
+    image: '/images/trabajos/botellas-termicas-negras-grabado-laser-logo-panama.jpg',
+    description: 'Lote de botellas térmicas negras mate personalizadas con logotipo corporativo mediante grabado láser imborrable resistente al uso diario.',
+    materials: 'Botella térmica de acero inoxidable con tapa hermética + Marcado láser',
+    client: 'Empresa en Panamá',
+    tags: ['Botellas Térmicas', 'Grabado Láser', 'Merchandising Corporativo'],
   },
   {
-    id: 'proj-9',
-    title: 'Bordados Computarizados de Alta Precisión en Polos Corporativos',
-    category: 'textil',
-    categoryLabel: 'Bordados & Textil',
-    image: '/images/services/bordados-computarizados-polo-panama.webp',
-    description: 'Bordado industrial directo sobre tela piqué de polo azul marino con hilos metalizados y de alta resistencia al lavado.',
-    materials: 'Hilos industriales de poliéster de alta resistencia + Tela Piqué',
-    client: 'Dotación Corporativa Panamá',
-    tags: ['Bordados', 'Polo Piqué', 'Hilos Industriales', 'Uniformes'],
+    id: 'foto-4',
+    title: 'Set de bolígrafo y llavero en caja',
+    imgTitle: 'Set de bolígrafo y llavero en caja',
+    alt: 'Set de regalo corporativo con bolígrafo y llavero personalizados dentro de una caja negra',
+    width: 1050,
+    height: 1400,
+    category: 'sets',
+    categoryLabel: 'Sets & Regalos Ejecutivos',
+    image: '/images/trabajos/set-boligrafo-y-llavero-grabado-en-caja-de-regalo-panama.jpg',
+    description: 'Set de regalo empresarial en estuche negro acolchado con bolígrafo metálico y llavero corporativo grabados con precisión milimétrica.',
+    materials: 'Metal anodizado y acero inoxidable en estuche de regalo corporativo',
+    client: 'Reconocimientos y Aniversarios — Panamá',
+    tags: ['Set de Regalo', 'Bolígrafo y Llavero', 'Regalos Corporativos'],
   },
   {
-    id: 'proj-10',
-    title: 'Línea de Tazas y Mugs Cerámicos para Merchandising de Marcas',
-    category: 'uvdtf',
-    categoryLabel: 'Merchandising & Tazas',
-    image: '/images/services/tazas-personalizadas-sublimacion-panama.webp',
-    description: 'Producción de tazas publicitarias de cerámica con logotipos corporativos monocromáticos y full color de máxima durabilidad.',
-    materials: 'Cerámica vitrificada con tintas de alta densidad para lavavajillas',
-    client: 'Eventos y Marcas Corporativas',
-    tags: ['Tazas', 'Mugs', 'Sublimación', 'Merchandising', 'Promocionales'],
+    id: 'foto-5',
+    title: 'Botellas y bolsa de cordón con logo',
+    imgTitle: 'Botellas y bolsa de cordón con logo',
+    alt: 'Botellas blancas y bolsa de cordón azul con logo de empresa, kit promocional en Panamá',
+    width: 1050,
+    height: 1400,
+    category: 'kits',
+    categoryLabel: 'Kits de Bienvenida & Promocionales',
+    image: '/images/trabajos/botellas-blancas-y-bolsa-de-cordon-con-logo-corporativo-panama.jpg',
+    description: 'Kit promocional para jornadas deportivas, onboarding e integración empresarial con botellas blancas personalizadas y mochila tipo tula de cordón.',
+    materials: 'Botellas deportivas blancas + Bolsa de cordón en poliéster resistente',
+    client: 'Kit de Bienvenida y Eventos — Panamá',
+    tags: ['Kit de Bienvenida', 'Bolsa de Cordón', 'Botellas con Logo', 'Activaciones'],
   },
   {
-    id: 'proj-8',
-    title: 'Viniles Microperforados y Señalética para Fachadas',
+    id: 'foto-9',
+    title: 'Roll-up banners institucionales',
+    imgTitle: 'Roll-up banners institucionales',
+    alt: 'Dos roll-up banners institucionales impresos en gran formato, Panamá',
+    width: 1050,
+    height: 1400,
     category: 'gran-formato',
     categoryLabel: 'Gran Formato & Banners',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop',
-    description: 'Rotulación de vitrinas comerciales con vinil microperforado que permite visibilidad desde el interior con privacidad exterior.',
-    materials: 'Vinil Microperforado 60/40 de alta durabilidad exterior',
-    client: 'Locales Comerciales Panamá Oeste',
-    tags: ['Microperforados', 'Vitrinas', 'Señaléctica', 'Fachadas'],
+    image: '/images/trabajos/roll-up-banners-institucionales-gran-formato-panama.jpg',
+    description: 'Impresión y montaje en taller de estructuras Roll-Up institucionales de 85 × 200 cm listas para exhibición en recepciones, conferencias y stands.',
+    materials: 'Lona/Pet banner en alta resolución + Base retráctil de aluminio con bolso',
+    client: 'Comunicación Institucional — Panamá',
+    tags: ['Roll-Up', 'Impresión de Banners', 'Gran Formato Panamá', 'Stands'],
+  },
+  {
+    id: 'foto-8',
+    title: 'Organizador de cuero personalizado',
+    imgTitle: 'Organizador de cuero personalizado',
+    alt: 'Organizador de cuero guinda con nombre grabado y bolígrafo azul, regalo ejecutivo personalizado',
+    width: 1050,
+    height: 1400,
+    category: 'sets',
+    categoryLabel: 'Sets & Regalos Ejecutivos',
+    image: '/images/trabajos/organizador-de-cuero-personalizado-con-nombre-grabado-panama.jpg',
+    description: 'Carpeta y organizador ejecutivo en acabado cuero color vino personalizado con nombre grabado en placa y bolígrafo metálico a juego.',
+    materials: 'Cuero sintético ejecutivo con cierre magnético, placa metálica y bolígrafo',
+    client: 'Regalo Ejecutivo Personalizado — Panamá',
+    tags: ['Organizador de Cuero', 'Libretas Ejecutivas', 'Personalización Nominal'],
+  },
+  {
+    id: 'foto-1',
+    title: 'Vasos térmicos y bolígrafos con logo',
+    imgTitle: 'Vasos térmicos y bolígrafos con logo',
+    alt: 'Vasos térmicos blancos y bolígrafos naranja personalizados con logo de empresa en Panamá',
+    width: 1050,
+    height: 1400,
+    category: 'kits',
+    categoryLabel: 'Kits de Bienvenida & Promocionales',
+    image: '/images/trabajos/vasos-termicos-blancos-y-boligrafos-naranja-con-logo-panama.jpg',
+    description: 'Producción combinada de vasos térmicos blancos grabados a láser y bolígrafos corporativos color naranja para entrega a clientes y equipo.',
+    materials: 'Vasos térmicos de acero inoxidable + Bolígrafos promocionales con logo',
+    client: 'Merchandising Empresarial — Panamá',
+    tags: ['Bolígrafos con Logo', 'Vasos Térmicos', 'Artículos Promocionales'],
   },
 ];
 
@@ -137,36 +180,33 @@ export default function GaleriaPage() {
   const [activeModalItem, setActiveModalItem] = useState<ProjectItem | null>(null);
 
   const categories = [
-    { id: 'todos', label: 'Todos los Trabajos' },
+    { id: 'todos', label: 'Todos los Trabajos (10)' },
     { id: 'grabados', label: 'Grabados Láser' },
-    { id: 'gran-formato', label: 'Gran Formato & Banners' },
-    { id: 'uvdtf', label: 'UVDTF' },
-    { id: 'stickers', label: 'Stickers & Etiquetas' },
-    { id: 'textil', label: 'DTF Textil' },
-    { id: 'papeleria', label: 'Papelería Comercial' },
+    { id: 'gran-formato', label: 'Gran Formato & Roll-Up' },
+    { id: 'sets', label: 'Sets & Regalos Ejecutivos' },
+    { id: 'kits', label: 'Kits Promocionales' },
   ];
 
-  const filteredProjects = selectedCategory === 'todos' 
-    ? GALLERY_PROJECTS 
-    : GALLERY_PROJECTS.filter(p => p.category === selectedCategory);
+  const filteredProjects = selectedCategory === 'todos'
+    ? GALLERY_PROJECTS
+    : GALLERY_PROJECTS.filter((p) => p.category === selectedCategory);
 
   return (
     <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
-      
       {/* Header Banner */}
       <section className="bg-[#0D0D0D] text-white py-16 px-6 sm:px-12 rounded-3xl border border-gray-800 relative overflow-hidden shadow-2xl">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#FF5E14]/15 blur-3xl rounded-full pointer-events-none" />
-        
+
         <div className="relative z-10 max-w-3xl space-y-4 text-center mx-auto">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3.5 py-1 rounded-md inline-flex items-center space-x-1.5">
             <Camera className="w-3.5 h-3.5" />
-            <span>Portafolio Real — @rufpixel</span>
+            <span>Portafolio Real en Taller — @rufpixel</span>
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-outfit leading-tight">
-            Nuestros Trabajos Realizados
+            Trabajos Realizados de Artículos Promocionales e Impresión de Banners
           </h1>
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
-            Explora una muestra de los proyectos entregados a marcas, agencias y emprendedores en Panamá: desde grabados láser ultra precisos y banners de gran formato hasta stickers troquelados e impresiones UV DTF.
+            Muestra real de producciones entregadas en Panamá: vasos y botellas térmicas con grabado láser, sets ejecutivos en bambú y cuero, kits de bienvenida y estructuras Roll-Up impresas en gran formato.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs">
@@ -180,11 +220,11 @@ export default function GaleriaPage() {
               <ExternalLink className="w-3.5 h-3.5 text-[#FF5E14]" />
             </a>
             <Link
-              href="/cotizador"
+              href="/articulos-promocionales-panama"
               className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-5 py-2 rounded-xl font-bold transition-all shadow-md shadow-[#FF5E14]/30 flex items-center space-x-1.5"
             >
               <Zap className="w-3.5 h-3.5" />
-              <span>Zona Pixel — Impresiones Digitales</span>
+              <span>Ver Precios de Artículos Promocionales</span>
             </Link>
           </div>
         </div>
@@ -212,23 +252,27 @@ export default function GaleriaPage() {
 
       {/* Gallery Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((project) => (
+        {filteredProjects.map((project, idx) => (
           <div
             key={project.id}
             className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between"
           >
             <div>
               {/* Image Container with Hover Overlay */}
-              <div 
-                className="relative h-64 overflow-hidden bg-gray-900 cursor-pointer"
+              <div
+                className="relative h-72 overflow-hidden bg-gray-900 cursor-pointer"
                 onClick={() => setActiveModalItem(project)}
               >
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={project.alt}
+                  title={project.imgTitle}
+                  width={project.width}
+                  height={project.height}
+                  loading={idx === 0 ? undefined : 'lazy'}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                
+
                 <span className="absolute top-3 left-3 bg-[#0D0D0D]/90 backdrop-blur-sm text-[#FF5E14] text-[11px] font-extrabold uppercase px-3 py-1 rounded-md border border-gray-800">
                   {project.categoryLabel}
                 </span>
@@ -236,7 +280,7 @@ export default function GaleriaPage() {
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <div className="bg-white/90 text-gray-900 px-4 py-2 rounded-xl text-xs font-bold flex items-center space-x-1.5 shadow-lg backdrop-blur-sm">
                     <Eye className="w-4 h-4 text-[#FF5E14]" />
-                    <span>Ver en Detalle</span>
+                    <span>Ver Foto Completa</span>
                   </div>
                 </div>
               </div>
@@ -247,9 +291,9 @@ export default function GaleriaPage() {
                   {project.client}
                 </span>
 
-                <h3 className="text-lg font-extrabold text-gray-900 font-outfit group-hover:text-[#FF5E14] transition-colors leading-snug">
+                <h2 className="text-lg font-extrabold text-gray-900 font-outfit group-hover:text-[#FF5E14] transition-colors leading-snug">
                   {project.title}
-                </h3>
+                </h2>
 
                 <p className="text-xs text-gray-600 leading-relaxed">
                   {project.description}
@@ -289,9 +333,9 @@ export default function GaleriaPage() {
               </a>
 
               <Link
-                href="/cotizador"
+                href="/tienda"
                 className="p-2 bg-gray-900 hover:bg-[#FF5E14] text-white rounded-xl transition-colors shadow-sm"
-                title="Zona Pixel — Impresiones Digitales"
+                title="Ver Catálogo de Productos"
               >
                 <ShoppingBag className="w-4 h-4" />
               </Link>
@@ -342,11 +386,14 @@ export default function GaleriaPage() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="h-80 sm:h-96 relative bg-gray-900">
+            <div className="h-80 sm:h-[420px] relative bg-gray-900">
               <img
                 src={activeModalItem.image}
-                alt={activeModalItem.title}
-                className="w-full h-full object-cover"
+                alt={activeModalItem.alt}
+                title={activeModalItem.imgTitle}
+                width={activeModalItem.width}
+                height={activeModalItem.height}
+                className="w-full h-full object-contain"
               />
             </div>
 
@@ -376,18 +423,17 @@ export default function GaleriaPage() {
                   <span>Cotizar Trabajo por WhatsApp (+507 6445-4084)</span>
                 </a>
                 <Link
-                  href="/cotizador"
+                  href="/tienda"
                   onClick={() => setActiveModalItem(null)}
                   className="bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-xl font-bold text-xs text-center"
                 >
-                  Zona Pixel — Impresiones Digitales
+                  Ver Catálogo Mayorista
                 </Link>
               </div>
             </div>
           </div>
         </div>
       )}
-
     </div>
   );
 }

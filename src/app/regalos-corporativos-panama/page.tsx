@@ -185,6 +185,52 @@ export default function RegalosCorporativosPanamaPage() {
           </div>
         </section>
 
+        {/* FOTOS REALES DE SETS Y REGALOS CORPORATIVOS ENTREGADOS EN PANAMÁ */}
+        <section className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14]">
+                Producción Real en Taller
+              </span>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 font-outfit">
+                Sets y Regalos Corporativos Personalizados en Panamá
+              </h2>
+            </div>
+            <Link href="/galeria" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
+              Ver los 10 trabajos en Galería →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+              <img
+                src="/images/trabajos/set-regalo-libreta-bambu-boligrafo-llavero-grabado-laser-panama.jpg"
+                alt="Set ejecutivo con libreta de bambú, bolígrafo y llavero de madera grabados a láser en caja negra"
+                title="Set ejecutivo en bambú grabado"
+                width={1050}
+                height={1400}
+                className="w-full h-80 object-cover"
+              />
+              <figcaption className="p-4 text-xs text-gray-700 font-medium">
+                Set ejecutivo con libreta de bambú, bolígrafo y llavero de madera grabados a láser en caja negra de presentación.
+              </figcaption>
+            </figure>
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+              <img
+                src="/images/trabajos/set-boligrafo-y-llavero-grabado-en-caja-de-regalo-panama.jpg"
+                alt="Set de regalo corporativo con bolígrafo y llavero personalizados dentro de una caja negra"
+                title="Set de bolígrafo y llavero en caja"
+                width={1050}
+                height={1400}
+                loading="lazy"
+                className="w-full h-80 object-cover"
+              />
+              <figcaption className="p-4 text-xs text-gray-700 font-medium">
+                Set de regalo corporativo con bolígrafo y llavero personalizados dentro de estuche rígido.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
         {/* OCASIONES Y TIPOS DE REGALOS CORPORATIVOS */}
         <section className="space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit">

@@ -176,7 +176,22 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
           <div className="rounded-3xl overflow-hidden shadow-lg border border-gray-200 h-80 sm:h-96 relative bg-gray-900">
             <img 
               src={service.image} 
-              alt={service.title} 
+              alt={
+                service.slug === 'grabados-laser'
+                  ? 'Vasos térmicos de acero negro, blanco y plateado con logo corporativo grabado a láser'
+                  : service.slug === 'impresion-gran-formato'
+                  ? 'Cuatro roll-up banners impresos para un evento, impresión de gran formato en Panamá'
+                  : service.title
+              }
+              title={
+                service.slug === 'grabados-laser'
+                  ? 'Vasos térmicos con grabado láser'
+                  : service.slug === 'impresion-gran-formato'
+                  ? 'Roll-up banners para evento'
+                  : service.title
+              }
+              width={service.slug === 'impresion-gran-formato' ? 1400 : 1050}
+              height={service.slug === 'impresion-gran-formato' ? 1050 : 1400}
               className="w-full h-full object-cover" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -321,6 +336,83 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
               ))}
             </div>
           </div>
+
+          {/* FOTOS REALES DE TRABAJOS EN TALLER (GRABADOS LÁSER) */}
+          {service.slug === 'grabados-laser' && (
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-5">
+              <div>
+                <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14]">
+                  Portafolio en Taller
+                </span>
+                <h3 className="text-xl font-extrabold text-gray-900 font-outfit">
+                  Trabajos de Grabado Láser Realizados en Panamá
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                  <img
+                    src="/images/trabajos/vasos-termicos-negros-grabado-laser-escudo-llavero-boligrafo-panama.jpg"
+                    alt="Vasos térmicos negros con escudo grabado a láser, llavero y bolígrafo personalizados"
+                    title="Vasos térmicos con escudo grabado"
+                    width={1050}
+                    height={1400}
+                    loading="lazy"
+                    className="w-full h-72 object-cover"
+                  />
+                  <figcaption className="p-3.5 text-xs text-gray-700 font-medium">
+                    Vasos térmicos negros con escudo grabado a láser, llavero y bolígrafo personalizados.
+                  </figcaption>
+                </figure>
+                <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                  <img
+                    src="/images/trabajos/botellas-termicas-negras-grabado-laser-logo-panama.jpg"
+                    alt="Botellas térmicas negras con logo grabado a láser para empresa en Panamá"
+                    title="Botellas térmicas con grabado láser"
+                    width={1050}
+                    height={1400}
+                    loading="lazy"
+                    className="w-full h-72 object-cover"
+                  />
+                  <figcaption className="p-3.5 text-xs text-gray-700 font-medium">
+                    Botellas térmicas negras con logo grabado a láser para empresa en Panamá.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          )}
+
+          {/* FOTO REAL SECUNDARIA EN TALLER (IMPRESIÓN GRAN FORMATO) */}
+          {service.slug === 'impresion-gran-formato' && (
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                  <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14]">
+                    Producción Real en Taller
+                  </span>
+                  <h3 className="text-xl font-extrabold text-gray-900 font-outfit">
+                    Roll-Up Banners Institucionales Entregados en Panamá
+                  </h3>
+                </div>
+                <Link href="/galeria" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
+                  Ver más en Galería →
+                </Link>
+              </div>
+              <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+                <img
+                  src="/images/trabajos/roll-up-banners-institucionales-gran-formato-panama.jpg"
+                  alt="Dos roll-up banners institucionales impresos en gran formato, Panamá"
+                  title="Roll-up banners institucionales"
+                  width={1050}
+                  height={1400}
+                  loading="lazy"
+                  className="w-full max-h-[460px] object-cover"
+                />
+                <figcaption className="p-3.5 text-xs text-gray-700 font-medium">
+                  Dos roll-up banners institucionales de 0.85 × 2.00 m impresos en gran formato listos para entrega.
+                </figcaption>
+              </figure>
+            </div>
+          )}
 
           {/* BLOQUE PROFUNDO EXCLUSIVO PARA GRAN FORMATO, BANNERS, BANDEROLAS, ROLL-UP Y VINILES (2,290 búsquedas/mes en Panamá) */}
           {service.slug === 'impresion-gran-formato' && (

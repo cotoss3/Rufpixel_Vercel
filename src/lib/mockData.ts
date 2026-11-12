@@ -92,7 +92,7 @@ export const MOCK_SERVICES: Service[] = [
     "shortDesc": "Marcado láser permanente e indestructible sobre acero inoxidable, aluminio, madera, cuero y acrílico. Detalles finos y logotipos corporativos.",
     "fullDesc": "El grabado láser es el estándar de máxima distinción y durabilidad para personalización corporativa y ejecutiva en Panamá. Mediante tecnología láser de fibra óptica y CO2, removemos microcapas superficiales para revelar el material base con una nitidez absoluta, garantizando que el grabado no se borre, no se despegue ni se deteriore con el uso intensivo ni el lavado. Grabamos desde 1 termo Stanley o botella individual hasta lotes de cientos de bolígrafos y libretas corporativas.",
     "iconName": "Sparkles",
-    "image": "/images/services/grabado-laser-termos-vasos-panama.webp",
+    "image": "/images/trabajos/vasos-termicos-acero-grabado-laser-logo-corporativo-panama.jpg",
     "detalFeatures": [
       "Graba tu propio termo, vaso térmico o accesorio desde 1 pieza.",
       "Simulación digital previa para confirmar posición y tamaño del logo.",
@@ -119,7 +119,7 @@ export const MOCK_SERVICES: Service[] = [
     "shortDesc": "Lona banner 13oz con ojales, estructuras Roll-Up y Banner Araña, banderolas publicitarias, backing para eventos y vinil adhesivo, microperforado y esmerilado.",
     "fullDesc": "Producimos publicidad visual de gran formato resistente al sol y lluvia tropical de Panamá. Imprimimos lonas banner reforzadas de 13oz con ojales perimetrales, banderolas publicitarias tipo gota y vela con base para exterior, estructuras portátiles Roll-Up de aluminio y Banner Araña (X-Banner), backing publicitario, manteles impresos para mesas plegables de ferias y viniles para vidrieras (vinil adhesivo brillante/mate, microperforado homologado y vinil esmerilado para oficinas). Atendemos desde 1 estructura lista para tu evento hasta tirajes por metros cuadrados para agencias y cadenas comerciales en todo Panamá.",
     "iconName": "Maximize2",
-    "image": "/images/banners/banner-gran-formato.webp",
+    "image": "/images/trabajos/roll-up-banners-impresos-para-evento-panama.jpg",
     "detalFeatures": [
       "Estructuras Roll-Up, Banner Araña y Banderolas completas desde 1 unidad.",
       "Lonas banner de eventos, inauguraciones o alquiler/venta con ojales listos para colgar.",
@@ -416,7 +416,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '4 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop',
+    image: '/images/trabajos/organizador-de-cuero-personalizado-con-nombre-grabado-panama.jpg',
     tags: ['Tarjetas', 'Papelería', 'Branding']
   },
   {
@@ -545,7 +545,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '5 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop',
+    image: '/images/trabajos/roll-up-banners-institucionales-gran-formato-panama.jpg',
     tags: ['Eventos', 'Banners', 'Roll-Up']
   },
   {
@@ -644,7 +644,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '6 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    image: '/images/trabajos/botellas-termicas-negras-grabado-laser-logo-panama.jpg',
     tags: ['Presupuesto', 'Promocionales', 'Precios']
   },
   {
@@ -745,7 +745,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '7 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
+    image: '/images/trabajos/vasos-termicos-blancos-y-boligrafos-naranja-con-logo-panama.jpg',
     tags: ['Bolígrafos', 'Precios', 'Panamá']
   },
   {
@@ -850,7 +850,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '8 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: '/images/banners/banner-gran-formato.webp',
+    image: '/images/trabajos/roll-up-banners-impresos-para-evento-panama.jpg',
     tags: ['Ferias', 'Congresos', 'Stands']
   },
   {
@@ -943,7 +943,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '8 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    image: '/images/trabajos/botellas-blancas-y-bolsa-de-cordon-con-logo-corporativo-panama.jpg',
     tags: ['Onboarding', 'RRHH', 'Sets']
   },
   {
@@ -1158,7 +1158,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '9 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    image: '/images/trabajos/vasos-termicos-acero-grabado-laser-logo-corporativo-panama.jpg',
     tags: ['Termos', 'Vasos Térmicos', 'Grabado Láser']
   },
   {
@@ -1273,7 +1273,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '10 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '9 min de lectura',
-    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
+    image: '/images/trabajos/set-regalo-libreta-bambu-boligrafo-llavero-grabado-laser-panama.jpg',
     tags: ['Fin de Año', 'Regalos Corporativos', 'Bambú']
   },
   {
@@ -1616,7 +1616,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '11 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
+    image: '/images/trabajos/set-boligrafo-y-llavero-grabado-en-caja-de-regalo-panama.jpg',
     tags: ['Colegios', 'Clínicas', 'Bancos']
   },
   {
@@ -1744,7 +1744,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '11 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '8 min de lectura',
-    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    image: '/images/trabajos/vasos-termicos-negros-grabado-laser-escudo-llavero-boligrafo-panama.jpg',
     tags: ['50 Unidades', 'Eventos', 'Promocionales']
   },
   {

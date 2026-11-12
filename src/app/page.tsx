@@ -736,35 +736,55 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: 'Grabados Láser en Botellas & Termos',
+                title: 'Vasos térmicos con grabado láser',
+                alt: 'Vasos térmicos de acero negro, blanco y plateado con logo corporativo grabado a láser',
                 category: 'Grabados Láser',
-                image: '/images/banners/banner-grabados-laser.webp',
-                tag: 'Acabado Imborrable',
+                image: '/images/trabajos/vasos-termicos-acero-grabado-laser-logo-corporativo-panama.jpg',
+                width: 1050,
+                height: 1400,
+                tag: 'Acabado Imborrable en Acero',
               },
               {
-                title: 'Impresión Gran Formato & Roll-Up',
+                title: 'Vasos térmicos con escudo grabado',
+                alt: 'Vasos térmicos negros con escudo grabado a láser, llavero y bolígrafo personalizados',
+                category: 'Kits & Grabado Láser',
+                image: '/images/trabajos/vasos-termicos-negros-grabado-laser-escudo-llavero-boligrafo-panama.jpg',
+                width: 1050,
+                height: 1400,
+                tag: 'Vasos, Llavero y Bolígrafo',
+              },
+              {
+                title: 'Set ejecutivo en bambú grabado',
+                alt: 'Set ejecutivo con libreta de bambú, bolígrafo y llavero de madera grabados a láser en caja negra',
+                category: 'Regalos Corporativos',
+                image: '/images/trabajos/set-regalo-libreta-bambu-boligrafo-llavero-grabado-laser-panama.jpg',
+                width: 1050,
+                height: 1400,
+                tag: 'Estuche Ejecutivo Personalizado',
+              },
+              {
+                title: 'Roll-up banners para evento',
+                alt: 'Cuatro roll-up banners impresos para un evento, impresión de gran formato en Panamá',
                 category: 'Gran Formato',
-                image: '/images/banners/banner-gran-formato.webp',
-                tag: 'Lona 13oz & Tintas Eco-Solventes',
-              },
-              {
-                title: 'Transfer UV DTF de Alta Resistencia',
-                category: 'UVDTF',
-                image: '/images/banners/banner-uvdtf.webp',
-                tag: 'Relieve Táctil & Full Color',
-              },
-              {
-                title: 'Stickers Troquelados Personalizados',
-                category: 'Stickers',
-                image: '/images/banners/banner-stickers.webp',
-                tag: 'Vinil Impermeable',
+                image: '/images/trabajos/roll-up-banners-impresos-para-evento-panama.jpg',
+                width: 1400,
+                height: 1050,
+                tag: 'Estructuras Roll-Up 0.85×2.00m',
               },
             ].map((item, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 group hover:shadow-lg transition-all flex flex-col justify-between">
-                <div className="h-48 overflow-hidden relative">
+              <Link
+                key={idx}
+                href="/galeria"
+                className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:border-[#FF5E14]/50 group hover:shadow-lg transition-all flex flex-col justify-between cursor-pointer"
+              >
+                <div className="h-56 overflow-hidden relative bg-gray-900">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.alt}
+                    title={item.title}
+                    width={item.width}
+                    height={item.height}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <span className="absolute top-3 left-3 bg-[#0D0D0D]/90 backdrop-blur-sm text-[#FF5E14] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md border border-gray-800">
@@ -778,15 +798,12 @@ export default async function HomePage() {
                   </h3>
                 </div>
                 <div className="p-5 pt-0">
-                  <Link
-                    href="/galeria"
-                    className="text-xs font-bold text-[#FF5E14] hover:text-[#E04700] flex items-center space-x-1"
-                  >
-                    <span>Ver proyecto</span>
+                  <span className="text-xs font-bold text-[#FF5E14] group-hover:text-[#E04700] flex items-center space-x-1">
+                    <span>Ver proyecto en galería</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
