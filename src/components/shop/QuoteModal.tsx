@@ -6,6 +6,7 @@ import {
   FileText, Sparkles, Send, ShieldCheck, X, Loader2, ArrowRight
 } from 'lucide-react';
 import { QuoteCustomer, QuoteItem } from '@/lib/types';
+import { trackQuotePdfGenerated } from '@/lib/analytics';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -61,6 +62,8 @@ export default function QuoteModal({ isOpen, onClose, items }: QuoteModalProps) 
       if (!res.ok || !data.success) {
         throw new Error(data.error || 'Error al generar la cotización');
       }
+
+      trackQuotePdfGenerated(items, total, customer.company);
 
       // Redirect to the newly generated quote page
       router.push(`/cotizacion/${data.quote.id}?token=${data.quote.token}`);

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Sparkles, X, Send, CheckCircle2, Bot, Layers, Palette, Hash, MessageCircle } from 'lucide-react';
+import { trackWhatsAppLead, trackEvent } from '@/lib/analytics';
 
 const WHATSAPP_NUMBER = '50764454084';
 
@@ -86,6 +87,11 @@ export default function AiWhatsAppAssistant() {
   };
 
   const handleSendToWhatsApp = () => {
+    trackWhatsAppLead({
+      source: 'ai_whatsapp_assistant',
+      productName: productType || 'Consulta IA',
+      quantity: quantity || 'No especificada',
+    });
     const url = generateWhatsAppUrl();
     window.open(url, '_blank');
     setIsOpen(false);

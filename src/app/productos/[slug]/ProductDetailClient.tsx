@@ -8,7 +8,9 @@ import Link from 'next/link';
 import { ProductSchema, BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
 import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
 import QuoteModal from '@/components/shop/QuoteModal';
+import QuickAddModal from '@/components/shop/QuickAddModal';
 import { QuoteItem } from '@/lib/types';
+import { trackViewItem, trackSelectQuantityTier, trackAddToCart, trackWhatsAppLead } from '@/lib/analytics';
 
 export default function ProductDetailClient({ 
   product: initialProduct,
@@ -64,6 +66,7 @@ export default function ProductDetailClient({
   const [selectedImage, setSelectedImage] = useState(product?.image || '');
   const [addedMessage, setAddedMessage] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isQuickBuyOpen, setIsQuickBuyOpen] = useState(false);
 
   useEffect(() => {
     if (product) {
@@ -141,8 +144,18 @@ export default function ProductDetailClient({
 
   const displayUnitPrice = isSingleUnit ? singleUnitPriceWith35 : (basePackPrice / baseQtyNum);
 
+  useEffect(() => {
+    if (product) {
+      trackViewItem(product, displayUnitPrice, baseQtyNum);
+    }
+  }, [product?.id]);
+
   const handleAttributeChange = (attrName: string, option: string) => {
     setSelectedAttributes((prev) => ({ ...prev, [attrName]: option }));
+    if (attrName === 'Cantidad' && product) {
+      const qNum = parseInt(option, 10) || 50;
+      trackSelectQuantityTier(product, qNum, displayUnitPrice, basePackPrice);
+    }
   };
 
   const handleAddToCart = () => {
@@ -152,6 +165,7 @@ export default function ProductDetailClient({
       image: selectedImage || product.image,
     };
     addToCart(productToCart, quantity, selectedAttributes);
+    trackAddToCart(product, quantity, baseQtyNum, basePackPrice, 'pdp_main');
     setAddedMessage(true);
     setTimeout(() => setAddedMessage(false), 4000);
   };
@@ -159,7 +173,14 @@ export default function ProductDetailClient({
   const handleWhatsAppQuote = () => {
     const currentUnits = isSingleUnit ? quantity : (baseQtyNum * quantity);
     const currentTotal = Number(((isSingleUnit ? singleUnitPriceWith35 : basePackPrice) * quantity).toFixed(2));
-    const productUrl = `https://rufpixel.com/productos/${product.slug}/`;
+    trackWhatsAppLead({
+      source: 'pdp_whatsapp_quote',
+      productName: product.name,
+      category: product.category,
+      quantity: currentUnits,
+      estimatedValue: currentTotal,
+    });
+    const productUrl = `https://rufpixel.com/productos/${product.slug}`;
     const text = encodeURIComponent(
       `¡Hola RufPixel! 👋 Quiero cotizar este producto:\n\n` +
       `📦 *Producto:* ${product.name}\n` +
@@ -704,7 +725,15 @@ export default function ProductDetailClient({
         onClose={() => setIsQuoteModalOpen(false)}
         items={[quoteItem]}
       />
-    
+
+      {/* Quick Buy Quantity Selector Modal (triggered from mobile sticky bar) */}
+      <QuickAddModal
+        product={product}
+        isOpen={isQuickBuyOpen}
+        onClose={() => setIsQuickBuyOpen(false)}
+        source="pdp_sticky_modal"
+      />
+
       {/* Fixed Toast Notification when product is added from anywhere on the page */}
       {addedMessage && (
         <div className="fixed top-28 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 bg-[#0D0D0D] border-2 border-[#FF5E14] text-white p-4 rounded-2xl text-xs font-medium flex items-center justify-between shadow-2xl animate-fade-in">
@@ -717,6 +746,9 @@ export default function ProductDetailClient({
           </div>
           <Link
             href="/carrito"
+            data-ga-event="view_cart_click"
+            data-ga-category="Ecommerce"
+            data-ga-label="Toast Ver Carrito"
             className="shrink-0 bg-[#FF5E14] hover:bg-[#E04700] text-white font-extrabold px-3.5 py-2 rounded-xl flex items-center space-x-1 transition-all"
           >
             <span>Ver Carrito</span>
@@ -742,6 +774,9 @@ export default function ProductDetailClient({
         <div className="flex items-center space-x-2 shrink-0">
           <button
             type="button"
+            data-ga-event="whatsapp_quote_sticky"
+            data-ga-category="Lead"
+            data-ga-label={product.name}
             onClick={handleWhatsAppQuote}
             className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all"
             title="Cotizar por WhatsApp"
@@ -750,25 +785,18 @@ export default function ProductDetailClient({
             <span>WhatsApp</span>
           </button>
 
-          {addedMessage ? (
-            <Link
-              href="/carrito"
-              className="bg-[#0D0D0D] hover:bg-gray-800 text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all border border-[#FF5E14]"
-            >
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#25D366]" />
-              <span>Ver Carrito</span>
-            </Link>
-          ) : (
-            <button
-              type="button"
-              onClick={handleAddToCart}
-              className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all"
-              title="Agregar al Carrito"
-            >
-              <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Comprar</span>
-            </button>
-          )}
+          <button
+            type="button"
+            data-ga-event="open_quantity_selector_sticky"
+            data-ga-category="Ecommerce"
+            data-ga-label={product.name}
+            onClick={() => setIsQuickBuyOpen(true)}
+            className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all"
+            title="Elegir cantidad y comprar"
+          >
+            <ShoppingBag className="w-3.5 h-3.5" />
+            <span>Comprar</span>
+          </button>
         </div>
       </div>
 

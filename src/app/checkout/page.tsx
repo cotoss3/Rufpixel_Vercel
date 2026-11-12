@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/lib/cartContext';
 import { ShieldCheck, Upload, CheckCircle2, QrCode, Phone, Copy, ArrowLeft, ShoppingBag, Landmark, Smartphone } from 'lucide-react';
 import { Order } from '@/lib/types';
+import { trackBeginCheckout, trackPurchase } from '@/lib/analytics';
 
 export default function CheckoutPage() {
   const { cart, subtotal, createYappyOrder } = useCart();
@@ -27,6 +28,12 @@ export default function CheckoutPage() {
   const [createdOrder, setCreatedOrder] = useState<Order | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      trackBeginCheckout(cart, subtotal);
+    }
+  }, []);
 
   if (createdOrder) {
     const isAch = createdOrder.paymentMethod === 'ACH_TRANSFER';
@@ -145,6 +152,7 @@ export default function CheckoutPage() {
         transactionId,
         receiptImageUrl: receiptFileName ? `/uploads/${receiptFileName}` : '',
       }, methodKey);
+      trackPurchase(newOrder);
       setCreatedOrder(newOrder);
       setIsSubmitting(false);
     }, 1000);

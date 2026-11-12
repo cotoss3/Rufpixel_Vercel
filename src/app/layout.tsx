@@ -7,6 +7,7 @@ import { CartProvider } from '@/lib/cartContext';
 import { OrganizationSchema, GeoFaqSchema } from '@/components/seo/SchemaOrg';
 import NavigationLoader from '@/components/common/NavigationLoader';
 import AiWhatsAppAssistant from '@/components/common/AiWhatsAppAssistant';
+import GoogleAnalytics from '@/components/seo/GoogleAnalytics';
 
 export const metadata: Metadata = {
   title: 'Imprenta en Panamá: DTF, Bordados y Banners | RufPixel',
@@ -62,6 +63,7 @@ export default function RootLayout({
         <CartProvider>
           <Suspense fallback={null}>
             <NavigationLoader />
+            <GoogleAnalytics />
           </Suspense>
           <Header />
           <main className="flex-grow">{children}</main>

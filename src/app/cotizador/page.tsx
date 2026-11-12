@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 import { StickerIcon } from '@/components/icons/StickerIcon';
+import { trackAddToCart } from '@/lib/analytics';
 
 interface SizeOption {
   id: string;
@@ -211,6 +212,7 @@ export default function CotizadorPage() {
     };
 
     addToCart(customProduct, quantity, { Categoría: categoryInfo.title, Medida: sizeLabel }, fileName ? `Archivo: ${fileName}` : '');
+    trackAddToCart(customProduct, quantity, 1, unitPrice, 'zona_pixel');
 
     setSubmittedOrder({
       id: `ZP-${Math.floor(100000 + Math.random() * 900000)}`,
