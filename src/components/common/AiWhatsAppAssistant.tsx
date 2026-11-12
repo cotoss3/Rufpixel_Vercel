@@ -95,7 +95,7 @@ export default function AiWhatsAppAssistant() {
   return (
     <>
       {/* Floating Trigger Button: Iconic WhatsApp Green (#25D366) with Subtle AI Accents */}
-      <div className="fixed bottom-6 right-6 z-50 flex items-center space-x-3">
+      <div className="fixed bottom-24 lg:bottom-12 right-5 sm:right-6 z-50 flex items-center space-x-3">
         {/* Helper Tooltip Badge */}
         {!isOpen && (
           <div 
