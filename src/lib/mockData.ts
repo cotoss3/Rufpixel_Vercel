@@ -113,28 +113,28 @@ export const MOCK_SERVICES: Service[] = [
   {
     "id": "serv-impresion-gran-formato",
     "slug": "impresion-gran-formato",
-    "metaTitle": "Banners Roll-Up y Gran Formato en Panamá | RufPixel",
-    "metaDesc": "Impresión de lonas banner 13oz, microperforados y estructuras Roll-Up de aluminio para ferias y eventos. Calidad resistente al exterior. Pide cotización.",
-    "title": "Impresión en Gran Formato, Lonas y Banners Roll-Up en Panamá",
-    "shortDesc": "Publicidad visual de gran impacto resistente al sol y lluvia de Panamá. Lona banner 13oz con ojales, vinil adhesivo, microperforado y Roll-Ups para eventos.",
-    "fullDesc": "Haz visible tu marca con impresiones de gran escala que no se decoloran con el clima tropical de Panamá. Producimos lonas publicitarias reforzadas de 13oz con ojales perimetrales, microperforados para cristales de locales y vehículos, viniles adhesivos troquelados y estructuras portátiles Roll-Up de aluminio con estuche de lona. Si necesitas 1 banner para una inauguración o stand de feria, te lo entregamos listo para instalar; si eres agencia o cadena comercial, manejamos precios por volumen y metros cuadrados continuos.",
+    "metaTitle": "Impresión de Banners, Roll-Up y Gran Formato | RufPixel",
+    "metaDesc": "Impresión de banners 13oz, Roll-Up, banderolas, backing publicitario y vinil adhesivo o esmerilado en Panamá. Pagos por Yappy y ACH. ¡Cotiza hoy!",
+    "title": "Impresión de Banners en Gran Formato, Roll-Up, Banderolas y Viniles en Panamá",
+    "shortDesc": "Lona banner 13oz con ojales, estructuras Roll-Up y Banner Araña, banderolas publicitarias, backing para eventos y vinil adhesivo, microperforado y esmerilado.",
+    "fullDesc": "Producimos publicidad visual de gran formato resistente al sol y lluvia tropical de Panamá. Imprimimos lonas banner reforzadas de 13oz con ojales perimetrales, banderolas publicitarias tipo gota y vela con base para exterior, estructuras portátiles Roll-Up de aluminio y Banner Araña (X-Banner), backing publicitario, manteles impresos para mesas plegables de ferias y viniles para vidrieras (vinil adhesivo brillante/mate, microperforado homologado y vinil esmerilado para oficinas). Atendemos desde 1 estructura lista para tu evento hasta tirajes por metros cuadrados para agencias y cadenas comerciales en todo Panamá.",
     "iconName": "Maximize2",
     "image": "/images/banners/banner-gran-formato.webp",
     "detalFeatures": [
-      "Estructuras Roll-Up completas (impresión + estuche) desde 1 unidad.",
-      "Lonas de cumpleaños, eventos o promociones temporales a medida.",
-      "Revisión de resolución de imagen para evitar que salga pixelada."
+      "Estructuras Roll-Up, Banner Araña y Banderolas completas desde 1 unidad.",
+      "Lonas banner de eventos, inauguraciones o alquiler/venta con ojales listos para colgar.",
+      "Revisión gratuita de resolución y sangrado de tu archivo antes de imprimir."
     ],
     "wholesaleFeatures": [
-      "Tarifas por volumen en m² para agencias de publicidad y remodelaciones.",
-      "Despacho de lonas con refuerzo perimetral y ojales para cuadrillas de instalación.",
-      "Envíos a proyectos en el interior y provincias centrales."
+      "Tarifas por volumen en m² y pie² para agencias, ferias y remodelaciones de locales.",
+      "Combina tu stand (Roll-Up + Backing + Mantel) con artículos promocionales con logo.",
+      "Facturación y despachos a Ciudad de Panamá, Panamá Oeste y provincias."
     ],
     "features": [
-      "Lona banner reforzada de 13oz con tintas resistentes a rayos UV y lluvia",
-      "Roll-Ups retráctiles de aluminio anodizado con bolso de transporte",
-      "Viniles adhesivos brillantes, mate y microperforados para vidrieras",
-      "Acabados con ojales de acero inoxidable y bolsillo para colgar"
+      "Lona banner 13oz de alta tenacidad con tintas ecosolventes/UV resistentes al exterior",
+      "Roll-Up retráctil de aluminio (0.85x2.00m) y Banner Araña con bolso de transporte",
+      "Banderolas publicitarias tipo Gota y Vela, Backing y Manteles para mesas de 6 pies",
+      "Vinil adhesivo, microperforado para vidrios y papel/vinil esmerilado para oficinas"
     ]
   },
   {
@@ -237,13 +237,15 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
   {
     id: 'post-3',
     slug: 'rollup-vs-banner-arana-cual-elegir-para-tu-evento',
-    title: 'Roll-Up Retráctil vs Banner Araña: ¿Cuál conviene más para tu evento o stand?',
-    excerpt: 'Analizamos costos, durabilidad, facilidad de armado y portabilidad para que elijas la estructura publicitaria ideal para ferias.',
-    content: `<p>Cuando organizas la presencia de tu empresa en una feria o evento corporativo en Panamá, la visibilidad es fundamental. Dos de las soluciones portátiles más populares son el Banner Roll-Up y la estructura tipo Araña.</p>
-    <h3>Roll-Up Retráctil de Aluminio</h3>
-    <p><strong>Ventajas:</strong> Su mecanismo retráctil protege la lona durante el transporte, se arma en menos de 30 segundos y ofrece una base elegante y estable con estuche de lona reforzado.</p>
-    <h3>Banner tipo Araña (X-Banner)</h3>
-    <p><strong>Ventajas:</strong> Es una opción sumamente económica y ligera, perfecta si cuentas con un presupuesto ajustado o necesitas renovar el arte con mucha frecuencia.</p>`,
+    title: 'Roll-Up Retráctil vs Banner Araña: ¿Cuál conviene más para tu evento o stand en Panamá?',
+    excerpt: 'Analizamos medidas estándar (0.85x2.00m vs 0.80x1.80m), durabilidad, armado y cuándo combinarlos con banderolas y manteles publicitarios.',
+    content: `<p>Cuando organizas la presencia de tu empresa en una feria, congreso o activación comercial en Panamá, la visibilidad del stand es fundamental. Dos de las estructuras portátiles más solicitadas en nuestro taller de <a href="/servicios/impresion-gran-formato"><strong>impresión de banners y gran formato en Panamá</strong></a> son el Banner Roll-Up de aluminio y la estructura tipo Araña (X-Banner).</p>
+    <h3>1. Roll-Up Retráctil de Aluminio (0.85 × 2.00 metros)</h3>
+    <p><strong>Ventajas:</strong> Su casete retráctil de aluminio anodizado enrolla y protege la gráfica durante el transporte, se arma en menos de 30 segundos sin herramientas y proyecta una imagen corporativa sólida en recepciones de hoteles, bancos y stands de ferias.</p>
+    <h3>2. Banner tipo Araña o X-Banner (0.60 × 1.60 m y 0.80 × 1.80 m)</h3>
+    <p><strong>Ventajas:</strong> Es una estructura ligera de fibra y aluminio que tensa la lona mediante 4 ojales en las esquinas. Resulta ideal cuando necesitas distribuir múltiples puntos visuales en sucursales o cambiar únicamente la lona impresa en cada promoción mensual.</p>
+    <h3>3. ¿Cómo completar tu Stand de Feria en Panamá?</h3>
+    <p>Para destacar frente a la competencia en centros de convenciones como Atlapa o el Panama Convention Center, recomendamos combinar tu Roll-Up con <strong>banderolas publicitarias tipo vela</strong>, <strong>manteles personalizados para mesas plegables</strong> y un lote de <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a> (como bolígrafos, lanyards y bolsas reutilizables con tu logo).</p>`,
     category: 'Gran Formato',
     categorySlug: 'gran-formato',
     date: '18 de Agosto, 2026',

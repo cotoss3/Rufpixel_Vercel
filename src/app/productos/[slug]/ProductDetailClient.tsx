@@ -186,10 +186,14 @@ export default function ProductDetailClient({
 
   const qtyOptions = ['50', '100', '250'];
 
+  const catSlug = product.categorySlug && product.categorySlug !== 'general'
+    ? product.categorySlug
+    : (product.categories?.[0]?.slug || (product.category || 'tienda').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-'));
+
   const breadcrumbs = [
     { name: 'Inicio', url: 'https://rufpixel.com' },
-    { name: 'Tienda', url: 'https://rufpixel.com/tienda' },
-    { name: product.category || 'Catálogo', url: `https://rufpixel.com/tienda/${(product.category || '').toLowerCase().replace(/\s+/g, '-')}` },
+    { name: 'Artículos Promocionales en Panamá', url: 'https://rufpixel.com/articulos-promocionales-panama' },
+    { name: product.category || 'Catálogo', url: `https://rufpixel.com/tienda/${catSlug}` },
     { name: product.name, url: `https://rufpixel.com/productos/${product.slug}` },
   ];
 
@@ -204,7 +208,7 @@ export default function ProductDetailClient({
     },
     {
       question: '¿Qué métodos de pago aceptan para pedidos corporativos?',
-      answer: 'Aceptamos Yappy Comercial directo, transferencias ACH bancarias en Panamá y pagos contraentrega previa confirmación del pedido.'
+      answer: 'Aceptamos pagos directos e instantáneos vía Yappy Comercial (+507 6445-4084) y transferencias bancarias ACH en Panamá.'
     },
     {
       question: '¿En qué formatos deben enviar el logotipo para personalización?',
@@ -220,9 +224,9 @@ export default function ProductDetailClient({
       <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs text-gray-500 flex-wrap">
         <Link href="/" className="hover:text-[#FF5E14] transition-colors">Inicio</Link>
         <span>/</span>
-        <Link href="/tienda" className="hover:text-[#FF5E14] transition-colors">Tienda</Link>
+        <Link href="/articulos-promocionales-panama" className="hover:text-[#FF5E14] transition-colors">Artículos Promocionales en Panamá</Link>
         <span>/</span>
-        <Link href={`https://rufpixel.com/tienda/${(product.category || '').toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-[#FF5E14] transition-colors">
+        <Link href={`/tienda/${catSlug}`} className="hover:text-[#FF5E14] transition-colors">
           {product.category}
         </Link>
         <span>/</span>
@@ -621,6 +625,28 @@ export default function ProductDetailClient({
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Enlazado Interno SILO hacia Categoría Padre y Página Pilar */}
+        <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-gray-700">
+          <p className="leading-relaxed">
+            Explora más opciones en la categoría{' '}
+            <Link href={`/tienda/${catSlug}`} className="font-extrabold text-[#FF5E14] hover:underline">
+              {product.category} personalizados en Panamá
+            </Link>{' '}
+            o consulta nuestra guía mayorista de{' '}
+            <Link href="/articulos-promocionales-panama" className="font-extrabold text-gray-900 hover:text-[#FF5E14] underline">
+              artículos promocionales en Panamá
+            </Link>{' '}
+            con precios por escala desde 50 unidades.
+          </p>
+          <Link
+            href={`/tienda/${catSlug}`}
+            className="shrink-0 inline-flex items-center space-x-1.5 bg-[#0D0D0D] hover:bg-[#FF5E14] text-white px-4 py-2.5 rounded-xl font-bold transition-colors"
+          >
+            <span>Ver más {product.category}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
       </div>
 

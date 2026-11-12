@@ -70,16 +70,6 @@ export const CATEGORY_DEFINITIONS: CategoryDefinition[] = [
     expectedCount: 17,
   },
   {
-    id: '72',
-    name: 'Vasos y Tazas',
-    canonicalSlug: 'vasos-y-tazas',
-    aliases: [
-      'vaso', 'vasos', 'taza', 'tazas', 'mug', 'mugs',
-      'vasos-y-tazas', '72'
-    ],
-    expectedCount: 16,
-  },
-  {
     id: '73',
     name: 'Textiles y Accesorios',
     canonicalSlug: 'textiles-y-ropa',
@@ -91,14 +81,16 @@ export const CATEGORY_DEFINITIONS: CategoryDefinition[] = [
   },
   {
     id: '54',
-    name: 'Vasos Botellas y Termos',
+    name: 'Tazas, Botellas y Termos',
     canonicalSlug: 'tazas-botellas-y-termos',
     aliases: [
+      'vaso', 'vasos', 'taza', 'tazas', 'mug', 'mugs',
+      'vasos-y-tazas', '72',
       'botella', 'botellas', 'termo', 'termos',
       'vasos-botellas-y-termos', 'tazas-botellas-y-termos',
       'botellas-y-termos', '54'
     ],
-    expectedCount: 14,
+    expectedCount: 30,
   },
   {
     id: '74',
@@ -113,12 +105,12 @@ export const CATEGORY_DEFINITIONS: CategoryDefinition[] = [
   {
     id: '76',
     name: 'Oficina y Escritorio',
-    canonicalSlug: 'articulos-promocionales-de-oficina',
+    canonicalSlug: 'oficina-y-escritorio',
     aliases: [
       'oficina', 'escritorio', 'oficina-y-escritorio',
       'articulos-promocionales-de-oficina', 'accesorios-de-escritorio', '76'
     ],
-    expectedCount: 10,
+    expectedCount: 9,
   },
   {
     id: '46',
@@ -339,7 +331,8 @@ export async function getCategories(): Promise<ProductCategory[]> {
           });
         });
 
-        // Update with live counts from API
+        // Update with live counts from API (summing when multiple WP categories map to one canonical SILO category)
+        const liveCounts = new Map<string, number>();
         data
           .filter((c: any) => c.slug !== 'sin-categorizar' && c.count > 0)
           .forEach((c: any) => {
@@ -347,12 +340,14 @@ export async function getCategories(): Promise<ProductCategory[]> {
             const catId = def ? def.id : String(c.id);
             const catName = def ? def.name : c.name;
             const catSlug = def ? def.canonicalSlug : c.slug;
+            const accumulatedCount = (liveCounts.get(catId) || 0) + (Number(c.count) || 0);
+            liveCounts.set(catId, accumulatedCount);
 
             categoriesMap.set(catId, {
               id: catId,
               name: catName,
               slug: catSlug,
-              count: c.count,
+              count: accumulatedCount,
             });
           });
 
@@ -398,7 +393,8 @@ export async function getProducts(
     if (def) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-      const catUrl = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100&category=${def.id}`;
+      const wpCategoryParam = def.id === '54' ? '54,72' : def.id;
+      const catUrl = `${LIVE_DOMAIN}/wp-json/wc/store/v1/products?per_page=100&category=${wpCategoryParam}`;
 
       const res = await fetch(catUrl, {
         next: { revalidate: 1800 },

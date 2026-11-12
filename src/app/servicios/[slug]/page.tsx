@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { MOCK_SERVICES } from '@/lib/mockData';
-import { CheckCircle2, ArrowLeft, PhoneCall, Calculator, ShieldCheck, Truck, Layers, Building2, User } from 'lucide-react';
+import { CheckCircle2, ArrowLeft, ArrowRight, PhoneCall, Calculator, ShieldCheck, Truck, Layers, Building2, User, HelpCircle, AlertTriangle, Check, Sparkles } from 'lucide-react';
+import { FAQPageSchema } from '@/components/seo/SchemaOrg';
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const service = MOCK_SERVICES.find((s) => s.slug === params.slug);
@@ -275,6 +276,229 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* BLOQUE PROFUNDO EXCLUSIVO PARA GRAN FORMATO, BANNERS, BANDEROLAS, ROLL-UP Y VINILES (2,290 búsquedas/mes en Panamá) */}
+          {service.slug === 'impresion-gran-formato' && (
+            <div className="space-y-8">
+              <FAQPageSchema
+                questions={[
+                  {
+                    question: '¿Qué medidas estándar tienen los Roll-Up y los Banners tipo Araña en Panamá?',
+                    answer: 'El Roll-Up retráctil estándar de aluminio mide 0.85 × 2.00 metros (también disponible en 1.00 × 2.00 m) e incluye la impresión instalada y maletín de lona acolchado. El Banner tipo Araña (X-Banner) se trabaja en medidas de 0.60 × 1.60 metros y 0.80 × 1.80 metros con 4 ojales esquineros.'
+                  },
+                  {
+                    question: '¿Qué diferencia hay entre el vinil adhesivo normal, el microperforado y el vinil esmerilado para vidrios?',
+                    answer: 'El vinil adhesivo (brillante o mate) cubre el cristal por completo con colores sólidos. El vinil microperforado permite ver la publicidad impresa desde afuera mientras conserva la visibilidad y paso de luz desde el interior del local o vehículo. El papel o vinil esmerilado (sandblasting) crea un efecto translúcido satinado de privacidad ideal para divisiones de vidrio en oficinas y clínicas en Panamá.'
+                  },
+                  {
+                    question: '¿Producen banderolas publicitarias, backing y manteles para ferias en Panamá?',
+                    answer: 'Sí. Producimos banderolas publicitarias tipo gota y tipo vela en tela sublimada resistente al viento con asta flexible y base, así como estructuras de backing publicitario y manteles impresos para mesas plegables de 6 pies ideales para stands de congresos y ferias.'
+                  },
+                  {
+                    question: '¿En qué formato debo enviar el diseño para un banner o Roll-Up sin que salga pixelado?',
+                    answer: 'Para impresión en gran formato recomendamos enviar archivos en PDF, TIFF o AI a tamaño real (escala 1:1) con una resolución entre 100 y 150 DPI en modo de color CMYK y textos convertidos a curvas.'
+                  }
+                ]}
+              />
+
+              {/* Regla 9 & Regla 8: Lo esencial + Honestidad Radical */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-amber-50/80 border border-amber-200 rounded-3xl p-6 space-y-3 text-xs sm:text-sm">
+                  <div className="flex items-center space-x-2 text-amber-900 font-extrabold uppercase tracking-wider text-xs">
+                    <Sparkles className="w-4 h-4 text-[#FF5E14]" />
+                    <span>Lo esencial, por si no lees todo</span>
+                  </div>
+                  <ul className="space-y-2 text-gray-800">
+                    <li className="flex items-start space-x-2">
+                      <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>Todo para tu local o evento:</strong> Lonas banner 13oz con ojales, Roll-Up, Banner Araña, Banderolas, Backing, Manteles y Viniles.</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>Desde 1 unidad o por m²:</strong> Pide un solo Roll-Up para tu evento o cotiza tirajes mayoristas en pie² / m².</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>Tintas para clima panameño:</strong> Alta resistencia a rayos UV, humedad y lluvia tropical.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-red-50/60 border border-red-200 rounded-3xl p-6 space-y-3 text-xs sm:text-sm">
+                  <div className="flex items-center space-x-2 text-red-900 font-extrabold uppercase tracking-wider text-xs">
+                    <AlertTriangle className="w-4 h-4 text-red-600" />
+                    <span>Lo que este servicio NO resuelve</span>
+                  </div>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start space-x-2">
+                      <span className="text-red-500 font-bold">•</span>
+                      <span><strong>No vendemos rollos de materia prima en blanco para otras imprentas:</strong> Entregamos la lona, el vinil o la estructura 100% impresa y terminada con tu diseño.</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <span className="text-red-500 font-bold">•</span>
+                      <span><strong>No realizamos obra civil de herrería pesada ni vallas de carretera en altura</strong> con grúa; nos especializamos en impresión gráfica, displays portátiles y viniles.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Los 4 Sub-Clústeres de Gran Formato en Panamá */}
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-6">
+                <h2 className="text-2xl font-extrabold text-gray-900 font-outfit">
+                  Soluciones de Gran Formato, Displays y Viniles en Panamá
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 space-y-2">
+                    <h2 className="text-base sm:text-lg font-extrabold text-gray-900 font-outfit">
+                      1. Banderolas Publicitarias Tipo Gota y Vela en Panamá
+                    </h2>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      Las <strong>banderolas publicitarias</strong> (tipo pluma, vela o gota) de 2.5 m a 4.5 m de altura son el imán visual número uno para fachadas de negocios, ferias, concesionarios, playas y eventos deportivos en Panamá. Incluyen tela sublimada resistente al viento, asta desarmable de fibra/aluminio y base tipo estaca o cruceta.
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 space-y-2">
+                    <h2 className="text-base sm:text-lg font-extrabold text-gray-900 font-outfit">
+                      2. Roll-Up, Banner Araña, Backing y Manteles para Ferias
+                    </h2>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      Equipa tu stand para congresos y activaciones en minutos: <strong>estructuras Roll-Up retráctiles de aluminio</strong> (0.85 × 2.00 m), <strong>Banner Araña (X-Banner)</strong> económico, <strong>backing publicitario</strong> para fondos de fotos o ruedas de prensa y <strong>manteles personalizados para mesas plegables</strong> de 6 pies.
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 space-y-2">
+                    <h2 className="text-base sm:text-lg font-extrabold text-gray-900 font-outfit">
+                      3. Vinil Adhesivo, Microperforado y Esmerilado para Vidrios
+                    </h2>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      Transformamos las vidrieras de tu local u oficina en Panamá: <strong>vinil adhesivo brillante o mate</strong> de alta adherencia, <strong>vinil microperforado para vidrios</strong> (visibilidad unidireccional homologada para fachadas y flotas) y <strong>vinil o papel esmerilado para vidrios</strong> (efecto sandblasting de privacidad con corte de logotipo en plotter).
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 space-y-2">
+                    <h2 className="text-base sm:text-lg font-extrabold text-gray-900 font-outfit">
+                      4. Impresión de Banners en Lona 13oz y Gigantografías
+                    </h2>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      Impresión de <strong>banners en Panamá</strong> sobre lona vinílica reforzada de 13 onzas con acabado brillante o mate, termosellado perimetral de refuerzo, <strong>ojales metálicos inoxidables</strong> cada 50 cm o bolsillos para tubo. Ideal para anuncios de "Se Vende / Se Alquila", aperturas comerciales y pasacalles.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tabla Técnica de Medidas y Materiales */}
+                <div className="pt-2 overflow-x-auto">
+                  <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                    <thead>
+                      <tr className="bg-[#0D0D0D] text-white">
+                        <th className="p-3.5 rounded-tl-xl font-extrabold">Producto / Estructura</th>
+                        <th className="p-3.5 font-extrabold">Medida Estándar</th>
+                        <th className="p-3.5 font-extrabold">Material e Impresión</th>
+                        <th className="p-3.5 rounded-tr-xl font-extrabold">Acabado Incluido</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200 text-gray-700">
+                      <tr>
+                        <td className="p-3.5 font-bold text-gray-900">Banner Roll-Up Aluminio</td>
+                        <td className="p-3.5">0.85 × 2.00 m (33" × 79")</td>
+                        <td className="p-3.5">Lona lisa / Pet Banner anti-curling</td>
+                        <td className="p-3.5">Casete retráctil + bolso de lona</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3.5 font-bold text-gray-900">Banner Araña (X-Banner)</td>
+                        <td className="p-3.5">0.60 × 1.60 m / 0.80 × 1.80 m</td>
+                        <td className="p-3.5">Lona Banner 13oz full color</td>
+                        <td className="p-3.5">4 ojales + estructura + funda</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3.5 font-bold text-gray-900">Banderolas Publicitarias</td>
+                        <td className="p-3.5">Alturas de 2.5 m, 3.5 m y 4.5 m</td>
+                        <td className="p-3.5">Tela bandera sublimada lavable</td>
+                        <td className="p-3.5">Mástil flexible + base + bolso</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3.5 font-bold text-gray-900">Lona Banner Exterior</td>
+                        <td className="p-3.5">A medida por pie² o m²</td>
+                        <td className="p-3.5">Lona reforzada 13oz UV/Ecosolvente</td>
+                        <td className="p-3.5">Refuerzo perimetral y ojales</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3.5 font-bold text-gray-900">Vinil / Microperforado / Esmerilado</td>
+                        <td className="p-3.5">A medida según vidriera</td>
+                        <td className="p-3.5">Vinil PVC polimérico / Esmerilado</td>
+                        <td className="p-3.5">Impresión HD o troquelado en plotter</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3.5 font-bold text-gray-900">Mantel Publicitario de Feria</td>
+                        <td className="p-3.5">Para mesa plegable de 6 pies (1.83 m)</td>
+                        <td className="p-3.5">Tela poliéster sublimada full color</td>
+                        <td className="p-3.5">Caída en 3 o 4 lados lavable</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Preguntas Frecuentes visibles de Gran Formato */}
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-4">
+                <div className="flex items-center space-x-2 text-[#FF5E14]">
+                  <HelpCircle className="w-5 h-5" />
+                  <h2 className="text-xl font-extrabold text-gray-900 font-outfit">
+                    Preguntas Frecuentes sobre Banners, Roll-Up y Viniles en Panamá
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
+                    <h3 className="font-bold text-sm text-gray-900 font-outfit">
+                      ¿Qué medidas estándar tienen los Roll-Up y los Banners tipo Araña?
+                    </h3>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      El Roll-Up retráctil de aluminio mide 0.85 × 2.00 m e incluye la lona instalada y estuche de transporte. El Banner Araña se trabaja en 0.60 × 1.60 m y 0.80 × 1.80 m. También puedes leer nuestra comparativa:{' '}
+                      <Link href="/blog/rollup-vs-banner-arana-cual-elegir-para-tu-evento" className="text-[#FF5E14] font-bold underline">
+                        Roll-Up vs Banner Araña para eventos
+                      </Link>.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
+                    <h3 className="font-bold text-sm text-gray-900 font-outfit">
+                      ¿Qué diferencia hay entre vinil adhesivo, microperforado y esmerilado?
+                    </h3>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      El vinil adhesivo es opaco (brillante o mate); el microperforado permite ver hacia afuera desde el interior del local o vehículo; y el vinil esmerilado da privacidad satinada elegante en divisiones de vidrio de oficinas y clínicas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Bloque de Enlazado Interno SILO hacia Página Pilar de Artículos Promocionales */}
+          <div className="bg-[#0D0D0D] text-white p-6 sm:p-8 rounded-3xl border border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
+              <span className="text-[#FF5E14] font-extrabold uppercase tracking-wider text-xs block">
+                Complementa tu Pedido Corporativo
+              </span>
+              <p className="leading-relaxed">
+                ¿Necesitas también dotación con tu logo para tu evento o empresa? Explora nuestro catálogo de{' '}
+                <Link href="/articulos-promocionales-panama" className="text-white font-extrabold underline decoration-[#FF5E14] hover:text-[#FF5E14]">
+                  artículos promocionales en Panamá
+                </Link>{' '}
+                con 166 productos desde 50 unidades:{' '}
+                <Link href="/tienda/tazas-botellas-y-termos" className="text-gray-200 underline hover:text-[#FF5E14]">termos</Link>,{' '}
+                <Link href="/tienda/boligrafos-y-plumas" className="text-gray-200 underline hover:text-[#FF5E14]">bolígrafos</Link>,{' '}
+                <Link href="/tienda/libretas-y-cuadernos" className="text-gray-200 underline hover:text-[#FF5E14]">agendas</Link>,{' '}
+                <Link href="/tienda/bolsas-y-totes" className="text-gray-200 underline hover:text-[#FF5E14]">bolsas de manta sucia</Link> y{' '}
+                <Link href="/tienda/identificacion-y-correas" className="text-gray-200 underline hover:text-[#FF5E14]">lanyards</Link>.
+              </p>
+            </div>
+            <Link
+              href="/articulos-promocionales-panama"
+              className="shrink-0 bg-[#FF5E14] hover:bg-[#E04700] text-white px-5 py-3 rounded-xl text-xs font-extrabold transition-all flex items-center space-x-2"
+            >
+              <span>Ver Promocionales B2B</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
         </div>

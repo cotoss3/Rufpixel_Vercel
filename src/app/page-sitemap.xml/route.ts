@@ -4,10 +4,11 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rufpixel.com';
-  const now = new Date().toISOString();
+  const lastmod = '2026-11-11T00:00:00.000Z';
 
   const pages = [
     { url: `${baseUrl}/`, priority: '1.0', changefreq: 'daily' },
+    { url: `${baseUrl}/articulos-promocionales-panama`, priority: '1.0', changefreq: 'weekly' },
     { url: `${baseUrl}/tienda`, priority: '0.9', changefreq: 'daily' },
     { url: `${baseUrl}/zona-pixel`, priority: '0.9', changefreq: 'weekly' },
     { url: `${baseUrl}/cotizador`, priority: '0.9', changefreq: 'weekly' },
@@ -28,7 +29,7 @@ ${pages
   .map(
     (p) => `  <url>
     <loc>${p.url}</loc>
-    <lastmod>${now}</lastmod>
+    <lastmod>${lastmod}</lastmod>
   </url>`
   )
   .join('\n')}

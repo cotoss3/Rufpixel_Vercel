@@ -199,11 +199,28 @@ export function GeoFaqSchema() {
 }
 
 export function ProductSchema({ product }: { product: Product }) {
+  const unit50 = product.pricePacks?.pack50?.unit || (product.price > 0 ? Number((product.price / 50).toFixed(2)) : 0);
+  const unit100 = product.pricePacks?.pack100?.unit || Number((unit50 * 0.95).toFixed(2));
+  const unit250 = product.pricePacks?.pack250?.unit || Number((unit50 * 0.90).toFixed(2));
+
+  const sellerObj = {
+    '@type': 'LocalBusiness',
+    name: 'RufPixel - Casa Creativa',
+    telephone: '+507 6445-4084',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Calle Arnoldo Cano, Barrio Colón, entrando por COMASA, Local 1',
+      addressLocality: 'La Chorrera',
+      addressRegion: 'Panamá Oeste',
+      addressCountry: 'PA',
+    },
+  };
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: [product.image, ...product.gallery].filter(Boolean),
+    image: [product.image, ...(product.gallery || [])].filter(Boolean),
     description: (product.shortDescription || product.description || '').replace(/<[^>]+>/g, '').trim(),
     sku: product.sku || product.id,
     brand: {
@@ -212,31 +229,52 @@ export function ProductSchema({ product }: { product: Product }) {
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '48',
+      ratingValue: '5.0',
+      reviewCount: '7',
       bestRating: '5',
       worstRating: '1',
     },
     offers: {
-      '@type': 'Offer',
+      '@type': 'AggregateOffer',
       url: `https://rufpixel.com/productos/${product.slug}`,
       priceCurrency: 'USD',
-      price: product.price,
-      priceValidUntil: '2027-12-31',
-      itemCondition: 'https://schema.org/NewCondition',
+      lowPrice: unit250.toFixed(2),
+      highPrice: unit50.toFixed(2),
+      offerCount: '3',
       availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'LocalBusiness',
-        name: 'RufPixel - Casa Creativa',
-        telephone: '+507 6445-4084',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Calle Arnoldo Cano, Barrio Colón, entrando por COMASA, Local 1',
-          addressLocality: 'La Chorrera',
-          addressRegion: 'Panamá Oeste',
-          addressCountry: 'PA',
+      itemCondition: 'https://schema.org/NewCondition',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: `${product.name} — Escala 50 unidades ($${unit50.toFixed(2)}/ud)`,
+          price: unit50.toFixed(2),
+          priceCurrency: 'USD',
+          priceValidUntil: '2027-12-31',
+          availability: 'https://schema.org/InStock',
+          url: `https://rufpixel.com/productos/${product.slug}`,
+          seller: sellerObj,
         },
-      },
+        {
+          '@type': 'Offer',
+          name: `${product.name} — Escala 100 unidades ($${unit100.toFixed(2)}/ud)`,
+          price: unit100.toFixed(2),
+          priceCurrency: 'USD',
+          priceValidUntil: '2027-12-31',
+          availability: 'https://schema.org/InStock',
+          url: `https://rufpixel.com/productos/${product.slug}`,
+          seller: sellerObj,
+        },
+        {
+          '@type': 'Offer',
+          name: `${product.name} — Escala 250 unidades ($${unit250.toFixed(2)}/ud)`,
+          price: unit250.toFixed(2),
+          priceCurrency: 'USD',
+          priceValidUntil: '2027-12-31',
+          availability: 'https://schema.org/InStock',
+          url: `https://rufpixel.com/productos/${product.slug}`,
+          seller: sellerObj,
+        },
+      ],
     },
   };
 

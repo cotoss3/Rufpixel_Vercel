@@ -8,14 +8,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tomas Aéreas y Drones en Panamá en 4K y 360° | RufPixel',
-  description: 'Servicio de tomas aéreas, video con drones 4K y tours virtuales 360° en Panamá. Cobertura de bienes raíces, obras y eventos. Cotiza por WhatsApp.',
+  title: 'Fotografía y Tomas Aéreas con Drones en Panamá | RufPixel',
+  description: 'Servicio de fotografía aérea, tomas con drones 4K y tours virtuales 360° en Panamá para bienes raíces, obras y eventos. ¡Cotiza por WhatsApp hoy!',
   alternates: {
     canonical: 'https://rufpixel.com/tomas-aereas-panama',
   },
   openGraph: {
-    title: 'Tomas Aéreas y Drones en Panamá en 4K y 360° | RufPixel',
-    description: 'Servicio profesional de video, fotografía aérea y panorámicas 360° con drones en Panamá. Resolución 4K a 60fps para bienes raíces, constructoras y turismo.',
+    title: 'Fotografía y Tomas Aéreas con Drones en Panamá | RufPixel',
+    description: 'Servicio de fotografía aérea, tomas con drones 4K y tours virtuales 360° en Panamá para bienes raíces, obras y eventos. ¡Cotiza por WhatsApp hoy!',
     url: 'https://rufpixel.com/tomas-aereas-panama',
     siteName: 'RufPixel',
     locale: 'es_PA',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: 'https://rufpixel.com/images/services/drone-moderno-tomas-aereas-panama.jpg',
         width: 1024,
         height: 576,
-        alt: 'Tomas Aéreas, Video 4K y Panorámicas 360 con Drones en Panamá - RufPixel',
+        alt: 'Fotografía Aérea, Tomas con Drones 4K y Panorámicas 360 en Panamá - RufPixel',
       },
     ],
   },
@@ -339,12 +339,12 @@ export default function TomasAereasPanamaPage() {
 
               {/* H1 Title */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-outfit text-gray-950 tracking-tight leading-[1.12]">
-                Tomas Aéreas, Video 4K y <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E14] via-[#E04700] to-amber-600">Drones 360°</span> en Panamá
+                Fotografía Aérea, Tomas 4K y <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5E14] via-[#E04700] to-amber-600">Drones 360°</span> en Panamá
               </h1>
 
               {/* Subtitle */}
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                Fotografía y video cinematográfico en 4K y <strong>panorámicas esféricas 360° interactivas</strong>. Capturamos perspectivas de alto impacto para <strong>bienes raíces</strong>, <strong>tours virtuales</strong>, <strong>avance de obras civiles</strong> y <strong>eventos</strong> en Ciudad de Panamá, Panamá Oeste y Provincias.
+                Servicio de <strong>fotografía aérea en Panamá</strong>, video cinematográfico en 4K y <strong>panorámicas esféricas 360° interactivas</strong>. Capturamos perspectivas de alto impacto para <strong>bienes raíces</strong>, <strong>tours virtuales</strong>, <strong>avance de obras civiles</strong> y <strong>eventos</strong> en Ciudad de Panamá, Panamá Oeste y Provincias.
               </p>
 
               {/* Action Buttons */}

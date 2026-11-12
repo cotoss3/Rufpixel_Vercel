@@ -244,6 +244,8 @@ export default function ShopClientGrid({
               selectedCategory === cat.slug ||
               (resolvedActive && def && resolvedActive.id === def.id) ||
               (resolvedActive && resolvedActive.canonicalSlug === cat.slug);
+            const liveCount = baseProducts.filter((p) => isProductInCategory(p, cat.slug, categories)).length;
+            const displayCount = liveCount > 0 ? liveCount : cat.count;
 
             return (
               <button
@@ -263,7 +265,7 @@ export default function ShopClientGrid({
                       : 'bg-gray-100 text-gray-500 group-hover:bg-[#FF5E14]/10 group-hover:text-[#FF5E14]'
                   }`}
                 >
-                  {cat.count}
+                  {displayCount}
                 </span>
               </button>
             );

@@ -100,7 +100,7 @@ export default async function HomePage() {
             {/* Right Feature Card Image Preview */}
             <div className="lg:col-span-5 relative">
               <Link
-                href="/tienda?category=grabados-laser"
+                href="/articulos-promocionales-panama"
                 className="block relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border-2 border-gray-800 shadow-2xl bg-[#070707] group p-2 flex items-center justify-center"
               >
                 <img
@@ -170,7 +170,7 @@ export default async function HomePage() {
 
               <div className="pt-6">
                 <Link
-                  href={`/servicios/${service.slug}`}
+                  href={service.slug === 'tomas-aereas-drones' ? '/tomas-aereas-panama' : `/servicios/${service.slug}`}
                   className="inline-flex items-center space-x-2 text-sm font-bold text-[#FF5E14] hover:text-[#E04700] transition-colors"
                 >
                   <span>Saber más sobre este servicio</span>

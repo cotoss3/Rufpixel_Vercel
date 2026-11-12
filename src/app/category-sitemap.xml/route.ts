@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rufpixel.com';
-  const now = new Date().toISOString();
+  const lastmod = '2026-11-11T00:00:00.000Z';
 
   const categories = await getCategories();
   const seen = new Set<string>();
@@ -26,7 +26,7 @@ ${uniqueCategories
   .map(
     (c) => `  <url>
     <loc>${baseUrl}/tienda/${c.slug}</loc>
-    <lastmod>${now}</lastmod>
+    <lastmod>${lastmod}</lastmod>
   </url>`
   )
   .join('\n')}

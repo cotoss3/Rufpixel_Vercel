@@ -41,10 +41,21 @@ const nextConfig = {
         destination: '/tienda/:slug*',
         permanent: true,
       },
+      // SILO Category Anti-Cannibalization 301 Redirects
+      {
+        source: '/tienda/vasos-y-tazas',
+        destination: '/tienda/tazas-botellas-y-termos',
+        permanent: true,
+      },
+      {
+        source: '/tienda/articulos-promocionales-de-oficina',
+        destination: '/tienda/oficina-y-escritorio',
+        permanent: true,
+      },
       // Fix legacy service URL
       {
         source: '/servicios/material-promocional-pop',
-        destination: '/tienda',
+        destination: '/articulos-promocionales-panama',
         permanent: true,
       },
       // 3. Old Shop / Catalog pages
@@ -91,12 +102,12 @@ const nextConfig = {
       },
       {
         source: '/articulos-promocionales',
-        destination: '/tienda',
+        destination: '/articulos-promocionales-panama',
         permanent: true,
       },
       {
         source: '/articulos-promocionale',
-        destination: '/tienda',
+        destination: '/articulos-promocionales-panama',
         permanent: true,
       },
       {

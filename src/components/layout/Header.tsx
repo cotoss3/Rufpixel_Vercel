@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Menu, X, Phone, Mail, Clock, Calculator, ShieldCheck, Zap } from 'lucide-react';
+import { ShoppingBag, Menu, X, Phone, Mail, Clock, ShieldCheck, Zap } from 'lucide-react';
 import { useCart } from '@/lib/cartContext';
 import ProductSearch from '../shop/ProductSearch';
 import { Product } from '@/lib/types';
@@ -46,8 +46,9 @@ export default function Header() {
 
   const navLinks = [
     { href: '/', label: 'Inicio' },
-    { href: '/servicios', label: 'Servicios' },
+    { href: '/articulos-promocionales-panama', label: 'Promocionales' },
     { href: '/tienda', label: 'Tienda' },
+    { href: '/servicios', label: 'Servicios' },
     { href: '/galeria', label: 'Galería' },
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/contacto', label: 'Contacto' },

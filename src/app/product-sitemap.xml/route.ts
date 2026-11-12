@@ -6,17 +6,18 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rufpixel.com';
-  const now = new Date().toISOString();
+  const catalogBaselineDate = '2026-11-11T00:00:00.000Z';
 
-  // Deduplicate products strictly
+  // Deduplicate products strictly and preserve real modification dates
   const seen = new Set<string>();
-  const productSlugs: string[] = [];
+  const productEntries: { slug: string; lastmod: string }[] = [];
 
   (localProductsDb as any[]).forEach((p) => {
     const s = (p.slug || p.handle || '').trim();
     if (s && !seen.has(s.toLowerCase())) {
       seen.add(s.toLowerCase());
-      productSlugs.push(s);
+      const modDate = p.date_modified || p.updated_at || catalogBaselineDate;
+      productEntries.push({ slug: s, lastmod: modDate });
     }
   });
 
@@ -24,18 +25,19 @@ export async function GET() {
     const s = (p.slug || '').trim();
     if (s && !seen.has(s.toLowerCase())) {
       seen.add(s.toLowerCase());
-      productSlugs.push(s);
+      const modDate = p.date_modified || p.updated_at || catalogBaselineDate;
+      productEntries.push({ slug: s, lastmod: modDate });
     }
   });
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${productSlugs
+${productEntries
   .map(
-    (slug) => `  <url>
-    <loc>${baseUrl}/productos/${slug}</loc>
-    <lastmod>${now}</lastmod>
+    (entry) => `  <url>
+    <loc>${baseUrl}/productos/${entry.slug}</loc>
+    <lastmod>${entry.lastmod}</lastmod>
   </url>`
   )
   .join('\n')}
