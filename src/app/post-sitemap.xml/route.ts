@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rufpixel.com';
-  const now = new Date().toISOString();
+  const lastmod = '2026-11-11T00:00:00.000Z';
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
@@ -14,7 +14,7 @@ ${MOCK_BLOG_POSTS
   .map(
     (p) => `  <url>
     <loc>${baseUrl}/blog/${p.slug}</loc>
-    <lastmod>${now}</lastmod>
+    <lastmod>${lastmod}</lastmod>
   </url>`
   )
   .join('\n')}

@@ -9,6 +9,8 @@ export async function GET() {
   const pages = [
     { url: `${baseUrl}/`, priority: '1.0', changefreq: 'daily' },
     { url: `${baseUrl}/articulos-promocionales-panama`, priority: '1.0', changefreq: 'weekly' },
+    { url: `${baseUrl}/regalos-corporativos-panama`, priority: '0.9', changefreq: 'weekly' },
+    { url: `${baseUrl}/promocionales-panama-oeste`, priority: '0.9', changefreq: 'weekly' },
     { url: `${baseUrl}/tienda`, priority: '0.9', changefreq: 'daily' },
     { url: `${baseUrl}/zona-pixel`, priority: '0.9', changefreq: 'weekly' },
     { url: `${baseUrl}/cotizador`, priority: '0.9', changefreq: 'weekly' },

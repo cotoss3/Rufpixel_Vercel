@@ -12,9 +12,11 @@ import { QuoteItem } from '@/lib/types';
 
 export default function ProductDetailClient({ 
   product: initialProduct,
+  relatedProducts = [],
   slug
 }: { 
   product?: Product;
+  relatedProducts?: Product[];
   slug?: string;
 }) {
   const { addToCart } = useCart();
@@ -648,6 +650,52 @@ export default function ProductDetailClient({
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
+
+        {/* Productos Relacionados de la Misma Categoría */}
+        {relatedProducts && relatedProducts.length > 0 && (
+          <div className="pt-8 border-t border-gray-200 space-y-5">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-extrabold text-gray-900 font-outfit">
+                Productos Relacionados en {product.category}
+              </h2>
+              <Link href={`/tienda/${catSlug}`} className="text-xs font-extrabold text-[#FF5E14] hover:underline flex items-center space-x-1">
+                <span>Ver todos</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {relatedProducts.map((rel) => {
+                const relUnit = rel.pricePacks?.pack50?.unit || (rel.price > 0 ? rel.price / 50 : 0);
+                return (
+                  <Link
+                    key={rel.id}
+                    href={`/productos/${rel.slug}`}
+                    className="bg-white border border-gray-200 hover:border-[#FF5E14] rounded-2xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group space-y-3"
+                  >
+                    <div className="space-y-3">
+                      <div className="h-36 bg-gray-50 rounded-xl overflow-hidden p-2 flex items-center justify-center">
+                        <img
+                          src={rel.image}
+                          alt={rel.name}
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                        />
+                      </div>
+                      <h3 className="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-[#FF5E14] line-clamp-2 font-outfit">
+                        {rel.name}
+                      </h3>
+                    </div>
+                    <div className="pt-2 border-t border-gray-100 flex items-center justify-between text-xs">
+                      <span className="text-gray-500 font-medium">Desde 50 uds</span>
+                      <span className="font-extrabold text-[#FF5E14]">
+                        ${relUnit.toFixed(2)}/ud
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Quote Modal */}

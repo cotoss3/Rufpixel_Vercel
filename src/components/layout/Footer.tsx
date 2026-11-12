@@ -128,6 +128,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-gray-300">
               <li><Link href="/tienda" className="hover:text-[#FF5E14] transition-colors">Catálogo Completo (166 uds)</Link></li>
+              <li><Link href="/regalos-corporativos-panama" className="hover:text-[#FF5E14] transition-colors">Regalos Corporativos en Panamá</Link></li>
+              <li><Link href="/promocionales-panama-oeste" className="hover:text-[#FF5E14] transition-colors">Imprenta y Bordados La Chorrera</Link></li>
               <li><Link href="/cotizador" className="hover:text-[#FF5E14] transition-colors font-bold text-[#FF5E14]">Zona Pixel (Al Detal)</Link></li>
               <li><Link href="/blog" className="hover:text-[#FF5E14] transition-colors">Blog y Guías de Compra</Link></li>
               <li><Link href="/galeria" className="hover:text-[#FF5E14] transition-colors">Galería de Trabajos</Link></li>

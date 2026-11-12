@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { getProductBySlug } from '@/lib/woocommerce';
+import { getProductBySlug, VERIFIED_LOCAL_PRODUCTS, isProductInCategory } from '@/lib/woocommerce';
 import ProductDetailClient from './ProductDetailClient';
 
 /**
@@ -139,9 +139,14 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
     );
   }
 
+  const catTarget = product.categorySlug || product.category;
+  const relatedProducts = VERIFIED_LOCAL_PRODUCTS
+    .filter((p) => p.slug !== product.slug && isProductInCategory(p, catTarget))
+    .slice(0, 4);
+
   return (
     <>
-      <ProductDetailClient product={product} />
+      <ProductDetailClient product={product} relatedProducts={relatedProducts} />
     </>
   );
 }

@@ -199,40 +199,40 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
   {
     id: 'post-1',
     slug: 'como-preparar-tus-archivos-para-impresion-sin-errores',
-    title: 'Guía Definitiva: Cómo preparar tus archivos de diseño para impresión sin errores de color',
-    excerpt: 'Descubre la diferencia entre CMYK y RGB, la importancia del sangrado (bleed) y cómo convertir fuentes a curvas para un resultado perfecto.',
-    content: `<p>Uno de los problemas más comunes al enviar artes a la imprenta es encontrarse con variaciones de color no deseadas o imágenes pixeladas. En <strong>RufPixel</strong> queremos que tus proyectos queden exactamente como los imaginaste.</p>
-    <h3>1. Modos de color: RGB vs CMYK</h3>
-    <p>Las pantallas de las computadoras y celulares trabajan en <strong>RGB</strong> (Rojo, Verde, Azul), generando luz. Por el contrario, las impresoras profesionales utilizan <strong>CMYK</strong> (Cian, Magenta, Amarillo, Negro) usando pigmentos reales. Para evitar cambios drásticos en los tonos, configura tu archivo en modo CMYK desde el inicio.</p>
-    <h3>2. Margen de Sangrado o Bleed</h3>
-    <p>Agrega siempre 3 mm de sangrado por cada borde del diseño. Esto garantiza que al momento del guillotinado no queden filos blancos desalineados.</p>
-    <h3>3. Convertir textos a curvas o contornos</h3>
-    <p>Si envías un archivo editable en Illustrator o PDF, recuerda convertir todas las tipografías a curvas (Ctrl+Shift+O en Illustrator) para evitar sustituciones automáticas de tipografía.</p>`,
-    category: 'Consejos de Impresión',
+    title: 'Cómo preparar el logo para que se vea bien en un promocional o impresión',
+    excerpt: 'Guía práctica en Panamá: diferencia entre CMYK y RGB, vectores en curvas (AI, PDF, EPS), sangrado y resolución mínima para grabados y DTF.',
+    content: `<p>Uno de los problemas más frecuentes al encargar <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a> o impresiones en gran formato es enviar logotipos descargados de WhatsApp o capturas de pantalla que pierden definición al ampliarse o grabarse. En <strong>RufPixel</strong> revisamos técnicamente tu archivo antes de producir, y con esta guía puedes prepararlo como un profesional.</p>
+    <h2>1. Vectores en curvas vs imágenes de píxeles</h2>
+    <p>Para técnicas de alta precisión como el <a href="/servicios/grabados-laser"><strong>grabado láser en metal y bambú</strong></a>, la serigrafía o el corte de vinil, el logotipo debe estar en formato vectorial (<strong>.AI, .EPS o .PDF editable</strong>) con todas las tipografías convertidas a curvas (<code>Ctrl+Shift+O</code> en Illustrator). Así las líneas quedan definidas a cualquier escala.</p>
+    <h2>2. Modos de color: RGB vs CMYK y códigos Pantone</h2>
+    <p>Las pantallas trabajan en <strong>RGB</strong> (luz), mientras que las prensas digitales, el <a href="/servicios/dtf-textil"><strong>DTF textil</strong></a> y el <a href="/servicios/uv-dtf"><strong>transfer UV DTF</strong></a> trabajan con pigmentos <strong>CMYK</strong> + tinta blanca. Diseña siempre en CMYK y a 300 DPI reales para evitar variaciones bruscas de tono.</p>
+    <h2>3. ¿Quieres probar 1 sola pieza antes de tu lote mayorista?</h2>
+    <p>En nuestra calculadora de <a href="/cotizador"><strong>Zona Pixel</strong></a> puedes cotizar pliegos sueltos de DTF, UV DTF o muestras unitarias antes de lanzar tu pedido corporativo de 50, 100 o 250 unidades.</p>`,
+    category: 'Preparación de Archivos',
     categorySlug: 'consejos',
-    date: '2 de Agosto, 2026',
+    date: '2 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '4 min de lectura',
     image: '/images/services/papeleria-corporativa-libretas-panama.webp',
-    tags: ['Pre-prensa', 'CMYK', 'Diseño Gráfico', 'Tutorial']
+    tags: ['Pre-prensa', 'CMYK', 'Vectores', 'Zona Pixel']
   },
   {
     id: 'post-2',
     slug: 'acabados-premium-en-tarjetas-de-presentacion',
-    title: 'Tarjetas de Presentación que Venden: Acabados Premium que Elevan tu Marca',
-    excerpt: 'Conoce el laminado Soft-Touch, el barniz UV brillante localizado y el hot-stamping metálico para causar una primera impresión imborrable.',
-    content: `<p>En el mundo empresarial, tu tarjeta de presentación sigue siendo uno de los puntos de contacto físico más relevantes. No se trata solo de entregar un papel con tus datos, sino de transmitir solidez y confianza en cuestión de segundos.</p>
-    <h3>El poder del tacto: Laminado Soft-Touch</h3>
-    <p>El acabado aterciopelado tipo Soft-Touch ofrece una experiencia táctil placentera que destaca inmediatamente frente a las tarjetas convencionales.</p>
-    <h3>Brillo localizado (Spot UV)</h3>
-    <p>Aplicar un barniz UV brillante exclusivamente sobre el logotipo o detalles clave genera un contraste elegante entre la superficie mate y las zonas reflectoras.</p>`,
+    title: 'Tarjetas de Presentación y Papelería Corporativa en Panamá: Acabados que Venden',
+    excerpt: 'Conoce el papel satinado de 100 lbs, laminado mate y barniz UV brillante para causar una primera impresión ejecutiva en tus reuniones.',
+    content: `<p>En las reuniones de negocios y ferias comerciales en Panamá, entregar una tarjeta de presentación sólida sigue siendo el puente más rápido para cerrar una cotización. En nuestro servicio de <a href="/servicios/flyers-y-folletos"><strong>impresión de flyers, volantes y tarjetas de presentación en Panamá</strong></a> combinamos sustratos de alto gramaje con acabados limpios.</p>
+    <h2>1. Gramaje firme y laminado protector</h2>
+    <p>Trabajamos cartulinas y papeles satinados que resisten la humedad de Panamá sin doblarse en la billetera o tarjetero.</p>
+    <h2>2. Combina tu papelería con agendas y plumas corporativas</h2>
+    <p>Para ejecutivos de ventas y consultores, el complemento ideal de las tarjetas de presentación es contar con <a href="/tienda/libretas-y-cuadernos"><strong>agendas y libretas personalizadas en Panamá</strong></a> junto con <a href="/tienda/boligrafos-y-plumas"><strong>plumas metálicas grabadas a láser</strong></a>.</p>`,
     category: 'Papelería Corporativa',
     categorySlug: 'corporativo',
-    date: '10 de Agosto, 2026',
+    date: '4 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '3 min de lectura',
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop',
-    tags: ['Soft-Touch', 'Tarjetas', 'Branding']
+    tags: ['Tarjetas', 'Papelería', 'Branding']
   },
   {
     id: 'post-3',
@@ -240,19 +240,260 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     title: 'Roll-Up Retráctil vs Banner Araña: ¿Cuál conviene más para tu evento o stand en Panamá?',
     excerpt: 'Analizamos medidas estándar (0.85x2.00m vs 0.80x1.80m), durabilidad, armado y cuándo combinarlos con banderolas y manteles publicitarios.',
     content: `<p>Cuando organizas la presencia de tu empresa en una feria, congreso o activación comercial en Panamá, la visibilidad del stand es fundamental. Dos de las estructuras portátiles más solicitadas en nuestro taller de <a href="/servicios/impresion-gran-formato"><strong>impresión de banners y gran formato en Panamá</strong></a> son el Banner Roll-Up de aluminio y la estructura tipo Araña (X-Banner).</p>
-    <h3>1. Roll-Up Retráctil de Aluminio (0.85 × 2.00 metros)</h3>
+    <h2>1. Roll-Up Retráctil de Aluminio (0.85 × 2.00 metros)</h2>
     <p><strong>Ventajas:</strong> Su casete retráctil de aluminio anodizado enrolla y protege la gráfica durante el transporte, se arma en menos de 30 segundos sin herramientas y proyecta una imagen corporativa sólida en recepciones de hoteles, bancos y stands de ferias.</p>
-    <h3>2. Banner tipo Araña o X-Banner (0.60 × 1.60 m y 0.80 × 1.80 m)</h3>
+    <h2>2. Banner tipo Araña o X-Banner (0.60 × 1.60 m y 0.80 × 1.80 m)</h2>
     <p><strong>Ventajas:</strong> Es una estructura ligera de fibra y aluminio que tensa la lona mediante 4 ojales en las esquinas. Resulta ideal cuando necesitas distribuir múltiples puntos visuales en sucursales o cambiar únicamente la lona impresa en cada promoción mensual.</p>
-    <h3>3. ¿Cómo completar tu Stand de Feria en Panamá?</h3>
+    <h2>3. ¿Cómo completar tu Stand de Feria en Panamá?</h2>
     <p>Para destacar frente a la competencia en centros de convenciones como Atlapa o el Panama Convention Center, recomendamos combinar tu Roll-Up con <strong>banderolas publicitarias tipo vela</strong>, <strong>manteles personalizados para mesas plegables</strong> y un lote de <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a> (como bolígrafos, lanyards y bolsas reutilizables con tu logo).</p>`,
     category: 'Gran Formato',
     categorySlug: 'gran-formato',
-    date: '18 de Agosto, 2026',
+    date: '5 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '5 min de lectura',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop',
-    tags: ['Eventos', 'Banners', 'Publicidad']
+    tags: ['Eventos', 'Banners', 'Roll-Up']
+  },
+  {
+    id: 'post-4',
+    slug: 'que-regalar-a-clientes-por-menos-de-3-dolares-panama',
+    title: 'Qué regalar a tus clientes por menos de 3 dólares en Panamá (Compras al por Mayor)',
+    excerpt: 'Ranking real de artículos promocionales útiles entre $0.45 y $2.95 USD por unidad en escalas de 50, 100 y 250 piezas con tu logotipo.',
+    content: `<p>¿Tienes un presupuesto ajustado para una feria, apertura de sucursal o campaña de fin de año y necesitas maximizar la cantidad de impactos sin entregar algo que termine en la basura? En nuestro catálogo de <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a> contamos con decenas de opciones por debajo de los <strong>$3.00 USD por unidad</strong> al pedir en escalas de 50, 100 o 250 piezas.</p>
+    <h2>1. De $0.45 a $1.50 USD/ud: Bolígrafos personalizados y plumas metálicas</h2>
+    <p>Dentro de la categoría de <a href="/tienda/boligrafos-y-plumas"><strong>bolígrafos personalizados en Panamá</strong></a> encontrarás desde lapiceros retráctiles y ecológicos en bambú por menos de $0.60/ud hasta plumas metálicas grabadas a láser con puntero táctil alrededor de $1.35–$1.50/ud.</p>
+    <h2>2. De $1.10 a $1.90 USD/ud: Llaveros metálicos, destapadores y bolsas reutilizables</h2>
+    <p>Los <a href="/tienda/llaveros"><strong>llaveros personalizados en Panamá</strong></a> (en metal, bambú o con destapador de botellas) y las <a href="/tienda/bolsas-y-totes"><strong>bolsas ecológicas y de manta sucia con logo</strong></a> se mantienen muy por debajo de los $3.00 USD y acompañan al cliente durante meses.</p>
+    <h2>3. De $1.75 a $2.95 USD/ud: Libretas de bolsillo, tazas y porta celulares</h2>
+    <p>Con menos de tres dólares por unidad también puedes entregar <a href="/tienda/libretas-y-cuadernos"><strong>libretas personalizadas de bolsillo</strong></a>, mugs de cerámica en <a href="/tienda/tazas-botellas-y-termos"><strong>tazas personalizadas en Panamá</strong></a> o soportes de escritorio para celular.</p>`,
+    category: 'Guías de Compra B2B',
+    categorySlug: 'promocionales',
+    date: '6 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    tags: ['Presupuesto', 'Promocionales', 'Precios']
+  },
+  {
+    id: 'post-5',
+    slug: 'cuanto-cuesta-personalizar-100-boligrafos-en-panama',
+    title: 'Cuánto cuesta personalizar 100 bolígrafos en Panamá: Precios y Técnicas',
+    excerpt: 'Desglose real de precios para lotes de 50, 100 y 250 bolígrafos plásticos, ecológicos de bambú y metálicos grabados a láser en Panamá.',
+    content: `<p>Una de las preguntas más frecuentes que recibimos de empresas, clínicas y organizadores de eventos es: <strong>¿cuánto cuesta personalizar 100 bolígrafos en Panamá?</strong> La respuesta depende del material del cuerpo del bolígrafo y de la técnica de marcado elegida.</p>
+    <h2>1. Rango de precios reales por 100 unidades en RufPixel</h2>
+    <ul>
+      <li><strong>100 Bolígrafos plásticos o ecológicos en bambú:</strong> Entre <strong>$48.00 y $85.00 USD</strong> el paquete completo de 100 unidades ($0.48 a $0.85 por unidad).</li>
+      <li><strong>100 Bolígrafos ejecutivos metálicos grabados a láser:</strong> Entre <strong>$135.00 y $195.00 USD</strong> el lote de 100 unidades ($1.35 a $1.95 por unidad), con un grabado permanente que no se borra jamás.</li>
+    </ul>
+    <h2>2. ¿Por qué conviene el tramo de 100 o 250 unidades?</h2>
+    <p>En todas las fichas de nuestra categoría de <a href="/tienda/boligrafos-y-plumas"><strong>bolígrafos y plumas personalizadas en Panamá</strong></a> verás tres botones de escala: <strong>50, 100 y 250 unidades</strong>. Al pasar de 50 a 100 unidades obtienes un descuento automático del 5% en el costo unitario, y al subir a 250 unidades ahorras un 10% adicional.</p>`,
+    category: 'Precios y Cotizaciones',
+    categorySlug: 'promocionales',
+    date: '7 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
+    tags: ['Bolígrafos', 'Precios', 'Panamá']
+  },
+  {
+    id: 'post-6',
+    slug: 'promocionales-para-feria-o-congreso-lista-y-cantidades',
+    title: 'Promocionales para una feria o congreso en Panamá: Lista, cantidades y Stand',
+    excerpt: 'Checklist completo para equipar tu stand en Atlapa, Panama Convention Center o ferias corporativas: desde Roll-Up y manteles hasta giveaways por nivel.',
+    content: `<p>Participar con un stand en una feria comercial o congreso médico en Panamá implica competir por la atención de cientos de visitantes por hora. Para no quedarte sin material a mitad del segundo día ni malgastar presupuesto, te compartimos la fórmula de cantidades que recomendamos en nuestra guía de <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a>.</p>
+    <h2>1. Nivel Masivo (Rompehielos para tráfico de pasillo): 250 a 500 unidades</h2>
+    <p>Ten siempre en el mostrador <a href="/tienda/boligrafos-y-plumas"><strong>bolígrafos personalizados con tu logo y teléfono</strong></a> y <a href="/tienda/bolsas-y-totes"><strong>bolsas ecológicas o de manta sucia</strong></a> donde el visitante guardará los folletos de toda la feria (convirtiéndose en publicidad ambulante para tu marca).</p>
+    <h2>2. Nivel Prospecto Calificado (Quien deja sus datos): 50 a 100 unidades</h2>
+    <p>Reserva debajo del mostrador <a href="/tienda/libretas-y-cuadernos"><strong>agendas y libretas personalizadas</strong></a>, <a href="/tienda/llaveros"><strong>llaveros metálicos grabados</strong></a> o <a href="/tienda/tazas-botellas-y-termos"><strong>tazas y vasos térmicos personalizados</strong></a> exclusivamente para los clientes potenciales con los que agendaste una reunión o cotización.</p>
+    <h2>3. La gráfica del Stand: Roll-Up, Banderolas y Mantel Publicitario</h2>
+    <p>Ningún promocional funciona si tu stand luce vacío. En nuestra división de <a href="/servicios/impresion-gran-formato"><strong>impresión de banners, Roll-Up y gran formato en Panamá</strong></a> producimos tus estructuras Roll-Up de aluminio, banderolas tipo vela, backing publicitario y manteles impresos para mesas plegables de 6 pies.</p>`,
+    category: 'Ferias y Eventos',
+    categorySlug: 'eventos',
+    date: '8 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '5 min de lectura',
+    image: '/images/banners/banner-gran-formato.webp',
+    tags: ['Ferias', 'Congresos', 'Stands']
+  },
+  {
+    id: 'post-7',
+    slug: 'kit-de-bienvenida-para-nuevos-empleados-panama',
+    title: 'Kit de bienvenida para nuevos empleados (Onboarding) en Panamá: Qué incluir',
+    excerpt: 'Cómo armar un Welcome Kit corporativo memorable para recursos humanos en Panamá combinando termo, agenda, bolígrafo, lanyard y suéter.',
+    content: `<p>El primer día de un colaborador define su sentido de pertenencia con la empresa. Cada vez más departamentos de Recursos Humanos en Panamá solicitan <a href="/regalos-corporativos-panama"><strong>regalos corporativos en Panamá</strong></a> enfocados en kits de bienvenida (<em>Welcome Kits</em> u <em>Onboarding Packs</em>).</p>
+    <h2>Los 5 elementos esenciales de un Kit de Bienvenida en Panamá</h2>
+    <ol>
+      <li><strong>Hidratación en escritorio:</strong> Un termo de acero inoxidable o mug de nuestra línea de <a href="/tienda/tazas-botellas-y-termos"><strong>tazas, botellas y termos personalizados</strong></a>.</li>
+      <li><strong>Toma de notas:</strong> Una libreta en cuero PU o bambú de <a href="/tienda/libretas-y-cuadernos"><strong>agendas y libretas personalizadas</strong></a> acompañada de una pluma metálica.</li>
+      <li><strong>Identificación diaria:</strong> Una cinta institucional de <a href="/tienda/identificacion-y-correas"><strong>lanyards y cintas porta carnet en Panamá</strong></a>.</li>
+      <li><strong>Vestimenta corporativa:</strong> Un polo bordado o camisa estilo Columbia de <a href="/tienda/textiles-y-ropa"><strong>suéteres personalizados y ropa corporativa</strong></a>.</li>
+      <li><strong>Presentación:</strong> Puedes elegir estuches listos en <a href="/tienda/sets-y-regalos"><strong>sets ejecutivos y regalos</strong></a> o empacar todo dentro de una mochila porta laptop o tote bag de manta sucia.</li>
+    </ol>`,
+    category: 'Recursos Humanos B2B',
+    categorySlug: 'corporativo',
+    date: '8 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    tags: ['Onboarding', 'RRHH', 'Sets']
+  },
+  {
+    id: 'post-8',
+    slug: 'grabado-laser-uv-dtf-o-serigrafia-cual-conviene',
+    title: 'Grabado láser, UV DTF o DTF textil: ¿Cuál conviene más para tus promocionales?',
+    excerpt: 'Comparativa técnica de durabilidad, costo y acabado entre grabado láser de fibra, stickers UV DTF con relieve 3D e impresión DTF textil.',
+    content: `<p>Elegir la técnica correcta de personalización es la diferencia entre un promocional que luce impecable durante años y uno cuyo logo se despega al mes. En el taller de <strong>RufPixel</strong> trabajamos las principales tecnologías modernas para <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a>:</p>
+    <h2>1. Grabado Láser (Acero inoxidable, aluminio, madera y bambú)</h2>
+    <p>El <a href="/servicios/grabados-laser"><strong>grabado láser en Panamá</strong></a> no utiliza tinta: un haz láser talla directamente el metal o la madera. Es 100% permanente, elegante e indestructible, ideal para termos, plumas metálicas, llaveros y tablas de bambú.</p>
+    <h2>2. Transfer UV DTF con Relieve 3D (Rígidos a todo color)</h2>
+    <p>Cuando necesitas que tu logotipo conserve sus colores exactos o degradados sobre superficies duras (cerámica, plástico, acrílico, vidrio o cuadernos), el <a href="/servicios/uv-dtf"><strong>transfer UV DTF en Panamá</strong></a> deposita tinta curada con luz UV y barniz brillante con relieve tridimensional resistente al agua.</p>
+    <h2>3. Impresión DTF Textil Directo (Telas, bolsas y ropa)</h2>
+    <p>Para <a href="/tienda/bolsas-y-totes"><strong>bolsas de manta sucia y yute</strong></a>, paraguas, mochilas y suéteres, la <a href="/servicios/dtf-textil"><strong>impresión DTF textil en Panamá</strong></a> supera a la serigrafía tradicional al permitir diseños multicolores sin costo por pantallas y con elasticidad superior.</p>`,
+    category: 'Técnicas de Taller',
+    categorySlug: 'consejos',
+    date: '9 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '5 min de lectura',
+    image: '/images/banners/banner-uvdtf.webp',
+    tags: ['Grabado Láser', 'UV DTF', 'DTF Textil']
+  },
+  {
+    id: 'post-9',
+    slug: 'termos-personalizados-materiales-y-que-marcado-aguantan',
+    title: 'Termos personalizados en Panamá: Materiales, aislamiento y qué marcado aguantan',
+    excerpt: 'Guía para elegir entre acero inoxidable de doble pared, aluminio y cerámica, y por qué el grabado láser es el rey para el clima panameño.',
+    content: `<p>En el clima cálido y húmedo de Panamá, mantener el agua o el café a la temperatura correcta todo el día convierte a los termos en el regalo empresarial número uno. Antes de hacer tu pedido en nuestra categoría de <a href="/tienda/tazas-botellas-y-termos"><strong>tazas, vasos térmicos y termos personalizados en Panamá</strong></a>, revisa qué material se adapta mejor a tu audiencia:</p>
+    <h2>1. Acero inoxidable de doble pared al vacío (Tumblers y Termos Térmicos)</h2>
+    <p>Conservan el frío hasta por 12–18 horas y el calor por 6–8 horas sin condensar ("sudar") por fuera ni mojar los papeles del escritorio. Admiten <a href="/servicios/grabados-laser"><strong>grabado láser permanente</strong></a> que revela el acero brillante debajo del recubrimiento en polvo.</p>
+    <h2>2. Botellas deportivas de aluminio y Tritán</h2>
+    <p>Son más ligeras y económicas en escalas de 100 y 250 unidades, ideales para gimnasios, carreras corporativas, escuelas y activaciones al aire libre.</p>`,
+    category: 'Guías de Producto',
+    categorySlug: 'promocionales',
+    date: '9 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    tags: ['Termos', 'Vasos Térmicos', 'Grabado Láser']
+  },
+  {
+    id: 'post-10',
+    slug: 'regalos-de-fin-de-ano-para-empresas-en-panama',
+    title: 'Regalos de fin de año para empresas en Panamá: Qué pedir y cómo cotizar a tiempo',
+    excerpt: 'Ideas de obsequios ejecutivos y navideños para clientes y colaboradores en Panamá: sets de vino, tablas de bambú, agendas y termos.',
+    content: `<p>Entre octubre y diciembre se concentra la mayor demanda de <a href="/regalos-corporativos-panama"><strong>regalos corporativos en Panamá</strong></a>. Planificar tus obsequios de fin de año con anticipación te garantiza disponibilidad de colores corporativos y entregas sin estrés antes de las fiestas.</p>
+    <h2>Los 4 regalos corporativos más pedidos a fin de año en Panamá</h2>
+    <ul>
+      <li><strong>Tablas de quesos y sets de vino en bambú:</strong> Disponibles en <a href="/tienda/cocina-y-hogar"><strong>artículos de madera, bambú y hogar</strong></a>, grabados a láser para que la familia de tu cliente los use en sus cenas de diciembre.</li>
+      <li><strong>Agendas y cuadernos para el nuevo año:</strong> Explora <a href="/tienda/libretas-y-cuadernos"><strong>agendas y libretas personalizadas en Panamá</strong></a> en curpiel, corcho y bambú.</li>
+      <li><strong>Vasos térmicos y termos grabados:</strong> Revisa los modelos en <a href="/tienda/tazas-botellas-y-termos"><strong>tazas, botellas y termos personalizados</strong></a>.</li>
+      <li><strong>Estuches ejecutivos listos para entregar:</strong> Visita nuestra sección de <a href="/tienda/sets-y-regalos"><strong>sets ejecutivos y regalos corporativos</strong></a>.</li>
+    </ul>`,
+    category: 'Temporada Fin de Año',
+    categorySlug: 'corporativo',
+    date: '10 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
+    tags: ['Fin de Año', 'Regalos Corporativos', 'Bambú']
+  },
+  {
+    id: 'post-11',
+    slug: 'bolsas-ecologicas-con-logo-manta-sucia-yute-o-cambrel',
+    title: 'Bolsas ecológicas con logo en Panamá: ¿Manta sucia, yute, canvas o cambrel?',
+    excerpt: 'Conoce cómo llaman los compradores en Panamá a cada tela reutilizable y cuál elegir según tu presupuesto y el peso que soportará la bolsa.',
+    content: `<p>En Panamá el comprador corporativo busca términos muy específicos al cotizar bolsas reutilizables. En nuestra categoría de <a href="/tienda/bolsas-y-totes"><strong>bolsas de manta sucia, yute, loncheras y totes en Panamá</strong></a> trabajamos los cuatro materiales principales:</p>
+    <h2>1. Bolsa de Manta Sucia y Algodón Canvas</h2>
+    <p>En Panamá llamamos <strong>manta sucia</strong> al lienzo de algodón crudo en tono beige natural con su textura orgánica característica. Es sumamente resistente, lavable y muy valorada en universidades, ferias del libro, boutiques y congresos.</p>
+    <h2>2. Bolsas de Yute Natural</h2>
+    <p>Fabricadas con fibra vegetal trenzada y fuelle amplio, las <strong>bolsas de yute con logo</strong> proyectan una estética eco-ejecutiva ideal para bancos, supermercados gourmet y regalos de fin de año.</p>
+    <h2>3. Cambrel (Non-Woven) y Loncheras Térmicas</h2>
+    <p>El cambrel termosellado es la alternativa más económica para repartir por cientos en ferias masivas, mientras que las <strong>loncheras térmicas personalizadas</strong> con interior de aluminio son el regalo favorito para empleados en empresas panameñas.</p>`,
+    category: 'Guías de Producto',
+    categorySlug: 'promocionales',
+    date: '10 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/banners/banner-dtf.webp',
+    tags: ['Manta Sucia', 'Yute', 'Bolsas Ecológicas']
+  },
+  {
+    id: 'post-12',
+    slug: 'gorras-con-logo-bordado-computarizado-o-dtf',
+    title: 'Gorras con logo en Panamá: ¿Cuándo elegir bordado computarizado o DTF?',
+    excerpt: 'Guía práctica para personalizar gorras Trucker de malla y gorras de algodón estructuradas para uniformes, agroindustria y eventos en Panamá.',
+    content: `<p>Las <a href="/tienda/gorras-y-accesorios-de-cabeza"><strong>gorras personalizadas en Panamá</strong></a> son indispensables tanto para cuadrillas de trabajo y agroindustria como para torneos de pesca, golf y promociones de verano. ¿Cómo saber si debes bordarlas o estamparlas?</p>
+    <h2>1. Cuándo elegir Bordado Computarizado</h2>
+    <p>En gorras de 5 o 6 paneles de algodón peinado o dril, nuestro servicio de <a href="/servicios/bordados-computarizados"><strong>bordados computarizados en Panamá</strong></a> brinda un relieve tridimensional con hilos industriales que resiste años de sol y lavado rudo.</p>
+    <h2>2. Cuándo elegir Impresión DTF en Gorras Trucker</h2>
+    <p>En las <strong>gorras de malla estilo Trucker</strong> con panel frontal de espuma acolchada (foam) o cuando tu logotipo tiene letras diminutas y degradados fotográficos, la transferencia <a href="/servicios/dtf-textil"><strong>DTF textil</strong></a> logra una fidelidad milimétrica sin fruncir la espuma.</p>`,
+    category: 'Textil y Bordados',
+    categorySlug: 'consejos',
+    date: '11 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/services/bordados-computarizados-polo-panama.webp',
+    tags: ['Gorras', 'Bordados', 'Trucker']
+  },
+  {
+    id: 'post-13',
+    slug: 'promocionales-para-colegios-clinicas-y-bancos-panama',
+    title: 'Artículos promocionales para colegios, clínicas y bancos en Panamá',
+    excerpt: 'Qué piden las instituciones educativas, centros médicos y entidades financieras en Panamá: desde lanyards porta carnet hasta kits corporativos.',
+    content: `<p>Cada sector institucional en Panamá tiene necesidades muy puntuales de identificación y recordación de marca. En nuestra página pilar de <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a> agrupamos los productos más solicitados por estos tres sectores:</p>
+    <h2>1. Colegios, Universidades y Academias</h2>
+    <p>Solicitan principalmente <a href="/tienda/identificacion-y-correas"><strong>lanyards personalizados y cintas porta carnet</strong></a> para estudiantes y docentes, <a href="/tienda/tazas-botellas-y-termos"><strong>botellas deportivas y termos</strong></a> para regreso a clases, y <a href="/tienda/mochilas-y-maletines"><strong>mochilas y cangureras con escudo</strong></a>.</p>
+    <h2>2. Clínicas, Hospitales, Laboratorios y Aseguradoras</h2>
+    <p>Priorizan <a href="/tienda/boligrafos-y-plumas"><strong>bolígrafos personalizados</strong></a> para consultorios y mostradores, <a href="/tienda/bolsas-y-totes"><strong>loncheras térmicas y bolsas ecológicas</strong></a> para campañas de salud y <a href="/tienda/oficina-y-escritorio"><strong>porta celulares y accesorios de escritorio</strong></a> para médicos.</p>
+    <h2>3. Bancos, Cooperativas y Financieras</h2>
+    <p>Invierten en <a href="/tienda/libretas-y-cuadernos"><strong>agendas personalizadas en Panamá</strong></a>, <a href="/tienda/paraguas"><strong>paraguas corporativos con logo</strong></a> y sets ejecutivos para clientes empresariales.</p>`,
+    category: 'Sectores B2B',
+    categorySlug: 'corporativo',
+    date: '11 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '4 min de lectura',
+    image: '/images/services/papeleria-corporativa-libretas-panama.webp',
+    tags: ['Colegios', 'Clínicas', 'Bancos']
+  },
+  {
+    id: 'post-14',
+    slug: 'que-pedir-cuando-necesitas-50-unidades-entrega-rapida',
+    title: 'Qué pedir cuando necesitas 50 unidades con entrega rápida en Panamá',
+    excerpt: 'Cómo resolver un evento corporativo próximo en Panamá eligiendo paquetes base de 50 unidades de rápida personalización en nuestro taller.',
+    content: `<p>¿Te acaban de confirmar la participación de tu empresa en un evento la próxima semana y no necesitas 1.000 piezas, sino un lote ejecutivo de <strong>50 unidades</strong> bien presentado? En RufPixel todos nuestros <a href="/articulos-promocionales-panama"><strong>artículos promocionales en Panamá</strong></a> parten desde el tramo accesible de 50 unidades.</p>
+    <h2>Los 3 productos más ágiles de producir en lotes de 50 unidades</h2>
+    <ol>
+      <li><strong>50 Libretas o Agendas con 50 Bolígrafos a juego:</strong> Revisa los modelos en stock en <a href="/tienda/libretas-y-cuadernos"><strong>agendas y libretas personalizadas</strong></a> y <a href="/tienda/boligrafos-y-plumas"><strong>bolígrafos personalizados</strong></a>.</li>
+      <li><strong>50 Llaveros metálicos o destapadores grabados a láser:</strong> Disponibles en <a href="/tienda/llaveros"><strong>llaveros personalizados en Panamá</strong></a>.</li>
+      <li><strong>50 Bolsas de manta sucia o cambrel estampadas en DTF:</strong> Visita <a href="/tienda/bolsas-y-totes"><strong>bolsas y totes personalizadas</strong></a>.</li>
+    </ol>
+    <p>Recuerda que los plazos se coordinan según el volumen y la técnica una vez aprobado tu boceto digital por WhatsApp al <strong>+507 6445-4084</strong>.</p>`,
+    category: 'Pedidos Ágiles',
+    categorySlug: 'promocionales',
+    date: '11 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '3 min de lectura',
+    image: '/images/services/grabado-laser-termos-vasos-panama.webp',
+    tags: ['50 Unidades', 'Eventos', 'Promocionales']
+  },
+  {
+    id: 'post-15',
+    slug: 'vinil-adhesivo-microperforado-o-esmerilado-vidrieras-panama',
+    title: 'Vinil adhesivo, microperforado o papel esmerilado: ¿Cuál elegir para los vidrios de tu negocio en Panamá?',
+    excerpt: 'Guía completa para rotular fachadas de vidrio, oficinas y clínicas en Panamá: privacidad con vinil esmerilado, publicidad en microperforado y vinil adhesivo.',
+    content: `<p>Las puertas y fachadas de vidrio de tu local comercial, clínica u oficina en Panamá son el espacio publicitario más valioso que tienes (y por el que no pagas alquiler extra). En nuestro servicio de <a href="/servicios/impresion-gran-formato"><strong>impresión de banners, viniles y gran formato en Panamá</strong></a> trabajamos tres soluciones distintas según necesites impacto visual, paso de luz o privacidad:</p>
+    <h2>1. Papel o Vinil Esmerilado para Vidrios (Efecto Sandblasting)</h2>
+    <p>Es el acabado satinado translúcido preferido en <strong>oficinas corporativas, salas de juntas, consultorios médicos y bancos en Panamá</strong>. Permite el paso de la luz natural pero impide que se vea nítidamente hacia adentro, brindando privacidad elegante. Se puede instalar liso, en franjas o troquelado con el logotipo de tu empresa en plotter de corte.</p>
+    <h2>2. Vinil Microperforado para Vidrios (Visibilidad Unidireccional)</h2>
+    <p>Gracias a sus microperforaciones calibradas con reverso negro, quien camina por fuera de tu local ve una gráfica publicitaria a todo color, mientras que quienes están dentro de la tienda u oficina conservan la vista hacia el exterior y reducen el calor solar.</p>
+    <h2>3. Vinil Adhesivo Brillante o Mate (Bloqueo Total y Colores Vibrantes)</h2>
+    <p>Cuando deseas cubrir por completo una pared lisa, mostrador, lámina de acrílico o vidriera con máxima saturación fotográfica, el vinil adhesivo impreso con tintas ecosolventes/UV de alta durabilidad es la elección ideal. Cotiza tus medidas directamente en nuestra sección de <a href="/servicios/impresion-gran-formato"><strong>gran formato y viniles en Panamá</strong></a>.</p>`,
+    category: 'Gran Formato',
+    categorySlug: 'gran-formato',
+    date: '11 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '5 min de lectura',
+    image: '/images/banners/banner-gran-formato.webp',
+    tags: ['Vinil Adhesivo', 'Microperforado', 'Vinil Esmerilado']
   }
 ];
 
