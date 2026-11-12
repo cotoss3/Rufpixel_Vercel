@@ -49,6 +49,7 @@ export default function Header() {
     { href: '/articulos-promocionales-panama', label: 'Promocionales' },
     { href: '/tienda', label: 'Tienda' },
     { href: '/servicios', label: 'Servicios' },
+    { href: '/blog', label: 'Blog' },
     { href: '/galeria', label: 'Galería' },
     { href: '/nosotros', label: 'Nosotros' },
     { href: '/contacto', label: 'Contacto' },
@@ -171,7 +172,7 @@ export default function Header() {
             {/* Mobile Menu Trigger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-white hover:text-[#FF5E14] focus:outline-none"
+              className="xl:hidden p-2 text-white hover:text-[#FF5E14] focus:outline-none"
               aria-label="Abrir menú"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -182,7 +183,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0D0D0D] border-b border-gray-800 px-4 pt-4 pb-6 space-y-4">
+        <div className="xl:hidden bg-[#0D0D0D] border-b border-gray-800 px-4 pt-4 pb-6 space-y-4">
           <ProductSearch
             products={products}
             categories={categories}
