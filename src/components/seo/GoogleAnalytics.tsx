@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { trackEvent } from '@/lib/analytics';
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-RUFPIXELPA';
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-3EB6RRNKWT';
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
 
 export default function GoogleAnalytics() {
@@ -81,7 +81,7 @@ export default function GoogleAnalytics() {
           ${GA_MEASUREMENT_ID ? `gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });` : ''}
         `}
       </Script>
-      {GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-RUFPIXELPA' && (
+      {GA_MEASUREMENT_ID && (
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
