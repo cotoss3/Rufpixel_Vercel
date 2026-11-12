@@ -168,7 +168,7 @@ export default function ProductDetailClient({
       (product.techniques?.length ? `🎨 *Técnica:* ${product.techniques.join(', ')}\n` : '') +
       `🔗 *Enlace:* ${productUrl}`
     );
-    window.open(`https://wa.me/50765256015?text=${text}`, '_blank');
+    window.open(`https://wa.me/50764454084?text=${text}`, '_blank');
   };
 
   const quoteItem: QuoteItem = {
@@ -705,6 +705,26 @@ export default function ProductDetailClient({
         items={[quoteItem]}
       />
     
+      {/* Fixed Toast Notification when product is added from anywhere on the page */}
+      {addedMessage && (
+        <div className="fixed top-28 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 bg-[#0D0D0D] border-2 border-[#FF5E14] text-white p-4 rounded-2xl text-xs font-medium flex items-center justify-between shadow-2xl animate-fade-in">
+          <div className="flex items-center space-x-2.5">
+            <CheckCircle2 className="w-5 h-5 text-[#25D366] shrink-0" />
+            <div>
+              <strong className="block font-extrabold text-white">¡Agregado al carrito!</strong>
+              <span className="text-[11px] text-gray-300">Pack x {selectedQtyOption} uds ({product.name})</span>
+            </div>
+          </div>
+          <Link
+            href="/carrito"
+            className="shrink-0 bg-[#FF5E14] hover:bg-[#E04700] text-white font-extrabold px-3.5 py-2 rounded-xl flex items-center space-x-1 transition-all"
+          >
+            <span>Ver Carrito</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
+
       {/* Mobile Sticky Action Bar for Instant Conversion */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 shadow-[0_-4px_25px_rgba(0,0,0,0.12)] flex items-center justify-between gap-3">
         <div className="min-w-0">
@@ -730,15 +750,25 @@ export default function ProductDetailClient({
             <span>WhatsApp</span>
           </button>
 
-          <button
-            type="button"
-            onClick={handleAddToCart}
-            className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all"
-            title="Agregar al Carrito"
-          >
-            <ShoppingBag className="w-3.5 h-3.5" />
-            <span>Comprar</span>
-          </button>
+          {addedMessage ? (
+            <Link
+              href="/carrito"
+              className="bg-[#0D0D0D] hover:bg-gray-800 text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all border border-[#FF5E14]"
+            >
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#25D366]" />
+              <span>Ver Carrito</span>
+            </Link>
+          ) : (
+            <button
+              type="button"
+              onClick={handleAddToCart}
+              className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-3.5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-1.5 shadow-md active:scale-95 transition-all"
+              title="Agregar al Carrito"
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+              <span>Comprar</span>
+            </button>
+          )}
         </div>
       </div>
 
