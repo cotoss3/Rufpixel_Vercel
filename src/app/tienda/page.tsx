@@ -6,9 +6,17 @@ import { BreadcrumbListSchema } from '@/components/seo/SchemaOrg';
 
 export const metadata = {
   title: 'Artículos Promocionales e Imprenta en Panamá | RufPixel', // 55 chars (Regla 1: 50-60)
-  description: 'Catálogo de artículos promocionales en Panamá: termos, libretas, gorras y DTF por mayor desde 50 uds. Taller en La Chorrera y envíos. ¡Cotiza al WhatsApp!', // 155 chars (Regla 2: 120-155)
+  description: 'Catálogo de artículos promocionales en Panamá: termos, libretas, gorras y DTF por mayor desde 50 uds. Taller en La Chorrera y envíos. ¡Cotiza al WhatsApp!', // 154 chars (Regla 2: 120-155)
   alternates: {
     canonical: 'https://rufpixel.com/tienda',
+  },
+  openGraph: {
+    title: 'Artículos Promocionales e Imprenta en Panamá | RufPixel',
+    description: 'Catálogo de artículos promocionales en Panamá: termos, libretas, gorras y DTF por mayor desde 50 uds. Taller en La Chorrera y envíos. ¡Cotiza al WhatsApp!',
+    url: 'https://rufpixel.com/tienda',
+    siteName: 'RufPixel',
+    locale: 'es_PA',
+    type: 'website',
   },
 };
 

@@ -4,23 +4,20 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/lib/cartContext';
-import { OrganizationSchema, GeoFaqSchema } from '@/components/seo/SchemaOrg';
+import { OrganizationSchema } from '@/components/seo/SchemaOrg';
 import NavigationLoader from '@/components/common/NavigationLoader';
 import AiWhatsAppAssistant from '@/components/common/AiWhatsAppAssistant';
 import GoogleAnalytics from '@/components/seo/GoogleAnalytics';
 
 export const metadata: Metadata = {
-  title: 'Imprenta en Panamá: DTF, Bordados y Banners | RufPixel',
-  description: 'Taller de imprenta en Panamá: DTF textil, bordados, grabado láser y promocionales al por mayor. Plazos según volumen y técnica. ¡Cotiza por WhatsApp!',
+  title: 'Artículos Promocionales e Impresión de Banners | RufPixel',
+  description: 'Artículos promocionales al por mayor e impresión de banners, roll-up, DTF y bordados en Panamá. Precios desde 50 uds y desde 1 pieza en Zona Pixel.',
   keywords: [
-    'Impresión Panamá', 'Imprenta en La Chorrera', 'DTF textil Panamá', 'UV DTF Panamá',
-    'Bordados computarizados Panamá', 'Grabado láser Panamá', 'Stickers personalizados Panamá',
-    'Banners roll-up Panamá', 'Zona Pixel', 'Artículos promocionales Panamá Oeste', 'Yappy Comercial', 'RufPixel'
+    'Artículos promocionales Panamá', 'Impresión de banners Panamá', 'Banners roll-up Panamá',
+    'Imprenta en La Chorrera', 'DTF textil Panamá', 'UV DTF Panamá', 'Bordados computarizados Panamá',
+    'Grabado láser Panamá', 'Zona Pixel', 'Artículos promocionales Panamá Oeste', 'RufPixel'
   ],
   metadataBase: new URL('https://rufpixel.com'),
-  alternates: {
-    canonical: 'https://rufpixel.com/',
-  },
   icons: {
     icon: [
       { url: '/icon.png', type: 'image/png' },
@@ -30,8 +27,8 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'Imprenta en Panamá: DTF, Bordados y Banners | RufPixel',
-    description: 'Taller de impresión y personalización en Panamá. DTF textil, UV DTF, bordados computarizados, grabado láser y promocionales. Envíos rápidos a todo el país.',
+    title: 'Artículos Promocionales e Impresión de Banners | RufPixel',
+    description: 'Artículos promocionales al por mayor e impresión de banners, roll-up, DTF y bordados en Panamá. Precios desde 50 uds y desde 1 pieza en Zona Pixel.',
     url: 'https://rufpixel.com',
     siteName: 'RufPixel',
     locale: 'es_PA',
@@ -57,7 +54,6 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <OrganizationSchema />
-        <GeoFaqSchema />
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-[#FAFAFA] text-gray-900">
         <CartProvider>

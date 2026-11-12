@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -10,6 +11,23 @@ import { StickerIcon } from '@/components/icons/StickerIcon';
 import { MOCK_SERVICES, MOCK_TESTIMONIALS } from '@/lib/mockData';
 import { getProducts } from '@/lib/woocommerce';
 import { getBlogPosts } from '@/lib/wordpress';
+import { GeoFaqSchema } from '@/components/seo/SchemaOrg';
+
+export const metadata: Metadata = {
+  title: 'Artículos Promocionales e Impresión de Banners | RufPixel', // 57 chars
+  description: 'Artículos promocionales al por mayor e impresión de banners, roll-up, DTF y bordados en Panamá. Precios desde 50 uds y desde 1 pieza en Zona Pixel.', // 148 chars
+  alternates: {
+    canonical: 'https://rufpixel.com',
+  },
+  openGraph: {
+    title: 'Artículos Promocionales e Impresión de Banners | RufPixel',
+    description: 'Artículos promocionales al por mayor e impresión de banners, roll-up, DTF y bordados en Panamá. Precios desde 50 uds y desde 1 pieza en Zona Pixel.',
+    url: 'https://rufpixel.com',
+    siteName: 'RufPixel',
+    locale: 'es_PA',
+    type: 'website',
+  },
+};
 
 export default async function HomePage() {
   const { products } = await getProducts();
@@ -32,6 +50,7 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-16 pb-20">
+      <GeoFaqSchema />
       
       {/* 1. HERO SECTION - Vibrant Modern Agency Banner */}
       <section className="relative bg-gradient-to-br from-[#0D0D0D] via-[#141414] to-[#070707] text-white pt-12 pb-24 overflow-hidden border-b border-gray-800">
@@ -128,6 +147,97 @@ export default async function HomePage() {
       </section>
 
 
+      {/* 1.5 DUAL MONEY PILLAR HUB: ARTÍCULOS PROMOCIONALES & IMPRESIÓN DE BANNERS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Money Pillar 1: Artículos Promocionales en Panamá */}
+          <div className="bg-white rounded-3xl p-7 sm:p-8 border-2 border-gray-200 hover:border-[#FF5E14] shadow-md transition-all flex flex-col justify-between space-y-5">
+            <div className="space-y-3">
+              <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider text-[#FF5E14] bg-[#FF5E14]/10 px-3 py-1 rounded-full">
+                Catálogo B2B · 166 Modelos en Stock
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit leading-tight">
+                <Link href="/articulos-promocionales-panama" className="hover:text-[#FF5E14] transition-colors">
+                  Artículos Promocionales en Panamá al por Mayor
+                </Link>
+              </h2>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Precios transparentes por escala (<strong>50, 100 y 250 unidades</strong>) con grabado láser, UV DTF, serigrafía y bordado computarizado. Desde bolígrafos a <strong>$0.55/ud</strong> y bolsas de manta sucia hasta termos de acero doble pared y{' '}
+                <Link href="/regalos-corporativos-panama" className="text-[#FF5E14] font-bold hover:underline">
+                  regalos corporativos en Panamá
+                </Link>.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1 text-xs font-bold">
+                <Link href="/tienda/boligrafos-y-plumas" className="bg-gray-100 hover:bg-[#FF5E14] hover:text-white text-gray-800 px-3 py-1.5 rounded-lg transition-colors">
+                  Bolígrafos con Logo
+                </Link>
+                <Link href="/tienda/tazas-botellas-y-termos" className="bg-gray-100 hover:bg-[#FF5E14] hover:text-white text-gray-800 px-3 py-1.5 rounded-lg transition-colors">
+                  Termos Personalizados
+                </Link>
+                <Link href="/tienda/libretas-y-cuadernos" className="bg-gray-100 hover:bg-[#FF5E14] hover:text-white text-gray-800 px-3 py-1.5 rounded-lg transition-colors">
+                  Agendas y Libretas
+                </Link>
+                <Link href="/tienda/bolsas-y-totes" className="bg-gray-100 hover:bg-[#FF5E14] hover:text-white text-gray-800 px-3 py-1.5 rounded-lg transition-colors">
+                  Bolsas de Manta y Yute
+                </Link>
+                <Link href="/tienda/gorras-y-accesorios-de-cabeza" className="bg-gray-100 hover:bg-[#FF5E14] hover:text-white text-gray-800 px-3 py-1.5 rounded-lg transition-colors">
+                  Gorras Bordadas
+                </Link>
+              </div>
+            </div>
+            <div className="pt-2">
+              <Link
+                href="/articulos-promocionales-panama"
+                className="inline-flex items-center space-x-2 bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3.5 rounded-xl text-xs sm:text-sm font-extrabold shadow-md transition-all"
+              >
+                <span>Ver Catálogo y Tabla de Precios de Artículos Promocionales</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Money Pillar 2: Impresión de Banners y Gran Formato en Panamá */}
+          <div className="bg-[#0D0D0D] text-white rounded-3xl p-7 sm:p-8 border-2 border-gray-800 hover:border-[#FF5E14] shadow-xl transition-all flex flex-col justify-between space-y-5">
+            <div className="space-y-3">
+              <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider text-[#FF5E14] bg-[#FF5E14]/15 border border-[#FF5E14]/30 px-3 py-1 rounded-full">
+                Producción en Taller · Sin Mínimos desde 1 Unidad
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-outfit leading-tight">
+                <Link href="/servicios/impresion-gran-formato" className="hover:text-[#FF5E14] transition-colors">
+                  Impresión de Banners, Roll-Up y Gran Formato en Panamá
+                </Link>
+              </h2>
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                Impresión ecosolvente y UV en alta resolución (1440 DPI) para ferias, fachadas y puntos de venta: <strong>banners en lona 13oz</strong> con ojales desde <strong>$9.63</strong>, <strong>banner araña (X-Banner)</strong> a <strong>$37.45</strong>, <strong>roll-up retráctil de aluminio</strong> a <strong>$69.55</strong>, banderolas tipo vela, vinil adhesivo, microperforado y papel esmerilado.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1 text-xs font-bold">
+                <Link href="/servicios/impresion-gran-formato" className="bg-gray-900 border border-gray-700 hover:border-[#FF5E14] text-gray-200 px-3 py-1.5 rounded-lg transition-colors">
+                  Roll-Up Retráctil ($69.55)
+                </Link>
+                <Link href="/servicios/impresion-gran-formato" className="bg-gray-900 border border-gray-700 hover:border-[#FF5E14] text-gray-200 px-3 py-1.5 rounded-lg transition-colors">
+                  Banner Araña ($37.45)
+                </Link>
+                <Link href="/servicios/impresion-gran-formato" className="bg-gray-900 border border-gray-700 hover:border-[#FF5E14] text-gray-200 px-3 py-1.5 rounded-lg transition-colors">
+                  Banderolas Publicitarias
+                </Link>
+                <Link href="/servicios/impresion-gran-formato" className="bg-gray-900 border border-gray-700 hover:border-[#FF5E14] text-gray-200 px-3 py-1.5 rounded-lg transition-colors">
+                  Vinil Microperforado y Esmerilado
+                </Link>
+              </div>
+            </div>
+            <div className="pt-2">
+              <Link
+                href="/servicios/impresion-gran-formato"
+                className="inline-flex items-center space-x-2 bg-white hover:bg-[#FF5E14] text-gray-900 hover:text-white px-6 py-3.5 rounded-xl text-xs sm:text-sm font-extrabold shadow-md transition-all"
+              >
+                <span>Ver Medidas y Precios de Banners y Gran Formato</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 2. SERVICES SECTION - Printfix Card Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3 mb-12">
@@ -173,7 +283,7 @@ export default async function HomePage() {
                   href={service.slug === 'tomas-aereas-drones' ? '/tomas-aereas-panama' : `/servicios/${service.slug}`}
                   className="inline-flex items-center space-x-2 text-sm font-bold text-[#FF5E14] hover:text-[#E04700] transition-colors"
                 >
-                  <span>Saber más sobre este servicio</span>
+                  <span>Ver {service.title.split(' en Panamá')[0]}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

@@ -5,7 +5,27 @@ import { getBlogPostBySlug } from '@/lib/wordpress';
 import { ArrowLeft, ArrowRight, Clock, User, Tag } from 'lucide-react';
 import { ArticleSchema, BreadcrumbListSchema } from '@/components/seo/SchemaOrg';
 
-function buildBlogTitle(title: string): string {
+const BLOG_SEO_TITLES: Record<string, string> = {
+  'como-preparar-tus-archivos-para-impresion-sin-errores': 'Cómo Preparar Archivos para Impresión CMYK | RufPixel', // 53
+  'dtf-vs-sublimacion-cual-es-mejor-para-tus-uniformes': 'DTF Textil vs Sublimación para Uniformes | RufPixel', // 51
+  'tendencias-en-regalos-corporativos-para-este-ano': 'Tendencias en Regalos Corporativos Panamá | RufPixel', // 52
+  'que-regalar-a-clientes-por-menos-de-3-dolares-panama': 'Regalos para Clientes por Menos de $3 Panamá | RufPixel', // 55
+  'cuanto-cuesta-personalizar-100-boligrafos-en-panama': 'Cuánto Cuesta Personalizar 100 Bolígrafos PA | RufPixel', // 55
+  'promocionales-para-feria-o-congreso-lista-y-cantidades': 'Artículos Promocionales para Ferias en Panamá | RufPixel', // 56
+  'kit-de-bienvenida-para-nuevos-empleados-panama': 'Kit de Bienvenida para Empleados en Panamá | RufPixel', // 53
+  'grabado-laser-uv-dtf-o-serigrafia-cual-conviene': 'Grabado Láser, UV DTF o Serigrafía en Panamá | RufPixel', // 55
+  'termos-personalizados-materiales-y-que-marcado-aguantan': 'Termos Personalizados: Materiales y Grabado | RufPixel', // 54
+  'regalos-de-fin-de-ano-para-empresas-en-panama': 'Regalos de Fin de Año para Empresas Panamá | RufPixel', // 53
+  'bolsas-ecologicas-con-logo-algodon-yute-o-non-woven': 'Bolsas Ecológicas con Logo: Manta y Yute PA | RufPixel', // 54
+  'gorras-con-logo-bordado-3d-o-dtf-cual-dura-mas': 'Gorras con Logo: Bordado 3D vs DTF en Panamá | RufPixel', // 55
+  'promocionales-para-colegios-clinicas-y-bancos-panama': 'Promocionales para Clínicas, Colegios y Bancos | RufPixel', // 57
+  'que-pedir-cuando-necesitas-50-unidades-entrega-rapida': 'Promocionales desde 50 Unidades en Panamá | RufPixel', // 52
+  'rollup-vs-banner-arana-cual-elegir-para-tu-evento': 'Roll-Up vs Banner Araña para Eventos Panamá | RufPixel', // 54
+  'vinil-adhesivo-microperforado-o-esmerilado-vidrieras-panama': 'Vinil Adhesivo, Microperforado y Esmerilado | RufPixel', // 54
+};
+
+function buildBlogTitle(title: string, slug?: string): string {
+  if (slug && BLOG_SEO_TITLES[slug]) return BLOG_SEO_TITLES[slug];
   const brand = ' | RufPixel';
   const candidate = `${title}${brand}`;
   if (candidate.length >= 50 && candidate.length <= 60) return candidate;
@@ -14,8 +34,15 @@ function buildBlogTitle(title: string): string {
     if (padded.length >= 50 && padded.length <= 60) return padded;
     return `${title} — Guía RufPixel Panamá`.slice(0, 59);
   }
-  const maxBody = 59 - brand.length - 3;
-  return `${title.slice(0, maxBody).trim()}...${brand}`;
+  const maxBody = 60 - brand.length;
+  const words = title.split(' ');
+  let acc = '';
+  for (const w of words) {
+    if ((acc ? acc + ' ' + w : w).length <= maxBody) {
+      acc = acc ? acc + ' ' + w : w;
+    } else break;
+  }
+  return `${acc.replace(/[:;,.]+$/, '')}${brand}`;
 }
 
 function buildBlogDescription(excerpt: string): string {
@@ -29,7 +56,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const post = await getBlogPostBySlug(params.slug);
   if (!post) return { title: 'Artículo no encontrado | RufPixel' };
 
-  const seoTitle = buildBlogTitle(post.title);
+  const seoTitle = buildBlogTitle(post.title, post.slug);
   const seoDesc = buildBlogDescription(post.excerpt);
   const canonicalUrl = `https://rufpixel.com/blog/${post.slug}`;
 

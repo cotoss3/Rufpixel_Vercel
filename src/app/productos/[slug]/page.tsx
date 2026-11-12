@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { getProductBySlug, VERIFIED_LOCAL_PRODUCTS, isProductInCategory } from '@/lib/woocommerce';
 import ProductDetailClient from './ProductDetailClient';
 
@@ -131,12 +132,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
   const product = await getProductBySlug(params.slug);
 
   if (!product) {
-    return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center p-4">
-        <h1 className="text-2xl font-bold font-outfit text-gray-900 mb-2">Producto no encontrado</h1>
-        <p className="text-gray-500 mb-6">El producto que buscas no existe o ha sido retirado del catálogo.</p>
-      </div>
-    );
+    notFound();
   }
 
   const catTarget = product.categorySlug || product.category;

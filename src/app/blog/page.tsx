@@ -1,11 +1,24 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getBlogPosts } from '@/lib/wordpress';
 import { Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { BreadcrumbListSchema } from '@/components/seo/SchemaOrg';
 
-export const metadata = {
-  title: 'Blog de Impresión & Consejos de Diseño — RufPixel Panamá',
-  description: 'Artículos sobre preparación de archivos CMYK, ventajas del acabado soft-touch, impresión en gran formato y estrategias de branding.',
+export const metadata: Metadata = {
+  title: 'Guías de Promocionales, Banners e Imprenta | RufPixel', // 53 chars
+  description: 'Guías de compra en Panamá: precios de artículos promocionales al por mayor, banners roll-up vs araña, vinil para vidrieras, grabado láser y DTF.', // 144 chars
+  alternates: {
+    canonical: 'https://rufpixel.com/blog',
+  },
+  openGraph: {
+    title: 'Guías de Promocionales, Banners e Imprenta | RufPixel',
+    description: 'Guías de compra en Panamá: precios de artículos promocionales al por mayor, banners roll-up vs araña, vinil para vidrieras, grabado láser y DTF.',
+    url: 'https://rufpixel.com/blog',
+    siteName: 'RufPixel',
+    locale: 'es_PA',
+    type: 'website',
+  },
 };
 
 export default async function BlogPage({ searchParams }: { searchParams?: { page?: string } }) {
@@ -19,19 +32,32 @@ export default async function BlogPage({ searchParams }: { searchParams?: { page
     { slug: 'gran-formato', label: 'Gran Formato' },
   ];
 
+  const breadcrumbs = [
+    { name: 'Inicio', url: 'https://rufpixel.com' },
+    { name: 'Blog y Guías', url: 'https://rufpixel.com/blog' },
+  ];
+
   return (
     <div className="py-12 space-y-10">
+      <BreadcrumbListSchema items={breadcrumbs} />
       {/* Blog Banner */}
       <section className="bg-[#0D0D0D] text-white py-14 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-[#FF5E14]/10 border border-[#FF5E14]/30 px-3 py-1 rounded-md">
-            RufPixel Contenidos
+            Centro de Guías B2B RufPixel Panamá
           </span>
-          <h1 className="text-4xl sm:text-5xl font-extrabold font-outfit">
-            Blog & Galería de Trabajos
+          <h1 className="text-3xl sm:text-5xl font-extrabold font-outfit">
+            Guías de Artículos Promocionales, Impresión de Banners y Personalización en Panamá
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-            ¿Buscas fotos y ejemplos de proyectos reales entregados? Visita nuestra sección de <Link href="/galeria" className="text-[#FF5E14] underline font-bold">Galería de Trabajos Realizados</Link>.
+          <p className="text-gray-300 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
+            Aprende a elegir entre técnicas de taller, escalas de precios mayoristas para{' '}
+            <Link href="/articulos-promocionales-panama" className="text-[#FF5E14] underline font-bold">
+              artículos promocionales en Panamá
+            </Link>{' '}
+            y estructuras de{' '}
+            <Link href="/servicios/impresion-gran-formato" className="text-white underline font-bold hover:text-[#FF5E14]">
+              impresión de banners, roll-up y gran formato
+            </Link>.
           </p>
         </div>
       </section>

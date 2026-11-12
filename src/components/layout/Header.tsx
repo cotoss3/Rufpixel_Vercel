@@ -47,11 +47,11 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: 'Inicio' },
     { href: '/articulos-promocionales-panama', label: 'Promocionales' },
+    { href: '/servicios/impresion-gran-formato', label: 'Banners' },
     { href: '/tienda', label: 'Tienda' },
     { href: '/servicios', label: 'Servicios' },
     { href: '/blog', label: 'Blog' },
     { href: '/galeria', label: 'Galería' },
-    { href: '/nosotros', label: 'Nosotros' },
     { href: '/contacto', label: 'Contacto' },
   ];
 

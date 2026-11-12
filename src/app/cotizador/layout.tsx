@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Cotizador Online de Impresión Digital & Zona Pixel | RufPixel Panamá',
-  description: 'Cotiza al instante tus impresiones digitales en Panamá: DTF Textil, UV DTF, Stickers personalizados en vinil, Banners y Papelería comercial con entrega rápida.',
+  title: 'Cotizador de Impresión Digital: Zona Pixel | RufPixel', // 53 chars
+  description: 'Cotiza al instante en Panamá desde 1 pieza: DTF textil, stickers en vinil, UV DTF, banners lona 13oz, roll-up y papelería. Pagos vía Yappy y ACH.', // 145 chars
   keywords: [
     'Cotizador imprenta Panamá',
     'Precios DTF Panamá',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     canonical: 'https://rufpixel.com/cotizador',
   },
   openGraph: {
-    title: 'Cotizador Online de Impresión Digital | RufPixel Panamá',
-    description: 'Calcula tu cotización online en segundos y añade directamente al carrito con pago por Yappy o ACH.',
+    title: 'Cotizador de Impresión Digital: Zona Pixel | RufPixel',
+    description: 'Cotiza al instante en Panamá desde 1 pieza: DTF textil, stickers en vinil, UV DTF, banners lona 13oz, roll-up y papelería. Pagos vía Yappy y ACH.',
     url: 'https://rufpixel.com/cotizador',
     siteName: 'RufPixel',
     locale: 'es_PA',

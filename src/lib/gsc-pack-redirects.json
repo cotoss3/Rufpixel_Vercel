@@ -298,5 +298,1035 @@
     "source": "/productos/botella-de-aluminio-para-sublimacion-estilo-swell-250-uds",
     "destination": "/productos/botella-de-aluminio-para-sublimacion-estilo-swell",
     "permanent": true
+  },
+  {
+    "source": "/productos/stickers-2x2",
+    "destination": "/cotizador",
+    "permanent": true
+  },
+  {
+    "source": "/productos/stickers-3-x-3",
+    "destination": "/cotizador",
+    "permanent": true
+  },
+  {
+    "source": "/productos/volante-1-4-de-pagina",
+    "destination": "/servicios/flyers-y-folletos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bandera-para-autos",
+    "destination": "/servicios/impresion-gran-formato",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-metalizado-con-soporte-para-celular-100-uds",
+    "destination": "/productos/boligrafo-metalizado-con-soporte-para-celular",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-triangular-de-metal-100-uds",
+    "destination": "/productos/boligrafo-triangular-de-metal",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-de-canvas-modelo-tote",
+    "destination": "/productos/bolsa-tote-de-canvas-poli-cotton-grande",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-drawstring-de-canvas-con-base-de-corcho-50-uds",
+    "destination": "/productos/bolsa-drawstring-de-canvas-con-base-de-corcho",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-organizadora-de-basura-para-auto-100-uds",
+    "destination": "/productos/bolsa-organizadora-de-basura-para-auto",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-reciclad-polipropileno-para-sublimacion",
+    "destination": "/productos/bolsa-reciclada-de-polipropileno-clasica",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cosmetiquera-modelo-longchamp",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lanyard-porta-identificacion-satinado",
+    "destination": "/productos/cordon-porta-id-satinado-con-clip-desprendible",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lanyards-satinado-copia",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mouse-pad-forma-de-rinon",
+    "destination": "/productos/mouse-pad-de-tela-en-forma-de-rinon",
+    "permanent": true
+  },
+  {
+    "source": "/productos/padfolio-de-cuerina-con-cierre-ziper",
+    "destination": "/tienda/libretas-y-cuadernos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-plastica-cuerpo-metalizado",
+    "destination": "/productos/boligrafo-plastico-con-cuerpo-metalizado",
+    "permanent": true
+  },
+  {
+    "source": "/productos/popsocket-sub",
+    "destination": "/tienda/oficina-y-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-identificacion",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/soporte-para-celular-de-bambu-para-escritorio-50-uds",
+    "destination": "/productos/soporte-para-celular-de-bambu-para-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/stickers-4-x-4",
+    "destination": "/cotizador",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-plastico-de-estadio-con-tapa",
+    "destination": "/productos/vaso-curvo-para-vino-doble-pared-con-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-termico-estilo-swig-alto",
+    "destination": "/productos/vaso-termico-de-acero-doble-pared-con-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-termico-para-trago",
+    "destination": "/productos/vaso-termico-de-acero-doble-pared-con-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/x-banner-24x63",
+    "destination": "/servicios/impresion-gran-formato",
+    "permanent": true
+  },
+  {
+    "source": "/productos/yoyo-porta-identificacion-redondo-plastico-traslucido",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/as",
+    "destination": "/articulos-promocionales-panama",
+    "permanent": true
+  },
+  {
+    "source": "/productos/audifonos-de-goma",
+    "destination": "/tienda/oficina-y-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bandana-tipo-headband-100-uds",
+    "destination": "/productos/bandana-tipo-headband",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bandana-tipo-headband-250-uds",
+    "destination": "/productos/bandana-tipo-headband",
+    "permanent": true
+  },
+  {
+    "source": "/productos/banner-roll-up",
+    "destination": "/servicios/impresion-gran-formato",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-brillante-con-clip-y-punta-plateada-100-uds",
+    "destination": "/productos/boligrafo-brillante-con-clip-y-punta-plateada",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-de-aluminio-liso-100-uds",
+    "destination": "/productos/boligrafo-de-aluminio-liso",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-de-aluminio-liso-250-uds",
+    "destination": "/productos/boligrafo-de-aluminio-liso",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-ejecutivo-de-aluminio-premium-100-uds",
+    "destination": "/productos/boligrafo-ejecutivo-de-aluminio-premium",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-metalizado-con-soporte-para-celular-250-uds",
+    "destination": "/productos/boligrafo-metalizado-con-soporte-para-celular",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-plastico-blanco-giratorio-100-uds",
+    "destination": "/productos/boligrafo-plastico-blanco-giratorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-plastico-con-inserto-de-color-100-uds",
+    "destination": "/productos/boligrafo-plastico-con-inserto-de-color",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-plastico-con-inserto-de-color-50-uds",
+    "destination": "/productos/boligrafo-plastico-con-inserto-de-color",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-satin-plateado-con-grip-traslucido-100-uds",
+    "destination": "/productos/boligrafo-satin-plateado-con-grip-traslucido",
+    "permanent": true
+  },
+  {
+    "source": "/productos/boligrafo-slim-con-stylus-y-clip-blanco-250-uds",
+    "destination": "/productos/boligrafo-slim-con-stylus-y-clip-blanco",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-basurero-para-autos",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-de-canvas",
+    "destination": "/productos/bolsa-de-canvas-natural-con-asas-de-cordon",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-de-congreso-para-catalogo-sub",
+    "destination": "/productos/bolsa-reciclada-de-congreso-para-catalogo",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-de-cordon-de-nylon",
+    "destination": "/productos/bolsa-drawstring-de-nylon-delgada-con-cordon",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos-100-uds",
+    "destination": "/productos/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos-250-uds",
+    "destination": "/productos/bolsa-de-nylon-cuadrada-con-zipper-y-salida-para-audifonos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-de-yute-o-heneken-natural",
+    "destination": "/productos/bolsa-tote-clasica-de-yute-natural",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-drawstring-de-canvas-negro-100-uds",
+    "destination": "/productos/bolsa-drawstring-de-canvas-negro",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-drawstring-de-canvas-negro-250-uds",
+    "destination": "/productos/bolsa-drawstring-de-canvas-negro",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-drawstring-de-nylon-delgada-con-cordon-100-uds",
+    "destination": "/productos/bolsa-drawstring-de-nylon-delgada-con-cordon",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper-100-uds",
+    "destination": "/productos/bolsa-drawstring-de-nylon-grueso-con-bolsillo-y-zipper",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-drawstring-en-canvas",
+    "destination": "/productos/bolsa-drawstring-de-canvas-negro",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-drawstring",
+    "destination": "/productos/bolsa-drawstring-de-nylon-delgada-con-cordon",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-para-guardar-celular",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-para-sublimacion",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-reciclada-14x16",
+    "destination": "/productos/bolsa-reciclada-de-polipropileno-clasica",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-reciclada-chica-con-cierre-de-boton-50-uds",
+    "destination": "/productos/bolsa-reciclada-chica-con-cierre-de-boton",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-reciclada-de-congreso-para-catalogo-100-uds",
+    "destination": "/productos/bolsa-reciclada-de-congreso-para-catalogo",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-reciclada-de-polipropileno-clasica-50-uds",
+    "destination": "/productos/bolsa-reciclada-de-polipropileno-clasica",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-reciclada-jumbo-para-sublimacion",
+    "destination": "/productos/bolsa-reciclada-jumbo-con-cierre-de-boton",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-tote-clasica-de-yute-natural-250-uds",
+    "destination": "/productos/bolsa-tote-clasica-de-yute-natural",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-tote-de-canvas-12-oz-con-asa-integrada-250-uds",
+    "destination": "/productos/bolsa-tote-de-canvas-12-oz-con-asa-integrada",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-tote-de-canvas-poli-cotton-grande-100-uds",
+    "destination": "/productos/bolsa-tote-de-canvas-poli-cotton-grande",
+    "permanent": true
+  },
+  {
+    "source": "/productos/bolsa-tote-de-manta-natural-50-uds",
+    "destination": "/productos/bolsa-tote-de-manta-natural",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-cilindrica-de-plastico-con-tapa-rosca",
+    "destination": "/productos/botella-de-acero-doble-pared-con-tapa-rosca",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-acero-blanca-para-sublimacion-dos-tonos-100-uds",
+    "destination": "/productos/botella-de-acero-blanca-para-sublimacion-dos-tonos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-acero-doble-pared-cuerpo-mate-50-uds",
+    "destination": "/productos/botella-de-acero-doble-pared-cuerpo-mate",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-agua-colapsable",
+    "destination": "/tienda/tazas-botellas-y-termos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-aluminio-estilo-swell-con-cuerpo-satinado-100-uds",
+    "destination": "/productos/botella-de-aluminio-estilo-swell-con-cuerpo-satinado",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-aluminio-estilo-swell-con-cuerpo-satinado-250-uds",
+    "destination": "/productos/botella-de-aluminio-estilo-swell-con-cuerpo-satinado",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-aluminio-modelo-swell-pared-sencilla",
+    "destination": "/productos/botella-plastica-de-24-oz-pared-sencilla",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-aluminio-modelo-swell",
+    "destination": "/productos/botella-de-aluminio-para-sublimacion-estilo-swell",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-aluminio-para-sublimacion-estilo-swell-100-uds",
+    "destination": "/productos/botella-de-aluminio-para-sublimacion-estilo-swell",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-de-metal-doble-pared-para-sublimacion-100-uds",
+    "destination": "/productos/botella-de-metal-doble-pared-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-deportiva-plastica",
+    "destination": "/productos/botella-deportiva-plastica-traslucida",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botella-plastica-de-24-oz",
+    "destination": "/productos/botella-plastica-de-24-oz-pared-sencilla",
+    "permanent": true
+  },
+  {
+    "source": "/productos/botellero-triangular-para-6-botellas-de-vino-50-uds",
+    "destination": "/productos/botellero-triangular-para-6-botellas-de-vino",
+    "permanent": true
+  },
+  {
+    "source": "/productos/camisa-pescador-lacrosse-manga-larga-ultralite-100-uds",
+    "destination": "/productos/camisa-pescador-lacrosse-manga-larga-ultralite",
+    "permanent": true
+  },
+  {
+    "source": "/productos/camiseta-de-algodon-lacrosse-180g-cuello-v-50-uds",
+    "destination": "/productos/camiseta-de-algodon-lacrosse-180g-cuello-v",
+    "permanent": true
+  },
+  {
+    "source": "/productos/camiseta-de-algodon-lacrosse-manga-larga-180g-100-uds",
+    "destination": "/productos/camiseta-de-algodon-lacrosse-manga-larga-180g",
+    "permanent": true
+  },
+  {
+    "source": "/productos/camiseta-de-algodon-lacrosse-manga-larga-180g-250-uds",
+    "destination": "/productos/camiseta-de-algodon-lacrosse-manga-larga-180g",
+    "permanent": true
+  },
+  {
+    "source": "/productos/camiseta-de-algodon-lacrosse-manga-larga-180g-50-uds",
+    "destination": "/productos/camiseta-de-algodon-lacrosse-manga-larga-180g",
+    "permanent": true
+  },
+  {
+    "source": "/productos/camiseta-para-sublimacion-250-uds",
+    "destination": "/productos/camiseta-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cangurera-de-nylon",
+    "destination": "/productos/cangurera-de-nylon-con-doble-zipper-y-gran-area-de-impresion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cangurera-deportiva-sostenedor-de-iphone-o-mp3",
+    "destination": "/productos/cangurera-deportiva-de-neoprene-con-porta-botella",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cangurera-deportiva",
+    "destination": "/productos/cangurera-deportiva-de-neoprene-con-porta-botella",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cinta-metrica-de-metal",
+    "destination": "/tienda/llaveros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cinta-metrica-redonda",
+    "destination": "/tienda/llaveros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/coasters-cuadrados-sub",
+    "destination": "/tienda/cocina-y-hogar",
+    "permanent": true
+  },
+  {
+    "source": "/productos/coasters-redondos-sub",
+    "destination": "/tienda/cocina-y-hogar",
+    "permanent": true
+  },
+  {
+    "source": "/productos/collar-porta-identificacion",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cooler-termico-redondo",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cosmetiquera-de-canvas",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cosmetiquera-de-plastico",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-de-caratula-rigida-en-tela",
+    "destination": "/productos/cuaderno-rigido-de-tela-con-soporte-para-celular-en-bambu",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-de-cuero-de-color-con-cierre-elastico-100-uds",
+    "destination": "/productos/cuaderno-de-cuero-de-color-con-cierre-elastico",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-de-cuero-de-color-con-cierre-elastico-250-uds",
+    "destination": "/productos/cuaderno-de-cuero-de-color-con-cierre-elastico",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-de-cuero-dos-tonos-con-cierre-elastico-250-uds",
+    "destination": "/productos/cuaderno-de-cuero-dos-tonos-con-cierre-elastico",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-de-cuero-para-sublimacion-100-uds",
+    "destination": "/productos/cuaderno-de-cuero-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-de-cuero-para-sublimacion-250-uds",
+    "destination": "/productos/cuaderno-de-cuero-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-dos-tonos-en-cuerina-con-gris",
+    "destination": "/productos/cuaderno-de-cuero-dos-tonos-con-cierre-elastico",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-en-cuerina-de-color",
+    "destination": "/tienda/libretas-y-cuadernos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/cuaderno-espiral-con-costuras-y-boligrafo-reciclado-100-uds",
+    "destination": "/productos/cuaderno-espiral-con-costuras-y-boligrafo-reciclado",
+    "permanent": true
+  },
+  {
+    "source": "/productos/delantal-de-canvas-denim-con-portaplumas-50-uds",
+    "destination": "/productos/delantal-de-canvas-denim-con-portaplumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/delantal-de-denim-con-portaplumas-y-bolsillos-250-uds",
+    "destination": "/productos/delantal-de-denim-con-portaplumas-y-bolsillos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/estuche-porta-identificacion",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/estuche-tecnologico-multi-uso",
+    "destination": "/productos/boligrafo-multiuso-brillante-con-detalles-negros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/facturas-1-2-carta-8-5x5-5",
+    "destination": "/servicios/flyers-y-folletos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/hielera-termica",
+    "destination": "/tienda/bolsas-y-totes",
+    "permanent": true
+  },
+  {
+    "source": "/productos/identificador-name-tag",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lanyard-porta-identificacion-nylon",
+    "destination": "/productos/cordon-porta-id-de-nylon-con-clip-desprendible",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lanyard-porta-identificacion-satinado-costuras-blancas",
+    "destination": "/productos/cuaderno-de-cuero-con-portapluma-y-costuras-blancas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lanyards-satinado-copia-2",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/libreta-ejecutiva-de-cuero-con-cierre-magnetico-50-uds",
+    "destination": "/productos/libreta-ejecutiva-de-cuero-con-cierre-magnetico",
+    "permanent": true
+  },
+  {
+    "source": "/productos/libreta-espiral-reciclada-con-boligrafo-50-uds",
+    "destination": "/productos/libreta-espiral-reciclada-con-boligrafo",
+    "permanent": true
+  },
+  {
+    "source": "/productos/linterna-de-aluminio",
+    "destination": "/tienda/llaveros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-abre-botella-de-madera",
+    "destination": "/productos/llavero-de-aluminio-abrebotellas-y-abre-latas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-cinta-metrica-2",
+    "destination": "/tienda/llaveros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-cinta-metrica",
+    "destination": "/tienda/llaveros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-de-aluminio-abrebotellas-y-abre-latas-100-uds",
+    "destination": "/productos/llavero-de-aluminio-abrebotellas-y-abre-latas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-de-bamboo-natural",
+    "destination": "/tienda/llaveros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-de-cuerina-sub",
+    "destination": "/tienda/llaveros",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-de-madera-2x1",
+    "destination": "/productos/llavero-de-madera-redondo-con-detalles-en-acero",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-de-madera-color-natural",
+    "destination": "/productos/llavero-de-madera-redondo-con-detalles-en-acero",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-de-madera",
+    "destination": "/productos/llavero-de-madera-redondo-con-detalles-en-acero",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-de-metal-rectangular",
+    "destination": "/productos/llavero-rectangular-de-mdf-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-mosqueton-plateado-para-sublimacion-50-uds",
+    "destination": "/productos/llavero-mosqueton-plateado-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-plastico-de-color-con-gancho-50-uds",
+    "destination": "/productos/llavero-plastico-de-color-con-gancho",
+    "permanent": true
+  },
+  {
+    "source": "/productos/llavero-plastico-para-guindar",
+    "destination": "/productos/llavero-plastico-de-color-con-gancho",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lonchera-de-nylon-insulada-con-bolsillo-exterior-50-uds",
+    "destination": "/productos/lonchera-de-nylon-insulada-con-bolsillo-exterior",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lonchera-termica-de-neoprene-con-cierre-zipper-50-uds",
+    "destination": "/productos/lonchera-termica-de-neoprene-con-cierre-zipper",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lonchera-termica-de-nylon-2",
+    "destination": "/productos/lonchera-termica-de-nylon-con-interior-de-aluminio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lonchera-termica-de-nylon-con-interior-de-aluminio-100-uds",
+    "destination": "/productos/lonchera-termica-de-nylon-con-interior-de-aluminio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lonchera-termica-de-nylon-con-interior-de-aluminio-250-uds",
+    "destination": "/productos/lonchera-termica-de-nylon-con-interior-de-aluminio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/lonchera-termica-de-nylon",
+    "destination": "/productos/lonchera-termica-de-nylon-con-interior-de-aluminio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/maletin-para-laptop-dos-tonos",
+    "destination": "/productos/cuaderno-de-cuero-dos-tonos-con-cierre-elastico",
+    "permanent": true
+  },
+  {
+    "source": "/productos/maletin-porta-laptop",
+    "destination": "/productos/mochila-antirrobo-con-puerto-usb-y-porta-laptop",
+    "permanent": true
+  },
+  {
+    "source": "/productos/memoria-usb-modelo-pluma",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mochila-antirrobo-zipper-oculto",
+    "destination": "/productos/mochila-antirrobo-con-puerto-usb-y-porta-laptop",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mochila-de-nylon-delgado",
+    "destination": "/productos/mochila-negra-de-nylon-600d-con-franja-reflectiva",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mochila-ejecutiva",
+    "destination": "/productos/mochila-ejecutiva-con-porta-laptop-y-triple-zipper",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mouse-pad-de-tela-cuadrado-50-uds",
+    "destination": "/productos/mouse-pad-de-tela-cuadrado",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mouse-pad-redondo-de-tela-para-sublimacion-50-uds",
+    "destination": "/productos/mouse-pad-redondo-de-tela-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mouse-pads",
+    "destination": "/tienda/oficina-y-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mousepad-rectangular-sub",
+    "destination": "/tienda/oficina-y-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/mousepad-redondo-sub",
+    "destination": "/tienda/oficina-y-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/padfolio-de-cuerina-jr",
+    "destination": "/tienda/libretas-y-cuadernos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/padfolio-de-cuerina",
+    "destination": "/tienda/libretas-y-cuadernos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/paragua-ejecutivo-20",
+    "destination": "/tienda/paraguas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/paragua-ejecutivo-48",
+    "destination": "/tienda/paraguas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-de-metal-cuerpo-de-goma",
+    "destination": "/productos/boligrafo-plastico-con-cuerpo-metalizado",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-de-metal-ejecutiva-matte",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-de-metal-ejecutiva",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-de-metal",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-ejecutiva-en-metal-con-bamboo",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-plastica-metalizado",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-plastica-promocional",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-stylus-dorada",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-stylus-platiada-2",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-stylus-platiada-copia",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-stylus-rose-gold",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/pluma-triangular",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/polo-dry-fit-dos-tonos-250-uds",
+    "destination": "/productos/polo-dry-fit-dos-tonos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/polo-dry-fit-dos-tonos-50-uds",
+    "destination": "/productos/polo-dry-fit-dos-tonos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-documentos-para-viajes",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-documentos",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-identificacion-para-maletas",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-identificacion-vertical",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-lata-de-acero-doble-pared-para-sublimacion-100-uds",
+    "destination": "/productos/porta-lata-de-acero-doble-pared-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-lata-doble-pared-en-acero",
+    "destination": "/productos/porta-lata-de-acero-doble-pared-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-latas",
+    "destination": "/tienda/tazas-botellas-y-termos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-pasaporte",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/porta-pluma-para-escritorio",
+    "destination": "/productos/portaplumas-con-reloj-digital-para-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/protector-de-sol-para-autos",
+    "destination": "/articulos-promocionales-panama",
+    "permanent": true
+  },
+  {
+    "source": "/productos/recibos-1-4-de-pagina-4-25-x-5-5",
+    "destination": "/servicios/flyers-y-folletos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/resaltador-de-estrella",
+    "destination": "/tienda/boligrafos-y-plumas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera-250-uds",
+    "destination": "/productos/set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera",
+    "permanent": true
+  },
+  {
+    "source": "/productos/set-de-porta-vasos",
+    "destination": "/productos/set-de-mochila-ejecutiva-3-piezas-con-porta-laptop",
+    "permanent": true
+  },
+  {
+    "source": "/productos/set-de-regalo-libreta-boligrafo-metalico-y-botella-termica",
+    "destination": "/productos/libreta-espiral-reciclada-con-boligrafo",
+    "permanent": true
+  },
+  {
+    "source": "/productos/sombrero-tipo-pescador-100-uds",
+    "destination": "/productos/sombrero-tipo-pescador",
+    "permanent": true
+  },
+  {
+    "source": "/productos/stand-promocional",
+    "destination": "/servicios/impresion-gran-formato",
+    "permanent": true
+  },
+  {
+    "source": "/productos/tabla-para-picar-en-bambu-2",
+    "destination": "/productos/tabla-de-cortar-de-bambu-rectangular",
+    "permanent": true
+  },
+  {
+    "source": "/productos/tabla-para-picar-en-bambu-redonda",
+    "destination": "/productos/tabla-de-cortar-de-bambu-redonda-con-mango",
+    "permanent": true
+  },
+  {
+    "source": "/productos/tabla-para-picar-en-bambu",
+    "destination": "/productos/tabla-de-cortar-de-bambu-rectangular",
+    "permanent": true
+  },
+  {
+    "source": "/productos/tapa-para-camara-web",
+    "destination": "/tienda/oficina-y-escritorio",
+    "permanent": true
+  },
+  {
+    "source": "/productos/tarjeta-de-identificacion",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
+  },
+  {
+    "source": "/productos/tarjetas-de-presentacion",
+    "destination": "/servicios/flyers-y-folletos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-de-acero-metalico-mate",
+    "destination": "/productos/taza-de-acero-mate-doble-pared-con-cuchara",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-de-ceramica-color-de-fondo",
+    "destination": "/productos/taza-de-ceramica-para-sublimacion-con-interior-de-color",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-de-ceramica-con-agarradero-y-tapa-de-bamboo",
+    "destination": "/productos/taza-de-ceramica-con-tapa-de-bambu-y-cuchara",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-de-ceramica-corcho",
+    "destination": "/productos/taza-de-ceramica-mate-con-base-de-corcho-removible",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-de-ceramica-mate-con-base-de-corcho-removible-50-uds",
+    "destination": "/productos/taza-de-ceramica-mate-con-base-de-corcho-removible",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-de-ceramica",
+    "destination": "/productos/taza-de-ceramica-para-sublimacion-con-interior-de-color",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-plastica-con-interior-de-acero-y-tapa-100-uds",
+    "destination": "/productos/taza-plastica-con-interior-de-acero-y-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-plastica-con-interior-de-acero-y-tapa-250-uds",
+    "destination": "/productos/taza-plastica-con-interior-de-acero-y-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/taza-plastica-con-interior-de-acero-y-tapa-50-uds",
+    "destination": "/productos/taza-plastica-con-interior-de-acero-y-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-acrilico-doble-insulacion-de-18-oz",
+    "destination": "/productos/vaso-acrilico-de-18-oz-con-doble-insulacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-curvo-chubby-para-vino-doble-pared-tapa-clear",
+    "destination": "/productos/vaso-curvo-para-vino-doble-pared-con-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-plastico-stadium-cup-colores-solidos",
+    "destination": "/tienda/tazas-botellas-y-termos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-termico-12-oz-blanco-para-sublimacion-100-uds",
+    "destination": "/productos/vaso-termico-12-oz-blanco-para-sublimacion",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-termico-con-base-de-bamboo",
+    "destination": "/productos/vaso-termico-de-acero-doble-pared-con-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-termico-de-acero-doble-pared-con-tapa-100-uds",
+    "destination": "/productos/vaso-termico-de-acero-doble-pared-con-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/vaso-termico-de-acero-doble-pared-con-tapa-50-uds",
+    "destination": "/productos/vaso-termico-de-acero-doble-pared-con-tapa",
+    "permanent": true
+  },
+  {
+    "source": "/productos/volantes-8-5x5-5",
+    "destination": "/servicios/flyers-y-folletos",
+    "permanent": true
+  },
+  {
+    "source": "/productos/yoyo-porta-identificacion-con-clip-carabiner",
+    "destination": "/productos/cordon-porta-id-de-nylon-con-clip-desprendible",
+    "permanent": true
+  },
+  {
+    "source": "/productos/yoyo-porta-identificacion-cuadrado",
+    "destination": "/tienda/identificacion-y-correas",
+    "permanent": true
   }
 ]

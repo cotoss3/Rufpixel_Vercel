@@ -59,7 +59,7 @@ export const MOCK_SERVICES: Service[] = [
   {
     "id": "serv-uvdtf",
     "slug": "uv-dtf",
-    "metaTitle": "Stickers UV DTF en Panamá: Relieve 3D | RufPixel",
+    "metaTitle": "Impresión de Stickers UV DTF 3D en Panamá | RufPixel",
     "metaDesc": "Personaliza termos, tazas y acrílico en frío sin plancha térmica. Relieve 3D con barniz brillante y adherencia ultra fuerte. Cotiza directo a WhatsApp.",
     "title": "Transfer UV DTF en Panamá: Stickers 3D para Superficies Rígidas",
     "shortDesc": "Calcomanías de transferencia directa en frío con relieve táctil 3D y barniz brillante curado UV. Pega tu logo en termos, vidrio y acrílico sin calor.",

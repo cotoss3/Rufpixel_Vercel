@@ -9,6 +9,14 @@ export const metadata = {
   alternates: {
     canonical: 'https://rufpixel.com/servicios',
   },
+  openGraph: {
+    title: 'Imprenta en Panamá al Por Mayor y Detal | RufPixel',
+    description: 'Bordados en Panamá, impresión DTF textil, stickers UV DTF, grabado láser de termos y banners roll-up. Cotiza al detal o lotes mayoristas con envíos.',
+    url: 'https://rufpixel.com/servicios',
+    siteName: 'RufPixel',
+    locale: 'es_PA',
+    type: 'website',
+  },
 };
 
 export default function ServiciosPage() {
