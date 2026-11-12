@@ -1,13 +1,35 @@
 'use client';
 
 import React, { useState, useMemo, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { Product } from '@/lib/types';
 import { ProductCategory, isProductInCategory, resolveCategory } from '@/lib/woocommerce';
 import { MOCK_PRODUCTS } from '@/lib/mockData';
 import ProductCard from './ProductCard';
-import ProductSearch from './ProductSearch';
-import { ChevronLeft, ChevronRight, Grid, Filter, Check, ChevronDown, ChevronUp } from 'lucide-react';
+import ProductSearch, { SEARCHABLE_SERVICES_AND_BANNERS } from './ProductSearch';
+import { ChevronLeft, ChevronRight, Grid, Filter, Check, ChevronDown, ChevronUp, Sparkles, ArrowRight } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
+
+const STOP_WORDS = new Set([
+  'de', 'del', 'la', 'las', 'el', 'los', 'en', 'con', 'para', 'por',
+  'un', 'una', 'unos', 'unas', 'y', 'o', 'a', 'al', 'panama',
+]);
+
+const GENERIC_MODIFIERS = new Set([
+  'impresion', 'impresiones', 'imprimir', 'personalizado', 'personalizados',
+  'personalizada', 'personalizadas', 'corporativo', 'corporativos',
+  'promocional', 'promocionales', 'publicitario', 'publicitarios',
+  'precio', 'precios', 'cotizar', 'venta', 'ventas',
+]);
+
+function extractSearchTokens(normQuery: string): string[] {
+  const rawTokens = normQuery
+    .split(/[^a-z0-9]+/)
+    .filter((tok) => tok.length > 1 && !STOP_WORDS.has(tok));
+  if (rawTokens.length === 0) return [];
+  const specificTokens = rawTokens.filter((tok) => !GENERIC_MODIFIERS.has(tok));
+  return specificTokens.length > 0 ? specificTokens : rawTokens;
+}
 
 interface ShopClientGridProps {
   initialProducts: Product[];
@@ -59,6 +81,25 @@ export default function ShopClientGrid({
   // 100% Synchronous Instant Client-Side Category & Search Filtering
   const baseProducts = initialProducts && initialProducts.length > 0 ? initialProducts : MOCK_PRODUCTS;
 
+  // Matching Services & Banners when user searches in /tienda
+  const matchedServices = useMemo(() => {
+    if (!searchTerm.trim()) return [];
+    const normTerm = searchTerm.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const tokens = extractSearchTokens(normTerm);
+    if (tokens.length === 0) return [];
+
+    return SEARCHABLE_SERVICES_AND_BANNERS.filter((srv) => {
+      const srvText = `${srv.name} ${srv.category} ${srv.keywords}`
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+      return tokens.every((tok) => {
+        const baseTok = tok.length > 3 && tok.endsWith('s') ? tok.slice(0, -1) : tok;
+        return srvText.includes(tok) || srvText.includes(baseTok);
+      });
+    });
+  }, [searchTerm]);
+
   const filteredProducts = useMemo(() => {
     let result = baseProducts;
 
@@ -67,11 +108,11 @@ export default function ShopClientGrid({
       result = result.filter((p) => isProductInCategory(p, selectedCategory, categories));
     }
 
-    // 2. Search Term Filter with Token & Alias Support
+    // 2. Search Term Filter with Stop-Word Stripping & Alias Support
     if (searchTerm.trim()) {
       const cleanTerm = searchTerm.toLowerCase().trim();
       const normTerm = cleanTerm.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      const tokens = normTerm.split(/\s+/).filter(Boolean);
+      const tokens = extractSearchTokens(normTerm);
 
       if (tokens.length > 0) {
         result = result.filter((p) => {
@@ -282,9 +323,66 @@ export default function ShopClientGrid({
           onSearchSubmit={handleSearchSubmit}
         />
 
+        {/* Matched Banners & Services Section */}
+        {matchedServices.length > 0 && (
+          <div className="bg-[#0D0D0D] text-white rounded-3xl p-6 border border-[#FF5E14]/40 shadow-lg space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+              <div className="flex items-center space-x-2.5">
+                <div className="p-2 bg-[#FF5E14]/20 text-[#FF5E14] rounded-xl">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#FF5E14]">
+                    Banners, Estructuras & Servicios Directos
+                  </span>
+                  <h3 className="text-base font-extrabold text-white font-outfit">
+                    Resultados en Impresión de Banners y Servicios para &ldquo;{searchTerm}&rdquo;
+                  </h3>
+                </div>
+              </div>
+              <Link
+                href="/servicios/impresion-gran-formato"
+                className="inline-flex items-center space-x-1.5 text-xs font-extrabold bg-[#FF5E14] hover:bg-[#e04f0e] text-white px-4 py-2.5 rounded-xl transition-colors shrink-0"
+              >
+                <span>Ver Catálogo de Banners</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {matchedServices.map((srv) => (
+                <Link
+                  key={srv.id}
+                  href={srv.href}
+                  className="flex items-center justify-between p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#FF5E14]/50 transition-all group"
+                >
+                  <div className="flex items-center space-x-3.5 min-w-0 pr-3">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-white shrink-0 border border-white/10 p-1 flex items-center justify-center">
+                      <img src={srv.image} alt={srv.name} className="w-full h-full object-contain" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#FF5E14] block">
+                        {srv.category}
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-white group-hover:text-[#FF5E14] transition-colors line-clamp-2">
+                        {srv.name}
+                      </h4>
+                      <span className="text-[11px] text-gray-400">{srv.subLabel}</span>
+                    </div>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <span className="text-sm font-extrabold text-[#FF5E14] block">{srv.priceLabel}</span>
+                    <span className="text-[10px] text-gray-300 font-semibold group-hover:underline">Ver tarifas →</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="flex items-center justify-between bg-white px-5 py-3.5 rounded-2xl border border-gray-200">
           <span className="text-xs font-bold text-gray-600">
-            Mostrando <strong>{paginatedProducts.length}</strong> de <strong>{totalProducts}</strong> productos (Página {currentPage} de {totalPages})
+            Mostrando <strong>{paginatedProducts.length}</strong> de <strong>{totalProducts}</strong> productos promocionales (Página {currentPage} de {totalPages})
             {selectedCategory !== 'todos' && (
               <span className="text-[#FF5E14] font-extrabold ml-1">
                 en {activeCategoryObj?.name || resolvedActive?.name || selectedCategory}
@@ -292,7 +390,7 @@ export default function ShopClientGrid({
             )}
             {searchTerm && (
               <span className="text-[#FF5E14] font-bold ml-1">
-                coincidentes con "{searchTerm}"
+                coincidentes con &ldquo;{searchTerm}&rdquo;
               </span>
             )}
           </span>
@@ -315,21 +413,29 @@ export default function ShopClientGrid({
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        ) : (
+        ) : matchedServices.length === 0 ? (
           <div className="bg-white rounded-3xl p-12 text-center border border-gray-200 space-y-3">
-            <h3 className="text-lg font-bold text-gray-900">No hay productos disponibles</h3>
-            <p className="text-xs text-gray-500">Prueba buscando por otro término o limpiando los filtros.</p>
-            <button
-              onClick={(e) => {
-                handleCategorySelect('todos', e);
-                setSearchTerm('');
-              }}
-              className="px-4 py-2 bg-[#FF5E14] text-white rounded-xl font-bold text-xs"
-            >
-              Ver todos los productos
-            </button>
+            <h3 className="text-lg font-bold text-gray-900">No hay productos promocionales disponibles para esta búsqueda</h3>
+            <p className="text-xs text-gray-500">Prueba buscando por otro término, explora Impresión de Banners o limpia los filtros.</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <button
+                onClick={(e) => {
+                  handleCategorySelect('todos', e);
+                  setSearchTerm('');
+                }}
+                className="px-4 py-2 bg-[#FF5E14] text-white rounded-xl font-bold text-xs"
+              >
+                Ver todos los productos
+              </button>
+              <Link
+                href="/servicios/impresion-gran-formato"
+                className="px-4 py-2 bg-[#0D0D0D] text-white rounded-xl font-bold text-xs hover:bg-gray-800 transition-colors"
+              >
+                Ver Impresión de Banners y Gran Formato
+              </Link>
+            </div>
           </div>
-        )}
+        ) : null}
 
         {/* Dynamic Centered URL Pagination Controls */}
         {totalPages > 1 && (
@@ -385,7 +491,7 @@ export default function ShopClientGrid({
               className={`p-2.5 rounded-xl font-bold text-xs flex items-center space-x-1 border transition-all ${
                 currentPage === totalPages
                   ? 'bg-gray-50 text-gray-300 border-gray-200 cursor-not-allowed'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:border-gray-400'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:border-gray-300'
               }`}
             >
               <span className="hidden sm:inline">Siguiente</span>

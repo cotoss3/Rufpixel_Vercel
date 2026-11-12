@@ -68,12 +68,56 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
       { '@type': 'AdministrativeArea', name: 'Ciudad de Panamá' },
       { '@type': 'Country', name: 'Panamá' },
     ],
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-      url: `https://rufpixel.com/servicios/${service.slug}`,
-    },
+    offers: service.slug === 'impresion-gran-formato'
+      ? {
+          '@type': 'AggregateOffer',
+          priceCurrency: 'USD',
+          lowPrice: '9.63',
+          highPrice: '315.65',
+          offerCount: '8',
+          availability: 'https://schema.org/InStock',
+          url: `https://rufpixel.com/servicios/${service.slug}`,
+        }
+      : {
+          '@type': 'Offer',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          url: `https://rufpixel.com/servicios/${service.slug}`,
+        },
+    ...(service.slug === 'impresion-gran-formato'
+      ? {
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Catálogo de Impresión de Banners y Gran Formato en Panamá',
+            itemListElement: [
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Product', name: 'Banner Lona 13oz con Ojales (24" x 36")' },
+                price: '9.63',
+                priceCurrency: 'USD',
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Product', name: 'Banner Araña / X-Banner (24" x 63" / 60x160 cm) con Estructura' },
+                price: '37.45',
+                priceCurrency: 'USD',
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Product', name: 'Banner Roll-Up Standard Retráctil Aluminio (33" x 79" / 85x200 cm)' },
+                price: '69.55',
+                priceCurrency: 'USD',
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Product', name: 'Banderola Publicitaria Feather Flag 8.5ft con Estructura y Base' },
+                price: '105.93',
+                priceCurrency: 'USD',
+              },
+            ],
+          },
+        }
+      : {}),
   };
 
   const breadcrumbSchema = {
