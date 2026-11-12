@@ -251,44 +251,70 @@ export default async function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {MOCK_SERVICES.map((service) => (
-            <div
-              key={service.id}
-              className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-[#FF5E14]/50 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between"
-            >
-              <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#FF5E14]/10 flex items-center justify-center group-hover:bg-[#FF5E14] transition-colors">
-                  {React.cloneElement((iconMap[service.iconName] || iconMap.Sparkles) as React.ReactElement, {
-                    className: "w-7 h-7 text-[#FF5E14] group-hover:text-white transition-colors"
-                  })}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FF5E14] transition-colors font-outfit">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {service.shortDesc}
-                </p>
-                <ul className="space-y-2 pt-2 border-t border-gray-100">
-                  {service.features.slice(0, 3).map((feat, idx) => (
-                    <li key={idx} className="flex items-center text-xs text-gray-500 space-x-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {MOCK_SERVICES.filter((s) => s.slug !== 'uv-dtf').map((rawService) => {
+            const isDtfCombined = rawService.slug === 'dtf-textil';
+            const service = isDtfCombined
+              ? {
+                  ...rawService,
+                  title: 'Impresión DTF Textil y Stickers UV DTF 3D en Panamá',
+                  shortDesc:
+                    'Transfer DTF textil por metros/pliegos para estampar cualquier tela y stickers UV DTF con relieve 3D en frío para termos, vidrio, metal y acrílico.',
+                  features: [
+                    'DTF Textil con base blanca sólida y resistencia a +50 lavadas',
+                    'Stickers UV DTF 3D con barniz brillante aplicados en frío sin plancha',
+                    'Desde 1 pliego A4 sin mínimos hasta rollos por metro o yarda lineal',
+                  ],
+                }
+              : rawService;
 
-              <div className="pt-6">
-                <Link
-                  href={service.slug === 'tomas-aereas-drones' ? '/tomas-aereas-panama' : `/servicios/${service.slug}`}
-                  className="inline-flex items-center space-x-2 text-sm font-bold text-[#FF5E14] hover:text-[#E04700] transition-colors"
-                >
-                  <span>Ver {service.title.split(' en Panamá')[0]}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+            return (
+              <div
+                key={service.id}
+                className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-[#FF5E14]/50 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-[#FF5E14]/10 flex items-center justify-center group-hover:bg-[#FF5E14] transition-colors">
+                    {React.cloneElement((iconMap[service.iconName] || iconMap.Sparkles) as React.ReactElement, {
+                      className: "w-7 h-7 text-[#FF5E14] group-hover:text-white transition-colors"
+                    })}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FF5E14] transition-colors font-outfit">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {service.shortDesc}
+                  </p>
+                  <ul className="space-y-2 pt-2 border-t border-gray-100">
+                    {service.features.slice(0, 3).map((feat, idx) => (
+                      <li key={idx} className="flex items-center text-xs text-gray-500 space-x-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-6 flex flex-wrap items-center gap-3">
+                  <Link
+                    href={service.slug === 'tomas-aereas-drones' ? '/tomas-aereas-panama' : `/servicios/${service.slug}`}
+                    className="inline-flex items-center space-x-2 text-sm font-bold text-[#FF5E14] hover:text-[#E04700] transition-colors"
+                  >
+                    <span>{isDtfCombined ? 'Ver DTF Textil' : `Ver ${service.title.split(' en Panamá')[0]}`}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  {isDtfCombined && (
+                    <Link
+                      href="/servicios/uv-dtf"
+                      className="inline-flex items-center space-x-1.5 text-xs font-extrabold text-gray-700 hover:text-[#FF5E14] bg-gray-100 hover:bg-[#FF5E14]/10 px-3 py-1.5 rounded-lg transition-colors"
+                    >
+                      <span>Ver UV DTF 3D</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
