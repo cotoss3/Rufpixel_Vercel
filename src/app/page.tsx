@@ -31,7 +31,16 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const { products } = await getProducts();
-  const featuredProducts = products.slice(0, 4);
+  const featuredSlugs = [
+    'boligrafo-ejecutivo-de-aluminio-premium',
+    'botella-de-acero-metalizada-con-tapa-rosca',
+    'cordon-porta-id-satinado-con-clip-desprendible',
+    'set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera',
+  ];
+  const selectedFeatured = featuredSlugs
+    .map((slug) => products.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const featuredProducts = selectedFeatured.length === 4 ? selectedFeatured : products.slice(0, 4);
 
   const { posts } = await getBlogPosts();
   const recentPosts = posts.slice(0, 3);
@@ -340,9 +349,10 @@ export default async function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
-              <div
+              <Link
                 key={product.id}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all group flex flex-col justify-between"
+                href={`/productos/${product.slug}`}
+                className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#FF5E14]/50 hover:shadow-lg transition-all group flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   <div className="relative h-52 bg-gray-200 overflow-hidden">
@@ -400,15 +410,14 @@ export default async function HomePage() {
                       );
                     })()}
                   </div>
-                  <Link
-                    href={`/productos/${product.slug}`}
-                    className="p-2.5 bg-[#FF5E14] text-white rounded-xl hover:bg-[#E04700] transition-colors shadow-md shadow-[#FF5E14]/20"
-                    aria-label={`Ver ${product.name}`}
+                  <span
+                    className="p-2.5 bg-[#FF5E14] text-white rounded-xl group-hover:bg-[#E04700] transition-colors shadow-md shadow-[#FF5E14]/20"
+                    aria-hidden="true"
                   >
                     <ShoppingBag className="w-5 h-5" />
-                  </Link>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
