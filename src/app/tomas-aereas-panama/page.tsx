@@ -181,43 +181,43 @@ export default function TomasAereasPanamaPage() {
 
   const useCases = [
     {
-      title: 'Bienes Raíces & Inmobiliarias',
-      desc: 'Destaca propiedades residenciales, torres de apartamentos, condominios de playa y casas campestres con ángulos aéreos que muestran la ubicación, entorno natural y amenidades. Aumenta drásticamente las consultas en Encuentra24 y portales B2B.',
+      title: 'Fotografía Aérea para Bienes Raíces, Terrenos y Fincas',
+      desc: 'Destaca propiedades residenciales, torres de apartamentos, condominios de playa y fincas campestres con ángulos aéreos que muestran delimitación de linderos, entorno natural y amenidades. Aumenta drásticamente las consultas en Encuentra24 y portales B2B.',
       image: '/images/services/drone-bienes-raices-panama.webp',
-      badge: 'Mayor Conversión en Ventas',
+      badge: 'Fotografía Aérea Inmobiliaria',
       points: [
-        'Fotografías panorámicas en 48MP',
+        'Fotografías panorámicas en 48MP de alta resolución',
         'Tomas en órbita y paneo 4K a 60fps',
-        'Perspectiva de accesos viales y vecindario'
+        'Perspectiva de accesos viales, linderos y vecindario'
       ]
     },
     {
-      title: 'Panorámicas Aéreas 360° & Tour Virtual',
-      desc: 'Esferas interactivas en 360 grados tomadas desde el aire. Permite a compradores locales e internacionales girar la vista en todas las direcciones para apreciar la vista al mar, la ciudad y el entorno como si estuvieran flotando en el lugar.',
+      title: 'Tours Virtuales 360° y Vistas Panorámicas Esféricas',
+      desc: 'Esferas interactivas en 360 grados tomadas desde el aire con dron. Permite a compradores locales e internacionales girar la vista en todas las direcciones para apreciar la vista al mar, la ciudad y el entorno como si estuvieran flotando en el lugar.',
       image: '/images/services/drone-moderno-tomas-aereas-panama.jpg',
       badge: 'Exclusivo en Panamá: 360° VR',
       points: [
-        'Fotografía esférica completa en 360°',
+        'Fotografía esférica completa en 360° interactiva',
         'Compatible con Google Street View y sitios web',
-        'Experiencia inmersiva para celulares y gafas VR'
+        'Experiencia inmersiva para celulares y visores VR'
       ]
     },
     {
-      title: 'Avance de Obras & Construcción',
-      desc: 'Monitoreo aéreo programado para constructoras, arquitectos e inversionistas. Documentamos cimentaciones, estructuras, acabados y techos con ángulos repetibles para reportes de avance ejecutivo y fiscalización técnica en Panamá.',
+      title: 'Seguimiento de Obra Civil e Inspección con Drones',
+      desc: 'Monitoreo aéreo programado para constructoras, arquitectos e inversionistas en Panamá. Documentamos cimentaciones, losas, acabados y techos con ángulos repetibles para reportes bancarios de avance y fiscalización técnica.',
       image: '/images/services/drone-construccion-obras-panama.webp',
-      badge: 'Control de Proyecto B2B',
+      badge: 'Inspección de Obras B2B',
       points: [
-        'Visitas mensuales o quincenales fijas',
-        'Inspección de cubiertas y zonas de difícil acceso',
-        'Video comparativo temporal para directores'
+        'Visitas mensuales o quincenales con coordenadas fijas',
+        'Inspección de cubiertas, techos y zonas de difícil acceso',
+        'Video comparativo temporal para directores y bancos'
       ]
     },
     {
-      title: 'Eventos Corporativos & Exteriores',
+      title: 'Video Cinemático 4K y Tomas Aéreas para Eventos',
       desc: 'Filmación cinematográfica para convenciones, aniversarios empresariales, eventos deportivos al aire libre, conciertos y activaciones de marca. Tomas dinámicas y planos de establecimiento que transmiten magnitud y asistencia masiva.',
       image: '/images/services/drone-eventos-costa-panama.webp',
-      badge: 'Impacto Visual Masivo',
+      badge: 'Video Aéreo 4K',
       points: [
         'Grabación con baterías continuas para cobertura total',
         'Planos generales y barridos aéreos fluidos',
@@ -518,10 +518,10 @@ export default function TomasAereasPanamaPage() {
               Sectores & Aplicaciones
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-950 font-outfit">
-              ¿Para qué proyectos necesitas tomas aéreas?
+              Fotografía Aérea, Video con Drone e Inspección por Industria en Panamá
             </h2>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              Adaptamos la altura de vuelo, óptica y perfil de color a los requerimientos específicos de tu industria en Panamá.
+              Adaptamos la altura de vuelo, óptica y perfil de color a los requerimientos específicos de bienes raíces, seguimiento de obras civiles y eventos corporativos.
             </p>
           </div>
 
@@ -741,6 +741,75 @@ export default function TomasAereasPanamaPage() {
                 <PhoneCall className="w-4 h-4" />
                 <span>Consultar Disponibilidad de Fecha</span>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5 GUÍAS ESPECIALIZADAS DEL BLOG (SILO DE AUTORIDAD SEO) */}
+      <section className="py-20 bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+            <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14] bg-orange-100 border border-orange-200 px-3 py-1 rounded-full">
+              Centro de Guías & Recursos
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 font-outfit">
+              Aprende más sobre Fotografía Aérea y Drones en Panamá
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Consejos técnicos y comerciales para inmobiliarias, propietarios y empresas constructoras.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Guía 1: Bienes Raíces */}
+            <div className="bg-slate-50 border border-gray-200 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-sm hover:shadow-lg transition-all group">
+              <div className="space-y-3">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#FF5E14] bg-white px-3 py-1 rounded-md border border-gray-200 inline-block">
+                  Bienes Raíces & Fincas
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-950 font-outfit group-hover:text-[#FF5E14] transition-colors">
+                  <Link href="/blog/fotografia-aerea-con-drones-bienes-raices-terrenos-panama">
+                    Fotografía Aérea y Drones para Bienes Raíces: Cómo Vender Propiedades más Rápido
+                  </Link>
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  Descubre cómo las tomas aéreas y fotografías 4K con drones aumentan hasta un 300% las consultas en Encuentra24 y portales internacionales para casas de playa, terrenos y apartamentos en Panamá.
+                </p>
+              </div>
+
+              <Link
+                href="/blog/fotografia-aerea-con-drones-bienes-raices-terrenos-panama"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] group-hover:translate-x-1 transition-transform"
+              >
+                <span>Leer guía completa de bienes raíces</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Guía 2: Obras Civiles */}
+            <div className="bg-slate-50 border border-gray-200 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-sm hover:shadow-lg transition-all group">
+              <div className="space-y-3">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#FF5E14] bg-white px-3 py-1 rounded-md border border-gray-200 inline-block">
+                  Construcción & Obras B2B
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-950 font-outfit group-hover:text-[#FF5E14] transition-colors">
+                  <Link href="/blog/seguimiento-de-obras-civiles-e-inspeccion-con-drones-panama">
+                    Seguimiento de Obras Civiles e Inspección con Drones: Guía para Constructoras
+                  </Link>
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  Cómo estructurar un programa de monitoreo aéreo periódico para justificar desembolsos de préstamos bancarios de construcción y realizar inspección de techos y galeras en Panamá sin riesgo humano.
+                </p>
+              </div>
+
+              <Link
+                href="/blog/seguimiento-de-obras-civiles-e-inspeccion-con-drones-panama"
+                className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] group-hover:translate-x-1 transition-transform"
+              >
+                <span>Leer guía para constructoras</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>

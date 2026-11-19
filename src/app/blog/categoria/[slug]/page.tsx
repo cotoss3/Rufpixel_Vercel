@@ -19,6 +19,7 @@ export default async function BlogCategoryPage({ params }: { params: { slug: str
     { slug: 'consejos', label: 'Consejos de Impresión' },
     { slug: 'materiales', label: 'Materiales & Acabados' },
     { slug: 'gran-formato', label: 'Gran Formato' },
+    { slug: 'tomas-aereas', label: 'Tomas Aéreas & Drones' },
   ];
 
   return (

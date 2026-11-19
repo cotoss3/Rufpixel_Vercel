@@ -1873,6 +1873,95 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     readTime: '8 min de lectura',
     image: '/images/banners/banner-gran-formato.webp',
     tags: ['Vinil Adhesivo', 'Microperforado', 'Vinil Esmerilado']
+  },
+  {
+    id: 'post-16',
+    slug: 'fotografia-aerea-con-drones-bienes-raices-terrenos-panama',
+    title: 'Fotografía Aérea y Drones para Bienes Raíces en Panamá: Cómo Vender Terrenos y Propiedades más Rápido',
+    excerpt: 'Descubre cómo las fotos y videos 4K con drones aceleran el cierre de ventas de fincas, casas de playa y apartamentos en Panamá. Ángulos clave, resolución y cotización.',
+    content: `<p>En el mercado inmobiliario de Panamá, una propiedad que solo muestra fotos desde el suelo compite en desventaja. Quien busca comprar un lote en Capira, una casa de playa en Coronado, una finca en Boquete o un apartamento en Costa del Este quiere entender de inmediato lo que una foto tradicional no puede mostrar: <strong>dónde termina el terreno, qué tan cerca está el mar, cómo son los accesos de calle y qué rodea al proyecto</strong>. Por eso la fotografía aérea con drones se convirtió en el estándar de venta de las agencias de bienes raíces más activas del país.</p>
+<p>En RufPixel brindamos el <a href="/tomas-aereas-panama"><strong>servicio profesional de fotografía aérea y tomas con drones en Panamá</strong></a>. En esta guía te explicamos cuáles son las tomas indispensables para comercializar inmuebles, qué impacto real tienen en portales como Encuentra24 o MLS Acobir y cómo coordinar una sesión de vuelo eficiente.</p>
+
+<h2>Por qué las fotos con dron aceleran el cierre inmobiliario</h2>
+<p>Según mediciones del sector inmobiliario comercial, los anuncios con video y fotos aéreas reciben hasta un <strong>300% más de consultas calificadas</strong> que aquellos con galerías estáticas normales. Las razones en el contexto de Panamá son claras:</p>
+<ul>
+<li><strong>Delimitación visual de linderos:</strong> En fincas, lotes y terrenos campestres, un paneo aéreo cenital (vista de pájaro a 90 grados) permite trazar líneas digitales sobre los límites de la propiedad, postes de tendido eléctrico, quebradas y accesos viales. El comprador entiende la topografía en cinco segundos.</li>
+<li><strong>Contexto de amenidades y entorno:</strong> En casas de playa (Gorgona, Coronado, San Carlos, Farallón) o proyectos turísticos, la distancia real a la costa, la vista panorámica al océano y la cercanía a centros comerciales son el principal argumento de venta.</li>
+<li><strong>Filtro de compradores serios:</strong> Los compradores de alto valor e inversionistas extranjeros (de Estados Unidos, Canadá o Sudamérica) descartan propiedades con fotos borrosas o incompletas. Un video 4K con tomas en órbita transmite seriedad jurídica y comercial.</li>
+</ul>
+
+<h2>Las 4 tomas aéreas indispensables en una sesión inmobiliaria</h2>
+<ol>
+<li><strong>Toma de establecimiento a media altura (40 a 60 metros):</strong> Muestra la casa o edificio completo junto con su entorno inmediato: vegetación, piscina, calle de acceso y vecindario.</li>
+<li><strong>Órbita de 360 grados:</strong> El dron realiza un giro circular continuo a velocidad constante manteniendo la propiedad en el centro. Es la toma estrella para videos de Instagram Reels, TikTok y YouTube.</li>
+<li><strong>Plano cenital (Top-Down):</strong> Cámara apuntando directamente hacia el suelo para apreciar la distribución total del predio, estacionamientos, techos y linderos.</li>
+<li><strong>Aproximación frontal cinematográfica:</strong> El dron desciende suavemente desde la altura hacia la fachada principal simulando la llegada de un visitante.</li>
+</ol>
+
+<h2>El diferencial tecnológico: Panorámicas esféricas 360° interactivas</h2>
+<p>Más allá de la foto aérea tradicional, en RufPixel implementamos <strong>captura esférica aérea en 360 grados</strong>. Elevamos el dron a la altura deseada y generamos un tour virtual donde el usuario final puede mover el cursor en la web o mover su celular para mirar hacia cualquier punto cardinal (arriba, abajo, mar, montaña o ciudad). Esta experiencia inmersiva se puede incrustar directamente en la página web del proyecto o subir a Google Maps / Street View.</p>
+
+<h2>Cobertura y coordinación de vuelo en Panamá</h2>
+<p>Operamos con total cumplimiento de las normativas de la Autoridad Aeronáutica Civil (AAC) de Panamá. Volamos habitualmente en:</p>
+<ul>
+<li><strong>Ciudad de Panamá:</strong> Costa del Este, Santa María, Punta Pacífica, Casco Antiguo, Bella Vista y San Francisco.</li>
+<li><strong>Panamá Oeste:</strong> La Chorrera, Arraiján, Costa Verde, Capira y Chame.</li>
+<li><strong>Corredor de Playas:</strong> Punta Chame, Gorgona, Coronado, San Carlos, Río Hato y Buenaventura.</li>
+<li><strong>Provincias Centrales e Interior:</strong> Coclé, Azuero y Chiriquí (previa coordinación de viáticos).</li>
+</ul>
+
+<h2>Paquetes adaptados a cada necesidad</h2>
+<p>Para particulares y corredores que solo necesitan fotos y video de un terreno puntual, nuestro <strong>Plan Lote & Terreno</strong> entrega entre 10 y 15 fotografías en alta resolución RAW y JPEG más video 4K en 24 a 48 horas. Para proyectos de mayor escala, el <strong>Plan Inmobiliario Pro</strong> y el <strong>Plan Experiencia 360° VR</strong> ofrecen cobertura exhaustiva y material editado listo para pauta digital. Revisa los detalles en nuestra página de <a href="/tomas-aereas-panama"><strong>tomas aéreas y drones en Panamá</strong></a> y cotiza vía WhatsApp de inmediato.</p>`,
+    category: 'Tomas Aéreas & Drones',
+    categorySlug: 'tomas-aereas',
+    date: '19 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '7 min de lectura',
+    image: '/images/services/drone-bienes-raices-panama.webp',
+    tags: ['Tomas Aéreas', 'Bienes Raíces', 'Fotografía Aérea', 'Drones Panamá', '360 VR']
+  },
+  {
+    id: 'post-17',
+    slug: 'seguimiento-de-obras-civiles-e-inspeccion-con-drones-panama',
+    title: 'Seguimiento de Obras Civiles e Inspección con Drones en Panamá: Guía para Constructoras e Ingenieros',
+    excerpt: 'Cómo optimizar la supervisión de proyectos de construcción, control de avance de obra y fiscalización técnica con monitoreo aéreo periódico en Panamá.',
+    content: `<p>Supervisar una obra de construcción en Panamá implica retos logísticos considerables: terrenos extensos con lodo en temporada de lluvias, estructuras de varios niveles donde la inspección visual física es lenta y costosa, y la necesidad constante de justificar desembolsos financieros ante bancos e inversionistas. El monitoreo aéreo con drones ha dejado de ser un lujo de mercadeo para convertirse en una <strong>herramienta esencial de control de gestión, seguridad industrial y fiscalización técnica</strong>.</p>
+<p>En RufPixel acompañamos a empresas constructoras, desarrolladores y firmas de arquitectura a través de nuestro <a href="/tomas-aereas-panama"><strong>servicio de tomas aéreas y seguimiento de obras en Panamá</strong></a>. En este artículo detallamos cómo estructurar un programa de vuelos periódicos de avance de obra y qué valor aporta a la dirección técnica.</p>
+
+<h2>Beneficios clave del monitoreo aéreo en construcción</h2>
+<ul>
+<li><strong>Informes visuales certificados para bancos:</strong> Los bancos en Panamá exigen evidencias contundentes para liberar desembolsos de préstamos interinos de construcción. Un reporte fotográfico aéreo quincenal o mensual documenta con precisión milimétrica el vaciado de losas, levantamiento de columnas, instalación de cubiertas y obras de urbanismo.</li>
+<li><strong>Inspección segura de cubiertas y estructuras altas:</strong> Revisar techos de naves industriales, galeras logísticas o torres de edificios suele requerir andamios, grúas o personal en altura con riesgo de caídas. El dron realiza una inspección visual de alta resolución en minutos, detectando fisuras, fallas en canaletas o sellados defectuosos sin exponer a los trabajadores.</li>
+<li><strong>Registro histórico comparativo:</strong> Al programar vuelos desde los mismos puntos GPS, alturas y ángulos cardinales, la constructora obtiene un registro visual idéntico mes a mes. Esto permite crear videos de evolución temporal (*timelapse* o comparación de hitos) ideales para juntas directivas y rendición de cuentas a inversionistas.</li>
+<li><strong>Control de acopios y logística de patio:</strong> Permite supervisar la entrada de material, disposición de acero, movimiento de tierras y ubicación de maquinaria pesada para evitar cuellos de botella en la circulación interna del proyecto.</li>
+</ul>
+
+<h2>Frecuencia recomendada de visitas según la fase de obra</h2>
+<ol>
+<li><strong>Fase inicial (Movimiento de tierras y fundaciones):</strong> Visitas quincenales. El terreno cambia rápidamente con la excavación, muros de contención y cimentaciones profundas.</li>
+<li><strong>Fase estructural (Obra gris y losas intermedias):</strong> Visitas mensuales. Se documenta la elevación progresiva de niveles y el ritmo de encofrado y vaciado.</li>
+<li><strong>Fase de cerramientos y acabados:</strong> Visitas mensuales combinando vuelos exteriores e inspección de cubiertas con detalles de fachada y ventanería.</li>
+<li><strong>Entrega final y entrega de llaves:</strong> Sesión integral en 4K y fotos de alta definición para el portafolio comercial de la constructora y entrega de memoria técnica a los propietarios.</li>
+</ol>
+
+<h2>Entregables técnicos de alta fidelidad</h2>
+<p>Las constructoras no necesitan fotos comprimidas de celular; requieren archivos de grado profesional. Cada jornada técnica de vuelo incluye:</p>
+<ul>
+<li>Fotografías aéreas en formato RAW (DNG) y JPEG procesadas en 48 megapíxeles.</li>
+<li>Video en resolución 4K a 60 cuadros por segundo con perfil cinemático plano para edición corporativa.</li>
+<li>Rotulación digital de hitos en video (fechas de colado, nombres de frentes de trabajo).</li>
+<li>Factura Fiscal panameña formal con RUC y DV para deducción contable corporativa.</li>
+</ul>
+
+<h2>Cotiza tu programa de avance de obra con RufPixel</h2>
+<p>Ofrecemos planes puntuales para hitos específicos y contratos trimestrales o semestrales con tarifas corporativas preferenciales en Ciudad de Panamá, Panamá Oeste, Colón y Provincias Centrales. Conoce más en nuestra sección de <a href="/tomas-aereas-panama"><strong>tomas aéreas y drones en Panamá</strong></a> o escríbenos directamente a nuestro WhatsApp comercial para coordinar una reunión técnica.</p>`,
+    category: 'Tomas Aéreas & Drones',
+    categorySlug: 'tomas-aereas',
+    date: '19 de Noviembre, 2026',
+    author: 'Equipo RufPixel',
+    readTime: '8 min de lectura',
+    image: '/images/services/drone-construccion-obras-panama.webp',
+    tags: ['Avance de Obra', 'Construcción', 'Drones Panamá', 'Inspección Aérea', 'B2B']
   }
 ];
 

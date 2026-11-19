@@ -23,13 +23,14 @@ export const metadata: Metadata = {
 
 export default async function BlogPage({ searchParams }: { searchParams?: { page?: string } }) {
   const page = parseInt(searchParams?.page || '1', 10);
-  const { posts, totalPages, totalPosts } = await getBlogPosts(page, 15);
+  const { posts, totalPages, totalPosts } = await getBlogPosts(page, 24);
 
   const categories = [
     { slug: 'todos', label: 'Todos los Artículos' },
     { slug: 'consejos', label: 'Consejos de Impresión' },
     { slug: 'materiales', label: 'Materiales & Acabados' },
     { slug: 'gran-formato', label: 'Gran Formato' },
+    { slug: 'tomas-aereas', label: 'Tomas Aéreas & Drones' },
   ];
 
   const breadcrumbs = [
