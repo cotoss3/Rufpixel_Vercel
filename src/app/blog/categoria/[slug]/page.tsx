@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { getBlogPosts } from '@/lib/wordpress';
-import { Clock, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Clock, ArrowRight, ArrowLeft, PhoneCall } from 'lucide-react';
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   return {
@@ -106,6 +106,33 @@ export default async function BlogCategoryPage({ params }: { params: { slug: str
           ))}
         </div>
       )}
+
+      {/* WhatsApp Express Quote Callout */}
+      <div className="bg-gradient-to-r from-gray-900 via-gray-950 to-gray-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl border border-gray-800">
+        <div className="space-y-1.5 max-w-xl">
+          <span className="text-[#FF5E14] font-extrabold uppercase tracking-wider text-xs flex items-center space-x-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Atención Directa por WhatsApp</span>
+          </span>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-white font-outfit">
+            ¿Buscas asesoría técnica o presupuesto inmediato?
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            Escríbenos directamente a WhatsApp y te ayudamos a cotizar tus impresiones, promocionales o tomas aéreas al instante.
+          </p>
+        </div>
+        <a
+          href={`https://wa.me/50764454084?text=${encodeURIComponent(
+            `Hola RufPixel, estoy explorando el blog en la categoría ${params.slug} y quisiera cotizar.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 bg-[#25D366] hover:bg-[#20ba5a] text-white px-7 py-4 rounded-2xl text-sm font-extrabold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all flex items-center space-x-2"
+        >
+          <PhoneCall className="w-4 h-4" />
+          <span>Cotizar por WhatsApp</span>
+        </a>
+      </div>
     </div>
   );
 }

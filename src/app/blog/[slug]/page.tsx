@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug } from '@/lib/wordpress';
-import { ArrowLeft, ArrowRight, Clock, User, Tag } from 'lucide-react';
+import { ArrowLeft, Clock, User, Tag, PhoneCall, MessageCircle } from 'lucide-react';
 import { ArticleSchema, BreadcrumbListSchema } from '@/components/seo/SchemaOrg';
 
 const BLOG_SEO_TITLES: Record<string, string> = {
@@ -146,33 +146,34 @@ export default async function BlogPostDetailPage({ params }: { params: { slug: s
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
-      {/* SILO Authority Callout to Money Pillar */}
-      <div className="bg-[#0D0D0D] text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <div className="space-y-1.5 text-xs sm:text-sm text-gray-300">
-          <span className="text-[#FF5E14] font-extrabold uppercase tracking-wider text-xs block">
-            Catálogo Mayorista en Panamá
+      {/* Direct WhatsApp Quote Conversion Box */}
+      <div className="bg-gradient-to-r from-gray-900 via-gray-950 to-gray-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl border border-gray-800">
+        <div className="space-y-2 text-xs sm:text-sm text-gray-300 max-w-xl">
+          <span className="text-[#FF5E14] font-extrabold uppercase tracking-wider text-xs flex items-center space-x-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Atención Inmediata por WhatsApp</span>
           </span>
-          <p className="leading-relaxed">
-            Consulta los 166 modelos con precios por escala (50, 100 y 250 unidades) en nuestra página de{' '}
-            <Link href="/articulos-promocionales-panama" className="text-white font-extrabold underline decoration-[#FF5E14] hover:text-[#FF5E14]">
-              artículos promocionales en Panamá
-            </Link>{' '}
-            o cotiza tus estructuras de{' '}
-            <Link href="/servicios/impresion-gran-formato" className="text-gray-200 underline hover:text-[#FF5E14]">
-              banners, roll-up y gran formato
-            </Link>.
+          <h3 className="text-xl sm:text-2xl font-extrabold text-white font-outfit">
+            ¿Deseas cotizar este servicio o material con tu logo?
+          </h3>
+          <p className="leading-relaxed text-gray-300">
+            Escríbenos directamente a nuestro WhatsApp oficial. Indícanos tu cantidad aproximada, medidas o requerimiento y te enviamos asesoría técnica con cotización formal el mismo día.
           </p>
         </div>
-        <Link
-          href="/articulos-promocionales-panama"
-          className="shrink-0 bg-[#FF5E14] hover:bg-[#E04700] text-white px-5 py-3 rounded-xl text-xs font-extrabold transition-all flex items-center space-x-2"
+        <a
+          href={`https://wa.me/50764454084?text=${encodeURIComponent(
+            `Hola RufPixel, estuve leyendo el artículo "${post.title}" y quisiera solicitar una cotización formal.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0 bg-[#25D366] hover:bg-[#20ba5a] text-white px-7 py-4 rounded-2xl text-sm font-extrabold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all flex items-center space-x-2.5"
         >
-          <span>Ver Precios por Escala</span>
-          <ArrowRight className="w-4 h-4" />
-        </Link>
+          <PhoneCall className="w-5 h-5" />
+          <span>Cotizar por WhatsApp Ahora</span>
+        </a>
       </div>
 
-      {/* Footer Share & Tag Callout */}
+      {/* Footer Share, Tags & Quick WhatsApp Action */}
       <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center space-x-2 text-xs flex-wrap">
           <Tag className="w-4 h-4 text-[#FF5E14]" />
@@ -184,12 +185,17 @@ export default async function BlogPostDetailPage({ params }: { params: { slug: s
           ))}
         </div>
 
-        <Link
-          href="/cotizador"
-          className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-xl text-xs font-bold shadow-md"
+        <a
+          href={`https://wa.me/50764454084?text=${encodeURIComponent(
+            `Hola RufPixel, me interesa cotizar: ${post.title}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-900 hover:bg-[#FF5E14] text-white px-6 py-3 rounded-xl text-xs font-bold shadow-md transition-colors flex items-center space-x-2"
         >
-          ¿Necesitas desde 1 sola pieza? Cotiza en Zona Pixel
-        </Link>
+          <MessageCircle className="w-4 h-4 text-[#25D366]" />
+          <span>Chatear con un Asesor</span>
+        </a>
       </div>
     </article>
   );

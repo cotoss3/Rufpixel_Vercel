@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getBlogPosts } from '@/lib/wordpress';
-import { Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Clock, ArrowRight, ChevronLeft, ChevronRight, PhoneCall } from 'lucide-react';
 import { BreadcrumbListSchema } from '@/components/seo/SchemaOrg';
 
 export const metadata: Metadata = {
@@ -170,6 +170,31 @@ export default async function BlogPage({ searchParams }: { searchParams?: { page
             )}
           </div>
         )}
+
+        {/* WhatsApp Express Quote Callout */}
+        <div className="bg-gradient-to-r from-gray-900 via-gray-950 to-gray-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl border border-gray-800">
+          <div className="space-y-1.5 max-w-xl">
+            <span className="text-[#FF5E14] font-extrabold uppercase tracking-wider text-xs flex items-center space-x-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Atención Rápida por WhatsApp</span>
+            </span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white font-outfit">
+              ¿Listo para cotizar tu proyecto o pedido?
+            </h3>
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+              Escríbenos directamente a WhatsApp y te armamos un presupuesto inmediato para tus promocionales, banners, DTF o tomas aéreas.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/50764454084?text=Hola%20RufPixel%2C%20estoy%20en%20el%20blog%20y%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20formal."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 bg-[#25D366] hover:bg-[#20ba5a] text-white px-7 py-4 rounded-2xl text-sm font-extrabold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all flex items-center space-x-2"
+          >
+            <PhoneCall className="w-4 h-4" />
+            <span>Cotizar por WhatsApp Ahora</span>
+          </a>
+        </div>
 
       </div>
     </div>
