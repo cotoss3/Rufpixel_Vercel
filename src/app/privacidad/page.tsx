@@ -3,6 +3,10 @@ import React from 'react';
 export const metadata = {
   title: 'Política de Privacidad — RufPixel.com',
   description: 'Política de privacidad y protección de datos personales de RufPixel.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacidadPage() {

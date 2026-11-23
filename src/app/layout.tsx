@@ -10,8 +10,8 @@ import AiWhatsAppAssistant from '@/components/common/AiWhatsAppAssistant';
 import GoogleAnalytics from '@/components/seo/GoogleAnalytics';
 
 export const metadata: Metadata = {
-  title: 'Artículos Promocionales e Impresión de Banners | RufPixel',
-  description: 'Artículos promocionales al por mayor e impresión de banners, roll-up, DTF y bordados en Panamá. Precios desde 50 uds y desde 1 pieza en Zona Pixel.',
+  title: 'Artículos Promocionales y Banners en Panamá | RufPixel Imprenta',
+  description: 'En RufPixel, tu imprenta en Panamá, ofrecemos artículos promocionales al por mayor y desde 1 pieza en Zona Pixel. Impresión de banners, roll-up, DTF y bordados. ¡Cotiza ya!',
   keywords: [
     'Artículos promocionales Panamá', 'Impresión de banners Panamá', 'Banners roll-up Panamá',
     'Imprenta en La Chorrera', 'DTF textil Panamá', 'UV DTF Panamá', 'Bordados computarizados Panamá',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'Artículos Promocionales e Impresión de Banners | RufPixel',
-    description: 'Artículos promocionales al por mayor e impresión de banners, roll-up, DTF y bordados en Panamá. Precios desde 50 uds y desde 1 pieza en Zona Pixel.',
+    title: 'Artículos Promocionales y Banners en Panamá | RufPixel Imprenta',
+    description: 'En RufPixel, tu imprenta en Panamá, ofrecemos artículos promocionales al por mayor y desde 1 pieza en Zona Pixel. Impresión de banners, roll-up, DTF y bordados. ¡Cotiza ya!',
     url: 'https://rufpixel.com',
     siteName: 'RufPixel',
     locale: 'es_PA',

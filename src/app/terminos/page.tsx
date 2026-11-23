@@ -3,6 +3,10 @@ import React from 'react';
 export const metadata = {
   title: 'Términos y Condiciones — RufPixel.com',
   description: 'Términos y condiciones de uso y servicio de RufPixel.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function TerminosPage() {

@@ -140,28 +140,29 @@ export const MOCK_SERVICES: Service[] = [
   {
     "id": "serv-flyers-folletos",
     "slug": "flyers-y-folletos",
-    "metaTitle": "Flyers y Volantes en Panamá [Precios B2B] | RufPixel",
-    "metaDesc": "Impresión digital de volantes satinados de 80 y 100 lbs, trípticos y afiches. Precios de imprenta por millares y tirajes cortos. Envíos a todo Panamá.",
+    "metaTitle": "Impresión de Flyers y Volantes en Panamá | RufPixel Imprenta",
+    "metaDesc": "Impresión de flyers, volantes y trípticos en papel satinado 80 y 100 lbs en Panamá. Tirajes cortos y millares con precios directos de imprenta. ¡Cotiza ya!",
     "title": "Impresión de Flyers, Volantes y Papelería Corporativa en Panamá",
-    "shortDesc": "Impresión nítida en papel satinado brillante de 80 y 100 lbs. Volantes media carta, cartas, trípticos informativos y afiches para campañas efectivas.",
-    "fullDesc": "Comunica las promociones y aperturas de tu negocio con material publicitario impreso en colores vivos y papel de excelente tacto. En RufPixel imprimimos volantes publicitarios, dípticos, trípticos corporativos, afiches y tarjetas de presentación con acabados de primera categoría. Ofrecemos tirajes cortos digitales para promociones puntuales sin inventario estancado, y producción masiva por millares con precios directos de imprenta para distribución masiva en Panamá.",
+    "shortDesc": "Impresión nítida en papel satinado brillante de 80 y 100 lbs. Volantes media carta, 1/4 carta, trípticos informativos y afiches para campañas efectivas.",
+    "fullDesc": "Comunica las promociones, aperturas y servicios de tu negocio con material publicitario impreso en colores vivos, nitidez fotográfica y papel de excelente gramaje en Panamá. En RufPixel producimos volantes publicitarios (flyers), dípticos, trípticos corporativos plegados, afiches y tarjetas de presentación con acabados profesionales. Ofrecemos dos modalidades: tirajes cortos digitales desde 100 o 250 volantes para probar promociones puntuales con entrega ágil, y producción masiva por millares (1.000, 2.500, 5.000+ unidades) con tarifas preferenciales directas de imprenta para distribución masiva en Ciudad de Panamá, Panamá Oeste y provincias centrales.",
     "iconName": "FileText",
     "image": "/images/services/papeleria-corporativa-libretas-panama.webp",
     "detalFeatures": [
-      "Tirajes cortos desde 100 o 250 volantes para probar promociones.",
-      "Ideal para eventos locales, restaurantes, salones y nuevos negocios.",
-      "Asesoría para ajustar sangrado y márgenes de corte antes de imprimir."
+      "Tirajes cortos digitales desde 100 o 250 volantes para probar promociones y eventos.",
+      "Formatos versátiles: Media Carta (5.5x8.5\"), 1/4 Carta (4.25x5.5\") y Carta completa.",
+      "Revisión técnica de márgenes, sangrado y modo de color CMYK antes de imprimir."
     ],
     "wholesaleFeatures": [
-      "Precios de escala por millares (1.000, 2.500, 5.000+ unidades) con máximo ahorro.",
-      "Papeles de 80 lbs y 100 lbs en acabado satinado o mate.",
-      "Empacado en fajos etiquetados y listos para reparto."
+      "Precios mayoristas por millares (1.000, 2.500, 5.000+ volantes) con máxima rentabilidad.",
+      "Papel satinado brillante o mate de 80 lbs y 100 lbs con corte guillotina milimétrico.",
+      "Empacado en fajos sellados y etiquetados listos para reparto o buzoneo."
     ],
     "features": [
-      "Papel satinado de 80 lbs y 100 lbs con brillo o acabado mate",
-      "Formatos Media Carta (5.5x8.5 pulgadas), Carta completa (8.5x11 pulgadas) y Trípticos plegados",
-      "Impresión full color por una cara (tiro) o ambas caras (tiro y retiro)",
-      "Cortes limpios y entrega puntual con envíos a todo Panamá"
+      "Papel satinado de 80 lbs y 100 lbs con acabado brillante o mate",
+      "Formatos 1/4 Carta (4.25x5.5\"), Media Carta (5.5x8.5\"), Carta (8.5x11\") y Trípticos",
+      "Impresión full color tiro (una cara) o tiro y retiro (ambas caras)",
+      "Plegado profesional para trípticos y dípticos corporativos",
+      "Cortes limpios y envíos rápidos a Ciudad de Panamá y todo el país"
     ]
   },
   {

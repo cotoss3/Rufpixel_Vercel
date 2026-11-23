@@ -32,10 +32,10 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   const { products } = await getProducts();
   const featuredSlugs = [
-    'boligrafo-ejecutivo-de-aluminio-premium',
+    'gorra-lacrosse-premium-6-panos-color-solido',
+    'libreta-espiral-reciclada-con-boligrafo',
     'botella-de-acero-metalizada-con-tapa-rosca',
-    'cordon-porta-id-satinado-con-clip-desprendible',
-    'set-de-bbq-en-tela-con-tabla-y-utensilios-de-madera',
+    'boligrafo-ejecutivo-de-aluminio-premium',
   ];
   const selectedFeatured = featuredSlugs
     .map((slug) => products.find((p) => p.slug === slug))
@@ -80,7 +80,7 @@ export default async function HomePage() {
 
               {/* Title */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-outfit tracking-tight leading-tight text-white">
-                Imprenta y Promocionales en Panamá: Al por Mayor y desde 1 Pieza en Zona Pixel
+                Imprenta y Artículos Promocionales en Panamá: Al por Mayor y desde 1 Unidad
               </h1>
 
               {/* Description */}
