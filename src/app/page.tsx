@@ -667,13 +667,13 @@ export default async function HomePage() {
         <div className="text-center space-y-3">
           <div className="inline-flex items-center space-x-2 bg-amber-50 border border-amber-200 px-4 py-1.5 rounded-full text-xs font-bold text-amber-900">
             <span className="text-amber-500">★★★★★</span>
-            <span>5,0 de 5 estrellas en <strong>Google Maps</strong> (7 Reseñas)</span>
+            <span>5,0 de 5 estrellas en <strong>Google Maps</strong> (16 Reseñas)</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 font-outfit">
             Reseñas Reales de Clientes
           </h2>
           <p className="text-gray-600 text-sm max-w-xl mx-auto">
-            Opiniones de nuestros clientes verificados en el perfil de Google Business de <strong>RufPixel - Casa Creativa</strong>.
+            Opiniones de nuestros clientes verificados en el perfil oficial de Google Maps de <strong>Artículos Promocionales - RUF PIXEL - CASA CREATIVA</strong>.
           </p>
         </div>
 

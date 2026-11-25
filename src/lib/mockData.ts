@@ -2005,7 +2005,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     date: '25 de Noviembre, 2026',
     author: 'Equipo RufPixel',
     readTime: '7 min de lectura',
-    image: '/images/trabajos/termos-acero-grabado-laser-mercantil-panama.jpg',
+    image: '/images/trabajos/linternas-aluminio-banco-mercantil-grabado-laser-panama.jpg',
     tags: ['Fábrica', 'Artículos Promocionales', 'Merchandising', 'Regalos Promocionales', 'B2B']
   }
 ];

@@ -4,15 +4,22 @@ import { Product, BlogPost } from '@/lib/types';
 export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'ProfessionalService'],
+    '@type': ['LocalBusiness', 'ProfessionalService', 'AdvertisingAgency'],
     '@id': 'https://rufpixel.com/#organization',
-    name: 'RufPixel - Casa Creativa',
-    alternateName: 'RufPixel Panamá',
+    name: 'Artículos Promocionales - RUF PIXEL - CASA CREATIVA',
+    alternateName: ['RufPixel - Casa Creativa', 'RufPixel Panamá', 'RufPixel Imprenta'],
     url: 'https://rufpixel.com',
     logo: 'https://rufpixel.com/logo.png',
     image: 'https://rufpixel.com/logo.png',
-    description: 'Imprenta y taller de producción gráfica en Panamá. Especialistas en impresión DTF textil directo, transfer UV DTF para rígidos, bordados computarizados, grabado láser, gran formato y artículos promocionales con envíos a todo Panamá.',
+    description: 'Imprenta, fábrica de artículos promocionales y agencia de publicidad en Panamá. Especialistas en impresión DTF textil directo, transfer UV DTF para rígidos, bordados computarizados, grabado láser, gran formato y regalos corporativos con envíos a todo Panamá.',
     telephone: '+507 6445-4084',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '16',
+      bestRating: '5',
+      worstRating: '1',
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+507 6445-4084',
@@ -251,7 +258,7 @@ export function ProductSchema({ product }: { product: Product }) {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '7',
+      reviewCount: '16',
       bestRating: '5',
       worstRating: '1',
     },

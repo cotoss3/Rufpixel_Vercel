@@ -56,11 +56,20 @@ export default function PromocionalesPanamaOestePage() {
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'AdvertisingAgency'],
     '@id': 'https://rufpixel.com/promocionales-panama-oeste#localbusiness',
-    name: 'RufPixel — Imprenta, Bordados y Artículos Promocionales en La Chorrera',
+    name: 'Artículos Promocionales - RUF PIXEL - CASA CREATIVA',
+    alternateName: 'RufPixel — Imprenta, Bordados y Artículos Promocionales en La Chorrera',
     telephone: '+507 6445-4084',
     url: 'https://rufpixel.com/promocionales-panama-oeste',
+    priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '16',
+      bestRating: '5',
+      worstRating: '1',
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Calle Arnoldo Cano, Barrio Colón, entrando por COMASA, Local 1',
@@ -217,6 +226,72 @@ export default function PromocionalesPanamaOestePage() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* TRABAJOS REALES ENTREGADOS EN LA CHORRERA Y PANAMÁ OESTE */}
+        <section className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span className="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14]">
+                Proyectos Locales en Panamá Oeste
+              </span>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 font-outfit">
+                Trabajos Producidos para Empresas de Costa Verde y La Chorrera
+              </h2>
+            </div>
+            <Link href="/galeria" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
+              Ver todos los proyectos en Galería →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col">
+              <img
+                src="/images/trabajos/valla-publicitaria-gigantografia-costa-verde-chorrera.jpg"
+                alt="Valla publicitaria de gran formato instalada en proyecto residencial Costa Verde La Chorrera"
+                title="Valla publicitaria en Costa Verde"
+                width={900}
+                height={1200}
+                className="w-full h-72 object-cover"
+              />
+              <figcaption className="p-4 text-xs text-gray-700 font-medium flex-1">
+                <strong className="text-gray-900 block font-bold mb-1">Valla Gigantografía Residencial:</strong>
+                Impresión e instalación de lona publicitaria de gran formato resistente a la intemperie en Costa Verde, La Chorrera.
+              </figcaption>
+            </figure>
+
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col">
+              <img
+                src="/images/trabajos/kit-bienvenida-cerrado-arbu-costa-verde-termos-llavero-panama.jpg"
+                alt="Welcome Kit residencial entregado a nuevos propietarios en Arbú Costa Verde Panamá Oeste"
+                title="Kit de bienvenida residencial Arbú Costa Verde"
+                width={900}
+                height={1200}
+                loading="lazy"
+                className="w-full h-72 object-cover"
+              />
+              <figcaption className="p-4 text-xs text-gray-700 font-medium flex-1">
+                <strong className="text-gray-900 block font-bold mb-1">Welcome Kit de Bienvenida Residencial:</strong>
+                Caja rígida con vasos térmicos grabados a láser y llavero acrílico para entrega de llaves en proyecto inmobiliario.
+              </figcaption>
+            </figure>
+
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col">
+              <img
+                src="/images/trabajos/scrubs-medicos-filipinas-bordadas-universidad-de-panama.jpg"
+                alt="Uniformes médicos y batas bordadas de alta definición para Facultad de Medicina"
+                title="Bordados de uniformes médicos y scrubs"
+                width={900}
+                height={1200}
+                loading="lazy"
+                className="w-full h-72 object-cover"
+              />
+              <figcaption className="p-4 text-xs text-gray-700 font-medium flex-1">
+                <strong className="text-gray-900 block font-bold mb-1">Bordados Computarizados de Uniformes:</strong>
+                Bordado industrial de alta densidad de escudos en scrubs médicos y camisas ejecutivas para instituciones y clínicas.
+              </figcaption>
+            </figure>
           </div>
         </section>
 

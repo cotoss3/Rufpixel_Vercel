@@ -197,35 +197,63 @@ export default function RegalosCorporativosPanamaPage() {
               </h2>
             </div>
             <Link href="/galeria" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
-              Ver los 10 trabajos en Galería →
+              Ver los 28 trabajos en Galería →
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col">
+              <img
+                src="/images/trabajos/agendas-ejecutivas-cuero-pgn-procuraduria-general-panama.jpg"
+                alt="Agenda ejecutiva de piel azul marino con grabado oficial de la Procuraduría General de la Nación Panamá"
+                title="Agenda en cuero grabada PGN"
+                width={900}
+                height={1200}
+                className="w-full h-64 object-cover"
+              />
+              <figcaption className="p-3.5 text-xs text-gray-700 font-medium flex-1">
+                <strong>Procuraduría General de la Nación:</strong> Agendas ejecutivas en cuero con grabado láser del escudo institucional.
+              </figcaption>
+            </figure>
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col">
+              <img
+                src="/images/trabajos/kit-bienvenida-cerrado-arbu-costa-verde-termos-llavero-panama.jpg"
+                alt="Kit de bienvenida residencial Arbú Costa Verde La Chorrera con 2 termos grabados y llavero"
+                title="Welcome Kit Residencial Arbú Costa Verde"
+                width={900}
+                height={1200}
+                loading="lazy"
+                className="w-full h-64 object-cover"
+              />
+              <figcaption className="p-3.5 text-xs text-gray-700 font-medium flex-1">
+                <strong>Arbú Costa Verde:</strong> Welcome pack residencial con caja rígida, 2 vasos térmicos grabados y llavero acrílico.
+              </figcaption>
+            </figure>
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col">
+              <img
+                src="/images/trabajos/agendas-ejecutivas-cuero-metro-de-panama-grabado-laser.jpg"
+                alt="Agendas ejecutivas grabadas a láser para Metro de Panamá"
+                title="Agendas de cuero Metro de Panamá"
+                width={900}
+                height={1200}
+                loading="lazy"
+                className="w-full h-64 object-cover"
+              />
+              <figcaption className="p-3.5 text-xs text-gray-700 font-medium flex-1">
+                <strong>Metro de Panamá:</strong> Agendas en cuero PU con personalización individual de nombre y logo corporativo.
+              </figcaption>
+            </figure>
+            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col">
               <img
                 src="/images/trabajos/set-regalo-libreta-bambu-boligrafo-llavero-grabado-laser-panama.jpg"
                 alt="Set ejecutivo con libreta de bambú, bolígrafo y llavero de madera grabados a láser en caja negra"
                 title="Set ejecutivo en bambú grabado"
                 width={1050}
                 height={1400}
-                className="w-full h-80 object-cover"
-              />
-              <figcaption className="p-4 text-xs text-gray-700 font-medium">
-                Set ejecutivo con libreta de bambú, bolígrafo y llavero de madera grabados a láser en caja negra de presentación.
-              </figcaption>
-            </figure>
-            <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
-              <img
-                src="/images/trabajos/set-boligrafo-y-llavero-grabado-en-caja-de-regalo-panama.jpg"
-                alt="Set de regalo corporativo con bolígrafo y llavero personalizados dentro de una caja negra"
-                title="Set de bolígrafo y llavero en caja"
-                width={1050}
-                height={1400}
                 loading="lazy"
-                className="w-full h-80 object-cover"
+                className="w-full h-64 object-cover"
               />
-              <figcaption className="p-4 text-xs text-gray-700 font-medium">
-                Set de regalo corporativo con bolígrafo y llavero personalizados dentro de estuche rígido.
+              <figcaption className="p-3.5 text-xs text-gray-700 font-medium flex-1">
+                <strong>Sets Ejecutivos en Bambú:</strong> Libreta ecológica, bolígrafo y llavero grabados a láser en caja rígida para directivos.
               </figcaption>
             </figure>
           </div>

@@ -264,7 +264,7 @@ export default function NosotrosPage() {
         </div>
         <div className="bg-[#0D0D0D] text-white p-6 rounded-3xl border border-gray-800 text-center space-y-1">
           <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit block">5.0 ★</span>
-          <span className="text-xs text-gray-400">Reseñas en Google Maps</span>
+          <span className="text-xs text-gray-400">16 Reseñas en Google Maps</span>
         </div>
         <div className="bg-[#0D0D0D] text-white p-6 rounded-3xl border border-gray-800 text-center space-y-1">
           <span className="text-3xl font-extrabold text-[#FF5E14] font-outfit block">100%</span>
