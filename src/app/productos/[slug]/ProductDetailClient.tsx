@@ -95,22 +95,13 @@ export default function ProductDetailClient({
     }
   }, [product, selectedImage, selectedAttributes]);
 
-  if (!product) {
-    return (
-      <div className="py-24 text-center space-y-4">
-        <h2 className="text-2xl font-bold text-gray-900 font-outfit">Cargando producto...</h2>
-        <p className="text-gray-500 text-sm">Obteniendo detalles de la BDD RufPixel...</p>
-      </div>
-    );
-  }
-
   // Selected quantity option (e.g., '1', '50', '100', '250')
   const selectedQtyOption = selectedAttributes['Cantidad'] || Object.values(selectedAttributes)[0] || '50';
   const isSingleUnit = false;
 
   // Find matching child variation for bulk pack
   const getSelectedVariation = (): ProductVariation | undefined => {
-    if (!product.childVariations || product.childVariations.length === 0) return undefined;
+    if (!product || !product.childVariations || product.childVariations.length === 0) return undefined;
     const match = product.childVariations.find(
       (v) => v?.quantityOption === selectedQtyOption || (v?.name && v.name.includes(selectedQtyOption))
     );
@@ -122,11 +113,11 @@ export default function ProductDetailClient({
   // Calculate base wholesale pack price and base unit price
   const defaultPackQty = 50;
   const baseQtyNum = parseInt(selectedQtyOption, 10) || defaultPackQty;
-  const baseUnitPriceFrom50 = product.pricePacks?.pack50?.unit || (product.price / defaultPackQty);
+  const baseUnitPriceFrom50 = product?.pricePacks?.pack50?.unit || ((product?.price || 0) / defaultPackQty);
   const singleUnitPriceWith35 = baseUnitPriceFrom50 * 1.35;
 
-  let basePackPrice = product.price;
-  if (product.pricePacks) {
+  let basePackPrice = product?.price || 0;
+  if (product?.pricePacks) {
     if (baseQtyNum === 50 && product.pricePacks.pack50?.total) {
       basePackPrice = product.pricePacks.pack50.total;
     } else if (baseQtyNum === 100 && product.pricePacks.pack100?.total) {
@@ -150,13 +141,24 @@ export default function ProductDetailClient({
     ? singleUnitPriceWith35 * quantity
     : basePackPrice * quantity;
 
-  const displayUnitPrice = isSingleUnit ? singleUnitPriceWith35 : (basePackPrice / baseQtyNum);
+  const displayUnitPrice = isSingleUnit ? singleUnitPriceWith35 : (baseQtyNum > 0 ? basePackPrice / baseQtyNum : 0);
 
+  // Unconditional React Hook - Must execute before any early return!
   useEffect(() => {
     if (product) {
       trackViewItem(product, displayUnitPrice, baseQtyNum);
     }
-  }, [product?.id]);
+  }, [product?.id, displayUnitPrice, baseQtyNum]);
+
+  // Early return ONLY after all React Hooks have been declared
+  if (!product) {
+    return (
+      <div className="py-24 text-center space-y-4">
+        <h2 className="text-2xl font-bold text-gray-900 font-outfit">Cargando producto...</h2>
+        <p className="text-gray-500 text-sm">Obteniendo detalles de la BDD RufPixel...</p>
+      </div>
+    );
+  }
 
   const handleAttributeChange = (attrName: string, option: string) => {
     setSelectedAttributes((prev) => ({ ...prev, [attrName]: option }));

@@ -20,7 +20,7 @@ export default function Header() {
   useEffect(() => {
     async function loadSearchData() {
       try {
-        const cachedStr = typeof window !== 'undefined' ? sessionStorage.getItem('rufpixel_search_catalog') : null;
+        const cachedStr = typeof window !== 'undefined' ? sessionStorage.getItem('rufpixel_search_catalog_v2') : null;
         if (cachedStr) {
           const parsed = JSON.parse(cachedStr);
           if (parsed.products && parsed.categories) {
@@ -36,7 +36,7 @@ export default function Header() {
           if (data.products) setProducts(data.products);
           if (data.categories) setCategories(data.categories);
           if (typeof window !== 'undefined' && data.products) {
-            sessionStorage.setItem('rufpixel_search_catalog', JSON.stringify({ products: data.products, categories: data.categories }));
+            sessionStorage.setItem('rufpixel_search_catalog_v2', JSON.stringify({ products: data.products, categories: data.categories }));
           }
         }
       } catch (e) {}

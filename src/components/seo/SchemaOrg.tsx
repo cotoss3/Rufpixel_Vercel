@@ -227,9 +227,9 @@ export function GeoFaqSchema() {
 }
 
 export function ProductSchema({ product }: { product: Product }) {
-  const unit50 = product.pricePacks?.pack50?.unit || (product.price > 0 ? Number((product.price / 50).toFixed(2)) : 0);
-  const unit100 = product.pricePacks?.pack100?.unit || Number((unit50 * 0.95).toFixed(2));
-  const unit250 = product.pricePacks?.pack250?.unit || Number((unit50 * 0.90).toFixed(2));
+  const unit50 = Number(product.pricePacks?.pack50?.unit || (product.price > 0 ? (product.price / 50) : 0)) || 0;
+  const unit100 = Number(product.pricePacks?.pack100?.unit || (unit50 * 0.95)) || 0;
+  const unit250 = Number(product.pricePacks?.pack250?.unit || (unit50 * 0.90)) || 0;
 
   const sellerObj = {
     '@type': 'LocalBusiness',
