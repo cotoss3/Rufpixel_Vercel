@@ -690,14 +690,27 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
             </div>
           </div>
 
-          {/* Return link */}
-          <div className="text-center">
+          {/* Return & Internal SEO Links */}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-semibold text-gray-500 pt-4 border-t border-gray-100">
+            <Link
+              href="/"
+              className="hover:text-[#FF5E14] transition-colors flex items-center space-x-1"
+            >
+              <span>← Inicio: Imprenta en Panamá</span>
+            </Link>
+            <span className="text-gray-300">•</span>
+            <Link
+              href="/articulos-promocionales-panama"
+              className="hover:text-[#FF5E14] transition-colors"
+            >
+              Artículos Promocionales en Panamá
+            </Link>
+            <span className="text-gray-300">•</span>
             <Link
               href="/servicios"
-              className="inline-flex items-center space-x-2 text-xs font-bold text-gray-500 hover:text-[#FF5E14] transition-colors"
+              className="inline-flex items-center space-x-1 hover:text-[#FF5E14] transition-colors"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Ver todos los servicios de impresión</span>
+              <span>Todos los servicios de imprenta</span>
             </Link>
           </div>
 

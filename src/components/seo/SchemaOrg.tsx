@@ -60,6 +60,12 @@ export function OrganizationSchema() {
       'https://www.facebook.com/rufpixel',
     ],
     knowsAbout: [
+      'Fábrica de Artículos Promocionales en Panamá',
+      'Artículos Publicitarios para Empresas',
+      'Regalos Promocionales al por Mayor',
+      'Merchandising Corporativo y Kits de Bienvenida',
+      'Material POP para Eventos y Ferias',
+      'Impresión de Volantes y Folletos Comerciales',
       'Impresión DTF Textil Directo',
       'Transfer UV DTF para Rígidos',
       'Bordados Computarizados y Ponchados',
@@ -67,13 +73,28 @@ export function OrganizationSchema() {
       'Impresión en Gran Formato y Banners Roll-Up',
       'Artículos Promocionales Corporativos al por Mayor',
       'Stickers Troquelados y Etiquetas Adhesivas',
-      'Sublimación y Regalos Publicitarios',
       'Tomas Aéreas y Grabación con Drones 4K'
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Servicios de Impresión & Catálogo Promocional',
+      name: 'Servicios de Impresión, Fábrica de Promocionales & Gran Formato',
       itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Fábrica de Artículos Promocionales y Regalos Publicitarios',
+            url: 'https://rufpixel.com/articulos-promocionales-panama',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Regalos Corporativos y Merchandising para Empresas',
+            url: 'https://rufpixel.com/regalos-corporativos-panama',
+          },
+        },
         {
           '@type': 'Offer',
           itemOffered: {
@@ -110,7 +131,7 @@ export function OrganizationSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Impresión Gran Formato & Banners',
+            name: 'Impresión Gran Formato, Banners & Material POP',
             url: 'https://rufpixel.com/servicios/impresion-gran-formato',
           },
         },
@@ -118,7 +139,7 @@ export function OrganizationSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Flyers & Folletos Publicitarios',
+            name: 'Impresión de Volantes, Folletos & Papelería Comercial',
             url: 'https://rufpixel.com/servicios/flyers-y-folletos',
           },
         },
