@@ -725,8 +725,8 @@ En RufPixel operamos bajo un modelo directo: combinamos la <strong>importación 
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6">
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
-      <strong class="text-gray-900 block font-bold text-sm">🏥 Sector Salud y Clínicas:</strong>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">Bordados de escudos en scrubs médicos antifluido para la Facultad de Medicina de la Universidad de Panamá, y bolsas ecológicas en cambrel para congresos farmacéuticos de Stérimar.</p>
+      <strong class="text-gray-900 block font-bold text-sm">🏥 Educación, Salud y Eventos:</strong>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">Bordados de alta definición en camisas ejecutivas y uniformes institucionales, y vasos térmicos conmemorativos grabados a láser para el Colegio Hebreo Unión.</p>
     </div>
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
       <strong class="text-gray-900 block font-bold text-sm">🏢 Bienes Raíces y Construcción:</strong>
@@ -734,7 +734,7 @@ En RufPixel operamos bajo un modelo directo: combinamos la <strong>importación 
     </div>
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
       <strong class="text-gray-900 block font-bold text-sm">🏛️ Banca e Instituciones Públicas:</strong>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">Agendas ejecutivas en cuero PU para la Procuraduría General de la Nación (PGN) y el Metro de Panamá, termos para Contraloría General y linternas grabadas para Banco Mercantil.</p>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">Agendas ejecutivas en cuero PU para la Procuraduría General de la Nación (PGN) y el Metro de Panamá, termos con nombres grabados para la Autoridad Nacional de Descentralización (AND), termos para Contraloría General y tazas térmicas para café de Banco Mercantil.</p>
     </div>
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
       <strong class="text-gray-900 block font-bold text-sm">⚡ Marcas y Eventos Comerciales:</strong>
