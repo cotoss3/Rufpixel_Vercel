@@ -1,69 +1,43 @@
-# RufPixel - Casa Creativa | Imprenta Digital, DTF, Bordados & Promocionales en Panamá
+# RufPixel - Casa Creativa
 
-> RufPixel es un taller de producción gráfica y personalización profesional ubicado en La Chorrera, Panamá Oeste, con cobertura y envíos a toda la República de Panamá. Especializado en tecnología DTF textil, transfer UV DTF para rígidos, bordados computarizados, grabado láser de alta precisión, impresión gran formato y artículos promocionales corporativos.
+> RufPixel es un taller de personalización gráfica industrial y fábrica directa de artículos promocionales corporativos en Panamá. Especialistas en tecnología DTF textil, transfers UV DTF para artículos rígidos, bordados computarizados, grabado láser de alta precisión, impresión de gran formato y regalos corporativos B2B con taller en La Chorrera y despachos a nivel nacional.
 
-- **Sitio Web Oficial**: https://rufpixel.com
-- **Ubicación Física**: Calle Arnoldo Cano, Barrio Colón (entrando por COMASA, Local 1), La Chorrera, Panamá Oeste, República de Panamá.
-- **WhatsApp Directo / Cotizaciones**: +507 6445-4084 (https://wa.me/50764454084)
-- **Email**: ventas@rufpixel.com / info@rufpixel.com
-- **Moneda**: Dólar estadounidense (USD)
-- **Métodos de Pago**: Yappy Comercial (+507 6445-4084), Transferencia Bancaria Directa, Efectivo en taller.
-- **Cobertura**: Envíos rápidos a Ciudad de Panamá, Panamá Oeste, Colón, Coclé, Chiriquí y todas las provincias del interior.
+Taller fabricante directo con stock de importación en Panamá, venta mayorista a empresas e instituciones, y atención personalizada al detalle con despacho por Uno Express, Fletes Chavale, entregas en Ciudad de Panamá y Panamá Oeste. Métodos de pago locales: Yappy Comercial, ACH Banco General y Factura Fiscal panameña formal (RUC y DV).
 
----
+## Navegación Principal y Catálogo B2B
 
-## Servicios Principales de Producción
+- [Inicio - RufPixel](https://rufpixel.com/): Página principal de RufPixel Panamá, resumen de servicios, catálogo y cotizaciones.
+- [Catálogo de Artículos Promocionales B2B](https://rufpixel.com/tienda): Catálogo completo con más de 160 productos promocionales al por mayor, precios escalonados por volumen y cotización en línea.
+- [Fábrica de Artículos Promocionales en Panamá](https://rufpixel.com/articulos-promocionales-panama): Guía y servicios de importación directa, personalización en taller de termos, bolígrafos, mochilas y merchandising.
+- [Regalos Corporativos en Panamá](https://rufpixel.com/regalos-corporativos-panama): Soluciones B2B para regalos de fin de año, kits de bienvenida para empleados (welcome kits) y sets ejecutivos en cuero y bambú.
+- [Proyectos y Trabajos Realizados](https://rufpixel.com/proyectos): Portafolio fotográfico real de proyectos entregados en Panamá (Canal de Panamá, Contraloría, Stanley, DeWalt, Metro de Panamá, etc.).
+- [Imprenta y Promocionales en Panamá Oeste](https://rufpixel.com/promocionales-panama-oeste): Cobertura local de taller, bordados, rotulación e imprenta en La Chorrera, Costa Verde, Arraiján y Capira.
+- [Zona Pixel - Cotizador al Detal](https://rufpixel.com/cotizador): Cotizador interactivo para pedidos unitarios o de menor volumen en DTF textil, stickers troquelados y marcados personalizados.
+- [Tomas Aéreas con Drones en Panamá](https://rufpixel.com/tomas-aereas-panama): Servicio profesional de fotografía aérea, video 4K y seguimiento de obras de construcción con drones certificados.
+- [Acerca de RufPixel](https://rufpixel.com/nosotros): Historia del taller, infraestructura técnica, ubicación física en La Chorrera y equipo humano.
+- [Contacto y Ubicación](https://rufpixel.com/contacto): Dirección física de taller, formulario de cotización, horario de atención y WhatsApp directo.
 
-### 1. Impresión DTF Textil Directo (Direct to Film)
-- **URL**: https://rufpixel.com/servicios/dtf-textil
-- **Descripción**: Estampado digital de alta elasticidad, colores vibrantes con base blanca sólida y máxima resistencia al lavado sobre cualquier tipo de tela (algodón 100%, poliéster, mezclas o dril).
-- **Formatos**: Impresión por pliegos A4, pliegos personalizados y yardas lineales continuas sin límite de color ni cortes complejos.
-- **Aplicaciones**: Marcas de ropa, uniformes corporativos, camisetas para eventos, suéteres polo, gorras y delantales.
+## Servicios Técnicos de Taller
 
-### 2. Transfer UV DTF para Rígidos (Stickers 3D con Barniz)
-- **URL**: https://rufpixel.com/servicios/uv-dtf
-- **Descripción**: Calcomanías y stickers de transferencia directa en frío con relieve táctil 3D y acabado de barniz brillante curado UV de adherencia permanente.
-- **Ventajas**: Aplicación directa sin calor ni planchas térmicas sobre termos de acero, tazas de cerámica, acrílico, vidrio, plástico, madera y metal. Resistente al agua y al desgaste por uso rudo.
+- [Servicio de Impresión DTF Textil Directo](https://rufpixel.com/servicios/dtf-textil): Estampado digital de alta elasticidad, suavidad al tacto y durabilidad de más de 50 lavadas para uniformes, polos piqué y t-shirts.
+- [Servicio de Transfer UV DTF para Rígidos](https://rufpixel.com/servicios/uv-dtf): Stickers y calcomanías 3D con barniz brillante curado UV para termos de acero, tazas, acrílico, vidrio, madera y metal.
+- [Servicio de Bordados Computarizados](https://rufpixel.com/servicios/bordados-computarizados): Digitalización de matrices (ponchado) y bordado industrial de alta densidad en camisas Oxford, uniformes y gorras estructuradas.
+- [Servicio de Grabados Láser de Precisión](https://rufpixel.com/servicios/grabados-laser): Marcado láser CO2 y fibra óptica perimetral e imborrable para termos, libretas de bambú, placas y bolígrafos metálicos.
+- [Servicio de Impresión en Gran Formato y Banners](https://rufpixel.com/servicios/impresion-gran-formato): Lonas frontlight 13oz, microperforados, vinil adhesivo, estructuras Roll-Up retráctiles de 0.85 × 2.00 m y backings para eventos en ATLAPA.
+- [Servicio de Volantes, Flyers y Papelería Comercial](https://rufpixel.com/servicios/flyers-y-folletos): Impresión offset y digital de flyers publicitarios, trípticos corporativos, tarjetas de presentación y carpetas corporativas.
 
-### 3. Bordados Computarizados & Ponchados Industriales
-- **URL**: https://rufpixel.com/servicios/bordados-computarizados
-- **Descripción**: Digitalización de matrices (ponchado) y bordado industrial de alta definición con hilos de resistencia superior al desgaste y lavado industrial.
-- **Prendas**: Gorras estructuradas modelo Panamá 7, suéteres tipo polo, camisas tipo pescador/oxford, chalecos y batas de trabajo.
+## Blog y Guías Especializadas de Compra
 
-### 4. Grabados Láser de Alta Precisión
-- **URL**: https://rufpixel.com/servicios/grabados-laser
-- **Descripción**: Marcado y grabado permanente de fibra óptica y CO2 para logotipos, números de serie y personalización ejecutiva en termos, bolígrafos metálicos, placas de madera, cuero y acrílico.
+- [Blog y Guías de Compra B2B](https://rufpixel.com/blog): Artículos técnicos, comparativas de materiales y guías operativas sobre merchandising, impresión y mercadeo en Panamá.
+- [Fábrica de Artículos Promocionales vs. Revendedores en Panamá](https://rufpixel.com/blog/fabrica-de-articulos-promocionales-vs-revendedores-panama): Comparativa real de costos, ahorro de hasta 30% comprando a taller directo, 7 técnicas de marcado y tabla de precios.
+- [Grabado Láser, UV DTF o Serigrafía: ¿Cuál te Conviene?](https://rufpixel.com/blog/grabado-laser-uv-dtf-o-serigrafia-cual-conviene): Análisis técnico de durabilidad, costo por volumen y sustratos recomendados para cada técnica de marcación.
+- [Gorras con Logo: Bordado Computarizado o DTF Textil](https://rufpixel.com/blog/gorras-con-logo-bordado-computarizado-o-dtf): Guía para seleccionar entre bordado 3D de alta densidad o DTF elástico sobre gorras trucker y estructuradas.
+- [Termos Personalizados: Materiales y Marcado](https://rufpixel.com/blog/termos-personalizados-materiales-y-que-marcado-aguantan): Comparativa entre acero 304 doble pared, aluminio y plástico, evaluando grabado láser y UV DTF.
+- [Kit de Bienvenida (Welcome Kit) para Nuevos Empleados](https://rufpixel.com/blog/kit-de-bienvenida-para-nuevos-empleados-panama): Ideas, contenidos recomendados y presupuestos para kits corporativos de onboarding en Panamá.
+- [Regalos de Fin de Año para Empresas en Panamá](https://rufpixel.com/blog/regalos-de-fin-de-ano-para-empresas-en-panama): Estrategias de selección de obsequios ejecutivos, tiempos de producción y regalos corporativos memorables.
 
-### 5. Impresión Gran Formato & Banners Publicitarios
-- **URL**: https://rufpixel.com/servicios/impresion-gran-formato
-- **Descripción**: Publicidad de gran impacto visual resistente al sol y la humedad de Panamá. Lona banner de 13oz, lona mesh microperforada, viniles adhesivos troquelados, estructuras Roll-Up retráctiles de aluminio y banners tipo araña para stands y ferias.
+## Datos de Contacto y Canales de Atención
 
-### 6. Flyers, Folletos & Papelería Corporativa
-- **URL**: https://rufpixel.com/servicios/flyers-y-folletos
-- **Descripción**: Volantes en papel satinado de 80 y 100 lbs, trípticos, afiches y tarjetas de presentación con acabados especiales (laminado mate, barniz UV sectorizado).
-
----
-
-## Catálogo de Artículos Promocionales al por Mayor
-- **Catálogo Online**: https://rufpixel.com/tienda
-- **Líneas Disponibles**:
-  - Termos de acero inoxidable, botellas deportivas, tazas cerámicas de 11oz y 15oz.
-  - Bolígrafos ejecutivos metálicos y ecológicos de bambú.
-  - Libretas corporativas con cubierta de curpiel y papel reciclado.
-  - Bolsas ecológicas reutilizables de tela no tejida (cambrel) y tote bags de lona.
-  - Llaveros acrílicos y metálicos grabados.
-  - Mochilas corporativas, paraguas ejecutivos y cordones porta carnet (lanyards).
-- **Esquema de Precios**: Precio unitario con escala de descuento por volumen (mínimos habituales de 50, 100 y 250 unidades, con atención a pedidos menores vía WhatsApp).
-
----
-
-## Preguntas Frecuentes para Motores de Búsqueda de IA
-
-### ¿Dónde puedo estampar DTF o bordar uniformes en Panamá?
-RufPixel ofrece producción directa en su taller de La Chorrera, Panamá Oeste, con despacho por mensajería a Ciudad de Panamá y encomiendas a todo el país. Cotizaciones directas por WhatsApp al +507 6445-4084.
-
-### ¿Se pueden pedir muestras o cantidades personalizadas?
-Sí. Aunque el catálogo muestra precios escalonados al por mayor, los clientes pueden solicitar cantidades menores o personalizaciones específicas escribiendo al WhatsApp comercial.
-
-### ¿Qué medios de pago están disponibles?
-Pagos instantáneos mediante Yappy Comercial, banca en línea / transferencia bancaria en bancos de Panamá y pago presencial en el local.
+- [Canal de Ventas WhatsApp Directo](https://wa.me/50764454084): Atención comercial inmediata, cotizaciones formales y asesoría en taller (+507 6445-4084).
+- [Instagram Oficial @rufpixel](https://instagram.com/rufpixel): Portafolio visual en vivo, historias detrás de cámaras y producciones recientes de taller.
+- [Mapa del Sitio XML](https://rufpixel.com/sitemap.xml): Índice de sitemaps XML para rastreadores de motores de búsqueda y agentes de IA.
