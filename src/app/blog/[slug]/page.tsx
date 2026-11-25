@@ -22,6 +22,7 @@ const BLOG_SEO_TITLES: Record<string, string> = {
   'que-pedir-cuando-necesitas-50-unidades-entrega-rapida': 'Promocionales desde 50 Unidades en Panamá | RufPixel', // 52
   'rollup-vs-banner-arana-cual-elegir-para-tu-evento': 'Roll-Up vs Banner Araña para Eventos Panamá | RufPixel', // 54
   'vinil-adhesivo-microperforado-o-esmerilado-vidrieras-panama': 'Vinil Adhesivo, Microperforado y Esmerilado | RufPixel', // 54
+  'fabrica-de-articulos-promocionales-vs-revendedores-panama': 'Fábrica de Artículos Promocionales en Panamá | RufPixel', // 55
 };
 
 function buildBlogTitle(title: string, slug?: string): string {
