@@ -14,12 +14,6 @@ export default function AiWhatsAppAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1);
 
-  // Hide floating WhatsApp AI bubble on product pages to prevent mobile clutter with the Buy/Cart button
-  const isProductPage = pathname?.startsWith('/productos/') || pathname?.startsWith('/producto/');
-  if (isProductPage) {
-    return null;
-  }
-
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -105,6 +99,13 @@ export default function AiWhatsAppAssistant() {
     setIsOpen(false);
     handleReset();
   };
+
+  // Hide floating WhatsApp AI bubble on product pages to prevent mobile clutter with the Buy/Cart button
+  // Checked strictly AFTER all hooks have unconditionally executed to prevent React Error #300
+  const isProductPage = pathname?.startsWith('/productos/') || pathname?.startsWith('/producto/');
+  if (isProductPage || !mounted) {
+    return null;
+  }
 
   return (
     <>
