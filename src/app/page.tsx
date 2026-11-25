@@ -725,10 +725,10 @@ export default async function HomePage() {
               </p>
             </div>
             <Link
-              href="/galeria"
+              href="/proyectos"
               className="mt-4 md:mt-0 text-sm font-bold text-[#FF5E14] hover:text-[#E04700] flex items-center space-x-1"
             >
-              <span>Ver galería completa de trabajos</span>
+              <span>Ver todos los proyectos</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -774,7 +774,7 @@ export default async function HomePage() {
             ].map((item, idx) => (
               <Link
                 key={idx}
-                href="/galeria"
+                href="/proyectos"
                 className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:border-[#FF5E14]/50 group hover:shadow-lg transition-all flex flex-col justify-between cursor-pointer"
               >
                 <div className="h-56 overflow-hidden relative bg-gray-900">

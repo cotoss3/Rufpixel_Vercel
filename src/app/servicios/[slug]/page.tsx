@@ -393,8 +393,8 @@ export default function ServicioDetailPage({ params }: { params: { slug: string 
                     Roll-Up Banners Institucionales Entregados en Panamá
                   </h3>
                 </div>
-                <Link href="/galeria" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
-                  Ver más en Galería →
+                <Link href="/proyectos" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
+                  Ver más en Proyectos →
                 </Link>
               </div>
               <figure className="rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">

@@ -445,12 +445,12 @@ const GALLERY_PROJECTS: ProjectItem[] = [
   },
 ];
 
-export default function GaleriaPage() {
+export default function ProyectosPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
   const [activeModalItem, setActiveModalItem] = useState<ProjectItem | null>(null);
 
   const categories = [
-    { id: 'todos', label: `Todos los Trabajos (${GALLERY_PROJECTS.length})` },
+    { id: 'todos', label: `Todos los Proyectos (${GALLERY_PROJECTS.length})` },
     { id: 'grabados', label: 'Grabados Láser' },
     { id: 'gran-formato', label: 'Gran Formato & Banners' },
     { id: 'textiles', label: 'Bordados & Textiles' },
@@ -474,7 +474,7 @@ export default function GaleriaPage() {
             <span>Portafolio Real en Taller — @rufpixel</span>
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-outfit leading-tight">
-            Trabajos Realizados de Artículos Promocionales e Impresión de Banners
+            Proyectos Realizados de Artículos Promocionales e Impresión de Banners
           </h1>
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light">
             Muestra real de producciones entregadas en Panamá: vasos y botellas térmicas con grabado láser, sets ejecutivos en bambú y cuero, kits de bienvenida y estructuras Roll-Up impresas en gran formato.
@@ -594,7 +594,7 @@ export default function GaleriaPage() {
             {/* Actions */}
             <div className="p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-4">
               <a
-                href={`https://wa.me/50764454084?text=${encodeURIComponent(`Hola RufPixel, vi el trabajo de "${project.title}" en la Galería de la web y me interesa cotizar algo similar.`)}`}
+                href={`https://wa.me/50764454084?text=${encodeURIComponent(`Hola RufPixel, vi el proyecto de "${project.title}" en la sección de Proyectos y me interesa cotizar algo similar.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-bold text-[#FF5E14] hover:text-[#E04700] flex items-center space-x-1.5"
@@ -685,7 +685,7 @@ export default function GaleriaPage() {
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <a
-                  href={`https://wa.me/50764454084?text=${encodeURIComponent(`Hola RufPixel, vi en detalle el trabajo "${activeModalItem.title}" en la Galería y deseo cotizar algo similar.`)}`}
+                  href={`https://wa.me/50764454084?text=${encodeURIComponent(`Hola RufPixel, vi en detalle el proyecto "${activeModalItem.title}" en la sección de Proyectos y deseo cotizar algo similar.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 bg-[#FF5E14] hover:bg-[#E04700] text-white py-3 px-6 rounded-xl font-bold text-xs text-center flex items-center justify-center space-x-2"

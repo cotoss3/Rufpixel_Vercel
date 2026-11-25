@@ -196,8 +196,8 @@ export default function RegalosCorporativosPanamaPage() {
                 Sets y Regalos Corporativos Personalizados en Panamá
               </h2>
             </div>
-            <Link href="/galeria" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
-              Ver los 28 trabajos en Galería →
+            <Link href="/proyectos" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
+              Ver los 28 proyectos realizados →
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

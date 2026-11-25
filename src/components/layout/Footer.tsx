@@ -132,7 +132,7 @@ export default function Footer() {
               <li><Link href="/promocionales-panama-oeste" className="hover:text-[#FF5E14] transition-colors">Imprenta y Bordados La Chorrera</Link></li>
               <li><Link href="/cotizador" className="hover:text-[#FF5E14] transition-colors font-bold text-[#FF5E14]">Zona Pixel (Al Detal)</Link></li>
               <li><Link href="/blog" className="hover:text-[#FF5E14] transition-colors">Blog y Guías de Compra</Link></li>
-              <li><Link href="/galeria" className="hover:text-[#FF5E14] transition-colors">Galería de Trabajos</Link></li>
+              <li><Link href="/proyectos" className="hover:text-[#FF5E14] transition-colors">Proyectos Realizados</Link></li>
               <li><Link href="/nosotros" className="hover:text-[#FF5E14] transition-colors">Acerca de RufPixel</Link></li>
               <li><Link href="/contacto" className="hover:text-[#FF5E14] transition-colors">Contacto & Ubicación</Link></li>
               <li><Link href="/mi-cuenta" className="hover:text-[#FF5E14] transition-colors">Consultar Pedido</Link></li>

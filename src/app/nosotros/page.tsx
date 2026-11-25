@@ -305,10 +305,10 @@ export default function NosotrosPage() {
             Ver Mapa & Contacto
           </Link>
           <Link
-            href="/galeria"
+            href="/proyectos"
             className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3 rounded-xl font-bold text-xs text-center shadow-md shadow-[#FF5E14]/25 transition-all"
           >
-            Ver Galería de Trabajos
+            Ver Proyectos Realizados
           </Link>
         </div>
       </section>

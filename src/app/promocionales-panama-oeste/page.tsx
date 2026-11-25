@@ -240,8 +240,8 @@ export default function PromocionalesPanamaOestePage() {
                 Trabajos Producidos para Empresas de Costa Verde y La Chorrera
               </h2>
             </div>
-            <Link href="/galeria" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
-              Ver todos los proyectos en Galería →
+            <Link href="/proyectos" className="text-xs font-extrabold text-[#FF5E14] hover:underline">
+              Ver todos los proyectos →
             </Link>
           </div>
 

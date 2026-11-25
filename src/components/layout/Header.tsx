@@ -51,7 +51,7 @@ export default function Header() {
     { href: '/tienda', label: 'Tienda' },
     { href: '/servicios', label: 'Servicios' },
     { href: '/blog', label: 'Blog' },
-    { href: '/galeria', label: 'Galería' },
+    { href: '/proyectos', label: 'Proyectos' },
     { href: '/contacto', label: 'Contacto' },
   ];
 

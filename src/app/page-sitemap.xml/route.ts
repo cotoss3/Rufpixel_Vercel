@@ -15,7 +15,7 @@ export async function GET() {
     { url: `${baseUrl}/cotizador`, priority: '0.9', changefreq: 'weekly' },
     { url: `${baseUrl}/tomas-aereas-panama`, priority: '0.9', changefreq: 'weekly' },
     { url: `${baseUrl}/servicios`, priority: '0.8', changefreq: 'weekly' },
-    { url: `${baseUrl}/galeria`, priority: '0.8', changefreq: 'weekly' },
+    { url: `${baseUrl}/proyectos`, priority: '0.8', changefreq: 'weekly' },
     { url: `${baseUrl}/blog`, priority: '0.7', changefreq: 'weekly' },
     { url: `${baseUrl}/contacto`, priority: '0.6', changefreq: 'monthly' },
   ];

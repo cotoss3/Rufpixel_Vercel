@@ -14,6 +14,17 @@ const nextConfig = {
   // 301 Permanent SEO Redirects to preserve 100% Google traffic and eliminate 404 errors
   async redirects() {
     return [
+      // 0. Galería a Proyectos 301 SEO Permanent Redirect
+      {
+        source: '/galeria',
+        destination: '/proyectos',
+        permanent: true,
+      },
+      {
+        source: '/galeria/:path*',
+        destination: '/proyectos',
+        permanent: true,
+      },
       // 1. Specific Legacy WordPress Categories from Google Search Console (must run before generic /categoria-producto/:slug*)
       {
         source: '/categoria-producto/impresiones-de-gran-formato-banners-y-letreros',
