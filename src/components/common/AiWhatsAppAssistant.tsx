@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { createPortal } from 'react-dom';
 import { Sparkles, X, Send, CheckCircle2, Bot, Layers, Palette, Hash, MessageCircle } from 'lucide-react';
 import { trackWhatsAppLead, trackEvent } from '@/lib/analytics';
@@ -8,9 +9,16 @@ import { trackWhatsAppLead, trackEvent } from '@/lib/analytics';
 const WHATSAPP_NUMBER = '50764454084';
 
 export default function AiWhatsAppAssistant() {
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1);
+
+  // Hide floating WhatsApp AI bubble on product pages to prevent mobile clutter with the Buy/Cart button
+  const isProductPage = pathname?.startsWith('/productos/') || pathname?.startsWith('/producto/');
+  if (isProductPage) {
+    return null;
+  }
 
   useEffect(() => {
     setMounted(true);
