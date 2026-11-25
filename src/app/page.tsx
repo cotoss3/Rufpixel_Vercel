@@ -85,7 +85,7 @@ export default async function HomePage() {
 
               {/* Description */}
               <p className="text-gray-300 text-lg max-w-2xl font-light leading-relaxed">
-                Taller gráfico en Panamá: DTF textil por metros, bordados, grabado láser, banners roll-up y catálogo corporativo al por mayor desde 50 uds o al detal sin mínimos en Zona Pixel.
+                Fábrica y taller directo de artículos promocionales y regalos publicitarios en Panamá: DTF textil, bordados computarizados, grabado láser, banners roll-up y catálogo de merchandising corporativo al por mayor desde 50 uds o al detal sin mínimos en Zona Pixel.
               </p>
 
               {/* CTA Buttons */}
@@ -111,15 +111,15 @@ export default async function HomePage() {
               <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-gray-800 text-xs text-gray-400">
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Prueba digital antes de imprimir</span>
+                  <span>Fábrica directa sin intermediarios</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Plazos según volumen y técnica</span>
+                  <span>Prueba digital antes de imprimir</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0" />
-                  <span>Pagos seguros vía YAPPY COMERCIAL & TRANSFERENCIA ACH</span>
+                  <span>Envíos rápidos a todo Panamá</span>
                 </div>
               </div>
 
@@ -163,7 +163,7 @@ export default async function HomePage() {
           <div className="bg-white rounded-3xl p-7 sm:p-8 border-2 border-gray-200 hover:border-[#FF5E14] shadow-md transition-all flex flex-col justify-between space-y-5">
             <div className="space-y-3">
               <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider text-[#FF5E14] bg-[#FF5E14]/10 px-3 py-1 rounded-full">
-                Catálogo B2B · 166 Modelos en Stock
+                Fábrica y Distribución B2B · 166 Modelos en Stock
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit leading-tight">
                 <Link href="/articulos-promocionales-panama" className="hover:text-[#FF5E14] transition-colors">
@@ -171,7 +171,7 @@ export default async function HomePage() {
                 </Link>
               </h2>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                Precios transparentes por escala (<strong>50, 100 y 250 unidades</strong>) con grabado láser, UV DTF, serigrafía y bordado computarizado. Desde bolígrafos a <strong>$0.55/ud</strong> y bolsas de manta sucia hasta termos de acero doble pared y{' '}
+                Somos fabricantes y distribuidores directos de <strong>artículos publicitarios</strong> y <strong>regalos promocionales en Panamá</strong>. Precios transparentes por escala (<strong>50, 100 y 250 unidades</strong>) con grabado láser, UV DTF, serigrafía y bordados de uniformes. Desde bolígrafos a <strong>$0.55/ud</strong> y bolsas de manta sucia hasta termos térmicos, souvenirs empresariales y{' '}
                 <Link href="/regalos-corporativos-panama" className="text-[#FF5E14] font-bold hover:underline">
                   regalos corporativos en Panamá
                 </Link>.
@@ -583,7 +583,7 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            {/* Card 5: Papelería Comercial */}
+            {/* Card 5: Impresión de Volantes y Folletos */}
             <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -591,15 +591,15 @@ export default async function HomePage() {
                     <FileText className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-mono text-[#FF5E14] font-bold bg-[#FF5E14]/10 px-3 py-1 rounded-full border border-[#FF5E14]/20">
-                    Desde 1 unidad
+                    Tirajes y Millares
                   </span>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
-                    Papelería Comercial
+                    Impresión de Volantes y Folletos
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
-                    Talonarios de factura autocopiativos desde 1 unidad, volantes satinados y tarjetas de presentación con acabado profesional para tu negocio.
+                    Impresión de folletos, trípticos y volantes publicitarios en papel satinado de 80 y 100 lbs. Talonarios autocopiativos y papelería comercial con entrega en todo Panamá.
                   </p>
                 </div>
               </div>
@@ -607,12 +607,12 @@ export default async function HomePage() {
                 href="/servicios/flyers-y-folletos"
                 className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
               >
-                <span>Ver opciones de papelería</span>
+                <span>Cotizar volantes y folletos</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
 
-            {/* Card 6: Banners & Roll-Ups */}
+            {/* Card 6: Banners & Material POP */}
             <div className="bg-[#141414] border border-gray-800 hover:border-[#FF5E14]/60 rounded-3xl p-6 sm:p-7 space-y-4 hover:bg-[#171717] transition-all group flex flex-col justify-between shadow-md">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -625,10 +625,10 @@ export default async function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white font-outfit group-hover:text-[#FF5E14] transition-colors">
-                    Banners & Roll-Ups
+                    Banners, Roll-Ups & Material POP
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mt-1.5">
-                    Lona gruesa de 13oz con ojales o estructura Roll-Up retráctil de aluminio con estuche de lona. Listo para armar en tu evento o stand.
+                    Lona gruesa de 13oz con ojales, backing para eventos, banderolas y estructuras Roll-Up retráctiles de aluminio con estuche. Material POP listo para armar en tu evento o stand.
                   </p>
                 </div>
               </div>
@@ -636,7 +636,7 @@ export default async function HomePage() {
                 href="/servicios/impresion-gran-formato"
                 className="inline-flex items-center space-x-2 text-xs font-bold text-[#FF5E14] hover:text-[#E04700] pt-3 border-t border-gray-800/80 group-hover:translate-x-1 transition-all"
               >
-                <span>Ver gran formato</span>
+                <span>Ver gran formato y POP</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
