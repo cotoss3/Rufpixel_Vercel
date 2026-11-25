@@ -224,7 +224,20 @@ export default async function BlogPostDetailPage({ params }: { params: { slug: s
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {MOCK_BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3).map((rPost) => (
+          {(() => {
+            if (post.slug === 'fabrica-de-articulos-promocionales-vs-revendedores-panama') {
+              const promoSlugs = [
+                'grabado-laser-uv-dtf-o-serigrafia-cual-conviene',
+                'gorras-con-logo-bordado-computarizado-o-dtf',
+                'termos-personalizados-materiales-y-que-marcado-aguantan'
+              ];
+              const matches = promoSlugs
+                .map(s => MOCK_BLOG_POSTS.find(p => p.slug === s))
+                .filter(Boolean) as typeof MOCK_BLOG_POSTS;
+              if (matches.length > 0) return matches;
+            }
+            return MOCK_BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
+          })().map((rPost) => (
             <Link
               key={rPost.id}
               href={`/blog/${rPost.slug}`}

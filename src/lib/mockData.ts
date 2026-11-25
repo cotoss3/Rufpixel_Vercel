@@ -524,7 +524,7 @@ En RufPixel operamos bajo un modelo directo: combinamos la <strong>importación 
       <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-purple-100 text-purple-800 uppercase tracking-wide">Lona Banner Frontlight 13oz</span>
       <h3 class="text-sm font-bold text-gray-900 font-outfit m-0">Banners, Roll-Ups y Publicidad Exterior</h3>
       <p class="text-xs text-gray-600 leading-relaxed m-0">
-        La lona de 13 onzas laminada con trama de poliéster 500x500 resiste ráfagas de viento y tensión perimetral. En Roll-Ups retráctiles usamos sustratos anti-curvatura (*no-curl*) que se mantienen planos sin enrollarse hacia los lados durante eventos en hoteles o ferias.
+        La lona de 13 onzas laminada con trama de poliéster 500x500 resiste ráfagas de viento y tensión perimetral. En Roll-Ups retráctiles usamos sustratos anti-curvatura (<em>no-curl</em>) que se mantienen planos sin enrollarse hacia los lados durante eventos en hoteles o ferias.
       </p>
     </div>
   </div>
