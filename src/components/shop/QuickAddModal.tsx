@@ -43,13 +43,14 @@ export default function QuickAddModal({
 
   const [selectedAttributes, setSelectedAttributes] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
-    product.attributes.forEach((attr) => {
-      if (attr.options.length > 0) {
+    const attrs = product.attributes || [];
+    attrs.forEach((attr) => {
+      if (attr?.options && attr.options.length > 0) {
         initial[attr.name] = attr.options[0];
       }
     });
-    const qtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
-    if (qtyAttr && qtyAttr.options.includes('50')) {
+    const qtyAttr = attrs.find((a) => (a?.name || '').toLowerCase() === 'cantidad');
+    if (qtyAttr && qtyAttr.options?.includes('50')) {
       initial[qtyAttr.name] = '50';
     } else {
       initial['Cantidad'] = '50';
@@ -68,7 +69,7 @@ export default function QuickAddModal({
   const getSelectedVariation = (): ProductVariation | undefined => {
     if (!product.childVariations || product.childVariations.length === 0) return undefined;
     const match = product.childVariations.find(
-      (v) => v.quantityOption === selectedQtyOption || v.name.includes(selectedQtyOption)
+      (v) => v?.quantityOption === selectedQtyOption || (v?.name && v.name.includes(selectedQtyOption))
     );
     return match || product.childVariations[0];
   };
@@ -139,8 +140,8 @@ export default function QuickAddModal({
   };
 
   const qtyOptions = ['50', '100', '250'];
-  const otherAttributes = product.attributes.filter((a) => {
-    const n = a.name.toLowerCase();
+  const otherAttributes = (product.attributes || []).filter((a) => {
+    const n = (a?.name || '').toLowerCase();
     return (
       n !== 'cantidad' &&
       !n.includes('técnica') &&

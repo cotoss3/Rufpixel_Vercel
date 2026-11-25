@@ -45,18 +45,21 @@ export default function ProductDetailClient({
     }
   }, [product, slug]);
 
-  // Initial attribute selections
+  // Initial attribute selections (bulletproof against missing attributes)
   const [selectedAttributes, setSelectedAttributes] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
     if (product) {
-      product.attributes.forEach((attr) => {
-        if (attr.options.length > 0) {
+      const attrs = product.attributes || [];
+      attrs.forEach((attr) => {
+        if (attr?.options && attr.options.length > 0) {
           initial[attr.name] = attr.options[0];
         }
       });
-      const qtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
-      if (qtyAttr && qtyAttr.options.includes('50')) {
+      const qtyAttr = attrs.find((a) => (a?.name || '').toLowerCase() === 'cantidad');
+      if (qtyAttr && qtyAttr.options?.includes('50')) {
         initial[qtyAttr.name] = '50';
+      } else {
+        initial['Cantidad'] = '50';
       }
     }
     return initial;
@@ -73,16 +76,19 @@ export default function ProductDetailClient({
       if (product.image && !selectedImage) {
         setSelectedImage(product.image);
       }
-      if (Object.keys(selectedAttributes).length === 0 && product.attributes) {
+      if (Object.keys(selectedAttributes).length === 0) {
         const initial: Record<string, string> = {};
-        product.attributes.forEach((attr) => {
-          if (attr.options.length > 0) {
+        const attrs = product.attributes || [];
+        attrs.forEach((attr) => {
+          if (attr?.options && attr.options.length > 0) {
             initial[attr.name] = attr.options[0];
           }
         });
-        const qtyAttr = product.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
-        if (qtyAttr && qtyAttr.options.includes('50')) {
+        const qtyAttr = attrs.find((a) => (a?.name || '').toLowerCase() === 'cantidad');
+        if (qtyAttr && qtyAttr.options?.includes('50')) {
           initial[qtyAttr.name] = '50';
+        } else {
+          initial['Cantidad'] = '50';
         }
         setSelectedAttributes(initial);
       }
@@ -105,7 +111,9 @@ export default function ProductDetailClient({
   // Find matching child variation for bulk pack
   const getSelectedVariation = (): ProductVariation | undefined => {
     if (!product.childVariations || product.childVariations.length === 0) return undefined;
-    const match = product.childVariations.find(v => v.quantityOption === selectedQtyOption || v.name.includes(selectedQtyOption));
+    const match = product.childVariations.find(
+      (v) => v?.quantityOption === selectedQtyOption || (v?.name && v.name.includes(selectedQtyOption))
+    );
     return match || product.childVariations[0];
   };
 
@@ -478,7 +486,9 @@ export default function ProductDetailClient({
                     optUnit = product.pricePacks.pack250.unit || (optTotal / 250);
                   }
                 } else {
-                  const optVar = product.childVariations?.find(v => v.quantityOption === opt || v.name.includes(opt));
+                  const optVar = product.childVariations?.find(
+                    (v) => v?.quantityOption === opt || (v?.name && v.name.includes(opt))
+                  );
                   if (optVar) {
                     optTotal = optVar.price;
                     optUnit = optTotal / optQty;
@@ -506,8 +516,8 @@ export default function ProductDetailClient({
           </div>
 
           {/* Other Attributes Selectors (Color, etc.) */}
-          {product.attributes.filter((a) => {
-              const n = a.name.toLowerCase();
+          {(product.attributes || []).filter((a) => {
+              const n = (a?.name || '').toLowerCase();
               return n !== 'cantidad' && !n.includes('técnica') && !n.includes('tecnica') && !n.includes('personalización') && !n.includes('personalizacion');
             })
             .map((attr) => (

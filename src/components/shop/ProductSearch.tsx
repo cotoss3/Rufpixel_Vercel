@@ -399,21 +399,20 @@ export default function ProductSearch({
                   }}
                   className="flex items-center space-x-3 p-2.5 bg-white hover:bg-orange-50/60 border border-gray-200/80 hover:border-[#FF5E14] rounded-xl transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl overflow-hidden bg-gray-900 border border-gray-200 shrink-0 flex items-center justify-center">
-                    <img src={srv.image} alt={srv.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <span className="text-[9px] font-extrabold uppercase text-white bg-[#0D0D0D] px-1.5 py-0.5 rounded">
-                      {srv.category}
-                    </span>
-                    <h4 className="font-bold text-gray-900 text-xs sm:text-sm truncate group-hover:text-[#FF5E14] transition-colors font-outfit mt-0.5">
+                  <div className="flex-1 min-w-0 pr-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-extrabold uppercase text-white bg-[#0D0D0D] px-2 py-0.5 rounded">
+                        {srv.category}
+                      </span>
+                    </div>
+                    <h4 className="font-bold text-gray-900 text-xs sm:text-sm group-hover:text-[#FF5E14] transition-colors font-outfit">
                       {srv.name}
                     </h4>
-                    <div className="flex items-baseline space-x-1.5 mt-0.5">
+                    <div className="flex items-baseline space-x-2 mt-1">
                       <span className="text-xs font-extrabold text-[#FF5E14] font-outfit">
                         {srv.priceLabel}
                       </span>
-                      <span className="text-[10px] text-gray-500 truncate">· {srv.subLabel}</span>
+                      <span className="text-[11px] text-gray-500">· {srv.subLabel}</span>
                     </div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-[#FF5E14] transition-colors shrink-0" />
@@ -452,9 +451,9 @@ export default function ProductSearch({
                 Artículos Promocionales coincidentes ({totalMatches})
               </span>
               {matchedProducts.map((prod) => {
-                const qtyAttr = prod.attributes.find((a) => a.name.toLowerCase() === 'cantidad');
+                const qtyAttr = (prod.attributes || []).find((a) => (a?.name || '').toLowerCase() === 'cantidad');
                 const baseQty = parseInt(qtyAttr?.options?.[0] || '50', 10) || 50;
-                const unitPrice = prod.pricePacks?.pack50?.unit || prod.price / baseQty;
+                const unitPrice = prod.pricePacks?.pack50?.unit || (prod.price > 0 ? prod.price / baseQty : 0);
 
                 return (
                   <Link
@@ -465,26 +464,24 @@ export default function ProductSearch({
                       setIsOpen(false);
                     }}
                     onMouseEnter={() => setCachedProduct(prod)}
-                    className="flex items-center space-x-3 p-2.5 hover:bg-gray-50 rounded-xl transition-all group"
+                    className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-xl transition-all group border-b border-gray-50 last:border-b-0"
                   >
-                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-gray-50 border border-gray-200 p-1 shrink-0 flex items-center justify-center">
-                      <img src={prod.image} alt={prod.name} className="w-full h-full object-contain" />
-                    </div>
-
-                    <div className="flex-1 min-w-0">
-                      <span className="text-[9px] font-extrabold uppercase text-[#FF5E14] bg-[#FF5E14]/10 px-1.5 py-0.5 rounded">
-                        {prod.category}
-                      </span>
-                      <h4 className="font-bold text-gray-900 text-xs sm:text-sm truncate group-hover:text-[#FF5E14] transition-colors font-outfit mt-0.5">
+                    <div className="flex-1 min-w-0 pr-3">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[10px] font-extrabold uppercase text-[#FF5E14] bg-[#FF5E14]/10 px-2 py-0.5 rounded">
+                          {prod.category}
+                        </span>
+                      </div>
+                      <h4 className="font-bold text-gray-900 text-xs sm:text-sm group-hover:text-[#FF5E14] transition-colors font-outfit">
                         {prod.name}
                       </h4>
-                      <div className="flex items-baseline space-x-1 mt-0.5">
+                      <div className="flex items-baseline space-x-1.5 mt-1">
                         <span className="text-xs font-extrabold text-gray-900 font-outfit">
                           ${unitPrice.toFixed(2)}
                         </span>
-                        <span className="text-[10px] font-bold text-gray-500">/ ud</span>
+                        <span className="text-xs font-bold text-gray-500">/ ud</span>
                         {baseQty > 1 && (
-                          <span className="text-[10px] text-gray-400 ml-1">(Pack x {baseQty})</span>
+                          <span className="text-[11px] text-gray-400 ml-1">(Pack x {baseQty})</span>
                         )}
                       </div>
                     </div>
