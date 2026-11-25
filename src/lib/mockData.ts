@@ -421,18 +421,18 @@ En RufPixel operamos bajo un modelo directo: combinamos la <strong>importación 
       </div>
     </div>
 
-    <!-- IMAGEN REAL 2: BORDADORA INDUSTRIAL EN POLO / UNIFORME -->
+    <!-- IMAGEN REAL 2: BORDADO INDUSTRIAL EN CAMISAS Y UNIFORMES -->
     <figure class="my-6 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
       <img
-        src="/images/trabajos/scrubs-medicos-filipinas-bordadas-universidad-de-panama.jpg"
-        alt="Bordado industrial computarizado de logotipo corporativo en taller RufPixel Panamá"
+        src="/images/trabajos/camisas-oxford-uniformes-bordados-panama.jpg"
+        alt="Bordado computarizado industrial de alta densidad sobre camisas y uniformes corporativos en RufPixel Panamá"
         loading="lazy"
         width="900"
         height="1200"
         class="w-full h-72 sm:h-80 object-cover"
       />
       <figcaption class="p-3 text-xs text-gray-500 text-center font-medium">
-        Control de puntada en taller: Bordado computarizado industrial de alta densidad sobre prendas institucionales y médicas.
+        Bordado industrial en taller: Detalle de puntadas de alta densidad sobre camisas y uniformes corporativos en Panamá.
       </figcaption>
     </figure>
 
