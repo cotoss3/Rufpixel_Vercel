@@ -45,7 +45,6 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '/', label: 'Inicio' },
     { href: '/articulos-promocionales-panama', label: 'Promocionales' },
     { href: '/servicios/impresion-gran-formato', label: 'Banners' },
     { href: '/tienda', label: 'Tienda' },
@@ -115,7 +114,7 @@ export default function Header() {
           </Link>
 
           {/* Intelligent Live Product Search Bar in Navbar */}
-          <div className="hidden md:block flex-1 max-w-md mx-4">
+          <div className="hidden md:block flex-1 max-w-xl xl:max-w-2xl mx-3 lg:mx-6">
             <ProductSearch
               products={products}
               categories={categories}

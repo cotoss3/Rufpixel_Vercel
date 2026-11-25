@@ -48,6 +48,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Tazas, Vasos Térmicos y Termos',
       anchor: 'tazas personalizadas y termos al por mayor en Panamá',
       slug: 'tazas-botellas-y-termos',
+      image: '/images/products/botella-termica-con-tapa-antiderrame-y-carrizo.webp',
       count: '30 modelos',
       fromUnit: 'Desde $1.95/ud',
       tech: 'Grabado Láser / UV DTF 3D',
@@ -57,6 +58,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Bolígrafos y Plumas con Logo',
       anchor: 'bolígrafos personalizados y plumas de lujo en Panamá',
       slug: 'boligrafos-y-plumas',
+      image: '/images/products/boligrafo-satin-plateado-con-grip-traslucido.webp',
       count: '24 modelos',
       fromUnit: 'Desde $0.45/ud',
       tech: 'Grabado Láser / UV DTF',
@@ -66,6 +68,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Suéteres, Polos y Camisas Tipo Columbia',
       anchor: 'suéteres personalizados y camisas tipo Columbia en Panamá',
       slug: 'textiles-y-ropa',
+      image: '/images/products/polo-max-dry-de-alto-rendimiento.webp',
       count: '15 modelos',
       fromUnit: 'Cotización por lote',
       tech: 'Bordado Computarizado / DTF Textil',
@@ -75,6 +78,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Bolsas de Manta Sucia, Yute y Loncheras',
       anchor: 'bolsas de manta sucia, yute y loncheras térmicas en Panamá',
       slug: 'bolsas-y-totes',
+      image: '/images/products/bolsa-tote-de-manta-natural.webp',
       count: '22 modelos',
       fromUnit: 'Desde $1.50/ud',
       tech: 'Impresión DTF Textil Full Color',
@@ -84,6 +88,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Llaveros Personalizados',
       anchor: 'llaveros personalizados en Panamá al por mayor',
       slug: 'llaveros',
+      image: '/images/products/llavero-de-aluminio-abrebotellas-y-abre-latas.webp',
       count: '9 modelos',
       fromUnit: 'Desde $1.10/ud',
       tech: 'Grabado Láser en Metal / Bambú',
@@ -93,6 +98,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Agendas y Libretas Corporativas',
       anchor: 'agendas y libretas personalizadas en Panamá',
       slug: 'libretas-y-cuadernos',
+      image: '/images/products/libreta-espiral-reciclada-con-boligrafo.webp',
       count: '14 modelos',
       fromUnit: 'Desde $1.75/ud',
       tech: 'Grabado Láser / UV DTF',
@@ -102,6 +108,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Lanyards y Cintas Porta Carnet',
       anchor: 'lanyards personalizados y cintas porta carnet en Panamá',
       slug: 'identificacion-y-correas',
+      image: '/images/products/cordon-porta-id-satinado-con-clip-desprendible.webp',
       count: 'Identificación B2B',
       fromUnit: 'Desde $1.25/ud',
       tech: 'Sublimación / Transferencia',
@@ -111,6 +118,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Gorras Personalizadas y Trucker',
       anchor: 'gorras personalizadas y bordadas en Panamá',
       slug: 'gorras-y-accesorios-de-cabeza',
+      image: '/images/products/gorra-lacrosse-max-dry-de-mallita-con-velcro.webp',
       count: '11 modelos',
       fromUnit: 'Desde $3.20/ud',
       tech: 'Bordado Computarizado / DTF',
@@ -120,6 +128,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Memorias USB y Escritorio',
       anchor: 'memorias USB y accesorios de oficina en Panamá',
       slug: 'oficina-y-escritorio',
+      image: '/images/products/soporte-para-celular-de-bambu-para-escritorio.webp',
       count: '9 modelos',
       fromUnit: 'Desde $1.60/ud',
       tech: 'UV DTF 3D / Grabado Láser',
@@ -129,6 +138,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Madera, Bambú, Cocina y Hogar',
       anchor: 'artículos promocionales de madera, bambú y hogar',
       slug: 'cocina-y-hogar',
+      image: '/images/products/tabla-para-quesos-ovalada-con-3-accesorios.webp',
       count: '17 modelos',
       fromUnit: 'Desde $1.80/ud',
       tech: 'Grabado Láser CO2 / Fibra',
@@ -138,6 +148,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Mochilas, Maletines y Cangureras',
       anchor: 'mochilas y maletines personalizados en Panamá',
       slug: 'mochilas-y-maletines',
+      image: '/images/products/mochila-antirrobo-con-puerto-usb-y-porta-laptop.webp',
       count: '6 modelos',
       fromUnit: 'Desde $4.50/ud',
       tech: 'DTF Textil / Bordado',
@@ -147,6 +158,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Paraguas y Sombrillas con Logo',
       anchor: 'paraguas personalizados con logo en Panamá',
       slug: 'paraguas',
+      image: '/images/products/paraguas-de-bolso-compacto-10-paneles.webp',
       count: '4 modelos',
       fromUnit: 'Desde $6.50/ud',
       tech: 'Transferencia Textil Impermeable',
@@ -156,6 +168,7 @@ export default function ArticulosPromocionalesPanamaPage() {
       name: 'Sets Ejecutivos y Regalos Corporativos',
       anchor: 'sets ejecutivos y regalos corporativos en Panamá',
       slug: 'sets-y-regalos',
+      image: '/images/products/set-ejecutivo-1.webp',
       count: 'Kits B2B',
       fromUnit: 'En estuche de regalo',
       tech: 'Grabado Láser / UV DTF',
@@ -361,9 +374,23 @@ export default function ArticulosPromocionalesPanamaPage() {
             {categoriesSilo.map((cat) => (
               <div
                 key={cat.slug}
-                className="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm hover:shadow-lg hover:border-[#FF5E14]/50 transition-all flex flex-col justify-between space-y-4"
+                className="group bg-white rounded-3xl border border-gray-200 p-6 shadow-sm hover:shadow-xl hover:border-[#FF5E14]/40 transition-all flex flex-col justify-between space-y-4"
               >
-                <div className="space-y-3">
+                <div className="space-y-4">
+                  <Link
+                    href={`/tienda/${cat.slug}`}
+                    className="block relative w-full h-48 sm:h-52 rounded-2xl bg-gradient-to-b from-gray-50 to-gray-100/70 border border-gray-100 overflow-hidden flex items-center justify-center p-3 group-hover:border-orange-200 transition-colors"
+                  >
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      loading="lazy"
+                      width={320}
+                      height={320}
+                      className="max-h-full max-w-full object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </Link>
+
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[11px] font-extrabold uppercase tracking-wider bg-orange-50 text-[#FF5E14] border border-[#FF5E14]/20 px-2.5 py-1 rounded-lg">
                       {cat.count}
