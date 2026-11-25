@@ -201,31 +201,28 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     id: 'post-18',
     slug: 'fabrica-de-articulos-promocionales-vs-revendedores-panama',
     title: 'Fábrica de Artículos Promocionales vs. Revendedores en Panamá: Cómo Ahorrar 30% en Pedidos Corporativos',
-    excerpt: 'Descubre por qué comprar directo a una fábrica y taller de artículos promocionales en Panamá reduce hasta un 30% en costos, evita errores de pre-prensa y garantiza entregas a tiempo sin intermediarios.',
+    excerpt: 'Ahorra hasta 30% comprando artículos promocionales directo a taller en Panamá. Comparativa real vs. revendedores, 7 técnicas de marcado y precios B2B.',
     content: `<div class="space-y-6 text-gray-700 leading-relaxed font-sans">
 
-<p class="text-base sm:text-lg text-gray-700 leading-relaxed font-normal">
-Cuando un gerente de compras, director de mercadeo o coordinador de recursos humanos en Panamá recibe la tarea de cotizar <strong>artículos promocionales</strong> para su empresa —ya sean 100 termos grabados para directores, 500 bolígrafos metálicos para un congreso en ATLAPA, 250 suéteres tipo polo bordados para colaboradores o un stand publicitario completo con banners Roll-Up y mantel para ferias—, se enfrenta inmediatamente a una encrucijada estratégica: <em class="text-gray-900 font-medium">¿es mejor contratar a una agencia comercial revendedora, o acudir directamente a una fábrica y taller de artículos promocionales con maquinaria propia en Panamá?</em>
+<!-- PÁRRAFO INICIAL ANTI-IA / DIRECTO AL GRANO -->
+<p class="text-base sm:text-lg text-gray-800 leading-relaxed font-normal">
+Si este mes te asignaron cotizar 100 termos grabados, 500 bolígrafos para una feria en ATLAPA o los uniformes bordados de tu equipo, es muy probable que estés pagando entre un 20% y un 45% de más sin saberlo. En Panamá, la gran mayoría de quienes comercializan material publicitario no son fabricantes ni tienen taller: son intermediarios comerciales que compran productos genéricos, subcontratan el marcado en talleres externos y aumentan el precio final para asegurar su comisión. En el camino, ese esquema multiplica los tiempos de espera y el riesgo de errores en los colores corporativos.
 </p>
 
 <p class="text-gray-600 leading-relaxed">
-A simple vista, un catálogo digital enviado por correo electrónico puede lucir similar sin importar quién lo envíe. Sin embargo, detrás de la pantalla existe una diferencia abismal en <strong>costos reales, márgenes de intermediación, fidelidad del color corporativo, tiempos de respuesta y garantías de entrega</strong>. En el dinámico mercado empresarial de Ciudad de Panamá, Costa del Este, Panamá Pacífico y Panamá Oeste, comprar a través de un intermediario suele inflar el presupuesto final entre un <strong>20% y un 45%</strong>, al tiempo que multiplica el riesgo de retrasos operativos por el efecto del "teléfono roto".
+En RufPixel operamos bajo un modelo directo: combinamos la <strong>importación y stock propio de más de 160 referencias de artículos promocionales</strong> con un <strong>taller industrial in-house en Panamá</strong> equipado con grabado láser de fibra y CO2, bordadoras computarizadas, impresoras UV DTF 3D, DTF textil y plotters de gran formato. A continuación, desglosamos cómo funciona la cadena de suministro publicitaria en el país, qué técnicas convienen según cada material y cómo una empresa puede retener cientos de dólares en su presupuesto anual gestionando sus pedidos directo con el fabricante.
 </p>
 
-<div class="my-6 p-5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-[#FF5E14] shadow-sm">
+<div class="my-6 p-5 rounded-2xl bg-gradient-to-r from-orange-50 to-amber-50 border-l-4 border-[#FF5E14] shadow-sm">
   <div class="flex items-center space-x-2 text-[#FF5E14] font-extrabold text-xs uppercase tracking-wider mb-1">
-    <span>💡 Clave para Compradores B2B en Panamá</span>
+    <span>💡 Clave Operativa para Compradores B2B</span>
   </div>
   <p class="text-xs sm:text-sm text-gray-800 m-0 leading-relaxed">
-    Comprar directo al taller no solo reduce hasta un 30% del costo total: te da acceso a muestras físicas previas, validación técnica de vectores CMYK y prioridad en cola de máquina para eventos con fechas límites improrrogables.
+    Comprar directo a taller no es únicamente ahorrar costos: significa hablar directamente con los operarios que preparan los archivos vectoriales, recibir muestras previas reales y tener prioridad garantizada en cola de máquina cuando el evento corporativo tiene fecha fija.
   </p>
 </div>
 
-<p class="text-gray-600 leading-relaxed">
-En esta guía exhaustiva para compradores corporativos, analizamos en detalle cómo funciona la cadena de suministro de <a href="/articulos-promocionales-panama" class="text-[#FF5E14] font-bold underline hover:text-[#E04700]">artículos promocionales y regalos corporativos en Panamá</a>, desglosamos las 7 técnicas de personalización industrial que se ejecutan directamente en taller, presentamos tablas comparativas de precios por escala y explicamos cómo optimizar tu presupuesto anual de merchandising.
-</p>
-
-<!-- SECCIÓN 1 -->
+<!-- SECCIÓN 1: CADENA DE SUMINISTRO -->
 <div class="pt-6">
   <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
     <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">1</span>
@@ -235,31 +232,37 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
   </div>
 
   <p class="text-gray-600 leading-relaxed mb-4">
-    Para comprender por qué existe una brecha de precios tan marcada entre proveedores, es indispensable transparentar cómo opera la industria gráfica y promocional en el istmo panameño. En Panamá conviven tres figuras comerciales bien diferenciadas:
+    Para entender por qué dos cotizaciones por el mismo termo o bolígrafo pueden variar drásticamente en precio, conviene transparentar la estructura de los tres actores comerciales que operan en Panamá:
   </p>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-6">
     <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
       <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-red-100 text-red-800 uppercase tracking-wide">Intermediario</span>
       <h3 class="text-base font-bold text-gray-900 font-outfit m-0">El Revendedor o Broker Publicitario</h3>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">No posee máquinas ni taller propio. Compra artículos genéricos, los envía a marcar a un taller externo y agrega un margen comercial del 20% al 40% adicional.</p>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">
+        Opera sin maquinaria propia. Recibe tu solicitud, compra los artículos a un tercero, los traslada a un taller externo para marcarlos y aplica un sobreprecio de reventa que oscila entre el 20% y el 40% sobre el costo final. Si hay fallas en la impresión, depende de la respuesta del taller subcontratado.
+      </p>
     </div>
 
     <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
       <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-gray-100 text-gray-800 uppercase tracking-wide">Solo Mayorista</span>
       <h3 class="text-base font-bold text-gray-900 font-outfit m-0">Importador de Zona Libre de Colón</h3>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">Importa contenedores desde Asia en cajas cerradas. Exige mínimos de miles de unidades por modelo y <strong>no ofrece servicio de personalización ni marcado</strong>.</p>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">
+        Trae contenedores completos desde Asia pero atiende exclusivamente en cajas cerradas de miles de unidades. <strong>No ofrece marcado con logo ni personalización unitaria</strong>, por lo que una empresa local no puede resolver con ellos un pedido corporativo de 50 o 250 piezas.
+      </p>
     </div>
 
     <div class="bg-orange-50/50 border-2 border-[#FF5E14]/40 rounded-2xl p-5 space-y-2 shadow-sm relative overflow-hidden">
-      <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-[#FF5E14] text-white uppercase tracking-wide">Fábrica Directa</span>
-      <h3 class="text-base font-bold text-gray-900 font-outfit m-0">Taller y Fábrica Propia (RufPixel)</h3>
-      <p class="text-xs text-gray-700 leading-relaxed m-0">Catálogo curado con maquinaria in-house: láser, UV DTF, bordadoras industriales, DTF textil y gran formato. Cero intermediarios y precios netos por escala.</p>
+      <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-[#FF5E14] text-white uppercase tracking-wide">Taller Fabricante</span>
+      <h3 class="text-base font-bold text-gray-900 font-outfit m-0">Fábrica y Taller Directo (RufPixel)</h3>
+      <p class="text-xs text-gray-700 leading-relaxed m-0">
+        El modelo más eficiente: combinamos la importación directa de artículos con maquinaria de personalización propia en Panamá. El comprador accede a precios netos de escala por volumen, validación de vectores CMYK y producción programada en máquina sin intermediarios.
+      </p>
     </div>
   </div>
 </div>
 
-<!-- SECCIÓN 2: TABLA COMPARATIVA CON BRANDING RUPIXEL -->
+<!-- SECCIÓN 2: TABLA COMPARATIVA -->
 <div class="pt-6">
   <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
     <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">2</span>
@@ -269,7 +272,7 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
   </div>
 
   <p class="text-gray-600 leading-relaxed mb-4">
-    A continuación se presenta la matriz operativa que define la diferencia entre confiar tu proyecto a un fabricante directo con taller en Panamá o a una agencia intermediaria:
+    La siguiente matriz resume los factores clave que diferencian cotizar con un taller directo frente a un broker comercial en el mercado panameño:
   </p>
 
   <div class="overflow-x-auto my-6 border border-gray-200 rounded-2xl shadow-md bg-white">
@@ -300,16 +303,16 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <tr class="hover:bg-gray-50/50 transition-colors">
           <td class="px-4 py-3.5 font-bold text-gray-900">Control de Calidad</td>
           <td class="px-4 py-3.5 bg-orange-50/30 text-gray-800 font-medium">
-            Inspección pieza por pieza en mesa de trabajo. Corrección inmediata de cualquier defecto.
+            Inspección pieza por pieza en mesa de trabajo. Corrección inmediata en taller si se detecta cualquier falla.
           </td>
           <td class="px-4 py-3.5 text-gray-600">
-            Revisión a ciegas; recibe cajas cerradas del taller subcontratado sin abrir.
+            Revisión a ciegas; recibe cajas cerradas del taller subcontratado y suele entregarlas sin abrir.
           </td>
         </tr>
         <tr class="hover:bg-gray-50/50 transition-colors">
           <td class="px-4 py-3.5 font-bold text-gray-900">Muestra Previa</td>
           <td class="px-4 py-3.5 bg-orange-50/30 text-gray-800 font-medium">
-            Simulación digital exacta a escala + muestra física grabada o bordada en taller para pedidos por volumen.
+            Simulación digital exacta a escala + muestra física grabada o bordada en taller para tirajes altos.
           </td>
           <td class="px-4 py-3.5 text-gray-600">
             Simulación básica en PDF genérico; cobra recargos elevados por muestras físicas previas.
@@ -318,10 +321,10 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <tr class="hover:bg-gray-50/50 transition-colors">
           <td class="px-4 py-3.5 font-bold text-gray-900">Tiempos de Entrega</td>
           <td class="px-4 py-3.5 bg-orange-50/30 text-gray-800 font-medium">
-            Fechas programadas directamente en cola de máquina. Opciones exprés disponibles.
+            Fechas programadas directamente en cola de máquina. Disponibilidad de pedidos urgentes.
           </td>
           <td class="px-4 py-3.5 text-gray-600">
-            Sujeto a la cola de espera de talleres de terceros. Alto riesgo de atrasos.
+            Sujeto a la cola de espera de talleres de terceros. Alto riesgo de atrasos en temporadas altas.
           </td>
         </tr>
         <tr class="hover:bg-gray-50/50 transition-colors">
@@ -336,10 +339,10 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <tr class="hover:bg-gray-50/50 transition-colors">
           <td class="px-4 py-3.5 font-bold text-gray-900">Facturación Fiscal</td>
           <td class="px-4 py-3.5 bg-orange-50/30 text-emerald-800 font-semibold">
-            Factura fiscal panameña con RUC y DV. Pagos seguros por ACH Banco General y Yappy Comercial.
+            Factura fiscal panameña con RUC y DV. Pagos por ACH Banco General y Yappy Comercial.
           </td>
           <td class="px-4 py-3.5 text-gray-600">
-            Facturación a menudo tercerizada o mediante personas naturales sin respaldo comercial.
+            Facturación a menudo tercerizada o mediante personas naturales sin respaldo institucional.
           </td>
         </tr>
       </tbody>
@@ -357,7 +360,7 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
   </div>
 
   <p class="text-gray-600 leading-relaxed mb-6">
-    Uno de los errores más costosos al comprar <strong>regalos promocionales en Panamá</strong> es aplicar una técnica incompatible con el sustrato del producto. En nuestro taller operamos 7 procesos industriales diferenciados:
+    Uno de los errores más comunes al comprar <a href="/articulos-promocionales-panama" class="text-[#FF5E14] font-bold underline">artículos promocionales en Panamá</a> es aplicar una técnica incompatible con el sustrato del producto. Un bolígrafo de aluminio grabado a láser dura para siempre, mientras que el mismo bolígrafo con una serigrafía económica puede despintarse a los pocos días de uso. En nuestro taller operamos 7 procesos industriales diferenciados:
   </p>
 
   <div class="space-y-6">
@@ -368,12 +371,27 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">1. Grabado Láser de Fibra Óptica y CO2</h3>
       </div>
       <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
-        El <a href="/servicios/grabado-laser" class="text-[#FF5E14] font-bold underline">grabado láser en Panamá</a> es la técnica preferida para regalos ejecutivos y artículos metálicos. Desgasta de manera milimétrica la capa superficial de pintura o anodizado, revelando el sustrato metálico o quemando con precisión la madera natural.
+        El <a href="/servicios/grabado-laser" class="text-[#FF5E14] font-bold underline">grabado láser en Panamá</a> desgasta de forma microscópica la capa superficial de pintura horneada o anodizado, revelando el sustrato metálico o quemando con precisión la veta de la madera.
       </p>
-      <div class="pt-2 text-xs text-gray-700">
-        <strong class="text-gray-900">Aplicaciones ideales:</strong> <a href="/tienda/tazas-botellas-y-termos" class="underline text-[#FF5E14]">Vasos y termos de acero inoxidable</a> (tipo Stanley), <a href="/tienda/boligrafos-y-plumas" class="underline text-[#FF5E14]">bolígrafos metálicos ejecutivos</a>, tablas de quesos en bambú y linternas de aluminio. Acabado 100% imborrable.
+      <div class="pt-1 text-xs text-gray-700">
+        <strong class="text-gray-900">Aplicaciones ideales:</strong> <a href="/tienda/tazas-botellas-y-termos" class="underline text-[#FF5E14]">Vasos y botellas térmicas de acero inoxidable</a> (tipo Stanley), <a href="/tienda/boligrafos-y-plumas" class="underline text-[#FF5E14]">bolígrafos metálicos ejecutivos</a>, tablas de bambú y linternas de aluminio. Acabado 100% imborrable que resiste lavados y alcohol.
       </div>
     </div>
+
+    <!-- IMAGEN REAL 1: GRABADO LÁSER EN TERMO -->
+    <figure class="my-6 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+      <img
+        src="/images/trabajos/termos-deportivos-grabado-laser-contraloria-panama.jpg"
+        alt="Grabado láser de precisión sobre termo de acero inoxidable en taller RufPixel Panamá"
+        loading="lazy"
+        width="900"
+        height="1200"
+        class="w-full h-72 sm:h-80 object-cover"
+      />
+      <figcaption class="p-3 text-xs text-gray-500 text-center font-medium">
+        Producción real en taller: Grabado láser de precisión perimetral sobre termos de acero inoxidable para dotación institucional en Panamá.
+      </figcaption>
+    </figure>
 
     <!-- Técnica 2 -->
     <div class="bg-gray-50/70 border border-gray-200 rounded-2xl p-5 space-y-2">
@@ -382,10 +400,10 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">2. Transfer UV DTF Directo a Rígidos con Barniz 3D</h3>
       </div>
       <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
-        La <a href="/servicios/uv-dtf" class="text-[#FF5E14] font-bold underline">impresión UV DTF</a> imprime tintas ultravioleta curadas al instante con lámparas LED más una capa de barniz transparente que produce un relieve táctil de alto brillo. Permite tirajes cortos a todo color sin matrices costosas.
+        La <a href="/servicios/uv-dtf" class="text-[#FF5E14] font-bold underline">impresión UV DTF</a> deposita tintas curadas al instante con luz ultravioleta más una capa de barniz transparente que produce relieve táctil y brillo superior sin necesidad de fabricar clichés ni mallas costosas.
       </p>
-      <div class="pt-2 text-xs text-gray-700">
-        <strong class="text-gray-900">Aplicaciones ideales:</strong> Tazas de cerámica, libretas de polipiel, termos cónicos o plásticos, carcasas, acrílicos y porta-vasos.
+      <div class="pt-1 text-xs text-gray-700">
+        <strong class="text-gray-900">Aplicaciones ideales:</strong> Tazas de cerámica, libretas de polipiel, termos cónicos o plásticos, carcasas, acrílicos y porta-vasos con colores vivos y degradados fotográficos.
       </div>
     </div>
 
@@ -396,12 +414,27 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">3. Bordados Computarizados Industriales de Alta Definición</h3>
       </div>
       <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
-        Para prendas corporativas, el <a href="/servicios/bordados-computarizados" class="text-[#FF5E14] font-bold underline">bordado computarizado en Panamá</a> ofrece la máxima durabilidad institucional. Empleamos hilos industriales de poliéster resistentes al lavado continuo y al cloro.
+        Para uniformes corporativos, el <a href="/servicios/bordados-computarizados" class="text-[#FF5E14] font-bold underline">bordado computarizado en Panamá</a> ofrece la máxima durabilidad institucional. Empleamos hilos industriales de poliéster que no se decoloran con lavados frecuentes ni uso de detergentes fuertes.
       </p>
-      <div class="pt-2 text-xs text-gray-700">
-        <strong class="text-gray-900">Aplicaciones ideales:</strong> Suéteres tipo polo de piqué de algodón o dry-fit, camisas ejecutivas Oxford, camisas estilo Columbia, scrubs médicos y <a href="/tienda/gorras-y-accesorios-de-cabeza" class="underline text-[#FF5E14]">gorras estructuradas y de malla trucker</a>.
+      <div class="pt-1 text-xs text-gray-700">
+        <strong class="text-gray-900">Aplicaciones ideales:</strong> Suéteres tipo polo de algodón piqué o dry-fit, camisas ejecutivas Oxford, camisas estilo Columbia, batas y scrubs médicos, y <a href="/tienda/gorras-y-accesorios-de-cabeza" class="underline text-[#FF5E14]">gorras estructuradas y trucker</a>.
       </div>
     </div>
+
+    <!-- IMAGEN REAL 2: BORDADORA INDUSTRIAL EN POLO / UNIFORME -->
+    <figure class="my-6 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+      <img
+        src="/images/trabajos/scrubs-medicos-filipinas-bordadas-universidad-de-panama.jpg"
+        alt="Bordado industrial computarizado de logotipo corporativo en taller RufPixel Panamá"
+        loading="lazy"
+        width="900"
+        height="1200"
+        class="w-full h-72 sm:h-80 object-cover"
+      />
+      <figcaption class="p-3 text-xs text-gray-500 text-center font-medium">
+        Control de puntada en taller: Bordado computarizado industrial de alta densidad sobre prendas institucionales y médicas.
+      </figcaption>
+    </figure>
 
     <!-- Técnica 4 -->
     <div class="bg-gray-50/70 border border-gray-200 rounded-2xl p-5 space-y-2">
@@ -410,11 +443,8 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">4. DTF Textil Directo para Prendas de Alta Rotación</h3>
       </div>
       <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
-        El <a href="/servicios/dtf-textil" class="text-[#FF5E14] font-bold underline">DTF textil</a> se integra elásticamente a las fibras de la prenda con tacto suave y transpirable, resistiendo más de 50 lavadas sin cuartearse ni perder nitidez fotográfica.
+        El <a href="/servicios/dtf-textil" class="text-[#FF5E14] font-bold underline">DTF textil</a> se integra de forma elástica a las fibras de la prenda con tacto suave y transpirable, resistiendo más de 50 lavadas sin cuartearse ni perder nitidez en camisetas de algodón o poliéster.
       </p>
-      <div class="pt-2 text-xs text-gray-700">
-        <strong class="text-gray-900">Aplicaciones ideales:</strong> T-shirts de algodón peinado para eventos técnicos (como ferias DeWalt), camisetas deportivas para torneos corporativos y suéteres de algodón negro o azul marino.
-      </div>
     </div>
 
     <!-- Técnica 5 -->
@@ -424,25 +454,19 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">5. Serigrafía Textil Tradicional y Tampografía Masiva</h3>
       </div>
       <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
-        Para repartir millares de piezas en congresos, ferias de empleo o activaciones comerciales, la serigrafía plana y la tampografía de alta velocidad ofrecen el costo unitario más bajo del mercado.
+        Para millares de artículos promocionales en congresos o activaciones masivas en Panamá, la serigrafía plana y la tampografía ofrecen el costo unitario más competitivo del mercado para <a href="/tienda/bolsas-y-totes" class="underline text-[#FF5E14]">bolsas de cambrel (non-woven)</a>, bolsas de manta sucia y bolígrafos plásticos.
       </p>
-      <div class="pt-2 text-xs text-gray-700">
-        <strong class="text-gray-900">Aplicaciones ideales:</strong> <a href="/tienda/bolsas-y-totes" class="underline text-[#FF5E14]">Bolsas ecológicas de cambrel (non-woven)</a>, bolsas de manta sucia de algodón crudo, bolsas de yute y bolígrafos plásticos para congresos masivos de 1.000 a 5.000 unidades.
-      </div>
     </div>
 
     <!-- Técnica 6 -->
     <div class="bg-gray-50/70 border border-gray-200 rounded-2xl p-5 space-y-2">
       <div class="flex items-center space-x-2">
         <span class="w-2.5 h-2.5 rounded-full bg-[#FF5E14]"></span>
-        <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">6. Impresión de Gran Formato y Estructuras Portátiles para Eventos</h3>
+        <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">6. Impresión de Gran Formato y Estructuras para Eventos</h3>
       </div>
       <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
-        Completamos el stand de tu empresa con <a href="/servicios/impresion-gran-formato" class="text-[#FF5E14] font-bold underline">impresión en gran formato y banners en Panamá</a> utilizando tintas ecosolventes de curado UV resistentes a la intemperie tropical.
+        Completamos el stand de tu empresa con <a href="/servicios/impresion-gran-formato" class="text-[#FF5E14] font-bold underline">banners en gran formato en Panamá</a>: lonas 13oz con ojales reforzados, Roll-Ups retráctiles de aluminio de 0.85 × 2.00 m, murales de backing telescópico para ferias en ATLAPA y banderolas tipo vela.
       </p>
-      <div class="pt-2 text-xs text-gray-700">
-        <strong class="text-gray-900">Aplicaciones ideales:</strong> Lonas banner 13oz con ojales, estructuras Roll-Up retráctiles de aluminio de 0.85 × 2.00 m, murales de backing fotográfico para stands en ATLAPA, banderolas tipo vela y vinil microperforado para vidrieras.
-      </div>
     </div>
 
     <!-- Técnica 7 -->
@@ -452,23 +476,86 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
         <h3 class="text-lg font-bold text-gray-900 font-outfit m-0">7. Impresión Offset y Digital de Papelería Comercial</h3>
       </div>
       <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
-        Producción de <a href="/servicios/flyers-y-folletos" class="text-[#FF5E14] font-bold underline">volantes publicitarios (flyers), dípticos, trípticos corporativos plegados</a>, tarjetas de presentación en cartulina sulfatada y carpetas institucionales para licitaciones.
+        Producción de <a href="/servicios/flyers-y-folletos" class="text-[#FF5E14] font-bold underline">volantes publicitarios (flyers), dípticos, trípticos corporativos plegados</a>, tarjetas de presentación y carpetas institucionales para juntas de accionistas y licitaciones.
       </p>
     </div>
   </div>
 </div>
 
-<!-- SECCIÓN 4: TABLA DE COSTOS CON BRANDING RUPIXEL -->
+<!-- SECCIÓN 4: GUÍA TÉCNICA DE MATERIALES (SECCIÓN INDEPENDIENTE H2) -->
 <div class="pt-6">
   <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
     <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">4</span>
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit m-0">
+      Guía Técnica de Materiales: Cómo Elegir el Sustrato Correcto según tu Presupuesto
+    </h2>
+  </div>
+
+  <p class="text-gray-600 leading-relaxed mb-4">
+    Un punto clave al trabajar con un taller fabricante es la asesoría sobre la durabilidad física de cada material ante el clima tropical de Panamá (con alta humedad ambiental y salinidad costera). A continuación detallamos los 4 materiales más solicitados en órdenes B2B y cómo responden al uso diario:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-6">
+    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
+      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-blue-100 text-blue-800 uppercase tracking-wide">Acero Inoxidable 304</span>
+      <h3 class="text-sm font-bold text-gray-900 font-outfit m-0">Termos y Botellas de Doble Pared al Vacío</h3>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">
+        El acero grado alimenticio 304 (18/8) no retiene olores y conserva bebidas frías por más de 18 horas bajo el sol panameño. Al grabarse a láser, la capa exterior horneada se vaporiza dejando el metal brillante con contraste permanente.
+      </p>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
+      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-emerald-100 text-emerald-800 uppercase tracking-wide">Bambú Natural Seleccionado</span>
+      <h3 class="text-sm font-bold text-gray-900 font-outfit m-0">Libretas Ejecutivas, Tablas y Sets Ecológicos</h3>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">
+        El bambú es un recurso renovable con alta densidad. Ajustamos la potencia del láser CO2 para lograr un quemado castaño oscuro cálido que resalta la veta natural de la madera sin quemar los trazos finos del logotipo corporativo.
+      </p>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
+      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-amber-100 text-amber-800 uppercase tracking-wide">Algodón Piqué y Dry-Fit</span>
+      <h3 class="text-sm font-bold text-gray-900 font-outfit m-0">Polos y Camisas para Climas Cálidos</h3>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">
+        Para personal que combina oficina y visitas técnicas de campo en Panamá, el algodón piqué de 200g ofrece presencia institucional sobria, mientras que el poliéster microperforado dry-fit asegura secado instantáneo. Ambos se bordan con entretela termo-adhesiva interior para evitar arrugas.
+      </p>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
+      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-purple-100 text-purple-800 uppercase tracking-wide">Lona Banner Frontlight 13oz</span>
+      <h3 class="text-sm font-bold text-gray-900 font-outfit m-0">Banners, Roll-Ups y Publicidad Exterior</h3>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">
+        La lona de 13 onzas laminada con trama de poliéster 500x500 resiste ráfagas de viento y tensión perimetral. En Roll-Ups retráctiles usamos sustratos anti-curvatura (*no-curl*) que se mantienen planos sin enrollarse hacia los lados durante eventos en hoteles o ferias.
+      </p>
+    </div>
+  </div>
+
+  <!-- IMAGEN REAL 3: DETALLE DE BAMBÚ GRABADO / KIT EJECUTIVO -->
+  <figure class="my-6 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+    <img
+      src="/images/trabajos/set-regalo-libreta-bambu-boligrafo-llavero-grabado-laser-panama.jpg"
+      alt="Detalle de personalización y grabado láser sobre libreta ejecutiva en bambú natural RufPixel Panamá"
+      loading="lazy"
+      width="1050"
+      height="1400"
+      class="w-full h-72 sm:h-80 object-cover"
+    />
+    <figcaption class="p-3 text-xs text-gray-500 text-center font-medium">
+      Sustratos naturales: Grabado láser sobre libreta de bambú ecológico y bolígrafo metálico terminado en caja de presentación.
+    </figcaption>
+  </figure>
+</div>
+
+<!-- SECCIÓN 5: ANÁLISIS DE COSTOS Y TABLA DE AHORRO -->
+<div class="pt-6">
+  <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
+    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">5</span>
     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit m-0">
       Análisis de Costos y Ahorro Real: Cotización de Fábrica vs. Revendedor
     </h2>
   </div>
 
   <p class="text-gray-600 leading-relaxed mb-4">
-    Para ilustrar con números reales el ahorro que genera comprar directo a taller, analicemos un pedido típico de dotación corporativa para un evento de aniversario de 100 colaboradores en Panamá:
+    Para ilustrar con números reales la diferencia presupuestaria de comprar directo a taller, analicemos un pedido típico de dotación corporativa para un evento empresarial de 100 colaboradores en Panamá:
   </p>
 
   <div class="overflow-x-auto my-6 border border-gray-200 rounded-2xl shadow-md bg-white">
@@ -524,22 +611,41 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
     </table>
   </div>
 
-  <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-    Ese ahorro neto de <strong>$860.00 USD</strong> le permite a la empresa compradora financiar por completo los banners del stand, o bien sumar 500 bolígrafos y bolsas de cambrel adicionales para los asistentes sin pedir aumentos presupuestarios a la gerencia.
+  <!-- NOTA FISCAL DE ITBMS -->
+  <p class="text-[11px] text-gray-500 italic mt-1 mb-6">
+    * Nota fiscal: Los montos presentados corresponden a costos netos de producción B2B antes de ITBMS (7%). En nuestro catálogo web y cotizaciones formales se desglosa el impuesto según la normativa tributaria panameña.
   </p>
+
+  <!-- CTA INTERMEDIO -->
+  <div class="my-6 p-6 rounded-2xl bg-gradient-to-r from-orange-50 via-white to-orange-50 border border-[#FF5E14]/30 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="space-y-1 text-center sm:text-left">
+      <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#FF5E14] block">Cotización Directa de Taller</span>
+      <h3 class="text-sm font-bold text-gray-900 m-0 font-outfit">¿Tienes un requerimiento corporativo en marcha para tu empresa?</h3>
+      <p class="text-xs text-gray-600 m-0">Envíanos tus cantidades aproximadas y logotipo para enviarte una cotización neta de taller sin márgenes de reventa.</p>
+    </div>
+    <a
+      href="https://wa.me/50764454084?text=Hola%20RufPixel,%20le%C3%AD%20la%20tabla%20de%20ahorro%20en%20su%20art%C3%ADculo%20y%20quisiera%20cotizar%20un%20pedido%20con%20precios%20de%20taller."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="shrink-0 bg-[#25D366] hover:bg-[#1EBE5D] text-white px-5 py-3 rounded-xl text-xs font-black shadow-md transition-all inline-flex items-center space-x-2"
+    >
+      <span>Escribir al Taller (+507 6445-4084)</span>
+      <span>→</span>
+    </a>
+  </div>
 </div>
 
-<!-- SECCIÓN 5: TELÉFONO ROTO Y PROTOCOLO -->
+<!-- SECCIÓN 6: TELÉFONO ROTO Y PROTOCOLO -->
 <div class="pt-6">
   <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
-    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">5</span>
+    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">6</span>
     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit m-0">
       El Costo Oculto del "Teléfono Roto": Errores de Pre-prensa y Retrasos
     </h2>
   </div>
 
   <p class="text-gray-600 leading-relaxed mb-4">
-    Más allá del aspecto económico, el riesgo más severo al operar con revendedores es la pérdida de control técnico sobre la marca. Si un lote de 200 camisas bordadas llega con el color corporativo equivocado a 24 horas de la feria comercial, el daño reputacional es irreparable.
+    Más allá del aspecto económico, el riesgo más crítico de contratar intermediarios es la pérdida de control técnico sobre la marca. Si un lote de 200 camisas bordadas llega con el color corporativo equivocado o el isotipo desfasado a 24 horas de la feria comercial, el daño en imagen pública es irreversible.
   </p>
 
   <div class="my-6 p-6 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-4">
@@ -579,10 +685,39 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
   </div>
 </div>
 
-<!-- SECCIÓN 6: CASOS POR SECTOR -->
+<!-- SECCIÓN 7: ECOSISTEMA TODO EN UNO -->
 <div class="pt-6">
   <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
-    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">6</span>
+    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">7</span>
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit m-0">
+      Solución Todo en Uno: Unificando Merchandising, Textiles y Gran Formato
+    </h2>
+  </div>
+
+  <p class="text-gray-600 leading-relaxed mb-4">
+    Gestionar compras con tres o cuatro proveedores distintos genera fricción administrativa innecesaria: diferentes órdenes de compra, tiempos desalineados y múltiples facturas para conciliar. En RufPixel centralizamos el ecosistema gráfico de tu empresa bajo una sola <strong>Factura Fiscal panameña formal con RUC y Dígito Verificador (DV)</strong>:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-6">
+    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
+      <h3 class="font-bold text-gray-900 text-sm font-outfit text-[#FF5E14] m-0">1. Artículos y Regalos B2B</h3>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">Termos, tazas térmicas, botellas deportivas, bolígrafos de metal, libretas de bambú, paraguas de golf, lanyards y llaveros acrílicos o metálicos con grabado láser o UV DTF.</p>
+    </div>
+    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
+      <h3 class="font-bold text-gray-900 text-sm font-outfit text-[#FF5E14] m-0">2. Textiles y Uniformes</h3>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">Bordado y estampado de camisas Oxford, polos piqué y dry-fit, camisas estilo Columbia, scrubs médicos, gorras estructuradas y t-shirts con hilos industriales resistentes.</p>
+    </div>
+    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
+      <h3 class="font-bold text-gray-900 text-sm font-outfit text-[#FF5E14] m-0">3. Gran Formato y Ferias</h3>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">Banners Roll-Up retráctiles, murales fotográficos de backing telescópico, banderolas tipo vela, manteles impresos para mesas plegables y vinil decorativo o esmerilado.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 8: CASOS DE ÉXITO POR INDUSTRIA -->
+<div class="pt-6">
+  <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
+    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">8</span>
     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit m-0">
       Casos de Éxito Reales por Industria en Panamá
     </h2>
@@ -591,11 +726,11 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6">
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
       <strong class="text-gray-900 block font-bold text-sm">🏥 Sector Salud y Clínicas:</strong>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">Bordados de escudos en scrubs médicos antifluido para la Facultad de Medicina de la Universidad de Panamá, y bolsas ecológicas en cambrel para congresos de Stérimar.</p>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">Bordados de escudos en scrubs médicos antifluido para la Facultad de Medicina de la Universidad de Panamá, y bolsas ecológicas en cambrel para congresos farmacéuticos de Stérimar.</p>
     </div>
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
       <strong class="text-gray-900 block font-bold text-sm">🏢 Bienes Raíces y Construcción:</strong>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">Welcome Kits residenciales para entrega de llaves en Arbú Costa Verde (vasos térmicos grabados y llavero acrílico), junto con gigantografías para vallas exteriores.</p>
+      <p class="text-xs text-gray-600 leading-relaxed m-0">Welcome Kits residenciales para entrega de llaves en Arbú Costa Verde (vasos térmicos grabados y llavero acrílico), junto con gigantografías para vallas exteriores en Panamá Oeste.</p>
     </div>
     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-2">
       <strong class="text-gray-900 block font-bold text-sm">🏛️ Banca e Instituciones Públicas:</strong>
@@ -606,117 +741,76 @@ En esta guía exhaustiva para compradores corporativos, analizamos en detalle c�
       <p class="text-xs text-gray-600 leading-relaxed m-0">Botellas de aluminio para Guess, backings gigantes para ferias DeWalt y toldos retráctiles para activaciones exteriores de Stanley Black & Decker.</p>
     </div>
   </div>
+
+  <!-- IMAGEN REAL 4: PEDIDO TERMINADO DE AGENDAS PGN -->
+  <figure class="my-6 rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+    <img
+      src="/images/trabajos/agendas-ejecutivas-cuero-pgn-procuraduria-general-panama.jpg"
+      alt="Pedido corporativo de agendas ejecutivas en cuero con termoestampado institucional terminado en Panamá"
+      loading="lazy"
+      width="900"
+      height="1200"
+      class="w-full h-72 sm:h-80 object-cover"
+    />
+    <figcaption class="p-3 text-xs text-gray-500 text-center font-medium">
+      Producción institucional entregada: Agendas ejecutivas en polipiel azul marino con termoestampado y grabado láser de escudo oficial.
+    </figcaption>
+  </figure>
 </div>
 
-<!-- SECCIÓN 7: FAQS -->
+<!-- SECCIÓN 9: PREGUNTAS FRECUENTES (ESTRICTAMENTE LAS 4 PREGUNTAS) -->
 <div class="pt-6">
   <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
-    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">7</span>
+    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">9</span>
     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 font-outfit m-0">
-      Preguntas Frecuentes sobre Compra a Fábrica de Promocionales
+      Preguntas Frecuentes sobre Compra a Fábrica de Promocionales en Panamá
     </h2>
   </div>
 
   <div class="space-y-4 my-6">
     <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
-      <h3 class="font-bold text-sm text-gray-900 font-outfit m-0">¿Cuál es el pedido mínimo para cotizar con precios de fábrica?</h3>
-      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">En nuestro catálogo B2B en línea los paquetes inician en 50, 100 y 250 unidades por modelo. Sin embargo, en taller atendemos pedidos de menor volumen para regalos directivos o muestras (desde 1 sola pieza en grabado láser, bordado de camisas o banners Roll-Up).</p>
+      <h3 class="font-bold text-sm text-gray-900 font-outfit m-0">¿Cuál es el pedido mínimo para cotizar con precios de fábrica en Panamá?</h3>
+      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
+        En nuestro catálogo B2B en línea los paquetes inician en 50, 100 y 250 unidades por modelo. En taller también atendemos pedidos de menor volumen para regalos directivos o muestras previas (desde 1 sola pieza en grabado láser de termos, bordado de camisas o banners Roll-Up).
+      </p>
     </div>
     
     <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
       <h3 class="font-bold text-sm text-gray-900 font-outfit m-0">¿Puedo llevar mis propios artículos o prendas para que hagan el bordado o grabado?</h3>
-      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">Sí. Prestamos servicio de maquila gráfica directa: puedes traer tus propios termos Stanley, polos, camisas de trabajo o mochilas a nuestro taller de La Chorrera o coordinar la recepción en Ciudad de Panamá, cobrando únicamente la mano de obra del marcado.</p>
+      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
+        Sí. Prestamos servicio de maquila gráfica directa: puedes traer tus propios termos Stanley, polos, camisas de trabajo o mochilas a nuestro taller de La Chorrera o coordinar la recepción en Ciudad de Panamá, cobrando únicamente la mano de obra del marcado.
+      </p>
     </div>
 
     <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
       <h3 class="font-bold text-sm text-gray-900 font-outfit m-0">¿Cuáles son los tiempos habituales de producción y despacho?</h3>
-      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">Un pedido estándar de 50 a 250 artículos personalizados toma entre 3 y 5 días hábiles tras aprobar la simulación digital. Para eventos con fecha cerrada contamos con servicio prioritario en taller sujeto a disponibilidad de máquina.</p>
+      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
+        Un pedido estándar de 50 a 250 artículos personalizados toma entre 3 y 5 días hábiles tras aprobar la simulación digital. Para eventos con fecha cerrada contamos con servicio prioritario en taller sujeto a disponibilidad de máquina.
+      </p>
     </div>
 
     <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
       <h3 class="font-bold text-sm text-gray-900 font-outfit m-0">¿Hacen envíos a Ciudad de Panamá, Panamá Oeste y provincias centrales?</h3>
-      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">Sí. Realizamos entregas directas a oficinas corporativas en Ciudad de Panamá (Costa del Este, Obarrio, Punta Pacífica, Clayton), entregas en Panamá Oeste (Costa Verde, La Chorrera, Arraiján) y despachos nacionales por Uno Express, Fletes Chavale y Ferguson con número de guía rastreable.</p>
+      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed m-0">
+        Sí. Realizamos entregas directas a oficinas corporativas en Ciudad de Panamá (Costa del Este, Obarrio, Punta Pacífica, Clayton), entregas en Panamá Oeste (Costa Verde, La Chorrera, Arraiján) y despachos nacionales por Uno Express, Fletes Chavale y Ferguson con número de guía rastreable.
+      </p>
     </div>
   </div>
 </div>
 
-
-<!-- SECCIÓN TÉCNICA EXTRA: GUÍA DE MATERIALES -->
-<div class="pt-6">
-  <div class="flex items-center space-x-3 mb-4 border-b border-gray-100 pb-3">
-    <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-[#FF5E14]/10 text-[#FF5E14] text-sm font-black shrink-0">★</span>
-    <h3 class="text-xl sm:text-2xl font-extrabold text-gray-900 font-outfit m-0">
-      Guía Técnica de Materiales: Cómo Elegir el Sustrato Correcto según tu Presupuesto
-    </h3>
-  </div>
-
-  <p class="text-gray-600 leading-relaxed mb-4">
-    Uno de los diferenciales al trabajar con un taller fabricante es la asesoría sobre la durabilidad física de cada material en el clima tropical de Panamá (con alta humedad ambiental y salinidad). A continuación detallamos los 4 materiales más solicitados en órdenes B2B y cómo responden al uso diario:
+<!-- PÁRRAFO DE CIERRE EDITORIAL ANTI-IA -->
+<div class="pt-6 border-t border-gray-200">
+  <p class="text-base text-gray-800 leading-relaxed font-normal">
+    Al final, la diferencia entre trabajar con un intermediario o con un taller directo se nota en dos lugares: en tu presupuesto y en la tranquilidad de recibir el pedido tal como lo aprobaste en pre-prensa. Si estás planificando una feria comercial en ATLAPA, una campaña de fin de año o la dotación corporativa de tu empresa, coordina directamente con quienes operan las máquinas. Cotiza con nosotros hoy mismo y compruébalo en tu próxima orden.
   </p>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-6">
-    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
-      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-blue-100 text-blue-800 uppercase tracking-wide">Acero Inoxidable 304</span>
-      <h4 class="text-sm font-bold text-gray-900 font-outfit m-0">Termos y Botellas de Doble Pared al Vacío</h4>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">
-        El acero grado alimenticio 304 (18/8) no retiene sabores ni olores y mantiene bebidas frías por más de 18 horas bajo el sol panameño. Al ser grabado a láser, el recubrimiento de polvo horneado se vaporiza dejando el metal brillante al descubierto con contraste permanente que no se borra con lavadas continuas.
-      </p>
-    </div>
-
-    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
-      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-emerald-100 text-emerald-800 uppercase tracking-wide">Bambú Natural Seleccionado</span>
-      <h4 class="text-sm font-bold text-gray-900 font-outfit m-0">Libretas Ejecutivas, Tablas y Accesorios Ecológicos</h4>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">
-        El bambú es un recurso renovable de rápido crecimiento con alta densidad superficial. En nuestro taller ajustamos la potencia del láser CO2 para lograr un quemado castaño oscuro cálido que resalta la veta natural de la madera sin carbonizar los bordes finos del logotipo corporativo.
-      </p>
-    </div>
-
-    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
-      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-amber-100 text-amber-800 uppercase tracking-wide">Algodón Piqué y Dry-Fit</span>
-      <h4 class="text-sm font-bold text-gray-900 font-outfit m-0">Polos y Camisas para Climas Cálidos</h4>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">
-        Para personal que combina oficina y visitas técnicas a campo en Panamá, el algodón piqué 100% de 200g ofrece presencia institucional sobria, mientras que el poliéster microperforado dry-fit asegura transpirabilidad y secado instantáneo. Ambos sustratos se bordan con entretela termo-adhesiva interior para evitar arrugas.
-      </p>
-    </div>
-
-    <div class="bg-white border border-gray-200 rounded-2xl p-5 space-y-2 shadow-sm">
-      <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-black bg-purple-100 text-purple-800 uppercase tracking-wide">Lona Banner Frontlight 13oz</span>
-      <h4 class="text-sm font-bold text-gray-900 font-outfit m-0">Banners, Roll-Ups y Publicidad Exterior</h4>
-      <p class="text-xs text-gray-600 leading-relaxed m-0">
-        La lona de 13 onzas laminada con trama interna de poliéster 500x500 resiste ráfagas de viento y tensión perimetral. En Roll-Ups retráctiles utilizamos sustratos anti-curvatura (*no-curl*) que se mantienen perfectamente planos y verticales sin enrollarse hacia los lados durante congresos y ferias.
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- CONCLUSIÓN -->
-<div class="pt-6">
-  <div class="bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-white rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl border border-gray-800">
-    <span class="text-xs uppercase font-extrabold tracking-widest text-[#FF5E14]">Decisión Inteligente de Compras</span>
-    <h2 class="text-xl sm:text-3xl font-extrabold text-white font-outfit m-0">
-      Optimiza tu Inversión Publicitaria Trabajando Directo con Fábrica en Panamá
-    </h2>
-    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed m-0">
-      En un entorno empresarial competitivo donde cada dólar debe justificar su retorno, adquirir artículos promocionales a través de intermediarios es un gasto innecesario. Trabajar de la mano de una <strong>fábrica y taller directo en Panamá</strong> protege tu presupuesto con ahorros reales del 30% y garantiza que tu marca se reproduzca con exactitud milimétrica.
-    </p>
-    <div class="pt-2 flex flex-wrap gap-3">
-      <a href="/articulos-promocionales-panama" class="bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3 rounded-xl text-xs font-extrabold shadow-lg shadow-[#FF5E14]/30 transition-all inline-flex items-center space-x-2">
-        <span>Ver Catálogo B2B en Línea</span>
-        <span>→</span>
-      </a>
-      <a href="https://wa.me/50764454084?text=Hola%20RufPixel,%20le%C3%AD%20el%20art%C3%ADculo%20sobre%20f%C3%A1brica%20de%20promocionales%20y%20quiero%20cotizar%20un%20pedido%20directo." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-6 py-3 rounded-xl text-xs font-extrabold shadow-md transition-all inline-flex items-center space-x-2">
-        <span>Cotizar con Asesor en WhatsApp</span>
-      </a>
-    </div>
-  </div>
 </div>
 
 </div>`,
     category: 'Promocionales & Merchandising',
     categorySlug: 'promocionales',
     date: '25 de Noviembre, 2026',
-    author: 'Equipo RufPixel',
-    readTime: '15 min de lectura',
+    author: 'Rubén Fernández · Dirección de Producción, RufPixel',
+    readTime: '7 min de lectura',
     image: '/images/blog/fabrica-articulos-promocionales-taller-directo-panama.jpg',
     tags: ['Fábrica', 'Artículos Promocionales', 'Merchandising', 'Regalos Promocionales', 'B2B', 'Taller Directo', 'Grabado Láser', 'Bordados', 'Gran Formato']
   },

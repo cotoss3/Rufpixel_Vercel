@@ -2,8 +2,28 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug } from '@/lib/wordpress';
-import { ArrowLeft, Clock, User, Tag, PhoneCall, MessageCircle } from 'lucide-react';
-import { ArticleSchema, BreadcrumbListSchema } from '@/components/seo/SchemaOrg';
+import { MOCK_BLOG_POSTS } from '@/lib/mockData';
+import { ArrowLeft, Clock, User, PhoneCall, ArrowRight, BookOpen } from 'lucide-react';
+import { ArticleSchema, BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
+
+const FABRICA_FAQS = [
+  {
+    question: '¿Cuál es el pedido mínimo para cotizar con precios de fábrica en Panamá?',
+    answer: 'En nuestro catálogo B2B en línea los paquetes inician en 50, 100 y 250 unidades por modelo. En taller también atendemos pedidos de menor volumen para regalos directivos o muestras previas (desde 1 sola pieza en grabado láser de termos, bordado de camisas o banners Roll-Up).'
+  },
+  {
+    question: '¿Puedo llevar mis propios artículos o prendas para que hagan el bordado o grabado?',
+    answer: 'Sí. Prestamos servicio de maquila gráfica directa: puedes traer tus propios termos Stanley, polos, camisas de trabajo o mochilas a nuestro taller de La Chorrera o coordinar la recepción en Ciudad de Panamá, cobrando únicamente la mano de obra del marcado.'
+  },
+  {
+    question: '¿Cuáles son los tiempos habituales de producción y despacho?',
+    answer: 'Un pedido estándar de 50 a 250 artículos personalizados toma entre 3 y 5 días hábiles tras aprobar la simulación digital. Para eventos con fecha cerrada contamos con servicio prioritario en taller sujeto a disponibilidad de máquina.'
+  },
+  {
+    question: '¿Hacen envíos a Ciudad de Panamá, Panamá Oeste y provincias centrales?',
+    answer: 'Sí. Realizamos entregas directas a oficinas corporativas en Ciudad de Panamá (Costa del Este, Obarrio, Punta Pacífica, Clayton), entregas en Panamá Oeste (Costa Verde, La Chorrera, Arraiján) y despachos nacionales por Uno Express, Fletes Chavale y Ferguson con número de guía rastreable.'
+  }
+];
 
 const BLOG_SEO_TITLES: Record<string, string> = {
   'como-preparar-tus-archivos-para-impresion-sin-errores': 'Cómo Preparar Archivos para Impresión CMYK | RufPixel', // 53
@@ -22,7 +42,7 @@ const BLOG_SEO_TITLES: Record<string, string> = {
   'que-pedir-cuando-necesitas-50-unidades-entrega-rapida': 'Promocionales desde 50 Unidades en Panamá | RufPixel', // 52
   'rollup-vs-banner-arana-cual-elegir-para-tu-evento': 'Roll-Up vs Banner Araña para Eventos Panamá | RufPixel', // 54
   'vinil-adhesivo-microperforado-o-esmerilado-vidrieras-panama': 'Vinil Adhesivo, Microperforado y Esmerilado | RufPixel', // 54
-  'fabrica-de-articulos-promocionales-vs-revendedores-panama': 'Fábrica de Artículos Promocionales en Panamá | RufPixel', // 55
+  'fabrica-de-articulos-promocionales-vs-revendedores-panama': 'Fábrica de Artículos Promocionales en Panamá: Ahorra 30% | RufPixel',
 };
 
 function buildBlogTitle(title: string, slug?: string): string {
@@ -147,57 +167,93 @@ export default async function BlogPostDetailPage({ params }: { params: { slug: s
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
-      {/* Direct WhatsApp Quote Conversion Box */}
-      <div className="bg-gradient-to-r from-gray-900 via-gray-950 to-gray-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl border border-gray-800">
+      {/* Schema FAQPage si aplica */}
+      {post.slug === 'fabrica-de-articulos-promocionales-vs-revendedores-panama' && (
+        <FAQPageSchema questions={FABRICA_FAQS} />
+      )}
+
+      {/* Único bloque CTA final limpio y directo (B2B + WhatsApp) */}
+      <div className="bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl border border-gray-800">
         <div className="space-y-2 text-xs sm:text-sm text-gray-300 max-w-xl">
           <span className="text-[#FF5E14] font-extrabold uppercase tracking-wider text-xs flex items-center space-x-1.5">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Atención Inmediata por WhatsApp</span>
+            <span>Atención Directa de Fábrica en Panamá</span>
           </span>
-          <h3 className="text-xl sm:text-2xl font-extrabold text-white font-outfit">
+          <h3 className="text-xl sm:text-2xl font-extrabold text-white font-outfit m-0">
             ¿Deseas cotizar este servicio o material con tu logo?
           </h3>
-          <p className="leading-relaxed text-gray-300">
-            Escríbenos directamente a nuestro WhatsApp oficial. Indícanos tu cantidad aproximada, medidas o requerimiento y te enviamos asesoría técnica con cotización formal el mismo día.
+          <p className="leading-relaxed text-gray-300 m-0">
+            Explora nuestro catálogo en línea con precios por escala o escríbenos directamente a nuestro WhatsApp oficial para recibir asesoría técnica y una propuesta formal el mismo día.
           </p>
         </div>
-        <a
-          href={`https://wa.me/50764454084?text=${encodeURIComponent(
-            `Hola RufPixel, estuve leyendo el artículo "${post.title}" y quisiera solicitar una cotización formal.`
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 bg-[#25D366] hover:bg-[#20ba5a] text-white px-7 py-4 rounded-2xl text-sm font-extrabold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all flex items-center space-x-2.5"
-        >
-          <PhoneCall className="w-5 h-5" />
-          <span>Cotizar por WhatsApp Ahora</span>
-        </a>
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+          <Link
+            href="/articulos-promocionales-panama"
+            className="bg-[#FF5E14] hover:bg-[#E04700] text-white px-6 py-3.5 rounded-2xl text-xs font-black shadow-md transition-all text-center flex items-center justify-center space-x-2"
+          >
+            <span>Ver Catálogo B2B en Línea</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <a
+            href={`https://wa.me/50764454084?text=${encodeURIComponent(
+              `Hola RufPixel, estuve leyendo el artículo "${post.title}" y quisiera solicitar una cotización formal.`
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-3.5 rounded-2xl text-xs font-black shadow-lg shadow-emerald-500/25 transition-all text-center flex items-center justify-center space-x-2"
+          >
+            <PhoneCall className="w-4 h-4" />
+            <span>Cotizar por WhatsApp Ahora</span>
+          </a>
+        </div>
       </div>
 
-      {/* Footer Share, Tags & Quick WhatsApp Action */}
-      <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center space-x-2 text-xs flex-wrap">
-          <Tag className="w-4 h-4 text-[#FF5E14]" />
-          <span className="font-bold text-gray-900">Etiquetas:</span>
-          {post.tags.map((t, idx) => (
-            <span key={idx} className="bg-gray-100 px-2 py-0.5 rounded text-[11px] text-gray-600">
-              #{t}
-            </span>
-          ))}
+      {/* Módulo de Guías Relacionadas del Blog (Retención y Topic Authority) */}
+      <section className="pt-8 border-t border-gray-200 space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <BookOpen className="w-5 h-5 text-[#FF5E14]" />
+            <h3 className="text-lg font-extrabold text-gray-900 font-outfit m-0">
+              Guías y Artículos Relacionados
+            </h3>
+          </div>
+          <Link href="/blog" className="text-xs font-bold text-[#FF5E14] hover:underline flex items-center space-x-1">
+            <span>Ver todo el blog</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
-        <a
-          href={`https://wa.me/50764454084?text=${encodeURIComponent(
-            `Hola RufPixel, me interesa cotizar: ${post.title}`
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-900 hover:bg-[#FF5E14] text-white px-6 py-3 rounded-xl text-xs font-bold shadow-md transition-colors flex items-center space-x-2"
-        >
-          <MessageCircle className="w-4 h-4 text-[#25D366]" />
-          <span>Chatear con un Asesor</span>
-        </a>
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {MOCK_BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3).map((rPost) => (
+            <Link
+              key={rPost.id}
+              href={`/blog/${rPost.slug}`}
+              className="group bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:border-[#FF5E14]/40 transition-all flex flex-col"
+            >
+              <div className="h-36 overflow-hidden bg-gray-100 relative">
+                <img
+                  src={rPost.image}
+                  alt={rPost.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <span className="absolute top-2 left-2 bg-black/75 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-xs">
+                  {rPost.category}
+                </span>
+              </div>
+              <div className="p-4 flex-1 flex flex-col justify-between space-y-2">
+                <h4 className="text-xs font-bold text-gray-900 group-hover:text-[#FF5E14] transition-colors line-clamp-2 leading-snug">
+                  {rPost.title}
+                </h4>
+                <div className="text-[11px] text-gray-500 flex items-center justify-between pt-2 border-t border-gray-100">
+                  <span>{rPost.readTime}</span>
+                  <span className="text-[#FF5E14] font-bold group-hover:translate-x-0.5 transition-transform">Leer →</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </article>
   );
 }

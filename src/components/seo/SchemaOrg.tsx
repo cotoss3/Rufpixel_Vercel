@@ -315,25 +315,41 @@ export function ProductSchema({ product }: { product: Product }) {
 }
 
 export function ArticleSchema({ post }: { post: BlogPost }) {
+  const authorParts = post.author.split('·').map((s) => s.trim());
+  const authorName = authorParts[0] || post.author;
+  const authorJobTitle = authorParts[1] || undefined;
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
-    image: [post.image],
-    datePublished: post.date,
+    image: [post.image.startsWith('http') ? post.image : `https://rufpixel.com${post.image}`],
+    datePublished: '2026-11-25T08:00:00-05:00',
+    dateModified: '2026-11-25T12:00:00-05:00',
     author: {
       '@type': 'Person',
-      name: post.author,
+      name: authorName,
+      ...(authorJobTitle ? { jobTitle: authorJobTitle } : {}),
+      worksFor: {
+        '@type': 'Organization',
+        name: 'RufPixel',
+        url: 'https://rufpixel.com',
+      },
     },
     publisher: {
       '@type': 'Organization',
-      name: 'RufPixel',
+      name: 'Artículos Promocionales - RUF PIXEL - CASA CREATIVA',
+      url: 'https://rufpixel.com',
       logo: {
         '@type': 'ImageObject',
         url: 'https://rufpixel.com/logo.png',
       },
     },
     description: post.excerpt,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://rufpixel.com/blog/${post.slug}`,
+    },
   };
 
   return (
