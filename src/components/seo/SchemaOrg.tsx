@@ -254,6 +254,13 @@ export function ProductSchema({ product }: { product: Product }) {
       addressRegion: 'Panamá Oeste',
       addressCountry: 'PA',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '16',
+      bestRating: '5',
+      worstRating: '1',
+    },
   };
 
   const returnPolicyObj = {
@@ -303,13 +310,6 @@ export function ProductSchema({ product }: { product: Product }) {
       name: 'RufPixel',
     },
     category: product.category || 'Artículos Promocionales',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '24',
-      bestRating: '5',
-      worstRating: '1',
-    },
     offers: {
       '@type': 'AggregateOffer',
       url: `https://rufpixel.com/productos/${product.slug}`,

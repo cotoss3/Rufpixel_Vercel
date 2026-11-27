@@ -434,8 +434,8 @@ export default function ProductDetailClient({
               <div className="flex items-start space-x-2">
                 <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-bold">Artículos 100% Personalizados</strong>
-                  <span className="text-[11px] text-gray-400">Exclusivos para tu marca. Sin devolución tras producción; garantía de reposición de fábrica.</span>
+                  <strong className="text-white block font-bold">5.0 ★ en Google Maps (16 Reseñas)</strong>
+                  <span className="text-[11px] text-gray-400">Taller verificado en Panamá. Sin devolución en personalizados; garantía total de fábrica.</span>
                 </div>
               </div>
 
