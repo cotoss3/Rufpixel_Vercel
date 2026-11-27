@@ -188,7 +188,11 @@ export default function ArticulosPromocionalesPanamaPage() {
     },
     {
       question: '¿Cuáles son los plazos de entrega en Ciudad de Panamá y provincias?',
-      answer: 'Los plazos de producción se definen según el volumen de unidades y la técnica seleccionada una vez aprobado el boceto digital de tu logotipo. Despachamos directamente desde nuestro taller de producción en La Chorrera hacia Ciudad de Panamá, Panamá Oeste, Colón, Coclé, Chiriquí y todo el país.'
+      answer: 'El tiempo estimado de entrega para producción en masa es de 5 a 7 días hábiles a partir de la confirmación formal del pedido y la aprobación del arte digital. Despachamos directamente desde nuestro taller en La Chorrera hacia Ciudad de Panamá, Panamá Oeste, Colón, Coclé, Chiriquí y todo el país.'
+    },
+    {
+      question: '¿Tienen política de devolución los artículos promocionales personalizados?',
+      answer: 'Al ser artículos 100% personalizados con el logotipo, colores e identidad de tu empresa, no se admiten cancelaciones ni devoluciones por retracto una vez aprobada la muestra digital y comenzada la producción en masa. Ofrecemos garantía directa de taller con reposición inmediata ante cualquier defecto de fabricación comprobado.'
     },
     {
       question: '¿Qué métodos de pago aceptan para empresas e instituciones?',

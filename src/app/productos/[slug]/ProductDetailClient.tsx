@@ -233,7 +233,15 @@ export default function ProductDetailClient({
   const productFaqs = [
     {
       question: `¿Cuál es el tiempo de entrega de ${product.name} en Panamá?`,
-      answer: 'El tiempo de producción se calcula según el volumen de unidades y la técnica seleccionada una vez aprobado el arte digital. Coordinamos los plazos directamente vía WhatsApp.'
+      answer: 'El tiempo estimado de entrega para producción en masa es de 5 a 7 días hábiles tras la aprobación final del diseño digital y la confirmación del pedido. Despachamos a toda Ciudad de Panamá, Panamá Oeste y provincias.'
+    },
+    {
+      question: `¿Cuál es el pedido mínimo de compra para ${product.name}?`,
+      answer: 'Los precios mayoristas aplican a partir de 50 unidades (con tramos de descuento escalonados a 100 y 250 unidades). Si necesitas cantidades menores o muestras personalizadas, contáctanos directamente a nuestro WhatsApp oficial (+507 6445-4084).'
+    },
+    {
+      question: '¿Tienen política de devolución los productos personalizados?',
+      answer: 'Al tratarse de artículos 100% personalizados con el logotipo o identidad de tu empresa, no aplican devoluciones ni cancelaciones una vez aprobada la prueba digital e iniciada la producción en masa. Garantizamos la reposición inmediata ante cualquier defecto de fábrica comprobado de taller.'
     },
     {
       question: `¿Puedo pedir una muestra previa de ${product.name} antes de la orden mayorista?`,
@@ -339,6 +347,22 @@ export default function ProductDetailClient({
                   <span>Total Pedido (1 ud): <strong>${(singleUnitPriceWith35 * quantity).toFixed(2)} USD</strong></span>
                 </div>
               )}
+
+              {/* Badges de Condiciones Comerciales Claras */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 border-t border-gray-200/80 mt-2">
+                <div className="flex items-center space-x-1.5 text-[11px] font-extrabold text-gray-700 bg-white px-2.5 py-1.5 rounded-lg border border-gray-200 shadow-2xs">
+                  <Tag className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />
+                  <span>Mínimo: <strong>Desde 50 uds</strong></span>
+                </div>
+                <div className="flex items-center space-x-1.5 text-[11px] font-extrabold text-orange-950 bg-orange-50 px-2.5 py-1.5 rounded-lg border border-orange-200/80 shadow-2xs">
+                  <Clock className="w-3.5 h-3.5 text-[#FF5E14] shrink-0" />
+                  <span>Entrega: <strong>5 a 7 días</strong> (masa)</span>
+                </div>
+                <div className="flex items-center space-x-1.5 text-[11px] font-extrabold text-gray-700 bg-white px-2.5 py-1.5 rounded-lg border border-gray-200 shadow-2xs">
+                  <ShieldCheck className="w-3.5 h-3.5 text-gray-500 shrink-0" />
+                  <span>Personalizado: <strong>Sin devolución</strong></span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -352,19 +376,19 @@ export default function ProductDetailClient({
             <ul className="space-y-1.5 text-gray-700">
               <li className="flex items-start space-x-2">
                 <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Pedido mínimo:</strong> Paquetes mayoristas a partir de <strong>50 unidades</strong> (tramos de 50, 100 y 250).</span>
+                <span><strong>Pedido mínimo:</strong> Precios mayoristas a partir de <strong>50 unidades</strong> (escalas de 50, 100 y 250 uds).</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Técnicas recomendadas:</strong> {product.techniques?.join(', ') || 'Personalización de alta resistencia en taller'}.</span>
+                <span><strong>Tiempo de entrega:</strong> <strong>5 a 7 días hábiles</strong> para producción en masa tras aprobación final del arte digital.</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Tiempos de entrega:</strong> Plazos definidos según volumen y técnica tras aprobación del arte digital.</span>
+                <span><strong>Sin devolución:</strong> Al ser productos <strong>100% personalizados</strong> con tu logotipo, no se aceptan devoluciones tras producción (garantía total de reposición por defecto de fábrica comprobado).</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Precios transparentes:</strong> Desde <strong>${displayUnitPrice.toFixed(2)} USD</strong> por unidad con descuentos automáticos por volumen.</span>
+                <span><strong>Técnicas de personalización:</strong> {product.techniques?.join(', ') || 'Grabado láser, serigrafía o transfer textil de alta fijación'}.</span>
               </li>
             </ul>
           </div>
@@ -378,15 +402,15 @@ export default function ProductDetailClient({
             <ul className="space-y-1.5 text-gray-700">
               <li className="flex items-start space-x-2">
                 <span className="text-red-500 font-bold shrink-0">•</span>
+                <span><strong>No admite devoluciones por cambio de opinión:</strong> Son artículos corporativos fabricados y grabados a medida con tu marca; la producción en masa (5 a 7 días) inicia tras tu aprobación formal.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-red-500 font-bold shrink-0">•</span>
+                <span><strong>No es para emergencias de menos de 48 horas sin validación previa:</strong> La producción en masa requiere curado y control de calidad de 5 a 7 días hábiles.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-red-500 font-bold shrink-0">•</span>
                 <span>No sustituye un proceso de vectorizado profesional si el logotipo suministrado se encuentra en baja resolución o pixelado.</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-red-500 font-bold shrink-0">•</span>
-                <span>No es adecuado para entregas de emergencia de menos de 12 horas sin validación previa de stock y capacidad en máquinas.</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-red-500 font-bold shrink-0">•</span>
-                <span>Los colores en pantalla (RGB) pueden tener ligeras variaciones físicas al imprimirse en tintas de taller o transferencias textiles.</span>
               </li>
             </ul>
           </div>
@@ -395,39 +419,39 @@ export default function ProductDetailClient({
           <div className="bg-[#0D0D0D] text-white p-5 rounded-2xl border border-gray-800 space-y-3 text-xs shadow-lg">
             <div className="flex items-center space-x-2 text-[#FF5E14] font-extrabold text-sm border-b border-gray-800 pb-2">
               <Sparkles className="w-4 h-4" />
-              <span>Garantías & Servicios RufPixel</span>
+              <span>Garantías & Políticas de Producción RufPixel</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-300">
               <div className="flex items-start space-x-2">
                 <Clock className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-bold">Despacho y Entrega</strong>
-                  <span className="text-[11px] text-gray-400">Envíos directos en Ciudad de Panamá y todo el país.</span>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-2">
-                <Sparkles className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white block font-bold">Alta Definición Impresa</strong>
-                  <span className="text-[11px] text-gray-400">Colores vivos y acabados profesionales.</span>
+                  <strong className="text-white block font-bold">Producción en Masa: 5 a 7 días</strong>
+                  <span className="text-[11px] text-gray-400">Días hábiles tras aprobación del boceto digital. Despachos a todo Panamá.</span>
                 </div>
               </div>
 
               <div className="flex items-start space-x-2">
                 <ShieldCheck className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-bold">Pago Seguro vía Yappy & ACH</strong>
-                  <span className="text-[11px] text-gray-400">Validación humana e inmediata de tu pago.</span>
+                  <strong className="text-white block font-bold">Artículos 100% Personalizados</strong>
+                  <span className="text-[11px] text-gray-400">Exclusivos para tu marca. Sin devolución tras producción; garantía de reposición de fábrica.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-2">
+                <Tag className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-bold">Mínimo de Compra Mayorista</strong>
+                  <span className="text-[11px] text-gray-400">Desde 50 unidades por referencia con descuentos por volumen a 100 y 250 uds.</span>
                 </div>
               </div>
 
               <div className="flex items-start space-x-2">
                 <Truck className="w-4 h-4 text-[#FF5E14] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-bold">Atención Personalizada</strong>
-                  <span className="text-[11px] text-gray-400">Soporte directo para muestras o gran volumen.</span>
+                  <strong className="text-white block font-bold">Pago Seguro vía Yappy & ACH</strong>
+                  <span className="text-[11px] text-gray-400">Facturación fiscal directa para compras corporativas e institucionales.</span>
                 </div>
               </div>
             </div>

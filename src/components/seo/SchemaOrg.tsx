@@ -259,10 +259,7 @@ export function ProductSchema({ product }: { product: Product }) {
   const returnPolicyObj = {
     '@type': 'MerchantReturnPolicy',
     applicableCountry: 'PA',
-    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-    merchantReturnDays: 15,
-    returnMethod: 'https://schema.org/ReturnInStore',
-    returnFees: 'https://schema.org/FreeReturn',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
   };
 
   const shippingDetailsObj = {
@@ -280,14 +277,14 @@ export function ProductSchema({ product }: { product: Product }) {
       '@type': 'ShippingDeliveryTime',
       handlingTime: {
         '@type': 'QuantitativeValue',
-        minValue: 1,
-        maxValue: 3,
+        minValue: 5,
+        maxValue: 7,
         unitCode: 'd',
       },
       transitTime: {
         '@type': 'QuantitativeValue',
         minValue: 1,
-        maxValue: 3,
+        maxValue: 2,
         unitCode: 'd',
       },
     },
@@ -333,6 +330,11 @@ export function ProductSchema({ product }: { product: Product }) {
           priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
           itemCondition: 'https://schema.org/NewCondition',
+          eligibleQuantity: {
+            '@type': 'QuantitativeValue',
+            minValue: 50,
+            unitCode: 'C62',
+          },
           url: `https://rufpixel.com/productos/${product.slug}`,
           seller: sellerObj,
           hasMerchantReturnPolicy: returnPolicyObj,
@@ -346,6 +348,11 @@ export function ProductSchema({ product }: { product: Product }) {
           priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
           itemCondition: 'https://schema.org/NewCondition',
+          eligibleQuantity: {
+            '@type': 'QuantitativeValue',
+            minValue: 100,
+            unitCode: 'C62',
+          },
           url: `https://rufpixel.com/productos/${product.slug}`,
           seller: sellerObj,
           hasMerchantReturnPolicy: returnPolicyObj,
@@ -359,6 +366,11 @@ export function ProductSchema({ product }: { product: Product }) {
           priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
           itemCondition: 'https://schema.org/NewCondition',
+          eligibleQuantity: {
+            '@type': 'QuantitativeValue',
+            minValue: 250,
+            unitCode: 'C62',
+          },
           url: `https://rufpixel.com/productos/${product.slug}`,
           seller: sellerObj,
           hasMerchantReturnPolicy: returnPolicyObj,
@@ -408,6 +420,40 @@ export function ProductListSchema({
     url: 'https://rufpixel.com',
   };
 
+  const returnPolicyObj = {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'PA',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+  };
+
+  const shippingDetailsObj = {
+    '@type': 'OfferShippingDetails',
+    shippingRate: {
+      '@type': 'MonetaryAmount',
+      value: '0.00',
+      currency: 'USD',
+    },
+    shippingDestination: {
+      '@type': 'DefinedRegion',
+      addressCountry: 'PA',
+    },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 5,
+        maxValue: 7,
+        unitCode: 'd',
+      },
+      transitTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 1,
+        maxValue: 2,
+        unitCode: 'd',
+      },
+    },
+  };
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -443,6 +489,13 @@ export function ProductListSchema({
             priceValidUntil: '2027-12-31',
             availability: 'https://schema.org/InStock',
             itemCondition: 'https://schema.org/NewCondition',
+            eligibleQuantity: {
+              '@type': 'QuantitativeValue',
+              minValue: 50,
+              unitCode: 'C62',
+            },
+            hasMerchantReturnPolicy: returnPolicyObj,
+            shippingDetails: shippingDetailsObj,
             url: prodUrl,
             seller: sellerObj,
           },
