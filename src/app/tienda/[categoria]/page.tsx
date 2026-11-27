@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { getProducts, getCategories, resolveCategory, isProductInCategory } from '@/lib/woocommerce';
 import { MOCK_PRODUCTS } from '@/lib/mockData';
 import ShopClientGrid from '@/components/shop/ShopClientGrid';
-import { BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
+import { BreadcrumbListSchema, FAQPageSchema, ProductListSchema } from '@/components/seo/SchemaOrg';
 import { Check, HelpCircle, Sparkles, ArrowRight, Layers, ShieldCheck } from 'lucide-react';
 
 interface CategorySeoConfig {
@@ -541,9 +541,17 @@ export default async function CategoriaTiendaPage({ params }: { params: { catego
     { name: catName, url: `https://rufpixel.com/tienda/${canonicalSlug}` },
   ];
 
+  const thisCategoryProducts = catalogProducts.filter((p) => isProductInCategory(p, canonicalSlug));
+
   return (
     <div className="py-10 space-y-10">
       <BreadcrumbListSchema items={breadcrumbs} />
+      <ProductListSchema
+        name={`${catName} Personalizados al por Mayor en Panamá | RufPixel`}
+        description={seoConfig?.metaDesc || `Catálogo mayorista de ${catName} en Panamá con foto y precios.`}
+        url={`https://rufpixel.com/tienda/${canonicalSlug}`}
+        products={thisCategoryProducts.length > 0 ? thisCategoryProducts : catalogProducts.slice(0, 40)}
+      />
       {seoConfig && <FAQPageSchema questions={seoConfig.faqs} />}
 
       {/* Category Header */}

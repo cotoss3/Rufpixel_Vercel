@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { getProducts, getCategories } from '@/lib/woocommerce';
 import { MOCK_PRODUCTS } from '@/lib/mockData';
 import ShopClientGrid from '@/components/shop/ShopClientGrid';
-import { BreadcrumbListSchema } from '@/components/seo/SchemaOrg';
+import { BreadcrumbListSchema, ProductListSchema } from '@/components/seo/SchemaOrg';
 
 export const metadata = {
   title: 'Artículos Promocionales e Imprenta en Panamá | RufPixel', // 55 chars (Regla 1: 50-60)
@@ -37,6 +37,12 @@ export default async function TiendaPage() {
   return (
     <div className="py-10 space-y-8">
       <BreadcrumbListSchema items={breadcrumbs} />
+      <ProductListSchema
+        name="Catálogo de Artículos Promocionales en Panamá | RufPixel"
+        description="Explora todo el catálogo de artículos promocionales con foto, precios al por mayor y personalización en Panamá."
+        url="https://rufpixel.com/tienda"
+        products={activeProducts}
+      />
 
       {/* Catalog Header in Jet Black (#0D0D0D) & RufPixel Orange (#FF5E14) */}
       <section className="bg-[#0D0D0D] text-white py-12 border-b border-gray-800">

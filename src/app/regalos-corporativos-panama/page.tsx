@@ -5,7 +5,8 @@ import {
   Gift, CheckCircle2, ArrowRight, PhoneCall, ShieldCheck,
   Sparkles, HelpCircle, AlertTriangle, Check, Tag, Layers, Award
 } from 'lucide-react';
-import { BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
+import { BreadcrumbListSchema, FAQPageSchema, ProductListSchema } from '@/components/seo/SchemaOrg';
+import productsDb from '@/lib/products-db.json';
 
 export const metadata: Metadata = {
   title: 'Regalos Corporativos en Panamá con tu Logo | RufPixel',
@@ -89,9 +90,30 @@ export default function RegalosCorporativosPanamaPage() {
     }
   ];
 
+  const giftProducts = (productsDb as any[]).filter(
+    (p: any) =>
+      p.category === 'SETS Y REGALOS' ||
+      p.category === 'TECNOLOGIA' ||
+      p.category === 'AGENDAS Y LIBRETAS' ||
+      p.category === 'VASOS Y TAZAS'
+  ).map((p: any) => ({
+    name: p.name,
+    slug: p.slug,
+    image: p.image,
+    unitPrice: p.unit_price || (p.price_packs?.pack50?.unit) || 2.50,
+    category: p.category,
+    sku: p.sku || String(p.id),
+  }));
+
   return (
     <div className="bg-gray-50 min-h-screen pb-16">
       <BreadcrumbListSchema items={breadcrumbs} />
+      <ProductListSchema
+        name="Regalos Corporativos y Sets Ejecutivos en Panamá | RufPixel"
+        description="Catálogo de regalos corporativos y kits ejecutivos con personalización láser y transfer en Panamá."
+        url="https://rufpixel.com/regalos-corporativos-panama"
+        products={giftProducts}
+      />
       <FAQPageSchema questions={faqs} />
 
       {/* HERO */}
