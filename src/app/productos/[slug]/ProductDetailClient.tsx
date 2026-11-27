@@ -5,7 +5,7 @@ import { Product, ProductVariation } from '@/lib/types';
 import { useCart } from '@/lib/cartContext';
 import { ShoppingBag, CheckCircle2, ShieldCheck, ArrowRight, ArrowLeft, Layers, Tag, Clock, Sparkles, Truck, FileText, Send, MessageCircle, AlertTriangle, HelpCircle, Check } from 'lucide-react';
 import Link from 'next/link';
-import { ProductSchema, BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
+import { BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
 import { getCachedProduct, setCachedProduct } from '@/lib/productCache';
 import QuoteModal from '@/components/shop/QuoteModal';
 import QuickAddModal from '@/components/shop/QuickAddModal';
@@ -251,7 +251,6 @@ export default function ProductDetailClient({
 
   return (
     <div className="py-12 space-y-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in pb-28 lg:pb-12">
-      <ProductSchema product={product} />
       <BreadcrumbListSchema items={breadcrumbs} />
 
       <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs text-gray-500 flex-wrap">

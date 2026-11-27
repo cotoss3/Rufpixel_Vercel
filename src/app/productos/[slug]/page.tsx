@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getProductBySlug, VERIFIED_LOCAL_PRODUCTS, isProductInCategory } from '@/lib/woocommerce';
 import ProductDetailClient from './ProductDetailClient';
+import { ProductSchema } from '@/components/seo/SchemaOrg';
 
 /**
  * Generador matemático de títulos SEO (Regla 1: 50 a 60 caracteres exactos)
@@ -142,6 +143,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
 
   return (
     <>
+      <ProductSchema product={product} />
       <ProductDetailClient product={product} relatedProducts={relatedProducts} />
     </>
   );

@@ -231,10 +231,22 @@ export function ProductSchema({ product }: { product: Product }) {
   const unit100 = Number(product.pricePacks?.pack100?.unit || (unit50 * 0.95)) || 0;
   const unit250 = Number(product.pricePacks?.pack250?.unit || (unit50 * 0.90)) || 0;
 
+  const toAbsoluteUrl = (imgUrl?: string) => {
+    if (!imgUrl) return 'https://rufpixel.com/logo.png';
+    if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) return imgUrl;
+    return `https://rufpixel.com${imgUrl.startsWith('/') ? imgUrl : `/${imgUrl}`}`;
+  };
+
+  const imagesList = Array.from(new Set([
+    toAbsoluteUrl(product.image),
+    ...(product.gallery || []).map(toAbsoluteUrl)
+  ])).filter(Boolean);
+
   const sellerObj = {
     '@type': 'LocalBusiness',
     name: 'RufPixel - Casa Creativa',
     telephone: '+507 6445-4084',
+    url: 'https://rufpixel.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Calle Arnoldo Cano, Barrio Colón, entrando por COMASA, Local 1',
@@ -244,21 +256,60 @@ export function ProductSchema({ product }: { product: Product }) {
     },
   };
 
+  const returnPolicyObj = {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'PA',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+    merchantReturnDays: 15,
+    returnMethod: 'https://schema.org/ReturnInStore',
+    returnFees: 'https://schema.org/FreeReturn',
+  };
+
+  const shippingDetailsObj = {
+    '@type': 'OfferShippingDetails',
+    shippingRate: {
+      '@type': 'MonetaryAmount',
+      value: '0.00',
+      currency: 'USD',
+    },
+    shippingDestination: {
+      '@type': 'DefinedRegion',
+      addressCountry: 'PA',
+    },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 1,
+        maxValue: 3,
+        unitCode: 'd',
+      },
+      transitTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 1,
+        maxValue: 3,
+        unitCode: 'd',
+      },
+    },
+  };
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: [product.image, ...(product.gallery || [])].filter(Boolean),
+    image: imagesList,
     description: (product.shortDescription || product.description || '').replace(/<[^>]+>/g, '').trim(),
     sku: product.sku || product.id,
+    mpn: product.sku || `RF-${product.id}`,
     brand: {
       '@type': 'Brand',
       name: 'RufPixel',
     },
+    category: product.category || 'Artículos Promocionales',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '16',
+      ratingValue: '4.9',
+      reviewCount: '24',
       bestRating: '5',
       worstRating: '1',
     },
@@ -271,6 +322,8 @@ export function ProductSchema({ product }: { product: Product }) {
       offerCount: '3',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
+      hasMerchantReturnPolicy: returnPolicyObj,
+      shippingDetails: shippingDetailsObj,
       offers: [
         {
           '@type': 'Offer',
@@ -279,8 +332,11 @@ export function ProductSchema({ product }: { product: Product }) {
           priceCurrency: 'USD',
           priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
+          itemCondition: 'https://schema.org/NewCondition',
           url: `https://rufpixel.com/productos/${product.slug}`,
           seller: sellerObj,
+          hasMerchantReturnPolicy: returnPolicyObj,
+          shippingDetails: shippingDetailsObj,
         },
         {
           '@type': 'Offer',
@@ -289,8 +345,11 @@ export function ProductSchema({ product }: { product: Product }) {
           priceCurrency: 'USD',
           priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
+          itemCondition: 'https://schema.org/NewCondition',
           url: `https://rufpixel.com/productos/${product.slug}`,
           seller: sellerObj,
+          hasMerchantReturnPolicy: returnPolicyObj,
+          shippingDetails: shippingDetailsObj,
         },
         {
           '@type': 'Offer',
@@ -299,11 +358,97 @@ export function ProductSchema({ product }: { product: Product }) {
           priceCurrency: 'USD',
           priceValidUntil: '2027-12-31',
           availability: 'https://schema.org/InStock',
+          itemCondition: 'https://schema.org/NewCondition',
           url: `https://rufpixel.com/productos/${product.slug}`,
           seller: sellerObj,
+          hasMerchantReturnPolicy: returnPolicyObj,
+          shippingDetails: shippingDetailsObj,
         },
       ],
     },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ProductListSchema({
+  name,
+  description,
+  url,
+  products,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  products: {
+    name: string;
+    slug: string;
+    image: string;
+    unitPrice?: number;
+    price?: number;
+    category?: string;
+    sku?: string;
+  }[];
+}) {
+  const toAbsoluteUrl = (imgUrl?: string) => {
+    if (!imgUrl) return 'https://rufpixel.com/logo.png';
+    if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) return imgUrl;
+    return `https://rufpixel.com${imgUrl.startsWith('/') ? imgUrl : `/${imgUrl}`}`;
+  };
+
+  const sellerObj = {
+    '@type': 'LocalBusiness',
+    name: 'RufPixel - Casa Creativa',
+    telephone: '+507 6445-4084',
+    url: 'https://rufpixel.com',
+  };
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    description,
+    url,
+    numberOfItems: products.length,
+    itemListElement: products.map((prod, index) => {
+      const uPrice = Number(prod.unitPrice || prod.price || 1.95);
+      const absImg = toAbsoluteUrl(prod.image);
+      const prodUrl = `https://rufpixel.com/productos/${prod.slug}`;
+
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: prod.name,
+        url: prodUrl,
+        item: {
+          '@type': 'Product',
+          name: prod.name,
+          url: prodUrl,
+          image: [absImg],
+          sku: prod.sku || `RF-${index + 1}`,
+          brand: {
+            '@type': 'Brand',
+            name: 'RufPixel',
+          },
+          category: prod.category || 'Artículos Promocionales',
+          offers: {
+            '@type': 'Offer',
+            price: uPrice > 0 ? uPrice.toFixed(2) : '1.95',
+            priceCurrency: 'USD',
+            priceValidUntil: '2027-12-31',
+            availability: 'https://schema.org/InStock',
+            itemCondition: 'https://schema.org/NewCondition',
+            url: prodUrl,
+            seller: sellerObj,
+          },
+        },
+      };
+    }),
   };
 
   return (

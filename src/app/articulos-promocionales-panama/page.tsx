@@ -6,7 +6,8 @@ import {
   Truck, Layers, Sparkles, HelpCircle, AlertTriangle, Check,
   Gift, Tag, Printer, Shirt, Maximize2, Building2, FileText
 } from 'lucide-react';
-import { BreadcrumbListSchema, FAQPageSchema } from '@/components/seo/SchemaOrg';
+import { BreadcrumbListSchema, FAQPageSchema, ProductListSchema } from '@/components/seo/SchemaOrg';
+import productsDb from '@/lib/products-db.json';
 
 export const metadata: Metadata = {
   title: 'Artículos Promocionales en Panamá al por Mayor | RufPixel',
@@ -203,6 +204,15 @@ export default function ArticulosPromocionalesPanamaPage() {
     }
   ];
 
+  const catalogProducts = (productsDb as any[]).map((p: any) => ({
+    name: p.name,
+    slug: p.slug,
+    image: p.image,
+    unitPrice: p.unit_price || (p.price_packs?.pack50?.unit) || 1.95,
+    category: p.category,
+    sku: p.sku || String(p.id),
+  }));
+
   const catalogSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -230,6 +240,12 @@ export default function ArticulosPromocionalesPanamaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogSchema) }}
+      />
+      <ProductListSchema
+        name="Catálogo de Artículos Promocionales en Panamá | RufPixel"
+        description="Fragmentos enriquecidos (Rich Snippets) del catálogo completo de artículos promocionales con foto, precios mayoristas y personalización en Panamá."
+        url="https://rufpixel.com/articulos-promocionales-panama"
+        products={catalogProducts}
       />
       <BreadcrumbListSchema items={breadcrumbs} />
       <FAQPageSchema questions={faqs} />
